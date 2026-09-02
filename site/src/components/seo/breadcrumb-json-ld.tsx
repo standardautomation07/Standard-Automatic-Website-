@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 export interface Crumb {
   name: string;
@@ -20,7 +21,7 @@ export function BreadcrumbJsonLd({ items }: { items: Crumb[] }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(data) }}
     />
   );
 }

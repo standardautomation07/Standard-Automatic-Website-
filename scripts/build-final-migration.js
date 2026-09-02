@@ -54,6 +54,10 @@ for (const u of urls) {
   if (pageType === 'dead-404') {
     redirect = 'No'; newUrl = '(none)';
     reason = 'Already 404 on live site — see research/url-migration-map.csv for per-page detail';
+    if (slug === 'hotels-in-alibaug') {
+      reason = 'INTENTIONALLY RETIRED — business decision (Phase 2 brief), not merely unresolved';
+      notes = 'Do not redirect to homepage or anywhere else just to avoid a 404. This URL is deliberately retired as a historical/unrelated page. See planning/OPEN-BUSINESS-DECISIONS.md item 5 (resolved).';
+    }
   } else if (pageType === 'home') {
     newUrl = '/'; reason = 'Homepage';
   } else if (pageType === 'info') {

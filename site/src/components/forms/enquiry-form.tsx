@@ -6,7 +6,17 @@ import { trackEvent } from "@/lib/analytics";
 
 const initialState: EnquiryState = { status: "idle" };
 
-export function EnquiryForm({ defaultProduct = "" }: { defaultProduct?: string }) {
+export function EnquiryForm({
+  defaultProduct = "",
+  compact = false,
+}: {
+  defaultProduct?: string;
+  /** Compact mode: fewer fields, product context passed automatically as a
+   * hidden field rather than an editable one - for embedding directly on a
+   * product page (planning brief's "the enquiry should automatically know
+   * the product context" requirement). */
+  compact?: boolean;
+}) {
   const [state, formAction, pending] = useActionState(submitEnquiry, initialState);
 
   useEffect(() => {
@@ -33,13 +43,24 @@ export function EnquiryForm({ defaultProduct = "" }: { defaultProduct?: string }
         <input type="text" id="company_website" name="company_website" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      {compact && defaultProduct && (
+        <>
+          <input type="hidden" name="productInterest" value={defaultProduct} />
+          <p className="rounded-sm bg-surface-sunken px-3 py-2 text-sm text-ink-muted">
+            Enquiring about: <span className="font-medium text-ink">{defaultProduct}</span>
+          </p>
+        </>
+      )}
+
+      <div className={compact ? "space-y-4" : "grid gap-4 sm:grid-cols-2"}>
         <Field label="Name" name="name" required autoComplete="name" />
-        <Field label="Company" name="companyName" autoComplete="organization" />
+        {!compact && <Field label="Company" name="companyName" autoComplete="organization" />}
         <Field label="Email" name="email" type="email" required autoComplete="email" />
         <Field label="Phone" name="phone" type="tel" autoComplete="tel" />
-        <Field label="City" name="city" autoComplete="address-level2" />
-        <Field label="Product / Interest" name="productInterest" defaultValue={defaultProduct} />
+        {!compact && <Field label="City" name="city" autoComplete="address-level2" />}
+        {!compact && (
+          <Field label="Product / Interest" name="productInterest" defaultValue={defaultProduct} />
+        )}
       </div>
 
       <div>
@@ -49,7 +70,7 @@ export function EnquiryForm({ defaultProduct = "" }: { defaultProduct?: string }
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={compact ? 3 : 4}
           required
           className="w-full rounded-sm border border-border bg-surface-raised px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-brand-steel"
         />
@@ -64,7 +85,7 @@ export function EnquiryForm({ defaultProduct = "" }: { defaultProduct?: string }
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-sm bg-brand-signal px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-signal-dark disabled:opacity-60 sm:w-auto"
+        className={`rounded-sm bg-brand-signal px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-signal-dark disabled:opacity-60 ${compact ? "w-full" : "w-full sm:w-auto"}`}
       >
         {pending ? "Sending…" : "Send Enquiry"}
       </button>

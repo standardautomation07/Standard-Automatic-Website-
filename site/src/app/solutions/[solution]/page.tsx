@@ -17,6 +17,7 @@ export async function generateMetadata(props: PageProps<"/solutions/[solution]">
   return {
     title: solution.name,
     description: `Standard Automation products suited to ${solution.name.toLowerCase()}.`,
+    alternates: { canonical: `/solutions/${solution.slug}` },
   };
 }
 

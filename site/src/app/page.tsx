@@ -11,9 +11,13 @@ import { RequestQuoteButton } from "@/components/cta/request-quote-button";
 import { WhatsAppCTA } from "@/components/cta/whatsapp-cta";
 
 export const metadata: Metadata = {
-  title: "Industrial Rolling Shutters, Gates & Doors Manufacturer in Pune",
+  // `absolute` bypasses the root layout's "%s | Standard Automation"
+  // template so the homepage doesn't double up the brand name and blow
+  // past a sane title length.
+  title: { absolute: "Standard Automation | Rolling Shutters & Industrial Doors" },
   description:
     "Standard Automatic Solutions Pvt Ltd manufactures automatic rolling shutters, sliding gates, industrial doors, high speed doors and loading bay equipment in Pune, India.",
+  alternates: { canonical: "/" },
 };
 
 const CLIENT_LOGOS = fs

@@ -7,6 +7,7 @@ import { WhatsAppCTA } from "@/components/cta/whatsapp-cta";
 export const metadata: Metadata = {
   title: "Service & Support",
   description: "Get in touch with Standard Automation for installation, service and support enquiries.",
+  alternates: { canonical: "/service-support" },
 };
 
 /**

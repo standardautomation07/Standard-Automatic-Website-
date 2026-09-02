@@ -7,6 +7,7 @@ import { Breadcrumb } from "@/components/layout/breadcrumb";
 export const metadata: Metadata = {
   title: "Clients",
   description: "Some of the clients and end users Standard Automation has supplied.",
+  alternates: { canonical: "/clients" },
 };
 
 const CLIENT_LOGOS = fs

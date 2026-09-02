@@ -9,6 +9,10 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: `Contact ${siteConfig.legalName} in Pune, Maharashtra for rolling shutters, gates, doors and loading bay equipment.`,
+  // Canonicalizes to the bare path even when visited with a `?product=`
+  // query string (used only to pre-fill the form) - the query variants are
+  // not distinct indexable pages.
+  alternates: { canonical: "/contact" },
 };
 
 export default async function ContactPage(props: PageProps<"/contact">) {

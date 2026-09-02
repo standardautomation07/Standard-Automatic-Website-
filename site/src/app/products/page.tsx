@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Products",
   description:
     "Browse Standard Automation's full range: rolling shutters, gates, doors, high speed doors, loading bay equipment, bollards, turnstiles and barriers.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsIndexPage() {

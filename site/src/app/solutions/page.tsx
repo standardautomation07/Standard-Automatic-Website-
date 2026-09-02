@@ -6,6 +6,7 @@ import { SOLUTIONS, getProductsForSolution } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "Solutions & Applications",
   description: "Industries and applications served by Standard Automation's product range.",
+  alternates: { canonical: "/solutions" },
 };
 
 export default function SolutionsIndexPage() {

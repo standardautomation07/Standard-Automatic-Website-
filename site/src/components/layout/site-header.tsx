@@ -10,8 +10,9 @@ import { RequestQuoteButton } from "@/components/cta/request-quote-button";
 const NAV_LINKS = [
   { label: "Solutions", href: "/solutions" },
   { label: "Projects", href: "/projects" },
-  { label: "About", href: "/about-us" },
-  { label: "Resources", href: "/resources" },
+  { label: "Service & Support", href: "/service-support" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function SiteHeader() {
@@ -22,9 +23,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface-raised">
-      <div className="hidden items-center justify-end gap-6 border-b border-border bg-surface-sunken px-6 py-1.5 lg:flex">
+      <div className="hidden items-center justify-end gap-6 border-b border-border bg-surface-sunken px-6 py-1.5 text-xs lg:flex">
         <PhoneCTA />
         <EmailCTA />
+        <Link href="/resources" className="font-medium text-ink-muted hover:text-brand-steel">
+          Downloads &amp; Resources
+        </Link>
       </div>
       <div className="container-x flex h-16 items-center justify-between gap-4 lg:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-2" aria-label={"Standard Automation home"}>

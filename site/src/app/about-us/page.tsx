@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Standard Automatic Solutions Pvt Ltd is a manufacturer and supplier of rolling shutters, automatic sliding gates, doors, and road barriers, based in Pune since 2006.",
+  alternates: { canonical: "/about-us" },
 };
 
 export default function AboutUsPage() {

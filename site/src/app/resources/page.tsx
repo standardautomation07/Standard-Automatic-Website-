@@ -6,6 +6,7 @@ import { EmailCTA } from "@/components/cta/email-cta";
 export const metadata: Metadata = {
   title: "Resources",
   description: "Brochures and technical datasheets from Standard Automation.",
+  alternates: { canonical: "/resources" },
 };
 
 /**

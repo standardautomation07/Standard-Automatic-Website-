@@ -5,6 +5,7 @@ import { RequestQuoteButton } from "@/components/cta/request-quote-button";
 export const metadata: Metadata = {
   title: "Projects",
   description: "Standard Automation project case studies.",
+  alternates: { canonical: "/projects" },
 };
 
 /**

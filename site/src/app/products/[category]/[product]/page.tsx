@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllCategories, getAllProducts, getCategory, getProduct, getRelatedProducts } from "@/lib/catalog";
+import { getAllCategories, getAllProducts, getCategory, getConfirmedVariants, getProduct, getRelatedProducts } from "@/lib/catalog";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { SpecTable } from "@/components/product/spec-table";
 import { ProductCard } from "@/components/product/product-card";
@@ -8,6 +8,8 @@ import { Faq } from "@/components/product/faq";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { RequestQuoteButton } from "@/components/cta/request-quote-button";
 import { WhatsAppCTA } from "@/components/cta/whatsapp-cta";
+import { PhoneCTA } from "@/components/cta/phone-cta";
+import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { ProductJsonLd } from "@/components/seo/product-json-ld";
 
 export function generateStaticParams() {
@@ -26,6 +28,7 @@ export async function generateMetadata(
       product.shortDescription?.slice(0, 155) ||
       `${product.name} manufactured by Standard Automation, Pune, India.`,
     openGraph: product.images[0] ? { images: [product.images[0].src] } : undefined,
+    alternates: { canonical: `/products/${category}/${productSlug}` },
   };
 }
 
@@ -36,6 +39,7 @@ export default async function ProductPage(props: PageProps<"/products/[category]
   if (!category || !product) notFound();
 
   const related = getRelatedProducts(product);
+  const variants = getConfirmedVariants(product);
   const otherCategories = getAllCategories().filter((c) => c.slug !== category.slug);
 
   return (
@@ -68,9 +72,17 @@ export default async function ProductPage(props: PageProps<"/products/[category]
               <p className="mt-4 text-ink-muted">{product.shortDescription}</p>
             )}
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <RequestQuoteButton productName={product.name} />
               <WhatsAppCTA message={`Hi, I'm interested in ${product.name}. Could you share more details?`} />
+              <PhoneCTA />
+            </div>
+
+            <div className="mt-6 rounded-sm border border-border bg-surface-raised p-4">
+              <p className="mb-3 font-display text-sm font-semibold uppercase tracking-wide text-ink-muted">
+                Quick Enquiry
+              </p>
+              <EnquiryForm defaultProduct={product.name} compact />
             </div>
 
             {product.featuresText && (
@@ -108,6 +120,23 @@ export default async function ProductPage(props: PageProps<"/products/[category]
             {product.materials && <InfoBlock label="Materials" value={product.materials} />}
             {product.dimensions && <InfoBlock label="Dimensions" value={product.dimensions} />}
             {product.certifications && <InfoBlock label="Certifications" value={product.certifications} />}
+          </div>
+        )}
+
+        {variants.length > 0 && (
+          <div className="mt-14">
+            <h2 className="mb-2 font-display text-2xl font-semibold">Variants</h2>
+            <p className="mb-4 max-w-2xl text-sm text-ink-muted">
+              Confirmed by the business as Rolling Shutter variants (see
+              planning/OPEN-BUSINESS-DECISIONS.md). Final per-variant technical
+              mapping is still pending, so each is shown as its own listing
+              rather than merged.
+            </p>
+            <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
+              {variants.map((p) => (
+                <ProductCard key={p.slug} product={p} categorySlug={p.categorySlug} />
+              ))}
+            </div>
           </div>
         )}
 

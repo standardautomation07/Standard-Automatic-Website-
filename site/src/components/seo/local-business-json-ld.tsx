@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 /**
  * LocalBusiness schema - was previously gated behind address confirmation
@@ -32,7 +33,7 @@ export function LocalBusinessJsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(data) }}
     />
   );
 }

@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { jsonLdHtml } from "@/lib/json-ld";
 import type { Product } from "@/lib/types";
 
 /**
@@ -22,7 +23,7 @@ export function ProductJsonLd({ product }: { product: Product }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(data) }}
     />
   );
 }

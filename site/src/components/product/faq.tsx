@@ -1,3 +1,5 @@
+import { jsonLdHtml } from "@/lib/json-ld";
+
 export interface FaqItem {
   question: string;
   answer: string;
@@ -25,7 +27,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
 
   return (
     <section aria-labelledby="faq-heading" className="space-y-3">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }} />
       <h2 id="faq-heading" className="font-display text-2xl font-semibold">
         Frequently Asked Questions
       </h2>

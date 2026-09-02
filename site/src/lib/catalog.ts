@@ -34,6 +34,20 @@ export function getRelatedProducts(product: Product): Product[] {
     .filter((p): p is Product => Boolean(p));
 }
 
+/**
+ * The 4 URLs confirmed by the business as genuine Rolling Shutter variants
+ * (planning/OPEN-BUSINESS-DECISIONS.md, "Resolved by the business" section) -
+ * returns the OTHER confirmed variants for a given product, for the
+ * product page's "Variants" section. Empty for any product that isn't one
+ * of the four.
+ */
+export function getConfirmedVariants(product: Product): Product[] {
+  if (!product.confirmedVariant) return [];
+  return catalog.products.filter(
+    (p) => p.confirmedVariant && p.slug !== product.slug
+  );
+}
+
 export function getFeaturedProducts(count = 6): Product[] {
   // Prefer products from currently-active (not pending-confirmation) categories
   // for homepage prominence - see planning/OPEN-BUSINESS-DECISIONS.md item 3.

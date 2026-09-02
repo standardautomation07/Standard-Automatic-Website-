@@ -7,6 +7,8 @@ import { OrganizationJsonLd } from "@/components/seo/organization-json-ld";
 import { LocalBusinessJsonLd } from "@/components/seo/local-business-json-ld";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { ClickTracker } from "@/components/analytics/click-tracker";
+import { StickyConversionRail } from "@/components/layout/sticky-conversion-rail";
+import { MobileStickyBar } from "@/components/layout/mobile-sticky-bar";
 import { siteConfig } from "@/lib/site-config";
 
 const bigShoulders = Big_Shoulders({
@@ -62,7 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${bigShoulders.variable} ${plexSans.variable} ${plexMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-surface-base text-ink">
+      <body className="flex min-h-screen flex-col bg-surface-base pb-14 text-ink lg:pb-0">
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <GoogleAnalytics />
@@ -78,6 +80,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <StickyConversionRail />
+        <MobileStickyBar />
       </body>
     </html>
   );

@@ -14,10 +14,19 @@ export async function generateMetadata(props: PageProps<"/products/[category]">)
   const category = getCategory(slug);
   if (!category) return {};
   return {
-    title: category.seoTitle || category.name,
+    // Deliberately not reusing the legacy site's verbose/duplicate titles
+    // (research/seo-audit.md §1.3) - a clean "Name | Standard Automation"
+    // title (via the root layout's template) is short, unique, and factual.
+    title: category.name,
+    // The legacy description is reused only when it's already a reasonable
+    // length - several of the old site's descriptions ran past 200
+    // characters (research/seo-audit.md §1.3) and shouldn't be carried
+    // forward as-is.
     description:
-      category.seoDescription ||
-      `${category.name} manufactured by Standard Automation, Pune, India.`,
+      category.seoDescription && category.seoDescription.length <= 160
+        ? category.seoDescription
+        : `${category.name} manufactured by Standard Automation, Pune, India.`,
+    alternates: { canonical: `/products/${category.slug}` },
   };
 }
 

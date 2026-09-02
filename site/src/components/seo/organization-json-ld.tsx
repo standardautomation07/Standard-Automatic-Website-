@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 /**
  * Organization schema - safe to ship unconditionally (unlike LocalBusiness,
@@ -24,7 +25,7 @@ export function OrganizationJsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdHtml(data) }}
     />
   );
 }
