@@ -4094,5 +4094,78 @@
     "relatedProducts": [],
     "confirmedVariant": false,
     "confirmationNote": "Live on the server but orphaned from current nav/sitemap. Real, distinct product content. Reinstatement in nav pending business confirmation."
+  },
+  {
+    "productName": "Bollard",
+    "navLabel": null,
+    "category": "Turnstile",
+    "subcategory": null,
+    "currentUrl": "https://www.standardautomation.in/bollard.html",
+    "navLiveInCurrentMenu": false,
+    "shortDescription": "Impact-resistant bollards are REFLEX profiles designed to protect doors or protruding corners from accidental impacts with forklifts and other moving vehicles. \n\n Our protections are manufactured according to an innovative technical design that combines speed and simplicity in the installation phase and guarantees a broad impact area. \n\n REFLEX material was carefully selected, studied and tested by our R&D department and external bodies to achieve the parameters of excellence that distinguish it from other \n\n plastics, offering high visibility in the workplace, maximum resistance to various types of impact, a small footprint, durability and ease of cleaning. \n\n MPM impact-resistant bollards are used in logistics and production areas, near industrial doors, overhead doors, cold storage doors, loading bays and fire doors. \n\n Our team can help you choose the right safety solution for your business needs. Fixing accessories included. \n\n EXPLORE THE PRODUCTS\nBOLLARD",
+    "fullDescriptionSections": [
+      {
+        "heading": "Bollard",
+        "text": "Impact-resistant bollards are REFLEX profiles designed to protect doors or protruding corners from accidental impacts with forklifts and other moving vehicles. \n\n Our protections are manufactured according to an innovative technical design that combines speed and simplicity in the installation phase and guarantees a broad impact area. \n\n REFLEX material was carefully selected, studied and tested by our R&D department and external bodies to achieve the parameters of excellence that distinguish it from other \n\n plastics, offering high visibility in the workplace, maximum resistance to various types of impact, a small footprint, durability and ease of cleaning. \n\n MPM impact-resistant bollards are used in logistics and production areas, near industrial doors, overhead doors, cold storage doors, loading bays and fire doors. \n\n Our team can help you choose the right safety solution for your business needs. Fixing accessories included. \n\n EXPLORE THE PRODUCTS\nBOLLARD"
+      },
+      {
+        "heading": "ROD PE 70",
+        "text": ">BOLLARD \n >COLD LINE \n\nLight traffic bollard. Also suited for low temperatures. Ideal for areas used by hand trucks. Perfectly rounded design with cap in anti-shock material. Fixing accessories are included and totally hidden, making the protective bollard suitable for hygienic environments. Chemical anchor necessary and available on request. The fixing is removable, with the possibility of replacing the protection without changing position."
+      },
+      {
+        "heading": "GRD 90",
+        "text": ">BOLLARD \n\nProtection bollard for light hand truck traffic. Compact, space-saving design. Thanks to its flat side you can install the bollard close to the structures to be protected, leaving more space for trucks, forklifts and materials. Fixing accessories included. Quick and easy installation."
+      },
+      {
+        "heading": "ROD PE 120",
+        "text": ">BOLLARD \n >COLD LINE \n\nHeavy traffic bollard. Also suited for low temperatures. Perfectly rounded design with cap in anti-shock material. Fixing accessories are included and totally concealed, making the protective bollard suitable for hygienic environments. Chemical anchor necessary and available on request. The fixing is removable, with the possibility of replacing the protection without changing position."
+      },
+      {
+        "heading": "GRD 150",
+        "text": ">BOLLARD \n\nProtection bollard for loads of medium-heavy traffic. Compact, space-saving design. Thanks to its flat side you can install the bollard close to the structures to be protected, leaving more space for trucks, forklifts and materials. Fixing accessories included. Quick and easy installation. \n\n <div"
+      }
+    ],
+    "specTables": [],
+    "applicationsOrFeatureBullets": [],
+    "images": [
+      {
+        "src": "images/Bollard.png",
+        "absoluteUrl": "https://www.standardautomation.in/images/Bollard.png",
+        "alt": "Bollard",
+        "role": "banner"
+      },
+      {
+        "src": "images/bollard-cover.jpg",
+        "absoluteUrl": "https://www.standardautomation.in/images/bollard-cover.jpg",
+        "alt": ""
+      },
+      {
+        "src": "images/rod_pe_70-266.jpg",
+        "absoluteUrl": "https://www.standardautomation.in/images/rod_pe_70-266.jpg",
+        "alt": ""
+      },
+      {
+        "src": "images/grd_90-1.jpg",
+        "absoluteUrl": "https://www.standardautomation.in/images/grd_90-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "images/rod_pe_120.jpg",
+        "absoluteUrl": "https://www.standardautomation.in/images/rod_pe_120.jpg",
+        "alt": ""
+      },
+      {
+        "src": "images/grd_150_500.jpg",
+        "absoluteUrl": "https://www.standardautomation.in/images/grd_150_500.jpg",
+        "alt": ""
+      }
+    ],
+    "materials": "UNKNOWN",
+    "dimensions": "UNKNOWN",
+    "certifications": "UNKNOWN",
+    "brochuresOrDatasheets": "UNKNOWN",
+    "relatedProducts": [],
+    "confirmedVariant": false,
+    "confirmationNote": "Bollard is a live top-level nav category with no sub-products of its own; added here as a product record so its real content renders under the Bollards/Turnstiles/Barriers grouping."
   }
 ]

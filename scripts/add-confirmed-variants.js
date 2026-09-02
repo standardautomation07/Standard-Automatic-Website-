@@ -57,12 +57,14 @@ const targets = [
   { file: 'perforated-shutters.html', url: 'https://www.standardautomation.in/perforated-shutters.html', category: 'Rolling Shutters', note: 'Live on the server but orphaned from current nav/sitemap. Real, distinct product content. Reinstatement in nav pending business confirmation.', confirmedVariant: false },
   { file: 'polycarbonate.html', url: 'https://www.standardautomation.in/polycarbonate.html', category: 'Rolling Shutters', note: 'Live on the server but orphaned from current nav/sitemap; likely superseded by polycarbonate-rolling-shutters.html — kept as a separate entry pending business confirmation rather than merged.', confirmedVariant: false },
   { file: 'sliding-glass-door.html', url: 'https://www.standardautomation.in/sliding-glass-door.html', category: 'Doors', note: 'Live on the server but orphaned from current nav/sitemap. Real, distinct product content. Reinstatement in nav pending business confirmation.', confirmedVariant: false },
+  { file: 'bollard.html', url: 'https://www.standardautomation.in/bollard.html', category: 'Turnstile', note: 'Bollard is a live top-level nav category with no sub-products of its own; added here as a product record so its real content renders under the Bollards/Turnstiles/Barriers grouping.', confirmedVariant: false, skipIfExists: true },
 ];
 
 const productsPath = path.join(ROOT, 'research', 'products.json');
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf8'));
 
 for (const t of targets) {
+  if (products.some(p => p.currentUrl === t.url)) { console.log('Skip (already present):', t.url); continue; }
   const html = fs.readFileSync(path.join(ROOT, 'legacy', 'content', 'raw', t.file), 'utf8');
   const region = extractMainRegion(html);
   const extracted = extractSections(region);
