@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Design tokens - see planning/DESIGN-SYSTEM.md. Named per role, not raw hex
+   scattered through components. Light-only for v1 (industrial B2B sites in
+   this category don't carry dark-mode expectations); revisit if requested. */
+@theme {
+  --color-surface-base: #eef0f1;
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: #e1e5e7;
+  --color-ink: #14181b;
+  --color-ink-muted: #54626b;
+  --color-border: #cdd6da;
+  --color-brand-steel: #1f5c82;
+  --color-brand-steel-dark: #123f5a;
+  --color-brand-signal: #c4650f;
+  --color-brand-signal-dark: #9c5009;
+  --color-state-success: #2c7a4f;
+  --color-state-error: #b5372b;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-big-shoulders), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.container-x {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+/* Visible focus state everywhere - see planning/DESIGN-SYSTEM.md §7 and the
+   audit's finding that the old site never defined one at all. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-brand-steel);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

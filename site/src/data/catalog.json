@@ -101,7 +101,7 @@
         "dock-house",
         "dock-levellers"
       ],
-      "heroImage": "/images/legacy/loading%20bay%20equipment.jpg"
+      "heroImage": "/images/legacy/loading-bay-equipment.jpg"
     },
     {
       "slug": "boom-and-barriers",
@@ -227,9 +227,9 @@
           "alt": "Galvanize Rolling Shutter"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "g-i-rolling-shutters",
         "polycarbonate-rolling-shutters",
@@ -380,9 +380,9 @@
           "alt": "Insulated Rolling Shutters"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "m-s-rolling-shutters",
         "polycarbonate-rolling-shutters",
@@ -480,9 +480,9 @@
           "alt": "Polycarbonate Rolling Shutters"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "m-s-rolling-shutters",
         "g-i-rolling-shutters",
@@ -527,9 +527,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "swing-gate",
         "telescoping-gate",
@@ -572,9 +572,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "sliding-gate",
         "telescoping-gate",
@@ -617,9 +617,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "sliding-gate",
         "swing-gate",
@@ -697,7 +697,7 @@
       ],
       "images": [
         {
-          "src": "/images/legacy/rectractable%20gate.jpg",
+          "src": "/images/legacy/rectractable-gate.jpg",
           "alt": "Retractable Gates"
         },
         {
@@ -705,9 +705,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "sliding-gate",
         "swing-gate",
@@ -813,13 +813,13 @@
       ],
       "images": [
         {
-          "src": "/images/legacy/high%20speed%20door.jpg",
+          "src": "/images/legacy/high-speed-door.jpg",
           "alt": "High Speed  Industrial Doors Manufacturers India"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "overhead-sectional-doors",
         "fire-sliding-door",
@@ -932,9 +932,9 @@
           "alt": "Overhead Sectional Doors"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-door",
         "fire-sliding-door",
@@ -1012,9 +1012,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-door",
         "overhead-sectional-doors",
@@ -1120,9 +1120,9 @@
           "alt": "Garage Door"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-door",
         "overhead-sectional-doors",
@@ -1220,9 +1220,9 @@
           "alt": "Residential Garage Door"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-door",
         "overhead-sectional-doors",
@@ -1332,9 +1332,9 @@
           "alt": "Sectional Door"
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-door",
         "overhead-sectional-doors",
@@ -1438,9 +1438,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-fold-up-doors",
         "high-speed-self-repairing-doors",
@@ -1543,9 +1543,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-roll-up-door",
         "high-speed-self-repairing-doors",
@@ -1651,9 +1651,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-roll-up-door",
         "high-speed-fold-up-doors",
@@ -1724,9 +1724,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "high-speed-roll-up-door",
         "high-speed-fold-up-doors",
@@ -1807,9 +1807,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "dock-levellers"
       ]
@@ -1930,9 +1930,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "dock-house"
       ]
@@ -1977,9 +1977,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "retractable-barriers"
       ]
@@ -2026,9 +2026,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "sliding-gate-motor",
         "swing-gate-motor",
@@ -2077,9 +2077,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "swing-gate-motor",
@@ -2134,9 +2134,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2172,9 +2172,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "boom-barriers"
       ]
@@ -2224,9 +2224,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2276,9 +2276,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2330,9 +2330,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2384,9 +2384,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2422,9 +2422,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2477,9 +2477,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2515,9 +2515,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "side-motor-with-chain",
         "sliding-gate-motor",
@@ -2634,9 +2634,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "m-s-rolling-shutters",
         "g-i-rolling-shutters",
@@ -2711,9 +2711,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "m-s-rolling-shutters",
         "g-i-rolling-shutters",
@@ -2757,7 +2757,7 @@
           "alt": null
         },
         {
-          "src": "/images/legacy/HL145%20DESC.PNG",
+          "src": "/images/legacy/HL145-DESC.PNG",
           "alt": null
         },
         {
@@ -2797,9 +2797,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "flap-barrier",
         "full-height-barrier",
@@ -2842,11 +2842,11 @@
           "alt": "Bollard"
         },
         {
-          "src": "/images/legacy/Flap%20A203.PNG",
+          "src": "/images/legacy/Flap-A203.PNG",
           "alt": null
         },
         {
-          "src": "/images/legacy/FLAPA203%20DES.PNG",
+          "src": "/images/legacy/FLAPA203-DES.PNG",
           "alt": null
         },
         {
@@ -2898,9 +2898,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "tripod-turnstile",
         "full-height-barrier",
@@ -2991,9 +2991,9 @@
           "alt": null
         }
       ],
-      "materials": "UNKNOWN - not separately tagged on live page, see fullDescriptionSections for any prose mentions",
-      "dimensions": "UNKNOWN - see specTables if present, otherwise not published",
-      "certifications": "UNKNOWN - only site-wide ISO 9001:2015 claim found on homepage, no per-product certification listed",
+      "materials": null,
+      "dimensions": null,
+      "certifications": null,
       "relatedSlugs": [
         "tripod-turnstile",
         "flap-barrier",

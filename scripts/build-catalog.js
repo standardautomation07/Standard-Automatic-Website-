@@ -18,7 +18,11 @@ function slugOf(u) {
 }
 function localImage(absoluteUrl) {
   if (!absoluteUrl) return null;
-  const fname = absoluteUrl.split('/').pop().split('?')[0];
+  let fname = absoluteUrl.split('/').pop().split('?')[0];
+  // Downloaded files were sanitized (percent-decoded, spaces -> hyphens) so
+  // they're valid as literal URL path segments - match that here.
+  try { fname = decodeURIComponent(fname); } catch (e) {}
+  fname = fname.replace(/ /g, '-');
   const p = path.join(SITE, 'public', 'images', 'legacy', fname);
   return fs.existsSync(p) ? '/images/legacy/' + fname : null;
 }
@@ -73,9 +77,14 @@ const outProducts = products.map(p => {
     specifications,
     applications,
     images,
-    materials: p.materials && p.materials !== 'UNKNOWN' ? p.materials : null,
-    dimensions: p.dimensions && p.dimensions !== 'UNKNOWN' ? p.dimensions : null,
-    certifications: p.certifications && p.certifications !== 'UNKNOWN' ? p.certifications : null,
+    // products.json stores these as long audit-annotation strings starting
+    // with "UNKNOWN" (e.g. "UNKNOWN - not separately tagged...") rather than
+    // the bare word - a strict equality check let that annotation text leak
+    // onto the live product page. Never show raw audit notes to end users:
+    // the field simply doesn't render when the source doesn't have real data.
+    materials: p.materials && !p.materials.startsWith('UNKNOWN') ? p.materials : null,
+    dimensions: p.dimensions && !p.dimensions.startsWith('UNKNOWN') ? p.dimensions : null,
+    certifications: p.certifications && !p.certifications.startsWith('UNKNOWN') ? p.certifications : null,
   };
 });
 
