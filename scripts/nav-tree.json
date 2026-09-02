@@ -1,0 +1,118 @@
+{
+  "note": "Parsed verbatim from the live site's header <ul class=\"nav navbar-nav\"> mega-menu (identical across sampled pages, e.g. sliding-gate.html lines 93-193). 'live' categories are active <li> entries; 'commented_out' categories exist in the HTML but are wrapped in <!-- --> and are NOT rendered/linked in the current live navigation, though the pages themselves are still on the server and some are still listed in sitemap.xml.",
+  "top_level": [
+    { "label": "Home", "url": "/", "live": true },
+    { "label": "About Us", "url": "about-us.html", "live": true },
+    { "label": "Clients", "url": "clients.html", "live": true },
+    { "label": "Enquiry", "url": "enquiry.html", "live": true },
+    { "label": "Contact Us", "url": "contact.html", "live": true }
+  ],
+  "product_categories_live": [
+    {
+      "category": "Rolling Shutters",
+      "category_url": "rolling-shutters.html",
+      "children": [
+        { "label": "Galvanized Rolling Shutters (nav label)", "url": "m-s-rolling-shutters.html" },
+        { "label": "Aluminium Rolling Shutters (nav label, href mismatch - points to fire-proof-shutters.html)", "url": "fire-proof-shutters.html" },
+        { "label": "Insulated Rolling Shutters (nav label, href mismatch - points to g-i-rolling-shutters.html)", "url": "g-i-rolling-shutters.html" },
+        { "label": "Fire Shutters (nav label, href mismatch - points to aluminium-single-wall.html)", "url": "aluminium-single-wall.html" },
+        { "label": "Polycarbonate Rolling Shutters", "url": "polycarbonate-rolling-shutters.html" }
+      ]
+    },
+    {
+      "category": "Gates",
+      "category_url": "automatic-gates.html",
+      "children": [
+        { "label": "Sliding Gate", "url": "sliding-gate.html" },
+        { "label": "Swing Gate", "url": "swing-gate.html" },
+        { "label": "Telescopic Gate", "url": "telescoping-gate.html" },
+        { "label": "Retractable Gates", "url": "retractable-gates.html" }
+      ]
+    },
+    {
+      "category": "Bollard",
+      "category_url": "bollard.html",
+      "children": []
+    },
+    {
+      "category": "Turnstile",
+      "category_url": "turnstile.html",
+      "children": [
+        { "label": "Tripod Turnstile", "url": "tripod-turnstile.html" },
+        { "label": "Flap Barrier", "url": "flap-barrier.html" },
+        { "label": "Full Height Barrier", "url": "full-height-barrier.html" }
+      ]
+    },
+    {
+      "category": "Doors",
+      "category_url": "automatic-doors.html",
+      "children": [
+        { "label": "High Speed Doors (duplicate label, distinct page from top-level 'High Speed Doors' menu)", "url": "high-speed-door.html" },
+        { "label": "Overhead Sectional Doors", "url": "overhead-sectional-doors.html" },
+        { "label": "Fire Sliding Door", "url": "fire-sliding-door.html" },
+        { "label": "Garage Doors", "url": "garage-door.html" },
+        { "label": "Residential Garage Door", "url": "residential-garage-door.html" },
+        { "label": "Sectional Doors", "url": "sectional-door.html" }
+      ]
+    },
+    {
+      "category": "High Speed Doors",
+      "category_url": "high-speed-roll-up.html",
+      "note": "Second, separate top-level nav entry also literally labeled 'High Speed Doors' - duplicates the 'Doors' entry's name, a nav labeling issue.",
+      "children": [
+        { "label": "High Speed Roll Up Doors", "url": "high-speed-roll-up-door.html" },
+        { "label": "High Speed Fold Up Doors", "url": "high-speed-fold-up-doors.html" },
+        { "label": "High Speed Self Repairing Doors", "url": "high-speed-self-repairing-doors.html" },
+        { "label": "High Speed Industrial Door", "url": "high-speed-industrial-door.html" }
+      ]
+    },
+    {
+      "category": "Loading bay Equipment",
+      "category_url": "loading-bay-equipment.html",
+      "children": [
+        { "label": "Dock House", "url": "dock-house.html" },
+        { "label": "Dock Levellers", "url": "dock-levellers.html" }
+      ]
+    }
+  ],
+  "product_categories_orphaned_commented_out_in_nav_html": [
+    {
+      "category": "Barriers",
+      "category_url": "automatic-barriers.html",
+      "children": [
+        { "label": "Boom Barriers", "url": "boom-barriers.html" },
+        { "label": "Retractable Barriers", "url": "retractable-barriers.html" }
+      ]
+    },
+    {
+      "category": "Motors & Accessories",
+      "category_url": "motors-accessories.html",
+      "children": [
+        { "label": "Tubular Motor", "url": "tubular-motor.html" },
+        { "label": "Australian Type Motor", "url": "australian-type-motor.html" },
+        { "label": "Central Motor", "url": "central-motor.html" },
+        { "label": "Side Motor", "url": "side-motor-with-chain.html" },
+        { "label": "Side Motor with Gear Drive Motor", "url": "side-motor-with-gear.html" },
+        { "label": "Sliding Gate Motor", "url": "sliding-gate-motor.html" },
+        { "label": "Swing Gate Motor", "url": "swing-gate-motor.html" },
+        { "label": "Industrial Sliding Gate Motor", "url": "industrial-sliding-gate-motor.html" },
+        { "label": "Sliding Glass Door Motor", "url": "sliding-glass-door-motor.html" },
+        { "label": "Sectional Door Motor", "url": "sectional-door-motor.html" }
+      ]
+    }
+  ],
+  "orphaned_dead_urls_404": [
+    "hotels-in-alibaug.html",
+    "sitemap.html",
+    "tile-adhesive.html",
+    "epoxy-tile-grout.html",
+    "industrial-engg-grout.html"
+  ],
+  "orphaned_live_not_in_nav_or_sitemap": [
+    "sliding-glass-door.html",
+    "m-s-grill-rolling-shutters.html",
+    "perforated-shutters.html",
+    "automatic-barriers.html (found via commented nav, not sitemap)",
+    "polycarbonate.html"
+  ]
+}
