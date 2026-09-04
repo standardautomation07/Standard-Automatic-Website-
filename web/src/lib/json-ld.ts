@@ -1,0 +1,96 @@
+import { siteConfig } from "@/lib/site-config";
+import type { Product } from "@/lib/types";
+
+const { address } = siteConfig;
+
+export function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.legalName,
+    alternateName: siteConfig.shortName,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/images/brand/logo.png`,
+    foundingDate: String(siteConfig.foundedYear),
+    email: siteConfig.email,
+    telephone: siteConfig.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${address.street}, ${address.locality}`,
+      addressLocality: address.city,
+      addressRegion: address.region,
+      postalCode: address.postalCode,
+      addressCountry: address.country,
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        contactType: "sales",
+        areaServed: "IN",
+        availableLanguage: ["en", "hi", "mr"],
+      },
+    ],
+  };
+}
+
+export function localBusinessJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteConfig.url}/#localbusiness`,
+    name: siteConfig.legalName,
+    url: siteConfig.url,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `${address.street}, ${address.locality}`,
+      addressLocality: address.city,
+      addressRegion: address.region,
+      postalCode: address.postalCode,
+      addressCountry: address.country,
+    },
+  };
+}
+
+export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: `${siteConfig.url}${crumb.path}`,
+    })),
+  };
+}
+
+/**
+ * Product schema. Deliberately carries no `offers`, `aggregateRating` or
+ * `review` — there are no published prices and no real review data, and
+ * inventing either would be schema spam.
+ */
+export function productJsonLd(product: Product, path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.summary,
+    url: `${siteConfig.url}${path}`,
+    ...(product.image ? { image: `${siteConfig.url}${product.image}` } : {}),
+    brand: { "@type": "Brand", name: siteConfig.shortName },
+    manufacturer: { "@type": "Organization", name: siteConfig.legalName },
+    ...(product.specs.length > 0
+      ? {
+          additionalProperty: product.specs.map((spec) => ({
+            "@type": "PropertyValue",
+            name: spec.label,
+            value: spec.value,
+          })),
+        }
+      : {}),
+  };
+}

@@ -4,8 +4,8 @@
     {
       "name": "standard-automation-site",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "site", "run", "dev"],
-      "port": 3000
+      "runtimeArgs": ["--prefix", "web", "run", "dev"],
+      "port": 3001
     }
   ]
 }
