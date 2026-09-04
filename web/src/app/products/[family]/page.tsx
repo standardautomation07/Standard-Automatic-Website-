@@ -131,7 +131,7 @@ export default async function FamilyPage({ params }: Params) {
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="02" eyebrow="Why" title={`Why ${family.name.toLowerCase()}?`} />
-          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {family.why.map((point) => (
               <article key={point.title} className="bg-paper-raised p-7">
                 <h3 className="font-display text-lg font-medium text-steel-900">{point.title}</h3>
@@ -255,7 +255,7 @@ export default async function FamilyPage({ params }: Params) {
           </div>
           <div className="lg:col-span-5">
             <h2 className="eyebrow text-steel-500">Industries served</h2>
-            <ul className="mt-5 grid gap-px border border-line bg-line">
+            <ul className="mt-5 grid hairline-grid">
               {family.industries.map((industryId) => {
                 const industry = industryById[industryId];
                 return (
@@ -283,7 +283,7 @@ export default async function FamilyPage({ params }: Params) {
       <section className="border-t border-line bg-paper pb-20 lg:pb-24">
         <div className="shell">
           <h2 className="eyebrow pt-16 text-steel-500">Related solutions</h2>
-          <ul className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
+          <ul className="mt-6 grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
             {others.map((other) => (
               <li key={other.id} className="bg-paper-raised">
                 <Link href={familyPath(other.id)} className="group flex h-full items-start justify-between gap-3 p-6">

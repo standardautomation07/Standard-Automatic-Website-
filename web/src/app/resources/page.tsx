@@ -72,7 +72,7 @@ export default function ResourcesPage() {
 
       <section className="bg-paper-sunken py-14 lg:py-20">
         <div className="shell">
-          <ol className="grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-3">
+          <ol className="grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             {checklist.map((item, index) => (
               <li key={item.t} className="bg-paper-raised p-7">
                 <span className="font-mono text-xs text-amber">
@@ -96,7 +96,7 @@ export default function ResourcesPage() {
 
           <div className="mt-12">
             <h2 className="eyebrow text-steel-500">Start from a product line</h2>
-            <ul className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-3">
+            <ul className="mt-6 grid hairline-grid sm:grid-cols-2 xl:grid-cols-3">
               {families.map((family) => (
                 <li key={family.id} className="bg-paper-raised">
                   <Link

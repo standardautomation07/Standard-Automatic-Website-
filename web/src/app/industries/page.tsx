@@ -54,7 +54,7 @@ export default function IndustriesPage() {
 
       <section className="bg-paper-sunken py-14 lg:py-20">
         <div className="shell">
-          <ul className="grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+          <ul className="grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {industries.map((industry, index) => {
               const recommended = productsForIndustry(industry.id);
               return (

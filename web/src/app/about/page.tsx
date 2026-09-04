@@ -93,7 +93,7 @@ export default function AboutPage() {
             title="Two company facts, and a rule about the rest."
             lede="Buyers in this market are used to company pages full of unverifiable numbers. This one carries two company claims, and both appear on Standard Automation's own published material."
           />
-          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             <article className="bg-paper-raised p-7">
               <p className="eyebrow text-amber-deep">Stated</p>
               <h3 className="mt-3 font-display text-lg font-medium text-steel-900">
@@ -136,7 +136,7 @@ export default function AboutPage() {
             eyebrow="How we work"
             title="Survey, specify, manufacture, install, support."
           />
-          <ol className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-5">
+          <ol className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-5">
             {[
               { t: "Survey", d: "The opening is measured and assessed in place before anything is proposed." },
               { t: "Specify", d: "Product type, drive sizing and safety layer follow from the survey constraints." },

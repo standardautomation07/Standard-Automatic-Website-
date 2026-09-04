@@ -136,7 +136,7 @@ export default function HomePage() {
             }
           />
 
-          <ul className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-3">
+          <ul className="mt-14 grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             {families.map((family, index) => (
               <li key={family.id} className="bg-paper-raised">
                 <FamilyCard family={family} index={index} />
@@ -163,7 +163,7 @@ export default function HomePage() {
             }
           />
 
-          <ul className="mt-14 grid gap-px border border-ink-line bg-ink-line sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-14 grid hairline-grid-dark sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((industry) => (
               <li key={industry.id} className="group relative aspect-[4/3] overflow-hidden bg-ink">
                 <Media
@@ -198,7 +198,7 @@ export default function HomePage() {
             title="Four steps, in this order."
             lede="An opening is an engineering problem before it is a product choice. Reversing these steps is what produces a door that is technically correct and practically wrong."
           />
-          <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-14 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {capabilities.map((item, index) => (
               <article key={item.k} className="bg-paper-raised p-7">
                 <p className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</p>

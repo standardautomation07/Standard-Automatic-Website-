@@ -26,7 +26,7 @@ export default function NotFound() {
           </ButtonLink>
         </div>
 
-        <ul className="mt-16 grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-3">
+        <ul className="mt-16 grid hairline-grid sm:grid-cols-2 xl:grid-cols-3">
           {families.map((family) => (
             <li key={family.id} className="bg-paper-raised">
               <Link

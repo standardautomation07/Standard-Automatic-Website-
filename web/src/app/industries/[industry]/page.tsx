@@ -70,7 +70,7 @@ export default async function IndustryPage({ params }: Params) {
             eyebrow="Industry challenges"
             title="What makes these openings hard"
           />
-          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {industry.challenges.map((challenge) => (
               <article key={challenge.title} className="bg-paper-raised p-7">
                 <h3 className="font-display text-lg font-medium text-steel-900">{challenge.title}</h3>
@@ -138,7 +138,7 @@ export default async function IndustryPage({ params }: Params) {
       <section className="border-t border-line bg-paper pb-20 lg:pb-24">
         <div className="shell">
           <h2 className="eyebrow pt-16 text-steel-500">Other industries</h2>
-          <ul className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
+          <ul className="mt-6 grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
             {others.map((other) => (
               <li key={other.id} className="bg-paper-raised">
                 <Link

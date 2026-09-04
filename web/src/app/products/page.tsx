@@ -67,7 +67,7 @@ export default function ProductsPage() {
 
       <section className="bg-paper-sunken py-14 lg:py-20">
         <div className="shell">
-          <ul className="grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             {families.map((family, index) => (
               <li key={family.id} className="bg-paper-raised">
                 <FamilyCard family={family} index={index} />

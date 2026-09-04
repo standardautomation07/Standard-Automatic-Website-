@@ -126,7 +126,7 @@ export default async function ProductPage({ params }: Params) {
 
         {/* QUICK FACTS */}
         <div className="shell pb-12 lg:pb-14">
-          <dl className="grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
+          <dl className="grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
             {product.quickFacts.map((fact) => (
               <div key={fact.label} className="bg-paper-raised p-6">
                 <dt className="eyebrow text-steel-500">{fact.label}</dt>
@@ -196,7 +196,7 @@ export default async function ProductPage({ params }: Params) {
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="02" eyebrow="Key benefits" title="What this product gets you" />
-          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {product.benefits.map((benefit) => (
               <article key={benefit.title} className="bg-paper-raised p-7">
                 <h3 className="font-display text-lg font-medium text-steel-900">{benefit.title}</h3>
@@ -217,7 +217,7 @@ export default async function ProductPage({ params }: Params) {
               title="Available configurations"
               lede="The same product, built for a different job. Configurations marked as to be confirmed are ones we are checking against current availability before quoting."
             />
-            <ul className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2">
+            <ul className="mt-12 grid hairline-grid md:grid-cols-2">
               {product.variants.map((variant) => (
                 <li key={variant.id} className="bg-paper-raised p-7">
                   <div className="flex items-start justify-between gap-4">
@@ -319,7 +319,7 @@ export default async function ProductPage({ params }: Params) {
             title="How it is governed"
             lede="Detection, control and maintenance are part of the specification, not an add-on decided after commissioning."
           />
-          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             <DetailBlock title="Safety" items={safety} />
             <DetailBlock title="Control options" items={controls} />
             <DetailBlock title="Optional features" items={options} />
@@ -348,7 +348,7 @@ export default async function ProductPage({ params }: Params) {
       <section className="border-t border-line bg-paper py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="08" eyebrow="Downloads" title="Documentation" />
-          <ul className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2">
+          <ul className="mt-12 grid hairline-grid md:grid-cols-2">
             {product.documents.map((doc) => (
               <li key={doc.title} className="bg-paper-raised p-7">
                 <p className="eyebrow text-steel-500">{doc.kind}</p>

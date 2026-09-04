@@ -118,6 +118,33 @@
   @media (min-width: 768px) { .shell { padding-inline: 2.5rem; } }
   @media (min-width: 1280px) { .shell { padding-inline: 4rem; } }
 
+  /* Hairline grid.
+   *
+   * The rules live on the cells, not on the container's background, so an
+   * incomplete final row leaves empty space rather than a grey panel where a
+   * cell would have been. The earlier "grey container + 1px gaps" version
+   * showed that panel the moment a grid stopped dividing exactly.
+   */
+  .hairline-grid {
+    background-color: var(--color-paper-raised);
+    border-top: 1px solid var(--color-line);
+    border-left: 1px solid var(--color-line);
+  }
+  .hairline-grid > * {
+    border-right: 1px solid var(--color-line);
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .hairline-grid-dark {
+    background-color: var(--color-ink);
+    border-top: 1px solid var(--color-ink-line);
+    border-left: 1px solid var(--color-ink-line);
+  }
+  .hairline-grid-dark > * {
+    border-right: 1px solid var(--color-ink-line);
+    border-bottom: 1px solid var(--color-ink-line);
+  }
+
   /* Hairline grid overlay used on dark sections for the "engineered" feel. */
   .grid-rule {
     background-image:
