@@ -91,9 +91,10 @@ produce, and it matches how a specifier actually narrows a choice.
 | Barriers / turnstiles / bollards | ✓ (boom barriers) | ✓ | – | – | – | ✓ |
 | Hangar doors | ✓ | ✓ | ✓ | – | – | – |
 
-Ten families is the market norm. Nine of them are relevant to Standard
-Automatic Solutions on current evidence; hangar doors and cold storage doors
-are **not confirmed** (see §7).
+Ten families is the market norm. Eight are published by Standard Automatic
+Solutions on current evidence: hangar doors and cold storage doors are **not
+confirmed**, and Motors & Automation has since been withdrawn from the range
+(both covered in §7).
 
 ---
 
@@ -260,6 +261,15 @@ industrial sliding doors as a distinct line, revolving doors, interlocking
 security portals, road blockers and tyre killers, vehicle restraint systems,
 mobile dock ramps, lift tables, guillotine vertical sliding doors, cleanroom
 hermetic doors, explosion-protected and machine-protection door series.
+
+**Withdrawn from the range (2026-09-04).** The **Motors & Automation** family —
+shutter, gate and door operators, ten products — has been removed from the
+published range at the business's instruction. It was already POTENTIAL: live
+on the company's own server but commented out of its navigation. The research
+and taxonomy for it are retained in `product-taxonomy.json` under
+`withdrawnFromRange` so the decision can be reversed without repeating the
+work. Drive selection still appears on the site as part of specifying a
+shutter, gate or door — it is no longer offered as a product line of its own.
 
 Several of those are commercially obvious adjacencies for a Pune-based
 entrance automation company — cold storage doors and industrial sliding doors

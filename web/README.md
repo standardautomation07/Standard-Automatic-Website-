@@ -26,10 +26,10 @@ and technical information hanging off the product:
 
 | Level | Count | Where |
 | --- | --- | --- |
-| Family | 9 | `src/data/families.ts` |
-| Category | 20 | `src/data/categories.ts` |
-| Product | 38 | `src/data/products/*.ts` |
-| Variant | 82 | on each product record |
+| Family | 8 | `src/data/families.ts` |
+| Category | 17 | `src/data/categories.ts` |
+| Product | 28 | `src/data/products/*.ts` |
+| Variant | 69 | on each product record |
 
 A **category** is a construction or operating principle — the level at which
 two products genuinely behave differently, not just finish differently. A
@@ -38,8 +38,8 @@ configuration, which is where competitors typically inflate a product count.
 
 Categories carry `defaults` for safety, controls, options and maintenance that
 every product in them inherits (`resolveDetail()` merges product over
-category). That is how 38 product pages carry real safety and control detail
-without 38 copies of the same paragraphs.
+category). That is how 28 product pages carry real safety and control detail
+without 28 copies of the same paragraphs.
 
 Nothing in the UI hardcodes a product. Every page renders from this data.
 
@@ -47,14 +47,14 @@ Nothing in the UI hardcodes a product. Every page renders from this data.
 
 ```
 /products                              families landing
-/products/catalogue                    search + filter across all 38
+/products/catalogue                    search + filter across all 28
 /products/[family]                     family page (categories, comparison, considerations)
 /products/[family]/[product]           product page
 /industries                            industry landing
 /industries/[industry]                 industry page
 ```
 
-69 routes, all statically prerendered.
+58 routes, all statically prerendered.
 
 ## Research trail
 
@@ -125,7 +125,9 @@ connected and points at phone and WhatsApp. To switch delivery on, implement
 ## Redirects
 
 `next.config.ts` serves `src/data/redirects.json` — 56 permanent redirects
-from the old `.html` URLs into the new hierarchy.
+from the old `.html` URLs into the new hierarchy. The eleven old motor pages
+now point at the family whose products those drives operate, because the
+Motors & Automation line has been withdrawn from the range.
 
 `hotels-in-alibaug.html` is deliberately absent: the business retired it, so a
 real 404 is the intended outcome. A test asserts it still 404s.

@@ -126,8 +126,8 @@ export default function HomePage() {
             index="02"
             eyebrow="Product families"
             align="between"
-            title="Nine families, grouped by how they work."
-            lede="From the vehicle gate at the boundary to the pedestrian lane in the lobby — and the drives behind all of it."
+            title={`${counts.families} families, grouped by how they work.`}
+            lede="From the vehicle gate at the boundary to the pedestrian lane in the lobby, specified against what each opening actually has to do."
             action={
               <ButtonLink href="/products" variant="secondary">
                 All products

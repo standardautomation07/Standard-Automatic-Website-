@@ -51,7 +51,7 @@ export const automaticGateProducts: Product[] = [
       "Ground track and guide rollers, or a cantilever beam and roller carriage",
       "Toothed rack along the leaf, driven by a gear motor",
     ],
-    related: ["telescopic-sliding-gates", "sliding-gate-operators", "boom-barriers"],
+    related: ["telescopic-sliding-gates", "automatic-swing-gates", "boom-barriers"],
     documents: [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Gate layout drawing", kind: "Technical drawing", href: null, note: "Produced per project once the opening and side-run are surveyed." },
@@ -108,7 +108,7 @@ export const automaticGateProducts: Product[] = [
       "Coupling and guidance arrangement to keep the leaves synchronised",
       "Gear motor with rack drive on the leading leaf",
     ],
-    related: ["automatic-sliding-gates", "retractable-gates", "industrial-sliding-gate-operators"],
+    related: ["automatic-sliding-gates", "retractable-gates", "boom-barriers"],
     documents: [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
@@ -165,7 +165,7 @@ export const automaticGateProducts: Product[] = [
       "Operator per leaf, sized against leaf weight, width and wind exposure",
       "Electric lock at the meeting stile where required",
     ],
-    related: ["automatic-sliding-gates", "swing-gate-operators", "retractable-gates"],
+    related: ["automatic-sliding-gates", "telescopic-sliding-gates", "retractable-gates"],
     documents: [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],

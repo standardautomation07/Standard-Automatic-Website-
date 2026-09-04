@@ -78,7 +78,7 @@ export const rollingShutterProducts: Product[] = [
       "Steel barrel, end plates and guides",
       "Bottom rail with locking provision on manual shutters",
     ],
-    related: ["insulated-double-wall-rolling-shutters", "aluminium-rolling-shutters", "side-motors-chain-drive"],
+    related: ["insulated-double-wall-rolling-shutters", "aluminium-rolling-shutters", "grille-rolling-shutters"],
     documents: [
       { title: "Rolling Shutter range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
@@ -153,7 +153,7 @@ export const rollingShutterProducts: Product[] = [
       "Steel barrel, end plates and guides",
       "Powder-coated finish to a specified colour",
     ],
-    related: ["tubular-motors", "polycarbonate-rolling-shutters", "galvanized-steel-rolling-shutters"],
+    related: ["perforated-rolling-shutters", "polycarbonate-rolling-shutters", "galvanized-steel-rolling-shutters"],
     documents: [
       { title: "Rolling Shutter range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],

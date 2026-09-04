@@ -16,8 +16,7 @@ export type FamilyId =
   | "automatic-gates"
   | "entrance-automation"
   | "loading-bay"
-  | "access-control"
-  | "motors-automation";
+  | "access-control";
 
 export type IndustryId =
   | "manufacturing"

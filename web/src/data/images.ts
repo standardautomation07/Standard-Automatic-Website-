@@ -56,7 +56,6 @@ const list: ImageRef[] = [
   stock("family-entrance-automation", "entrance-automation.jpg", "Automatic glass entrance doors at a modern building", "Entrance Automation family"),
   stock("family-loading-bay", "loading-bay.jpg", "A row of loading docks on a distribution building", "Loading Bay Equipment family"),
   stock("family-access-control", "security-access.jpg", "A row of access-control turnstiles in a building lobby", "Access Control family"),
-  stock("family-motors", "motor-gears.jpg", "A close view of a geared drive assembly", "Motors & Automation family"),
 
   // ------------------------------------------------------------ products
   stock("p-sectional-overhead", "garage-door-house.jpg", "A closed sectional overhead door beside a brick wall", "Industrial Sectional Overhead Doors"),
@@ -95,16 +94,6 @@ const list: ImageRef[] = [
   stock("p-boom-barrier", "barrier-arm.jpg", "A boom barrier arm at a controlled vehicle entry", "Boom Barriers"),
   stock("p-retractable-barrier", "barrier-closed.jpg", "A vehicle waiting at a closed barrier line", "Retractable Barriers"),
 
-  stock("p-motor-chain", "motor-gears.jpg", "A close view of a geared drive assembly", "Side Motors — Chain Drive"),
-  stock("p-motor-gear", "motor-gear-detail.jpg", "Close detail of a drive gear", "Side Motors — Gear Drive"),
-  stock("p-motor-central", "motor-unit.jpg", "An electric drive motor unit", "Central Motors"),
-  stock("p-motor-tubular", "motor-service.jpg", "A technician servicing a drive unit", "Tubular Motors"),
-  stock("p-motor-australian", "engineering-panel.jpg", "An engineer operating an industrial equipment control panel", "Australian Type Motors"),
-  stock("p-operator-sliding-gate", "gate-sliding.jpg", "A powered site gate across a vehicle entrance", "Sliding Gate Operators"),
-  stock("p-operator-industrial-gate", "gates-industrial.jpg", "An industrial site entrance with a large powered gate", "Industrial Sliding Gate Operators"),
-  stock("p-operator-swing-gate", "gate-driveway.jpg", "A gated driveway entrance", "Swing Gate Operators"),
-  stock("p-operator-sectional", "garage-door-house.jpg", "A closed sectional overhead door", "Sectional Door Operators"),
-  stock("p-operator-sliding-door", "entrance-night.jpg", "An illuminated building lobby behind automatic glass doors", "Automatic Sliding Door Operators"),
 
   // ---------------------------------------------------------- galleries
   own("g-tripod-yl121", "YL121.PNG", "A tripod turnstile, alternative model", "Tripod Turnstiles gallery", "contain"),

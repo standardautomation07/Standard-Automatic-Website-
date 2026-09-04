@@ -187,7 +187,6 @@ export const industries: Industry[] = [
     recommendedProductIds: [
       "fire-rated-sliding-doors",
       "high-speed-roll-up-doors",
-      "side-motors-gear-drive",
       "automatic-sliding-glass-doors",
     ],
     imageId: "i-pharma",

@@ -1,13 +1,13 @@
 import type { Category } from "@/lib/types";
 
 /**
- * Twenty categories. A category is a construction or operating *principle*,
+ * Seventeen categories. A category is a construction or operating *principle*,
  * not a marketing group — it is the level at which two products genuinely
  * work differently rather than just being finished differently.
  *
  * `defaults` are inherited by every product in the category. A product may
  * override any of them; the UI merges product over category. This is why the
- * site can carry safety and control detail on 38 products without 38 copies
+ * site can carry safety and control detail on 28 products without 28 copies
  * of the same four sentences.
  */
 export const categories: Category[] = [
@@ -519,93 +519,6 @@ export const categories: Category[] = [
     },
   },
 
-  // ------------------------------------------------------- motors and drives
-  {
-    id: "shutter-operators",
-    familyId: "motors-automation",
-    name: "Shutter Operators",
-    principle:
-      "Sized against curtain weight, opening height and daily cycle count — duty rating usually binds before torque does.",
-    defaults: {
-      safety: [
-        "Manual override on every drive — hand chain, crank or release",
-        "Adjustable travel limits set at commissioning",
-        "Input for a bottom-rail safety edge and obstruction detection",
-        "Thermal protection appropriate to the duty rating",
-      ],
-      controls: [
-        "Push button station, key switch or remote handset",
-        "Up / stop / down control with optional auto-close",
-        "Single or three phase supply depending on curtain weight",
-      ],
-      options: [
-        "Emergency hand chain of extended length for high openings",
-        "Radio remote control and additional handsets",
-        "Interlocking with a second opening",
-      ],
-      maintenance: [
-        "Drive chains, sprockets and limit gearing are the wear points and should be inspected on a scheduled interval",
-        "Duty rating should be reviewed if the opening's usage pattern changes",
-      ],
-    },
-  },
-  {
-    id: "gate-operators",
-    familyId: "motors-automation",
-    name: "Gate Operators",
-    principle:
-      "Rolling and hinged loads behave differently: a sliding leaf is driven along a rack, a swing leaf is accelerated through an arc against the hinge post.",
-    defaults: {
-      safety: [
-        "Obstruction detection stops and reverses the leaf",
-        "Inputs for photocells and safety edges",
-        "Key-operated manual release",
-        "Soft start and soft stop at both ends of travel",
-      ],
-      controls: [
-        "Remote handset, keypad, card reader, intercom or loop detector",
-        "Adjustable travel limits and auto-close timing",
-        "Leaf sequencing on double swing gates",
-      ],
-      options: [
-        "Ground loop detectors for free exit",
-        "Warning light and audible warning before movement",
-        "Battery backup for operation during a power failure",
-      ],
-      maintenance: [
-        "Rack, pinion and release mechanism should be inspected on a scheduled interval",
-        "Duty rating should be reviewed if traffic through the gate increases",
-      ],
-    },
-  },
-  {
-    id: "door-operators",
-    familyId: "motors-automation",
-    name: "Door Operators",
-    principle:
-      "High-cycle, low-noise duty in occupied buildings, where the defining specification is what the door does when power is lost.",
-    defaults: {
-      safety: [
-        "Obstruction detection stops and reverses a closing leaf",
-        "Presence sensing in the threshold on pedestrian doors",
-        "Defined power-failure behaviour: manual release, or fail-safe open",
-      ],
-      controls: [
-        "Mode selector on pedestrian doors: automatic, partial, exit only, locked, hold open",
-        "Adjustable opening width, speed and hold-open time",
-        "Interface for access control and building management",
-      ],
-      options: [
-        "Battery backup for fail-safe opening",
-        "Part-open mode to reduce conditioning loss",
-        "Integration with a card reader or visitor system",
-      ],
-      maintenance: [
-        "Belt, carriage and sensors should be inspected on a scheduled interval",
-        "On a counterbalanced door, the springs — not the operator — carry the leaf and must be maintained",
-      ],
-    },
-  },
 ];
 
 export const categoryById = Object.fromEntries(categories.map((c) => [c.id, c])) as Record<

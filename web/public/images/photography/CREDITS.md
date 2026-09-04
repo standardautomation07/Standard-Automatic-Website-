@@ -32,10 +32,6 @@ Replace them with owned project photography before/soon after launch.
 - `garage-door-house.jpg` — https://unsplash.com/photos/photo-1696992812596-3c0d4d2d1299 — A closed grey sectional garage door beside a brick wall
 - `garage-door-modern.jpg` — https://unsplash.com/photos/photo-1605276374104-dee2a0ed3cd6 — A modern house elevation with a sectional garage door
 - `door-red-shutter.jpg` — https://unsplash.com/photos/photo-1541737949652-27149c8e786d — A closed red shutter door on an industrial elevation
-- `motor-gears.jpg` — https://unsplash.com/photos/photo-1711199694531-e982a79ea381 — Close view of a geared drive assembly
-- `motor-unit.jpg` — https://unsplash.com/photos/photo-1736161999520-0a20fa297a89 — An electric drive motor unit
-- `motor-service.jpg` — https://unsplash.com/photos/photo-1649038780045-235e4b6e40b4 — A technician servicing a drive unit
-- `motor-gear-detail.jpg` — https://unsplash.com/photos/photo-1653071098188-99a98ea1f466 — Close detail of a drive gear
 - `barrier-arm.jpg` — https://unsplash.com/photos/photo-1761707054382-6956707c3747 — A striped boom barrier arm at a vehicle entry
 - `barrier-closed.jpg` — https://unsplash.com/photos/photo-1768812790664-149877f92c0f — A vehicle waiting at a closed barrier
 - `gate-metal.jpg` — https://unsplash.com/photos/photo-1580047750144-2c7790adf461 — A black metal gate at a site entrance
@@ -55,3 +51,10 @@ Replace them with owned project photography before/soon after launch.
 - `engineering-fabrication.jpg` — https://unsplash.com/photos/photo-1598302936625-6075fbd98dd7 — A fabricator grinding a steel beam with sparks flying
 - `engineering-welding.jpg` — https://unsplash.com/photos/photo-1455165814004-1126a7199f9b — A welder working on steel in protective equipment
 - `industry-plant-robotics.jpg` — https://unsplash.com/photos/photo-1716191299980-a6e8827ba10b — An industrial robot arm inside a production plant
+
+
+## Withdrawn 2026-09-04
+
+`motor-gears.jpg`, `motor-unit.jpg`, `motor-service.jpg` and
+`motor-gear-detail.jpg` were deleted when the Motors & Automation line was
+removed from the published range. Nothing else referenced them.

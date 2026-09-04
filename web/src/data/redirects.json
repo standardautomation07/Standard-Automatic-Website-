@@ -226,57 +226,57 @@
   },
   {
     "source": "/motors-accessories.html",
-    "destination": "/products/motors-automation",
+    "destination": "/products",
     "permanent": true
   },
   {
     "source": "/side-motor-with-chain.html",
-    "destination": "/products/motors-automation/side-motors-chain-drive",
+    "destination": "/products/rolling-shutters",
     "permanent": true
   },
   {
     "source": "/side-motor-with-gear.html",
-    "destination": "/products/motors-automation/side-motors-gear-drive",
+    "destination": "/products/rolling-shutters",
     "permanent": true
   },
   {
     "source": "/central-motor.html",
-    "destination": "/products/motors-automation/central-motors",
+    "destination": "/products/rolling-shutters",
     "permanent": true
   },
   {
     "source": "/tubular-motor.html",
-    "destination": "/products/motors-automation/tubular-motors",
+    "destination": "/products/rolling-shutters",
     "permanent": true
   },
   {
     "source": "/australian-type-motor.html",
-    "destination": "/products/motors-automation/australian-type-motors",
+    "destination": "/products/rolling-shutters",
     "permanent": true
   },
   {
     "source": "/sliding-gate-motor.html",
-    "destination": "/products/motors-automation/sliding-gate-operators",
+    "destination": "/products/automatic-gates",
     "permanent": true
   },
   {
     "source": "/industrial-sliding-gate-motor.html",
-    "destination": "/products/motors-automation/industrial-sliding-gate-operators",
+    "destination": "/products/automatic-gates",
     "permanent": true
   },
   {
     "source": "/swing-gate-motor.html",
-    "destination": "/products/motors-automation/swing-gate-operators",
+    "destination": "/products/automatic-gates",
     "permanent": true
   },
   {
     "source": "/sectional-door-motor.html",
-    "destination": "/products/motors-automation/sectional-door-operators",
+    "destination": "/products/industrial-doors",
     "permanent": true
   },
   {
     "source": "/sliding-glass-door-motor.html",
-    "destination": "/products/motors-automation/automatic-sliding-door-operators",
+    "destination": "/products/entrance-automation",
     "permanent": true
   }
 ]

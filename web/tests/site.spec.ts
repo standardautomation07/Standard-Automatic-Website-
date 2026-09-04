@@ -18,7 +18,6 @@ const FAMILIES = [
   "entrance-automation",
   "loading-bay",
   "access-control",
-  "motors-automation",
 ];
 
 const INDUSTRIES = [
@@ -41,7 +40,6 @@ const SAMPLE_PRODUCTS = [
   "/products/entrance-automation/automatic-sliding-glass-doors",
   "/products/loading-bay/dock-levellers",
   "/products/access-control/tripod-turnstiles",
-  "/products/motors-automation/tubular-motors",
 ];
 
 const isDesktop = (page: Page) => (page.viewportSize()?.width ?? 0) >= 1024;
@@ -256,7 +254,7 @@ test.describe("catalogue hierarchy", () => {
   });
 
   test("a POTENTIAL product is shown with a visible marker, not hidden", async ({ page }) => {
-    await page.goto("/products/motors-automation/tubular-motors");
+    await page.goto("/products/access-control/boom-barriers");
     await expect(page.getByText("To be confirmed").first()).toBeVisible();
   });
 
@@ -264,22 +262,22 @@ test.describe("catalogue hierarchy", () => {
     await page.goto("/products/catalogue");
 
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(38);
+    await expect(cards).toHaveCount(28);
 
     await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
       await expect(cards).toHaveCount(2, { timeout: 1000 });
     });
     await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
-      await expect(cards).toHaveCount(38, { timeout: 1000 });
+      await expect(cards).toHaveCount(28, { timeout: 1000 });
     });
 
     await page.getByLabel("Industry").selectOption("cold-chain-food");
-    expect(await cards.count()).toBeLessThan(38);
+    expect(await cards.count()).toBeLessThan(28);
     await page.getByLabel("Industry").selectOption("all");
 
     await page.getByLabel("Operating environment").selectOption("fire");
     expect(await cards.count()).toBeGreaterThan(0);
-    expect(await cards.count()).toBeLessThan(38);
+    expect(await cards.count()).toBeLessThan(28);
     await page.getByLabel("Operating environment").selectOption("all");
 
     await page.getByLabel("Search products").fill("turnstile");
@@ -424,7 +422,7 @@ test.describe("assets, layout and links", () => {
       ["/m-s-rolling-shutters.html", "/products/rolling-shutters/galvanized-steel-rolling-shutters"],
       ["/high-speed-door.html", "/products/high-speed-doors/high-speed-roll-up-doors"],
       ["/fire-proof-rolling-shutters.html", "/products/fire-safety-doors/fire-rated-rolling-shutters"],
-      ["/sliding-gate-motor.html", "/products/motors-automation/sliding-gate-operators"],
+      ["/sliding-gate-motor.html", "/products/automatic-gates"],
     ];
     for (const [from, to] of cases) {
       const response = await request.get(from, { maxRedirects: 0 });

@@ -9,7 +9,6 @@ import { automaticGateProducts } from "@/data/products/automatic-gates";
 import { entranceAutomationProducts } from "@/data/products/entrance-automation";
 import { loadingBayProducts } from "@/data/products/loading-bay";
 import { accessControlProducts } from "@/data/products/access-control";
-import { motorProducts } from "@/data/products/motors-automation";
 import type { Category, Family, FamilyId, Product } from "@/lib/types";
 
 export { families, familyById, categories, categoryById, industries, industryById };
@@ -24,7 +23,6 @@ export const products: Product[] = [
   ...entranceAutomationProducts,
   ...loadingBayProducts,
   ...accessControlProducts,
-  ...motorProducts,
 ];
 
 const productById = new Map(products.map((p) => [p.id, p]));

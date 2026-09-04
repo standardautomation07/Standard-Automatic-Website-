@@ -63,7 +63,7 @@ export const entranceAutomationProducts: Product[] = [
       "Approach and presence sensors on both sides of the opening",
       "Threshold and side seals where the lobby is conditioned",
     ],
-    related: ["automatic-sliding-door-operators", "flap-barriers", "fire-rated-sliding-doors"],
+    related: ["tripod-turnstiles", "flap-barriers", "fire-rated-sliding-doors"],
     documents: [
       { title: "Automatic Sliding Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Header and threshold detail", kind: "Technical drawing", href: null, note: "Produced per project once the opening and header depth are surveyed." },

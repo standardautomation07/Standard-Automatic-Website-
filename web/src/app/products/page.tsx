@@ -12,7 +12,7 @@ import { ArrowRight, Search } from "@/components/ui/icons";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Nine product families covering entrance automation and industrial access: high speed doors, industrial doors, rolling shutters, fire and safety doors, automatic gates, loading bay equipment, access control and drives.",
+    "Eight product families covering entrance automation and industrial access: high speed doors, industrial doors, rolling shutters, fire and safety doors, automatic gates, entrance automation, loading bay equipment and access control.",
   alternates: { canonical: "/products" },
 };
 
@@ -41,7 +41,7 @@ export default function ProductsPage() {
             <div className="lg:col-span-7">
               <p className="eyebrow text-amber-deep">Product families</p>
               <h1 className="mt-5 text-display-2 text-steel-900">
-                Nine families. {counts.categories} categories. {counts.products} products.
+                {counts.families} families. {counts.categories} categories. {counts.products} products.
               </h1>
             </div>
             <div className="lg:col-span-5">

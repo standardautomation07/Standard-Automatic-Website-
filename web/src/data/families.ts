@@ -1,7 +1,7 @@
 import type { Family } from "@/lib/types";
 
 /**
- * Nine product families. Structure and terminology derived from
+ * Eight product families. Structure and terminology derived from
  * research/market-product-research.md §3; every family is corroborated by at
  * least two independent manufacturer sources.
  *
@@ -391,52 +391,6 @@ export const families: Family[] = [
     ],
     industries: ["manufacturing", "retail-commercial", "infrastructure-transit", "warehousing-logistics"],
     imageId: "family-access-control",
-  },
-  {
-    id: "motors-automation",
-    name: "Motors & Automation",
-    shortName: "Motors",
-    tagline: "The drive is what decides how long an opening keeps working.",
-    summary:
-      "Shutter, gate and door operators — side, central, tubular and Australian-type shutter drives, gate operators and door operators, with manual override on every one.",
-    intro: [
-      "The operator determines an opening's duty cycle, its noise, and how it behaves when the power fails. Sizing is a function of curtain or leaf weight, opening height, and how many cycles a day it has to complete — and duty rating usually binds before torque does.",
-      "Motor types are not interchangeable. A tubular motor sits inside the barrel of a light shutter, a side motor drives the barrel shaft on a heavy one, a gate operator drives a rolling load along a rack, and a pedestrian door operator runs a light leaf thousands of times a day, quietly, in an occupied building.",
-    ],
-    why: [
-      {
-        title: "Sized to the load and the duty",
-        body: "Torque and duty rating selected against curtain or leaf weight and daily cycle count, not against opening width.",
-      },
-      {
-        title: "Manual override on every drive",
-        body: "Hand chain, crank or release mechanism, so the opening still works during a power failure.",
-      },
-      {
-        title: "Limit and safety control",
-        body: "Adjustable travel limits, with obstruction detection and safety edge inputs on the control side.",
-      },
-      {
-        title: "Retrofit as well as new",
-        body: "Drive types to suit both new installations and the motorisation of existing manual shutters and gates.",
-      },
-    ],
-    considerations: [
-      "Curtain or leaf weight, and opening height — the two inputs to torque.",
-      "Cycles per day, which sets the duty rating and is the usual cause of premature failure when guessed.",
-      "Available mounting space: inside the barrel, at the end plate, at the centre of the span, or overhead.",
-      "Supply available at the opening, single or three phase.",
-      "What the manual override has to be operable by, and from which side.",
-      "Whether the drive is replacing a failed unit, in which case the existing mounting and shaft govern.",
-    ],
-    applications: [
-      "New shutter, gate and door installations",
-      "Motorising existing manual shutters",
-      "Replacement of failed or undersized operators",
-      "Service, spares and AMC support",
-    ],
-    industries: ["manufacturing", "warehousing-logistics", "retail-commercial"],
-    imageId: "family-motors",
   },
 ];
 

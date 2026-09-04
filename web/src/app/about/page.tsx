@@ -56,8 +56,7 @@ export default function AboutPage() {
               <p>
                 The published range covers {counts.products} products across {counts.families}{" "}
                 families and {counts.categories} categories, from the vehicle gate at a site boundary
-                through to the pedestrian lane in a building lobby — and the drive units that operate
-                all of it.
+                through to the pedestrian lane in a building lobby.
               </p>
               <p>
                 The company is an {siteConfig.isoCertification} registered organisation and operates
