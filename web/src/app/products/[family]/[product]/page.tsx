@@ -12,6 +12,8 @@ import {
   products,
   relatedProducts,
   resolveDetail,
+  specCompleteness,
+  variantSpecs,
 } from "@/lib/catalog";
 import { image } from "@/data/images";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
@@ -59,6 +61,8 @@ export default async function ProductPage({ params }: Params) {
   const related = relatedProducts(product);
   const path = productPath(product);
 
+  const completeness = specCompleteness(product);
+  const variantDeltas = variantSpecs(product);
   const safety = resolveDetail(product, "safety");
   const controls = resolveDetail(product, "controls");
   const options = resolveDetail(product, "options");
@@ -77,7 +81,7 @@ export default async function ProductPage({ params }: Params) {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
-      <JsonLd data={productJsonLd(product, path, image(product.imageId).src)} />
+      <JsonLd data={productJsonLd(product, path, image(product.imageId).src, completeness.groups)} />
 
       {/* HERO */}
       <section className="border-b border-line bg-paper">
@@ -238,53 +242,105 @@ export default async function ProductPage({ params }: Params) {
           <SectionHeading
             index="04"
             eyebrow="Technical specifications"
-            title={product.specGroups.length > 0 ? "Published specifications" : "Specification to be confirmed"}
-            lede={
-              product.specGroups.length > 0
-                ? "Published for this product line. The final configuration is confirmed against your opening before quotation."
-                : undefined
-            }
+            title="Specification"
+            lede="The full field list a specifier needs for this product type. Figures we can support are published; everything else is marked to be confirmed rather than filled with a plausible number."
           />
 
-          {product.specGroups.length > 0 ? (
-            <div className="mt-12 space-y-8">
-              {product.specGroups.map((group) => (
-                <div key={group.group} className="overflow-x-auto border border-line bg-paper-raised">
-                  <table className="w-full min-w-[34rem] border-collapse text-sm">
-                    <caption className="border-b border-line bg-paper-sunken/60 px-6 py-3 text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
-                      {group.group}
-                    </caption>
-                    <tbody>
-                      {group.specs.map((spec) => (
-                        <tr key={spec.label} className="border-b border-line last:border-b-0">
-                          <th
-                            scope="row"
-                            className="w-2/5 px-6 py-4 text-left align-top font-mono text-xs font-medium uppercase tracking-[0.08em] text-steel-500"
-                          >
-                            {spec.label}
-                          </th>
-                          <td className="px-6 py-4 align-top leading-relaxed text-steel-800">{spec.value}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              ))}
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <p className="font-mono text-xs text-steel-500">
+              {completeness.published} of {completeness.total} fields published
+            </p>
+            <div
+              className="h-1.5 w-40 overflow-hidden rounded-edge bg-line"
+              role="img"
+              aria-label={`${completeness.published} of ${completeness.total} specification fields published`}
+            >
+              <div
+                className="h-full bg-amber"
+                style={{ width: `${Math.round((completeness.published / completeness.total) * 100)}%` }}
+              />
             </div>
-          ) : (
-            <div className="mt-12 border border-line bg-paper-raised p-8">
-              <p className="max-w-2xl text-base leading-relaxed text-steel-700">
-                We do not publish a specification table for this product, because we will not publish
-                a figure we cannot support for your opening. Send us the clear width and height, the
-                daily cycle count and the site conditions and we will issue the specification that
-                actually applies.{" "}
-                <Link href="#enquiry" className="font-medium text-amber-deep underline-offset-4 hover:underline">
-                  Contact us for configuration
-                </Link>
-                .
+            <Link href="#enquiry" className="text-sm font-medium text-amber-deep underline-offset-4 hover:underline">
+              Ask us to confirm the rest for your opening
+            </Link>
+          </div>
+
+          <div className="mt-10 space-y-8">
+            {completeness.groups.map((group) => (
+              <div key={group.group} className="overflow-x-auto border border-line bg-paper-raised">
+                <table className="w-full min-w-[34rem] border-collapse text-sm">
+                  <caption className="border-b border-line bg-paper-sunken/60 px-6 py-3 text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
+                    {group.group}
+                  </caption>
+                  <tbody>
+                    {group.specs.map((spec) => (
+                      <tr key={spec.label} className="border-b border-line last:border-b-0">
+                        <th
+                          scope="row"
+                          className="w-2/5 px-6 py-4 text-left align-top font-mono text-xs font-medium uppercase tracking-[0.08em] text-steel-500"
+                        >
+                          {spec.label}
+                          {spec.note && (
+                            <span className="mt-1.5 block font-sans text-[0.7rem] normal-case tracking-normal text-steel-400">
+                              {spec.note}
+                            </span>
+                          )}
+                        </th>
+                        <td className="px-6 py-4 align-top leading-relaxed">
+                          {spec.value ? (
+                            <span className="text-steel-800">{spec.value}</span>
+                          ) : (
+                            <span className="font-mono text-xs uppercase tracking-[0.08em] text-steel-400">
+                              To be confirmed
+                              {spec.unit && <span className="ml-2 normal-case tracking-normal">({spec.unit})</span>}
+                            </span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ))}
+          </div>
+
+          {variantDeltas.length > 0 && (
+            <div className="mt-12">
+              <h3 className="eyebrow text-steel-500">By configuration</h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-600">
+                Where a configuration changes the specification, the difference is listed against it
+                rather than buried in the table above.
               </p>
+              <div className="mt-6 grid gap-px hairline-grid md:grid-cols-2">
+                {variantDeltas.map(({ variant, specs }) => (
+                  <div key={variant.id} className="p-7">
+                    <div className="flex items-start justify-between gap-4">
+                      <h4 className="font-display text-lg font-medium text-steel-900">{variant.name}</h4>
+                      <StatusBadge status={variant.status} />
+                    </div>
+                    <dl className="mt-4 space-y-2">
+                      {specs.map((spec) => (
+                        <div key={spec.label} className="flex flex-wrap gap-x-3 text-sm">
+                          <dt className="font-mono text-xs uppercase tracking-[0.08em] text-steel-500">
+                            {spec.label}
+                          </dt>
+                          <dd className="text-steel-800">{spec.value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
+
+          <p className="mt-8 max-w-2xl text-xs leading-relaxed text-steel-500">
+            Field lists follow the characteristics this market declares against — EN 13241 for
+            industrial doors and gates, EN 16005 for powered pedestrian doors, EN 1398 for dock
+            levellers. Naming a standard describes what a field means; it is not a claim that this
+            product is certified to it. A rating appears only against a certificate for the
+            assembly as installed.
+          </p>
         </div>
       </section>
 

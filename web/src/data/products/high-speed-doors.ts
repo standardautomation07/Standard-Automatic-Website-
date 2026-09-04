@@ -55,43 +55,6 @@ export const highSpeedDoorProducts: Product[] = [
       { id: "cold-store", name: "Cold store / freezer", note: "Insulated or heated-guide configuration for openings into chilled and frozen rooms.", status: "POTENTIAL" },
       { id: "cleanroom", name: "Cleanroom", note: "Interlocked pairing and a low-particulate curtain for classified area transitions.", status: "POTENTIAL" },
     ],
-    specGroups: [
-      {
-        group: "Dimensions",
-        specs: [
-          { label: "Maximum width", value: "5000 mm" },
-          { label: "Maximum height", value: "5000 mm" },
-        ],
-      },
-      {
-        group: "Performance",
-        specs: [
-          { label: "Opening speed", value: "0.80–2.5 m/s, adjustable" },
-          { label: "Closing speed", value: "0.80–2.5 m/s, adjustable" },
-          { label: "Wind load resistance", value: "EN 12424 Class 2" },
-        ],
-      },
-      {
-        group: "Construction",
-        specs: [
-          { label: "Curtain", value: "0.8–1.2 mm high-density PVC coated fabric" },
-          { label: "Vision panel", value: "Transparent PVC film" },
-          { label: "Side guides", value: "Aluminium extrusion" },
-          { label: "Frame material", value: "Galvanized steel, aluminium alloy or stainless steel" },
-          { label: "Track and box cover", value: "2.0 mm folded galvanized steel" },
-          { label: "Curtain colours", value: "Blue, yellow, orange, grey, red and others to order" },
-        ],
-      },
-      {
-        group: "Drive and control",
-        specs: [
-          { label: "Drive", value: "SEW or equivalent geared motor, 380 V or 220 V 50 Hz, 0.75 / 1.1 / 1.5 kW" },
-          { label: "Control system", value: "PLC with inverter and encoder" },
-          { label: "Activation", value: "Double-side radar, push button or infrared sensors" },
-          { label: "Manual operation", value: "Crank handle" },
-        ],
-      },
-    ],
     applications: [
       "Warehouse internal and external openings",
       "Loading and dispatch bays",
@@ -162,7 +125,6 @@ export const highSpeedDoorProducts: Product[] = [
       { id: "internal", name: "Internal", note: "Standard configuration for internal throughways and production separations.", status: "CONFIRMED" },
       { id: "external", name: "External", note: "Reinforced curtain and guides where the opening is also wind-exposed.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "High-traffic warehouse throughways",
       "Narrow openings with heavy forklift movement",
@@ -230,7 +192,6 @@ export const highSpeedDoorProducts: Product[] = [
       { id: "external-wide-span", name: "External wide span", note: "For wide vehicle openings on exposed elevations, where a single rolled curtain would need excessive headroom.", status: "CONFIRMED" },
       { id: "reinforced-wind-bars", name: "Wind-bar reinforced", note: "Additional horizontal reinforcement where the elevation carries significant wind load.", status: "CONFIRMED" },
     ],
-    specGroups: [],
     applications: [
       "Wide external warehouse openings",
       "Dispatch and vehicle access doors",
@@ -297,39 +258,6 @@ export const highSpeedDoorProducts: Product[] = [
     variants: [
       { id: "external", name: "External / wind-rated", note: "For exposed elevations where the panel has to carry wind load as well as cycle quickly.", status: "CONFIRMED" },
       { id: "thermal-separation", name: "Thermal separation", note: "For internal openings between areas held at different temperatures, where a fabric curtain will not hold the differential.", status: "CONFIRMED" },
-    ],
-    specGroups: [
-      {
-        group: "Dimensions",
-        specs: [
-          { label: "Maximum width", value: "5000 mm" },
-          { label: "Maximum height", value: "7500 mm" },
-        ],
-      },
-      {
-        group: "Performance",
-        specs: [
-          { label: "Opening speed", value: "1.2–1.5 m/s, adjustable" },
-          { label: "Closing speed", value: "0.6 m/s, adjustable" },
-          { label: "Rated wind velocity", value: "120 km/h" },
-        ],
-      },
-      {
-        group: "Construction",
-        specs: [
-          { label: "Panel", value: "Aluminium alloy with PU foam core" },
-          { label: "Panel thickness", value: "43 mm" },
-          { label: "Panel finish", value: "Silver or customised" },
-        ],
-      },
-      {
-        group: "Drive and control",
-        specs: [
-          { label: "Drive", value: "SEW or equivalent geared motor, 380 V or 220 V 50 Hz, 0.75 / 1.1 / 1.5 kW" },
-          { label: "Control system", value: "PLC with inverter and encoder" },
-          { label: "Activation", value: "Double-side radar, infrared sensors or as specified" },
-        ],
-      },
     ],
     applications: [
       "Tall external industrial openings",

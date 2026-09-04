@@ -10,6 +10,7 @@ import {
   productPath,
   productsInCategory,
   productsInFamily,
+  specCompleteness,
 } from "@/lib/catalog";
 import { ProductCard } from "@/components/product/cards";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
@@ -204,7 +205,7 @@ export default async function FamilyPage({ params }: Params) {
                     Configurations
                   </th>
                   <th scope="col" className="px-5 py-4 text-left font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel-500">
-                    Published specs
+                    Published fields
                   </th>
                 </tr>
               </thead>
@@ -225,7 +226,10 @@ export default async function FamilyPage({ params }: Params) {
                     </td>
                     <td className="px-5 py-4 align-top text-steel-600">{product.variants.length}</td>
                     <td className="px-5 py-4 align-top text-steel-600">
-                      {product.specGroups.length > 0 ? "Yes" : "On request"}
+                      {(() => {
+                        const { published, total } = specCompleteness(product);
+                        return `${published} / ${total}`;
+                      })()}
                     </td>
                   </tr>
                 ))}

@@ -50,35 +50,6 @@ export const industrialDoorProducts: Product[] = [
       { id: "glazed-vision", name: "Glazed vision panels", note: "Vision sections in one or more panels, or a full-vision glazed leaf, where daylight or sightlines through the opening matter.", status: "CONFIRMED" },
       { id: "wicket-door", name: "Wicket access door", note: "A pedestrian door built into the leaf, interlocked so the main door only runs when the wicket is closed.", status: "CONFIRMED" },
     ],
-    specGroups: [
-      {
-        group: "Construction",
-        specs: [
-          { label: "Type code", value: "SD40, SD50" },
-          { label: "Panel material", value: "Aluminium or galvanized steel, PUF insulated" },
-          { label: "Panel thickness", value: "40 mm to 50 mm" },
-          { label: "Panel height", value: "300 mm" },
-          { label: "Frame", value: "Steel" },
-          { label: "Standard colour", value: "White or customised" },
-          { label: "Finish options", value: "Powder coated or plastisol coated to any RAL colour" },
-        ],
-      },
-      {
-        group: "Dimensions and performance",
-        specs: [
-          { label: "Maximum span", value: "Up to 10 m wide" },
-          { label: "Wind resistance", value: "EN 12424" },
-        ],
-      },
-      {
-        group: "Operation",
-        specs: [
-          { label: "Operation", value: "Electric or manual" },
-          { label: "Control options", value: "Key switch, radio remote control, rocker switch" },
-          { label: "Options", value: "Wicket access door, vision panels" },
-        ],
-      },
-    ],
     applications: [
       "Warehouse and factory external openings",
       "Large apertures over 16 sq m",
@@ -137,31 +108,6 @@ export const industrialDoorProducts: Product[] = [
       { id: "full-vision", name: "Full-vision glazed", note: "Glazing across the full leaf, for showroom and display frontages where the opening is on view.", status: "CONFIRMED" },
       { id: "insulated-panel", name: "Insulated panel", note: "Foam-filled sections with selected glazed inserts, where thermal performance matters as well as daylight.", status: "CONFIRMED" },
     ],
-    specGroups: [
-      {
-        group: "Construction",
-        specs: [
-          { label: "Panel", value: "Aluminium sections with glazed inserts, foam filled" },
-          { label: "Hardware and track", value: "2.5 mm galvanized steel, powder coated" },
-          { label: "Sealing", value: "Perimeter seals around the leaf" },
-        ],
-      },
-      {
-        group: "Safety",
-        specs: [
-          { label: "Spring-break device", value: "Arrests the spring axis and cable if a spring fails" },
-          { label: "Anti-fall device", value: "Arrests the leaf if a lifting cable breaks" },
-        ],
-      },
-      {
-        group: "Electrical and performance",
-        specs: [
-          { label: "Supply", value: "220 V / 380 V / 400 V" },
-          { label: "Protection class", value: "IP55" },
-          { label: "Wind resistance", value: "EN 12424" },
-        ],
-      },
-    ],
     applications: [
       "Showroom and display frontages",
       "Commercial garages and service bays",
@@ -216,29 +162,6 @@ export const industrialDoorProducts: Product[] = [
     variants: [
       { id: "remote-operated", name: "Remote operated", note: "Handset and wall control with a manual release cord — the usual arrangement for a private garage.", status: "CONFIRMED" },
       { id: "manual", name: "Manual with counterbalance", note: "Spring-balanced manual operation where power is not available at the opening or is not wanted.", status: "CONFIRMED" },
-    ],
-    specGroups: [
-      {
-        group: "Construction",
-        specs: [
-          { label: "Panel", value: "Galvanized steel sections with a foam core" },
-          { label: "Hardware and track", value: "2.5 mm galvanized steel, powder coated" },
-        ],
-      },
-      {
-        group: "Safety",
-        specs: [
-          { label: "Spring-break device", value: "Arrests the spring axis and cable if a spring fails" },
-          { label: "Anti-fall device", value: "Arrests the leaf if a lifting cable breaks" },
-        ],
-      },
-      {
-        group: "Performance",
-        specs: [
-          { label: "Protection class", value: "IP55" },
-          { label: "Wind resistance", value: "EN 12424" },
-        ],
-      },
     ],
     applications: [
       "Private residences and villas",

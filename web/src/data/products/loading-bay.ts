@@ -31,40 +31,6 @@ export const loadingBayProducts: Product[] = [
       { id: "swing-lip", name: "Swing lip", note: "The lip hinges out and lowers onto the vehicle bed. The standard arrangement where vehicles dock consistently.", status: "CONFIRMED" },
       { id: "telescopic-lip", name: "Telescopic lip", note: "The lip extends horizontally, giving longer reach and more accurate placement on a mixed or awkwardly docked fleet.", status: "POTENTIAL" },
     ],
-    specGroups: [
-      {
-        group: "Platform",
-        specs: [
-          { label: "Platform length", value: "2000 mm or 2500 mm (±2)" },
-          { label: "Platform width", value: "1830 mm, 2000 mm or 2130 mm (±2)" },
-          { label: "Platform height", value: "500 mm or 600 mm (±2)" },
-        ],
-      },
-      {
-        group: "Foundation pit",
-        specs: [
-          { label: "Pit length", value: "2000 mm or 2500 mm (±2)" },
-          { label: "Pit width", value: "1880 mm, 2050 mm or 2180 mm (±2)" },
-          { label: "Pit depth", value: "515 mm or 615 mm (±2)" },
-        ],
-      },
-      {
-        group: "Working range",
-        specs: [
-          { label: "Upper working range", value: "725–750 mm" },
-          { label: "Lower working range", value: "225–380 mm" },
-        ],
-      },
-      {
-        group: "Construction and power",
-        specs: [
-          { label: "Deck material", value: "14 mm tear plate, double 5° bending" },
-          { label: "Finish", value: "Epoxy resin, long-term anti-corrosion" },
-          { label: "Power consumption", value: "≤ 1.5 kW" },
-          { label: "Operating temperature", value: "-35 °C to +50 °C" },
-        ],
-      },
-    ],
     applications: [
       "Distribution centres and 3PL warehouses",
       "Manufacturing dispatch bays",
@@ -123,23 +89,6 @@ export const loadingBayProducts: Product[] = [
       { id: "curtain", name: "Curtain shelter", note: "Sprung frame with sealing curtains at the head and sides. The general-purpose arrangement for a mixed fleet.", status: "CONFIRMED" },
       { id: "dock-house", name: "Dock house", note: "A built-out housing enclosing the bay, used where the dock face sits flush with the building line or the fleet varies widely.", status: "CONFIRMED" },
       { id: "inflatable", name: "Inflatable shelter", note: "Inflating cushions form to the vehicle body for the tightest seal. Specified where temperature loss is the governing concern.", status: "POTENTIAL" },
-    ],
-    specGroups: [
-      {
-        group: "Construction",
-        specs: [
-          { label: "Frame material", value: "Aluminium alloy" },
-          { label: "Size and colour", value: "Made to the bay and to requirement" },
-        ],
-      },
-      {
-        group: "Performance",
-        specs: [
-          { label: "Function", value: "Heat retention, dustproof, waterproof" },
-          { label: "Wind loading", value: "Above force 10" },
-          { label: "Service life", value: "10–20 years" },
-        ],
-      },
     ],
     applications: [
       "Warehouse and distribution loading bays",

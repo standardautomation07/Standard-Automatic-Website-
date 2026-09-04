@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
-import type { Product } from "@/lib/types";
+import type { Product, Spec, SpecGroup } from "@/lib/types";
 
 const { address } = siteConfig;
 
@@ -73,8 +73,17 @@ export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
  * `review` — there are no published prices and no real review data, and
  * inventing either would be schema spam.
  */
-export function productJsonLd(product: Product, path: string, imageSrc: string | null) {
-  const specs = product.specGroups.flatMap((group) => group.specs);
+export function productJsonLd(
+  product: Product,
+  path: string,
+  imageSrc: string | null,
+  specGroups: SpecGroup[],
+) {
+  // Only answered fields become structured data. A to-be-confirmed field is
+  // absent rather than published as an empty or placeholder property.
+  const specs = specGroups
+    .flatMap((group) => group.specs)
+    .filter((spec): spec is Spec & { value: string } => spec.value !== null);
   return {
     "@context": "https://schema.org",
     "@type": "Product",

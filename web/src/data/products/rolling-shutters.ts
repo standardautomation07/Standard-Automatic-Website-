@@ -38,26 +38,6 @@ export const rollingShutterProducts: Product[] = [
       { id: "manual", name: "Manual push-pull or gear", note: "For smaller and lower-cycle openings where a drive is not justified. Gear operation extends the practical size range of a hand-operated shutter.", status: "CONFIRMED" },
       { id: "motorised", name: "Motorised", note: "Side, central or Australian-type drive selected against curtain weight and daily cycle count, with manual override.", status: "CONFIRMED" },
     ],
-    specGroups: [
-      {
-        group: "Curtain",
-        specs: [
-          { label: "Type code", value: "GL78RS" },
-          { label: "Curtain material", value: "Galvanized steel" },
-          { label: "Slat height", value: "75 mm, 125 mm, 150 mm" },
-          { label: "Slat thickness", value: "0.80 mm to 1.2 mm" },
-          { label: "Standard colour", value: "Silver or customised" },
-        ],
-      },
-      {
-        group: "Frame and operation",
-        specs: [
-          { label: "Guides and frame", value: "Steel" },
-          { label: "Operation", value: "Electric or manual" },
-          { label: "Size", value: "Made to the opening" },
-        ],
-      },
-    ],
     applications: [
       "Warehouses and godowns",
       "Factories and industrial units",
@@ -114,26 +94,6 @@ export const rollingShutterProducts: Product[] = [
       { id: "single-wall", name: "Single wall", note: "The lightest curtain in the range. Suits small and medium shopfronts, service counters and kiosks.", status: "CONFIRMED" },
       { id: "double-wall", name: "Double wall", note: "A stiffer slat for wider openings and more exposed frontages, at higher curtain weight.", status: "CONFIRMED" },
     ],
-    specGroups: [
-      {
-        group: "Curtain",
-        specs: [
-          { label: "Type code", value: "AL55RS, AL75RS" },
-          { label: "Curtain material", value: "Aluminium, single and double wall" },
-          { label: "Slat height", value: "55 mm, 75 mm" },
-          { label: "Slat thickness", value: "0.45 mm to 1.00 mm" },
-          { label: "Standard colour", value: "White or customised" },
-        ],
-      },
-      {
-        group: "Frame and operation",
-        specs: [
-          { label: "Guides and frame", value: "Steel" },
-          { label: "Operation", value: "Electric or manual" },
-          { label: "Size", value: "Made to the opening" },
-        ],
-      },
-    ],
     applications: [
       "Shopfronts and showrooms",
       "Commercial and office frontages",
@@ -188,7 +148,6 @@ export const rollingShutterProducts: Product[] = [
     variants: [
       { id: "bright-bar", name: "Bright bar lattice", note: "Vertical bright bars on horizontal links, the standard grille construction. Bar spacing is set against the security requirement.", status: "CONFIRMED" },
     ],
-    specGroups: [],
     applications: [
       "Shopping mall units",
       "Parking and basement entries",
@@ -242,7 +201,6 @@ export const rollingShutterProducts: Product[] = [
     variants: [
       { id: "perforated-slat", name: "Perforated slat", note: "Perforation pattern and open area set against how much light, air and visibility the opening needs.", status: "CONFIRMED" },
     ],
-    specGroups: [],
     applications: [
       "Retail and showroom frontages",
       "Parking and ventilated service areas",
@@ -296,35 +254,6 @@ export const rollingShutterProducts: Product[] = [
     variants: [
       { id: "transparent", name: "Fully transparent", note: "The full curtain in polycarbonate, for display frontages where visibility is the point.", status: "CONFIRMED" },
       { id: "mixed-slat", name: "Mixed polycarbonate and steel slat", note: "Alternating transparent and solid slats, trading some visibility for more physical resistance.", status: "POTENTIAL" },
-    ],
-    specGroups: [
-      {
-        group: "Curtain",
-        specs: [
-          { label: "Type code", value: "AD-TD001" },
-          { label: "Panel material", value: "Polycarbonate" },
-          { label: "Standard finish", value: "Transparent" },
-          { label: "Panel height", value: "85 mm, 100 mm, 115 mm, 170 mm" },
-          { label: "Panel thickness", value: "1.5 / 2.1 / 3.2 / 4.8 / 5.0 mm" },
-        ],
-      },
-      {
-        group: "Frame and operation",
-        specs: [
-          { label: "Frame", value: "Colour steel or aluminium alloy" },
-          { label: "Open style", value: "Rolling, folding or sliding" },
-          { label: "Operation", value: "Electric or manual" },
-        ],
-      },
-      {
-        group: "Performance",
-        specs: [
-          { label: "UV blocked", value: "Approximately 80%" },
-          { label: "Acoustic performance", value: "Approximately 3–4 dB better than glass" },
-          { label: "Fire behaviour", value: "Flame retardant, self-extinguishing Class I" },
-          { label: "Compliance", value: "ROHS; panel is recyclable" },
-        ],
-      },
     ],
     applications: [
       "Retail units and high-grade shops",
@@ -380,7 +309,6 @@ export const rollingShutterProducts: Product[] = [
       { id: "galvanised-insulated", name: "Galvanised insulated", note: "Galvanised double-wall slat with an insulating core — the standard industrial configuration.", status: "CONFIRMED" },
       { id: "aluminium-insulated", name: "Aluminium insulated", note: "A lighter insulated slat for frontages where curtain weight and finish matter more than span.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Openings between conditioned and unconditioned space",
       "Cold and chilled storage areas",

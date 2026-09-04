@@ -31,7 +31,6 @@ export const automaticGateProducts: Product[] = [
       { id: "tracked", name: "Track guided", note: "The leaf runs on a ground rail. Suits long, heavy leaves on a level, well-drained approach; the track must be kept clear of silt.", status: "CONFIRMED" },
       { id: "cantilever", name: "Cantilever", note: "The leaf is carried on rollers set back from the opening, so nothing crosses the driveway. Chosen where drainage, silt or heavy axle loads rule out a ground track.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Factory and plant main gates",
       "Warehouse and logistics yards",
@@ -88,7 +87,6 @@ export const automaticGateProducts: Product[] = [
       { id: "two-leaf", name: "Two-leaf nesting", note: "The usual arrangement. Halves the required side-run compared with a single leaf of the same opening width.", status: "CONFIRMED" },
       { id: "three-leaf", name: "Three-leaf nesting", note: "For very wide openings on very short boundaries, at the cost of a more involved drive and guidance arrangement.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Constrained industrial entrances",
       "Urban plots with limited boundary run",
@@ -145,7 +143,6 @@ export const automaticGateProducts: Product[] = [
       { id: "linear-ram", name: "Linear ram operator", note: "The usual choice for residential and light commercial leaves. Compact and simple to install on a standard hinge post.", status: "CONFIRMED" },
       { id: "underground", name: "Underground operator", note: "The drive sits in a foundation box at the hinge, invisible when the gate is closed. Requires drainage in the box.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Residential and villa entrances",
       "Housing society side gates",
@@ -201,36 +198,6 @@ export const automaticGateProducts: Product[] = [
       { id: "trackless", name: "Trackless", note: "Nothing crosses the driveway. Preferred where drainage, silt or heavy axle loads make a ground track impractical.", status: "CONFIRMED" },
       { id: "single-track", name: "Single track", note: "One ground rail for added lateral stability on longer runs.", status: "CONFIRMED" },
       { id: "double-track", name: "Double track", note: "Two ground rails for the greatest stability on long or wind-exposed openings.", status: "CONFIRMED" },
-    ],
-    specGroups: [
-      {
-        group: "Dimensions",
-        specs: [
-          { label: "Maximum length", value: "30 m" },
-          { label: "Standard height", value: "1.6 m" },
-          { label: "Main tube", value: "52 × 50 × 0.65 mm" },
-          { label: "Cross tube", value: "44 × 35 × 0.6 mm" },
-        ],
-      },
-      {
-        group: "Running gear",
-        specs: [
-          { label: "Wheels", value: "Plastic or cast aluminium, 95 mm diameter" },
-          { label: "Track options", value: "No track, single track, double track" },
-          { label: "Finishes", value: "Silver, black, red" },
-        ],
-      },
-      {
-        group: "Drive and control",
-        specs: [
-          { label: "Supply", value: "220 V ±10%, 50 Hz" },
-          { label: "Motor power", value: "370 W / 550 W / 750 W" },
-          { label: "Travel speed", value: "17–19 m/min" },
-          { label: "Operating current", value: "≤ 2.5 A × 2" },
-          { label: "Remote control range", value: "≥ 30 m" },
-          { label: "Working temperature", value: "-25 °C to +75 °C" },
-        ],
-      },
     ],
     applications: [
       "Factory and enterprise gates",

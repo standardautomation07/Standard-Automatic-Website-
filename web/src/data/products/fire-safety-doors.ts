@@ -60,33 +60,6 @@ export const fireSafetyProducts: Product[] = [
         status: "POTENTIAL",
       },
     ],
-    specGroups: [
-      {
-        group: "Curtain",
-        specs: [
-          { label: "Type code", value: "FR75, FR100" },
-          { label: "Curtain material", value: "Galvanised double wall with silicon insulated strip" },
-          { label: "Slat height", value: "75 mm, 100 mm" },
-          { label: "Curtain thickness", value: "25 mm" },
-          { label: "Standard colour", value: "Silver or customised" },
-        ],
-      },
-      {
-        group: "Performance",
-        specs: [
-          { label: "Sound reduction", value: "21 dB" },
-          { label: "Fire rating", value: "To be confirmed — see note below" },
-          { label: "Test standard", value: "To be confirmed — IS 3614, BS 476 Pt 22 and EN 1634-1 are the standards applied in this market" },
-        ],
-      },
-      {
-        group: "Frame and operation",
-        specs: [
-          { label: "Guides and frame", value: "Steel" },
-          { label: "Operation", value: "Electric or manual" },
-        ],
-      },
-    ],
     applications: [
       "Fire compartment openings",
       "Warehouse and plant separations",
@@ -145,34 +118,6 @@ export const fireSafetyProducts: Product[] = [
       { id: "automatic", name: "Automatic operation", note: "Sensor, push plate or hands-free activation for corridors in constant use.", status: "CONFIRMED" },
       { id: "lead-lined", name: "Lead-lined / shielded", note: "3.0 mm lead sheet in the leaf with lead glass vision panels, for diagnostic and imaging rooms.", status: "CONFIRMED" },
       { id: "vision-panel", name: "Glazed vision panel", note: "Single glazing in an aluminium frame, or double glazing, where sightlines through the opening are needed.", status: "CONFIRMED" },
-    ],
-    specGroups: [
-      {
-        group: "Leaf and frame",
-        specs: [
-          { label: "Door type", value: "Automatic sliding" },
-          { label: "Leaf facing", value: "HPL, painted steel or powder-coated aluminium" },
-          { label: "Frame material", value: "Aluminium" },
-          { label: "Leaf thickness", value: "4.5 mm" },
-          { label: "Door plate thickness", value: "1.0 mm" },
-          { label: "Reference size", value: "1800 × 2100 mm" },
-        ],
-      },
-      {
-        group: "Shielding and glazing",
-        specs: [
-          { label: "Lead sheet thickness", value: "3.0 mm" },
-          { label: "Vision window", value: "Single glazing in aluminium frame, or double glazing with lead glass" },
-          { label: "Glass thickness", value: "5 mm / 6 mm" },
-        ],
-      },
-      {
-        group: "Compliance",
-        specs: [
-          { label: "Fire rating", value: "To be confirmed — see note below" },
-          { label: "Test standard", value: "To be confirmed — IS 3614, BS 476 Pt 22 and EN 1634-1 are the standards applied in this market" },
-        ],
-      },
     ],
     applications: [
       "Hospitals and diagnostic suites",

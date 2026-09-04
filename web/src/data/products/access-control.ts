@@ -38,7 +38,6 @@ export const accessControlProducts: Product[] = [
       { id: "drop-arm", name: "Drop-arm emergency release", note: "The arms fall clear on alarm or power failure, converting the lane into open escape width.", status: "CONFIRMED" },
       { id: "stainless-housing", name: "Stainless steel housing", note: "For external gate houses and washdown or coastal environments where a painted housing would not last.", status: "CONFIRMED" },
     ],
-    specGroups: [],
     applications: [
       "Factory and plant gate houses",
       "Corporate and IT campus entrances",
@@ -95,7 +94,6 @@ export const accessControlProducts: Product[] = [
       { id: "standard-lane", name: "Standard lane", note: "The normal-width lane used for the majority of flow in a lobby installation.", status: "CONFIRMED" },
       { id: "accessible-lane", name: "Wide accessible lane", note: "A wider clear passage for wheelchair users, trolleys and luggage. At least one is normally required per bank of lanes.", status: "CONFIRMED" },
     ],
-    specGroups: [],
     applications: [
       "Corporate and IT campus lobbies",
       "Commercial building receptions",
@@ -152,7 +150,6 @@ export const accessControlProducts: Product[] = [
       { id: "single-lane", name: "Single rotor", note: "One controlled passage in a self-contained frame. The usual arrangement at a secondary perimeter point.", status: "CONFIRMED" },
       { id: "twin-lane", name: "Twin rotor", note: "Two rotors in a shared frame, typically set for entry and exit, where flow justifies both in one footprint.", status: "CONFIRMED" },
     ],
-    specGroups: [],
     applications: [
       "Plant and site perimeter entry points",
       "Data centres and restricted zones",
@@ -210,7 +207,6 @@ export const accessControlProducts: Product[] = [
       { id: "removable", name: "Removable", note: "Lifted out with a key for occasional service access, then replaced. Suits lines that open a few times a month.", status: "CONFIRMED" },
       { id: "automatic-rising", name: "Automatic rising", note: "Retracts flush into the carriageway on demand and re-deploys behind the vehicle. For lines that open many times a day.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Building entrances and forecourts",
       "Pedestrian plazas and service access routes",
@@ -267,7 +263,6 @@ export const accessControlProducts: Product[] = [
       { id: "folding-boom", name: "Folding boom", note: "The boom articulates as it rises, for lanes with restricted headroom such as basement entries.", status: "POTENTIAL" },
       { id: "fence-boom", name: "Fence boom", note: "A skirted boom that deters pedestrians from ducking under the barrier at a mixed-traffic entry.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Car park entries and exits",
       "Factory and plant gate houses",
@@ -323,7 +318,6 @@ export const accessControlProducts: Product[] = [
       { id: "powered", name: "Powered", note: "Motorised extension and retraction with a manual release, where the line opens and closes several times a day.", status: "POTENTIAL" },
       { id: "manual", name: "Manual", note: "Hand-operated, for lines that change state once or twice a day on a shift pattern.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Yard and service entrances",
       "Temporary and shift-based closures",

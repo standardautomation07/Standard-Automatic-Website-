@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { categories, families, products } from "../src/lib/catalog";
+import { categories, families, products, productSpecGroups } from "../src/lib/catalog";
 
 /**
  * The research taxonomy and the site's typed data are two representations of
@@ -99,13 +99,12 @@ test.describe("catalogue data matches the research taxonomy", () => {
 test.describe("content honesty rules", () => {
   test("no product publishes a fire rating", () => {
     for (const product of products) {
-      for (const group of product.specGroups) {
+      for (const group of productSpecGroups(product)) {
         for (const spec of group.specs) {
-          if (/fire rating/i.test(spec.label)) {
-            expect(
-              /to be confirmed/i.test(spec.value),
-              `${product.id} publishes a fire rating: ${spec.value}`,
-            ).toBe(true);
+          if (spec.value && /rating/i.test(spec.label) && /fire|integrity|insulation|radiation/i.test(group.group)) {
+            throw new Error(
+              `${product.id} publishes a fire rating (${spec.label}: ${spec.value}) with no certificate reference`,
+            );
           }
         }
       }
@@ -116,6 +115,36 @@ test.describe("content honesty rules", () => {
     for (const product of products) {
       const text = JSON.stringify(product).toLowerCase();
       expect(/\bwarranty\b/.test(text), `${product.id} mentions a warranty`).toBe(false);
+    }
+  });
+
+  test("every product resolves a specification schema", () => {
+    for (const product of products) {
+      const groups = productSpecGroups(product);
+      const fields = groups.flatMap((g) => g.specs);
+      expect(groups.length, `${product.id} has no specification groups`).toBeGreaterThan(3);
+      expect(fields.length, `${product.id} has too few specification fields`).toBeGreaterThan(14);
+      for (const spec of fields) {
+        expect(spec.label.length, `${product.id} has an unlabelled field`).toBeGreaterThan(1);
+      }
+    }
+  });
+
+  test("every published value traces to spec-values.json", () => {
+    const values = JSON.parse(
+      readFileSync(resolve(__dirname, "../src/data/spec-values.json"), "utf8"),
+    ) as Record<string, Record<string, string>>;
+
+    for (const product of products) {
+      for (const group of productSpecGroups(product)) {
+        for (const spec of group.specs) {
+          if (spec.value === null) continue;
+          expect(
+            values[product.id]?.[spec.label],
+            `${product.id} / ${spec.label} has a value that is not in spec-values.json`,
+          ).toBe(spec.value);
+        }
+      }
     }
   });
 

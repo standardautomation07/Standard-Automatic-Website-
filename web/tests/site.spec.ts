@@ -234,17 +234,25 @@ test.describe("catalogue hierarchy", () => {
     });
   }
 
-  test("a product with published specs renders grouped spec tables", async ({ page }) => {
+  test("specifications are grouped into multiple tables", async ({ page }) => {
     await page.goto("/products/loading-bay/dock-levellers");
-    const tables = page.getByRole("table");
-    expect(await tables.count()).toBeGreaterThan(1);
-    await expect(page.getByText("Upper working range")).toBeVisible();
+    expect(await page.getByRole("table").count()).toBeGreaterThan(3);
+    await expect(page.getByText("Working range above dock")).toBeVisible();
   });
 
-  test("a product without specs says so instead of inventing a table", async ({ page }) => {
+  test("a product with no supplied figures still shows the full field list, marked to be confirmed", async ({ page }) => {
     await page.goto("/products/access-control/tripod-turnstiles");
-    await expect(page.getByRole("heading", { name: /Specification to be confirmed/i })).toBeVisible();
-    await expect(page.getByRole("table")).toHaveCount(0);
+    await expect(page.getByRole("table").first()).toBeVisible();
+    await expect(page.getByText("0 of 29 fields published")).toBeVisible();
+    // Every row is unanswered, and none of them invents a number.
+    expect(await page.getByText("To be confirmed", { exact: false }).count()).toBeGreaterThan(20);
+  });
+
+  test("a product with supplied figures shows them alongside the unanswered fields", async ({ page }) => {
+    await page.goto("/products/loading-bay/dock-levellers");
+    await expect(page.getByText(/d+ of d+ fields published/)).toBeVisible();
+    await expect(page.getByText("725–750 mm")).toBeVisible();
+    await expect(page.getByText("To be confirmed", { exact: false }).first()).toBeVisible();
   });
 
   test("variants render with their configuration notes", async ({ page }) => {

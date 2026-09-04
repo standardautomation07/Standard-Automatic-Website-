@@ -41,7 +41,6 @@ export const entranceAutomationProducts: Product[] = [
       { id: "telescopic", name: "Telescopic", note: "Nested leaves give a wider clear opening from a narrower overall frame — for openings where the structure limits the header width.", status: "POTENTIAL" },
       { id: "break-out", name: "Break-out escape leaves", note: "Leaves swing out under push force to give a clear escape width. Required where the opening sits on a designated escape route.", status: "POTENTIAL" },
     ],
-    specGroups: [],
     applications: [
       "Office and corporate building lobbies",
       "Retail and showroom entrances",

@@ -45,9 +45,32 @@ export interface Variant {
   status: Status;
 }
 
-export interface Spec {
+/** A resolved variant: the configuration plus the specification fields that
+ *  differ from the base product. */
+export interface VariantSpec {
+  variant: Variant;
+  specs: Spec[];
+}
+
+/** One field a specifier needs answered. The schema declares it; the value
+ *  is supplied separately, so a field can never acquire an invented number. */
+export interface SpecField {
   label: string;
-  value: string;
+  /** Expected unit or format, shown as a hint while the value is unknown. */
+  unit?: string;
+  /** What the field decides, or which standard defines it. */
+  note?: string;
+}
+
+export interface SpecGroupSchema {
+  group: string;
+  fields: SpecField[];
+}
+
+export interface Spec extends SpecField {
+  /** null when no supportable value has been supplied. Rendered as "to be
+   *  confirmed" — never filled with a plausible guess. */
+  value: string | null;
 }
 
 /** Specifications are grouped so a long table stays readable. */
@@ -105,8 +128,6 @@ export interface Product {
   quickFacts: QuickFact[];
   benefits: Benefit[];
   variants: Variant[];
-  /** Only specifications that can be supported. Empty is allowed. */
-  specGroups: SpecGroup[];
   applications: string[];
   industries: IndustryId[];
   environments: Environment[];

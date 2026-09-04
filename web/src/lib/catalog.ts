@@ -9,7 +9,17 @@ import { automaticGateProducts } from "@/data/products/automatic-gates";
 import { entranceAutomationProducts } from "@/data/products/entrance-automation";
 import { loadingBayProducts } from "@/data/products/loading-bay";
 import { accessControlProducts } from "@/data/products/access-control";
-import type { Category, Family, FamilyId, Product } from "@/lib/types";
+import specValues from "@/data/spec-values.json";
+import { schemaFor } from "@/data/spec-schema";
+import type {
+  Category,
+  Family,
+  FamilyId,
+  Product,
+  Spec,
+  SpecGroup,
+  VariantSpec,
+} from "@/lib/types";
 
 export { families, familyById, categories, categoryById, industries, industryById };
 
@@ -102,3 +112,71 @@ export const counts = {
   categories: categories.length,
   products: products.length,
 };
+
+/* ------------------------------------------------------------------ *
+ * Specifications
+ *
+ * A product's technical data is the schema for its category (the fields a
+ * specifier needs answered) merged with whatever supportable values exist in
+ * spec-values.json. A field with no value resolves to null and the UI renders
+ * it as to-be-confirmed — there is deliberately no code path that can invent
+ * one. Values that do not correspond to a schema field are not discarded;
+ * they surface in a final "Additional published data" group.
+ * ------------------------------------------------------------------ */
+
+const values = specValues as Record<string, Record<string, string>>;
+
+export function productSpecGroups(product: Product): SpecGroup[] {
+  const published = values[product.id] ?? {};
+  const claimed = new Set<string>();
+
+  const groups: SpecGroup[] = schemaFor(product).map((group) => ({
+    group: group.group,
+    specs: group.fields.map((field) => {
+      const value = published[field.label];
+      if (value !== undefined) claimed.add(field.label);
+      return { ...field, value: value ?? null } satisfies Spec;
+    }),
+  }));
+
+  const extra = Object.entries(published).filter(([label]) => !claimed.has(label));
+  if (extra.length > 0) {
+    groups.push({
+      group: "Additional published data",
+      specs: extra.map(([label, value]) => ({ label, value })),
+    });
+  }
+
+  return groups;
+}
+
+/** How much of the schema is actually answered — shown on the page so the
+ *  reader knows what they are looking at without counting rows. */
+export function specCompleteness(product: Product) {
+  const groups = productSpecGroups(product);
+  const specs = groups.flatMap((group) => group.specs);
+  const published = specs.filter((spec) => spec.value !== null).length;
+  return { published, total: specs.length, groups };
+}
+
+/** Per-variant specification deltas, keyed "<productId>::<variantId>". */
+export function variantSpecs(product: Product): VariantSpec[] {
+  return product.variants
+    .map((variant) => {
+      const published = values[`${product.id}::${variant.id}`] ?? {};
+      const specs = Object.entries(published).map(([label, value]) => ({ label, value }));
+      return { variant, specs };
+    })
+    .filter((entry) => entry.specs.length > 0);
+}
+
+/** Every product that still has unanswered fields, worst first. Drives the
+ *  data-request sheet in scripts/build-spec-request.mjs. */
+export function specGaps() {
+  return products
+    .map((product) => {
+      const { published, total } = specCompleteness(product);
+      return { product, published, total, missing: total - published };
+    })
+    .sort((a, b) => b.missing - a.missing);
+}
