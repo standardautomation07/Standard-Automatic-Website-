@@ -142,14 +142,14 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href={telHref()}
-            className="hidden items-center gap-2 px-3 py-2 font-mono text-xs tracking-wide text-steel-300 transition-colors hover:text-white xl:flex"
+            className="hidden items-center gap-2 whitespace-nowrap px-3 py-2 font-mono text-xs tracking-wide text-steel-300 transition-colors hover:text-white 2xl:flex"
           >
             <Phone className="h-4 w-4" />
             {siteConfig.phone}
           </a>
           <Link
             href="/contact"
-            className="hidden rounded-edge bg-amber px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ff9426] sm:inline-flex"
+            className="hidden whitespace-nowrap rounded-edge bg-amber px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ff9426] sm:inline-flex"
           >
             Request a Quote
           </Link>

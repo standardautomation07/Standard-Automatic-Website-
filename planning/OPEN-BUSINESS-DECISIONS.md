@@ -36,3 +36,30 @@ This is the master checklist gating content finalization, design sign-off, and l
 ## Process gate
 
 Per the master brief: **do not begin the Figma design phase or any production coding until the items in the "Blocking" section above are answered.** The remaining sections can proceed in parallel with early design exploration but must be resolved before their respective content ships.
+
+---
+
+## How the new `web/` build handles each open item
+
+Added when the new website was built (see `web/README.md`). Nothing below
+resolves an item — this records how the site behaves while each stays open.
+
+| Item | Handling in the new site |
+| --- | --- |
+| 3 — Boom Barriers / Motors still active? | Published, each carrying a visible "Awaiting confirmation" badge on the card and a note on the product page. Not hidden. |
+| 5 — `g-i-rolling-shutters` title/H1 contradiction | Published as **Insulated Rolling Shutters** with a rendered `namingNote` stating the contradiction. |
+| 6 — `sectional-door` vs `overhead-sectional-doors` | Merged into one product (**Overhead Sectional Doors**); both old URLs 301 to it. Split them back out if they are genuinely different. |
+| 7 — duplicated "High Speed Doors" group | Group removed; all high speed products sit under **Industrial Doors**. `high-speed-door.html` and `high-speed-roll-up-door.html` merged (identical spec tables) and both redirect to **High Speed Roll Up Doors**. |
+| 4 (follow-on) — shutter variant naming | `aluminium-single-wall.html` and `fire-proof-shutters.html` are published under working names with a rendered caveat, since each page's heading contradicts its own URL. |
+| 9/10 — enquiry delivery + hosting | Server-side endpoint implemented and validated; with no provider configured it records the enquiry and the UI says delivery is not connected. See `web/src/lib/enquiry.ts`. |
+| 11 — CMS | Not implemented. Content is typed TypeScript data under `web/src/data/`, which a CMS can back later without changing the page components. |
+| 12 — brand palette | A new palette was designed (graphite / off-white / steel / amber). If a real brand guideline exists it takes precedence. |
+| 13 — certifications, materials, dimensions | Only published where the business already publishes them. Products without them show a "specifications on request" panel. |
+| 14 — brochures | `/resources` gives specification guidance and states that literature is in preparation. No fake download buttons. |
+| 15 — client names | Logos shown without invented names, under an explicit note that references are being confirmed. |
+| 16 — projects | `/projects` ships empty, `noindex`, and excluded from the sitemap. |
+| 17 — FAQ / testimonials | Not built. No FAQ schema, no reviews, no ratings. |
+| 18 — service & support | Folded into the About page's "Survey, specify, install, support" section, describing process rather than claiming service levels. |
+| 19 — industries copy | `/industries` describes the constraint each sector has and links to grounded product recommendations. It makes no claim about work delivered. |
+| 20 — "sister company of itself" / wrong body copy | Not carried over. All product and about copy on the new site is newly written. |
+| 8 — `hotels-in-alibaug.html` | Still absent from the redirect map; a Playwright test asserts it 404s. |
