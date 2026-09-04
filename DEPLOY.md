@@ -3,57 +3,52 @@
 The repository is committed and clean; it just has no remote yet. Everything
 below is a one-time setup.
 
-## Why this needs you
+## Status
 
-Claude Code cannot authenticate to GitHub from this machine. There is no
-`gh` CLI installed, git has no credential helper configured, and the only
-GitHub credential on the machine belongs to GitHub Desktop — Claude will not
-read a stored token out of Windows Credential Manager to authenticate on your
-behalf. So the push is yours; everything after it can be automated again.
+**GitHub — done.** Pushed 2026-09-04 to
+<https://github.com/standardautomation07/Standard-Automatic-Website->
+(note the trailing hyphen in the repository name). The local branch was
+renamed `master` → `main` to match the repository's default branch, which is
+also what Vercel treats as the production branch.
 
-## Pre-publish check (already done)
+The repository is **public**. If this should be private, change it in
+GitHub → Settings → General → Danger Zone → Change repository visibility.
 
-- Working tree clean, branch `master`, 22 MB packed.
-- No `.env`, key, token or credential file is tracked.
-- No API keys or secrets found in tracked source.
-- `node_modules/`, `.next/`, `test-results/`, `playwright-report/` and
-  `shots/` are all ignored.
+**Vercel — not deployed yet, and needs one action in the dashboard.**
 
-## Step 1 — publish to GitHub
+Creating the project through the Vercel connector left an inconsistent state:
 
-**Option A — GitHub Desktop** (installed, already signed in as
-`standardautomation07`):
+- `create_git_project` reported that project `standard-automation-website`
+  (`prj_q3ourrRMxBcOGrZHLLu1v8Wp8acL`) was created, but could not verify the
+  git link to the repository.
+- Fetching that project id returns 404, and listing projects for team
+  `standard9` returns an empty list.
+- Re-creating the project returns 409 "already exists", and listing its
+  deployments returns 403.
+- No deployment is live: both `standard-automation-website.vercel.app` and
+  `standard-automation-website-standard9.vercel.app` return 404.
 
-1. File → Add local repository → choose this folder.
-2. Click **Publish repository**.
-3. Name it `standard-automation-website`.
-4. Leave **Keep this code private** ticked unless you want it public.
-5. Publish.
+The most likely cause is that Vercel's GitHub integration is not connected to
+the `standardautomation07` GitHub account, so Vercel cannot read the
+repository to link it — and the half-created project record is not visible to
+the connector's token.
 
-**Option B — command line.** Create an empty repository on GitHub first (do
-not add a README, licence or .gitignore), then:
+**To finish it (about a minute):**
 
-```bash
-cd "C:/Users/Dinesh Makwana/OneDrive/Desktop/Standard Automation Website" && git remote add origin https://github.com/standardautomation07/standard-automation-website.git && git push -u origin master
-```
+1. Go to <https://vercel.com/new>.
+2. If prompted, install/authorise the **Vercel GitHub app** for the
+   `standardautomation07` account and grant it access to
+   `Standard-Automatic-Website-`.
+3. Import that repository.
+4. Set **Root Directory** to `web` — this is the one setting that is not
+   auto-detected, and the build fails without it.
+5. Deploy.
 
-The first push opens a browser sign-in via Git Credential Manager.
+Also check the project list for a stray, empty `standard-automation-website`
+project and either reuse it (connect the repo in its Git settings) or delete
+it before importing.
 
-## Step 2 — Vercel preview
-
-Once the repository exists, Claude can create the Vercel project and the
-preview deployment through the Vercel connector — tell it the repository name
-and it will link the project with **root directory `web`** and deploy.
-
-To do it yourself instead:
-
-```bash
-cd "C:/Users/Dinesh Makwana/OneDrive/Desktop/Standard Automation Website/web" && npx vercel --name standard-automation
-```
-
-Answer the prompts: link to the existing scope `standard`, set the root
-directory to the current folder, and accept the detected Next.js settings.
-`npx vercel --prod` promotes it afterwards.
+Once the GitHub app is authorised, the connector can drive this instead.
 
 ## Vercel project settings that matter
 
