@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
-import { categories, products } from "@/lib/catalog";
+import { families, products } from "@/lib/catalog";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -21,8 +21,8 @@ const trail = [
 ];
 
 export default function ContactPage() {
-  const formProducts = products.map(({ slug, name, category }) => ({ slug, name, category }));
-  const formCategories = categories.map(({ slug, name }) => ({ slug, name }));
+  const formProducts = products.map(({ id, name, familyId }) => ({ id, name, familyId }));
+  const formFamilies = families.map(({ id, name }) => ({ id, name }));
 
   return (
     <>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                 </div>
               }
             >
-              <EnquiryForm products={formProducts} categories={formCategories} />
+              <EnquiryForm products={formProducts} families={formFamilies} />
             </Suspense>
           </div>
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
+import { Media } from "@/components/ui/media";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -30,14 +30,7 @@ export default function ProjectsPage() {
       <JsonLd data={breadcrumbJsonLd(trail)} />
 
       <section className="relative isolate overflow-hidden bg-ink">
-        <Image
-          src="/images/photography/warehouse-interior.jpg"
-          alt="Interior of a large distribution warehouse"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-35"
-        />
+        <Media id="warehouse-interior" sizes="100vw" priority decorative className="opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
         <div className="shell relative py-14 lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />

@@ -1,64 +1,282 @@
 [
-  { "source": "/index.html", "destination": "/", "permanent": true },
-  { "source": "/about-us.html", "destination": "/about", "permanent": true },
-  { "source": "/clients.html", "destination": "/about", "permanent": true },
-  { "source": "/enquiry.html", "destination": "/contact", "permanent": true },
-  { "source": "/contact.html", "destination": "/contact", "permanent": true },
-
-  { "source": "/rolling-shutters.html", "destination": "/products/rolling-shutters", "permanent": true },
-  { "source": "/m-s-rolling-shutters.html", "destination": "/products/rolling-shutters/galvanized-rolling-shutters", "permanent": true },
-  { "source": "/g-i-rolling-shutters.html", "destination": "/products/rolling-shutters/insulated-rolling-shutters", "permanent": true },
-  { "source": "/aluminium-rolling-shutters.html", "destination": "/products/rolling-shutters/aluminium-rolling-shutters", "permanent": true },
-  { "source": "/aluminium-single-wall.html", "destination": "/products/rolling-shutters/aluminium-single-wall-rolling-shutters", "permanent": true },
-  { "source": "/fire-proof-rolling-shutters.html", "destination": "/products/rolling-shutters/fire-rated-rolling-shutters", "permanent": true },
-  { "source": "/fire-proof-shutters.html", "destination": "/products/rolling-shutters/fire-proof-shutters", "permanent": true },
-  { "source": "/polycarbonate-rolling-shutters.html", "destination": "/products/rolling-shutters/polycarbonate-rolling-shutters", "permanent": true },
-  { "source": "/polycarbonate.html", "destination": "/products/rolling-shutters/polycarbonate-rolling-shutters", "permanent": true },
-  { "source": "/m-s-grill-rolling-shutters.html", "destination": "/products/rolling-shutters/bright-bar-rolling-shutters", "permanent": true },
-  { "source": "/perforated-shutters.html", "destination": "/products/rolling-shutters/perforated-rolling-shutters", "permanent": true },
-
-  { "source": "/automatic-gates.html", "destination": "/products/entrance-automation", "permanent": true },
-  { "source": "/sliding-gate.html", "destination": "/products/entrance-automation/automatic-sliding-gates", "permanent": true },
-  { "source": "/swing-gate.html", "destination": "/products/entrance-automation/swing-gates", "permanent": true },
-  { "source": "/telescoping-gate.html", "destination": "/products/entrance-automation/telescopic-gates", "permanent": true },
-  { "source": "/retractable-gates.html", "destination": "/products/entrance-automation/retractable-gates", "permanent": true },
-  { "source": "/sliding-glass-door.html", "destination": "/products/entrance-automation/automatic-sliding-glass-doors", "permanent": true },
-
-  { "source": "/automatic-doors.html", "destination": "/products/industrial-doors", "permanent": true },
-  { "source": "/high-speed-roll-up.html", "destination": "/products/industrial-doors", "permanent": true },
-  { "source": "/high-speed-door.html", "destination": "/products/industrial-doors/high-speed-roll-up-doors", "permanent": true },
-  { "source": "/high-speed-roll-up-door.html", "destination": "/products/industrial-doors/high-speed-roll-up-doors", "permanent": true },
-  { "source": "/high-speed-fold-up-doors.html", "destination": "/products/industrial-doors/high-speed-fold-up-doors", "permanent": true },
-  { "source": "/high-speed-self-repairing-doors.html", "destination": "/products/industrial-doors/high-speed-self-repairing-doors", "permanent": true },
-  { "source": "/high-speed-industrial-door.html", "destination": "/products/industrial-doors/high-speed-industrial-doors", "permanent": true },
-  { "source": "/overhead-sectional-doors.html", "destination": "/products/industrial-doors/overhead-sectional-doors", "permanent": true },
-  { "source": "/sectional-door.html", "destination": "/products/industrial-doors/overhead-sectional-doors", "permanent": true },
-  { "source": "/garage-door.html", "destination": "/products/industrial-doors/aluminium-garage-doors", "permanent": true },
-  { "source": "/residential-garage-door.html", "destination": "/products/industrial-doors/residential-garage-doors", "permanent": true },
-  { "source": "/fire-sliding-door.html", "destination": "/products/industrial-doors/fire-sliding-doors", "permanent": true },
-
-  { "source": "/loading-bay-equipment.html", "destination": "/products/loading-bay", "permanent": true },
-  { "source": "/dock-house.html", "destination": "/products/loading-bay/dock-houses", "permanent": true },
-  { "source": "/dock-levellers.html", "destination": "/products/loading-bay/dock-levellers", "permanent": true },
-
-  { "source": "/bollard.html", "destination": "/products/security-access/bollards", "permanent": true },
-  { "source": "/turnstile.html", "destination": "/products/security-access", "permanent": true },
-  { "source": "/automatic-barriers.html", "destination": "/products/security-access", "permanent": true },
-  { "source": "/tripod-turnstile.html", "destination": "/products/security-access/tripod-turnstiles", "permanent": true },
-  { "source": "/flap-barrier.html", "destination": "/products/security-access/flap-barriers", "permanent": true },
-  { "source": "/full-height-barrier.html", "destination": "/products/security-access/full-height-turnstiles", "permanent": true },
-  { "source": "/boom-barriers.html", "destination": "/products/security-access/boom-barriers", "permanent": true },
-  { "source": "/retractable-barriers.html", "destination": "/products/security-access/retractable-barriers", "permanent": true },
-
-  { "source": "/motors-accessories.html", "destination": "/products/motors-accessories", "permanent": true },
-  { "source": "/side-motor-with-chain.html", "destination": "/products/motors-accessories/side-motor-with-chain-drive", "permanent": true },
-  { "source": "/side-motor-with-gear.html", "destination": "/products/motors-accessories/side-motor-with-gear-drive", "permanent": true },
-  { "source": "/central-motor.html", "destination": "/products/motors-accessories/central-motor", "permanent": true },
-  { "source": "/tubular-motor.html", "destination": "/products/motors-accessories/tubular-motor", "permanent": true },
-  { "source": "/australian-type-motor.html", "destination": "/products/motors-accessories/australian-type-motor", "permanent": true },
-  { "source": "/sliding-gate-motor.html", "destination": "/products/motors-accessories/sliding-gate-motor", "permanent": true },
-  { "source": "/swing-gate-motor.html", "destination": "/products/motors-accessories/swing-gate-motor", "permanent": true },
-  { "source": "/sliding-glass-door-motor.html", "destination": "/products/motors-accessories/sliding-glass-door-motor", "permanent": true },
-  { "source": "/sectional-door-motor.html", "destination": "/products/motors-accessories/sectional-door-motor", "permanent": true },
-  { "source": "/industrial-sliding-gate-motor.html", "destination": "/products/motors-accessories/industrial-sliding-gate-motor", "permanent": true }
+  {
+    "source": "/index.html",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/about-us.html",
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/clients.html",
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/enquiry.html",
+    "destination": "/contact",
+    "permanent": true
+  },
+  {
+    "source": "/contact.html",
+    "destination": "/contact",
+    "permanent": true
+  },
+  {
+    "source": "/rolling-shutters.html",
+    "destination": "/products/rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/m-s-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/galvanized-steel-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/g-i-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/insulated-double-wall-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/aluminium-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/aluminium-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/aluminium-single-wall.html",
+    "destination": "/products/rolling-shutters/aluminium-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/m-s-grill-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/grille-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/perforated-shutters.html",
+    "destination": "/products/rolling-shutters/perforated-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/polycarbonate-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/polycarbonate-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/polycarbonate.html",
+    "destination": "/products/rolling-shutters/polycarbonate-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/fire-proof-rolling-shutters.html",
+    "destination": "/products/fire-safety-doors/fire-rated-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/fire-proof-shutters.html",
+    "destination": "/products/fire-safety-doors/fire-rated-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/fire-sliding-door.html",
+    "destination": "/products/fire-safety-doors/fire-rated-sliding-doors",
+    "permanent": true
+  },
+  {
+    "source": "/automatic-gates.html",
+    "destination": "/products/automatic-gates",
+    "permanent": true
+  },
+  {
+    "source": "/sliding-gate.html",
+    "destination": "/products/automatic-gates/automatic-sliding-gates",
+    "permanent": true
+  },
+  {
+    "source": "/swing-gate.html",
+    "destination": "/products/automatic-gates/automatic-swing-gates",
+    "permanent": true
+  },
+  {
+    "source": "/telescoping-gate.html",
+    "destination": "/products/automatic-gates/telescopic-sliding-gates",
+    "permanent": true
+  },
+  {
+    "source": "/retractable-gates.html",
+    "destination": "/products/automatic-gates/retractable-gates",
+    "permanent": true
+  },
+  {
+    "source": "/sliding-glass-door.html",
+    "destination": "/products/entrance-automation/automatic-sliding-glass-doors",
+    "permanent": true
+  },
+  {
+    "source": "/automatic-doors.html",
+    "destination": "/products/industrial-doors",
+    "permanent": true
+  },
+  {
+    "source": "/overhead-sectional-doors.html",
+    "destination": "/products/industrial-doors/industrial-sectional-overhead-doors",
+    "permanent": true
+  },
+  {
+    "source": "/sectional-door.html",
+    "destination": "/products/industrial-doors/industrial-sectional-overhead-doors",
+    "permanent": true
+  },
+  {
+    "source": "/garage-door.html",
+    "destination": "/products/industrial-doors/aluminium-garage-doors",
+    "permanent": true
+  },
+  {
+    "source": "/residential-garage-door.html",
+    "destination": "/products/industrial-doors/residential-garage-doors",
+    "permanent": true
+  },
+  {
+    "source": "/high-speed-roll-up.html",
+    "destination": "/products/high-speed-doors",
+    "permanent": true
+  },
+  {
+    "source": "/high-speed-door.html",
+    "destination": "/products/high-speed-doors/high-speed-roll-up-doors",
+    "permanent": true
+  },
+  {
+    "source": "/high-speed-roll-up-door.html",
+    "destination": "/products/high-speed-doors/high-speed-roll-up-doors",
+    "permanent": true
+  },
+  {
+    "source": "/high-speed-fold-up-doors.html",
+    "destination": "/products/high-speed-doors/high-speed-fold-up-doors",
+    "permanent": true
+  },
+  {
+    "source": "/high-speed-self-repairing-doors.html",
+    "destination": "/products/high-speed-doors/self-repairing-high-speed-doors",
+    "permanent": true
+  },
+  {
+    "source": "/high-speed-industrial-door.html",
+    "destination": "/products/high-speed-doors/high-speed-insulated-panel-doors",
+    "permanent": true
+  },
+  {
+    "source": "/loading-bay-equipment.html",
+    "destination": "/products/loading-bay",
+    "permanent": true
+  },
+  {
+    "source": "/dock-levellers.html",
+    "destination": "/products/loading-bay/dock-levellers",
+    "permanent": true
+  },
+  {
+    "source": "/dock-house.html",
+    "destination": "/products/loading-bay/dock-shelters-and-houses",
+    "permanent": true
+  },
+  {
+    "source": "/turnstile.html",
+    "destination": "/products/access-control",
+    "permanent": true
+  },
+  {
+    "source": "/automatic-barriers.html",
+    "destination": "/products/access-control",
+    "permanent": true
+  },
+  {
+    "source": "/bollard.html",
+    "destination": "/products/access-control/bollards",
+    "permanent": true
+  },
+  {
+    "source": "/tripod-turnstile.html",
+    "destination": "/products/access-control/tripod-turnstiles",
+    "permanent": true
+  },
+  {
+    "source": "/flap-barrier.html",
+    "destination": "/products/access-control/flap-barriers",
+    "permanent": true
+  },
+  {
+    "source": "/full-height-barrier.html",
+    "destination": "/products/access-control/full-height-turnstiles",
+    "permanent": true
+  },
+  {
+    "source": "/boom-barriers.html",
+    "destination": "/products/access-control/boom-barriers",
+    "permanent": true
+  },
+  {
+    "source": "/retractable-barriers.html",
+    "destination": "/products/access-control/retractable-barriers",
+    "permanent": true
+  },
+  {
+    "source": "/motors-accessories.html",
+    "destination": "/products/motors-automation",
+    "permanent": true
+  },
+  {
+    "source": "/side-motor-with-chain.html",
+    "destination": "/products/motors-automation/side-motors-chain-drive",
+    "permanent": true
+  },
+  {
+    "source": "/side-motor-with-gear.html",
+    "destination": "/products/motors-automation/side-motors-gear-drive",
+    "permanent": true
+  },
+  {
+    "source": "/central-motor.html",
+    "destination": "/products/motors-automation/central-motors",
+    "permanent": true
+  },
+  {
+    "source": "/tubular-motor.html",
+    "destination": "/products/motors-automation/tubular-motors",
+    "permanent": true
+  },
+  {
+    "source": "/australian-type-motor.html",
+    "destination": "/products/motors-automation/australian-type-motors",
+    "permanent": true
+  },
+  {
+    "source": "/sliding-gate-motor.html",
+    "destination": "/products/motors-automation/sliding-gate-operators",
+    "permanent": true
+  },
+  {
+    "source": "/industrial-sliding-gate-motor.html",
+    "destination": "/products/motors-automation/industrial-sliding-gate-operators",
+    "permanent": true
+  },
+  {
+    "source": "/swing-gate-motor.html",
+    "destination": "/products/motors-automation/swing-gate-operators",
+    "permanent": true
+  },
+  {
+    "source": "/sectional-door-motor.html",
+    "destination": "/products/motors-automation/sectional-door-operators",
+    "permanent": true
+  },
+  {
+    "source": "/sliding-glass-door-motor.html",
+    "destination": "/products/motors-automation/automatic-sliding-door-operators",
+    "permanent": true
+  }
 ]

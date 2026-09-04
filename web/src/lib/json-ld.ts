@@ -73,24 +73,52 @@ export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
  * `review` — there are no published prices and no real review data, and
  * inventing either would be schema spam.
  */
-export function productJsonLd(product: Product, path: string) {
+export function productJsonLd(product: Product, path: string, imageSrc: string | null) {
+  const specs = product.specGroups.flatMap((group) => group.specs);
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.summary,
     url: `${siteConfig.url}${path}`,
-    ...(product.image ? { image: `${siteConfig.url}${product.image}` } : {}),
+    ...(imageSrc ? { image: `${siteConfig.url}${imageSrc}` } : {}),
+    category: product.familyId,
     brand: { "@type": "Brand", name: siteConfig.shortName },
     manufacturer: { "@type": "Organization", name: siteConfig.legalName },
-    ...(product.specs.length > 0
+    ...(specs.length > 0
       ? {
-          additionalProperty: product.specs.map((spec) => ({
+          additionalProperty: specs.map((spec) => ({
             "@type": "PropertyValue",
             name: spec.label,
             value: spec.value,
           })),
         }
       : {}),
+  };
+}
+
+/** CollectionPage + ItemList for a family page. */
+export function familyCollectionJsonLd(
+  name: string,
+  description: string,
+  path: string,
+  items: { name: string; path: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: `${siteConfig.url}${path}`,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: `${siteConfig.url}${item.path}`,
+      })),
+    },
   };
 }

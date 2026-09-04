@@ -5,19 +5,33 @@ import { useSearchParams } from "next/navigation";
 import { submitEnquiry } from "@/app/actions";
 import type { EnquiryResult } from "@/lib/enquiry";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
-import type { Category, Product } from "@/lib/types";
 
 const initialState: EnquiryResult = { status: "idle" };
 
-interface EnquiryFormProps {
-  products: Pick<Product, "slug" | "name" | "category">[];
-  categories: Pick<Category, "slug" | "name">[];
+interface FormProduct {
+  id: string;
+  name: string;
+  familyId: string;
 }
 
-export function EnquiryForm({ products, categories }: EnquiryFormProps) {
+interface FormFamily {
+  id: string;
+  name: string;
+}
+
+export function EnquiryForm({
+  products,
+  families,
+  presetProductId,
+}: {
+  products: FormProduct[];
+  families: FormFamily[];
+  /** Set on a product page so the form arrives already scoped to it. */
+  presetProductId?: string;
+}) {
   const [state, formAction, pending] = useActionState(submitEnquiry, initialState);
   const searchParams = useSearchParams();
-  const preselected = searchParams.get("product") ?? "general";
+  const preselected = presetProductId ?? searchParams.get("product") ?? "general";
   const formId = useId();
 
   if (state.status === "sent" || state.status === "recorded") {
@@ -26,7 +40,7 @@ export function EnquiryForm({ products, categories }: EnquiryFormProps) {
         <h2 className="font-display text-2xl text-steel-900">Thank you — we have your enquiry.</h2>
         {state.status === "sent" ? (
           <p className="mt-4 text-base leading-relaxed text-steel-700">
-            Our team will be in touch shortly. If it is urgent, call or WhatsApp us on{" "}
+            Our engineering team will be in touch shortly. If it is urgent, call or WhatsApp us on{" "}
             {siteConfig.phone}.
           </p>
         ) : (
@@ -61,99 +75,107 @@ export function EnquiryForm({ products, categories }: EnquiryFormProps) {
   const values = state.values ?? {};
 
   return (
-    <form action={formAction} noValidate className="space-y-6">
+    <form action={formAction} noValidate className="space-y-10">
       {/* Honeypot — visually and programmatically hidden from real users. */}
       <div hidden aria-hidden="true">
         <label htmlFor={`${formId}-website`}>Website</label>
         <input id={`${formId}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <Field
-          id={`${formId}-name`}
-          name="name"
-          label="Name"
-          required
-          autoComplete="name"
-          defaultValue={values.name}
-          error={errors.name}
-        />
-        <Field
-          id={`${formId}-company`}
-          name="company"
-          label="Company"
-          autoComplete="organization"
-          defaultValue={values.company}
-          error={errors.company}
-        />
-        <Field
-          id={`${formId}-phone`}
-          name="phone"
-          label="Phone"
-          type="tel"
-          required
-          autoComplete="tel"
-          defaultValue={values.phone}
-          error={errors.phone}
-        />
-        <Field
-          id={`${formId}-email`}
-          name="email"
-          label="Email"
-          type="email"
-          autoComplete="email"
-          defaultValue={values.email}
-          error={errors.email}
-        />
-      </div>
+      <fieldset>
+        <legend className="eyebrow text-amber-deep">01 — Who you are</legend>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <Field id={`${formId}-name`} name="name" label="Name" required autoComplete="name" defaultValue={values.name} error={errors.name} />
+          <Field id={`${formId}-company`} name="company" label="Company" autoComplete="organization" defaultValue={values.company} error={errors.company} />
+          <Field id={`${formId}-phone`} name="phone" label="Phone" type="tel" required autoComplete="tel" defaultValue={values.phone} error={errors.phone} />
+          <Field id={`${formId}-email`} name="email" label="Email" type="email" autoComplete="email" defaultValue={values.email} error={errors.email} />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend className="eyebrow text-amber-deep">02 — The opening</legend>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-steel-600">
+          These five answers decide most of the specification. Approximate is fine — we would rather
+          start from a rough number than from nothing.
+        </p>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <Field id={`${formId}-width`} name="width" label="Clear width" placeholder="e.g. 4200 mm" defaultValue={values.width} error={errors.width} />
+          <Field id={`${formId}-height`} name="height" label="Clear height" placeholder="e.g. 4000 mm" defaultValue={values.height} error={errors.height} />
+          <Field id={`${formId}-application`} name="application" label="Application" placeholder="e.g. warehouse dispatch bay" defaultValue={values.application} error={errors.application} />
+          <Field id={`${formId}-location`} name="location" label="Site location" placeholder="e.g. Chakan, Pune" defaultValue={values.location} error={errors.location} />
+          <div className="sm:col-span-2">
+            <label htmlFor={`${formId}-usage`} className="eyebrow block text-steel-500">
+              Usage
+            </label>
+            <select
+              id={`${formId}-usage`}
+              name="usage"
+              defaultValue={values.usage ?? ""}
+              className="mt-3 h-12 w-full rounded-edge border border-line bg-paper-raised px-4 text-sm text-steel-900 focus-visible:border-steel-900 focus-visible:outline-none"
+            >
+              <option value="">Not sure yet</option>
+              <option value="light">Light — a few cycles a day</option>
+              <option value="medium">Medium — tens of cycles a day</option>
+              <option value="heavy">Heavy — hundreds of cycles a day</option>
+              <option value="continuous">Continuous — in use through the shift</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend className="eyebrow text-amber-deep">03 — What you need</legend>
+        <div className="mt-6 space-y-6">
+          <div>
+            <label htmlFor={`${formId}-product`} className="eyebrow block text-steel-500">
+              Product or solution
+            </label>
+            <select
+              id={`${formId}-product`}
+              name="product"
+              defaultValue={preselected}
+              className="mt-3 h-12 w-full rounded-edge border border-line bg-paper-raised px-4 text-sm text-steel-900 focus-visible:border-steel-900 focus-visible:outline-none"
+            >
+              <option value="general">Not sure — please advise</option>
+              {families.map((family) => (
+                <optgroup key={family.id} label={family.name}>
+                  {products
+                    .filter((product) => product.familyId === family.id)
+                    .map((product) => (
+                      <option key={product.id} value={product.id}>
+                        {product.name}
+                      </option>
+                    ))}
+                </optgroup>
+              ))}
+            </select>
+          </div>
+
+          <Field
+            id={`${formId}-message`}
+            name="message"
+            label="Message"
+            required
+            multiline
+            placeholder="Anything else that matters — site constraints, headroom, what the opening has to separate, timescale."
+            defaultValue={values.message}
+            error={errors.message}
+          />
+        </div>
+      </fieldset>
 
       <div>
-        <label htmlFor={`${formId}-product`} className="eyebrow block text-steel-500">
-          Product or solution
-        </label>
-        <select
-          id={`${formId}-product`}
-          name="product"
-          defaultValue={preselected}
-          className="mt-3 h-12 w-full rounded-edge border border-line bg-paper-raised px-4 text-sm text-steel-900 focus-visible:border-steel-900 focus-visible:outline-none"
+        <button
+          type="submit"
+          disabled={pending}
+          className="inline-flex min-h-13 w-full items-center justify-center rounded-edge bg-amber px-7 font-semibold text-ink transition-colors hover:bg-[#ff9426] disabled:opacity-60 sm:w-auto"
         >
-          <option value="general">General enquiry</option>
-          {categories.map((category) => (
-            <optgroup key={category.slug} label={category.name}>
-              {products
-                .filter((product) => product.category === category.slug)
-                .map((product) => (
-                  <option key={product.slug} value={product.slug}>
-                    {product.name}
-                  </option>
-                ))}
-            </optgroup>
-          ))}
-        </select>
+          {pending ? "Sending…" : "Send enquiry"}
+        </button>
+        <p className="mt-4 text-xs leading-relaxed text-steel-500">
+          We use your details only to respond to this enquiry.
+        </p>
       </div>
-
-      <Field
-        id={`${formId}-message`}
-        name="message"
-        label="Message"
-        required
-        multiline
-        placeholder="Opening width and height, daily traffic, site location, and anything else that matters."
-        defaultValue={values.message}
-        error={errors.message}
-      />
-
-      <button
-        type="submit"
-        disabled={pending}
-        className="inline-flex min-h-13 w-full items-center justify-center rounded-edge bg-amber px-7 font-semibold text-ink transition-colors hover:bg-[#ff9426] disabled:opacity-60 sm:w-auto"
-      >
-        {pending ? "Sending…" : "Send enquiry"}
-      </button>
-
-      <p className="text-xs leading-relaxed text-steel-500">
-        We use your details only to respond to this enquiry.
-      </p>
     </form>
   );
 }
@@ -189,7 +211,7 @@ function Field({
     (error ? "border-red-600 focus-visible:border-red-700" : "border-line focus-visible:border-steel-900");
 
   return (
-    <div className={multiline ? "" : undefined}>
+    <div>
       <label htmlFor={id} className="eyebrow block text-steel-500">
         {label}
         {required && <span className="ml-1 text-amber-deep">*</span>}

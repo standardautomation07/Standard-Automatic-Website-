@@ -42,3 +42,16 @@ Replace them with owned project photography before/soon after launch.
 - `gate-sliding.jpg` — https://unsplash.com/photos/photo-1494122412770-c4f61930150f — A yellow and black site gate
 - `gate-driveway.jpg` — https://unsplash.com/photos/photo-1645005049035-c35644b627ba — A gated driveway entrance
 - `parking-entry.jpg` — https://unsplash.com/photos/photo-1774831958913-51c294dd64e6 — A controlled entrance to a parking structure
+
+## Third batch — industry and engineering imagery
+
+- `industry-cleanroom.jpg` — https://unsplash.com/photos/photo-1748349221526-33b51820b21e — Workers in protective suits inside a cleanroom
+- `industry-cold-chain.jpg` — https://unsplash.com/photos/photo-1741739813128-cb658a9a0f9a — Frozen product stacked in a cold storage facility
+- `industry-food.jpg` — https://unsplash.com/photos/photo-1762330018258-2cf9b8f80618 — Worker filling trays on a food processing line
+- `industry-automotive.jpg` — https://unsplash.com/photos/photo-1777383975764-bec6f5cabf00 — Robotic arms assembling a car body on a production line
+- `industry-healthcare.jpg` — https://unsplash.com/photos/photo-1777269749032-d8d458ae594d — An empty hospital corridor with doors along it
+- `industry-transit.jpg` — https://unsplash.com/photos/photo-1771970574223-24e53a0c5a24 — People walking through a modern airport terminal
+- `industry-retail.jpg` — https://unsplash.com/photos/photo-1701852965474-35ad0d54a0b4 — Shoppers inside a modern shopping mall
+- `engineering-fabrication.jpg` — https://unsplash.com/photos/photo-1598302936625-6075fbd98dd7 — A fabricator grinding a steel beam with sparks flying
+- `engineering-welding.jpg` — https://unsplash.com/photos/photo-1455165814004-1126a7199f9b — A welder working on steel in protective equipment
+- `industry-plant-robotics.jpg` — https://unsplash.com/photos/photo-1716191299980-a6e8827ba10b — An industrial robot arm inside a production plant

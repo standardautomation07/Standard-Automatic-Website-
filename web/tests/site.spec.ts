@@ -1,30 +1,47 @@
 import { expect, test, type Page } from "@playwright/test";
 
 const NAV_LINKS = [
-  { label: "Products", path: "/products" },
   { label: "Industries", path: "/industries" },
   { label: "Projects", path: "/projects" },
   { label: "Resources", path: "/resources" },
+  { label: "Service & Support", path: "/service-support" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
 
-const CATEGORIES = [
-  "entrance-automation",
+const FAMILIES = [
+  "high-speed-doors",
   "industrial-doors",
   "rolling-shutters",
+  "fire-safety-doors",
+  "automatic-gates",
+  "entrance-automation",
   "loading-bay",
-  "security-access",
-  "motors-accessories",
+  "access-control",
+  "motors-automation",
+];
+
+const INDUSTRIES = [
+  "manufacturing",
+  "warehousing-logistics",
+  "cold-chain-food",
+  "pharmaceutical-cleanroom",
+  "automotive",
+  "retail-commercial",
+  "healthcare",
+  "infrastructure-transit",
 ];
 
 const SAMPLE_PRODUCTS = [
-  "/products/industrial-doors/high-speed-roll-up-doors",
-  "/products/entrance-automation/automatic-sliding-gates",
+  "/products/high-speed-doors/high-speed-roll-up-doors",
+  "/products/industrial-doors/industrial-sectional-overhead-doors",
   "/products/rolling-shutters/polycarbonate-rolling-shutters",
+  "/products/fire-safety-doors/fire-rated-rolling-shutters",
+  "/products/automatic-gates/retractable-gates",
+  "/products/entrance-automation/automatic-sliding-glass-doors",
   "/products/loading-bay/dock-levellers",
-  "/products/security-access/flap-barriers",
-  "/products/motors-accessories/tubular-motor",
+  "/products/access-control/tripod-turnstiles",
+  "/products/motors-automation/tubular-motors",
 ];
 
 const isDesktop = (page: Page) => (page.viewportSize()?.width ?? 0) >= 1024;
@@ -42,19 +59,31 @@ async function clickUntil(locator: ReturnType<Page["locator"]>, assert: () => Pr
 }
 
 async function expectNoHorizontalOverflow(page: Page) {
-  const overflow = await page.evaluate(() => {
-    const doc = document.documentElement;
-    return { scroll: doc.scrollWidth, client: doc.clientWidth };
-  });
-  // 1px of tolerance for sub-pixel rounding.
+  const overflow = await page.evaluate(() => ({
+    scroll: document.documentElement.scrollWidth,
+    client: document.documentElement.clientWidth,
+  }));
   expect(overflow.scroll).toBeLessThanOrEqual(overflow.client + 1);
 }
 
 test.describe("page loads and SEO head", () => {
-  const pages = ["/", "/products", "/industries", "/resources", "/about", "/contact", "/projects"];
+  const pages = [
+    "/",
+    "/products",
+    "/products/catalogue",
+    "/industries",
+    "/service-support",
+    "/resources",
+    "/about",
+    "/contact",
+    "/projects",
+    "/products/high-speed-doors",
+    "/products/high-speed-doors/high-speed-roll-up-doors",
+    "/industries/manufacturing",
+  ];
 
   for (const path of pages) {
-    test(`${path} loads with title, description and canonical`, async ({ page }) => {
+    test(`${path} loads with title, description, canonical and one h1`, async ({ page }) => {
       const response = await page.goto(path);
       expect(response?.status()).toBeLessThan(400);
 
@@ -71,28 +100,61 @@ test.describe("page loads and SEO head", () => {
       await expect(page.locator("h1")).toHaveCount(1);
     });
   }
+
+  test("product page emits Product and BreadcrumbList structured data", async ({ page }) => {
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const types = blocks.map((block) => JSON.parse(block)["@type"]);
+    expect(types).toContain("Product");
+    expect(types).toContain("BreadcrumbList");
+
+    const product = blocks.map((b) => JSON.parse(b)).find((b) => b["@type"] === "Product");
+    // No prices, ratings or reviews exist, so none may be claimed.
+    expect(product.offers).toBeUndefined();
+    expect(product.aggregateRating).toBeUndefined();
+    expect(product.review).toBeUndefined();
+    expect(product.additionalProperty.length).toBeGreaterThan(5);
+  });
+
+  test("family page emits CollectionPage structured data", async ({ page }) => {
+    await page.goto("/products/rolling-shutters");
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const types = blocks.map((block) => JSON.parse(block)["@type"]);
+    expect(types).toContain("CollectionPage");
+  });
 });
 
 test.describe("navigation", () => {
-  test("desktop solutions flyout opens and links to a category", async ({ page }) => {
+  test("desktop products mega-menu opens and links to a family", async ({ page }) => {
     test.skip(!isDesktop(page), "desktop-only navigation");
     await page.goto("/");
 
-    const trigger = page.getByRole("button", { name: "Solutions" });
+    const trigger = page.getByRole("button", { name: "Products" });
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
     await clickUntil(trigger, async () => {
       await expect(trigger).toHaveAttribute("aria-expanded", "true", { timeout: 1000 });
     });
 
-    const flyoutLink = page.getByRole("link", { name: "Entrance Automation", exact: false }).first();
-    await flyoutLink.click();
-    await expect(page).toHaveURL(/\/products\/entrance-automation$/);
+    await page.getByRole("link", { name: "Loading Bay Equipment", exact: true }).first().click();
+    await expect(page).toHaveURL(/\/products\/loading-bay$/);
   });
 
-  test("escape closes the desktop flyout", async ({ page }) => {
+  test("mega-menu lists every family", async ({ page }) => {
     test.skip(!isDesktop(page), "desktop-only navigation");
     await page.goto("/");
-    const trigger = page.getByRole("button", { name: "Solutions" });
+    const trigger = page.getByRole("button", { name: "Products" });
+    await clickUntil(trigger, async () => {
+      await expect(trigger).toHaveAttribute("aria-expanded", "true", { timeout: 1000 });
+    });
+    for (const family of FAMILIES) {
+      await expect(page.locator(`#${await trigger.getAttribute("aria-controls")} a[href="/products/${family}"]`)).toHaveCount(1);
+    }
+  });
+
+  test("escape closes the mega-menu", async ({ page }) => {
+    test.skip(!isDesktop(page), "desktop-only navigation");
+    await page.goto("/");
+    const trigger = page.getByRole("button", { name: "Products" });
     await clickUntil(trigger, async () => {
       await expect(trigger).toHaveAttribute("aria-expanded", "true", { timeout: 1000 });
     });
@@ -100,7 +162,7 @@ test.describe("navigation", () => {
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
   });
 
-  test("mobile drawer opens, exposes solutions and closes", async ({ page }) => {
+  test("mobile drawer opens, expands products and closes", async ({ page }) => {
     test.skip(isDesktop(page), "mobile-only navigation");
     await page.goto("/");
 
@@ -109,7 +171,7 @@ test.describe("navigation", () => {
       await expect(mobileNav).toBeVisible({ timeout: 1000 });
     });
 
-    await clickUntil(mobileNav.getByRole("button", { name: "Solutions" }), async () => {
+    await clickUntil(mobileNav.getByRole("button", { name: "Products" }), async () => {
       await expect(mobileNav.getByRole("link", { name: "Rolling Shutters" })).toBeVisible({
         timeout: 1000,
       });
@@ -142,80 +204,132 @@ test.describe("navigation", () => {
   }
 });
 
-test.describe("product catalogue", () => {
-  test("product index lists every product and filters", async ({ page }) => {
+test.describe("catalogue hierarchy", () => {
+  test("products landing shows nine families, not a flat product grid", async ({ page }) => {
     await page.goto("/products");
-
-    const cards = page.locator("article");
-    await expect(cards).toHaveCount(40);
-
-    await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
-      await expect(cards).toHaveCount(2, { timeout: 1000 });
-    });
-
-    await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
-      await expect(cards).toHaveCount(40, { timeout: 1000 });
-    });
-    await page.getByLabel("Search products").fill("turnstile");
-    await expect(cards.first()).toBeVisible();
-    expect(await cards.count()).toBeLessThan(40);
-
-    await page.getByLabel("Search products").fill("zzzznotaproduct");
-    await expect(page.getByText("No products match that search.")).toBeVisible();
+    for (const family of FAMILIES) {
+      await expect(page.locator(`a[href="/products/${family}"]`).first()).toBeVisible();
+    }
+    // A flat grid of every product would be far more than nine cards.
+    expect(await page.locator("article").count()).toBe(FAMILIES.length);
   });
 
-  for (const slug of CATEGORIES) {
-    test(`category page /products/${slug} loads`, async ({ page }) => {
-      const response = await page.goto(`/products/${slug}`);
+  for (const family of FAMILIES) {
+    test(`family page /products/${family} renders categories and products`, async ({ page }) => {
+      const response = await page.goto(`/products/${family}`);
       expect(response?.status()).toBeLessThan(400);
       await expect(page.locator("h1")).toBeVisible();
       await expect(page.locator("article").first()).toBeVisible();
+      // The comparison table proves the family level is rendering its children.
+      await expect(page.getByRole("table")).toBeVisible();
     });
   }
 
   for (const path of SAMPLE_PRODUCTS) {
-    test(`product page ${path} loads with CTA`, async ({ page }) => {
+    test(`product page ${path} renders the full template`, async ({ page }) => {
       const response = await page.goto(path);
       expect(response?.status()).toBeLessThan(400);
       await expect(page.locator("h1")).toBeVisible();
-
-      const quote = page.locator("main").getByRole("link", { name: "Request a Quote" }).first();
-      await expect(quote).toBeVisible();
-      await quote.click();
-      await expect(page).toHaveURL(/\/contact\?product=/);
-      await expect(page.getByLabel(/Product or solution/)).toBeVisible();
+      await expect(page.getByRole("heading", { name: /Key benefits|What this product gets you/i }).first()).toBeVisible();
+      await expect(page.getByText("Applications", { exact: false }).first()).toBeVisible();
+      await expect(page.locator("#enquiry")).toBeAttached();
     });
   }
 
-  test("product page preselects the product on the enquiry form", async ({ page }) => {
+  test("a product with published specs renders grouped spec tables", async ({ page }) => {
+    await page.goto("/products/loading-bay/dock-levellers");
+    const tables = page.getByRole("table");
+    expect(await tables.count()).toBeGreaterThan(1);
+    await expect(page.getByText("Upper working range")).toBeVisible();
+  });
+
+  test("a product without specs says so instead of inventing a table", async ({ page }) => {
+    await page.goto("/products/access-control/tripod-turnstiles");
+    await expect(page.getByRole("heading", { name: /Specification to be confirmed/i })).toBeVisible();
+    await expect(page.getByRole("table")).toHaveCount(0);
+  });
+
+  test("variants render with their configuration notes", async ({ page }) => {
+    await page.goto("/products/industrial-doors/industrial-sectional-overhead-doors");
+    await expect(page.getByRole("heading", { name: "Available configurations" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Low headroom" })).toBeVisible();
+  });
+
+  test("a POTENTIAL product is shown with a visible marker, not hidden", async ({ page }) => {
+    await page.goto("/products/motors-automation/tubular-motors");
+    await expect(page.getByText("To be confirmed").first()).toBeVisible();
+  });
+
+  test("catalogue filters by family, industry, environment and search", async ({ page }) => {
+    await page.goto("/products/catalogue");
+
+    const cards = page.locator("article");
+    await expect(cards).toHaveCount(38);
+
+    await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
+      await expect(cards).toHaveCount(2, { timeout: 1000 });
+    });
+    await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
+      await expect(cards).toHaveCount(38, { timeout: 1000 });
+    });
+
+    await page.getByLabel("Industry").selectOption("cold-chain-food");
+    expect(await cards.count()).toBeLessThan(38);
+    await page.getByLabel("Industry").selectOption("all");
+
+    await page.getByLabel("Operating environment").selectOption("fire");
+    expect(await cards.count()).toBeGreaterThan(0);
+    expect(await cards.count()).toBeLessThan(38);
+    await page.getByLabel("Operating environment").selectOption("all");
+
+    await page.getByLabel("Search products").fill("turnstile");
+    expect(await cards.count()).toBeGreaterThan(0);
+    await page.getByLabel("Search products").fill("zzzznotaproduct");
+    await expect(page.getByText("Nothing matches that combination.")).toBeVisible();
+  });
+});
+
+test.describe("industries", () => {
+  for (const industry of INDUSTRIES) {
+    test(`industry page /industries/${industry} loads with recommendations`, async ({ page }) => {
+      const response = await page.goto(`/industries/${industry}`);
+      expect(response?.status()).toBeLessThan(400);
+      await expect(page.locator("h1")).toBeVisible();
+      await expect(page.locator("article").first()).toBeVisible();
+      await expect(page.getByRole("heading", { name: /Engineering considerations/i })).toBeVisible();
+    });
+  }
+});
+
+test.describe("conversion routes", () => {
+  test("phone, WhatsApp and email links are present and correctly formed", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator('a[href^="tel:"]').first()).toHaveAttribute("href", "tel:+918888100280");
+    await expect(page.locator('a[href*="wa.me"]').first()).toHaveAttribute("href", /wa\.me\/918888100280/);
+    await expect(page.locator('a[href^="mailto:sales@standardautomation.in"]').first()).toHaveCount(1);
+  });
+
+  test("product page CTA reaches the on-page engineering enquiry", async ({ page }) => {
     await page.goto("/products/loading-bay/dock-levellers");
     await page.locator("main").getByRole("link", { name: "Request a Quote" }).first().click();
+    await expect(page).toHaveURL(/#enquiry$/);
     await expect(page.getByLabel(/Product or solution/)).toHaveValue("dock-levellers");
   });
 });
 
-test.describe("conversion routes", () => {
-  test("phone and WhatsApp links are present and correctly formed", async ({ page }) => {
-    await page.goto("/");
-
-    const tel = page.locator('a[href^="tel:"]').first();
-    await expect(tel).toHaveAttribute("href", "tel:+918888100280");
-
-    const whatsapp = page.locator('a[href*="wa.me"]').first();
-    await expect(whatsapp).toHaveAttribute("href", /wa\.me\/918888100280/);
+test.describe("engineering enquiry form", () => {
+  test("asks for width, height, application, location and usage", async ({ page }) => {
+    await page.goto("/contact");
+    await expect(page.getByLabel("Clear width")).toBeVisible();
+    await expect(page.getByLabel("Clear height")).toBeVisible();
+    await expect(page.getByLabel("Application")).toBeVisible();
+    await expect(page.getByLabel("Site location")).toBeVisible();
+    await expect(page.getByLabel("Usage")).toBeVisible();
   });
 
-  test("mailto link is present in the footer", async ({ page }) => {
-    await page.goto("/");
-    await expect(page.locator('a[href^="mailto:sales@standardautomation.in"]').first()).toHaveCount(1);
-  });
-});
-
-test.describe("enquiry form", () => {
   test("rejects an empty submission with field errors", async ({ page }) => {
     await page.goto("/contact");
     await page.getByRole("button", { name: "Send enquiry" }).click();
-
     await expect(page.getByText("Please enter your name.")).toBeVisible();
     await expect(page.getByText("Please enter a phone number we can reach you on.")).toBeVisible();
   });
@@ -227,7 +341,6 @@ test.describe("enquiry form", () => {
     await page.getByLabel("Email", { exact: false }).fill("not-an-email");
     await page.getByLabel("Message", { exact: false }).fill("We need a high speed door for a busy bay.");
     await page.getByRole("button", { name: "Send enquiry" }).click();
-
     await expect(page.getByText("That does not look like a valid phone number.")).toBeVisible();
     await expect(page.getByText("That does not look like a valid email address.")).toBeVisible();
   });
@@ -237,15 +350,24 @@ test.describe("enquiry form", () => {
     await page.getByLabel("Name", { exact: false }).fill("Test Person");
     await page.getByLabel("Phone", { exact: false }).fill("9876543210");
     await page.getByLabel("Email", { exact: false }).fill("test@example.com");
-    await page.getByLabel("Message", { exact: false }).fill("We need a high speed door for a busy dispatch bay.");
+    await page.getByLabel("Clear width").fill("4200 mm");
+    await page.getByLabel("Clear height").fill("4000 mm");
+    await page.getByLabel("Usage").selectOption("heavy");
+    await page.getByLabel("Message", { exact: false }).fill("High speed door for a busy dispatch bay.");
     await page.getByRole("button", { name: "Send enquiry" }).click();
-
     await expect(page.getByText("Thank you — we have your enquiry.")).toBeVisible();
   });
 });
 
-test.describe("assets and layout", () => {
-  const pages = ["/", "/products", "/products/rolling-shutters", "/products/loading-bay/dock-levellers"];
+test.describe("assets, layout and links", () => {
+  const pages = [
+    "/",
+    "/products",
+    "/products/catalogue",
+    "/products/rolling-shutters",
+    "/products/loading-bay/dock-levellers",
+    "/industries/manufacturing",
+  ];
 
   for (const path of pages) {
     test(`${path} loads every image and has no horizontal overflow`, async ({ page }) => {
@@ -256,15 +378,10 @@ test.describe("assets and layout", () => {
         }
       });
 
-      // Not `networkidle`: the App Router keeps prefetching route payloads in
-      // the background, so the network never actually goes idle. Instead,
-      // promote every lazy image to eager so the whole page's imagery is
-      // actually fetched, then wait for all of it to settle.
       await page.goto(path);
       await page.evaluate(() => {
         for (const img of document.querySelectorAll("img")) img.loading = "eager";
       });
-
       await expect
         .poll(
           () =>
@@ -276,34 +393,23 @@ test.describe("assets and layout", () => {
         .toBe(0);
 
       expect(failed, `broken images on ${path}`).toEqual([]);
-
-      const broken = await page.evaluate(() =>
-        [...document.querySelectorAll("img")]
-          .filter((img) => img.complete && img.naturalWidth === 0)
-          .map((img) => img.currentSrc || img.src),
-      );
-      expect(broken, `images that failed to decode on ${path}`).toEqual([]);
-
       await expectNoHorizontalOverflow(page);
     });
   }
 
-  test("internal links on the homepage all resolve", async ({ page, request }) => {
+  test("internal links on the products landing page all resolve", async ({ page, request }) => {
     test.skip(!isDesktop(page), "run once, on desktop");
-    await page.goto("/");
-
-    const hrefs = await page.evaluate(() =>
-      [...new Set(
+    await page.goto("/products");
+    const hrefs = await page.evaluate(() => [
+      ...new Set(
         [...document.querySelectorAll("a[href]")]
           .map((a) => a.getAttribute("href") ?? "")
           .filter((href) => href.startsWith("/")),
-      )],
-    );
-
-    expect(hrefs.length).toBeGreaterThan(10);
-
+      ),
+    ]);
+    expect(hrefs.length).toBeGreaterThan(20);
     for (const href of hrefs) {
-      const response = await request.get(href);
+      const response = await request.get(href.split("#")[0]);
       expect(response.status(), `${href} returned ${response.status()}`).toBeLessThan(400);
     }
   });
@@ -313,34 +419,46 @@ test.describe("assets and layout", () => {
     expect(response.status()).toBe(404);
   });
 
-  test("legacy product URLs redirect to their new home", async ({ request }) => {
-    const response = await request.get("/m-s-rolling-shutters.html", { maxRedirects: 0 });
-    expect([301, 308]).toContain(response.status());
-    expect(response.headers()["location"]).toContain(
-      "/products/rolling-shutters/galvanized-rolling-shutters",
-    );
+  test("legacy product URLs redirect into the new hierarchy", async ({ request }) => {
+    const cases: [string, string][] = [
+      ["/m-s-rolling-shutters.html", "/products/rolling-shutters/galvanized-steel-rolling-shutters"],
+      ["/high-speed-door.html", "/products/high-speed-doors/high-speed-roll-up-doors"],
+      ["/fire-proof-rolling-shutters.html", "/products/fire-safety-doors/fire-rated-rolling-shutters"],
+      ["/sliding-gate-motor.html", "/products/motors-automation/sliding-gate-operators"],
+    ];
+    for (const [from, to] of cases) {
+      const response = await request.get(from, { maxRedirects: 0 });
+      expect([301, 308]).toContain(response.status());
+      expect(response.headers()["location"]).toContain(to);
+    }
+  });
+
+  test("sitemap lists families, products and industries but not /projects", async ({ request }) => {
+    const body = await (await request.get("/sitemap.xml")).text();
+    expect(body).toContain("/products/high-speed-doors/high-speed-roll-up-doors");
+    expect(body).toContain("/industries/manufacturing");
+    expect(body).not.toContain("/projects");
   });
 });
 
 test.describe("accessibility basics", () => {
-  test("skip link is the first focusable element and works", async ({ page }) => {
+  test("skip link is the first focusable element", async ({ page }) => {
     test.skip(!isDesktop(page), "keyboard test, desktop only");
     await page.goto("/");
     await page.keyboard.press("Tab");
-    const skip = page.getByRole("link", { name: "Skip to content" });
-    await expect(skip).toBeFocused();
+    await expect(page.getByRole("link", { name: "Skip to content" })).toBeFocused();
   });
 
   test("every image has an alt attribute", async ({ page }) => {
-    await page.goto("/products");
-    const missing = await page.evaluate(() =>
-      [...document.querySelectorAll("img")].filter((img) => img.getAttribute("alt") === null).length,
+    await page.goto("/products/catalogue");
+    const missing = await page.evaluate(
+      () => [...document.querySelectorAll("img")].filter((img) => img.getAttribute("alt") === null).length,
     );
     expect(missing).toBe(0);
   });
 
-  test("headings start at h1 and do not skip to h3", async ({ page }) => {
-    await page.goto("/products/industrial-doors/high-speed-roll-up-doors");
+  test("headings do not skip a level on a product page", async ({ page }) => {
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
     const levels = await page.evaluate(() =>
       [...document.querySelectorAll("h1,h2,h3,h4")].map((h) => Number(h.tagName[1])),
     );

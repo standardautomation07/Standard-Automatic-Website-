@@ -1,11 +1,22 @@
 import { products } from "@/lib/catalog";
 
+/**
+ * Engineering enquiry. The extra technical fields are not decoration: clear
+ * width, clear height, application, location and usage are the five inputs
+ * that decide almost every specification in this catalogue, so asking for
+ * them up front turns a quotation into a short conversation.
+ */
 export interface EnquiryInput {
   name: string;
   company: string;
   phone: string;
   email: string;
   product: string;
+  width: string;
+  height: string;
+  application: string;
+  location: string;
+  usage: string;
   message: string;
 }
 
@@ -36,7 +47,7 @@ export function validate(input: EnquiryInput): FieldErrors {
   if (input.email.trim() && !EMAIL.test(input.email.trim()))
     errors.email = "That does not look like a valid email address.";
 
-  if (input.product && input.product !== "general" && !products.some((p) => p.slug === input.product))
+  if (input.product && input.product !== "general" && !products.some((p) => p.id === input.product))
     errors.product = "Please choose a product from the list.";
 
   return errors;
@@ -45,11 +56,10 @@ export function validate(input: EnquiryInput): FieldErrors {
 /**
  * Delivery boundary.
  *
- * No email provider is connected yet (planning/OPEN-BUSINESS-DECISIONS.md
- * item 9/10). Rather than pretend a message was emailed, this records the
- * enquiry in the server log and reports back that it was *recorded*, not
- * *sent* — the UI says so plainly and points the visitor at the phone and
- * WhatsApp routes, which do work.
+ * No email provider is connected yet. Rather than pretend a message was
+ * emailed, this records the enquiry in the server log and reports back that
+ * it was *recorded*, not *sent* — the UI says so plainly and points the
+ * visitor at the phone and WhatsApp routes, which do work.
  *
  * To switch delivery on, implement `sendViaProvider` against whichever
  * provider the business chooses and set ENQUIRY_PROVIDER in the environment.
@@ -61,15 +71,7 @@ export async function deliverEnquiry(input: EnquiryInput): Promise<"sent" | "rec
   if (!provider) {
     console.info(
       "[enquiry] No ENQUIRY_PROVIDER configured — enquiry recorded to log only:",
-      JSON.stringify({
-        receivedAt: new Date().toISOString(),
-        name: input.name,
-        company: input.company,
-        phone: input.phone,
-        email: input.email,
-        product: input.product,
-        message: input.message,
-      }),
+      JSON.stringify({ receivedAt: new Date().toISOString(), ...input }),
     );
     return "recorded";
   }
@@ -81,7 +83,7 @@ export async function deliverEnquiry(input: EnquiryInput): Promise<"sent" | "rec
 async function sendViaProvider(_input: EnquiryInput, provider: string): Promise<void> {
   // Intentionally unimplemented. Wire this to the chosen provider when the
   // business has picked one; throwing here is better than silently dropping
-  // an enquiry that the UI has already told the visitor was sent.
+  // an enquiry the UI has already told the visitor was sent.
   throw new Error(
     `ENQUIRY_PROVIDER is set to "${provider}" but no delivery integration is implemented yet.`,
   );

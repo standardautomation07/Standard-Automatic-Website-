@@ -1,102 +1,134 @@
 # Standard Automation — website (`web/`)
 
-The new Standard Automatic Solutions Pvt. Ltd. website. Built from scratch:
-new information architecture, new design system, new content. It is **not** a
-restyle of the old `standardautomation.in` — the legacy site survives here
-only as researched product facts and a redirect map.
+The Standard Automatic Solutions Pvt Ltd website. Built from market research
+rather than from the previous site: new taxonomy, new content, new structure.
+The old `standardautomation.in` survives here only as (a) evidence of which
+products are actually the company's, and (b) a redirect map.
 
-The earlier `../site/` app (built directly from the old site's structure and
-mega-menu) is superseded by this one and is kept only for reference.
+The earlier `../site/` app is superseded and kept for reference only.
 
 ## Run it
 
 ```bash
 npm install
-npm run dev      # http://localhost:3001
+npm run dev              # http://localhost:3001
 npm run build
 npm start
 npm run lint
-npm run test:e2e # Playwright, against a production build on port 3100
-node scripts/shots.mjs   # QA screenshots at 1440/1280/390/375 into shots/
+npm run test:e2e         # Playwright, production build on port 3100
+node scripts/shots.mjs   # QA screenshots at 1440/1024/768/430/390/375
 ```
 
-## Structure
+## Catalogue architecture
 
-| Path | What it is |
-| --- | --- |
-| `src/app/` | App Router pages. All static; 58 routes prerendered. |
-| `src/data/categories.ts` | The six solution categories. |
-| `src/data/products/*.ts` | 40 products, one file per category. |
-| `src/data/redirects.json` | 301s from every old `.html` URL. |
-| `src/lib/site-config.ts` | The only place business contact details live. |
-| `src/lib/catalog.ts` | Catalogue accessors and the homepage featured set. |
-| `src/lib/enquiry.ts` | Validation and the email-delivery boundary. |
-| `public/images/photography/` | Stand-in photography (Unsplash) — see `CREDITS.md`. |
-| `public/images/brand/` | Logo derived to transparent PNG by `scripts/derive-logo.js`. |
-| `public/images/legacy/` | The old site's asset library. Mostly unusable (see below). |
+The hierarchy is **family → category → product → variant**, with application
+and technical information hanging off the product:
 
-## Rules this codebase follows
+| Level | Count | Where |
+| --- | --- | --- |
+| Family | 9 | `src/data/families.ts` |
+| Category | 20 | `src/data/categories.ts` |
+| Product | 38 | `src/data/products/*.ts` |
+| Variant | 82 | on each product record |
 
-**No invented facts.** Only two company claims are published — founded 2006 in
-Pune, and ISO 9001:2015 registered — because both appear on Standard
-Automation's own published material. There are no invented project counts,
-client numbers, ratings or reviews, and no `offers`/`aggregateRating` in the
-Product schema.
+A **category** is a construction or operating principle — the level at which
+two products genuinely behave differently, not just finish differently. A
+**variant** is the same product built for a different environment or
+configuration, which is where competitors typically inflate a product count.
 
-**Specifications are reproduced, not authored.** A product publishes a spec
-table only where Standard Automation already publishes those figures for the
-line. Where it does not, the page says so and points at "contact us for
-configuration" instead of guessing.
+Categories carry `defaults` for safety, controls, options and maintenance that
+every product in them inherits (`resolveDetail()` merges product over
+category). That is how 38 product pages carry real safety and control detail
+without 38 copies of the same paragraphs.
 
-**Unresolved naming is surfaced, not hidden.** Four rolling shutter URLs and
-one motor URL contradict themselves on the old site (the page title and the
-heading name different products). Those records carry a `namingNote` that is
-rendered on the page as a visible caveat.
+Nothing in the UI hardcodes a product. Every page renders from this data.
 
-**Product lines awaiting confirmation are shown, not dropped.** Motors &
-Accessories and the two barrier products were live on the old server but
-commented out of its navigation. They are published with a visible "Awaiting
-confirmation" badge rather than silently removed.
+### URLs
 
-**Empty sections stay empty.** `/projects` has no case studies because there
-is no verified project material; it is `noindex` and excluded from the sitemap
-until there is. `/resources` offers specification guidance rather than fake
-download buttons, because no brochures exist yet.
+```
+/products                              families landing
+/products/catalogue                    search + filter across all 38
+/products/[family]                     family page (categories, comparison, considerations)
+/products/[family]/[product]           product page
+/industries                            industry landing
+/industries/[industry]                 industry page
+```
+
+69 routes, all statically prerendered.
+
+## Research trail
+
+Everything in the catalogue traces back to three files at the repo root:
+
+- `research/market-product-research.md` — the market study: ten manufacturers
+  read, the taxonomy conclusions drawn from them, the specification fields
+  this market conventionally publishes, and the fire-rating standards that
+  apply in India.
+- `research/product-taxonomy.json` — the structural taxonomy. `tests/taxonomy.spec.ts`
+  fails if it and `src/data` ever disagree, id for id.
+- `research/product-source-matrix.csv` — per product: sources, evidence,
+  confidence and recommended website status.
+
+## Content rules this codebase enforces
+
+**Business status.** `CONFIRMED` products were published by the company with a
+dedicated page, live in its navigation. `POTENTIAL` products were published
+but removed from navigation, or are a configuration of something confirmed —
+they appear with a visible "to be confirmed" marker rather than hidden.
+`NOT_CONFIRMED` market products are absent from `src/data` entirely and exist
+only in the research matrix. A test asserts none has leaked in.
+
+**Specifications.** A spec table appears only where the figures come from
+specifications the company itself publishes. Products without one get an
+explicit "specification to be confirmed" panel, never an invented table.
+
+**Fire ratings.** No product publishes one. A rating belongs to a tested
+assembly — curtain, guides, fixings, motor and release as installed — not to a
+product name. Both fire products say so on the page. A test enforces it.
+
+**Company claims.** Two only: founded 2006 in Pune, and ISO 9001:2015
+registered. Both appear on the company's own published material. No employee
+count, turnover, project totals, client list or factory size appears anywhere.
+
+**Names we cannot confirm.** Two products carry a rendered `namingNote`
+because the previous site's page title contradicted its own heading or URL.
 
 ## Imagery
 
-The legacy asset library could not be used for product imagery:
+`src/data/images.ts` is the registry. Components take an image **id**, never a
+path, so source, usage status, product association and alt text always travel
+with the picture.
 
-- the `.jpg` files are almost all 1400×298 **page banners with headings burned
-  into the pixels** ("Gates", "Shutters", "doors");
-- the `.png` product thumbnails are 300×294 and sit inside a **decorative
-  octagonal frame** from the old design.
+Two usage classes today:
 
-Product and category imagery is therefore stand-in photography from Unsplash
-(Unsplash License — free for commercial use, no attribution required), listed
-in `public/images/photography/CREDITS.md`. **It is not photography of Standard
-Automation installations** and should be replaced with owned project
-photography. Alt text describes what each photograph actually shows.
+- **Unsplash License** (free commercial use, no attribution) — stand-in
+  photography, credited per file in `public/images/photography/CREDITS.md`.
+  It is *not* photography of Standard Automation installations and should be
+  replaced with owned project photography. Alt text describes only what each
+  photograph actually shows.
+- **Company asset** — clean supplier catalogue renders the company itself
+  published (turnstiles, flap and full height barriers, and two photographs).
+  These render on a light plate via `fit: "contain"`.
 
-Four legacy assets survived and are still used because they are genuine, clean
-images: `intro.jpg`, `bollard-cover.jpg`, and the turnstile/flap/full-height
-catalogue renders, which render on a light plate via `imageFit: "contain"`.
+No competitor imagery is used.
 
-## Enquiry delivery
+## Enquiry
 
-No email provider is connected. `deliverEnquiry` in `src/lib/enquiry.ts` logs
-the submission and returns `"recorded"`, and the form tells the visitor
-plainly that email delivery is not connected yet and points them at phone and
-WhatsApp. To switch delivery on, implement `sendViaProvider` and set
-`ENQUIRY_PROVIDER`; nothing else needs to change.
+The form asks for width, height, application, location and usage as well as
+contact details, because those five answers decide most specifications here.
+
+No email provider is connected. `deliverEnquiry` logs the submission and
+returns `"recorded"`, and the UI says plainly that email delivery is not
+connected and points at phone and WhatsApp. To switch delivery on, implement
+`sendViaProvider` in `src/lib/enquiry.ts` and set `ENQUIRY_PROVIDER`.
 
 ## Redirects
 
-`next.config.ts` serves `src/data/redirects.json` as permanent redirects.
+`next.config.ts` serves `src/data/redirects.json` — 56 permanent redirects
+from the old `.html` URLs into the new hierarchy.
 
-`hotels-in-alibaug.html` is deliberately **absent** — the business retired it,
-so a real 404 is the intended outcome. There is a Playwright test asserting it
-still 404s.
+`hotels-in-alibaug.html` is deliberately absent: the business retired it, so a
+real 404 is the intended outcome. A test asserts it still 404s.
 
-http→https and non-www→www consolidation is not handled here; it belongs to
-the hosting/edge layer.
+http→https and non-www→www consolidation belongs to the hosting/edge layer,
+not here.

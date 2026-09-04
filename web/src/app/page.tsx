@@ -1,29 +1,50 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import { categories } from "@/data/categories";
-import { featuredProducts, products } from "@/lib/catalog";
+import {
+  counts,
+  families,
+  featuredProducts,
+  industries,
+  productsForIndustry,
+} from "@/lib/catalog";
 import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { ProductCard } from "@/components/product/product-card";
-import { CtaBand } from "@/components/cta/cta-band";
-import { ArrowRight, Check } from "@/components/ui/icons";
-import { siteConfig } from "@/lib/site-config";
+import { FamilyCard, ProductCard } from "@/components/product/cards";
+import { EnquiryForm } from "@/components/forms/enquiry-form";
+import { Media } from "@/components/ui/media";
+import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
+import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
+import { families as familyList } from "@/data/families";
+import { products } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "Entrance Automation & Industrial Access Solutions",
-  description:
-    "Standard Automatic Solutions Pvt. Ltd. specifies, supplies and installs entrance automation, industrial doors, rolling shutters, loading bay equipment and access control across India, from Pune.",
+  title: "Engineered Entrance & Industrial Automation",
+  description: `Standard Automatic Solutions Pvt Ltd designs, supplies and installs high speed doors, industrial doors, rolling shutters, fire rated shutters, automatic gates, loading bay equipment and access control — ${counts.products} products across ${counts.families} families, from Pune.`,
   alternates: { canonical: "/" },
 };
 
-const industries = [
-  { name: "Manufacturing", image: "/images/photography/manufacturing.jpg", alt: "Production machinery inside a manufacturing plant" },
-  { name: "Warehousing & Logistics", image: "/images/photography/warehouse-forklift.jpg", alt: "Forklift operating inside a large warehouse" },
-  { name: "Commercial & Corporate", image: "/images/photography/commercial-building.jpg", alt: "Modern commercial building with a glazed facade" },
-  { name: "Retail & Showrooms", image: "/images/photography/rolling-shutters.jpg", alt: "Roller shutters across a retail frontage" },
-  { name: "Healthcare", image: "/images/photography/entrance-automation.jpg", alt: "Automatic glass entrance doors at a building entrance" },
-  { name: "Infrastructure & Transit", image: "/images/photography/security-access.jpg", alt: "Access control turnstiles in a transit building" },
+const capabilities = [
+  {
+    k: "Survey",
+    t: "The opening, measured",
+    d: "Clear width and height, headroom, side room, floor condition, wind exposure and the traffic the opening actually carries. Most specification errors are made before this step is finished.",
+  },
+  {
+    k: "Specify",
+    t: "Constraint before catalogue",
+    d: "Product type, drive sizing and safety layer follow from those constraints. Duty cycle sizes the drive; what the opening separates chooses the leaf.",
+  },
+  {
+    k: "Manufacture",
+    t: "Made to the opening",
+    d: "Shutters, gates and door assemblies are manufactured and supplied to the surveyed dimensions rather than cut down from a stock size.",
+  },
+  {
+    k: "Install",
+    t: "Commissioned, not just fitted",
+    d: "Installation, limit setting, safety device testing and a handover that covers manual release and safe operation for the people who will use it.",
+  },
 ];
 
 const whyPoints = [
@@ -36,63 +57,58 @@ const whyPoints = [
     body: "Photocells, safety edges, obstruction detection, anti-fall devices and manual release are part of the specification from the start. A powered leaf that cannot be stopped or released by hand is not finished.",
   },
   {
-    title: "Built to run every day",
-    body: "Duty cycle governs the drive selection. An operator sized only for leaf weight will overheat on a gate that cycles four hundred times a day long before it fails mechanically.",
+    title: "We publish what we can support",
+    body: "Specification tables appear where we can stand behind the figures and are marked to be confirmed where we cannot. No fire rating is published without a certificate for the installed assembly.",
   },
   {
-    title: "Installed and supported by the people who supplied it",
-    body: "Supply, installation and after-sales support sit with one company, so the site survey, the specification and the commissioning are answerable to the same team.",
+    title: "One company from survey to service",
+    body: "Supply, installation and after-sales support sit together, so the site survey, the specification and the commissioning are answerable to the same team.",
   },
 ];
 
-const clientLogos = ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9", "l10", "l11", "l12"];
-
 export default function HomePage() {
+  const formProducts = products.map(({ id, name, familyId }) => ({ id, name, familyId }));
+  const formFamilies = familyList.map(({ id, name }) => ({ id, name }));
+
   return (
     <>
       {/* 01 — Hero */}
       <section className="relative isolate overflow-hidden bg-ink">
-        <Image
-          src="/images/photography/hero-facility.jpg"
-          alt="Modern industrial building exterior with loading docks"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <Media id="hero-facility" sizes="100vw" priority />
         <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/85 to-ink/35" />
         <div className="grid-rule absolute inset-0" aria-hidden="true" />
 
         <div className="shell relative flex min-h-[calc(100svh-4rem)] flex-col justify-end pb-14 pt-24 lg:min-h-[46rem] lg:pb-20 lg:pt-32">
-          <p className="eyebrow text-amber">Entrance Automation & Industrial Solutions</p>
+          <p className="eyebrow text-amber">Entrance Automation & Industrial Access</p>
 
           <h1 className="mt-7 max-w-5xl text-display-1 text-white">
             Engineered access.
             <br />
-            <span className="text-steel-400">Automated for the way you move.</span>
+            <span className="text-steel-400">Specified against the opening.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-base leading-relaxed text-steel-300 lg:text-lg">
-            Gates, industrial doors, rolling shutters, loading bays and access control — specified
-            against the opening and the traffic it carries, then installed and supported from Pune.
+            High speed doors, industrial doors, rolling shutters, fire rated assemblies, automatic
+            gates, loading bay equipment and access control — engineered, supplied, installed and
+            supported from Pune.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/products" variant="primary" size="lg">
-              Explore Solutions
+              Explore products
               <ArrowRight className="h-5 w-5" />
             </ButtonLink>
-            <ButtonLink href="/contact" variant="onDark" size="lg">
+            <ButtonLink href="#enquiry" variant="onDark" size="lg">
               Request a Quote
             </ButtonLink>
           </div>
 
           <dl className="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-white/15 pt-8 lg:mt-20 lg:grid-cols-4">
             {[
+              { k: "Product families", v: String(counts.families) },
+              { k: "Categories", v: String(counts.categories) },
+              { k: "Products", v: String(counts.products) },
               { k: "Established", v: String(siteConfig.foundedYear) },
-              { k: "Quality system", v: siteConfig.isoCertification },
-              { k: "Solution categories", v: String(categories.length) },
-              { k: "Products in range", v: String(products.length) },
             ].map((stat) => (
               <div key={stat.k}>
                 <dt className="eyebrow text-steel-500">{stat.k}</dt>
@@ -103,15 +119,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 02 — Solutions */}
+      {/* 02 — Product families */}
       <section className="bg-paper py-20 lg:py-28">
         <div className="shell">
           <SectionHeading
             index="02"
-            eyebrow="Solutions"
+            eyebrow="Product families"
             align="between"
-            title="Six lines that cover the whole opening."
-            lede="From the vehicle gate at the boundary to the pedestrian lane in the lobby — and the drive units behind all of it."
+            title="Nine families, grouped by how they work."
+            lede="From the vehicle gate at the boundary to the pedestrian lane in the lobby — and the drives behind all of it."
             action={
               <ButtonLink href="/products" variant="secondary">
                 All products
@@ -121,73 +137,141 @@ export default function HomePage() {
           />
 
           <ul className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-3">
-            {categories.map((category, index) => (
-              <li key={category.slug} className="bg-paper-raised">
-                <Link
-                  href={`/products/${category.slug}`}
-                  className="group flex h-full flex-col focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-amber"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={category.image}
-                      alt={category.imageAlt}
-                      fill
-                      sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
-                    <span className="absolute left-5 top-5 font-mono text-[0.65rem] text-white/70">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div className="flex flex-1 flex-col p-7">
-                    <h3 className="flex items-start justify-between gap-4 font-display text-xl font-medium text-steel-900">
-                      {category.name}
-                      <ArrowRight className="mt-1 h-5 w-5 shrink-0 text-amber transition-transform duration-300 group-hover:translate-x-1" />
-                    </h3>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-steel-600">
-                      {category.summary}
-                    </p>
-                  </div>
-                </Link>
+            {families.map((family, index) => (
+              <li key={family.id} className="bg-paper-raised">
+                <FamilyCard family={family} index={index} />
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* 03 — Featured products */}
-      <section className="bg-paper-sunken py-20 lg:py-28">
+      {/* 03 — Solutions by industry */}
+      <section className="bg-ink py-20 lg:py-28">
         <div className="shell">
           <SectionHeading
             index="03"
-            eyebrow="Featured products"
+            eyebrow="Solutions by industry"
+            tone="dark"
             align="between"
-            title="A representative product from each line."
+            title="Where these systems go to work."
             action={
-              <ButtonLink href="/products" variant="secondary">
-                Browse all {products.length}
+              <ButtonLink href="/industries" variant="onDark">
+                All industries
+                <ArrowRight className="h-4 w-4" />
+              </ButtonLink>
+            }
+          />
+
+          <ul className="mt-14 grid gap-px border border-ink-line bg-ink-line sm:grid-cols-2 lg:grid-cols-4">
+            {industries.map((industry) => (
+              <li key={industry.id} className="group relative aspect-[4/3] overflow-hidden bg-ink">
+                <Media
+                  id={industry.imageId}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  decorative
+                  className="opacity-50 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="font-display text-lg font-medium text-white">
+                    <Link href={`/industries/${industry.id}`} className="before:absolute before:inset-0">
+                      {industry.name}
+                    </Link>
+                  </h3>
+                  <p className="mt-1 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-400">
+                    {productsForIndustry(industry.id).length} products
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 04 — Engineering capabilities */}
+      <section className="border-b border-line bg-paper-sunken py-20 lg:py-28">
+        <div className="shell">
+          <SectionHeading
+            index="04"
+            eyebrow="Engineering capabilities"
+            title="Four steps, in this order."
+            lede="An opening is an engineering problem before it is a product choice. Reversing these steps is what produces a door that is technically correct and practically wrong."
+          />
+          <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+            {capabilities.map((item, index) => (
+              <article key={item.k} className="bg-paper-raised p-7">
+                <p className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</p>
+                <p className="eyebrow mt-4 text-amber-deep">{item.k}</p>
+                <h3 className="mt-3 font-display text-lg font-medium text-steel-900">{item.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-600">{item.d}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 05 — Selected products */}
+      <section className="bg-paper py-20 lg:py-28">
+        <div className="shell">
+          <SectionHeading
+            index="05"
+            eyebrow="Selected products"
+            align="between"
+            title="A representative product from six families."
+            action={
+              <ButtonLink href="/products/catalogue" variant="secondary">
+                Browse all {counts.products}
                 <ArrowRight className="h-4 w-4" />
               </ButtonLink>
             }
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 04 — Why Standard Automation */}
+      {/* 06 — Projects / installations */}
+      <section className="relative isolate overflow-hidden bg-ink py-20 lg:py-28">
+        <Media id="warehouse-interior" sizes="100vw" decorative className="opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/60" />
+        <div className="shell relative grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6">
+            <SectionHeading
+              index="06"
+              eyebrow="Projects & installations"
+              tone="dark"
+              title="Installation references, being documented properly."
+              lede="We are writing up completed installations — site, opening, the products specified and why — and confirming each client reference before it is published. Rather than fill a page with stock photography and invented case studies, it stays empty until there is real material to put there."
+            />
+            <div className="mt-10">
+              <ButtonLink href="/projects" variant="onDark">
+                What is coming
+                <ArrowRight className="h-4 w-4" />
+              </ButtonLink>
+            </div>
+          </div>
+          <div className="lg:col-span-6 lg:pt-8">
+            <p className="text-base leading-relaxed text-steel-300">
+              If you want references relevant to your sector in the meantime, ask us directly and we
+              will share what the client has agreed we can share.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 07 — Why Standard Automatic */}
       <section className="bg-paper py-20 lg:py-28">
         <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHeading
-              index="04"
-              eyebrow="Why Standard Automation"
-              title="An opening is an engineering problem before it is a product choice."
-              lede="The failure modes on automated openings are predictable: an operator sized for weight but not duty, a safety layer added after commissioning, a door specified for a width rather than for what it has to separate."
+              index="07"
+              eyebrow="Why Standard Automatic"
+              title="The failure modes here are predictable."
+              lede="An operator sized for weight but not duty. A safety layer added after commissioning. A door specified for a width rather than for what it has to separate. A fire rating quoted from a brochure instead of a certificate."
             />
             <div className="mt-10">
               <ButtonLink href="/about" variant="secondary">
@@ -199,13 +283,8 @@ export default function HomePage() {
 
           <ul className="lg:col-span-7">
             {whyPoints.map((point, index) => (
-              <li
-                key={point.title}
-                className="grid grid-cols-[auto_1fr] gap-x-6 border-t border-line py-8 last:border-b"
-              >
-                <span className="font-mono text-xs text-amber">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+              <li key={point.title} className="grid grid-cols-[auto_1fr] gap-x-6 border-t border-line py-8 last:border-b">
+                <span className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="font-display text-lg font-medium text-steel-900">{point.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-steel-600">{point.body}</p>
@@ -216,67 +295,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 05 — Industries */}
-      <section className="bg-ink py-20 lg:py-28">
-        <div className="shell">
-          <SectionHeading
-            index="05"
-            eyebrow="Industries"
-            tone="dark"
-            align="between"
-            title="Where these systems go to work."
-            action={
-              <ButtonLink href="/industries" variant="onDark">
-                Industries in detail
-                <ArrowRight className="h-4 w-4" />
-              </ButtonLink>
-            }
-          />
-
-          <ul className="mt-14 grid gap-px border border-ink-line bg-ink-line sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry) => (
-              <li key={industry.name} className="group relative aspect-[4/3] overflow-hidden bg-ink">
-                <Image
-                  src={industry.image}
-                  alt={industry.alt}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover opacity-55 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-75"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                <h3 className="absolute inset-x-0 bottom-0 p-6 font-display text-lg font-medium text-white">
-                  {industry.name}
-                </h3>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 06 — Installation showcase */}
-      <section className="bg-paper py-20 lg:py-28">
+      {/* 08 — Service & support */}
+      <section className="border-y border-line bg-paper-sunken py-20 lg:py-28">
         <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="relative aspect-[4/3] lg:col-span-7">
-            <Image
-              src="/images/photography/installation.jpg"
-              alt="Technician inspecting a door installation on site"
-              fill
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              className="object-cover"
-            />
+          <div className="relative aspect-[4/3] lg:col-span-6">
+            <Media id="installation" sizes="(min-width: 1024px) 50vw, 100vw" />
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-6">
             <SectionHeading
-              index="06"
-              eyebrow="Installation & service"
+              index="08"
+              eyebrow="Service & support"
               title="The specification is only half of it."
-              lede="A correctly chosen door still fails if the guides are out of plumb, the limits are set wrong, or nobody has explained the manual release to the people who use it. Installation and commissioning are where the specification either holds or does not."
+              lede="A correctly chosen door still fails if the guides are out of plumb, the limits are set wrong, or nobody has explained the manual release to the people who use it."
             />
             <ul className="mt-10 space-y-4">
               {[
                 "Site survey against the actual opening and traffic",
                 "Installation, commissioning and limit setting",
-                "Handover including manual release and safety checks",
+                "Handover covering manual release and safety checks",
                 "Service, spares and maintenance support",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-steel-700">
@@ -285,89 +321,62 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-10">
+              <ButtonLink href="/service-support" variant="secondary">
+                Service & support
+                <ArrowRight className="h-4 w-4" />
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 07 — Technology / engineering */}
-      <section className="border-y border-line bg-paper-sunken py-20 lg:py-28">
-        <div className="shell">
-          <SectionHeading
-            index="07"
-            eyebrow="Engineering"
-            title="What automation actually buys you."
-            lede="An automated opening is rarely bought for convenience. It is bought because the manual alternative costs something measurable — time, energy, safety exposure or control."
-          />
-
-          <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                k: "Cycle time",
-                t: "Time the building stands open",
-                d: "A high speed door on a busy opening cuts the open time per movement from minutes to seconds, which is where the energy and contamination cost actually lives.",
-              },
-              {
-                k: "Separation",
-                t: "Two environments, one opening",
-                d: "Insulated panels and sealed perimeters hold a temperature or cleanliness differential across an aperture that has to be crossed hundreds of times a day.",
-              },
-              {
-                k: "Safety",
-                t: "A powered leaf that stops",
-                d: "Detection, safety edges and obstruction sensing govern every powered movement, with a manual release that works when the power does not.",
-              },
-              {
-                k: "Control",
-                t: "One authorised movement",
-                d: "Access devices at the gate and door line turn an opening into a decision point that can be recorded and audited.",
-              },
-            ].map((item) => (
-              <article key={item.k} className="bg-paper-raised p-7">
-                <p className="eyebrow text-amber-deep">{item.k}</p>
-                <h3 className="mt-4 font-display text-lg font-medium text-steel-900">{item.t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-steel-600">{item.d}</p>
-              </article>
-            ))}
+      {/* 09 — Engineering enquiry */}
+      <section id="enquiry" className="scroll-mt-20 bg-paper py-20 lg:py-28">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              index="09"
+              eyebrow="Engineering enquiry"
+              title="Tell us about the opening."
+              lede="Clear width, clear height, application, location and usage. Those five answers are usually enough for us to come back with a specification and a price."
+            />
+            <div className="mt-8 space-y-4">
+              <a href={telHref()} className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep">
+                <Phone className="h-5 w-5 text-amber" />
+                {siteConfig.phone}
+              </a>
+              <a
+                href={whatsappHref("Hello Standard Automation, I would like a quote.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep"
+              >
+                <WhatsApp className="h-5 w-5 text-amber" />
+                WhatsApp us
+              </a>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="flex items-center gap-3 break-all text-base text-steel-900 hover:text-amber-deep"
+              >
+                <ArrowRight className="h-5 w-5 text-amber" />
+                {siteConfig.email}
+              </a>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <Suspense
+              fallback={
+                <div className="border border-line bg-paper-raised p-8 text-sm text-steel-600">
+                  Loading enquiry form…
+                </div>
+              }
+            >
+              <EnquiryForm products={formProducts} families={formFamilies} />
+            </Suspense>
           </div>
         </div>
       </section>
-
-      {/* 08 — Trust */}
-      <section className="bg-paper py-20 lg:py-24">
-        <div className="shell">
-          <SectionHeading
-            index="08"
-            eyebrow="Track record"
-            title={`Working from Pune since ${siteConfig.foundedYear}.`}
-            lede={`Standard Automatic Solutions Pvt. Ltd. was founded in ${siteConfig.foundedYear} in Pune, Maharashtra, and is an ${siteConfig.isoCertification} registered company.`}
-          />
-
-          <div className="mt-12">
-            <p className="eyebrow text-steel-500">Organisations on our published client list</p>
-            <ul className="mt-6 grid grid-cols-3 items-center gap-px border border-line bg-line sm:grid-cols-4 lg:grid-cols-6">
-              {clientLogos.map((logo) => (
-                <li key={logo} className="flex h-28 items-center justify-center bg-paper-raised p-5">
-                  <Image
-                    src={`/images/legacy/${logo}.png`}
-                    alt=""
-                    width={110}
-                    height={80}
-                    className="h-auto w-[110px] max-w-full opacity-80 mix-blend-multiply"
-                  />
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 max-w-2xl text-xs leading-relaxed text-steel-500">
-              Logos are reproduced from Standard Automation&apos;s existing published client list.
-              Named client references and project attributions are being confirmed before they are
-              published here.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 09 — CTA */}
-      <CtaBand />
     </>
   );
 }

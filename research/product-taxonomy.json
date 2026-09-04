@@ -1,0 +1,406 @@
+{
+  "$comment": "Structural taxonomy for the Standard Automatic Solutions catalogue. Derived from research/market-product-research.md. The website's typed data in web/src/data/catalog mirrors these ids exactly; web/tests/taxonomy.spec.ts asserts they stay in sync. Business status per product is justified in research/product-source-matrix.csv.",
+  "generatedOn": "2026-09-04",
+  "levels": ["family", "category", "product", "variant"],
+  "statuses": {
+    "CONFIRMED": "Standard Automatic Solutions published a dedicated product page for this and it was live in its navigation.",
+    "POTENTIAL": "Published by the company but removed from navigation, or a straightforward configuration of a confirmed product. Shown on the site with a visible 'to be confirmed' marker.",
+    "NOT_CONFIRMED": "Found in market research only. Never published as a Standard Automation product."
+  },
+  "families": [
+    {
+      "id": "industrial-doors",
+      "name": "Industrial Doors",
+      "shortName": "Industrial Doors",
+      "sources": ["S1", "S2", "S3"],
+      "categories": [
+        {
+          "id": "sectional-overhead-doors",
+          "name": "Sectional Overhead Doors",
+          "principle": "Hinged insulated panels running on tracks that turn from vertical to horizontal above the opening.",
+          "products": [
+            {
+              "id": "industrial-sectional-overhead-doors",
+              "name": "Industrial Sectional Overhead Doors",
+              "status": "CONFIRMED",
+              "variants": [
+                { "id": "standard-lift", "name": "Standard lift", "status": "CONFIRMED" },
+                { "id": "high-lift", "name": "High lift", "status": "POTENTIAL" },
+                { "id": "vertical-lift", "name": "Vertical lift", "status": "POTENTIAL" },
+                { "id": "low-headroom", "name": "Low headroom", "status": "POTENTIAL" },
+                { "id": "glazed-vision", "name": "Glazed vision panels", "status": "CONFIRMED" },
+                { "id": "wicket-door", "name": "Wicket access door", "status": "CONFIRMED" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "garage-doors",
+          "name": "Garage Doors",
+          "principle": "Sectional doors sized and finished for vehicle parking rather than industrial duty.",
+          "products": [
+            { "id": "aluminium-garage-doors", "name": "Aluminium Garage Doors", "status": "CONFIRMED", "variants": [
+              { "id": "full-vision", "name": "Full-vision glazed", "status": "CONFIRMED" },
+              { "id": "insulated-panel", "name": "Insulated panel", "status": "CONFIRMED" }
+            ]},
+            { "id": "residential-garage-doors", "name": "Residential Garage Doors", "status": "CONFIRMED", "variants": [
+              { "id": "remote-operated", "name": "Remote operated", "status": "CONFIRMED" },
+              { "id": "manual", "name": "Manual with counterbalance", "status": "CONFIRMED" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "high-speed-doors",
+      "name": "High Speed Doors",
+      "shortName": "High Speed Doors",
+      "sources": ["S1", "S2", "S4", "S5"],
+      "categories": [
+        {
+          "id": "roll-up-high-speed-doors",
+          "name": "Roll-Up High Speed Doors",
+          "principle": "Flexible curtain rolling onto a drum above the opening; the fastest cycle time per rupee of the high speed types.",
+          "products": [
+            {
+              "id": "high-speed-roll-up-doors",
+              "name": "High Speed Roll-Up Doors",
+              "status": "CONFIRMED",
+              "variants": [
+                { "id": "internal", "name": "Internal", "status": "CONFIRMED" },
+                { "id": "external", "name": "External / wind-loaded", "status": "CONFIRMED" },
+                { "id": "food-grade", "name": "Food-grade washdown", "status": "POTENTIAL" },
+                { "id": "cold-store", "name": "Cold store / freezer", "status": "POTENTIAL" },
+                { "id": "cleanroom", "name": "Cleanroom", "status": "POTENTIAL" }
+              ]
+            },
+            {
+              "id": "self-repairing-high-speed-doors",
+              "name": "Self-Repairing High Speed Doors",
+              "status": "CONFIRMED",
+              "variants": [
+                { "id": "internal", "name": "Internal", "status": "CONFIRMED" },
+                { "id": "external", "name": "External", "status": "POTENTIAL" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fold-up-high-speed-doors",
+          "name": "Fold-Up High Speed Doors",
+          "principle": "Curtain gathers into horizontal folds rather than rolling, giving a shallower stack on wide openings.",
+          "products": [
+            { "id": "high-speed-fold-up-doors", "name": "High Speed Fold-Up Doors", "status": "CONFIRMED", "variants": [
+              { "id": "external-wide-span", "name": "External wide span", "status": "CONFIRMED" },
+              { "id": "reinforced-wind-bars", "name": "Wind-bar reinforced", "status": "CONFIRMED" }
+            ]}
+          ]
+        },
+        {
+          "id": "rigid-panel-high-speed-doors",
+          "name": "Rigid Panel High Speed Doors",
+          "principle": "Insulated aluminium sections instead of a fabric curtain, where the opening needs both speed and thermal separation.",
+          "products": [
+            { "id": "high-speed-insulated-panel-doors", "name": "High Speed Insulated Panel Doors", "status": "CONFIRMED", "variants": [
+              { "id": "external", "name": "External / wind-rated", "status": "CONFIRMED" },
+              { "id": "thermal-separation", "name": "Thermal separation", "status": "CONFIRMED" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rolling-shutters",
+      "name": "Rolling Shutters",
+      "shortName": "Rolling Shutters",
+      "sources": ["S1", "S2"],
+      "categories": [
+        {
+          "id": "single-wall-rolling-shutters",
+          "name": "Single-Wall Rolling Shutters",
+          "principle": "A single folded slat profile — the choice when span, security or visibility matters more than insulation.",
+          "products": [
+            { "id": "galvanized-steel-rolling-shutters", "name": "Galvanized Steel Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "manual", "name": "Manual push-pull / gear", "status": "CONFIRMED" },
+              { "id": "motorised", "name": "Motorised", "status": "CONFIRMED" }
+            ]},
+            { "id": "aluminium-rolling-shutters", "name": "Aluminium Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "single-wall", "name": "Single wall", "status": "CONFIRMED" },
+              { "id": "double-wall", "name": "Double wall", "status": "CONFIRMED" }
+            ]},
+            { "id": "grille-rolling-shutters", "name": "Grille Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "bright-bar", "name": "Bright bar lattice", "status": "CONFIRMED" }
+            ]},
+            { "id": "perforated-rolling-shutters", "name": "Perforated Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "perforated-slat", "name": "Perforated slat", "status": "CONFIRMED" }
+            ]},
+            { "id": "polycarbonate-rolling-shutters", "name": "Polycarbonate Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "transparent", "name": "Fully transparent", "status": "CONFIRMED" },
+              { "id": "mixed-slat", "name": "Mixed polycarbonate and steel slat", "status": "POTENTIAL" }
+            ]}
+          ]
+        },
+        {
+          "id": "insulated-rolling-shutters",
+          "name": "Insulated Rolling Shutters",
+          "principle": "Double-wall slat with an insulating core, where the opening separates two thermal or acoustic environments.",
+          "products": [
+            { "id": "insulated-double-wall-rolling-shutters", "name": "Insulated Double-Wall Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "galvanised-insulated", "name": "Galvanised insulated", "status": "CONFIRMED" },
+              { "id": "aluminium-insulated", "name": "Aluminium insulated", "status": "POTENTIAL" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fire-safety-doors",
+      "name": "Fire & Safety Doors",
+      "shortName": "Fire & Safety",
+      "sources": ["S1", "S2", "S10"],
+      "categories": [
+        {
+          "id": "fire-rated-shutters",
+          "name": "Fire Rated Shutters",
+          "principle": "A rolling shutter built to hold a compartment line for a tested duration.",
+          "products": [
+            { "id": "fire-rated-rolling-shutters", "name": "Fire Rated Rolling Shutters", "status": "CONFIRMED", "variants": [
+              { "id": "insulated-double-wall", "name": "Galvanised double-wall insulated", "status": "CONFIRMED" },
+              { "id": "auto-close-release", "name": "Alarm-linked auto-close", "status": "POTENTIAL" }
+            ]}
+          ]
+        },
+        {
+          "id": "fire-rated-doors",
+          "name": "Fire Rated Doors",
+          "principle": "Sliding leaves on compartment and controlled-area openings.",
+          "products": [
+            { "id": "fire-rated-sliding-doors", "name": "Fire Rated Sliding Doors", "status": "CONFIRMED", "variants": [
+              { "id": "automatic", "name": "Automatic operation", "status": "CONFIRMED" },
+              { "id": "lead-lined", "name": "Lead-lined / shielded", "status": "CONFIRMED" },
+              { "id": "vision-panel", "name": "Glazed vision panel", "status": "CONFIRMED" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automatic-gates",
+      "name": "Automatic Gates",
+      "shortName": "Automatic Gates",
+      "sources": ["S1", "S2", "S7"],
+      "categories": [
+        {
+          "id": "sliding-gates",
+          "name": "Sliding Gates",
+          "principle": "Leaf runs parallel to the boundary — the default where there is no room for a swing arc.",
+          "products": [
+            { "id": "automatic-sliding-gates", "name": "Automatic Sliding Gates", "status": "CONFIRMED", "variants": [
+              { "id": "tracked", "name": "Track guided", "status": "CONFIRMED" },
+              { "id": "cantilever", "name": "Cantilever", "status": "POTENTIAL" }
+            ]},
+            { "id": "telescopic-sliding-gates", "name": "Telescopic Sliding Gates", "status": "CONFIRMED", "variants": [
+              { "id": "two-leaf", "name": "Two-leaf nesting", "status": "CONFIRMED" },
+              { "id": "three-leaf", "name": "Three-leaf nesting", "status": "POTENTIAL" }
+            ]}
+          ]
+        },
+        {
+          "id": "swing-gates",
+          "name": "Swing Gates",
+          "principle": "Hinged leaves, for entrances with clear swing room and moderate duty.",
+          "products": [
+            { "id": "automatic-swing-gates", "name": "Automatic Swing Gates", "status": "CONFIRMED", "variants": [
+              { "id": "articulated-arm", "name": "Articulated arm operator", "status": "CONFIRMED" },
+              { "id": "linear-ram", "name": "Linear ram operator", "status": "CONFIRMED" },
+              { "id": "underground", "name": "Underground operator", "status": "POTENTIAL" }
+            ]}
+          ]
+        },
+        {
+          "id": "retractable-gates",
+          "name": "Retractable Gates",
+          "principle": "Folding lattice leaf that collapses into a short parked stack.",
+          "products": [
+            { "id": "retractable-gates", "name": "Retractable Gates", "status": "CONFIRMED", "variants": [
+              { "id": "trackless", "name": "Trackless", "status": "CONFIRMED" },
+              { "id": "single-track", "name": "Single track", "status": "CONFIRMED" },
+              { "id": "double-track", "name": "Double track", "status": "CONFIRMED" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entrance-automation",
+      "name": "Entrance Automation",
+      "shortName": "Entrance Automation",
+      "sources": ["S2", "S3"],
+      "categories": [
+        {
+          "id": "automatic-sliding-doors",
+          "name": "Automatic Sliding Doors",
+          "principle": "Header-mounted operator driving glass leaves for pedestrian entrances.",
+          "products": [
+            { "id": "automatic-sliding-glass-doors", "name": "Automatic Sliding Glass Doors", "status": "CONFIRMED", "variants": [
+              { "id": "single-leaf", "name": "Single leaf", "status": "CONFIRMED" },
+              { "id": "bi-parting", "name": "Bi-parting", "status": "CONFIRMED" },
+              { "id": "telescopic", "name": "Telescopic", "status": "POTENTIAL" },
+              { "id": "break-out", "name": "Break-out escape leaves", "status": "POTENTIAL" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loading-bay",
+      "name": "Loading Bay Equipment",
+      "shortName": "Loading Bay",
+      "sources": ["S1", "S2", "S6"],
+      "categories": [
+        {
+          "id": "dock-levellers",
+          "name": "Dock Levellers",
+          "principle": "A hinged, load-bearing bridge between the dock floor and the vehicle bed.",
+          "products": [
+            { "id": "dock-levellers", "name": "Dock Levellers", "status": "CONFIRMED", "variants": [
+              { "id": "swing-lip", "name": "Swing lip", "status": "CONFIRMED" },
+              { "id": "telescopic-lip", "name": "Telescopic lip", "status": "POTENTIAL" }
+            ]}
+          ]
+        },
+        {
+          "id": "dock-shelters",
+          "name": "Dock Shelters & Houses",
+          "principle": "Sealing the opening around a docked vehicle, not just the gap under it.",
+          "products": [
+            { "id": "dock-shelters-and-houses", "name": "Dock Shelters & Dock Houses", "status": "CONFIRMED", "variants": [
+              { "id": "curtain", "name": "Curtain shelter", "status": "CONFIRMED" },
+              { "id": "dock-house", "name": "Dock house", "status": "CONFIRMED" },
+              { "id": "inflatable", "name": "Inflatable shelter", "status": "POTENTIAL" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "access-control",
+      "name": "Access Control & Vehicle Barriers",
+      "shortName": "Access Control",
+      "sources": ["S1", "S2", "S7", "S8"],
+      "categories": [
+        {
+          "id": "pedestrian-access-control",
+          "name": "Pedestrian Access Control",
+          "principle": "Graded by physical resistance: detect, then enforce single passage, then make the line unclimbable.",
+          "products": [
+            { "id": "tripod-turnstiles", "name": "Tripod Turnstiles", "status": "CONFIRMED", "variants": [
+              { "id": "drop-arm", "name": "Drop-arm emergency release", "status": "CONFIRMED" },
+              { "id": "stainless-housing", "name": "Stainless steel housing", "status": "CONFIRMED" }
+            ]},
+            { "id": "flap-barriers", "name": "Flap Barriers", "status": "CONFIRMED", "variants": [
+              { "id": "standard-lane", "name": "Standard lane", "status": "CONFIRMED" },
+              { "id": "accessible-lane", "name": "Wide accessible lane", "status": "CONFIRMED" }
+            ]},
+            { "id": "full-height-turnstiles", "name": "Full Height Turnstiles", "status": "CONFIRMED", "variants": [
+              { "id": "single-lane", "name": "Single rotor", "status": "CONFIRMED" },
+              { "id": "twin-lane", "name": "Twin rotor", "status": "CONFIRMED" }
+            ]}
+          ]
+        },
+        {
+          "id": "vehicle-access-control",
+          "name": "Vehicle Access Control",
+          "principle": "Metering devices at the gate line, and physical vehicle barriers where a decision has to be enforced.",
+          "products": [
+            { "id": "boom-barriers", "name": "Boom Barriers", "status": "POTENTIAL", "variants": [
+              { "id": "straight-boom", "name": "Straight boom", "status": "POTENTIAL" },
+              { "id": "folding-boom", "name": "Folding boom", "status": "POTENTIAL" },
+              { "id": "fence-boom", "name": "Fence boom", "status": "POTENTIAL" }
+            ]},
+            { "id": "bollards", "name": "Bollards", "status": "CONFIRMED", "variants": [
+              { "id": "fixed", "name": "Fixed", "status": "CONFIRMED" },
+              { "id": "removable", "name": "Removable", "status": "CONFIRMED" },
+              { "id": "automatic-rising", "name": "Automatic rising", "status": "POTENTIAL" }
+            ]},
+            { "id": "retractable-barriers", "name": "Retractable Barriers", "status": "POTENTIAL", "variants": [
+              { "id": "powered", "name": "Powered", "status": "POTENTIAL" },
+              { "id": "manual", "name": "Manual", "status": "POTENTIAL" }
+            ]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motors-automation",
+      "name": "Motors & Automation",
+      "shortName": "Motors",
+      "sources": ["S1", "S2"],
+      "categories": [
+        {
+          "id": "shutter-operators",
+          "name": "Shutter Operators",
+          "principle": "Sized against curtain weight and daily cycle count, not opening width.",
+          "products": [
+            { "id": "side-motors-chain-drive", "name": "Side Motors — Chain Drive", "status": "POTENTIAL", "variants": [{ "id": "hand-chain-override", "name": "Hand-chain override", "status": "POTENTIAL" }] },
+            { "id": "side-motors-gear-drive", "name": "Side Motors — Gear Drive", "status": "POTENTIAL", "variants": [{ "id": "crank-override", "name": "Crank override", "status": "POTENTIAL" }] },
+            { "id": "central-motors", "name": "Central Motors", "status": "POTENTIAL", "variants": [{ "id": "wide-span", "name": "Wide span", "status": "POTENTIAL" }] },
+            { "id": "tubular-motors", "name": "Tubular Motors", "status": "POTENTIAL", "variants": [{ "id": "in-barrel", "name": "In-barrel", "status": "POTENTIAL" }] },
+            { "id": "australian-type-motors", "name": "Australian Type Motors", "status": "POTENTIAL", "variants": [{ "id": "external-mount", "name": "External mount", "status": "POTENTIAL" }] }
+          ]
+        },
+        {
+          "id": "gate-operators",
+          "name": "Gate Operators",
+          "principle": "Rolling versus hinged loads behave differently; duty rating usually binds before torque does.",
+          "products": [
+            { "id": "sliding-gate-operators", "name": "Sliding Gate Operators", "status": "POTENTIAL", "variants": [{ "id": "rack-drive", "name": "Rack drive", "status": "POTENTIAL" }] },
+            { "id": "industrial-sliding-gate-operators", "name": "Industrial Sliding Gate Operators", "status": "POTENTIAL", "variants": [{ "id": "high-duty", "name": "High duty cycle", "status": "POTENTIAL" }] },
+            { "id": "swing-gate-operators", "name": "Swing Gate Operators", "status": "POTENTIAL", "variants": [
+              { "id": "articulated-arm", "name": "Articulated arm", "status": "POTENTIAL" },
+              { "id": "linear-ram", "name": "Linear ram", "status": "POTENTIAL" },
+              { "id": "underground", "name": "Underground", "status": "POTENTIAL" }
+            ]}
+          ]
+        },
+        {
+          "id": "door-operators",
+          "name": "Door Operators",
+          "principle": "High-cycle, low-noise duty in occupied buildings, with a defined power-failure behaviour.",
+          "products": [
+            { "id": "sectional-door-operators", "name": "Sectional Door Operators", "status": "POTENTIAL", "variants": [
+              { "id": "shaft-mounted", "name": "Shaft mounted", "status": "POTENTIAL" },
+              { "id": "trolley", "name": "Trolley", "status": "POTENTIAL" }
+            ]},
+            { "id": "automatic-sliding-door-operators", "name": "Automatic Sliding Door Operators", "status": "POTENTIAL", "variants": [{ "id": "belt-drive-header", "name": "Belt-drive header", "status": "POTENTIAL" }] }
+          ]
+        }
+      ]
+    }
+  ],
+  "industries": [
+    { "id": "manufacturing", "name": "Manufacturing" },
+    { "id": "warehousing-logistics", "name": "Warehousing & Logistics" },
+    { "id": "cold-chain-food", "name": "Cold Chain & Food Processing" },
+    { "id": "pharmaceutical-cleanroom", "name": "Pharmaceutical & Cleanroom" },
+    { "id": "automotive", "name": "Automotive" },
+    { "id": "retail-commercial", "name": "Retail & Commercial" },
+    { "id": "healthcare", "name": "Healthcare" },
+    { "id": "infrastructure-transit", "name": "Infrastructure & Transit" }
+  ],
+  "notConfirmedMarketProducts": [
+    "Hangar doors (steel sliding, PVC fabric)",
+    "Cold storage / freezer room doors (sliding, hinged, guillotine)",
+    "Industrial sliding doors as a distinct line",
+    "Revolving doors",
+    "Interlocking security portals / mantraps",
+    "Road blockers and tyre killers",
+    "Vehicle restraint systems",
+    "Mobile dock ramps and lift tables",
+    "Cleanroom hermetic doors",
+    "Explosion-protected (ATEX) and machine-protection high speed door series",
+    "Automatic swing pedestrian doors",
+    "Stainless steel and galvalume rolling shutters"
+  ],
+  "counts": { "families": 9, "categories": 20, "products": 38 }
+}

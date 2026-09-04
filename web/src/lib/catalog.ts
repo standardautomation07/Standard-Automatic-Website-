@@ -1,68 +1,106 @@
-import { categories, categoryBySlug } from "@/data/categories";
-import { entranceAutomationProducts } from "@/data/products/entrance-automation";
+import { families, familyById } from "@/data/families";
+import { categories, categoryById } from "@/data/categories";
+import { industries, industryById } from "@/data/industries";
+import { highSpeedDoorProducts } from "@/data/products/high-speed-doors";
 import { industrialDoorProducts } from "@/data/products/industrial-doors";
 import { rollingShutterProducts } from "@/data/products/rolling-shutters";
+import { fireSafetyProducts } from "@/data/products/fire-safety-doors";
+import { automaticGateProducts } from "@/data/products/automatic-gates";
+import { entranceAutomationProducts } from "@/data/products/entrance-automation";
 import { loadingBayProducts } from "@/data/products/loading-bay";
-import { securityAccessProducts } from "@/data/products/security-access";
-import { motorProducts } from "@/data/products/motors-accessories";
-import type { Category, CategorySlug, Product } from "@/lib/types";
+import { accessControlProducts } from "@/data/products/access-control";
+import { motorProducts } from "@/data/products/motors-automation";
+import type { Category, Family, FamilyId, Product } from "@/lib/types";
 
+export { families, familyById, categories, categoryById, industries, industryById };
+
+/** Every published product, in family order. */
 export const products: Product[] = [
-  ...entranceAutomationProducts,
+  ...highSpeedDoorProducts,
   ...industrialDoorProducts,
   ...rollingShutterProducts,
+  ...fireSafetyProducts,
+  ...automaticGateProducts,
+  ...entranceAutomationProducts,
   ...loadingBayProducts,
-  ...securityAccessProducts,
+  ...accessControlProducts,
   ...motorProducts,
 ];
 
-export { categories, categoryBySlug };
+const productById = new Map(products.map((p) => [p.id, p]));
 
-const productBySlug = new Map(products.map((p) => [p.slug, p]));
-
-export function getProduct(slug: string): Product | undefined {
-  return productBySlug.get(slug);
+export function getProduct(id: string): Product | undefined {
+  return productById.get(id);
 }
 
-export function getCategory(slug: string): Category | undefined {
-  return categories.find((c) => c.slug === slug);
+export function getFamily(id: string): Family | undefined {
+  return families.find((f) => f.id === id);
 }
 
-export function productsInCategory(slug: CategorySlug): Product[] {
-  return products.filter((p) => p.category === slug);
+export function productsInFamily(familyId: FamilyId): Product[] {
+  return products.filter((p) => p.familyId === familyId);
+}
+
+export function categoriesInFamily(familyId: FamilyId): Category[] {
+  return categories.filter((c) => c.familyId === familyId);
+}
+
+export function productsInCategory(categoryId: string): Product[] {
+  return products.filter((p) => p.categoryId === categoryId);
 }
 
 export function relatedProducts(product: Product): Product[] {
-  return product.related
-    .map((slug) => productBySlug.get(slug))
+  return product.related.map((id) => productById.get(id)).filter((p): p is Product => Boolean(p));
+}
+
+export function productsForIndustry(industryId: string): Product[] {
+  const industry = industries.find((i) => i.id === industryId);
+  if (!industry) return [];
+  return industry.recommendedProductIds
+    .map((id) => productById.get(id))
     .filter((p): p is Product => Boolean(p));
 }
 
+export function familyPath(familyId: string): string {
+  return `/products/${familyId}`;
+}
+
 export function productPath(product: Product): string {
-  return `/products/${product.category}/${product.slug}`;
+  return `/products/${product.familyId}/${product.id}`;
 }
 
-export function categoryPath(slug: CategorySlug): string {
-  return `/products/${slug}`;
+export function industryPath(industryId: string): string {
+  return `/industries/${industryId}`;
 }
 
-/** Homepage selection — one representative product per category, plus the
- *  two strongest technical stories. Confirmed lines only. */
-export const featuredSlugs = [
+/**
+ * Category defaults merged under any product-level override. This is what
+ * lets 38 product pages carry safety, control, option and maintenance detail
+ * without 38 copies of the same paragraphs.
+ */
+export function resolveDetail(
+  product: Product,
+  key: "safety" | "controls" | "options" | "maintenance",
+): string[] {
+  return product[key] ?? categoryById[product.categoryId]?.defaults[key] ?? [];
+}
+
+/** Homepage selection: one product from each of six families, confirmed only. */
+export const featuredProductIds = [
   "high-speed-roll-up-doors",
-  "automatic-sliding-gates",
-  "dock-levellers",
+  "industrial-sectional-overhead-doors",
   "polycarbonate-rolling-shutters",
+  "dock-levellers",
   "flap-barriers",
-  "overhead-sectional-doors",
+  "automatic-sliding-gates",
 ] as const;
 
-export const featuredProducts: Product[] = featuredSlugs
-  .map((slug) => productBySlug.get(slug))
+export const featuredProducts: Product[] = featuredProductIds
+  .map((id) => productById.get(id))
   .filter((p): p is Product => Boolean(p));
 
-/** Categories whose entire line is awaiting confirmation from the business. */
-export function categoryIsPending(slug: CategorySlug): boolean {
-  const inCategory = productsInCategory(slug);
-  return inCategory.length > 0 && inCategory.every((p) => p.pendingConfirmation);
-}
+export const counts = {
+  families: families.length,
+  categories: categories.length,
+  products: products.length,
+};

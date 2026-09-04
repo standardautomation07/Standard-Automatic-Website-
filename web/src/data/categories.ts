@@ -1,256 +1,614 @@
 import type { Category } from "@/lib/types";
 
 /**
- * Six solution categories. This taxonomy is new — the old site had eight
- * overlapping menu groups with a duplicated "High Speed Doors" label and
- * doors split across two unrelated branches. Every product from the
- * researched catalogue maps into exactly one category here.
+ * Twenty categories. A category is a construction or operating *principle*,
+ * not a marketing group — it is the level at which two products genuinely
+ * work differently rather than just being finished differently.
  *
- * Copy is original. Product-type explanations are general industry
- * information about how these systems work; nothing here asserts a
- * company-specific capability that has not been confirmed.
+ * `defaults` are inherited by every product in the category. A product may
+ * override any of them; the UI merges product over category. This is why the
+ * site can carry safety and control detail on 38 products without 38 copies
+ * of the same four sentences.
  */
 export const categories: Category[] = [
+  // ------------------------------------------------------- high speed doors
   {
-    slug: "entrance-automation",
-    name: "Entrance Automation",
-    shortName: "Entrance Automation",
-    tagline: "Automated gates and entrance doors for sites that move all day.",
-    summary:
-      "Automatic sliding gates, swing gates, telescopic and retractable gates, and automatic sliding glass doors — sized to the opening and the traffic it carries.",
-    intro: [
-      "An automated entrance has to do two jobs at once: let the right traffic through without delay, and stop reliably when something is in the way. Everything in this category is built around that pairing — a drive sized to the leaf weight and duty cycle, and a detection and safety layer that governs it.",
-      "Selection starts with the opening: clear width, available side-run, slope, wind exposure, and how many cycles a day the entrance will see. A gate that opens forty times a day and one that opens four hundred times are not the same specification, even at the same width.",
-    ],
-    image: "/images/photography/entrance-automation.jpg",
-    imageAlt: "Modern building entrance with automatic glass doors",
-    benefits: [
-      {
-        title: "Sized to the duty cycle",
-        body: "Drive, gearbox and control are matched to leaf weight and daily cycle count, not to opening width alone.",
-      },
-      {
-        title: "Safety edges and detection",
-        body: "Photocells, safety edges and obstruction sensing stop and reverse travel before contact — the baseline for any powered leaf.",
-      },
-      {
-        title: "Manual release",
-        body: "Every powered gate and door can be released and operated by hand during a power failure.",
-      },
-      {
-        title: "Access control ready",
-        body: "Interfaces for card readers, remotes, keypads, loop detectors and intercoms so the entrance fits your existing access system.",
-      },
-    ],
-    applications: [
-      "Factory and plant main gates",
-      "Warehouse and logistics yards",
-      "Corporate campuses and office parks",
-      "Retail and showroom entrances",
-      "Housing societies and gated developments",
-      "Hospitals and institutional buildings",
-    ],
+    id: "roll-up-high-speed-doors",
+    familyId: "high-speed-doors",
+    name: "Roll-Up High Speed Doors",
+    principle:
+      "A flexible curtain rolling onto a drum above the opening. No heavy panel to accelerate, so this is the fastest cycle time per rupee of the high speed types.",
+    defaults: {
+      safety: [
+        "Photocell across the threshold prevents the curtain closing on an obstruction",
+        "Light curtain or safety edge on the leading edge, reversing travel on contact",
+        "Soft bottom beam, so contact with a person or vehicle is absorbed rather than resisted",
+        "Crank handle or manual release for operation during a power failure",
+      ],
+      controls: [
+        "PLC control with inverter and encoder for ramped acceleration and repeatable stop positions",
+        "Adjustable open and close speeds and hold-open time",
+        "Activation by radar, infrared sensor, pull switch, push button, loop detector or remote",
+        "Interface for traffic lights and for interlocking with a second door",
+      ],
+      options: [
+        "Transparent vision sections in the curtain",
+        "Curtain colour to requirement",
+        "Interlock pairing for airlocks and clean transitions",
+        "Stainless steel frame and guides for washdown areas",
+      ],
+      maintenance: [
+        "Curtain, guides and bottom beam should be inspected on a scheduled interval — cycle count, not calendar time, drives wear",
+        "Safety devices should be function-tested at every service visit",
+        "Consumables are the curtain, the bottom beam seal and the drive belt or chain",
+      ],
+    },
   },
   {
-    slug: "industrial-doors",
-    name: "Industrial Doors",
-    shortName: "Industrial Doors",
-    tagline: "High speed, sectional and fire-rated doors for production and storage.",
-    summary:
-      "High speed roll-up, fold-up and self-repairing doors, overhead sectional doors, garage doors and fire sliding doors for industrial and commercial openings.",
-    intro: [
-      "Industrial doors are chosen on cycle time, seal and headroom. A high speed door earns its cost back in a busy opening by cutting the time the building is open to dust, temperature loss and pedestrian risk; a sectional door earns it in insulation and clear headroom.",
-      "The right door for an opening depends on how often it runs, what has to stay in or out, and what is above and beside the opening. Specification works from those constraints rather than from a catalogue default.",
-    ],
-    image: "/images/photography/industrial-doors.jpg",
-    imageAlt: "Closed roll-up industrial door on a warehouse facade",
-    benefits: [
-      {
-        title: "Cycle time that matches the traffic",
-        body: "High speed doors open and close in seconds, so an opening used continuously is not left standing open between movements.",
-      },
-      {
-        title: "Environmental separation",
-        body: "Insulated panels and perimeter sealing hold temperature, keep dust and insects out, and reduce conditioning losses.",
-      },
-      {
-        title: "Impact tolerance",
-        body: "Self-repairing designs re-seat the curtain after a forklift strike instead of taking the opening out of service.",
-      },
-      {
-        title: "Clear headroom",
-        body: "Sectional doors stack overhead, leaving the full opening width and the wall either side usable.",
-      },
-    ],
-    applications: [
-      "Production halls and clean areas",
-      "Cold storage and temperature-controlled rooms",
-      "Warehouse internal and external openings",
-      "Loading and dispatch bays",
-      "Vehicle workshops and service bays",
-      "Pharmaceutical and food processing facilities",
-    ],
+    id: "fold-up-high-speed-doors",
+    familyId: "high-speed-doors",
+    name: "Fold-Up High Speed Doors",
+    principle:
+      "The curtain gathers into horizontal folds instead of rolling, giving a shallower stack above the opening — which is what makes wide external openings practical.",
+    defaults: {
+      safety: [
+        "Photocell across the threshold prevents the curtain closing on an obstruction",
+        "Safety edge on the leading edge, reversing travel on contact",
+        "Manual release for operation during a power failure",
+      ],
+      controls: [
+        "Inverter-controlled drive with adjustable speeds",
+        "Activation by radar, push button, pull switch or remote",
+        "Adjustable hold-open time",
+      ],
+      options: [
+        "Transparent vision sections",
+        "Horizontal wind-bar reinforcement for exposed elevations",
+        "Curtain colour to requirement",
+      ],
+      maintenance: [
+        "Fold straps and wind bars should be inspected on a scheduled interval",
+        "Safety devices should be function-tested at every service visit",
+      ],
+    },
   },
   {
-    slug: "rolling-shutters",
-    name: "Rolling Shutters",
-    shortName: "Rolling Shutters",
-    tagline: "Steel, aluminium, polycarbonate and fire-rated shutter systems.",
-    summary:
-      "Galvanized, aluminium, insulated, perforated, grille, polycarbonate and fire-rated rolling shutters, in manual and motorised configurations.",
-    intro: [
-      "A rolling shutter stores its curtain in a barrel above the opening, so it needs almost no side room and leaves the aperture completely clear when open. That makes it the default for wide industrial openings and for shopfronts where floor space is at a premium.",
-      "The variants differ mainly in curtain material and slat profile: galvanized steel for security and span, aluminium for weight and finish, insulated double-wall for thermal and acoustic separation, perforated or grille for visibility and airflow, polycarbonate for full transparency, and fire-rated for compartment openings.",
-    ],
-    image: "/images/photography/rolling-shutters.jpg",
-    imageAlt: "Closed roller shutters across a commercial frontage",
-    benefits: [
-      {
-        title: "Almost no side room needed",
-        body: "The curtain rolls into a barrel above the lintel, so the full opening width stays usable.",
-      },
-      {
-        title: "Wide spans",
-        body: "Steel curtains cover large industrial apertures that would need multiple leaves in other door types.",
-      },
-      {
-        title: "Material chosen for the job",
-        body: "Security, insulation, visibility, airflow or fire rating — the slat profile follows the requirement.",
-      },
-      {
-        title: "Manual or motorised",
-        body: "Side, central, tubular or Australian-type drives, with manual override on every powered shutter.",
-      },
-    ],
-    applications: [
-      "Factory and warehouse openings",
-      "Shopfronts, showrooms and malls",
-      "Godowns and storage yards",
-      "Basement and parking entries",
-      "Fire compartment openings",
-      "Service counters and kiosks",
-    ],
+    id: "rigid-panel-high-speed-doors",
+    familyId: "high-speed-doors",
+    name: "Rigid Panel High Speed Doors",
+    principle:
+      "Insulated aluminium sections instead of a fabric curtain, for openings that need thermal separation and wind resistance as well as speed.",
+    defaults: {
+      safety: [
+        "Photocell across the threshold and safety edge on the leading section",
+        "Controlled acceleration and deceleration, so a heavier panel is not snatched",
+        "Manual release for operation during a power failure",
+      ],
+      controls: [
+        "PLC control with inverter and encoder",
+        "Adjustable open and close speeds",
+        "Activation by radar, infrared sensor or as specified",
+      ],
+      options: [
+        "Vision panels in selected sections",
+        "Panel finish to requirement",
+        "Interlock pairing for temperature-separated areas",
+      ],
+      maintenance: [
+        "Panel hinges, rollers and guides should be inspected on a scheduled interval",
+        "Seals are a consumable in temperature-separated openings",
+      ],
+    },
+  },
+
+  // ------------------------------------------------------ industrial doors
+  {
+    id: "sectional-overhead-doors",
+    familyId: "industrial-doors",
+    name: "Sectional Overhead Doors",
+    principle:
+      "Hinged insulated panels running on tracks that turn from vertical to horizontal above the opening, so the leaf stores flat under the roof.",
+    defaults: {
+      safety: [
+        "Spring-break device arrests the torsion assembly if a spring fails",
+        "Anti-fall device arrests the leaf if a lifting cable breaks",
+        "Obstruction detection on the operator stops and reverses a closing leaf",
+        "Finger-trap-resistant panel joints",
+      ],
+      controls: [
+        "Push button, key switch, remote handset or rocker switch",
+        "Adjustable open and close limits set at commissioning",
+        "Interface for photocells and traffic lights",
+      ],
+      options: [
+        "Wicket access door, interlocked so the main leaf only runs when it is closed",
+        "Vision panels or a full-vision glazed leaf",
+        "Powder coat or plastisol finish to a specified RAL colour",
+        "High lift, vertical lift or low headroom track arrangements",
+      ],
+      maintenance: [
+        "Springs, cables and rollers are wear items and should be inspected on a scheduled interval",
+        "Safety devices should be function-tested at every service visit",
+        "Seals around the perimeter are a consumable",
+      ],
+    },
   },
   {
-    slug: "loading-bay",
-    name: "Loading Bay Solutions",
-    shortName: "Loading Bay",
-    tagline: "Bridging the gap between the dock floor and the vehicle bed.",
-    summary:
-      "Dock levellers and dock houses/shelters that make the transition from building to trailer level sealed, level and safe to drive across.",
-    intro: [
-      "A loading bay is a joint between two structures that never quite line up: a fixed dock floor and a vehicle bed whose height changes with every truck and every pallet loaded. Levellers close that gap; shelters seal around it.",
-      "Specification is driven by the vehicle mix, the height range to be covered, the capacity of the equipment crossing it, and whether the goods inside need the bay sealed against weather or temperature loss.",
-    ],
-    image: "/images/photography/loading-bay.jpg",
-    imageAlt: "Row of loading docks on a distribution building",
-    benefits: [
-      {
-        title: "Safe, continuous crossing",
-        body: "A levelled ramp lets forklifts drive on and off the trailer without a step or a loose dock plate.",
-      },
-      {
-        title: "Height range coverage",
-        body: "Working range above and below dock level accommodates a mixed vehicle fleet at one bay.",
-      },
-      {
-        title: "Sealed opening",
-        body: "Dock shelters close the gap around the trailer, holding temperature and keeping rain and dust out of the building.",
-      },
-      {
-        title: "Faster turnaround",
-        body: "A fixed, powered bay removes the manual setup that slows each vehicle movement.",
-      },
-    ],
-    applications: [
-      "Distribution centres and 3PL warehouses",
-      "Manufacturing dispatch bays",
-      "Cold chain and food logistics",
-      "Packaging and FMCG plants",
-      "Retail distribution hubs",
-      "Transport and freight terminals",
-    ],
+    id: "garage-doors",
+    familyId: "industrial-doors",
+    name: "Garage Doors",
+    principle:
+      "Sectional doors sized and finished for vehicle parking rather than industrial duty — appearance, insulation and quiet running matter more than cycle count.",
+    defaults: {
+      safety: [
+        "Spring-break device arrests the torsion assembly if a spring fails",
+        "Anti-fall device arrests the leaf if a lifting cable breaks",
+        "Obstruction detection on the operator stops and reverses a closing leaf",
+      ],
+      controls: [
+        "Remote handset and wall control",
+        "Adjustable travel limits",
+        "Manual release cord for use during a power failure",
+      ],
+      options: [
+        "Glazed sections and vision windows",
+        "Wicket access door",
+        "Finish to a specified colour",
+      ],
+      maintenance: [
+        "Springs, cables and rollers are wear items and should be inspected on a scheduled interval",
+        "Perimeter seals are a consumable",
+      ],
+    },
+  },
+
+  // ------------------------------------------------------ rolling shutters
+  {
+    id: "single-wall-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Single-Wall Rolling Shutters",
+    principle:
+      "A single folded slat profile — chosen when span, security, visibility or airflow matters more than insulation.",
+    defaults: {
+      safety: [
+        "Safety edge on the bottom rail where the shutter is motorised",
+        "Obstruction detection on the operator",
+        "Manual override on every powered shutter — hand chain, crank or release",
+        "Guides sized to retain the curtain under wind load",
+      ],
+      controls: [
+        "Push button station, key switch or remote handset",
+        "Adjustable open and close limits set at commissioning",
+        "Three-phase or single-phase supply depending on curtain weight",
+      ],
+      options: [
+        "Locking arrangements at the bottom rail",
+        "Powder coat finish to a specified colour",
+        "Vision or ventilation slats within the curtain",
+        "Motorisation of an existing manual shutter",
+      ],
+      maintenance: [
+        "Guides and bottom rail should be kept clear and inspected on a scheduled interval",
+        "Curtain and barrel bearings are the wear points on a high-cycle shutter",
+      ],
+    },
   },
   {
-    slug: "security-access",
-    name: "Security & Access",
-    shortName: "Security & Access",
-    tagline: "Controlling who enters, on foot and on wheels.",
-    summary:
-      "Bollards, tripod turnstiles, flap barriers, full height turnstiles, boom barriers and retractable barriers for pedestrian and vehicle control.",
-    intro: [
-      "Perimeter and lobby control is a layered problem: vehicles are metered at the gate line, pedestrians are metered at the door line, and each layer has a different tolerance for delay and a different failure mode.",
-      "These products all do the same underlying job — allow one authorised movement at a time and record it — but they differ in throughput, physical resistance and how they behave when power or the access system is lost.",
-    ],
-    image: "/images/photography/security-access.jpg",
-    imageAlt: "Row of access-control turnstiles in a building lobby",
-    benefits: [
-      {
-        title: "One authorised movement at a time",
-        body: "Tripod, flap and full height units enforce single-person passage rather than simply signalling it.",
-      },
-      {
-        title: "Integrates with your access system",
-        body: "Standard dry-contact and reader interfaces for cards, biometrics, QR and visitor systems.",
-      },
-      {
-        title: "Graded physical resistance",
-        body: "From lobby flap barriers up to full height turnstiles and fixed or retractable bollards at the vehicle line.",
-      },
-      {
-        title: "Defined fail state",
-        body: "Free-exit and emergency release behaviour specified up front, so egress is never dependent on power.",
-      },
-    ],
-    applications: [
-      "Factory and plant gate houses",
-      "Corporate lobbies and IT campuses",
-      "Metro, transit and stadium entries",
-      "Data centres and restricted zones",
-      "Parking entries and exits",
-      "Public buildings and institutions",
-    ],
+    id: "insulated-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Insulated Rolling Shutters",
+    principle:
+      "A double-wall slat with an insulating core, for openings that separate two thermal or acoustic environments without giving up the compact roll.",
+    defaults: {
+      safety: [
+        "Safety edge on the bottom rail",
+        "Obstruction detection on the operator",
+        "Manual override on every powered shutter",
+      ],
+      controls: [
+        "Push button station, key switch or remote handset",
+        "Adjustable open and close limits",
+        "Interface for interlocking with a second opening",
+      ],
+      options: [
+        "Perimeter and bottom seals for a tighter thermal envelope",
+        "Powder coat finish to a specified colour",
+        "Vision sections",
+      ],
+      maintenance: [
+        "Seals are a consumable and determine whether the thermal performance is retained",
+        "Guides and barrel bearings should be inspected on a scheduled interval",
+      ],
+    },
+  },
+
+  // ---------------------------------------------------------- fire & safety
+  {
+    id: "fire-rated-shutters",
+    familyId: "fire-safety-doors",
+    name: "Fire Rated Shutters",
+    principle:
+      "A rolling shutter built and tested as an assembly to hold a compartment line for a stated duration.",
+    defaults: {
+      safety: [
+        "Controlled descent on release, so the curtain closes at a governed speed",
+        "Manual release for testing and for use during a power failure",
+        "Escape route strategy defined for the opening before installation",
+        "Safety edge on the bottom rail during normal daily operation",
+      ],
+      controls: [
+        "Normal daily operation by push button, key switch or remote",
+        "Interface to the fire alarm panel for automatic closure",
+        "Fusible link release where an alarm interface is not available",
+      ],
+      options: [
+        "Alarm-linked auto-close with a battery-backed release",
+        "Audible and visual warning before closure",
+        "Powder coat finish to a specified colour",
+      ],
+      maintenance: [
+        "The release mechanism and drop test should be carried out on a scheduled interval as part of fire system maintenance",
+        "Certification paperwork should be held with the building's fire file",
+      ],
+    },
   },
   {
-    slug: "motors-accessories",
-    name: "Motors & Accessories",
-    shortName: "Motors",
-    tagline: "The drive units behind shutters, gates and doors.",
-    summary:
-      "Side, central, tubular and Australian-type shutter motors, plus sliding gate, swing gate, sectional door and sliding glass door operators.",
-    intro: [
-      "The operator is the part of an automated opening that determines its duty cycle, its noise, and how it behaves when the power fails. Sizing is a function of curtain or leaf weight, opening height, and how many cycles a day it has to complete.",
-      "Motor types are not interchangeable: a tubular motor sits inside the barrel of a light shutter, a side motor drives the barrel shaft on a heavy one, and a gate operator has an entirely different load profile again.",
-    ],
-    image: "/images/photography/engineering-panel.jpg",
-    imageAlt: "Engineer operating an industrial equipment control panel",
-    benefits: [
-      {
-        title: "Sized to the load",
-        body: "Torque and duty rating selected against curtain or leaf weight and daily cycle count.",
-      },
-      {
-        title: "Manual override",
-        body: "Chain hoist, crank or release mechanism so the opening still works during a power failure.",
-      },
-      {
-        title: "Limit and safety control",
-        body: "Adjustable travel limits, with obstruction detection and safety edge inputs on the control side.",
-      },
-      {
-        title: "Retrofit friendly",
-        body: "Drive types to suit both new installations and the motorisation of existing manual shutters and gates.",
-      },
-    ],
-    applications: [
-      "New shutter, gate and door installations",
-      "Motorising existing manual shutters",
-      "Replacement of failed or undersized operators",
-      "Service and AMC spares",
-    ],
+    id: "fire-rated-doors",
+    familyId: "fire-safety-doors",
+    name: "Fire Rated Doors",
+    principle:
+      "Sliding leaves on compartment and controlled-area openings, where the door is also in daily hygienic or clinical use.",
+    defaults: {
+      safety: [
+        "Presence detection in the threshold during normal operation",
+        "Defined behaviour on alarm, agreed against the building's fire strategy",
+        "Manual operation available without power",
+      ],
+      controls: [
+        "Automatic operation by sensor, push plate or hands-free switch",
+        "Interface to the fire alarm panel",
+        "Adjustable hold-open time",
+      ],
+      options: [
+        "Lead sheet lining and lead glass vision panels for shielded rooms",
+        "Hands-free elbow or foot activation for clinical areas",
+        "Vision panels in single or double glazing",
+      ],
+      maintenance: [
+        "Sensors, seals and the release mechanism should be function-tested on a scheduled interval",
+        "Certification paperwork should be held with the building's fire file",
+      ],
+    },
+  },
+
+  // -------------------------------------------------------- automatic gates
+  {
+    id: "sliding-gates",
+    familyId: "automatic-gates",
+    name: "Sliding Gates",
+    principle:
+      "The leaf runs parallel to the boundary — the default wherever there is no room for a swing arc into the road or the yard.",
+    defaults: {
+      safety: [
+        "Photocells across the opening stop and reverse travel on obstruction",
+        "Safety edge on the leading edge of the leaf",
+        "Obstruction detection in the operator",
+        "Key-operated manual release for use during a power failure",
+      ],
+      controls: [
+        "Remote handset, card reader, keypad, intercom or loop detector",
+        "Adjustable open and close limits with soft stop at both ends",
+        "Auto-close timer with loop-detector confirmation",
+      ],
+      options: [
+        "Ground loop detectors for free exit and safety",
+        "Warning light and audible warning before movement",
+        "Infill to match the boundary treatment",
+        "Integration with a gatehouse control or access system",
+      ],
+      maintenance: [
+        "Rollers, guides and the drive rack should be kept clear and inspected on a scheduled interval",
+        "Safety devices should be function-tested at every service visit",
+      ],
+    },
+  },
+  {
+    id: "swing-gates",
+    familyId: "automatic-gates",
+    name: "Swing Gates",
+    principle:
+      "Hinged leaves on posts either side of the opening, for entrances with clear swing room and moderate duty.",
+    defaults: {
+      safety: [
+        "Photocells across the opening stop travel when the arc is obstructed",
+        "Soft start and soft stop reduce load on the hinge post",
+        "Manual release on each operator so the leaves can be swung by hand",
+      ],
+      controls: [
+        "Leaf sequencing so a double gate opens and closes in the correct order",
+        "Remote handset, keypad, reader or intercom",
+        "Adjustable travel and hold-open time",
+      ],
+      options: [
+        "Underground operators where the drive must be concealed",
+        "Electric lock at the meeting stile",
+        "Warning light and audible warning before movement",
+      ],
+      maintenance: [
+        "Hinges, posts and operator mountings carry high loads and should be inspected on a scheduled interval",
+        "Safety devices should be function-tested at every service visit",
+      ],
+    },
+  },
+  {
+    id: "retractable-gates",
+    familyId: "automatic-gates",
+    name: "Retractable Gates",
+    principle:
+      "A folding lattice leaf that collapses on itself, so a long opening parks into a very short length of boundary.",
+    defaults: {
+      safety: [
+        "Photocells across the opening",
+        "Obstruction detection in the operator",
+        "Manual release for use during a power failure",
+      ],
+      controls: [
+        "Remote handset with a stated working range",
+        "Push button station or gatehouse control",
+        "Adjustable travel limits",
+      ],
+      options: [
+        "Trackless, single-track or double-track arrangement",
+        "Finish to a specified colour",
+        "Warning light and audible warning before movement",
+      ],
+      maintenance: [
+        "Wheels, lattice pivots and the drive should be inspected on a scheduled interval",
+        "Track, where fitted, must be kept clear of silt and debris",
+      ],
+    },
+  },
+
+  // ---------------------------------------------------- entrance automation
+  {
+    id: "automatic-sliding-doors",
+    familyId: "entrance-automation",
+    name: "Automatic Sliding Doors",
+    principle:
+      "A belt-driven operator concealed in a header above the opening, carrying glass leaves on a track.",
+    defaults: {
+      safety: [
+        "Approach and presence sensors hold the door open while the threshold is occupied",
+        "Safety sensors in the door leaves detect a person in the closing path",
+        "Defined power-failure behaviour: released for manual push, or driven open",
+        "Break-out leaves where the opening sits on an escape route",
+      ],
+      controls: [
+        "Mode selector: automatic, partial open, exit only, locked, hold open",
+        "Adjustable opening width, speed and hold-open time",
+        "Interface for access control, intercom and building management",
+      ],
+      options: [
+        "Bi-parting or telescopic leaf arrangements",
+        "Part-open winter mode to cut conditioning loss",
+        "Break-out escape leaves",
+        "Integration with a card reader or visitor system",
+      ],
+      maintenance: [
+        "Sensors, belt and carriage rollers should be inspected on a scheduled interval",
+        "Break-out function, where fitted, must be tested as part of the escape route check",
+      ],
+    },
+  },
+
+  // ------------------------------------------------------------ loading bay
+  {
+    id: "dock-levellers",
+    familyId: "loading-bay",
+    name: "Dock Levellers",
+    principle:
+      "A hinged, load-bearing platform set into the dock edge, raised hydraulically and lowered onto the vehicle bed.",
+    defaults: {
+      safety: [
+        "Maintenance strut to hold the platform safely while work is carried out beneath it",
+        "Toe guards along the sides of the platform",
+        "Hydraulic hose burst protection to prevent uncontrolled descent",
+        "Emergency stop at the control station",
+      ],
+      controls: [
+        "Dead-man push button control station at the bay",
+        "Interlock with the bay door so the leveller cannot deploy against a closed door",
+        "Interface for traffic lights and vehicle restraint signalling",
+      ],
+      options: [
+        "Telescopic lip for longer reach and more accurate placement",
+        "Traffic lights and bay signalling",
+        "Bumpers, wheel guides and dock bollards",
+        "Weather sealing between the platform and the pit",
+      ],
+      maintenance: [
+        "Hydraulic system, hinges and lip mechanism should be inspected on a scheduled interval",
+        "The pit must be kept clear of debris and free-draining",
+      ],
+    },
+  },
+  {
+    id: "dock-shelters",
+    familyId: "loading-bay",
+    name: "Dock Shelters & Houses",
+    principle:
+      "A frame and sealing curtain, or a built-out housing, that closes the opening around a docked vehicle rather than the gap beneath it.",
+    defaults: {
+      safety: [
+        "Frame designed to deflect on vehicle impact rather than transferring load into the building",
+        "High-visibility guidance markings on the approach",
+      ],
+      controls: [
+        "Passive for a curtain shelter; no controls required",
+        "Bay signalling and traffic lights supplied as part of the bay",
+      ],
+      options: [
+        "Curtain, cushion or inflatable sealing arrangements",
+        "Top and side seal configurations for a mixed vehicle fleet",
+        "Integrated dock lights",
+      ],
+      maintenance: [
+        "Sealing curtains are a consumable and their condition determines whether the bay is still sealed",
+        "Frame fixings should be inspected after any vehicle impact",
+      ],
+    },
+  },
+
+  // --------------------------------------------------------- access control
+  {
+    id: "pedestrian-access-control",
+    familyId: "access-control",
+    name: "Pedestrian Access Control",
+    principle:
+      "Graded by physical resistance: detect and deter at lane speed, then enforce single passage mechanically, then make the line unclimbable.",
+    defaults: {
+      safety: [
+        "Free-exit and emergency release behaviour defined before installation",
+        "Arms or wings release, drop or free-spin on alarm and on power failure",
+        "Lane sensors detect a person or object in the closing path",
+      ],
+      controls: [
+        "Dry-contact and reader interfaces for card, biometric, QR and visitor systems",
+        "Directional control: entry only, exit only, bi-directional or free passage",
+        "Interface to an access control panel and to attendance systems",
+      ],
+      options: [
+        "Integrated reader mountings in the housing",
+        "Directional indicators and passage counting",
+        "Stainless steel or painted housing finishes",
+        "Wide accessible lane alongside standard lanes",
+      ],
+      maintenance: [
+        "Mechanism, sensors and release should be function-tested on a scheduled interval",
+        "The emergency release must be tested as part of the building's escape route check",
+      ],
+    },
+  },
+  {
+    id: "vehicle-access-control",
+    familyId: "access-control",
+    name: "Vehicle Access Control",
+    principle:
+      "Metering devices that regulate and record vehicle movement, and physical barriers where a decision has to be enforced rather than signalled.",
+    defaults: {
+      safety: [
+        "Ground loops and photocells prevent a boom descending onto a vehicle or person",
+        "Manual release for use during a power failure",
+        "High-visibility markings and, where required, warning lights",
+      ],
+      controls: [
+        "Loop detectors, card readers, remotes, ticket machines or a gatehouse control",
+        "Adjustable open and close timing",
+        "Interface to parking management and ANPR systems",
+      ],
+      options: [
+        "Boom skirts and fencing for pedestrian deterrence",
+        "LED-lit booms for night-time visibility",
+        "Traffic lights and signage",
+        "Battery backup for continued operation during a power failure",
+      ],
+      maintenance: [
+        "Spring balance, bearings and the boom mounting should be inspected on a scheduled interval",
+        "Ground loops should be tested after any resurfacing work",
+      ],
+    },
+  },
+
+  // ------------------------------------------------------- motors and drives
+  {
+    id: "shutter-operators",
+    familyId: "motors-automation",
+    name: "Shutter Operators",
+    principle:
+      "Sized against curtain weight, opening height and daily cycle count — duty rating usually binds before torque does.",
+    defaults: {
+      safety: [
+        "Manual override on every drive — hand chain, crank or release",
+        "Adjustable travel limits set at commissioning",
+        "Input for a bottom-rail safety edge and obstruction detection",
+        "Thermal protection appropriate to the duty rating",
+      ],
+      controls: [
+        "Push button station, key switch or remote handset",
+        "Up / stop / down control with optional auto-close",
+        "Single or three phase supply depending on curtain weight",
+      ],
+      options: [
+        "Emergency hand chain of extended length for high openings",
+        "Radio remote control and additional handsets",
+        "Interlocking with a second opening",
+      ],
+      maintenance: [
+        "Drive chains, sprockets and limit gearing are the wear points and should be inspected on a scheduled interval",
+        "Duty rating should be reviewed if the opening's usage pattern changes",
+      ],
+    },
+  },
+  {
+    id: "gate-operators",
+    familyId: "motors-automation",
+    name: "Gate Operators",
+    principle:
+      "Rolling and hinged loads behave differently: a sliding leaf is driven along a rack, a swing leaf is accelerated through an arc against the hinge post.",
+    defaults: {
+      safety: [
+        "Obstruction detection stops and reverses the leaf",
+        "Inputs for photocells and safety edges",
+        "Key-operated manual release",
+        "Soft start and soft stop at both ends of travel",
+      ],
+      controls: [
+        "Remote handset, keypad, card reader, intercom or loop detector",
+        "Adjustable travel limits and auto-close timing",
+        "Leaf sequencing on double swing gates",
+      ],
+      options: [
+        "Ground loop detectors for free exit",
+        "Warning light and audible warning before movement",
+        "Battery backup for operation during a power failure",
+      ],
+      maintenance: [
+        "Rack, pinion and release mechanism should be inspected on a scheduled interval",
+        "Duty rating should be reviewed if traffic through the gate increases",
+      ],
+    },
+  },
+  {
+    id: "door-operators",
+    familyId: "motors-automation",
+    name: "Door Operators",
+    principle:
+      "High-cycle, low-noise duty in occupied buildings, where the defining specification is what the door does when power is lost.",
+    defaults: {
+      safety: [
+        "Obstruction detection stops and reverses a closing leaf",
+        "Presence sensing in the threshold on pedestrian doors",
+        "Defined power-failure behaviour: manual release, or fail-safe open",
+      ],
+      controls: [
+        "Mode selector on pedestrian doors: automatic, partial, exit only, locked, hold open",
+        "Adjustable opening width, speed and hold-open time",
+        "Interface for access control and building management",
+      ],
+      options: [
+        "Battery backup for fail-safe opening",
+        "Part-open mode to reduce conditioning loss",
+        "Integration with a card reader or visitor system",
+      ],
+      maintenance: [
+        "Belt, carriage and sensors should be inspected on a scheduled interval",
+        "On a counterbalanced door, the springs — not the operator — carry the leaf and must be maintained",
+      ],
+    },
   },
 ];
 
-export const categoryBySlug = Object.fromEntries(
-  categories.map((c) => [c.slug, c]),
-) as Record<Category["slug"], Category>;
+export const categoryById = Object.fromEntries(categories.map((c) => [c.id, c])) as Record<
+  string,
+  Category
+>;

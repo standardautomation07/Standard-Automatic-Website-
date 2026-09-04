@@ -1,7 +1,7 @@
 /**
- * Visual QA helper. Captures the key pages at the four viewports named in
- * the build brief so the layout can be inspected at real desktop widths
- * (the in-app preview pane is narrower than 1440px).
+ * Visual QA helper. Captures the key pages at the six viewports named in the
+ * brief, so layout can be inspected at real widths (the in-app preview pane
+ * is narrower than 1440px).
  *
  *   node scripts/shots.mjs [baseUrl]
  */
@@ -13,7 +13,9 @@ const outDir = "shots";
 
 const viewports = [
   { name: "desktop-1440", width: 1440, height: 900 },
-  { name: "laptop-1280", width: 1280, height: 800 },
+  { name: "laptop-1024", width: 1024, height: 768 },
+  { name: "tablet-768", width: 768, height: 1024 },
+  { name: "mobile-430", width: 430, height: 932, mobile: true },
   { name: "mobile-390", width: 390, height: 844, mobile: true },
   { name: "mobile-375", width: 375, height: 812, mobile: true },
 ];
@@ -21,11 +23,15 @@ const viewports = [
 const pages = [
   { name: "home", path: "/" },
   { name: "products", path: "/products" },
-  { name: "category", path: "/products/industrial-doors" },
-  { name: "product", path: "/products/industrial-doors/high-speed-roll-up-doors" },
-  { name: "contact", path: "/contact" },
-  { name: "about", path: "/about" },
+  { name: "catalogue", path: "/products/catalogue" },
+  { name: "family", path: "/products/high-speed-doors" },
+  { name: "product", path: "/products/high-speed-doors/high-speed-roll-up-doors" },
+  { name: "product-nospec", path: "/products/access-control/tripod-turnstiles" },
   { name: "industries", path: "/industries" },
+  { name: "industry", path: "/industries/warehousing-logistics" },
+  { name: "service", path: "/service-support" },
+  { name: "about", path: "/about" },
+  { name: "contact", path: "/contact" },
 ];
 
 await mkdir(outDir, { recursive: true });
@@ -41,13 +47,9 @@ for (const viewport of viewports) {
   const page = await context.newPage();
 
   for (const target of pages) {
-    await page.goto(`${base}${target.path}`, { waitUntil: "networkidle" });
-    await page.waitForTimeout(400);
-    const full = viewport.name.startsWith("desktop") && target.name === "home";
-    await page.screenshot({
-      path: `${outDir}/${viewport.name}-${target.name}.png`,
-      fullPage: full,
-    });
+    await page.goto(`${base}${target.path}`, { waitUntil: "load" });
+    await page.waitForTimeout(500);
+    await page.screenshot({ path: `${outDir}/${viewport.name}-${target.name}.png` });
   }
 
   await context.close();

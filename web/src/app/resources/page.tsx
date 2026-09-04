@@ -5,7 +5,7 @@ import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { ArrowRight } from "@/components/ui/icons";
-import { categories } from "@/lib/catalog";
+import { families } from "@/lib/catalog";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -97,17 +97,17 @@ export default function ResourcesPage() {
           <div className="mt-12">
             <h2 className="eyebrow text-steel-500">Start from a product line</h2>
             <ul className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-3">
-              {categories.map((category) => (
-                <li key={category.slug} className="bg-paper-raised">
+              {families.map((family) => (
+                <li key={family.id} className="bg-paper-raised">
                   <Link
-                    href={`/products/${category.slug}`}
+                    href={`/products/${family.id}`}
                     className="group flex h-full items-start justify-between gap-3 p-6"
                   >
                     <span>
                       <span className="block font-display text-base font-medium text-steel-900">
-                        {category.name}
+                        {family.name}
                       </span>
-                      <span className="mt-1 block text-sm text-steel-600">{category.tagline}</span>
+                      <span className="mt-1 block text-sm text-steel-600">{family.tagline}</span>
                     </span>
                     <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-amber transition-transform group-hover:translate-x-1" />
                   </Link>

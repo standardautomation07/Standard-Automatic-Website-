@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Media } from "@/components/ui/media";
 import { ButtonLink } from "@/components/ui/button";
 import { Phone, WhatsApp } from "@/components/ui/icons";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
@@ -16,13 +16,7 @@ export function CtaBand({
 }: CtaBandProps) {
   return (
     <section className="relative isolate overflow-hidden bg-ink">
-      <Image
-        src="/images/photography/entrance-night.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover opacity-25"
-      />
+      <Media id="entrance-night" sizes="100vw" decorative className="opacity-25" />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/50" />
       <div className="grid-rule absolute inset-0" aria-hidden="true" />
 

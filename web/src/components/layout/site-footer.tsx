@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { categories } from "@/data/categories";
+import { families } from "@/data/families";
+import { industries } from "@/data/industries";
 import { addressLine, mailtoHref, siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { ArrowUpRight, Mail, MapPin, Phone, WhatsApp } from "@/components/ui/icons";
 
 const company = [
   { href: "/about", label: "About" },
-  { href: "/industries", label: "Industries" },
+  { href: "/service-support", label: "Service & Support" },
   { href: "/projects", label: "Projects" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
@@ -15,28 +16,49 @@ export function SiteFooter() {
   return (
     <footer className="bg-ink text-steel-300">
       <div className="shell py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-4">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-3">
             <p className="font-display text-lg font-medium text-white">{siteConfig.legalName}</p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-steel-400">
-              Entrance automation, industrial doors, rolling shutters, loading bay and access
-              control systems — specified, supplied and installed from Pune.
+              Entrance automation and industrial access systems — specified against the opening,
+              supplied, installed and supported from Pune.
             </p>
             <p className="mt-6 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-steel-600">
               {siteConfig.isoCertification} registered · Established {siteConfig.foundedYear}
             </p>
           </div>
 
-          <nav aria-label="Solutions" className="lg:col-span-3">
-            <h2 className="eyebrow text-steel-600">Solutions</h2>
+          <nav aria-label="Product families" className="lg:col-span-3">
+            <h2 className="eyebrow text-steel-600">Products</h2>
             <ul className="mt-5 space-y-3">
-              {categories.map((category) => (
-                <li key={category.slug}>
+              {families.map((family) => (
+                <li key={family.id}>
                   <Link
-                    href={`/products/${category.slug}`}
+                    href={`/products/${family.id}`}
                     className="text-sm text-steel-300 transition-colors hover:text-white"
                   >
-                    {category.name}
+                    {family.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/products/catalogue" className="text-sm text-amber hover:underline">
+                  Full catalogue
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Industries" className="lg:col-span-2">
+            <h2 className="eyebrow text-steel-600">Industries</h2>
+            <ul className="mt-5 space-y-3">
+              {industries.map((industry) => (
+                <li key={industry.id}>
+                  <Link
+                    href={`/industries/${industry.id}`}
+                    className="text-sm text-steel-300 transition-colors hover:text-white"
+                  >
+                    {industry.name}
                   </Link>
                 </li>
               ))}
@@ -59,14 +81,11 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h2 className="eyebrow text-steel-600">Contact</h2>
             <ul className="mt-5 space-y-4 text-sm">
               <li>
-                <a
-                  href={telHref()}
-                  className="flex items-start gap-3 text-steel-300 transition-colors hover:text-white"
-                >
+                <a href={telHref()} className="flex items-start gap-3 text-steel-300 transition-colors hover:text-white">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
                   {siteConfig.phone}
                 </a>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button";
-import { categories } from "@/lib/catalog";
+import { families } from "@/lib/catalog";
 import { ArrowRight } from "@/components/ui/icons";
 
 export default function NotFound() {
@@ -27,14 +27,14 @@ export default function NotFound() {
         </div>
 
         <ul className="mt-16 grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-3">
-          {categories.map((category) => (
-            <li key={category.slug} className="bg-paper-raised">
+          {families.map((family) => (
+            <li key={family.id} className="bg-paper-raised">
               <Link
-                href={`/products/${category.slug}`}
+                href={`/products/${family.id}`}
                 className="group flex h-full items-start justify-between gap-3 p-6"
               >
                 <span className="font-display text-base font-medium text-steel-900">
-                  {category.name}
+                  {family.name}
                 </span>
                 <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-amber transition-transform group-hover:translate-x-1" />
               </Link>

@@ -1,0 +1,463 @@
+import Link from "next/link";
+import { Suspense } from "react";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  categoryById,
+  families,
+  familyById,
+  getProduct,
+  industryById,
+  productPath,
+  products,
+  relatedProducts,
+  resolveDetail,
+} from "@/lib/catalog";
+import { image } from "@/data/images";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { ButtonLink } from "@/components/ui/button";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { ProductCard } from "@/components/product/cards";
+import { EnquiryForm } from "@/components/forms/enquiry-form";
+import { CtaBand } from "@/components/cta/cta-band";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbJsonLd, productJsonLd } from "@/lib/json-ld";
+import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
+import { Media, StatusBadge } from "@/components/ui/media";
+import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
+
+export function generateStaticParams() {
+  return products.map((product) => ({ family: product.familyId, product: product.id }));
+}
+
+type Params = { params: Promise<{ family: string; product: string }> };
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { product: id, family } = await params;
+  const product = getProduct(id);
+  if (!product || product.familyId !== family) return {};
+
+  return {
+    title: product.name,
+    description: product.summary,
+    alternates: { canonical: productPath(product) },
+    openGraph: {
+      title: `${product.name} | Standard Automation`,
+      description: product.summary,
+      images: [{ url: image(product.imageId).src }],
+    },
+  };
+}
+
+export default async function ProductPage({ params }: Params) {
+  const { product: id, family: familyParam } = await params;
+  const product = getProduct(id);
+  if (!product || product.familyId !== familyParam) notFound();
+
+  const family = familyById[product.familyId];
+  const category = categoryById[product.categoryId];
+  const related = relatedProducts(product);
+  const path = productPath(product);
+
+  const safety = resolveDetail(product, "safety");
+  const controls = resolveDetail(product, "controls");
+  const options = resolveDetail(product, "options");
+  const maintenance = resolveDetail(product, "maintenance");
+
+  const trail = [
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: family.name, path: `/products/${family.id}` },
+    { name: product.name, path },
+  ];
+
+  const formProducts = products.map(({ id: pid, name, familyId }) => ({ id: pid, name, familyId }));
+  const formFamilies = families.map(({ id: fid, name }) => ({ id: fid, name }));
+
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd(trail)} />
+      <JsonLd data={productJsonLd(product, path, image(product.imageId).src)} />
+
+      {/* HERO */}
+      <section className="border-b border-line bg-paper">
+        <div className="shell pt-10 lg:pt-14">
+          <Breadcrumb trail={trail} />
+        </div>
+        <div className="shell grid gap-10 pb-12 pt-8 lg:grid-cols-12 lg:gap-16 lg:pb-16">
+          <div className="lg:col-span-6 lg:pt-4">
+            <p className="eyebrow text-amber-deep">
+              <Link href={`/products/${family.id}`} className="hover:underline">
+                {family.name}
+              </Link>
+              <span className="mx-2 text-steel-400">/</span>
+              <span className="text-steel-500">{category.name}</span>
+            </p>
+            <h1 className="mt-5 text-display-2 text-steel-900">{product.name}</h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel-700">{product.tagline}</p>
+
+            {(product.status === "POTENTIAL" || product.namingNote) && (
+              <div className="mt-8 border-l-2 border-amber bg-amber-soft/60 p-5">
+                <StatusBadge status={product.status} />
+                <p className={`text-sm leading-relaxed text-steel-700 ${product.status === "POTENTIAL" ? "mt-3" : ""}`}>
+                  {product.namingNote ??
+                    "This line is published while we confirm it is currently active. Contact us and we will confirm availability and configurations before quoting."}
+                </p>
+              </div>
+            )}
+
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="#enquiry" variant="primary" size="lg">
+                Request a Quote
+              </ButtonLink>
+              <ButtonLink href={telHref()} variant="secondary" size="lg">
+                <Phone className="h-5 w-5" />
+                Talk to an Engineer
+              </ButtonLink>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6">
+            <div className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
+              <Media id={product.imageId} sizes="(min-width: 1024px) 50vw, 100vw" priority />
+            </div>
+          </div>
+        </div>
+
+        {/* QUICK FACTS */}
+        <div className="shell pb-12 lg:pb-14">
+          <dl className="grid gap-px border border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
+            {product.quickFacts.map((fact) => (
+              <div key={fact.label} className="bg-paper-raised p-6">
+                <dt className="eyebrow text-steel-500">{fact.label}</dt>
+                <dd className="mt-2 font-display text-lg leading-snug text-steel-900">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* OVERVIEW */}
+      <section className="bg-paper py-16 lg:py-20">
+        <div className="shell grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-7">
+            <SectionHeading index="01" eyebrow="Overview" title={`About ${product.name}`} />
+            <div className="mt-8">
+              {product.overview.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)} className="mb-5 text-base leading-relaxed text-steel-700 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            <h3 className="eyebrow mt-10 text-steel-500">Operating method</h3>
+            <ol className="mt-5">
+              {product.operatingMethod.map((step, index) => (
+                <li key={step.slice(0, 30)} className="grid grid-cols-[auto_1fr] gap-x-5 border-t border-line py-4 last:border-b">
+                  <span className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</span>
+                  <p className="text-sm leading-relaxed text-steel-700">{step}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <aside className="space-y-6 lg:col-span-5">
+            <div className="border border-line bg-paper-raised p-7">
+              <h2 className="eyebrow text-steel-500">Construction</h2>
+              <ul className="mt-5 space-y-3">
+                {product.construction.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-steel-700">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="border border-line bg-paper-raised p-7">
+              <h2 className="eyebrow text-steel-500">Industries</h2>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {product.industries.map((industryId) => (
+                  <li key={industryId}>
+                    <Link
+                      href={`/industries/${industryId}`}
+                      className="inline-flex rounded-edge border border-line px-3 py-1.5 text-sm text-steel-700 transition-colors hover:border-steel-900 hover:text-steel-900"
+                    >
+                      {industryById[industryId].name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* KEY BENEFITS */}
+      <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+        <div className="shell">
+          <SectionHeading index="02" eyebrow="Key benefits" title="What this product gets you" />
+          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+            {product.benefits.map((benefit) => (
+              <article key={benefit.title} className="bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">{benefit.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-600">{benefit.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* VARIANTS */}
+      {product.variants.length > 0 && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              index="03"
+              eyebrow="Variants"
+              title="Available configurations"
+              lede="The same product, built for a different job. Configurations marked as to be confirmed are ones we are checking against current availability before quoting."
+            />
+            <ul className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2">
+              {product.variants.map((variant) => (
+                <li key={variant.id} className="bg-paper-raised p-7">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="font-display text-lg font-medium text-steel-900">{variant.name}</h3>
+                    <StatusBadge status={variant.status} />
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-steel-600">{variant.note}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* TECHNICAL SPECIFICATIONS */}
+      <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+        <div className="shell">
+          <SectionHeading
+            index="04"
+            eyebrow="Technical specifications"
+            title={product.specGroups.length > 0 ? "Published specifications" : "Specification to be confirmed"}
+            lede={
+              product.specGroups.length > 0
+                ? "Published for this product line. The final configuration is confirmed against your opening before quotation."
+                : undefined
+            }
+          />
+
+          {product.specGroups.length > 0 ? (
+            <div className="mt-12 space-y-8">
+              {product.specGroups.map((group) => (
+                <div key={group.group} className="overflow-x-auto border border-line bg-paper-raised">
+                  <table className="w-full min-w-[34rem] border-collapse text-sm">
+                    <caption className="border-b border-line bg-paper-sunken/60 px-6 py-3 text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
+                      {group.group}
+                    </caption>
+                    <tbody>
+                      {group.specs.map((spec) => (
+                        <tr key={spec.label} className="border-b border-line last:border-b-0">
+                          <th
+                            scope="row"
+                            className="w-2/5 px-6 py-4 text-left align-top font-mono text-xs font-medium uppercase tracking-[0.08em] text-steel-500"
+                          >
+                            {spec.label}
+                          </th>
+                          <td className="px-6 py-4 align-top leading-relaxed text-steel-800">{spec.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-12 border border-line bg-paper-raised p-8">
+              <p className="max-w-2xl text-base leading-relaxed text-steel-700">
+                We do not publish a specification table for this product, because we will not publish
+                a figure we cannot support for your opening. Send us the clear width and height, the
+                daily cycle count and the site conditions and we will issue the specification that
+                actually applies.{" "}
+                <Link href="#enquiry" className="font-medium text-amber-deep underline-offset-4 hover:underline">
+                  Contact us for configuration
+                </Link>
+                .
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* APPLICATIONS */}
+      <section className="bg-paper py-16 lg:py-20">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6">
+            <SectionHeading index="05" eyebrow="Applications" title="Where it is used" />
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              {product.applications.map((application) => (
+                <li key={application} className="flex gap-3 text-sm leading-relaxed text-steel-700">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
+                  {application}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="lg:col-span-6">
+            <div className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
+              <Media id={family.imageId} sizes="(min-width: 1024px) 45vw, 100vw" decorative />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SAFETY & CONTROL */}
+      <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+        <div className="shell">
+          <SectionHeading
+            index="06"
+            eyebrow="Safety & control"
+            title="How it is governed"
+            lede="Detection, control and maintenance are part of the specification, not an add-on decided after commissioning."
+          />
+          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 xl:grid-cols-4">
+            <DetailBlock title="Safety" items={safety} />
+            <DetailBlock title="Control options" items={controls} />
+            <DetailBlock title="Optional features" items={options} />
+            <DetailBlock title="Maintenance" items={maintenance} />
+          </div>
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      {product.galleryIds && product.galleryIds.length > 0 && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading index="07" eyebrow="Gallery" title={`${product.name} in detail`} />
+            <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {product.galleryIds.map((imageId) => (
+                <li key={imageId} className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
+                  <Media id={imageId} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* DOWNLOADS */}
+      <section className="border-t border-line bg-paper py-16 lg:py-20">
+        <div className="shell">
+          <SectionHeading index="08" eyebrow="Downloads" title="Documentation" />
+          <ul className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2">
+            {product.documents.map((doc) => (
+              <li key={doc.title} className="bg-paper-raised p-7">
+                <p className="eyebrow text-steel-500">{doc.kind}</p>
+                <h3 className="mt-3 font-display text-lg font-medium text-steel-900">{doc.title}</h3>
+                {doc.href ? (
+                  <a
+                    href={doc.href}
+                    className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-amber-deep underline-offset-4 hover:underline"
+                  >
+                    Download
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                ) : (
+                  <p className="mt-3 text-sm leading-relaxed text-steel-600">{doc.note}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* RELATED */}
+      {related.length > 0 && (
+        <section className="border-t border-line bg-paper-sunken py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              eyebrow="Related products"
+              title="Often specified alongside"
+              align="between"
+              action={
+                <ButtonLink href={`/products/${family.id}`} variant="secondary">
+                  All {family.name}
+                  <ArrowRight className="h-4 w-4" />
+                </ButtonLink>
+              }
+            />
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {related.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ENGINEERING ENQUIRY */}
+      <section id="enquiry" className="scroll-mt-20 border-t border-line bg-paper py-16 lg:py-24">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Engineering enquiry"
+              title={`Get a specification for ${product.name}.`}
+              lede="Five answers about the opening are usually enough for us to come back with a configuration and a price."
+            />
+            <div className="mt-8 space-y-4">
+              <a
+                href={telHref()}
+                className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep"
+              >
+                <Phone className="h-5 w-5 text-amber" />
+                {siteConfig.phone}
+              </a>
+              <a
+                href={whatsappHref(`Hello Standard Automation, I would like a quote for ${product.name}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep"
+              >
+                <WhatsApp className="h-5 w-5 text-amber" />
+                WhatsApp us
+              </a>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <Suspense
+              fallback={
+                <div className="border border-line bg-paper-raised p-8 text-sm text-steel-600">
+                  Loading enquiry form…
+                </div>
+              }
+            >
+              <EnquiryForm products={formProducts} families={formFamilies} presetProductId={product.id} />
+            </Suspense>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title="Or talk it through with an engineer."
+        lede="If it is easier to describe the opening than to write it down, call or message us and we will work through it with you."
+        whatsappMessage={`Hello Standard Automation, I would like a quote for ${product.name}.`}
+      />
+    </>
+  );
+}
+
+function DetailBlock({ title, items }: { title: string; items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <article className="bg-paper-raised p-7">
+      <h3 className="eyebrow text-amber-deep">{title}</h3>
+      <ul className="mt-5 space-y-3">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 text-sm leading-relaxed text-steel-700">
+            <Check className="mt-0.5 h-4 w-4 shrink-0 text-steel-400" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </article>
+  );
+}

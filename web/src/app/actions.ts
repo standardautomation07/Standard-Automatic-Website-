@@ -22,6 +22,11 @@ export async function submitEnquiry(
     phone: readField(formData, "phone"),
     email: readField(formData, "email"),
     product: readField(formData, "product"),
+    width: readField(formData, "width"),
+    height: readField(formData, "height"),
+    application: readField(formData, "application"),
+    location: readField(formData, "location"),
+    usage: readField(formData, "usage"),
     message: readField(formData, "message"),
   };
 

@@ -1,46 +1,61 @@
 import type { Product } from "@/lib/types";
 
 /**
- * Rolling Shutters — 9 products.
+ * Rolling Shutters — 6 products.
  *
- * Naming caveat, carried over from the audit: four of the old shutter URLs
- * contradict themselves (the page title and the H1 name different products,
- * and two pairs appear to have been swapped). The business has confirmed all
- * four are genuine, separate variants, but not which name belongs to which.
- * Each affected record carries a `namingNote` that is rendered on the page —
- * the names are working names, not confirmed ones.
- *
- * `polycarbonate-rolling-shutters.html` and `polycarbonate.html` are two URLs
- * for the same product and are published here once.
+ * Naming note carried from research/product-source-matrix.csv: the previous
+ * site's insulated shutter page contradicted itself (title "Galvanize Rolling
+ * Shutter", heading "Insulated Rolling Shutters"). The product's identity is
+ * confirmed; its exact commercial name is not, and that is stated on the page.
  */
 export const rollingShutterProducts: Product[] = [
   {
-    slug: "galvanized-rolling-shutters",
-    category: "rolling-shutters",
-    name: "Galvanized Rolling Shutters",
-    tagline: "The workhorse shutter for wide industrial openings.",
+    id: "galvanized-steel-rolling-shutters",
+    familyId: "rolling-shutters",
+    categoryId: "single-wall-rolling-shutters",
+    name: "Galvanized Steel Rolling Shutters",
+    status: "CONFIRMED",
+    tagline: "The workhorse curtain for wide industrial openings.",
     summary:
       "Galvanized steel rolling shutters in 75, 125 and 150 mm slat profiles, 0.80–1.2 mm thick, for factory, warehouse and large-aperture openings.",
     overview: [
-      "Galvanized steel is the default curtain material for industrial rolling shutters because it combines span, security and corrosion resistance at a sensible cost. The zinc coating protects the slat in humid and coastal conditions where plain mild steel would need constant maintenance.",
+      "Galvanized steel is the default curtain material for industrial rolling shutters because it combines span, security and corrosion resistance at a sensible cost. The zinc coating protects the slat in the humid, dusty and coastal conditions where plain mild steel would need constant maintenance.",
       "When open, the curtain is stored in a barrel above the opening, so the aperture is completely unobstructed and no side room is consumed. That is what makes this type suitable for the very wide openings found on industrial units and godowns.",
     ],
+    quickFacts: [
+      { label: "Slat height", value: "75 / 125 / 150 mm" },
+      { label: "Slat thickness", value: "0.80–1.2 mm" },
+      { label: "Curtain", value: "Galvanized steel" },
+      { label: "Operation", value: "Electric or manual" },
+    ],
     benefits: [
+      { title: "Wide apertures", body: "Steel curtains cover large industrial openings that would need multiple leaves in other door types." },
+      { title: "Corrosion protected", body: "Galvanized slats hold up in humid, dusty and coastal environments better than uncoated steel." },
+      { title: "Physical security", body: "A solid steel curtain in steel guides is a real barrier, not just a closure." },
+      { title: "Clear opening", body: "The curtain rolls above the lintel, so nothing intrudes into the aperture or the wall beside it." },
+    ],
+    variants: [
+      { id: "manual", name: "Manual push-pull or gear", note: "For smaller and lower-cycle openings where a drive is not justified. Gear operation extends the practical size range of a hand-operated shutter.", status: "CONFIRMED" },
+      { id: "motorised", name: "Motorised", note: "Side, central or Australian-type drive selected against curtain weight and daily cycle count, with manual override.", status: "CONFIRMED" },
+    ],
+    specGroups: [
       {
-        title: "Wide apertures",
-        body: "Steel curtains cover large industrial openings — configurations up to 10 m wide are standard for this type.",
+        group: "Curtain",
+        specs: [
+          { label: "Type code", value: "GL78RS" },
+          { label: "Curtain material", value: "Galvanized steel" },
+          { label: "Slat height", value: "75 mm, 125 mm, 150 mm" },
+          { label: "Slat thickness", value: "0.80 mm to 1.2 mm" },
+          { label: "Standard colour", value: "Silver or customised" },
+        ],
       },
       {
-        title: "Corrosion protected",
-        body: "Galvanized slats hold up in humid, dusty and coastal environments better than uncoated steel.",
-      },
-      {
-        title: "Physical security",
-        body: "A solid steel curtain in steel guides adds a real barrier between the outside and the opening it protects.",
-      },
-      {
-        title: "Clear opening",
-        body: "The curtain rolls above the lintel, so nothing intrudes into the aperture or the wall beside it.",
+        group: "Frame and operation",
+        specs: [
+          { label: "Guides and frame", value: "Steel" },
+          { label: "Operation", value: "Electric or manual" },
+          { label: "Size", value: "Made to the opening" },
+        ],
       },
     ],
     applications: [
@@ -48,277 +63,267 @@ export const rollingShutterProducts: Product[] = [
       "Factories and industrial units",
       "Large apertures over 16 sq m",
       "Commercial and retail frontages",
+      "Basement and parking entries",
     ],
-    specs: [
-      { label: "Type code", value: "GL78RS" },
-      { label: "Curtain material", value: "Galvanized steel" },
-      { label: "Slat height", value: "75 mm, 125 mm, 150 mm" },
-      { label: "Slat thickness", value: "0.80 mm to 1.2 mm" },
-      { label: "Standard colour", value: "Silver or customised" },
-      { label: "Guides and frame", value: "Steel" },
-      { label: "Operation", value: "Electric or manual" },
-      { label: "Size", value: "Made to the opening" },
+    industries: ["manufacturing", "warehousing-logistics", "retail-commercial"],
+    environments: ["internal", "external", "security"],
+    operatingMethod: [
+      "Interlocking galvanized slats form a curtain that winds onto a barrel above the opening.",
+      "Steel guides at each jamb retain the curtain and carry wind load.",
+      "A side, central or in-barrel drive turns the barrel, with adjustable open and close limits.",
+      "A hand chain, crank or release allows the shutter to be moved without power.",
     ],
-    image: "/images/photography/shutter-grey.jpg",
-    imageAlt: "A closed steel rolling shutter in a plain wall",
-    related: ["insulated-rolling-shutters", "aluminium-rolling-shutters", "side-motor-with-chain-drive"],
-    legacyUrl: "https://www.standardautomation.in/m-s-rolling-shutters.html",
+    construction: [
+      "Interlocking galvanized steel slats, 75 / 125 / 150 mm profile, 0.80–1.2 mm",
+      "Steel barrel, end plates and guides",
+      "Bottom rail with locking provision on manual shutters",
+    ],
+    related: ["insulated-double-wall-rolling-shutters", "aluminium-rolling-shutters", "side-motors-chain-drive"],
+    documents: [
+      { title: "Rolling Shutter range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
+    ],
+    imageId: "p-shutter-galvanized",
+    legacyUrls: ["m-s-rolling-shutters.html"],
   },
   {
-    slug: "insulated-rolling-shutters",
-    category: "rolling-shutters",
-    name: "Insulated Rolling Shutters",
-    tagline: "Double-wall slats where the opening separates two climates.",
-    summary:
-      "Insulated double-wall rolling shutters for openings that need thermal and acoustic separation as well as security.",
-    overview: [
-      "An insulated shutter uses a double-wall slat with an insulating core rather than a single folded profile. The result is a curtain that slows heat transfer and cuts sound through the opening, without giving up the compact roll and clear aperture of a standard rolling shutter.",
-      "The type is specified where a shutter closes an opening between conditioned and unconditioned space, or where noise transmission through a large aperture is a problem for neighbours or for the workspace behind it.",
-    ],
-    benefits: [
-      {
-        title: "Thermal separation",
-        body: "An insulating core in the slat reduces heat transfer through the closed opening.",
-      },
-      {
-        title: "Sound reduction",
-        body: "Double-wall construction cuts noise transmission compared with a single-skin curtain.",
-      },
-      {
-        title: "Same compact roll",
-        body: "Insulation is added without needing side room or intruding into the opening.",
-      },
-      {
-        title: "Industrial duty",
-        body: "Steel construction and steel guides, motorised or manual as the opening requires.",
-      },
-    ],
-    applications: [
-      "Openings between conditioned and unconditioned space",
-      "Cold and chilled storage areas",
-      "Noise-sensitive industrial and urban sites",
-      "Workshops and service bays",
-    ],
-    specs: [],
-    image: "/images/photography/shutter-white.jpg",
-    imageAlt: "A white rolling shutter with horizontal slats",
-    namingNote:
-      "Working name. The source page titles this product \"Galvanize Rolling Shutter\" but headlines it \"Insulated Rolling Shutters\" — the business needs to confirm which it is.",
-    related: ["galvanized-rolling-shutters", "fire-rated-rolling-shutters", "aluminium-rolling-shutters"],
-    legacyUrl: "https://www.standardautomation.in/g-i-rolling-shutters.html",
-  },
-  {
-    slug: "aluminium-rolling-shutters",
-    category: "rolling-shutters",
+    id: "aluminium-rolling-shutters",
+    familyId: "rolling-shutters",
+    categoryId: "single-wall-rolling-shutters",
     name: "Aluminium Rolling Shutters",
-    tagline: "Lighter curtains and a cleaner finish for commercial frontages.",
+    status: "CONFIRMED",
+    tagline: "A lighter curtain and a cleaner finish for visible frontages.",
     summary:
       "Aluminium rolling shutters in 55 and 75 mm slat profiles, single and double wall, 0.45–1.00 mm, for shopfronts and commercial openings.",
     overview: [
-      "Aluminium slats weigh substantially less than steel of the same profile, which reduces the load on the barrel, the guides and the operator. On a shopfront or a light commercial opening that translates into a smaller drive, quieter running and a shutter that is easier to operate by hand.",
-      "Aluminium also finishes better than galvanized steel and does not need painting to resist corrosion, which is why the type is common where the shutter is part of the visible frontage.",
+      "Aluminium slats weigh substantially less than steel of the same profile, which reduces the load on the barrel, the guides and the operator. On a shopfront or light commercial opening that means a smaller drive, quieter running, and a shutter that can often still be worked by hand.",
+      "Aluminium also finishes better than galvanized steel and resists corrosion without repainting, which is why the type is common wherever the shutter forms part of the visible frontage rather than a back-of-house opening.",
+    ],
+    quickFacts: [
+      { label: "Slat height", value: "55 / 75 mm" },
+      { label: "Slat thickness", value: "0.45–1.00 mm" },
+      { label: "Construction", value: "Single and double wall" },
+      { label: "Operation", value: "Electric or manual" },
     ],
     benefits: [
+      { title: "Light curtain", body: "Lower curtain weight means a smaller operator, less load on the structure and easier manual operation." },
+      { title: "Clean finish", body: "Aluminium takes a powder coat well and resists corrosion without repainting." },
+      { title: "Single or double wall", body: "Single wall for light-duty frontages, double wall where more rigidity is wanted." },
+      { title: "Suited to visible frontages", body: "Appropriate where the shutter is part of the building's face, not a service opening." },
+    ],
+    variants: [
+      { id: "single-wall", name: "Single wall", note: "The lightest curtain in the range. Suits small and medium shopfronts, service counters and kiosks.", status: "CONFIRMED" },
+      { id: "double-wall", name: "Double wall", note: "A stiffer slat for wider openings and more exposed frontages, at higher curtain weight.", status: "CONFIRMED" },
+    ],
+    specGroups: [
       {
-        title: "Light curtain",
-        body: "Lower curtain weight means a smaller operator, less load on the structure and easier manual operation.",
+        group: "Curtain",
+        specs: [
+          { label: "Type code", value: "AL55RS, AL75RS" },
+          { label: "Curtain material", value: "Aluminium, single and double wall" },
+          { label: "Slat height", value: "55 mm, 75 mm" },
+          { label: "Slat thickness", value: "0.45 mm to 1.00 mm" },
+          { label: "Standard colour", value: "White or customised" },
+        ],
       },
       {
-        title: "Clean finish",
-        body: "Aluminium takes a powder coat well and resists corrosion without repainting.",
-      },
-      {
-        title: "Single or double wall",
-        body: "Single-wall for light-duty frontages, double-wall where more rigidity or insulation is wanted.",
-      },
-      {
-        title: "Suited to visible frontages",
-        body: "Appropriate where the shutter forms part of the building's face rather than a back-of-house opening.",
+        group: "Frame and operation",
+        specs: [
+          { label: "Guides and frame", value: "Steel" },
+          { label: "Operation", value: "Electric or manual" },
+          { label: "Size", value: "Made to the opening" },
+        ],
       },
     ],
     applications: [
       "Shopfronts and showrooms",
       "Commercial and office frontages",
       "Malls and retail units",
-      "Low to medium security openings",
-    ],
-    specs: [
-      { label: "Type code", value: "AL55RS, AL75RS" },
-      { label: "Curtain material", value: "Aluminium, single and double wall" },
-      { label: "Slat height", value: "55 mm, 75 mm" },
-      { label: "Slat thickness", value: "0.45 mm to 1.00 mm" },
-      { label: "Standard colour", value: "White or customised" },
-      { label: "Guides and frame", value: "Steel" },
-      { label: "Operation", value: "Electric or manual" },
-      { label: "Size", value: "Made to the opening" },
-    ],
-    image: "/images/photography/shutter-brown.jpg",
-    imageAlt: "A closed aluminium-finish roller shutter",
-    related: ["aluminium-single-wall-rolling-shutters", "galvanized-rolling-shutters", "tubular-motor"],
-    legacyUrl: "https://www.standardautomation.in/aluminium-rolling-shutters.html",
-  },
-  {
-    slug: "aluminium-single-wall-rolling-shutters",
-    category: "rolling-shutters",
-    name: "Aluminium Single-Wall Rolling Shutters",
-    tagline: "The lightest aluminium curtain, for light-duty frontages.",
-    summary:
-      "Single-wall aluminium rolling shutters for light-duty commercial openings where curtain weight and finish matter more than physical resistance.",
-    overview: [
-      "A single-wall aluminium slat is a folded profile with no inner skin. It is the lightest curtain in the range, which suits small and medium shopfront openings, service counters and kiosks where the shutter is closing rather than defending an aperture.",
-      "Because the curtain is light, these shutters can often be operated manually on smaller openings and driven by a compact tubular motor where automation is wanted.",
-    ],
-    benefits: [
-      {
-        title: "Lightest curtain",
-        body: "Minimal load on the barrel and structure — often hand-operable on smaller openings.",
-      },
-      {
-        title: "Compact drive",
-        body: "Suits tubular motors housed inside the barrel, with no external drive on the frontage.",
-      },
-      {
-        title: "Corrosion resistant",
-        body: "Aluminium needs no painting to survive humid and coastal conditions.",
-      },
-      {
-        title: "Neat frontage",
-        body: "Slim profile and clean finish for openings that are part of the visible shopfront.",
-      },
-    ],
-    applications: [
-      "Small and medium shopfronts",
       "Service counters and kiosks",
-      "Light commercial openings",
-      "Internal partitions and hatches",
     ],
-    specs: [],
-    image: "/images/photography/shutter-slats.jpg",
-    imageAlt: "Close detail of rolling shutter slats",
-    namingNote:
-      "Working name. This URL (`aluminium-single-wall.html`) is headlined \"Fire Shutters\" on the source site, which contradicts its own address — the business has confirmed it is a genuine separate variant but not what it should be called.",
-    related: ["aluminium-rolling-shutters", "tubular-motor", "perforated-rolling-shutters"],
-    legacyUrl: "https://www.standardautomation.in/aluminium-single-wall.html",
+    industries: ["retail-commercial"],
+    environments: ["external", "security"],
+    operatingMethod: [
+      "Interlocking aluminium slats wind onto a barrel above the opening.",
+      "Steel guides retain the curtain at each jamb.",
+      "A tubular, Australian-type or side drive turns the barrel, with adjustable limits.",
+      "A crank or release allows manual operation without power.",
+    ],
+    construction: [
+      "Interlocking aluminium slats, 55 / 75 mm profile, 0.45–1.00 mm, single or double wall",
+      "Steel barrel, end plates and guides",
+      "Powder-coated finish to a specified colour",
+    ],
+    related: ["tubular-motors", "polycarbonate-rolling-shutters", "galvanized-steel-rolling-shutters"],
+    documents: [
+      { title: "Rolling Shutter range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
+    ],
+    imageId: "p-shutter-aluminium",
+    legacyUrls: ["aluminium-rolling-shutters.html", "aluminium-single-wall.html"],
   },
   {
-    slug: "fire-rated-rolling-shutters",
-    category: "rolling-shutters",
-    name: "Fire Rated Rolling Shutters",
-    tagline: "Galvanized double-wall curtains for compartment openings.",
+    id: "grille-rolling-shutters",
+    familyId: "rolling-shutters",
+    categoryId: "single-wall-rolling-shutters",
+    name: "Grille Rolling Shutters",
+    status: "CONFIRMED",
+    tagline: "A secure line you can see and breathe through.",
     summary:
-      "Fire rated rolling shutters with galvanized double-wall, silicon-insulated slats in 75 and 100 mm profiles, offering 21 dB sound reduction and radiant heat protection.",
+      "Bright bar grille shutters that secure an opening while keeping the frontage visible and allowing air to move through it.",
     overview: [
-      "A fire rated shutter closes an opening in a fire compartment wall. Its job is to hold the compartment line for a stated period so that the building's escape and containment strategy still works when a large aperture has been cut through a fire-rated wall.",
-      "Construction reflects that: a galvanized double-wall curtain with a silicon-insulated strip between the skins, in steel guides sized to hold the curtain in place under heat. The same construction gives useful acoustic performance as a by-product.",
+      "A grille shutter replaces the solid curtain with a lattice of bright bars and links. Closed, it is a real physical barrier; open to view, it lets light and air pass and lets a patrol or a passer-by see what is behind it.",
+      "The type is common on mall units, parking entries and service areas — anywhere an opening has to be secured without being blanked off entirely.",
+    ],
+    quickFacts: [
+      { label: "Curtain", value: "Bright bar lattice" },
+      { label: "Visibility", value: "See-through when closed" },
+      { label: "Airflow", value: "Open curtain" },
+      { label: "Specification", value: "To be confirmed per opening" },
     ],
     benefits: [
-      {
-        title: "Compartment openings",
-        body: "Specified where a large aperture passes through a fire-rated wall and the compartment line must be maintained.",
-      },
-      {
-        title: "Radiant heat protection",
-        body: "Insulated double-wall construction limits radiant heat transfer through the closed curtain.",
-      },
-      {
-        title: "21 dB sound reduction",
-        body: "The same insulated build gives a stated sound reduction value of 21 dB.",
-      },
-      {
-        title: "Corrosion protected",
-        body: "Galvanized slats and steel guides for industrial and service environments.",
-      },
+      { title: "Secure but see-through", body: "A steel lattice barrier that still allows the frontage behind it to be seen." },
+      { title: "Air movement", body: "The open curtain lets air pass, which matters on parking, plant and service openings." },
+      { title: "Lighter than a solid curtain", body: "A grille curtain weighs less than a solid one of the same size, so the drive and structure are smaller." },
+      { title: "Deterrent visibility", body: "Interiors stay visible to patrols and passers-by rather than being hidden behind a blank face." },
     ],
+    variants: [
+      { id: "bright-bar", name: "Bright bar lattice", note: "Vertical bright bars on horizontal links, the standard grille construction. Bar spacing is set against the security requirement.", status: "CONFIRMED" },
+    ],
+    specGroups: [],
     applications: [
-      "Fire compartment openings",
-      "Warehouse and plant separations",
-      "Basement and service areas",
-      "Commercial buildings with rated wall lines",
+      "Shopping mall units",
+      "Parking and basement entries",
+      "Service and plant areas",
+      "Showroom frontages",
     ],
-    specs: [
-      { label: "Type code", value: "FR75, FR100" },
-      { label: "Curtain material", value: "Galvanized double wall with silicon insulated strip" },
-      { label: "Slat height", value: "75 mm, 100 mm" },
-      { label: "Curtain thickness", value: "25 mm" },
-      { label: "Standard colour", value: "Silver or customised" },
-      { label: "Sound reduction", value: "21 dB" },
-      { label: "Guides and frame", value: "Steel" },
-      { label: "Operation", value: "Electric or manual" },
+    industries: ["retail-commercial", "infrastructure-transit"],
+    environments: ["internal", "security"],
+    operatingMethod: [
+      "Bright bars and links form an open lattice curtain that winds onto a barrel above the opening.",
+      "Steel guides retain the curtain at each jamb.",
+      "A side or central drive turns the barrel, with adjustable limits, or the shutter is operated by hand.",
     ],
-    image: "/images/photography/shutter-red.jpg",
-    imageAlt: "A closed red rolling shutter at a building opening",
-    related: ["fire-proof-shutters", "insulated-rolling-shutters", "fire-sliding-doors"],
-    legacyUrl: "https://www.standardautomation.in/fire-proof-rolling-shutters.html",
+    construction: [
+      "Bright bar and link lattice curtain",
+      "Steel barrel, end plates and guides",
+      "Bottom rail with locking provision on manual shutters",
+    ],
+    related: ["perforated-rolling-shutters", "polycarbonate-rolling-shutters", "galvanized-steel-rolling-shutters"],
+    documents: [
+      { title: "Rolling Shutter range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
+    ],
+    imageId: "p-shutter-grille",
+    legacyUrls: ["m-s-grill-rolling-shutters.html"],
   },
   {
-    slug: "fire-proof-shutters",
-    category: "rolling-shutters",
-    name: "Fire Proof Shutters",
-    tagline: "A second fire shutter variant, confirmed but not yet named.",
+    id: "perforated-rolling-shutters",
+    familyId: "rolling-shutters",
+    categoryId: "single-wall-rolling-shutters",
+    name: "Perforated Rolling Shutters",
+    status: "CONFIRMED",
+    tagline: "A solid slat, punched for light and airflow.",
     summary:
-      "A separate fire shutter variant held in the range alongside the FR75/FR100 fire rated rolling shutter. Configuration details to be confirmed.",
+      "Perforated slat shutters that keep the rigidity of a solid curtain while admitting light and ventilation through the closed opening.",
     overview: [
-      "This is a distinct fire shutter variant that the business has confirmed is genuinely separate from the FR75/FR100 fire rated rolling shutter, rather than a duplicate page. What it is called, and how its construction and rating differ, has not yet been confirmed.",
-      "Rather than invent a specification, this page is published with the general characteristics of the product family and an explicit note. Contact us and we will confirm the exact variant, rating and construction for your opening.",
+      "A perforated shutter is a solid curtain with a punched slat pattern. It sits between a solid shutter and a grille: more rigid and more weather-resisting than a lattice, but still admitting light and air through the closed opening.",
+      "It suits frontages that need partial visibility and ventilation without giving up the security and structural behaviour of a conventional slat curtain.",
+    ],
+    quickFacts: [
+      { label: "Curtain", value: "Perforated solid slat" },
+      { label: "Visibility", value: "Partial" },
+      { label: "Airflow", value: "Through the slat perforation" },
+      { label: "Specification", value: "To be confirmed per opening" },
     ],
     benefits: [
-      {
-        title: "Compartment line integrity",
-        body: "Fire shutters hold an opening in a rated wall for a stated period as part of the building's containment strategy.",
-      },
-      {
-        title: "Insulated construction",
-        body: "Double-skin curtains with an insulating layer limit radiant heat transfer through the closed shutter.",
-      },
-      {
-        title: "Specified per opening",
-        body: "Rating, drop mechanism and release arrangement are chosen against the building's fire strategy.",
-      },
-      {
-        title: "Manual and motorised",
-        body: "Powered operation for daily use, with a defined behaviour on alarm and on power failure.",
-      },
+      { title: "Light and airflow", body: "Punched slats admit daylight and allow ventilation while the shutter is closed." },
+      { title: "Solid-slat rigidity", body: "Retains the structural behaviour and weather resistance of a conventional curtain." },
+      { title: "Partial visibility", body: "Frontages stay partly visible, which suits retail and display openings." },
+      { title: "Manual or motorised", body: "Available with side, central or tubular drives, and by hand on smaller openings." },
     ],
+    variants: [
+      { id: "perforated-slat", name: "Perforated slat", note: "Perforation pattern and open area set against how much light, air and visibility the opening needs.", status: "CONFIRMED" },
+    ],
+    specGroups: [],
     applications: [
-      "Fire compartment openings",
-      "Industrial and warehouse separations",
-      "Service and plant rooms",
+      "Retail and showroom frontages",
+      "Parking and ventilated service areas",
+      "Mall and arcade units",
+      "Openings needing light and security together",
     ],
-    specs: [],
-    image: "/images/photography/door-red-shutter.jpg",
-    imageAlt: "A closed shutter door on an industrial elevation",
-    namingNote:
-      "Working name. The source page at `fire-proof-shutters.html` is headlined \"Aluminium Rolling Shutters\", contradicting its own address. The business has confirmed the variant is real; its name and specification are still to be supplied.",
-    related: ["fire-rated-rolling-shutters", "fire-sliding-doors", "insulated-rolling-shutters"],
-    legacyUrl: "https://www.standardautomation.in/fire-proof-shutters.html",
+    industries: ["retail-commercial"],
+    environments: ["internal", "external", "security"],
+    operatingMethod: [
+      "Perforated interlocking slats form a curtain that winds onto a barrel above the opening.",
+      "Steel guides retain the curtain at each jamb.",
+      "A side, central or tubular drive turns the barrel, with adjustable limits.",
+    ],
+    construction: [
+      "Perforated interlocking slats",
+      "Steel barrel, end plates and guides",
+      "Powder-coated finish to a specified colour",
+    ],
+    related: ["grille-rolling-shutters", "polycarbonate-rolling-shutters", "aluminium-rolling-shutters"],
+    documents: [
+      { title: "Rolling Shutter range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
+    ],
+    imageId: "p-shutter-perforated",
+    legacyUrls: ["perforated-shutters.html"],
   },
   {
-    slug: "polycarbonate-rolling-shutters",
-    category: "rolling-shutters",
+    id: "polycarbonate-rolling-shutters",
+    familyId: "rolling-shutters",
+    categoryId: "single-wall-rolling-shutters",
     name: "Polycarbonate Rolling Shutters",
+    status: "CONFIRMED",
     tagline: "A shutter you can see straight through, closed.",
     summary:
-      "Transparent polycarbonate rolling shutters in 85–170 mm profiles, cutting around 80% of UV while keeping the frontage visible day and night.",
+      "Transparent polycarbonate shutters in 85–170 mm profiles, cutting around 80% of incident UV while keeping the frontage visible.",
     overview: [
-      "A polycarbonate shutter uses transparent panels instead of a solid slat, so the frontage behind it stays visible when the shutter is closed. For a retail unit in a mall or a high street, that turns closing time from a blank steel face back into a display window.",
+      "A polycarbonate shutter uses transparent panels instead of a solid slat, so the frontage behind it stays visible when the shutter is closed. For a retail unit in a mall or on a high street, that turns closing time from a blank steel face back into a display window.",
       "Polycarbonate is also considerably tougher than glass for its weight, blocks most incident UV, and performs better than glass on both sound and heat transfer.",
     ],
+    quickFacts: [
+      { label: "Panel height", value: "85 / 100 / 115 / 170 mm" },
+      { label: "Panel thickness", value: "1.5–5.0 mm" },
+      { label: "UV blocked", value: "Approximately 80%" },
+      { label: "Fire behaviour", value: "Flame retardant, Class I" },
+    ],
     benefits: [
+      { title: "Full visibility", body: "Transparent panels keep the display visible while the unit is closed and secured." },
+      { title: "UV protection", body: "Cuts roughly 80% of incident ultraviolet, protecting stock and display materials behind the shutter." },
+      { title: "Better than glass thermally and acoustically", body: "Stated as around 3–4 dB better than glass on sound, with substantially better heat insulation." },
+      { title: "Fire retardant and recyclable", body: "Flame retardant and self-extinguishing Class I, ROHS compliant, and the panel can be recycled." },
+    ],
+    variants: [
+      { id: "transparent", name: "Fully transparent", note: "The full curtain in polycarbonate, for display frontages where visibility is the point.", status: "CONFIRMED" },
+      { id: "mixed-slat", name: "Mixed polycarbonate and steel slat", note: "Alternating transparent and solid slats, trading some visibility for more physical resistance.", status: "POTENTIAL" },
+    ],
+    specGroups: [
       {
-        title: "Full visibility",
-        body: "Transparent panels keep the display visible while the unit is closed and secured.",
+        group: "Curtain",
+        specs: [
+          { label: "Type code", value: "AD-TD001" },
+          { label: "Panel material", value: "Polycarbonate" },
+          { label: "Standard finish", value: "Transparent" },
+          { label: "Panel height", value: "85 mm, 100 mm, 115 mm, 170 mm" },
+          { label: "Panel thickness", value: "1.5 / 2.1 / 3.2 / 4.8 / 5.0 mm" },
+        ],
       },
       {
-        title: "UV protection",
-        body: "Cuts roughly 80% of incident ultraviolet, protecting stock and display materials behind the shutter.",
+        group: "Frame and operation",
+        specs: [
+          { label: "Frame", value: "Colour steel or aluminium alloy" },
+          { label: "Open style", value: "Rolling, folding or sliding" },
+          { label: "Operation", value: "Electric or manual" },
+        ],
       },
       {
-        title: "Better than glass thermally and acoustically",
-        body: "Stated as around 3–4 dB better than glass on sound, with substantially better heat insulation.",
-      },
-      {
-        title: "Fire retardant, recyclable",
-        body: "Flame retardant and self-extinguishing Class I, ROHS compliant and recyclable.",
+        group: "Performance",
+        specs: [
+          { label: "UV blocked", value: "Approximately 80%" },
+          { label: "Acoustic performance", value: "Approximately 3–4 dB better than glass" },
+          { label: "Fire behaviour", value: "Flame retardant, self-extinguishing Class I" },
+          { label: "Compliance", value: "ROHS; panel is recyclable" },
+        ],
       },
     ],
     applications: [
@@ -327,104 +332,80 @@ export const rollingShutterProducts: Product[] = [
       "Exhibition and display centres",
       "Showrooms and commercial frontages",
     ],
-    specs: [
-      { label: "Type code", value: "AD-TD001" },
-      { label: "Panel material", value: "Polycarbonate" },
-      { label: "Standard finish", value: "Transparent" },
-      { label: "Panel height", value: "85 mm, 100 mm, 115 mm, 170 mm" },
-      { label: "Panel thickness", value: "1.5 / 2.1 / 3.2 / 4.8 / 5.0 mm" },
-      { label: "Open style", value: "Rolling, folding or sliding" },
-      { label: "Frame", value: "Colour steel or aluminium alloy" },
+    industries: ["retail-commercial"],
+    environments: ["internal", "security"],
+    operatingMethod: [
+      "Transparent polycarbonate panels are linked into a curtain that winds onto a barrel above the opening.",
+      "Guides in colour steel or aluminium alloy retain the curtain at each jamb.",
+      "A drive turns the barrel, with adjustable limits; the curtain can also be arranged to fold or slide.",
+    ],
+    construction: [
+      "Polycarbonate panels, 1.5–5.0 mm, in 85–170 mm profiles",
+      "Colour steel or aluminium alloy frame and guides",
+      "Steel barrel and end plates",
+    ],
+    related: ["grille-rolling-shutters", "perforated-rolling-shutters", "aluminium-rolling-shutters"],
+    documents: [
+      { title: "Polycarbonate Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
+    ],
+    imageId: "p-shutter-polycarbonate",
+    legacyUrls: ["polycarbonate-rolling-shutters.html", "polycarbonate.html"],
+  },
+  {
+    id: "insulated-double-wall-rolling-shutters",
+    familyId: "rolling-shutters",
+    categoryId: "insulated-rolling-shutters",
+    name: "Insulated Double-Wall Rolling Shutters",
+    status: "CONFIRMED",
+    tagline: "Double-wall slats where the opening separates two climates.",
+    summary:
+      "Double-wall insulated shutters for openings that need thermal and acoustic separation as well as security, without giving up the compact roll.",
+    overview: [
+      "An insulated shutter uses a double-wall slat with an insulating core rather than a single folded profile. The result is a curtain that slows heat transfer and cuts sound through the opening, while keeping the compact roll and clear aperture of a standard rolling shutter.",
+      "The type is specified where a shutter closes an opening between conditioned and unconditioned space, or where noise transmission through a large aperture is a problem for neighbours or for the workspace behind it.",
+    ],
+    quickFacts: [
+      { label: "Curtain", value: "Double-wall insulated slat" },
+      { label: "Purpose", value: "Thermal and acoustic separation" },
       { label: "Operation", value: "Electric or manual" },
-      { label: "UV blocked", value: "Approximately 80%" },
-      { label: "Fire behaviour", value: "Flame retardant, self-extinguishing Class I" },
-      { label: "Compliance", value: "ROHS; panel is recyclable" },
-    ],
-    image: "/images/photography/rolling-shutters.jpg",
-    imageAlt: "Closed roller shutters across a retail frontage",
-    related: ["perforated-rolling-shutters", "bright-bar-rolling-shutters", "aluminium-rolling-shutters"],
-    legacyUrl: "https://www.standardautomation.in/polycarbonate-rolling-shutters.html",
-  },
-  {
-    slug: "bright-bar-rolling-shutters",
-    category: "rolling-shutters",
-    name: "Bright Bar Rolling Shutters",
-    tagline: "An open grille curtain — secure, but you can see and breathe through it.",
-    summary:
-      "Bright bar grille rolling shutters that secure an opening while keeping the frontage visible and allowing air to move through it.",
-    overview: [
-      "A grille shutter replaces the solid curtain with a lattice of bright bars and links. Closed, it is a real physical barrier; open to view, it lets light and air pass, and lets a passer-by or a security patrol see what is behind it.",
-      "The type is common on mall units, parking entries and service areas — anywhere the opening needs to be secured without being blanked off entirely.",
+      { label: "Specification", value: "To be confirmed per opening" },
     ],
     benefits: [
-      {
-        title: "Secure but see-through",
-        body: "A steel lattice barrier that still allows the frontage behind it to be seen.",
-      },
-      {
-        title: "Air movement",
-        body: "The open curtain lets air pass, useful on parking, plant and service openings.",
-      },
-      {
-        title: "Light weight",
-        body: "A grille curtain is lighter than a solid one of the same size, so the drive and structure are smaller.",
-      },
-      {
-        title: "Deterrent visibility",
-        body: "Interiors stay visible to patrols and passers-by rather than being hidden behind a solid face.",
-      },
+      { title: "Thermal separation", body: "An insulating core in the slat reduces heat transfer through the closed opening." },
+      { title: "Sound reduction", body: "Double-wall construction cuts noise transmission compared with a single-skin curtain." },
+      { title: "Same compact roll", body: "Insulation is added without needing side room or intruding into the opening." },
+      { title: "Industrial duty", body: "Steel construction and steel guides, motorised or manual as the opening requires." },
     ],
+    variants: [
+      { id: "galvanised-insulated", name: "Galvanised insulated", note: "Galvanised double-wall slat with an insulating core — the standard industrial configuration.", status: "CONFIRMED" },
+      { id: "aluminium-insulated", name: "Aluminium insulated", note: "A lighter insulated slat for frontages where curtain weight and finish matter more than span.", status: "POTENTIAL" },
+    ],
+    specGroups: [],
     applications: [
-      "Shopping mall units",
-      "Parking and basement entries",
-      "Service and plant areas",
-      "Showroom frontages",
+      "Openings between conditioned and unconditioned space",
+      "Cold and chilled storage areas",
+      "Noise-sensitive industrial and urban sites",
+      "Workshops and service bays",
     ],
-    specs: [],
-    image: "/images/photography/industrial-doors.jpg",
-    imageAlt: "A closed roll-up shutter on a commercial opening",
-    related: ["perforated-rolling-shutters", "polycarbonate-rolling-shutters", "galvanized-rolling-shutters"],
-    legacyUrl: "https://www.standardautomation.in/m-s-grill-rolling-shutters.html",
-  },
-  {
-    slug: "perforated-rolling-shutters",
-    category: "rolling-shutters",
-    name: "Perforated Rolling Shutters",
-    tagline: "A solid slat, punched for light and airflow.",
-    summary:
-      "Perforated slat rolling shutters that keep the rigidity of a solid curtain while admitting light and ventilation through the closed opening.",
-    overview: [
-      "A perforated shutter is a solid curtain with a punched slat pattern. It sits between a solid shutter and a grille: more rigid and more weather-resisting than a lattice, but still admitting light and air through the closed opening.",
-      "It suits frontages that need partial visibility and ventilation without giving up the security and structural behaviour of a conventional slat curtain.",
+    industries: ["manufacturing", "cold-chain-food", "warehousing-logistics"],
+    environments: ["internal", "cold"],
+    operatingMethod: [
+      "Double-wall insulated slats form a curtain that winds onto a barrel above the opening.",
+      "Steel guides retain the curtain; perimeter and bottom seals close the gaps around it.",
+      "A side or central drive turns the barrel, with adjustable limits and a manual override.",
     ],
-    benefits: [
-      {
-        title: "Light and airflow",
-        body: "Punched slats admit daylight and allow ventilation while the shutter is closed.",
-      },
-      {
-        title: "Solid-slat rigidity",
-        body: "Retains the structural behaviour and weather resistance of a conventional curtain.",
-      },
-      {
-        title: "Partial visibility",
-        body: "Frontages stay partly visible, which suits retail and display openings.",
-      },
-      {
-        title: "Manual or motorised",
-        body: "Available with side, central or tubular drives, and with manual operation on smaller openings.",
-      },
+    construction: [
+      "Double-wall slats with an insulating core",
+      "Steel barrel, end plates and guides",
+      "Perimeter and bottom seals to retain the thermal envelope",
     ],
-    applications: [
-      "Retail and showroom frontages",
-      "Parking and ventilated service areas",
-      "Mall and arcade units",
-      "Openings needing light and security together",
+    namingNote:
+      "Working name. The previous product page for this shutter carried a page title reading “Galvanize Rolling Shutter” while its heading read “Insulated Rolling Shutters”. The product itself is confirmed; the exact commercial name needs confirming from the business.",
+    related: ["galvanized-steel-rolling-shutters", "fire-rated-rolling-shutters", "high-speed-insulated-panel-doors"],
+    documents: [
+      { title: "Insulated Rolling Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    specs: [],
-    image: "/images/photography/shutter-grey.jpg",
-    imageAlt: "A closed metal rolling shutter across an opening",
-    related: ["bright-bar-rolling-shutters", "polycarbonate-rolling-shutters", "aluminium-rolling-shutters"],
-    legacyUrl: "https://www.standardautomation.in/perforated-shutters.html",
+    imageId: "p-shutter-insulated",
+    legacyUrls: ["g-i-rolling-shutters.html"],
   },
 ];
