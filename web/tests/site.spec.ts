@@ -445,7 +445,11 @@ test.describe("assets, layout and links", () => {
             page.evaluate(
               () => [...document.querySelectorAll("img")].filter((img) => !img.complete).length,
             ),
-          { timeout: 30_000 },
+          // The poll carries its own deadline, which test.slow() does not
+          // extend. On a cold optimizer cache every variant on the page is
+          // transcoded on first request, and 30s is not enough for a page
+          // carrying two dozen images.
+          { timeout: 90_000 },
         )
         .toBe(0);
 

@@ -245,8 +245,15 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-cold-storage-freezer-door",
     ],
     documents: [brochure("High Speed Roll-Up Door"), drawing],
-    imageId: "p-hsd-roll-up",
-    galleryIds: ["g-hsd-installation", "g-hsd-rollup-context", "g-hsd-warehouse"],
+    imageId: "hsd-roll-up-hero",
+    galleryIds: [
+      "hsd-roll-up-front",
+      "hsd-roll-up-angle",
+      "hsd-roll-up-operational",
+      "hsd-roll-up-detail",
+      "hsd-roll-up-application",
+      "p-hsd-roll-up",
+    ],
     legacyUrls: ["high-speed-door.html", "high-speed-roll-up-door.html"],
   },
 
@@ -417,8 +424,8 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-self-repairing-door",
     ],
     documents: [brochure("High Speed Fold-Up Door"), drawing],
-    imageId: "p-hsd-fold-up",
-    galleryIds: ["g-hsd-wide-opening", "g-hsd-warehouse"],
+    imageId: "hsd-fold-up-hero",
+    galleryIds: ["hsd-fold-up-front", "p-hsd-fold-up"],
     legacyUrls: ["high-speed-fold-up-doors.html"],
   },
 

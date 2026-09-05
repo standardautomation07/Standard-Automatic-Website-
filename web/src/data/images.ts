@@ -23,16 +23,28 @@ import type { ImageRef } from "@/lib/types";
  *    scripts/build-door-diagrams.mjs. They carry no third-party rights and
  *    depict only what the issued technical data describes.
  *
+ *  - "Standard Automation — AI-generated product visualisation." Product
+ *    imagery generated to a written master visual definition, because no
+ *    installation photography exists yet. Every such image is a plausible
+ *    depiction rather than a record of a real installation, and is marked so
+ *    that it can be swapped for real photography without touching anything
+ *    downstream. What is verified about each product and what is a visual
+ *    assumption is recorded per product in
+ *    research/high-speed-doors-visual-definitions.md.
+ *
  * No competitor imagery is used.
  */
 
 const STOCK = "Unsplash — Unsplash License, free commercial use, no attribution required";
 const OWN = "Standard Automatic Solutions — supplier catalogue render from the company's own published material";
 const DIAGRAM = "Standard Automation — original technical illustration, drawn for this website";
+const GENERATED = "Standard Automation — AI-generated product visualisation, built to the master visual definition in research/high-speed-doors-visual-definitions.md";
 
 const PENDING = "Stand-in. Replace with owned installation photography before launch.";
 const APPROVED = "Cleared for use — company's own published asset.";
 const ORIGINAL = "Cleared for use — original artwork, no third-party rights.";
+const VISUALISATION =
+  "Interim visual. NOT a photograph of a Standard Automation installation, and not a photograph of any other manufacturer's product. Replace with owned installation photography when it exists.";
 
 function stock(id: string, file: string, alt: string, association: string): ImageRef {
   return { id, src: `/images/photography/${file}`, alt, source: STOCK, usage: PENDING, association };
@@ -47,6 +59,28 @@ function own(id: string, file: string, alt: string, association: string, fit: "c
  * image where the mechanism is the product and a photograph of a closed door
  * would show none of it. Built by scripts/build-door-diagrams.mjs.
  */
+/**
+ * One view from a generated product image package. `view` is the filename
+ * suffix, so an id maps predictably onto the asset folder for that product.
+ */
+function generated(
+  id: string,
+  product: string,
+  view: string,
+  alt: string,
+  association: string,
+): ImageRef {
+  return {
+    id,
+    src: `/images/products/high-speed-doors/${product}/${product}-${view}.webp`,
+    alt,
+    source: GENERATED,
+    usage: VISUALISATION,
+    association,
+    fit: "cover",
+  };
+}
+
 function diagram(id: string, file: string, alt: string, association: string): ImageRef {
   return {
     id,
@@ -131,6 +165,67 @@ const list: ImageRef[] = [
     "high-speed-cold-storage-freezer-door",
     "Diagram of a high speed cold storage door: an insulated curtain with heated side guides and a cold-storage bottom seal at a freezer room opening",
     "High Speed Cold Storage / Freezer Door",
+  ),
+
+  // High Speed Roll-Up Door — generated product image package, six views built
+  // to one master visual definition so the same door appears in all of them.
+  generated(
+    "hsd-roll-up-hero",
+    "high-speed-roll-up-door",
+    "hero",
+    "A blue PVC high speed roll-up door, closed, in an internal warehouse opening, with galvanized steel side guides and a geared motor at the head",
+    "High Speed Roll-Up Door — lead image",
+  ),
+  generated(
+    "hsd-roll-up-front",
+    "high-speed-roll-up-door",
+    "front",
+    "Front elevation of a blue PVC high speed roll-up door showing the full curtain, both side guides, the barrel and the wall-mounted control panel",
+    "High Speed Roll-Up Door — front view",
+  ),
+  generated(
+    "hsd-roll-up-angle",
+    "high-speed-roll-up-door",
+    "angle",
+    "A blue PVC high speed roll-up door seen from a three-quarter angle, showing the depth of the side guide, the end of the barrel and the geared motor housing",
+    "High Speed Roll-Up Door — three-quarter view",
+  ),
+  generated(
+    "hsd-roll-up-operational",
+    "high-speed-roll-up-door",
+    "operational",
+    "A high speed roll-up door part open with a forklift driving through the clear opening beneath the raised curtain",
+    "High Speed Roll-Up Door — in operation",
+  ),
+  generated(
+    "hsd-roll-up-detail",
+    "high-speed-roll-up-door",
+    "detail",
+    "Close-up of the lower corner of a high speed door, showing the woven texture of the blue PVC curtain, the black rubber bottom edge and the bolted galvanized steel side guide",
+    "High Speed Roll-Up Door — construction detail",
+  ),
+  generated(
+    "hsd-roll-up-application",
+    "high-speed-roll-up-door",
+    "application",
+    "A blue high speed roll-up door closed in a dividing wall of a distribution warehouse, with loaded pallet racking either side of a wide concrete aisle",
+    "High Speed Roll-Up Door — installed application",
+  ),
+
+  // High Speed Fold-Up Door — package in progress.
+  generated(
+    "hsd-fold-up-hero",
+    "high-speed-fold-up-door",
+    "hero",
+    "A tall anthracite high speed fold-up door in the external elevation of a logistics building, with horizontal aluminium wind bars and a rectangular head box",
+    "High Speed Fold-Up Door — lead image",
+  ),
+  generated(
+    "hsd-fold-up-front",
+    "high-speed-fold-up-door",
+    "front",
+    "Front elevation of a tall anthracite high speed fold-up door showing the wind bars, the vision window band and the rectangular galvanized head box",
+    "High Speed Fold-Up Door — front view",
   ),
 
   // Contextual photography used in the High Speed Doors galleries.

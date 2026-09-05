@@ -533,7 +533,9 @@ test.describe("the pages render that data", () => {
           page.evaluate(
             () => [...document.querySelectorAll("img")].filter((img) => !img.complete).length,
           ),
-        { timeout: 30_000 },
+        // The poll carries its own deadline, which test.slow() does not
+        // extend. On a cold optimizer cache 30s is not enough.
+        { timeout: 90_000 },
       )
       .toBe(0);
 

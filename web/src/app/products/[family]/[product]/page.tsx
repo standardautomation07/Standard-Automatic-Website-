@@ -133,6 +133,18 @@ export default async function ProductPage({ params }: Params) {
           </div>
         </div>
 
+        {image(product.imageId).usage.startsWith("Interim visual") && (
+          <div className="shell pb-2">
+            <p className="max-w-3xl text-xs leading-relaxed text-steel-500">
+              Product visualisations. These images are built to a written
+              specification of this door type rather than photographed on site,
+              and they are replaced as installation photography becomes
+              available. They illustrate construction and arrangement; the
+              figures that matter are in the specification below.
+            </p>
+          </div>
+        )}
+
         {/* QUICK FACTS */}
         <div className="shell pb-12 lg:pb-14">
           <dl className="grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
