@@ -674,22 +674,14 @@ export default async function ProductPage({ params }: Params) {
  * One specification value, rendered against how firm it actually is.
  *
  *  - CONFIRMED    — the figure, plainly.
- *  - CONFIGURABLE — the figure, with the dependency marked next to it. It is a
- *                   real number and it is published; it is not a promise that
- *                   applies to every opening.
+ *  - CONFIGURABLE — the figure as published. The dependency is carried by the
+ *                   note under the tables and by the marked headline facts,
+ *                   rather than by a badge on every row.
  *  - TBC          — either the qualification the issued data itself gives
  *                   ("application dependent", "project specific"), or, where
  *                   nothing was supplied, the field name with its expected
  *                   unit and no number invented to fill the gap.
  */
-function needsBadge(spec: Spec): boolean {
-  if (spec.status === "CONFIRMED") return false;
-  if (spec.value === null) return true;
-  // A figure that varies gets flagged. A prose answer that already states what
-  // it depends on says it better than a badge would, so it is left to speak.
-  return /\d/.test(spec.value);
-}
-
 function SpecValue({ spec }: { spec: Spec }) {
   if (spec.value === null) {
     return (
@@ -700,16 +692,7 @@ function SpecValue({ spec }: { spec: Spec }) {
     );
   }
 
-  if (!needsBadge(spec)) return <span className="text-steel-800">{spec.value}</span>;
-
-  return (
-    <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
-      <span className="text-steel-800">{spec.value}</span>
-      <span className="inline-flex items-center rounded-edge border border-amber-deep/30 bg-amber-soft px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.1em] text-amber-deep">
-        {spec.status === "CONFIGURABLE" ? "Subject to configuration" : "To be confirmed"}
-      </span>
-    </span>
-  );
+  return <span className="text-steel-800">{spec.value}</span>;
 }
 
 function DetailBlock({ title, items }: { title: string; items: string[] }) {

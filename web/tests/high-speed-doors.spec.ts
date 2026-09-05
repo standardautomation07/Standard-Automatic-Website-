@@ -464,7 +464,9 @@ test.describe("the pages render that data", () => {
 
   test("a configuration-dependent figure is visibly qualified", async ({ page }) => {
     await page.goto("/products/high-speed-doors/high-speed-spiral-door");
-    await expect(page.getByText("Subject to configuration").first()).toBeVisible();
+    // The qualification is carried by the note under the tables and by the
+    // marked headline facts, not by a badge on every row.
+    await expect(page.getByText(CONFIGURATION_NOTE).first()).toBeVisible();
     await expect(
       page
         .getByRole("table")

@@ -297,14 +297,6 @@ export function ShutterDetail({ product }: { product: Product }) {
 }
 
 /** Same three-state rendering the rest of the site uses. */
-function needsBadge(spec: Spec): boolean {
-  if (spec.status === "CONFIRMED") return false;
-  if (spec.value === null) return true;
-  // A figure that varies gets flagged. A prose answer that already states what
-  // it depends on says it better than a badge would, so it is left to speak.
-  return /\d/.test(spec.value);
-}
-
 function SpecCell({ spec }: { spec: Spec }) {
   if (spec.value === null) {
     return (
@@ -315,14 +307,5 @@ function SpecCell({ spec }: { spec: Spec }) {
     );
   }
 
-  if (!needsBadge(spec)) return <span className="text-steel-800">{spec.value}</span>;
-
-  return (
-    <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
-      <span className="text-steel-800">{spec.value}</span>
-      <span className="inline-flex items-center rounded-edge border border-amber-deep/30 bg-amber-soft px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.1em] text-amber-deep">
-        {spec.status === "CONFIGURABLE" ? "Subject to configuration" : "To be confirmed"}
-      </span>
-    </span>
-  );
+  return <span className="text-steel-800">{spec.value}</span>;
 }
