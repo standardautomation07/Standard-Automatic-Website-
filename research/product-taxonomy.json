@@ -562,6 +562,74 @@
               ]
             }
           ]
+        },
+        {
+          "id": "automatic-swing-doors",
+          "name": "Automatic Swing Doors",
+          "principle": "A powered operator on a hinged pedestrian leaf, for openings where a sliding track cannot be fitted.",
+          "products": [
+            {
+              "id": "automatic-swing-doors",
+              "name": "Automatic Swing Doors",
+              "status": "POTENTIAL",
+              "variants": [
+                {
+                  "id": "low-energy",
+                  "name": "Low energy",
+                  "status": "POTENTIAL"
+                },
+                {
+                  "id": "full-power",
+                  "name": "Full power",
+                  "status": "POTENTIAL"
+                },
+                {
+                  "id": "double-leaf",
+                  "name": "Double leaf with sequencing",
+                  "status": "POTENTIAL"
+                },
+                {
+                  "id": "concealed",
+                  "name": "Concealed operator",
+                  "status": "POTENTIAL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hermetic-cleanroom-doors",
+          "name": "Hermetic & Cleanroom Doors",
+          "principle": "An automatic leaf that seals against its frame on all four edges, so the opening can hold a pressure differential and a classification.",
+          "products": [
+            {
+              "id": "hermetic-cleanroom-doors",
+              "name": "Hermetic & Cleanroom Doors",
+              "status": "POTENTIAL",
+              "variants": [
+                {
+                  "id": "single-leaf",
+                  "name": "Single leaf",
+                  "status": "POTENTIAL"
+                },
+                {
+                  "id": "bi-parting",
+                  "name": "Bi-parting",
+                  "status": "POTENTIAL"
+                },
+                {
+                  "id": "airlock-interlocked",
+                  "name": "Airlock interlocked pair",
+                  "status": "POTENTIAL"
+                },
+                {
+                  "id": "shielded",
+                  "name": "Shielded",
+                  "status": "POTENTIAL"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -813,15 +881,13 @@
     "Road blockers and tyre killers",
     "Vehicle restraint systems",
     "Mobile dock ramps and lift tables",
-    "Cleanroom hermetic doors",
     "Explosion-protected (ATEX) and machine-protection high speed door series",
-    "Automatic swing pedestrian doors",
     "Stainless steel and galvalume rolling shutters"
   ],
   "counts": {
     "families": 8,
-    "categories": 17,
-    "products": 28
+    "categories": 19,
+    "products": 30
   },
   "withdrawnFromRange": [
     {

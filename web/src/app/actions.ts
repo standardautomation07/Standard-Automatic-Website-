@@ -26,6 +26,9 @@ export async function submitEnquiry(
     height: readField(formData, "height"),
     application: readField(formData, "application"),
     location: readField(formData, "location"),
+    city: readField(formData, "city"),
+    quantity: readField(formData, "quantity"),
+    projectStage: readField(formData, "projectStage"),
     usage: readField(formData, "usage"),
     message: readField(formData, "message"),
   };

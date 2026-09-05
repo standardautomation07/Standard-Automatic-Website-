@@ -83,6 +83,8 @@ const list: ImageRef[] = [
   stock("p-gate-retractable", "gate-sliding.jpg", "A yellow and black site gate across a vehicle entrance", "Retractable Gates"),
 
   stock("p-auto-sliding-doors", "entrance-automation.jpg", "Automatic glass entrance doors at a modern building", "Automatic Sliding Glass Doors"),
+  stock("p-swing-doors", "industry-healthcare.jpg", "A hospital corridor with doors along it", "Automatic Swing Doors"),
+  stock("p-hermetic-doors", "industry-cleanroom.jpg", "Workers in protective suits inside a cleanroom", "Hermetic & Cleanroom Doors"),
 
   stock("p-dock-leveller", "loading-bay-trailer.jpg", "A trailer positioned at a loading ramp", "Dock Levellers"),
   stock("p-dock-shelter", "loading-bay.jpg", "A row of loading docks on a distribution building", "Dock Shelters & Dock Houses"),

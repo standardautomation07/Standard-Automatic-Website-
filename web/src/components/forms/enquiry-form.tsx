@@ -102,7 +102,9 @@ export function EnquiryForm({
           <Field id={`${formId}-width`} name="width" label="Clear width" placeholder="e.g. 4200 mm" defaultValue={values.width} error={errors.width} />
           <Field id={`${formId}-height`} name="height" label="Clear height" placeholder="e.g. 4000 mm" defaultValue={values.height} error={errors.height} />
           <Field id={`${formId}-application`} name="application" label="Application" placeholder="e.g. warehouse dispatch bay" defaultValue={values.application} error={errors.application} />
-          <Field id={`${formId}-location`} name="location" label="Site location" placeholder="e.g. Chakan, Pune" defaultValue={values.location} error={errors.location} />
+          <Field id={`${formId}-location`} name="location" label="Site location" placeholder="e.g. Chakan industrial area" defaultValue={values.location} error={errors.location} />
+          <Field id={`${formId}-city`} name="city" label="City" placeholder="e.g. Pune" defaultValue={values.city} error={errors.city} />
+          <Field id={`${formId}-quantity`} name="quantity" label="Quantity" placeholder="e.g. 3 openings" defaultValue={values.quantity} error={errors.quantity} />
           <div className="sm:col-span-2">
             <label htmlFor={`${formId}-usage`} className="eyebrow block text-steel-500">
               Usage
@@ -118,6 +120,23 @@ export function EnquiryForm({
               <option value="medium">Medium — tens of cycles a day</option>
               <option value="heavy">Heavy — hundreds of cycles a day</option>
               <option value="continuous">Continuous — in use through the shift</option>
+            </select>
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor={`${formId}-projectStage`} className="eyebrow block text-steel-500">
+              Project stage
+            </label>
+            <select
+              id={`${formId}-projectStage`}
+              name="projectStage"
+              defaultValue={values.projectStage ?? ""}
+              className="mt-3 h-12 w-full rounded-edge border border-line bg-paper-raised px-4 text-sm text-steel-900 focus-visible:border-steel-900 focus-visible:outline-none"
+            >
+              <option value="">Not sure yet</option>
+              <option value="budgeting">Budgeting or early enquiry</option>
+              <option value="design">Design or tender stage</option>
+              <option value="ready">Ready to order</option>
+              <option value="replacement">Replacing something that has failed</option>
             </select>
           </div>
         </div>

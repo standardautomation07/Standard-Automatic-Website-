@@ -84,6 +84,26 @@ export interface Benefit {
   body: string;
 }
 
+/** A real buyer or engineering question with a factual answer. Written from
+ *  search intent, never invented to pad a page. */
+export interface Faq {
+  question: string;
+  answer: string;
+}
+
+/** "Which configuration is right for your application?" — the decision, and
+ *  what it turns on. */
+export interface SelectionRule {
+  condition: string;
+  recommendation: string;
+}
+
+/** How the product ties into other systems. Only where technically true. */
+export interface Integration {
+  system: string;
+  detail: string;
+}
+
 /** Three or four headline facts shown directly under the product hero. */
 export interface QuickFact {
   label: string;
@@ -138,6 +158,10 @@ export interface Product {
   controls?: string[];
   options?: string[];
   maintenance?: string[];
+  integration?: Integration[];
+  installation?: string[];
+  selectionGuide?: SelectionRule[];
+  faq?: Faq[];
   related: string[];
   documents: DocumentRef[];
   imageId: string;
@@ -154,7 +178,10 @@ export interface Category {
   name: string;
   /** The construction or operating principle that defines the group. */
   principle: string;
-  /** Inherited by every product in the category unless it overrides them. */
+  /** Inherited by every product in the category unless it overrides them.
+   *  Integration, installation, selection guidance and FAQ are almost always
+   *  a property of how the product type works, so they live here rather than
+   *  being restated on every product. */
   defaults: {
     safety: string[];
     controls: string[];

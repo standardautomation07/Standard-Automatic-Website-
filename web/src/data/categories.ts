@@ -401,6 +401,67 @@ export const categories: Category[] = [
     },
   },
 
+  {
+    id: "automatic-swing-doors",
+    familyId: "entrance-automation",
+    name: "Automatic Swing Doors",
+    principle:
+      "A powered operator on a hinged pedestrian leaf, for openings where a sliding track cannot be fitted or the door must also work as a conventional swing door.",
+    defaults: {
+      safety: [
+        "Presence sensing on both sides of the swing arc",
+        "Low-energy operation, or guarding where full-power operation is required",
+        "Obstruction detection stops and reverses the leaf",
+        "Manual operation retained without power",
+      ],
+      controls: [
+        "Activation by push plate, wave sensor, reader or remote release",
+        "Adjustable opening angle, speed and hold-open time",
+        "Mode selector including hold-open and manual-only",
+      ],
+      options: [
+        "Hands-free elbow, foot or wave activation",
+        "Concealed overhead or surface-mounted operator",
+        "Double-leaf sequencing",
+        "Integration with access control and nurse-call systems",
+      ],
+      maintenance: [
+        "Operator, arm linkage and sensors should be inspected on a scheduled interval",
+        "Hold-open and obstruction behaviour must be function-tested at every visit",
+      ],
+    },
+  },
+  {
+    id: "hermetic-cleanroom-doors",
+    familyId: "entrance-automation",
+    name: "Hermetic & Cleanroom Doors",
+    principle:
+      "An automatic leaf that seals against its frame on all four edges, so the opening can hold a pressure differential and a cleanliness classification.",
+    defaults: {
+      safety: [
+        "Presence detection in the threshold",
+        "Obstruction detection stops and reverses the leaf",
+        "Defined behaviour on alarm, agreed against the containment and escape strategy",
+        "Manual operation available without power",
+      ],
+      controls: [
+        "Hands-free activation by wave sensor, elbow switch or foot control",
+        "Airlock interlocking so paired doors are never open together",
+        "Access control and mode selection from a controlled position",
+      ],
+      options: [
+        "Flush vision panels with concealed frames",
+        "Stainless steel or powder-coated hygienic facings",
+        "Interlocked pairing for gowning rooms and material airlocks",
+        "Integration with pressure monitoring and BMS alarms",
+      ],
+      maintenance: [
+        "Seals are the consumable that determines whether the opening still holds its differential",
+        "Interlock and sensor function must be tested as part of the area's periodic qualification",
+      ],
+    },
+  },
+
   // ------------------------------------------------------------ loading bay
   {
     id: "dock-levellers",

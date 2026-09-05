@@ -257,8 +257,44 @@ test.describe("catalogue hierarchy", () => {
   test("a product with supplied figures shows them alongside the unanswered fields", async ({ page }) => {
     await page.goto("/products/loading-bay/dock-levellers");
     await expect(page.getByText(/\d+ of \d+ fields published/)).toBeVisible();
-    await expect(page.getByText("725–750 mm")).toBeVisible();
+    // Scoped to the tables: the FAQ answer cites the same figure, which is
+    // the intended behaviour but makes an unscoped locator ambiguous.
+    await expect(page.getByRole("table").getByText("725–750 mm")).toBeVisible();
     await expect(page.getByText("To be confirmed", { exact: false }).first()).toBeVisible();
+  });
+
+  test("product pages carry integration, installation, selection guidance and FAQ", async ({ page }) => {
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    await expect(page.getByRole("heading", { name: "What it connects to" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "What the site has to provide" })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /Which configuration is right for your application/i }),
+    ).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Questions we are actually asked" })).toBeVisible();
+  });
+
+  test("FAQ structured data matches the visible questions", async ({ page }) => {
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const faq = blocks.map((b) => JSON.parse(b)).find((b) => b["@type"] === "FAQPage");
+    expect(faq).toBeTruthy();
+    expect(faq.mainEntity.length).toBeGreaterThan(2);
+    // every question in the schema must actually appear on the page
+    for (const entry of faq.mainEntity) {
+      await expect(page.getByRole("term").filter({ hasText: entry.name }).first()).toBeVisible();
+    }
+  });
+
+  test("the two newly added entrance products are published as to-be-confirmed", async ({ page }) => {
+    for (const path of [
+      "/products/entrance-automation/automatic-swing-doors",
+      "/products/entrance-automation/hermetic-cleanroom-doors",
+    ]) {
+      const response = await page.goto(path);
+      expect(response?.status()).toBeLessThan(400);
+      await expect(page.locator("h1")).toBeVisible();
+      await expect(page.getByText("To be confirmed").first()).toBeVisible();
+    }
   });
 
   test("variants render with their configuration notes", async ({ page }) => {
@@ -276,22 +312,22 @@ test.describe("catalogue hierarchy", () => {
     await page.goto("/products/catalogue");
 
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(28);
+    await expect(cards).toHaveCount(30);
 
     await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
       await expect(cards).toHaveCount(2, { timeout: 1000 });
     });
     await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
-      await expect(cards).toHaveCount(28, { timeout: 1000 });
+      await expect(cards).toHaveCount(30, { timeout: 1000 });
     });
 
     await page.getByLabel("Industry").selectOption("cold-chain-food");
-    expect(await cards.count()).toBeLessThan(28);
+    expect(await cards.count()).toBeLessThan(30);
     await page.getByLabel("Industry").selectOption("all");
 
     await page.getByLabel("Operating environment").selectOption("fire");
     expect(await cards.count()).toBeGreaterThan(0);
-    expect(await cards.count()).toBeLessThan(28);
+    expect(await cards.count()).toBeLessThan(30);
     await page.getByLabel("Operating environment").selectOption("all");
 
     await page.getByLabel("Search products").fill("turnstile");

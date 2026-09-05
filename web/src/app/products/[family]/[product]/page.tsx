@@ -12,6 +12,7 @@ import {
   products,
   relatedProducts,
   resolveDetail,
+  productGuidance,
   specCompleteness,
   variantSpecs,
 } from "@/lib/catalog";
@@ -23,7 +24,7 @@ import { ProductCard } from "@/components/product/cards";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
-import { breadcrumbJsonLd, productJsonLd } from "@/lib/json-ld";
+import { breadcrumbJsonLd, faqJsonLd, productJsonLd } from "@/lib/json-ld";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { Media, StatusBadge } from "@/components/ui/media";
 import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
@@ -62,6 +63,7 @@ export default async function ProductPage({ params }: Params) {
   const path = productPath(product);
 
   const completeness = specCompleteness(product);
+  const guidance = productGuidance(product);
   const variantDeltas = variantSpecs(product);
   const safety = resolveDetail(product, "safety");
   const controls = resolveDetail(product, "controls");
@@ -82,6 +84,7 @@ export default async function ProductPage({ params }: Params) {
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
       <JsonLd data={productJsonLd(product, path, image(product.imageId).src, completeness.groups)} />
+      {guidance.faq.length > 0 && <JsonLd data={faqJsonLd(guidance.faq)} />}
 
       {/* HERO */}
       <section className="border-b border-line bg-paper">
@@ -366,11 +369,33 @@ export default async function ProductPage({ params }: Params) {
         </div>
       </section>
 
+      {/* INTEGRATION */}
+      {guidance.integration.length > 0 && (
+        <section className="border-t border-line bg-paper py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              index="06"
+              eyebrow="Integration"
+              title="What it connects to"
+              lede="Couplings that are technically true for this product type. Credential technology is your choice — the opening responds to a release signal, not to a brand."
+            />
+            <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
+              {guidance.integration.map((entry) => (
+                <article key={entry.system} className="p-7">
+                  <h3 className="font-display text-lg font-medium text-steel-900">{entry.system}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-steel-600">{entry.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* SAFETY & CONTROL */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
-            index="06"
+            index="07"
             eyebrow="Safety & control"
             title="How it is governed"
             lede="Detection, control and maintenance are part of the specification, not an add-on decided after commissioning."
@@ -384,11 +409,63 @@ export default async function ProductPage({ params }: Params) {
         </div>
       </section>
 
+      {/* INSTALLATION */}
+      {guidance.installation.length > 0 && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                index="08"
+                eyebrow="Installation"
+                title="What the site has to provide"
+                lede="Most problems on an automated opening are set before anyone arrives to install it. These are the things worth settling early."
+              />
+            </div>
+            <ol className="lg:col-span-7">
+              {guidance.installation.map((step, index) => (
+                <li
+                  key={step.slice(0, 30)}
+                  className="grid grid-cols-[auto_1fr] gap-x-5 border-t border-line py-5 last:border-b"
+                >
+                  <span className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</span>
+                  <p className="text-sm leading-relaxed text-steel-700">{step}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
+      {/* SELECTION GUIDE */}
+      {guidance.selectionGuide.length > 0 && (
+        <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              index="09"
+              eyebrow="Selection guide"
+              title="Which configuration is right for your application?"
+              lede="What the decision actually turns on. If your situation is not listed, describe the opening and we will work it through with you."
+            />
+            <dl className="mt-12 grid hairline-grid md:grid-cols-2">
+              {guidance.selectionGuide.map((rule) => (
+                <div key={rule.condition} className="p-7">
+                  <dt className="flex gap-3 font-display text-lg font-medium text-steel-900">
+                    <span className="mt-1 h-2 w-2 shrink-0 bg-amber" aria-hidden="true" />
+                    {rule.condition}
+                  </dt>
+                  <dd className="mt-3 pl-5 text-sm leading-relaxed text-steel-600">{rule.recommendation}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
       {/* GALLERY */}
       {product.galleryIds && product.galleryIds.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
           <div className="shell">
-            <SectionHeading index="07" eyebrow="Gallery" title={`${product.name} in detail`} />
+            <SectionHeading index="10" eyebrow="Gallery" title={`${product.name} in detail`} />
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {product.galleryIds.map((imageId) => (
                 <li key={imageId} className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
@@ -403,7 +480,7 @@ export default async function ProductPage({ params }: Params) {
       {/* DOWNLOADS */}
       <section className="border-t border-line bg-paper py-16 lg:py-20">
         <div className="shell">
-          <SectionHeading index="08" eyebrow="Downloads" title="Documentation" />
+          <SectionHeading index="11" eyebrow="Downloads" title="Documentation" />
           <ul className="mt-12 grid hairline-grid md:grid-cols-2">
             {product.documents.map((doc) => (
               <li key={doc.title} className="bg-paper-raised p-7">
@@ -446,6 +523,25 @@ export default async function ProductPage({ params }: Params) {
                 <ProductCard key={item.id} product={item} />
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {guidance.faq.length > 0 && (
+        <section className="border-t border-line bg-paper py-16 lg:py-20">
+          <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <SectionHeading eyebrow="FAQ" title="Questions we are actually asked" />
+            </div>
+            <dl className="lg:col-span-8">
+              {guidance.faq.map((entry) => (
+                <div key={entry.question} className="border-t border-line py-6 last:border-b">
+                  <dt className="font-display text-lg font-medium text-steel-900">{entry.question}</dt>
+                  <dd className="mt-3 text-sm leading-relaxed text-steel-700">{entry.answer}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
       )}

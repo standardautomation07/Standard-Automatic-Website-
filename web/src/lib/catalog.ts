@@ -11,6 +11,7 @@ import { loadingBayProducts } from "@/data/products/loading-bay";
 import { accessControlProducts } from "@/data/products/access-control";
 import specValues from "@/data/spec-values.json";
 import { schemaFor } from "@/data/spec-schema";
+import { guidanceFor } from "@/data/category-guidance";
 import type {
   Category,
   Family,
@@ -179,4 +180,20 @@ export function specGaps() {
       return { product, published, total, missing: total - published };
     })
     .sort((a, b) => b.missing - a.missing);
+}
+
+/**
+ * Integration, installation, selection guidance and FAQ, resolved product
+ * over category. All four are properties of how a product type works, so the
+ * category carries them and a product overrides only where it genuinely
+ * differs.
+ */
+export function productGuidance(product: Product) {
+  const shared = guidanceFor(product.categoryId);
+  return {
+    integration: product.integration ?? shared?.integration ?? [],
+    installation: product.installation ?? shared?.installation ?? [],
+    selectionGuide: product.selectionGuide ?? shared?.selectionGuide ?? [],
+    faq: product.faq ?? shared?.faq ?? [],
+  };
 }

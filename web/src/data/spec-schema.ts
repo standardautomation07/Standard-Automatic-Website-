@@ -580,6 +580,8 @@ const byCategory: Record<string, SpecGroupSchema[]> = {
   "swing-gates": gate,
   "retractable-gates": gate,
   "automatic-sliding-doors": pedestrianDoor,
+  "automatic-swing-doors": pedestrianDoor,
+  "hermetic-cleanroom-doors": pedestrianDoor,
   "dock-levellers": dockLeveller,
   "dock-shelters": dockShelter,
   "pedestrian-access-control": pedestrianAccess,

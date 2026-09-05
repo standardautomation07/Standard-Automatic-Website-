@@ -76,6 +76,10 @@ test.describe("catalogue data matches the research taxonomy", () => {
   });
 
   test("no NOT CONFIRMED market product leaked into the catalogue", () => {
+    // Hermetic and cleanroom doors left this list on 2026-09-05: the market
+    // review found them a direct adjacency to the confirmed sliding and fire
+    // rated door lines, so they are published as POTENTIAL with a visible
+    // to-be-confirmed marker. Everything below remains withheld entirely.
     const forbidden = [
       "hangar",
       "cold-storage-door",
@@ -86,7 +90,6 @@ test.describe("catalogue data matches the research taxonomy", () => {
       "vehicle-restraint",
       "mobile-dock-ramp",
       "lift-table",
-      "hermetic",
     ];
     for (const product of products) {
       for (const term of forbidden) {

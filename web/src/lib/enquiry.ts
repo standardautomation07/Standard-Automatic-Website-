@@ -16,6 +16,9 @@ export interface EnquiryInput {
   height: string;
   application: string;
   location: string;
+  city: string;
+  quantity: string;
+  projectStage: string;
   usage: string;
   message: string;
 }

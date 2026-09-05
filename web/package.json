@@ -10,7 +10,8 @@
     "test:e2e": "playwright test",
     "spec:request": "node scripts/spec-data.mjs request",
     "spec:import": "node scripts/spec-data.mjs import",
-    "spec:status": "node scripts/spec-data.mjs status"
+    "spec:status": "node scripts/spec-data.mjs status",
+    "master": "node scripts/build-product-master.mjs"
   },
   "dependencies": {
     "next": "16.3.4",

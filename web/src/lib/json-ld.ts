@@ -131,3 +131,19 @@ export function familyCollectionJsonLd(
     },
   };
 }
+
+/**
+ * FAQPage. Emitted only where the page actually carries the questions and
+ * answers, because schema that does not match visible content is spam.
+ */
+export function faqJsonLd(faq: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((entry) => ({
+      "@type": "Question",
+      name: entry.question,
+      acceptedAnswer: { "@type": "Answer", text: entry.answer },
+    })),
+  };
+}
