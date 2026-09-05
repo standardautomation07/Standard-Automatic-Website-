@@ -105,6 +105,8 @@ export function EnquiryForm({
           <Field id={`${formId}-location`} name="location" label="Site location" placeholder="e.g. Chakan industrial area" defaultValue={values.location} error={errors.location} />
           <Field id={`${formId}-city`} name="city" label="City" placeholder="e.g. Pune" defaultValue={values.city} error={errors.city} />
           <Field id={`${formId}-quantity`} name="quantity" label="Quantity" placeholder="e.g. 3 openings" defaultValue={values.quantity} error={errors.quantity} />
+          <Field id={`${formId}-variant`} name="variant" label="Variant" placeholder="e.g. heavy duty 1.2 mm" defaultValue={values.variant} error={errors.variant} />
+          <Field id={`${formId}-operation`} name="operation" label="Operation" placeholder="e.g. motorised" defaultValue={values.operation} error={errors.operation} />
           <div className="sm:col-span-2">
             <label htmlFor={`${formId}-usage`} className="eyebrow block text-steel-500">
               Usage

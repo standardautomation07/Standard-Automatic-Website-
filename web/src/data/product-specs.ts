@@ -1,4 +1,5 @@
 import type { Spec, SpecGroup } from "@/lib/types";
+import { rollingShutterSpecs } from "@/data/product-specs-shutters";
 
 /**
  * Authored specification tables.
@@ -334,6 +335,7 @@ const coldStorage: SpecGroup[] = [
  * and spec-values.json.
  */
 export const authoredSpecs: Record<string, SpecGroup[]> = {
+  ...rollingShutterSpecs,
   "high-speed-roll-up-door": rollUp,
   "high-speed-fold-up-door": foldUp,
   "high-speed-self-repairing-door": selfRepairing,

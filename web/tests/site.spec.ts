@@ -34,7 +34,7 @@ const INDUSTRIES = [
 const SAMPLE_PRODUCTS = [
   "/products/high-speed-doors/high-speed-roll-up-door",
   "/products/industrial-doors/industrial-sectional-overhead-doors",
-  "/products/rolling-shutters/polycarbonate-rolling-shutters",
+  "/products/rolling-shutters/ms-solid-rolling-shutters",
   "/products/fire-safety-doors/fire-rated-rolling-shutters",
   "/products/automatic-gates/retractable-gates",
   "/products/entrance-automation/automatic-sliding-glass-doors",
@@ -234,7 +234,13 @@ test.describe("catalogue hierarchy", () => {
       const response = await page.goto(path);
       expect(response?.status()).toBeLessThan(400);
       await expect(page.locator("h1")).toBeVisible();
-      await expect(page.getByRole("heading", { name: /Key benefits|What this product gets you/i }).first()).toBeVisible();
+      // Rolling Shutters render their benefits inside the accordion's Features
+      // panel rather than as a standalone section, so accept either heading.
+      await expect(
+        page
+          .getByRole("heading", { name: /Key benefits|What this product gets you|Features/i })
+          .first(),
+      ).toBeVisible();
       await expect(page.getByText("Applications", { exact: false }).first()).toBeVisible();
       await expect(page.locator("#enquiry")).toBeAttached();
     });
@@ -312,22 +318,22 @@ test.describe("catalogue hierarchy", () => {
     await page.goto("/products/catalogue");
 
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(33);
+    await expect(cards).toHaveCount(40);
 
     await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
       await expect(cards).toHaveCount(2, { timeout: 1000 });
     });
     await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
-      await expect(cards).toHaveCount(33, { timeout: 1000 });
+      await expect(cards).toHaveCount(40, { timeout: 1000 });
     });
 
     await page.getByLabel("Industry").selectOption("cold-chain-food");
-    expect(await cards.count()).toBeLessThan(33);
+    expect(await cards.count()).toBeLessThan(40);
     await page.getByLabel("Industry").selectOption("all");
 
     await page.getByLabel("Operating environment").selectOption("fire");
     expect(await cards.count()).toBeGreaterThan(0);
-    expect(await cards.count()).toBeLessThan(33);
+    expect(await cards.count()).toBeLessThan(40);
     await page.getByLabel("Operating environment").selectOption("all");
 
     await page.getByLabel("Search products").fill("turnstile");
@@ -482,7 +488,7 @@ test.describe("assets, layout and links", () => {
 
   test("legacy product URLs redirect into the new hierarchy", async ({ request }) => {
     const cases: [string, string][] = [
-      ["/m-s-rolling-shutters.html", "/products/rolling-shutters/galvanized-steel-rolling-shutters"],
+      ["/m-s-rolling-shutters.html", "/products/rolling-shutters/ms-solid-rolling-shutters"],
       ["/high-speed-door.html", "/products/high-speed-doors/high-speed-roll-up-door"],
       ["/products/high-speed-doors/high-speed-roll-up-doors", "/products/high-speed-doors/high-speed-roll-up-door"],
       ["/fire-proof-rolling-shutters.html", "/products/fire-safety-doors/fire-rated-rolling-shutters"],

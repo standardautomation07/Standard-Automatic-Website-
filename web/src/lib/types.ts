@@ -163,6 +163,27 @@ export interface ImageRef {
   fit?: "cover" | "contain";
 }
 
+/**
+ * Catalogue facets for filtering within a family. Optional because only
+ * families whose products are genuinely chosen against these axes declare
+ * them — Rolling Shutters is the first.
+ */
+export interface ProductFacets {
+  material: string[];
+  construction: string;
+  duty: string[];
+  operation: string[];
+  performance: string[];
+}
+
+/** One row of the family comparison table. Kept factual and short. */
+export interface ComparisonRow {
+  material: string;
+  thickness: string;
+  corrosion: string;
+  operation: string;
+}
+
 export interface Product {
   id: string;
   familyId: FamilyId;
@@ -199,6 +220,20 @@ export interface Product {
   namingNote?: string;
   /** Old .html pages this product's business status was evidenced from. */
   legacyUrls?: string[];
+  /** Filter axes for the family listing. */
+  facets?: ProductFacets;
+  /** Headline figures for the family comparison table. */
+  comparison?: ComparisonRow;
+  /**
+   * Families this product should also be listed under. A product lives in one
+   * family and has one URL; this surfaces it as a clearly-labelled cross-listed
+   * card elsewhere rather than duplicating the page, which would be a doorway.
+   */
+  crossListedIn?: FamilyId[];
+  /** Ordering questions specific to this product type. */
+  ordering?: string[];
+  /** Motors, controls and accessories that genuinely couple to this product. */
+  compatibility?: Integration[];
 }
 
 export interface Category {

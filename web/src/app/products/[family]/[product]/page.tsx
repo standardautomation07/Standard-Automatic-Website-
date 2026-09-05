@@ -18,6 +18,7 @@ import {
 } from "@/lib/catalog";
 import { image } from "@/data/images";
 import { CONFIGURATION_NOTE } from "@/data/product-specs";
+import { ShutterDetail } from "@/components/product/shutter-detail";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -26,7 +27,7 @@ import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, faqJsonLd, productJsonLd } from "@/lib/json-ld";
-import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
+import { productWhatsappHref, siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { Media, StatusBadge } from "@/components/ui/media";
 import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
 import type { Spec } from "@/lib/types";
@@ -63,6 +64,12 @@ export default async function ProductPage({ params }: Params) {
   const category = categoryById[product.categoryId];
   const related = relatedProducts(product);
   const path = productPath(product);
+
+  // Rolling Shutters present their detail as independent accordion
+  // sections instead of a long scroll of stacked panels. Everything the
+  // standard template renders inline is inside that accordion, so the
+  // inline sections are suppressed for this family rather than duplicated.
+  const isShutter = product.familyId === "rolling-shutters";
 
   const completeness = specCompleteness(product);
   const guidance = productGuidance(product);
@@ -226,6 +233,7 @@ export default async function ProductPage({ params }: Params) {
       </section>
 
       {/* KEY BENEFITS */}
+      {!isShutter && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="02" eyebrow="Key benefits" title="What this product gets you" />
@@ -239,6 +247,7 @@ export default async function ProductPage({ params }: Params) {
           </div>
         </div>
       </section>
+      )}
 
       {/* VARIANTS */}
       {product.variants.length > 0 && (
@@ -266,6 +275,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* TECHNICAL SPECIFICATIONS */}
+      {!isShutter && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
@@ -377,8 +387,10 @@ export default async function ProductPage({ params }: Params) {
           </p>
         </div>
       </section>
+      )}
 
       {/* APPLICATIONS */}
+      {!isShutter && (
       <section className="bg-paper py-16 lg:py-20">
         <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
@@ -399,9 +411,10 @@ export default async function ProductPage({ params }: Params) {
           </div>
         </div>
       </section>
+      )}
 
       {/* INTEGRATION */}
-      {guidance.integration.length > 0 && (
+      {!isShutter && guidance.integration.length > 0 && (
         <section className="border-t border-line bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading
@@ -423,6 +436,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* SAFETY & CONTROL */}
+      {!isShutter && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
@@ -439,9 +453,10 @@ export default async function ProductPage({ params }: Params) {
           </div>
         </div>
       </section>
+      )}
 
       {/* INSTALLATION */}
-      {guidance.installation.length > 0 && (
+      {!isShutter && guidance.installation.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
           <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -493,7 +508,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* GALLERY */}
-      {product.galleryIds && product.galleryIds.length > 0 && (
+      {!isShutter && product.galleryIds && product.galleryIds.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading index="10" eyebrow="Gallery" title={`${product.name} in detail`} />
@@ -509,6 +524,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* DOWNLOADS */}
+      {!isShutter && (
       <section className="border-t border-line bg-paper py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="11" eyebrow="Downloads" title="Documentation" />
@@ -533,6 +549,24 @@ export default async function ProductPage({ params }: Params) {
           </ul>
         </div>
       </section>
+      )}
+
+      {/* SHUTTER DETAIL — accordion */}
+      {isShutter && (
+        <section className="border-y border-line bg-paper py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              index="04"
+              eyebrow="Product detail"
+              title="Specification, features and ordering"
+              lede="Each section opens on its own, and you can have as many open at once as you need. Technical data is open by default."
+            />
+            <div className="mt-12">
+              <ShutterDetail product={product} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* RELATED */}
       {related.length > 0 && (
@@ -595,7 +629,11 @@ export default async function ProductPage({ params }: Params) {
                 {siteConfig.phone}
               </a>
               <a
-                href={whatsappHref(`Hello Standard Automation, I would like a quote for ${product.name}.`)}
+                href={
+                  isShutter
+                    ? productWhatsappHref(product.name)
+                    : whatsappHref(`Hello Standard Automation, I would like a quote for ${product.name}.`)
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep"

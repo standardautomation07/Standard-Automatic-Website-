@@ -20,6 +20,10 @@ export interface EnquiryInput {
   quantity: string;
   projectStage: string;
   usage: string;
+  /** Which configuration of the product, where the product has variants. */
+  variant: string;
+  /** Manual, gear, motorised or smart — asked because it changes the price. */
+  operation: string;
   message: string;
 }
 

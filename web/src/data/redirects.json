@@ -31,12 +31,12 @@
   },
   {
     "source": "/m-s-rolling-shutters.html",
-    "destination": "/products/rolling-shutters/galvanized-steel-rolling-shutters",
+    "destination": "/products/rolling-shutters/ms-solid-rolling-shutters",
     "permanent": true
   },
   {
     "source": "/g-i-rolling-shutters.html",
-    "destination": "/products/rolling-shutters/insulated-double-wall-rolling-shutters",
+    "destination": "/products/rolling-shutters/galvanized-steel-rolling-shutters",
     "permanent": true
   },
   {
@@ -297,6 +297,16 @@
   {
     "source": "/products/high-speed-doors/high-speed-insulated-panel-doors",
     "destination": "/products/high-speed-doors/high-speed-rigid-insulated-door",
+    "permanent": true
+  },
+  {
+    "source": "/insulated-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/insulated-double-wall-rolling-shutters",
+    "permanent": true
+  },
+  {
+    "source": "/perforated-rolling-shutters.html",
+    "destination": "/products/rolling-shutters/perforated-rolling-shutters",
     "permanent": true
   }
 ]

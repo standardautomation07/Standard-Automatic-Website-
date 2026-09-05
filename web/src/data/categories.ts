@@ -1,7 +1,7 @@
 import type { Category } from "@/lib/types";
 
 /**
- * Twenty-one categories. A category is a construction or operating *principle*,
+ * Twenty-six categories. A category is a construction or operating *principle*,
  * not a marketing group — it is the level at which two products genuinely
  * work differently rather than just being finished differently.
  *
@@ -222,22 +222,22 @@ export const categories: Category[] = [
 
   // ------------------------------------------------------ rolling shutters
   {
-    id: "single-wall-rolling-shutters",
+    id: "solid-steel-rolling-shutters",
     familyId: "rolling-shutters",
-    name: "Single-Wall Rolling Shutters",
+    name: "Solid Steel Rolling Shutters",
     principle:
-      "A single folded slat profile — chosen when span, security, visibility or airflow matters more than insulation.",
+      "An interlocking steel slat curtain rolling onto a barrel above the opening. The three lines here differ by what the steel is protected with, not by how the shutter works.",
     defaults: {
       safety: [
         "Safety edge on the bottom rail where the shutter is motorised",
         "Obstruction detection on the operator",
-        "Manual override on every powered shutter — hand chain, crank or release",
-        "Guides sized to retain the curtain under wind load",
+        "Manual override on every powered shutter, by hand chain, crank or release",
+        "Guides sized to retain the curtain under the load the opening imposes",
       ],
       controls: [
         "Push button station, key switch or remote handset",
         "Adjustable open and close limits set at commissioning",
-        "Three-phase or single-phase supply depending on curtain weight",
+        "Single-phase or three-phase supply selected against curtain weight",
       ],
       options: [
         "Locking arrangements at the bottom rail",
@@ -247,7 +247,95 @@ export const categories: Category[] = [
       ],
       maintenance: [
         "Guides and bottom rail should be kept clear and inspected on a scheduled interval",
-        "Curtain and barrel bearings are the wear points on a high-cycle shutter",
+        "Curtain, barrel bearings and the drive are the wear points on a high-cycle shutter",
+        "Coating condition decides service life on a steel curtain, so damage is worth making good early",
+      ],
+    },
+  },
+  {
+    id: "architectural-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Aluminium & Stainless Shutters",
+    principle:
+      "A non-ferrous curtain, chosen where appearance, weight or corrosion resistance decides the specification rather than cost.",
+    defaults: {
+      safety: [
+        "Safety edge on the bottom rail where the shutter is motorised",
+        "Obstruction detection on the operator",
+        "Manual override on every powered shutter, by hand chain, crank or release",
+        "Guides sized to retain the curtain under the load the opening imposes",
+      ],
+      controls: [
+        "Push button station, key switch or remote handset",
+        "Adjustable open and close limits set at commissioning",
+        "Single-phase or three-phase supply selected against curtain weight",
+      ],
+      options: [
+        "Anodised, powder coated or RAL colour finish",
+        "Brushed, satin or polished stainless finish",
+        "Locking arrangements at the bottom rail",
+        "Motorisation with remote or access control release",
+      ],
+      maintenance: [
+        "Guides and bottom rail should be kept clear and inspected on a scheduled interval",
+        "A non-ferrous curtain is cleaned rather than repainted, and the cleaning method should suit the finish",
+      ],
+    },
+  },
+  {
+    id: "open-curtain-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Perforated, Vision & Grille Curtains",
+    principle:
+      "An open curtain that secures the opening while letting light, air or sight through it. What changes between these lines is how much of the curtain is open, and in what pattern.",
+    defaults: {
+      safety: [
+        "Safety edge on the bottom rail where the shutter is motorised",
+        "Obstruction detection on the operator",
+        "Manual override on every powered shutter, by hand chain, crank or release",
+        "Guides sized to retain the curtain under the load the opening imposes",
+      ],
+      controls: [
+        "Push button station, key switch or remote handset",
+        "Adjustable open and close limits set at commissioning",
+        "Single-phase or three-phase supply selected against curtain weight",
+      ],
+      options: [
+        "Perforation pattern and open area selected against the visibility required",
+        "Mixed curtain combining solid, perforated and vision sections",
+        "Powder coat or anodised finish",
+        "Locking arrangements at the bottom rail",
+      ],
+      maintenance: [
+        "An open curtain collects debris in the guides more readily than a solid one and benefits from more frequent cleaning",
+        "Guides, bottom rail and barrel bearings should be inspected on a scheduled interval",
+      ],
+    },
+  },
+  {
+    id: "transparent-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Transparent Shutters",
+    principle:
+      "A polycarbonate curtain that closes the opening while leaving the display behind it visible. Specified where the shop front has to keep working after hours.",
+    defaults: {
+      safety: [
+        "Safety edge on the bottom rail",
+        "Obstruction detection on the operator",
+        "Manual emergency operation where the configuration allows it",
+      ],
+      controls: [
+        "Primarily motorised operation, by push button, key switch or remote",
+        "Adjustable open and close limits set at commissioning",
+      ],
+      options: [
+        "Clear or tinted polycarbonate",
+        "Aluminium connector and bottom profile finish to requirement",
+        "Locking arrangements at the bottom profile",
+      ],
+      maintenance: [
+        "Polycarbonate is cleaned rather than painted, and the cleaning agent has to suit the material because solvents craze it",
+        "Connectors, guides and the bottom profile should be inspected on a scheduled interval",
       ],
     },
   },
@@ -274,8 +362,67 @@ export const categories: Category[] = [
         "Vision sections",
       ],
       maintenance: [
-        "Seals are a consumable and determine whether the thermal performance is retained",
+        "Seals are a consumable and decide whether the thermal performance is retained",
         "Guides and barrel bearings should be inspected on a scheduled interval",
+      ],
+    },
+  },
+  {
+    id: "industrial-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Industrial & Wind-Rated Shutters",
+    principle:
+      "An engineered shutter rather than a catalogue size: curtain, guide, shaft and drive are sized together against the opening and the load it carries.",
+    defaults: {
+      safety: [
+        "Photocell across the opening",
+        "Safety edge on the bottom rail",
+        "Emergency stop",
+        "Emergency manual override independent of the power supply",
+        "Anti-drop device on the barrel assembly",
+      ],
+      controls: [
+        "Industrial push button station with key switch isolation",
+        "Adjustable limits set at commissioning against the engineered travel",
+        "Interface for traffic signalling and for access control release",
+      ],
+      options: [
+        "Wind locks and reinforced end locks",
+        "Wicket door for pedestrian passage",
+        "Intermediate mullion on a wide opening",
+        "Vision section within the curtain",
+      ],
+      maintenance: [
+        "Guides, wind locks and end locks carry the load on an exposed shutter and are the first things to inspect",
+        "Shaft bearings, brackets and the drive should be inspected on an interval driven by cycle count",
+        "Anchoring and structural fixings should be checked periodically on any wind-rated installation",
+      ],
+    },
+  },
+  {
+    id: "counter-rolling-shutters",
+    familyId: "rolling-shutters",
+    name: "Counter & Service Shutters",
+    principle:
+      "A small shutter closing a service opening rather than a doorway. Light curtain, compact headbox, and a finish that suits the room it sits in.",
+    defaults: {
+      safety: [
+        "Bottom rail profiled so it can be closed by hand without a trap risk",
+        "Obstruction detection where the shutter is motorised",
+        "Manual override on every powered shutter",
+      ],
+      controls: [
+        "Manual, gear or motorised operation selected against the curtain size",
+        "Key switch or push button where motorised",
+      ],
+      options: [
+        "Integral lock at the bottom rail",
+        "Stainless, anodised or powder coated finish",
+        "Face mounted, between jamb or recessed installation",
+      ],
+      maintenance: [
+        "A counter shutter is operated by hand many times a day, so the guides and the bottom rail lock are the wear points",
+        "Finish should be cleaned with an agent that suits the material, particularly stainless in a food area",
       ],
     },
   },

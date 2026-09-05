@@ -9,10 +9,12 @@ import {
   industryById,
   productPath,
   productsInCategory,
+  products,
   productsInFamily,
   specCompleteness,
 } from "@/lib/catalog";
 import { ProductCard } from "@/components/product/cards";
+import { ShutterFilters } from "@/components/product/shutter-filters";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CtaBand } from "@/components/cta/cta-band";
@@ -50,6 +52,13 @@ export default async function FamilyPage({ params }: Params) {
   const items = productsInFamily(familyId);
   const cats = categoriesInFamily(familyId);
   const others = families.filter((f) => f.id !== family.id);
+
+  // A product lives in one family and has one URL. Cross-listed products are
+  // genuinely part of this range but keep their page where it belongs, so
+  // they are surfaced here as clearly-labelled cards rather than duplicated.
+  const crossListed = products.filter((p) => p.crossListedIn?.includes(familyId));
+  const comparable = [...items, ...crossListed].filter((p) => p.comparison);
+  const showFilters = items.length >= 8 && items.every((p) => p.facets);
 
   const trail = [
     { name: "Home", path: "/" },
@@ -178,6 +187,41 @@ export default async function FamilyPage({ params }: Params) {
         </div>
       </section>
 
+      {/* Filter and browse */}
+      {showFilters && (
+        <section className="border-t border-line bg-paper-sunken py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              index="04"
+              eyebrow="Find a shutter"
+              title="Filter the range"
+              lede="Narrow by what it is made of, how the curtain is built, how hard it has to work, how it is operated and what it has to withstand."
+            />
+            <div className="mt-12">
+              <ShutterFilters products={items} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Cross-listed */}
+      {crossListed.length > 0 && (
+        <section className="border-t border-line bg-paper py-16 lg:py-20">
+          <div className="shell">
+            <SectionHeading
+              eyebrow="Also part of this range"
+              title="Listed under another family"
+              lede="These products belong to this range but their page sits with the family that governs how they behave, so there is one page per product rather than two."
+            />
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {crossListed.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Comparison */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
@@ -198,6 +242,19 @@ export default async function FamilyPage({ params }: Params) {
                   <th scope="col" className="px-5 py-4 text-left font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel-500">
                     Category
                   </th>
+                  {comparable.length > 0 && (
+                    <>
+                      <th scope="col" className="px-5 py-4 text-left font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel-500">
+                        Material
+                      </th>
+                      <th scope="col" className="px-5 py-4 text-left font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel-500">
+                        Thickness
+                      </th>
+                      <th scope="col" className="px-5 py-4 text-left font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel-500">
+                        Corrosion
+                      </th>
+                    </>
+                  )}
                   <th scope="col" className="px-5 py-4 text-left font-mono text-[0.65rem] uppercase tracking-[0.1em] text-steel-500">
                     Environment
                   </th>
@@ -221,6 +278,19 @@ export default async function FamilyPage({ params }: Params) {
                     <td className="px-5 py-4 align-top text-steel-600">
                       {cats.find((c) => c.id === product.categoryId)?.name}
                     </td>
+                    {comparable.length > 0 && (
+                      <>
+                        <td className="px-5 py-4 align-top text-steel-600">
+                          {product.comparison?.material ?? "—"}
+                        </td>
+                        <td className="px-5 py-4 align-top text-steel-600">
+                          {product.comparison?.thickness ?? "—"}
+                        </td>
+                        <td className="px-5 py-4 align-top text-steel-600">
+                          {product.comparison?.corrosion ?? "—"}
+                        </td>
+                      </>
+                    )}
                     <td className="px-5 py-4 align-top text-steel-600">
                       {product.environments.join(", ")}
                     </td>

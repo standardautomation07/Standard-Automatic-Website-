@@ -241,7 +241,20 @@ const list: ImageRef[] = [
 
   stock("p-shutter-galvanized", "shutter-grey.jpg", "A closed steel rolling shutter set in a plain wall", "Galvanized Steel Rolling Shutters"),
   stock("p-shutter-aluminium", "shutter-brown.jpg", "A closed aluminium-finish roller shutter", "Aluminium Rolling Shutters"),
-  stock("p-shutter-grille", "shutter-slats.jpg", "Close detail of rolling shutter slats", "Grille Rolling Shutters"),
+  stock("p-shutter-grille", "shutter-slats.jpg", "Close detail of rolling shutter slats", "Rolling Grille"),
+
+  // Rolling Shutters — placeholder photography for the lines added on
+  // 2026-09-05. These are licensed stock images standing in for product
+  // photography that does not exist yet; the image id is what the product
+  // references, so each one can be swapped for a real photograph without
+  // touching the product data.
+  stock("p-shutter-ms-solid", "shutter-grey.jpg", "A closed steel rolling shutter set in a plain wall", "MS Solid Rolling Shutter"),
+  stock("p-shutter-galvalume", "shutter-white.jpg", "A closed metallic-finish rolling shutter with horizontal slats", "Galvalume Rolling Shutter"),
+  stock("p-shutter-stainless", "industry-food.jpg", "A worker filling trays on a food processing line", "Stainless Steel Rolling Shutter"),
+  stock("p-shutter-vision", "industry-retail.jpg", "Shoppers inside a modern shopping mall", "Vision / Window Rolling Shutter"),
+  stock("p-shutter-industrial", "loading-bay.jpg", "A row of loading docks on a distribution building", "Industrial Rolling Shutter"),
+  stock("p-shutter-counter", "commercial-building.jpg", "A modern commercial building with a large glazed facade", "Counter / Service Window Shutter"),
+  stock("p-shutter-windproof", "facility-night.jpg", "An industrial plant illuminated at night", "Windproof / Storm-Resistant Rolling Shutter"),
   stock("p-shutter-perforated", "shutter-white.jpg", "A white rolling shutter with horizontal slats", "Perforated Rolling Shutters"),
   stock("p-shutter-polycarbonate", "rolling-shutters.jpg", "Closed roller shutters across a retail frontage", "Polycarbonate Rolling Shutters"),
   stock("p-shutter-insulated", "door-red-shutter.jpg", "A closed insulated shutter door on an industrial elevation", "Insulated Double-Wall Rolling Shutters"),

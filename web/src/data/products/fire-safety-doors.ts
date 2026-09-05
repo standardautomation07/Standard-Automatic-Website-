@@ -87,6 +87,23 @@ export const fireSafetyProducts: Product[] = [
       { title: "Fire Rated Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation." },
     ],
     imageId: "p-fire-shutter",
+    // Genuinely part of the rolling shutter range, but its page lives here
+    // with the rest of the life-safety products. Cross-listed onto Rolling
+    // Shutters rather than duplicated: one product, one URL.
+    crossListedIn: ["rolling-shutters"],
+    facets: {
+      material: ["MS", "GI"],
+      construction: "Fire Rated",
+      duty: ["Heavy", "Industrial"],
+      operation: ["Motorized", "Gear"],
+      performance: ["Fire Rated"],
+    },
+    comparison: {
+      material: "Steel, tested assembly",
+      thickness: "Per tested configuration",
+      corrosion: "Material dependent",
+      operation: "Motorised with automatic closure on alarm",
+    },
     legacyUrls: ["fire-proof-rolling-shutters.html", "fire-proof-shutters.html"],
   },
   {

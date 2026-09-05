@@ -30,6 +30,8 @@ export async function submitEnquiry(
     quantity: readField(formData, "quantity"),
     projectStage: readField(formData, "projectStage"),
     usage: readField(formData, "usage"),
+    variant: readField(formData, "variant"),
+    operation: readField(formData, "operation"),
     message: readField(formData, "message"),
   };
 

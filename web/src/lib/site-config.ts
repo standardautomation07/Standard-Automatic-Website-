@@ -48,6 +48,29 @@ export function whatsappHref(message?: string) {
   return `https://wa.me/${digits}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
 }
 
+/**
+ * A WhatsApp enquiry pre-filled with the questions we would ask anyway.
+ *
+ * The blanks are deliberate: the buyer fills them in their own client before
+ * sending, which turns a "do you do shutters?" message into something that can
+ * actually be quoted. Nothing is pre-answered on their behalf.
+ */
+export function productWhatsappHref(product: string, variant?: string) {
+  const subject = variant ? `${product} — ${variant}` : product;
+  return whatsappHref(
+    [
+      `I am interested in ${subject}.`,
+      "",
+      "Opening Width:",
+      "Opening Height:",
+      "Quantity:",
+      "Operation:",
+      "Location:",
+      "Requirement:",
+    ].join("\n"),
+  );
+}
+
 export function telHref() {
   return `tel:${siteConfig.phone.replace(/\s/g, "")}`;
 }

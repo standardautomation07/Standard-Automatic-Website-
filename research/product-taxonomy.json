@@ -297,82 +297,221 @@
       ],
       "categories": [
         {
-          "id": "single-wall-rolling-shutters",
-          "name": "Single-Wall Rolling Shutters",
-          "principle": "A single folded slat profile — the choice when span, security or visibility matters more than insulation.",
+          "id": "solid-steel-rolling-shutters",
+          "name": "Solid Steel Rolling Shutters",
+          "principle": "An interlocking steel slat curtain rolling onto a barrel above the opening. The three lines here differ by what the steel is protected with, not by how the shutter works.",
           "products": [
             {
-              "id": "galvanized-steel-rolling-shutters",
-              "name": "Galvanized Steel Rolling Shutters",
+              "id": "ms-solid-rolling-shutters",
+              "name": "MS Solid Rolling Shutter",
               "status": "CONFIRMED",
               "variants": [
                 {
-                  "id": "manual",
-                  "name": "Manual push-pull / gear",
+                  "id": "light-duty",
+                  "name": "Light duty â€” 0.8 mm",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "motorised",
-                  "name": "Motorised",
+                  "id": "standard-duty",
+                  "name": "Standard duty â€” 1.0 mm",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "heavy-duty",
+                  "name": "Heavy duty â€” 1.2 mm",
                   "status": "CONFIRMED"
                 }
               ]
             },
             {
-              "id": "aluminium-rolling-shutters",
-              "name": "Aluminium Rolling Shutters",
+              "id": "galvanized-steel-rolling-shutters",
+              "name": "GI Solid Rolling Shutter",
               "status": "CONFIRMED",
               "variants": [
                 {
-                  "id": "single-wall",
-                  "name": "Single wall",
+                  "id": "standard-duty",
+                  "name": "Standard duty â€” 0.8â€“1.0 mm class",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "double-wall",
-                  "name": "Double wall",
+                  "id": "heavy-duty",
+                  "name": "Heavy duty â€” 1.2 mm",
+                  "status": "CONFIRMED"
+                }
+              ]
+            },
+            {
+              "id": "galvalume-rolling-shutters",
+              "name": "Galvalume Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "standard",
+                  "name": "Standard â€” 1.0 mm class",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "heavy-duty",
+                  "name": "Heavy duty â€” 1.2 mm class",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "architectural-rolling-shutters",
+          "name": "Aluminium & Stainless Shutters",
+          "principle": "A non-ferrous curtain, chosen where appearance, weight or corrosion resistance decides the specification rather than cost.",
+          "products": [
+            {
+              "id": "aluminium-rolling-shutters",
+              "name": "Aluminium Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "standard",
+                  "name": "Standard â€” roll-formed",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "heavy-duty",
+                  "name": "Heavy duty â€” roll-formed",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "premium",
+                  "name": "Premium â€” extruded",
+                  "status": "CONFIRMED"
+                }
+              ]
+            },
+            {
+              "id": "stainless-steel-rolling-shutters",
+              "name": "Stainless Steel Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "ss304-standard",
+                  "name": "SS304 standard",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "ss304-heavy",
+                  "name": "SS304 heavy duty",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "ss316-coastal",
+                  "name": "SS316 special / coastal",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "open-curtain-rolling-shutters",
+          "name": "Perforated, Vision & Grille Curtains",
+          "principle": "An open curtain that secures the opening while letting light, air or sight through it. What changes between these lines is how much of the curtain is open, and in what pattern.",
+          "products": [
+            {
+              "id": "perforated-rolling-shutters",
+              "name": "Perforated Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "fine",
+                  "name": "Fine perforated",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "standard-vision",
+                  "name": "Standard vision perforated",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "heavy-duty",
+                  "name": "Heavy-duty perforated",
+                  "status": "CONFIRMED"
+                }
+              ]
+            },
+            {
+              "id": "vision-window-rolling-shutters",
+              "name": "Vision / Window Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "standard-vision",
+                  "name": "Standard vision",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "large-vision",
+                  "name": "Large vision",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "mixed-curtain",
+                  "name": "Mixed curtain",
                   "status": "CONFIRMED"
                 }
               ]
             },
             {
               "id": "grille-rolling-shutters",
-              "name": "Grille Rolling Shutters",
+              "name": "Rolling Grille",
               "status": "CONFIRMED",
               "variants": [
                 {
-                  "id": "bright-bar",
-                  "name": "Bright bar lattice",
-                  "status": "CONFIRMED"
-                }
-              ]
-            },
-            {
-              "id": "perforated-rolling-shutters",
-              "name": "Perforated Rolling Shutters",
-              "status": "CONFIRMED",
-              "variants": [
-                {
-                  "id": "perforated-slat",
-                  "name": "Perforated slat",
-                  "status": "CONFIRMED"
-                }
-              ]
-            },
-            {
-              "id": "polycarbonate-rolling-shutters",
-              "name": "Polycarbonate Rolling Shutters",
-              "status": "CONFIRMED",
-              "variants": [
-                {
-                  "id": "transparent",
-                  "name": "Fully transparent",
+                  "id": "steel",
+                  "name": "Steel rolling grille",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "mixed-slat",
-                  "name": "Mixed polycarbonate and steel slat",
-                  "status": "POTENTIAL"
+                  "id": "aluminium",
+                  "name": "Aluminium rolling grille",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "stainless",
+                  "name": "Stainless steel rolling grille",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "high-cycle",
+                  "name": "High-cycle security grille",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "transparent-rolling-shutters",
+          "name": "Transparent Shutters",
+          "principle": "A polycarbonate curtain that closes the opening while leaving the display behind it visible. Specified where the shop front has to keep working after hours.",
+          "products": [
+            {
+              "id": "polycarbonate-rolling-shutters",
+              "name": "Transparent Polycarbonate Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "clear",
+                  "name": "Clear",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "tinted",
+                  "name": "Tinted",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "premium-security",
+                  "name": "Premium security",
+                  "status": "CONFIRMED"
                 }
               ]
             }
@@ -381,22 +520,107 @@
         {
           "id": "insulated-rolling-shutters",
           "name": "Insulated Rolling Shutters",
-          "principle": "Double-wall slat with an insulating core, where the opening separates two thermal or acoustic environments.",
+          "principle": "A double-wall slat with an insulating core, for openings that separate two thermal or acoustic environments without giving up the compact roll.",
           "products": [
             {
               "id": "insulated-double-wall-rolling-shutters",
-              "name": "Insulated Double-Wall Rolling Shutters",
+              "name": "Insulated Rolling Shutter",
               "status": "CONFIRMED",
               "variants": [
                 {
-                  "id": "galvanised-insulated",
-                  "name": "Galvanised insulated",
+                  "id": "standard",
+                  "name": "Standard insulated",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "aluminium-insulated",
-                  "name": "Aluminium insulated",
-                  "status": "POTENTIAL"
+                  "id": "thermal",
+                  "name": "Thermal insulated",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "industrial",
+                  "name": "Industrial insulated",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "industrial-rolling-shutters",
+          "name": "Industrial & Wind-Rated Shutters",
+          "principle": "An engineered shutter rather than a catalogue size: curtain, guide, shaft and drive are sized together against the opening and the load it carries.",
+          "products": [
+            {
+              "id": "industrial-rolling-shutters",
+              "name": "Industrial Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "standard",
+                  "name": "Industrial standard",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "heavy-duty",
+                  "name": "Industrial heavy duty",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "extra-heavy-duty",
+                  "name": "Industrial extra heavy duty",
+                  "status": "CONFIRMED"
+                }
+              ]
+            },
+            {
+              "id": "windproof-rolling-shutters",
+              "name": "Windproof / Storm-Resistant Rolling Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "windproof-standard",
+                  "name": "Windproof standard",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "windproof-heavy",
+                  "name": "Windproof heavy duty",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "storm-resistant",
+                  "name": "Storm-resistant",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "counter-rolling-shutters",
+          "name": "Counter & Service Shutters",
+          "principle": "A small shutter closing a service opening rather than a doorway. Light curtain, compact headbox, and a finish that suits the room it sits in.",
+          "products": [
+            {
+              "id": "counter-service-rolling-shutters",
+              "name": "Counter / Service Window Shutter",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "aluminium",
+                  "name": "Aluminium counter shutter",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "gi",
+                  "name": "GI counter shutter",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "stainless",
+                  "name": "Stainless steel counter shutter",
+                  "status": "CONFIRMED"
                 }
               ]
             }
@@ -946,8 +1170,8 @@
   ],
   "counts": {
     "families": 8,
-    "categories": 21,
-    "products": 33
+    "categories": 26,
+    "products": 40
   },
   "withdrawnFromRange": [
     {
