@@ -65,16 +65,6 @@
     "Fire behaviour": "Flame retardant, self-extinguishing Class I",
     "Compliance": "ROHS; panel is recyclable"
   },
-  "fire-rated-rolling-shutters": {
-    "Slat material": "Galvanised double wall with silicon insulated strip",
-    "Slat profile height": "75 mm, 100 mm",
-    "Finish and colour": "Silver or customised",
-    "Guide material and section": "Steel",
-    "Airborne sound reduction": "21 dB",
-    "Operator type": "Electric or manual",
-    "Type code": "FR75, FR100",
-    "Curtain thickness": "25 mm"
-  },
   "fire-rated-sliding-doors": {
     "Leaf facing material": "HPL, painted steel or powder-coated aluminium",
     "Leaf thickness": "4.5 mm",

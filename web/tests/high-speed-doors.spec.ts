@@ -349,7 +349,12 @@ test.describe("the issued technical data reached the site unchanged", () => {
         expect(pattern.test(text), `${product.id} matches ${pattern}`).toBe(false);
       }
     }
-    for (const [id, groups] of Object.entries(authoredSpecs)) {
+    // Scoped to this family. The authored registry also holds the rolling
+    // shutters, and the fire-rated shutter legitimately talks about certified
+    // configurations — that is its whole subject.
+    for (const [id, groups] of Object.entries(authoredSpecs).filter(([key]) =>
+      (SLUGS as readonly string[]).includes(key),
+    )) {
       const text = JSON.stringify(groups);
       for (const pattern of forbidden) {
         expect(pattern.test(text), `${id} specification matches ${pattern}`).toBe(false);

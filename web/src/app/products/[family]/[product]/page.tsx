@@ -257,7 +257,7 @@ export default async function ProductPage({ params }: Params) {
               index="03"
               eyebrow="Variants"
               title="Available configurations"
-              lede="The same product, built for a different job. Configurations marked as to be confirmed are ones we are checking against current availability before quoting."
+              lede="The same product, built for a different job. Where a specification depends on opening dimensions, selected profile, operating duty or site conditions, the final configuration is confirmed during technical assessment."
             />
             <ul className="mt-12 grid hairline-grid md:grid-cols-2">
               {product.variants.map((variant) => (
@@ -282,14 +282,18 @@ export default async function ProductPage({ params }: Params) {
             index="04"
             eyebrow="Technical specifications"
             title="Specification"
-            lede="The full field list a specifier needs for this product type. Figures we can support are published; everything else is marked to be confirmed rather than filled with a plausible number."
+            lede={
+              completeness.toConfirm === 0
+                ? "The full field list a specifier needs for this product type. Where a value depends on the opening, the profile, the duty or a certificate, the entry says what it depends on rather than stating a figure we cannot support."
+                : "The full field list a specifier needs for this product type. Figures we can support are published; everything else is marked to be confirmed rather than filled with a plausible number."
+            }
           />
 
           <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
             <p className="font-mono text-xs text-steel-500">
               {completeness.published} of {completeness.total} fields published
             </p>
-            {completeness.configurable > 0 && (
+            {(completeness.configurable > 0 || completeness.toConfirm > 0) && (
               <p className="font-mono text-xs text-steel-500">
                 {completeness.confirmed} fixed · {completeness.configurable} set by configuration ·{" "}
                 {completeness.toConfirm} to be confirmed
@@ -678,6 +682,14 @@ export default async function ProductPage({ params }: Params) {
  *                   nothing was supplied, the field name with its expected
  *                   unit and no number invented to fill the gap.
  */
+function needsBadge(spec: Spec): boolean {
+  if (spec.status === "CONFIRMED") return false;
+  if (spec.value === null) return true;
+  // A figure that varies gets flagged. A prose answer that already states what
+  // it depends on says it better than a badge would, so it is left to speak.
+  return /\d/.test(spec.value);
+}
+
 function SpecValue({ spec }: { spec: Spec }) {
   if (spec.value === null) {
     return (
@@ -688,7 +700,7 @@ function SpecValue({ spec }: { spec: Spec }) {
     );
   }
 
-  if (spec.status === "CONFIRMED") return <span className="text-steel-800">{spec.value}</span>;
+  if (!needsBadge(spec)) return <span className="text-steel-800">{spec.value}</span>;
 
   return (
     <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">

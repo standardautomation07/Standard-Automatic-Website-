@@ -26,7 +26,7 @@ export const fireSafetyProducts: Product[] = [
       { label: "Slat height", value: "75 / 100 mm" },
       { label: "Curtain thickness", value: "25 mm" },
       { label: "Sound reduction", value: "21 dB" },
-      { label: "Fire rating", value: "To be confirmed against a certificate" },
+      { label: "Fire rating", value: "Certification dependent", qualified: true },
     ],
     benefits: [
       {
@@ -123,7 +123,7 @@ export const fireSafetyProducts: Product[] = [
       { label: "Leaf thickness", value: "4.5 mm" },
       { label: "Lead sheet option", value: "3.0 mm" },
       { label: "Reference size", value: "1800 × 2100 mm" },
-      { label: "Fire rating", value: "To be confirmed against a certificate" },
+      { label: "Fire rating", value: "Certification dependent", qualified: true },
     ],
     benefits: [
       { title: "Automatic and hands-free", body: "Powered sliding operation suits corridors where trolleys and beds are moved constantly." },
