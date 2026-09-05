@@ -85,7 +85,7 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="shell flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
+      <div className="shell flex h-16 items-center justify-between gap-2 lg:h-[4.5rem] xl:gap-4">
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${siteConfig.shortName} — home`}>
           <Image
             src="/images/brand/logo-invert.png"
@@ -98,14 +98,14 @@ export function SiteHeader() {
           <span className="sr-only">{siteConfig.legalName}</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden lg:flex lg:items-center">
+        <nav aria-label="Primary" className="hidden min-w-0 lg:flex lg:items-center">
           <div ref={triggerRef}>
             <button
               type="button"
               onClick={() => setMegaOpen((v) => !v)}
               aria-expanded={megaOpen}
               aria-controls={panelId}
-              className={`flex items-center gap-1.5 px-3 py-2 text-sm transition-colors ${
+              className={`flex items-center gap-1.5 whitespace-nowrap px-2 py-2 text-sm transition-colors xl:px-3 ${
                 megaOpen || pathname.startsWith("/products") ? "text-white" : "text-steel-300 hover:text-white"
               }`}
             >
@@ -118,7 +118,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className={`whitespace-nowrap px-3 py-2 text-sm transition-colors ${
+              className={`whitespace-nowrap px-2 py-2 text-sm transition-colors xl:px-3 ${
                 isActive(item.href) ? "text-white" : "text-steel-300 hover:text-white"
               }`}
               aria-current={isActive(item.href) ? "page" : undefined}
@@ -128,7 +128,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={telHref()}
             className="hidden items-center gap-2 whitespace-nowrap px-3 py-2 font-mono text-xs tracking-wide text-steel-300 transition-colors hover:text-white 2xl:flex"
@@ -138,7 +138,7 @@ export function SiteHeader() {
           </a>
           <Link
             href="/contact"
-            className="hidden whitespace-nowrap rounded-edge bg-amber px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ff9426] sm:inline-flex"
+            className="hidden whitespace-nowrap rounded-edge bg-amber px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ff9426] sm:inline-flex xl:px-5"
           >
             Request a Quote
           </Link>

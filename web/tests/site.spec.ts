@@ -133,7 +133,11 @@ test.describe("navigation", () => {
       await expect(trigger).toHaveAttribute("aria-expanded", "true", { timeout: 1000 });
     });
 
-    await page.getByRole("link", { name: "Loading Bay Equipment", exact: true }).first().click();
+    // Scope the click to the panel. The same link text also appears in the
+    // footer, and at laptop widths the footer sits under the fixed action bar,
+    // so an unscoped locator clicked the wrong one and then timed out.
+    const panelId = await trigger.getAttribute("aria-controls");
+    await page.locator(`#${panelId} a[href="/products/loading-bay"]`).click();
     await expect(page).toHaveURL(/\/products\/loading-bay$/);
   });
 
@@ -206,7 +210,9 @@ test.describe("catalogue hierarchy", () => {
   test("products landing shows nine families, not a flat product grid", async ({ page }) => {
     await page.goto("/products");
     for (const family of FAMILIES) {
-      await expect(page.locator(`a[href="/products/${family}"]`).first()).toBeVisible();
+      // Scoped to main: the header mega-menu holds the same hrefs but is
+      // collapsed, so an unscoped locator matched a hidden link.
+      await expect(page.locator(`main a[href="/products/${family}"]`).first()).toBeVisible();
     }
     // A flat grid of every product would be far more than nine cards.
     expect(await page.locator("article").count()).toBe(FAMILIES.length);
@@ -250,7 +256,7 @@ test.describe("catalogue hierarchy", () => {
 
   test("a product with supplied figures shows them alongside the unanswered fields", async ({ page }) => {
     await page.goto("/products/loading-bay/dock-levellers");
-    await expect(page.getByText(/d+ of d+ fields published/)).toBeVisible();
+    await expect(page.getByText(/\d+ of \d+ fields published/)).toBeVisible();
     await expect(page.getByText("725–750 mm")).toBeVisible();
     await expect(page.getByText("To be confirmed", { exact: false }).first()).toBeVisible();
   });
@@ -302,7 +308,12 @@ test.describe("industries", () => {
       expect(response?.status()).toBeLessThan(400);
       await expect(page.locator("h1")).toBeVisible();
       await expect(page.locator("article").first()).toBeVisible();
-      await expect(page.getByRole("heading", { name: /Engineering considerations/i })).toBeVisible();
+      // "Engineering considerations" is the section eyebrow, not the heading —
+      // assert both the label and the heading it introduces.
+      await expect(page.getByText("Engineering considerations")).toBeVisible();
+      await expect(
+        page.getByRole("heading", { name: /What to settle before you order/i }),
+      ).toBeVisible();
     });
   }
 });
