@@ -10,6 +10,7 @@ import { entranceAutomationProducts } from "@/data/products/entrance-automation"
 import { loadingBayProducts } from "@/data/products/loading-bay";
 import { accessControlProducts } from "@/data/products/access-control";
 import specValues from "@/data/spec-values.json";
+import { authoredSpecs } from "@/data/product-specs";
 import { schemaFor } from "@/data/spec-schema";
 import { guidanceFor } from "@/data/category-guidance";
 import type {
@@ -96,7 +97,7 @@ export function resolveDetail(
 
 /** Homepage selection: one product from each of six families, confirmed only. */
 export const featuredProductIds = [
-  "high-speed-roll-up-doors",
+  "high-speed-roll-up-door",
   "industrial-sectional-overhead-doors",
   "polycarbonate-rolling-shutters",
   "dock-levellers",
@@ -127,7 +128,22 @@ export const counts = {
 
 const values = specValues as Record<string, Record<string, string>>;
 
+/**
+ * A product resolves its table one of two ways:
+ *
+ *  - it is listed in `product-specs.ts`, in which case the business issued a
+ *    complete parameter set for it and that set is the table; or
+ *  - it resolves the schema for its category, merged with whatever values
+ *    spec-values.json can support.
+ *
+ * Neither path can produce a figure that is not written down in one of those
+ * two files. A field with nothing behind it resolves to null and renders as
+ * to be confirmed.
+ */
 export function productSpecGroups(product: Product): SpecGroup[] {
+  const authored = authoredSpecs[product.id];
+  if (authored) return authored;
+
   const published = values[product.id] ?? {};
   const claimed = new Set<string>();
 
@@ -136,7 +152,7 @@ export function productSpecGroups(product: Product): SpecGroup[] {
     specs: group.fields.map((field) => {
       const value = published[field.label];
       if (value !== undefined) claimed.add(field.label);
-      return { ...field, value: value ?? null } satisfies Spec;
+      return { ...field, value: value ?? null, status: value !== undefined ? "CONFIRMED" : "TBC" } satisfies Spec;
     }),
   }));
 
@@ -144,20 +160,34 @@ export function productSpecGroups(product: Product): SpecGroup[] {
   if (extra.length > 0) {
     groups.push({
       group: "Additional published data",
-      specs: extra.map(([label, value]) => ({ label, value })),
+      specs: extra.map(([label, value]) => ({ label, value, status: "CONFIRMED" as const })),
     });
   }
 
   return groups;
 }
 
-/** How much of the schema is actually answered — shown on the page so the
- *  reader knows what they are looking at without counting rows. */
+/**
+ * How much of the field list is actually answered, and how firm each answer
+ * is — shown on the page so the reader knows what they are looking at without
+ * counting rows. A CONFIGURABLE figure counts as published, because it is a
+ * real figure; the qualification travels with it in the table.
+ */
 export function specCompleteness(product: Product) {
   const groups = productSpecGroups(product);
   const specs = groups.flatMap((group) => group.specs);
   const published = specs.filter((spec) => spec.value !== null).length;
-  return { published, total: specs.length, groups };
+  return {
+    published,
+    total: specs.length,
+    groups,
+    confirmed: specs.filter((spec) => spec.status === "CONFIRMED").length,
+    configurable: specs.filter((spec) => spec.status === "CONFIGURABLE").length,
+    toConfirm: specs.filter((spec) => spec.status === "TBC").length,
+    /** True where at least one row is qualified, which is when the
+     *  configuration note has to appear under the tables. */
+    qualified: specs.some((spec) => spec.status !== "CONFIRMED"),
+  };
 }
 
 /** Per-variant specification deltas, keyed "<productId>::<variantId>". */
@@ -165,7 +195,11 @@ export function variantSpecs(product: Product): VariantSpec[] {
   return product.variants
     .map((variant) => {
       const published = values[`${product.id}::${variant.id}`] ?? {};
-      const specs = Object.entries(published).map(([label, value]) => ({ label, value }));
+      const specs = Object.entries(published).map(([label, value]) => ({
+        label,
+        value,
+        status: "CONFIRMED" as const,
+      }));
       return { variant, specs };
     })
     .filter((entry) => entry.specs.length > 0);

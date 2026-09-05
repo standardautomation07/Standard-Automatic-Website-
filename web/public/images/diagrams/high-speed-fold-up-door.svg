@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>High speed fold-up door</title>
+  <desc>The curtain gathers into horizontal folds on lifting straps instead of rolling onto a drum.</desc>
+
+  <rect x="0" y="0" width="800" height="600" fill="#eceae5"/>
+  <rect x="90" y="90" width="620" height="420" fill="#d9d5cd" stroke="#b9b3a8" stroke-width="2"/>
+  <rect x="250" y="150" width="300" height="330" fill="#eceae5"/>
+  <path d="M90 480 L710 480" stroke="#b9b3a8" stroke-width="3"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+
+  <rect x="230" y="118" width="340" height="14" fill="#272c33"/>
+  <path d="M256 168 Q400 194 544 168" fill="none" stroke="#69707a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M256 198 Q400 224 544 198" fill="none" stroke="#69707a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M256 228 Q400 254 544 228" fill="none" stroke="#69707a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M256 258 Q400 284 544 258" fill="none" stroke="#69707a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M290 132 L290 300 M510 132 L510 300" stroke="#c8892a" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="253" y="300" width="294" height="180" fill="#69707a" opacity="1"/>
+  <rect x="290" y="330" width="220" height="42" fill="#cfe0e6" stroke="#272c33" stroke-width="2"/>
+  <rect x="253" y="466" width="294" height="14" fill="#272c33"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+  <path d="M600 200 L640 200" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="205" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">folded stack</text>
+  <path d="M600 300 L640 300" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="305" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">lifting straps</text>
+  <path d="M232 400 L200 400" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="192" y="405" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">wind bars</text>
+  <path d="M260 360 L540 360 M260 410 L540 410" stroke="#272c33" stroke-width="4"/>
+  <text x="90" y="552" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">HIGH SPEED FOLD-UP DOOR</text>
+  <text x="710" y="552" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">STANDARD AUTOMATION</text>
+  <path d="M90 566 L710 566" stroke="#a9a396" stroke-width="1"/>
+</svg>

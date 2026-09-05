@@ -329,7 +329,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     namingNote:
       "Working name. The previous product page for this shutter carried a page title reading “Galvanize Rolling Shutter” while its heading read “Insulated Rolling Shutters”. The product itself is confirmed; the exact commercial name needs confirming from the business.",
-    related: ["galvanized-steel-rolling-shutters", "fire-rated-rolling-shutters", "high-speed-insulated-panel-doors"],
+    related: ["galvanized-steel-rolling-shutters", "fire-rated-rolling-shutters", "high-speed-rigid-insulated-door"],
     documents: [
       { title: "Insulated Rolling Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],

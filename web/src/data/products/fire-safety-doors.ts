@@ -140,7 +140,7 @@ export const fireSafetyProducts: Product[] = [
     ],
     namingNote:
       "Fire rating is not published for this product. A rating applies to a tested assembly as installed, and only against a certificate for that assembly. Ask us and we will confirm what can be certified for your opening.",
-    related: ["fire-rated-rolling-shutters", "automatic-sliding-glass-doors", "high-speed-roll-up-doors"],
+    related: ["fire-rated-rolling-shutters", "automatic-sliding-glass-doors", "high-speed-roll-up-door"],
     documents: [
       { title: "Fire test certificate", kind: "Certificate", href: null, note: "Issued per certified assembly. Ask us for the certificate covering the configuration proposed for your opening." },
       { title: "Fire Rated Sliding Door datasheet", kind: "Datasheet", href: null, note: "In preparation." },

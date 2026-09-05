@@ -146,27 +146,27 @@
   },
   {
     "source": "/high-speed-door.html",
-    "destination": "/products/high-speed-doors/high-speed-roll-up-doors",
+    "destination": "/products/high-speed-doors/high-speed-roll-up-door",
     "permanent": true
   },
   {
     "source": "/high-speed-roll-up-door.html",
-    "destination": "/products/high-speed-doors/high-speed-roll-up-doors",
+    "destination": "/products/high-speed-doors/high-speed-roll-up-door",
     "permanent": true
   },
   {
     "source": "/high-speed-fold-up-doors.html",
-    "destination": "/products/high-speed-doors/high-speed-fold-up-doors",
+    "destination": "/products/high-speed-doors/high-speed-fold-up-door",
     "permanent": true
   },
   {
     "source": "/high-speed-self-repairing-doors.html",
-    "destination": "/products/high-speed-doors/self-repairing-high-speed-doors",
+    "destination": "/products/high-speed-doors/high-speed-self-repairing-door",
     "permanent": true
   },
   {
     "source": "/high-speed-industrial-door.html",
-    "destination": "/products/high-speed-doors/high-speed-insulated-panel-doors",
+    "destination": "/products/high-speed-doors/high-speed-rigid-insulated-door",
     "permanent": true
   },
   {
@@ -277,6 +277,26 @@
   {
     "source": "/sliding-glass-door-motor.html",
     "destination": "/products/entrance-automation",
+    "permanent": true
+  },
+  {
+    "source": "/products/high-speed-doors/high-speed-roll-up-doors",
+    "destination": "/products/high-speed-doors/high-speed-roll-up-door",
+    "permanent": true
+  },
+  {
+    "source": "/products/high-speed-doors/self-repairing-high-speed-doors",
+    "destination": "/products/high-speed-doors/high-speed-self-repairing-door",
+    "permanent": true
+  },
+  {
+    "source": "/products/high-speed-doors/high-speed-fold-up-doors",
+    "destination": "/products/high-speed-doors/high-speed-fold-up-door",
+    "permanent": true
+  },
+  {
+    "source": "/products/high-speed-doors/high-speed-insulated-panel-doors",
+    "destination": "/products/high-speed-doors/high-speed-rigid-insulated-door",
     "permanent": true
   }
 ]

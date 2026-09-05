@@ -7,7 +7,7 @@ import type { ImageRef } from "@/lib/types";
  * status, product association and alt text. Components take an image *id*,
  * never a path, so an image can never appear without that provenance.
  *
- * Two usage classes exist today:
+ * Three usage classes exist today:
  *
  *  - "Unsplash License — free commercial use, no attribution required."
  *    Stand-in photography. It is NOT a photograph of a Standard Automation
@@ -18,14 +18,21 @@ import type { ImageRef } from "@/lib/types";
  *    Automation." Clean product renders carried over from the company's own
  *    published material.
  *
+ *  - "Standard Automation — original technical illustration, drawn for this
+ *    website." Our own diagrams of how a door type works, built by
+ *    scripts/build-door-diagrams.mjs. They carry no third-party rights and
+ *    depict only what the issued technical data describes.
+ *
  * No competitor imagery is used.
  */
 
 const STOCK = "Unsplash — Unsplash License, free commercial use, no attribution required";
 const OWN = "Standard Automatic Solutions — supplier catalogue render from the company's own published material";
+const DIAGRAM = "Standard Automation — original technical illustration, drawn for this website";
 
 const PENDING = "Stand-in. Replace with owned installation photography before launch.";
 const APPROVED = "Cleared for use — company's own published asset.";
+const ORIGINAL = "Cleared for use — original artwork, no third-party rights.";
 
 function stock(id: string, file: string, alt: string, association: string): ImageRef {
   return { id, src: `/images/photography/${file}`, alt, source: STOCK, usage: PENDING, association };
@@ -33,6 +40,23 @@ function stock(id: string, file: string, alt: string, association: string): Imag
 
 function own(id: string, file: string, alt: string, association: string, fit: "cover" | "contain" = "cover"): ImageRef {
   return { id, src: `/images/legacy/${file}`, alt, source: OWN, usage: APPROVED, association, fit };
+}
+
+/**
+ * An original diagram of how a door type actually works. Used as the lead
+ * image where the mechanism is the product and a photograph of a closed door
+ * would show none of it. Built by scripts/build-door-diagrams.mjs.
+ */
+function diagram(id: string, file: string, alt: string, association: string): ImageRef {
+  return {
+    id,
+    src: `/images/diagrams/${file}.svg`,
+    alt,
+    source: DIAGRAM,
+    usage: ORIGINAL,
+    association,
+    fit: "cover",
+  };
 }
 
 const list: ImageRef[] = [
@@ -62,10 +86,63 @@ const list: ImageRef[] = [
   stock("p-garage-aluminium", "garage-door-modern.jpg", "A modern building elevation with a sectional garage door", "Aluminium Garage Doors"),
   stock("p-garage-residential", "parking-entry.jpg", "A controlled vehicle entrance to a parking structure", "Residential Garage Doors"),
 
-  own("p-hsd-roll-up", "intro.jpg", "A high speed door at a warehouse opening with a forklift passing through", "High Speed Roll-Up Doors"),
-  stock("p-hsd-self-repairing", "industrial-doors.jpg", "A roll-up industrial door on an internal warehouse opening", "Self-Repairing High Speed Doors"),
-  stock("p-hsd-fold-up", "loading-bay-trailer.jpg", "A trailer positioned at a loading ramp beneath a wide door opening", "High Speed Fold-Up Doors"),
-  stock("p-hsd-rigid", "manufacturing.jpg", "Large production machinery inside a manufacturing plant", "High Speed Insulated Panel Doors"),
+  // High Speed Doors — the lead image for each of the seven types is an
+  // original diagram of that mechanism, because the mechanism is what makes
+  // the products different from each other. Contextual photography follows in
+  // each gallery, described only as what it actually shows.
+  diagram(
+    "p-hsd-roll-up",
+    "high-speed-roll-up-door",
+    "Diagram of a high speed roll-up door: a flexible curtain winding onto a drum above the opening and running in side guides",
+    "High Speed Roll-Up Door",
+  ),
+  diagram(
+    "p-hsd-fold-up",
+    "high-speed-fold-up-door",
+    "Diagram of a high speed fold-up door: the curtain gathered into horizontal folds on lifting straps above the opening",
+    "High Speed Fold-Up Door",
+  ),
+  diagram(
+    "p-hsd-self-repairing",
+    "high-speed-self-repairing-door",
+    "Diagram of a high speed self-repairing door: the curtain released from one side guide after impact, with its path back into the guide at the top of travel",
+    "High Speed Self-Repairing Door",
+  ),
+  diagram(
+    "p-hsd-spiral",
+    "high-speed-spiral-door",
+    "Diagram of a high speed spiral door: rigid insulated panels carried into a spiral track above the opening",
+    "High Speed Spiral Door",
+  ),
+  diagram(
+    "p-hsd-rigid",
+    "high-speed-rigid-insulated-door",
+    "Diagram of a high speed rigid insulated door: double-skin panels lifting vertically, with a section showing the insulation core between two metal skins",
+    "High Speed Rigid / Insulated Door",
+  ),
+  diagram(
+    "p-hsd-cleanroom",
+    "high-speed-cleanroom-hygiene-door",
+    "Diagram of a high speed cleanroom door: a sealed rapid-door assembly in a stainless frame with side and bottom seals between two controlled rooms",
+    "High Speed Cleanroom / Hygiene Door",
+  ),
+  diagram(
+    "p-hsd-cold-store",
+    "high-speed-cold-storage-freezer-door",
+    "Diagram of a high speed cold storage door: an insulated curtain with heated side guides and a cold-storage bottom seal at a freezer room opening",
+    "High Speed Cold Storage / Freezer Door",
+  ),
+
+  // Contextual photography used in the High Speed Doors galleries.
+  own("g-hsd-installation", "intro.jpg", "A high speed door at a warehouse opening with a forklift passing through", "High Speed Doors gallery"),
+  stock("g-hsd-rollup-context", "industrial-doors.jpg", "A closed roll-up industrial door on an internal opening", "High Speed Doors gallery"),
+  stock("g-hsd-wide-opening", "loading-bay-trailer.jpg", "A trailer positioned at a loading ramp beneath a wide door opening", "High Speed Doors gallery"),
+  stock("g-hsd-forklift", "warehouse-forklift.jpg", "A forklift operating inside a large warehouse", "High Speed Doors gallery"),
+  stock("g-hsd-production", "manufacturing.jpg", "Large production machinery inside a manufacturing plant", "High Speed Doors gallery"),
+  stock("g-hsd-cleanroom", "industry-cleanroom.jpg", "Workers in protective suits inside a cleanroom", "High Speed Doors gallery"),
+  stock("g-hsd-food", "industry-food.jpg", "A worker filling trays on a food processing line", "High Speed Doors gallery"),
+  stock("g-hsd-cold-chain", "industry-cold-chain.jpg", "Frozen product stacked in a cold storage facility", "High Speed Doors gallery"),
+  stock("g-hsd-warehouse", "warehouse-interior.jpg", "The interior of a large distribution warehouse", "High Speed Doors gallery"),
 
   stock("p-shutter-galvanized", "shutter-grey.jpg", "A closed steel rolling shutter set in a plain wall", "Galvanized Steel Rolling Shutters"),
   stock("p-shutter-aluminium", "shutter-brown.jpg", "A closed aluminium-finish roller shutter", "Aluminium Rolling Shutters"),

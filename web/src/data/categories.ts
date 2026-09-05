@@ -1,7 +1,7 @@
 import type { Category } from "@/lib/types";
 
 /**
- * Seventeen categories. A category is a construction or operating *principle*,
+ * Twenty-one categories. A category is a construction or operating *principle*,
  * not a marketing group — it is the level at which two products genuinely
  * work differently rather than just being finished differently.
  *
@@ -21,26 +21,26 @@ export const categories: Category[] = [
     defaults: {
       safety: [
         "Photocell across the threshold prevents the curtain closing on an obstruction",
-        "Light curtain or safety edge on the leading edge, reversing travel on contact",
+        "Safety edge on the leading edge, reversing travel on contact",
         "Soft bottom beam, so contact with a person or vehicle is absorbed rather than resisted",
-        "Crank handle or manual release for operation during a power failure",
+        "Manual crank or override for operation during a power failure",
       ],
       controls: [
         "PLC control with inverter and encoder for ramped acceleration and repeatable stop positions",
         "Adjustable open and close speeds and hold-open time",
-        "Activation by radar, infrared sensor, pull switch, push button, loop detector or remote",
+        "Activation by radar, push button, photocell or loop detector",
         "Interface for traffic lights and for interlocking with a second door",
       ],
       options: [
-        "Transparent vision sections in the curtain",
-        "Curtain colour to requirement",
+        "Transparent PVC vision panels",
+        "Frame and guide material selected for the environment",
         "Interlock pairing for airlocks and clean transitions",
-        "Stainless steel frame and guides for washdown areas",
+        "Internal or external mounting depending on configuration",
       ],
       maintenance: [
         "Curtain, guides and bottom beam should be inspected on a scheduled interval — cycle count, not calendar time, drives wear",
         "Safety devices should be function-tested at every service visit",
-        "Consumables are the curtain, the bottom beam seal and the drive belt or chain",
+        "Consumables are the curtain, the bottom beam seal and the drive transmission",
       ],
     },
   },
@@ -49,25 +49,54 @@ export const categories: Category[] = [
     familyId: "high-speed-doors",
     name: "Fold-Up High Speed Doors",
     principle:
-      "The curtain gathers into horizontal folds instead of rolling, giving a shallower stack above the opening — which is what makes wide external openings practical.",
+      "The curtain gathers into horizontal folds instead of rolling, giving a shallower stack above the opening — which is what makes tall and wide openings practical.",
     defaults: {
       safety: [
-        "Photocell across the threshold prevents the curtain closing on an obstruction",
+        "Photoelectric protection across the threshold",
         "Safety edge on the leading edge, reversing travel on contact",
+        "Manual crank for operation during a power failure",
+      ],
+      controls: [
+        "PLC control with inverter and encoder",
+        "Adjustable open and close speeds",
+        "Activation by radar, push button or infrared",
+      ],
+      options: [
+        "Transparent PVC vision windows",
+        "Motor rating selected against the leaf size and duty",
+        "Internal or external mounting",
+      ],
+      maintenance: [
+        "Fold straps, curtain and track should be inspected on a scheduled interval",
+        "Safety devices should be function-tested at every service visit",
+      ],
+    },
+  },
+  {
+    id: "spiral-high-speed-doors",
+    familyId: "high-speed-doors",
+    name: "Spiral High Speed Doors",
+    principle:
+      "Rigid insulated panels guided into a spiral above the opening, so the leaf never rests on itself. A rigid door that keeps flexible-door cycle times.",
+    defaults: {
+      safety: [
+        "Light curtain and photocell across the threshold",
+        "Safety edge on the leading panel",
+        "Controlled acceleration and deceleration, so a rigid leaf is not snatched",
         "Manual release for operation during a power failure",
       ],
       controls: [
-        "Inverter-controlled drive with adjustable speeds",
-        "Activation by radar, push button, pull switch or remote",
+        "Frequency-controlled drive with adjustable speeds",
+        "Activation by radar, photocell, loop detector or push button",
         "Adjustable hold-open time",
       ],
       options: [
-        "Transparent vision sections",
-        "Horizontal wind-bar reinforcement for exposed elevations",
-        "Curtain colour to requirement",
+        "Transparent panel configuration for sight of the far side",
+        "Insulation configuration selected against the thermal requirement",
+        "Panel finish to requirement",
       ],
       maintenance: [
-        "Fold straps and wind bars should be inspected on a scheduled interval",
+        "Spiral track, panel rollers and seals should be inspected on a scheduled interval",
         "Safety devices should be function-tested at every service visit",
       ],
     },
@@ -77,17 +106,17 @@ export const categories: Category[] = [
     familyId: "high-speed-doors",
     name: "Rigid Panel High Speed Doors",
     principle:
-      "Insulated aluminium sections instead of a fabric curtain, for openings that need thermal separation and wind resistance as well as speed.",
+      "Double-skin insulated panels instead of a fabric curtain, for openings that need structural rigidity and thermal separation as well as speed.",
     defaults: {
       safety: [
-        "Photocell across the threshold and safety edge on the leading section",
+        "Photocell across the threshold and safety edge on the leading panel",
+        "Emergency stop",
         "Controlled acceleration and deceleration, so a heavier panel is not snatched",
-        "Manual release for operation during a power failure",
       ],
       controls: [
         "PLC control with inverter and encoder",
         "Adjustable open and close speeds",
-        "Activation by radar, infrared sensor or as specified",
+        "Activation by radar, infrared or push button",
       ],
       options: [
         "Vision panels in selected sections",
@@ -95,8 +124,37 @@ export const categories: Category[] = [
         "Interlock pairing for temperature-separated areas",
       ],
       maintenance: [
-        "Panel hinges, rollers and guides should be inspected on a scheduled interval",
+        "Panel joints, rollers and guides should be inspected on a scheduled interval",
         "Seals are a consumable in temperature-separated openings",
+      ],
+    },
+  },
+  {
+    id: "controlled-environment-high-speed-doors",
+    familyId: "high-speed-doors",
+    name: "Controlled Environment High Speed Doors",
+    principle:
+      "The same rapid-door mechanism built for the room rather than the traffic — hygienic and cleanable for classified areas, insulated and heated for sub-zero ones.",
+    defaults: {
+      safety: [
+        "Photocells across the threshold",
+        "Safety edge on the leading edge, reversing travel on contact",
+        "Manual override for operation during a power failure",
+      ],
+      controls: [
+        "Frequency-controlled drive with adjustable speeds",
+        "Activation by radar, touchless sensor, pull switch, loop or remote",
+        "Interlock pairing where the opening forms one side of an airlock",
+      ],
+      options: [
+        "Vision panel",
+        "Anti-condensation and guide heating where the environment requires it",
+        "Stainless steel and hygienic-coated construction",
+      ],
+      maintenance: [
+        "Seals, curtain and guides should be inspected on a scheduled interval — sealing is what the door is bought for, so it is what gets checked",
+        "Cleaning regime should be agreed with the room owner, since it is the room, not the door, that sets it",
+        "Safety devices should be function-tested at every service visit",
       ],
     },
   },

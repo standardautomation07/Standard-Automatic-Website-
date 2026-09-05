@@ -127,51 +127,41 @@
           "principle": "Flexible curtain rolling onto a drum above the opening; the fastest cycle time per rupee of the high speed types.",
           "products": [
             {
-              "id": "high-speed-roll-up-doors",
-              "name": "High Speed Roll-Up Doors",
+              "id": "high-speed-roll-up-door",
+              "name": "High Speed Roll-Up Door",
               "status": "CONFIRMED",
               "variants": [
                 {
                   "id": "internal",
-                  "name": "Internal",
+                  "name": "Internal mounting",
                   "status": "CONFIRMED"
                 },
                 {
                   "id": "external",
-                  "name": "External / wind-loaded",
+                  "name": "External mounting",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "food-grade",
-                  "name": "Food-grade washdown",
-                  "status": "POTENTIAL"
-                },
-                {
-                  "id": "cold-store",
-                  "name": "Cold store / freezer",
-                  "status": "POTENTIAL"
-                },
-                {
-                  "id": "cleanroom",
-                  "name": "Cleanroom",
-                  "status": "POTENTIAL"
+                  "id": "stainless",
+                  "name": "Stainless steel frame and guides",
+                  "status": "CONFIRMED"
                 }
               ]
             },
             {
-              "id": "self-repairing-high-speed-doors",
-              "name": "Self-Repairing High Speed Doors",
+              "id": "high-speed-self-repairing-door",
+              "name": "High Speed Self-Repairing Door",
               "status": "CONFIRMED",
               "variants": [
                 {
-                  "id": "internal",
-                  "name": "Internal",
+                  "id": "class-2",
+                  "name": "Class 2 wind configuration",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "external",
-                  "name": "External",
-                  "status": "POTENTIAL"
+                  "id": "class-3",
+                  "name": "Class 3 wind configuration",
+                  "status": "CONFIRMED"
                 }
               ]
             }
@@ -180,21 +170,50 @@
         {
           "id": "fold-up-high-speed-doors",
           "name": "Fold-Up High Speed Doors",
-          "principle": "Curtain gathers into horizontal folds rather than rolling, giving a shallower stack on wide openings.",
+          "principle": "Curtain gathers into horizontal folds rather than rolling, giving a shallower stack and a greater published height.",
           "products": [
             {
-              "id": "high-speed-fold-up-doors",
-              "name": "High Speed Fold-Up Doors",
+              "id": "high-speed-fold-up-door",
+              "name": "High Speed Fold-Up Door",
               "status": "CONFIRMED",
               "variants": [
                 {
-                  "id": "external-wide-span",
-                  "name": "External wide span",
+                  "id": "internal",
+                  "name": "Internal mounting",
                   "status": "CONFIRMED"
                 },
                 {
-                  "id": "reinforced-wind-bars",
-                  "name": "Wind-bar reinforced",
+                  "id": "external",
+                  "name": "External mounting",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "class-3-wind",
+                  "name": "Class 3 wind configuration",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "spiral-high-speed-doors",
+          "name": "Spiral High Speed Doors",
+          "principle": "Rigid insulated panels guided into a spiral above the opening, so the leaf never rests on itself.",
+          "products": [
+            {
+              "id": "high-speed-spiral-door",
+              "name": "High Speed Spiral Door",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "insulated",
+                  "name": "Insulated panel configuration",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "vision",
+                  "name": "Transparent panel configuration",
                   "status": "CONFIRMED"
                 }
               ]
@@ -204,21 +223,62 @@
         {
           "id": "rigid-panel-high-speed-doors",
           "name": "Rigid Panel High Speed Doors",
-          "principle": "Insulated aluminium sections instead of a fabric curtain, where the opening needs both speed and thermal separation.",
+          "principle": "Double-skin insulated panels lifting vertically, where the opening needs structural rigidity and thermal separation as well as speed.",
           "products": [
             {
-              "id": "high-speed-insulated-panel-doors",
-              "name": "High Speed Insulated Panel Doors",
+              "id": "high-speed-rigid-insulated-door",
+              "name": "High Speed Rigid / Insulated Door",
               "status": "CONFIRMED",
               "variants": [
                 {
                   "id": "external",
-                  "name": "External / wind-rated",
+                  "name": "External configuration",
                   "status": "CONFIRMED"
                 },
                 {
                   "id": "thermal-separation",
-                  "name": "Thermal separation",
+                  "name": "Thermal separation configuration",
+                  "status": "CONFIRMED"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "controlled-environment-high-speed-doors",
+          "name": "Controlled Environment High Speed Doors",
+          "principle": "The same rapid-door mechanism built for the room rather than the traffic: hygienic and cleanable for classified areas, insulated and heated for sub-zero ones.",
+          "products": [
+            {
+              "id": "high-speed-cleanroom-hygiene-door",
+              "name": "High Speed Cleanroom / Hygiene Door",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "stainless",
+                  "name": "Stainless steel construction",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "hygienic-coated",
+                  "name": "Hygienic-coated construction",
+                  "status": "CONFIRMED"
+                }
+              ]
+            },
+            {
+              "id": "high-speed-cold-storage-freezer-door",
+              "name": "High Speed Cold Storage / Freezer Door",
+              "status": "CONFIRMED",
+              "variants": [
+                {
+                  "id": "heated-guides",
+                  "name": "Heated guide configuration",
+                  "status": "CONFIRMED"
+                },
+                {
+                  "id": "temperature-resistant",
+                  "name": "Temperature-resistant guide configuration",
                   "status": "CONFIRMED"
                 }
               ]
@@ -886,8 +946,8 @@
   ],
   "counts": {
     "families": 8,
-    "categories": 19,
-    "products": 30
+    "categories": 21,
+    "products": 33
   },
   "withdrawnFromRange": [
     {

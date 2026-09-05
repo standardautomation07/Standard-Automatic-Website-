@@ -79,11 +79,17 @@ export function productJsonLd(
   imageSrc: string | null,
   specGroups: SpecGroup[],
 ) {
-  // Only answered fields become structured data. A to-be-confirmed field is
-  // absent rather than published as an empty or placeholder property.
+  // Only figures become structured data. A to-be-confirmed field is absent
+  // rather than published as an empty or placeholder property — and that
+  // includes a field whose issued value is itself a qualification such as
+  // "application dependent", which is true on the page but is not a value a
+  // machine reader should be handed as one.
   const specs = specGroups
     .flatMap((group) => group.specs)
-    .filter((spec): spec is Spec & { value: string } => spec.value !== null);
+    .filter(
+      (spec): spec is Spec & { value: string } =>
+        spec.value !== null && spec.status !== "TBC",
+    );
   return {
     "@context": "https://schema.org",
     "@type": "Product",

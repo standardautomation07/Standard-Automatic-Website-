@@ -52,7 +52,7 @@ export const loadingBayProducts: Product[] = [
       "Epoxy resin finish for long-term corrosion protection",
       "Rear hinge and pit frame set into the dock edge",
     ],
-    related: ["dock-shelters-and-houses", "high-speed-roll-up-doors", "industrial-sectional-overhead-doors"],
+    related: ["dock-shelters-and-houses", "high-speed-roll-up-door", "industrial-sectional-overhead-doors"],
     documents: [
       { title: "Dock Leveller datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Pit construction drawing", kind: "Technical drawing", href: null, note: "Issued per project so the builder can form the pit correctly." },
@@ -109,7 +109,7 @@ export const loadingBayProducts: Product[] = [
       "Head and side sealing curtains or cushions",
       "Impact-deflecting mounting arrangement",
     ],
-    related: ["dock-levellers", "high-speed-roll-up-doors", "industrial-sectional-overhead-doors"],
+    related: ["dock-levellers", "high-speed-roll-up-door", "industrial-sectional-overhead-doors"],
     documents: [
       { title: "Dock Shelter datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],

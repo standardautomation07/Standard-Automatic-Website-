@@ -27,6 +27,7 @@ import { families } from "../src/data/families.ts";
 import { categories } from "../src/data/categories.ts";
 import { industries } from "../src/data/industries.ts";
 import { schemaFor } from "../src/data/spec-schema.ts";
+import { authoredSpecs } from "../src/data/product-specs.ts";
 import { categoryGuidance } from "../src/data/category-guidance.ts";
 import { imageList } from "../src/data/images.ts";
 
@@ -64,26 +65,49 @@ const master = products.map((product) => {
   const fam = family(product.familyId);
   const cat = category(product.categoryId);
   const guidance = categoryGuidance[product.categoryId] ?? {};
-  const published = values[product.id] ?? {};
+  const published =
+    values[product.id] ??
+    Object.fromEntries(
+      (authoredSpecs[product.id] ?? [])
+        .flatMap((g) => g.specs)
+        .filter((sp) => sp.value !== null)
+        .map((sp) => [sp.label, sp.value]),
+    );
 
-  const schema = schemaFor(product);
+  // A product with an issued parameter set takes it verbatim; everything else
+  // resolves the category schema against the values we can support.
+  const authored = authoredSpecs[product.id];
   const technical = {};
   let answered = 0;
   let total = 0;
-  for (const group of schema) {
-    technical[group.group] = {};
-    for (const field of group.fields) {
-      total += 1;
-      const value = published[field.label];
-      if (value !== undefined) answered += 1;
-      technical[group.group][field.label] = value ?? TBC;
+
+  if (authored) {
+    for (const group of authored) {
+      technical[group.group] = {};
+      for (const spec of group.specs) {
+        total += 1;
+        if (spec.value !== null) answered += 1;
+        technical[group.group][spec.label] =
+          spec.value === null ? TBC : { value: spec.value, status: spec.status };
+      }
     }
+  } else {
+    const schema = schemaFor(product);
+    for (const group of schema) {
+      technical[group.group] = {};
+      for (const field of group.fields) {
+        total += 1;
+        const value = published[field.label];
+        if (value !== undefined) answered += 1;
+        technical[group.group][field.label] = value ?? TBC;
+      }
+    }
+    const schemaLabels = new Set(schema.flatMap((g) => g.fields.map((f) => f.label)));
+    const extra = Object.fromEntries(
+      Object.entries(published).filter(([label]) => !schemaLabels.has(label)),
+    );
+    if (Object.keys(extra).length > 0) technical["Additional published data"] = extra;
   }
-  const schemaLabels = new Set(schema.flatMap((g) => g.fields.map((f) => f.label)));
-  const extra = Object.fromEntries(
-    Object.entries(published).filter(([label]) => !schemaLabels.has(label)),
-  );
-  if (Object.keys(extra).length > 0) technical["Additional published data"] = extra;
 
   const image = images[product.imageId];
 

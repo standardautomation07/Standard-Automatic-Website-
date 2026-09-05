@@ -18,8 +18,12 @@ import type { Faq, Integration, SelectionRule } from "@/lib/types";
 interface Guidance {
   integration: Integration[];
   installation: string[];
-  selectionGuide: SelectionRule[];
-  faq: Faq[];
+  /** Optional: a family whose products each carry their own selection logic
+   *  and question set supplies them on the product instead. High Speed Doors
+   *  works that way — seven products that are chosen against each other need
+   *  seven distinct answers, not one shared set. */
+  selectionGuide?: SelectionRule[];
+  faq?: Faq[];
 }
 
 // ------------------------------------------------------------ shared blocks
@@ -78,96 +82,37 @@ const doorInstallation = (specifics: string[]): string[] => [
   "Commissioning sets travel limits, tests every safety device, and hands over normal operation plus the manual release to the people who will use it.",
 ];
 
-const cycleFirstSelection: SelectionRule[] = [
-  {
-    condition: "The opening is used continuously through the shift",
-    recommendation:
-      "Size on duty cycle first. An operator chosen only for leaf weight will overheat long before it fails mechanically.",
-  },
-  {
-    condition: "The opening separates two environments",
-    recommendation:
-      "State the differential — temperature, dust, insects, noise or pressure. It decides curtain or panel construction and the sealing requirement.",
-  },
-  {
-    condition: "The opening is on an external elevation",
-    recommendation:
-      "Wind exposure sets the class the assembly must be built to, and rules out lighter constructions regardless of opening size.",
-  },
-];
-
 // ------------------------------------------------------------------ per category
 
 export const categoryGuidance: Record<string, Guidance> = {
+  // High Speed Doors carry their own selection guidance and FAQ on each
+  // product: the seven doors in this family are chosen against one another,
+  // so a shared answer would be the wrong answer six times out of seven.
+  // Integration and installation genuinely are properties of the mechanism,
+  // so they stay here.
+
   "roll-up-high-speed-doors": {
     integration: poweredOpeningIntegration,
     installation: doorInstallation([
       "The drum and side guides need clear headroom above the lintel and clear side room at both jambs; these two dimensions rule out more high speed doors than opening width does.",
       "Where the door pairs with a second opening as an airlock, both are set out together so the interlock can be commissioned as one system.",
     ]),
-    selectionGuide: [
-      ...cycleFirstSelection,
-      {
-        condition: "Forklifts pass close to the guides",
-        recommendation:
-          "Specify a self-repairing door. Impact is a matter of when, not if, and a releasing curtain avoids taking the opening out of service.",
-      },
-      {
-        condition: "The area is hosed or foamed down",
-        recommendation:
-          "Stainless frame and guides, and a wipe-down curtain. Painted steel and exposed chain drives do not survive washdown.",
-      },
-    ],
-    faq: [
-      {
-        question: "How fast is a high speed door?",
-        answer:
-          "Fast enough that open time stops being the dominant cost of the opening. Our published roll-up specification runs 0.80–2.5 m/s and is adjustable at commissioning; the right setting depends on the traffic and the safety devices fitted.",
-      },
-      {
-        question: "How much headroom does a high speed roll-up door need?",
-        answer:
-          "Enough for the drum and its cover above the lintel, plus the side guides at each jamb. The figure is configuration dependent, so it is confirmed at survey rather than quoted from a table.",
-      },
-      {
-        question: "What happens if the power fails?",
-        answer:
-          "A crank handle or manual release allows the door to be operated by hand. This is part of the specification, not an accessory.",
-      },
-      {
-        question: "Can a high speed door replace a rolling shutter?",
-        answer:
-          "Often it complements one rather than replacing it. A shutter secures an opening overnight; a high speed door handles the traffic during the shift. Many sites fit both on the same aperture.",
-      },
-    ],
   },
 
   "fold-up-high-speed-doors": {
     integration: poweredOpeningIntegration,
     installation: doorInstallation([
-      "A folding curtain needs less depth above the opening than a rolled one, which is usually why it is chosen — but the stack still has to be accommodated and is confirmed at survey.",
-      "Wide external openings need the structural fixing checked against wind load before the frame is set out.",
+      "A folding curtain stacks in less depth above the opening than a rolled one, which is usually why it is chosen — but the stack still has to be accommodated and is confirmed at survey.",
+      "Tall and wide openings need the structural fixing checked against wind load before the frame is set out, because the curtain transfers that load into the building.",
     ]),
-    selectionGuide: [
-      ...cycleFirstSelection,
-      {
-        condition: "The opening is wide and the lintel detail is shallow",
-        recommendation:
-          "A fold-up door stacks in less depth than a drum of the same span, which is the main reason to choose one.",
-      },
-    ],
-    faq: [
-      {
-        question: "When is a fold-up door better than a roll-up?",
-        answer:
-          "On wide external openings, and where the lintel cannot take the depth of a drum. The folded stack is shallower for the same span.",
-      },
-      {
-        question: "Do fold-up doors work on exposed elevations?",
-        answer:
-          "Yes — horizontal wind bars carry load across the span. The wind class the assembly is built to is confirmed against the elevation.",
-      },
-    ],
+  },
+
+  "spiral-high-speed-doors": {
+    integration: poweredOpeningIntegration,
+    installation: doorInstallation([
+      "The spiral track sits above the opening and needs both headroom and clear space behind the lintel; it is a deeper head detail than a drum of the same span.",
+      "A rigid leaf is heavier than a fabric curtain, so lintel capacity and the structural fixing are confirmed before manufacture rather than on the day.",
+    ]),
   },
 
   "rigid-panel-high-speed-doors": {
@@ -176,31 +121,27 @@ export const categoryGuidance: Record<string, Guidance> = {
       "A rigid panel assembly is heavier than a fabric curtain, so the structural fixing and lintel capacity are checked before manufacture.",
       "Where the door separates temperatures, the perimeter seal detail is set out with the building fabric rather than fitted afterwards.",
     ]),
-    selectionGuide: [
-      ...cycleFirstSelection,
+  },
+
+  "controlled-environment-high-speed-doors": {
+    integration: [
+      ...poweredOpeningIntegration,
       {
-        condition: "The opening needs insulation as well as speed",
-        recommendation:
-          "A fabric curtain will not hold a meaningful temperature differential. An insulated rigid panel will, at a slightly slower closing cycle.",
+        system: "Room and airlock interlocking",
+        detail:
+          "Where the opening is one side of an airlock, the pair is electrically interlocked so both are never open together. The override behaviour on alarm is agreed against the building fire strategy before commissioning.",
       },
       {
-        condition: "The elevation is tall and wind exposed",
-        recommendation:
-          "Rigid panels carry wind load that a fabric curtain of the same span cannot.",
-      },
-    ],
-    faq: [
-      {
-        question: "Why choose a rigid panel door over a fabric one?",
-        answer:
-          "Two reasons: insulation and wind resistance. Our published panel specification is a 43 mm aluminium alloy section with a PU foam core, rated to 120 km/h wind velocity.",
-      },
-      {
-        question: "Is it slower than a roll-up door?",
-        answer:
-          "Closing is slower, because a heavier leaf has to be decelerated under control. Published opening speed is 1.2–1.5 m/s with closing at 0.6 m/s.",
+        system: "Refrigeration and environmental control",
+        detail:
+          "Open, closed and fault states can be reported to the plant or BMS point that owns the room, so a door left open is visible where the temperature is being watched.",
       },
     ],
+    installation: doorInstallation([
+      "The room owner sets the cleaning or washdown regime before the door is specified, because it decides the frame, guide and control enclosure construction rather than the other way round.",
+      "On a cold or freezer opening, the floor condition and any threshold heating are agreed with the refrigeration contractor; frost heave and condensation at the threshold are building problems that arrive at the door.",
+      "Where the opening forms one side of an airlock, both doors are set out together so the interlock is commissioned as one system.",
+    ]),
   },
 
   "sectional-overhead-doors": {

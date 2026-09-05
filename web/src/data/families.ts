@@ -15,10 +15,11 @@ export const families: Family[] = [
     shortName: "High Speed Doors",
     tagline: "Seconds per cycle on the openings that never stop moving.",
     summary:
-      "Roll-up, fold-up and rigid insulated panel doors for openings crossed hundreds of times a day, where the cost is in the time the building stands open.",
+      "Seven rapid door types — roll-up, fold-up, self-repairing, spiral, rigid insulated, hygiene and cold storage — for openings crossed hundreds of times a day, where the cost is in the time the building stands open.",
     intro: [
-      "A high speed door is bought for cycle time, not for the door. On an opening used continuously, the expensive thing is not the leaf — it is the minutes per hour the building spends open to dust, insects, temperature loss and pedestrian risk while a slow door travels.",
-      "The market segments these doors along two axes at once: how the curtain is stored (rolled onto a drum, folded into a stack, or made of rigid insulated panels) and what environment the door has to survive (internal, external and wind-loaded, impact-prone, hygienic, or cold). Both axes are represented here.",
+      "A high speed door is bought for cycle time, not for the door. On an opening used continuously the expensive thing is not the leaf — it is the minutes per hour the building spends open to dust, insects, temperature loss and pedestrian risk while a slow door travels.",
+      "The seven types here differ in two ways that actually matter. How the leaf is stored and guided: rolled onto a drum, folded into a stack, released from its guides on impact, carried into a spiral, or lifted as rigid panels. And what the door has to survive: a dry internal throughway, an exposed elevation, constant forklift contact, a classified room, or a freezer at the other end of the cold chain.",
+      "Choose on the first axis and you get a door that fits the opening. Choose on the second and you get one that is still working in three years. Every product page below states which figures are fixed and which are set by the configuration, so a specification can be compared honestly rather than by whoever quotes the largest number.",
     ],
     why: [
       {
@@ -27,34 +28,35 @@ export const families: Family[] = [
       },
       {
         title: "Environmental separation",
-        body: "A sealed, fast-cycling curtain limits dust, insect and temperature transfer between areas that have to stay different from each other.",
+        body: "A sealed, fast-cycling leaf limits dust, insect and temperature transfer between areas that have to stay different from each other.",
       },
       {
         title: "Impact tolerance",
-        body: "Self-repairing designs re-seat the curtain after a strike instead of taking a critical opening out of service until an engineer attends.",
+        body: "The self-repairing configuration re-enters its guides automatically after a strike, instead of taking a critical opening out of service until an engineer attends.",
       },
       {
-        title: "Hands-free operation",
-        body: "Radar, infrared and loop activation mean the driver never leaves the vehicle and no one touches the door.",
+        title: "Built for the room",
+        body: "Hygienic and cold storage configurations are engineered for the environment they sit in — stainless and sealed for controlled areas, insulated and heated-guide for sub-zero rooms.",
       },
     ],
     considerations: [
       "Cycle count per day — this, not opening width, sizes the drive and decides whether a high speed door is justified at all.",
-      "Internal or external: an external opening carries wind load and needs a curtain and guide system rated for it.",
+      "Internal or external: an external opening carries wind load and needs a leaf and guide system configured for it.",
       "What the opening separates — temperature, dust, insects, noise, or nothing at all.",
       "Impact exposure: how close the traffic route runs to the guides, and whether forklift contact is a matter of if or when.",
-      "Available headroom and side room for the drum or stack, and the depth of the lintel.",
+      "Available headroom and side room for the drum, stack or spiral track, and the depth of the lintel.",
+      "Flexible or rigid leaf: a fabric curtain is faster and cheaper, a rigid insulated panel holds a temperature difference and carries load.",
       "Activation and safety: what opens the door, and what stops it closing on something.",
     ],
     applications: [
       "Warehouse internal and external openings",
       "Loading and dispatch bays",
       "Production and packing hall separations",
-      "Cold and chilled store entrances",
-      "Clean and controlled area transitions",
-      "Vehicle throughways in constrained routes",
+      "Cold rooms, frozen storage and cold-chain logistics",
+      "Pharmaceutical, laboratory and controlled production transitions",
+      "Vehicle throughways on constrained forklift routes",
     ],
-    industries: ["warehousing-logistics", "manufacturing", "cold-chain-food", "pharmaceutical-cleanroom", "automotive"],
+    industries: ["warehousing-logistics", "manufacturing", "cold-chain-food", "pharmaceutical-cleanroom", "automotive", "healthcare"],
     imageId: "family-high-speed-doors",
   },
   {

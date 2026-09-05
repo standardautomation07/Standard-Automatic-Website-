@@ -17,6 +17,7 @@ import {
   variantSpecs,
 } from "@/lib/catalog";
 import { image } from "@/data/images";
+import { CONFIGURATION_NOTE } from "@/data/product-specs";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -28,6 +29,7 @@ import { breadcrumbJsonLd, faqJsonLd, productJsonLd } from "@/lib/json-ld";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { Media, StatusBadge } from "@/components/ui/media";
 import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
+import type { Spec } from "@/lib/types";
 
 export function generateStaticParams() {
   return products.map((product) => ({ family: product.familyId, product: product.id }));
@@ -137,10 +139,22 @@ export default async function ProductPage({ params }: Params) {
             {product.quickFacts.map((fact) => (
               <div key={fact.label} className="bg-paper-raised p-6">
                 <dt className="eyebrow text-steel-500">{fact.label}</dt>
-                <dd className="mt-2 font-display text-lg leading-snug text-steel-900">{fact.value}</dd>
+                <dd className="mt-2 font-display text-lg leading-snug text-steel-900">
+                  {fact.value}
+                  {fact.qualified && (
+                    <span className="ml-1 align-super text-sm text-amber-deep" aria-hidden="true">
+                      *
+                    </span>
+                  )}
+                </dd>
               </div>
             ))}
           </dl>
+          {product.quickFacts.some((fact) => fact.qualified) && (
+            <p className="mt-4 max-w-3xl text-xs leading-relaxed text-steel-500">
+              <span className="text-amber-deep">*</span> {CONFIGURATION_NOTE}
+            </p>
+          )}
         </div>
       </section>
 
@@ -253,6 +267,12 @@ export default async function ProductPage({ params }: Params) {
             <p className="font-mono text-xs text-steel-500">
               {completeness.published} of {completeness.total} fields published
             </p>
+            {completeness.configurable > 0 && (
+              <p className="font-mono text-xs text-steel-500">
+                {completeness.confirmed} fixed · {completeness.configurable} set by configuration ·{" "}
+                {completeness.toConfirm} to be confirmed
+              </p>
+            )}
             <div
               className="h-1.5 w-40 overflow-hidden rounded-edge bg-line"
               role="img"
@@ -290,14 +310,7 @@ export default async function ProductPage({ params }: Params) {
                           )}
                         </th>
                         <td className="px-6 py-4 align-top leading-relaxed">
-                          {spec.value ? (
-                            <span className="text-steel-800">{spec.value}</span>
-                          ) : (
-                            <span className="font-mono text-xs uppercase tracking-[0.08em] text-steel-400">
-                              To be confirmed
-                              {spec.unit && <span className="ml-2 normal-case tracking-normal">({spec.unit})</span>}
-                            </span>
-                          )}
+                          <SpecValue spec={spec} />
                         </td>
                       </tr>
                     ))}
@@ -335,6 +348,12 @@ export default async function ProductPage({ params }: Params) {
                 ))}
               </div>
             </div>
+          )}
+
+          {completeness.qualified && (
+            <p className="mt-10 border-l-2 border-amber bg-amber-soft/50 p-5 text-sm leading-relaxed text-steel-700">
+              {CONFIGURATION_NOTE}
+            </p>
           )}
 
           <p className="mt-8 max-w-2xl text-xs leading-relaxed text-steel-500">
@@ -594,6 +613,40 @@ export default async function ProductPage({ params }: Params) {
         whatsappMessage={`Hello Standard Automation, I would like a quote for ${product.name}.`}
       />
     </>
+  );
+}
+
+/**
+ * One specification value, rendered against how firm it actually is.
+ *
+ *  - CONFIRMED    — the figure, plainly.
+ *  - CONFIGURABLE — the figure, with the dependency marked next to it. It is a
+ *                   real number and it is published; it is not a promise that
+ *                   applies to every opening.
+ *  - TBC          — either the qualification the issued data itself gives
+ *                   ("application dependent", "project specific"), or, where
+ *                   nothing was supplied, the field name with its expected
+ *                   unit and no number invented to fill the gap.
+ */
+function SpecValue({ spec }: { spec: Spec }) {
+  if (spec.value === null) {
+    return (
+      <span className="font-mono text-xs uppercase tracking-[0.08em] text-steel-400">
+        To be confirmed
+        {spec.unit && <span className="ml-2 normal-case tracking-normal">({spec.unit})</span>}
+      </span>
+    );
+  }
+
+  if (spec.status === "CONFIRMED") return <span className="text-steel-800">{spec.value}</span>;
+
+  return (
+    <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+      <span className="text-steel-800">{spec.value}</span>
+      <span className="inline-flex items-center rounded-edge border border-amber-deep/30 bg-amber-soft px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.1em] text-amber-deep">
+        {spec.status === "CONFIGURABLE" ? "Subject to configuration" : "To be confirmed"}
+      </span>
+    </span>
   );
 }
 

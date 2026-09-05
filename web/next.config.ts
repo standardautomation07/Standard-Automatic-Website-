@@ -18,6 +18,14 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    // The High Speed Doors lead images are our own technical illustrations,
+    // authored in scripts/build-door-diagrams.mjs and served from
+    // public/images/diagrams. They are first-party files with no scripting;
+    // the CSP below is belt and braces so an SVG can never execute anything
+    // even if one is ever added by hand.
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 };
 

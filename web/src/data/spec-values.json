@@ -1,34 +1,4 @@
 {
-  "high-speed-roll-up-doors": {
-    "Maximum clear width": "5000 mm",
-    "Maximum clear height": "5000 mm",
-    "Opening speed": "0.80–2.5 m/s, adjustable",
-    "Closing speed": "0.80–2.5 m/s, adjustable",
-    "Curtain or panel material": "0.8–1.2 mm high-density PVC coated fabric",
-    "Vision panel": "Transparent PVC film",
-    "Side guide material": "Aluminium extrusion",
-    "Frame material": "Galvanized steel, aluminium alloy or stainless steel",
-    "Finish and colour": "Blue, yellow, orange, grey, red and others to order",
-    "Wind load resistance": "EN 12424 Class 2",
-    "Operator type": "SEW or equivalent geared motor, 380 V or 220 V 50 Hz, 0.75 / 1.1 / 1.5 kW",
-    "Manual override": "Crank handle",
-    "Control system": "PLC with inverter and encoder",
-    "Activation devices": "Double-side radar, push button or infrared sensors",
-    "Track and box cover": "2.0 mm folded galvanized steel"
-  },
-  "high-speed-insulated-panel-doors": {
-    "Maximum clear width": "5000 mm",
-    "Maximum clear height": "7500 mm",
-    "Opening speed": "1.2–1.5 m/s, adjustable",
-    "Closing speed": "0.6 m/s, adjustable",
-    "Curtain or panel material": "Aluminium alloy with PU foam core",
-    "Curtain or panel thickness": "43 mm",
-    "Finish and colour": "Silver or customised",
-    "Operator type": "SEW or equivalent geared motor, 380 V or 220 V 50 Hz, 0.75 / 1.1 / 1.5 kW",
-    "Control system": "PLC with inverter and encoder",
-    "Activation devices": "Double-side radar, infrared sensors or as specified",
-    "Rated wind velocity": "120 km/h"
-  },
   "industrial-sectional-overhead-doors": {
     "Maximum clear width": "Up to 10 m wide",
     "Panel material": "Aluminium or galvanized steel, PUF insulated",

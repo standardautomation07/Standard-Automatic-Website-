@@ -71,7 +71,7 @@ export const industrialDoorProducts: Product[] = [
       "Torsion spring counterbalance with spring-break and anti-fall devices",
       "Perimeter seals at head, jambs and floor",
     ],
-    related: ["aluminium-garage-doors", "high-speed-insulated-panel-doors", "insulated-double-wall-rolling-shutters"],
+    related: ["aluminium-garage-doors", "high-speed-rigid-insulated-door", "insulated-double-wall-rolling-shutters"],
     documents: [
       { title: "Sectional Overhead Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Lift configuration drawing", kind: "Technical drawing", href: null, note: "Produced per project once headroom and side room are surveyed." },
@@ -127,7 +127,7 @@ export const industrialDoorProducts: Product[] = [
       "2.5 mm powder-coated galvanized steel hardware and track",
       "Torsion counterbalance with spring-break and anti-fall devices",
     ],
-    related: ["residential-garage-doors", "industrial-sectional-overhead-doors", "high-speed-insulated-panel-doors"],
+    related: ["residential-garage-doors", "industrial-sectional-overhead-doors", "high-speed-rigid-insulated-door"],
     documents: [
       { title: "Aluminium Garage Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],

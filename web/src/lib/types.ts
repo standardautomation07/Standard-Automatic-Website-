@@ -67,10 +67,35 @@ export interface SpecGroupSchema {
   fields: SpecField[];
 }
 
+/**
+ * How firm a published figure is.
+ *
+ *  - CONFIRMED    — a fixed characteristic of the product as supplied.
+ *  - CONFIGURABLE — a real figure, but the achievable value is set by the
+ *                   size, configuration and environment of the opening. This
+ *                   is what the business marks with an asterisk on its own
+ *                   data. It is published, with the dependency stated.
+ *  - TBC          — the parameter exists and is named, but no precise value
+ *                   can be stated ahead of the project. Either the supplied
+ *                   data itself says "application dependent" or "project
+ *                   specific", or nothing supportable has been supplied at
+ *                   all, in which case `value` is null.
+ *
+ * There is deliberately no state in which a plausible-looking number appears
+ * from nowhere.
+ */
+export type SpecStatus = "CONFIRMED" | "CONFIGURABLE" | "TBC";
+
+/**
+ * A resolved specification row. `label` is the parameter name, `note` carries
+ * the notes a specifier needs, and `unit` is the expected unit — so the row
+ * holds name, value, unit, status and notes together.
+ */
 export interface Spec extends SpecField {
   /** null when no supportable value has been supplied. Rendered as "to be
    *  confirmed" — never filled with a plausible guess. */
   value: string | null;
+  status: SpecStatus;
 }
 
 /** Specifications are grouped so a long table stays readable. */
@@ -108,6 +133,10 @@ export interface Integration {
 export interface QuickFact {
   label: string;
   value: string;
+  /** True where the underlying specification is CONFIGURABLE or TBC. The hero
+   *  marks the figure and carries a footnote, so a headline number is never
+   *  read as a universal guarantee. */
+  qualified?: boolean;
 }
 
 export interface DocumentRef {

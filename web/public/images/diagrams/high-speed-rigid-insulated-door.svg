@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>High speed rigid insulated door</title>
+  <desc>Double-skin insulated panels lift vertically, with an insulation core between two metal skins.</desc>
+
+  <rect x="0" y="0" width="800" height="600" fill="#eceae5"/>
+  <rect x="90" y="90" width="620" height="420" fill="#d9d5cd" stroke="#b9b3a8" stroke-width="2"/>
+  <rect x="250" y="150" width="300" height="330" fill="#eceae5"/>
+  <path d="M90 480 L710 480" stroke="#b9b3a8" stroke-width="3"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+
+  <rect x="230" y="118" width="340" height="14" fill="#272c33"/>
+  <rect x="254" y="146" width="292" height="150" fill="#69707a" opacity="0.28" stroke="#3d444d" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="270" y="226" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">stored leaf</text>
+  <rect x="254" y="330" width="292" height="34" rx="2" fill="#69707a" stroke="#272c33" stroke-width="2"/>
+  <rect x="254" y="368" width="292" height="34" rx="2" fill="#69707a" stroke="#272c33" stroke-width="2"/>
+  <rect x="254" y="406" width="292" height="34" rx="2" fill="#69707a" stroke="#272c33" stroke-width="2"/>
+  <rect x="254" y="444" width="292" height="34" rx="2" fill="#69707a" stroke="#272c33" stroke-width="2"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+  <path d="M560 470 L660 400" stroke="#3d444d" stroke-width="1.5"/>
+  <rect x="600" y="300" width="96" height="100" fill="#ffffff" stroke="#3d444d" stroke-width="2"/>
+  <rect x="600" y="300" width="96" height="12" fill="#272c33"/>
+  <rect x="600" y="388" width="96" height="12" fill="#272c33"/>
+  <rect x="600" y="312" width="96" height="76" fill="#f0dcb8"/>
+  <text x="600" y="288" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">panel section</text>
+  <text x="704" y="356" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">PU core</text>
+  <path d="M600 356 L592 356" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="90" y="552" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">HIGH SPEED RIGID INSULATED DOOR</text>
+  <text x="710" y="552" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">STANDARD AUTOMATION</text>
+  <path d="M90 566 L710 566" stroke="#a9a396" stroke-width="1"/>
+</svg>

@@ -32,7 +32,7 @@ const INDUSTRIES = [
 ];
 
 const SAMPLE_PRODUCTS = [
-  "/products/high-speed-doors/high-speed-roll-up-doors",
+  "/products/high-speed-doors/high-speed-roll-up-door",
   "/products/industrial-doors/industrial-sectional-overhead-doors",
   "/products/rolling-shutters/polycarbonate-rolling-shutters",
   "/products/fire-safety-doors/fire-rated-rolling-shutters",
@@ -76,7 +76,7 @@ test.describe("page loads and SEO head", () => {
     "/contact",
     "/projects",
     "/products/high-speed-doors",
-    "/products/high-speed-doors/high-speed-roll-up-doors",
+    "/products/high-speed-doors/high-speed-roll-up-door",
     "/industries/manufacturing",
   ];
 
@@ -100,7 +100,7 @@ test.describe("page loads and SEO head", () => {
   }
 
   test("product page emits Product and BreadcrumbList structured data", async ({ page }) => {
-    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
     const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
     const types = blocks.map((block) => JSON.parse(block)["@type"]);
     expect(types).toContain("Product");
@@ -264,7 +264,7 @@ test.describe("catalogue hierarchy", () => {
   });
 
   test("product pages carry integration, installation, selection guidance and FAQ", async ({ page }) => {
-    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
     await expect(page.getByRole("heading", { name: "What it connects to" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "What the site has to provide" })).toBeVisible();
     await expect(
@@ -274,7 +274,7 @@ test.describe("catalogue hierarchy", () => {
   });
 
   test("FAQ structured data matches the visible questions", async ({ page }) => {
-    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
     const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
     const faq = blocks.map((b) => JSON.parse(b)).find((b) => b["@type"] === "FAQPage");
     expect(faq).toBeTruthy();
@@ -312,22 +312,22 @@ test.describe("catalogue hierarchy", () => {
     await page.goto("/products/catalogue");
 
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(30);
+    await expect(cards).toHaveCount(33);
 
     await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
       await expect(cards).toHaveCount(2, { timeout: 1000 });
     });
     await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
-      await expect(cards).toHaveCount(30, { timeout: 1000 });
+      await expect(cards).toHaveCount(33, { timeout: 1000 });
     });
 
     await page.getByLabel("Industry").selectOption("cold-chain-food");
-    expect(await cards.count()).toBeLessThan(30);
+    expect(await cards.count()).toBeLessThan(33);
     await page.getByLabel("Industry").selectOption("all");
 
     await page.getByLabel("Operating environment").selectOption("fire");
     expect(await cards.count()).toBeGreaterThan(0);
-    expect(await cards.count()).toBeLessThan(30);
+    expect(await cards.count()).toBeLessThan(33);
     await page.getByLabel("Operating environment").selectOption("all");
 
     await page.getByLabel("Search products").fill("turnstile");
@@ -424,6 +424,10 @@ test.describe("assets, layout and links", () => {
 
   for (const path of pages) {
     test(`${path} loads every image and has no horizontal overflow`, async ({ page }) => {
+      // The poll below waits up to 30s, which is the default test timeout, so
+      // the test would expire before the poll could ever report. On a cold
+      // image cache the optimizer genuinely needs that long.
+      test.slow();
       const failed: string[] = [];
       page.on("response", (response) => {
         if (response.request().resourceType() === "image" && response.status() >= 400) {
@@ -475,7 +479,8 @@ test.describe("assets, layout and links", () => {
   test("legacy product URLs redirect into the new hierarchy", async ({ request }) => {
     const cases: [string, string][] = [
       ["/m-s-rolling-shutters.html", "/products/rolling-shutters/galvanized-steel-rolling-shutters"],
-      ["/high-speed-door.html", "/products/high-speed-doors/high-speed-roll-up-doors"],
+      ["/high-speed-door.html", "/products/high-speed-doors/high-speed-roll-up-door"],
+      ["/products/high-speed-doors/high-speed-roll-up-doors", "/products/high-speed-doors/high-speed-roll-up-door"],
       ["/fire-proof-rolling-shutters.html", "/products/fire-safety-doors/fire-rated-rolling-shutters"],
       ["/sliding-gate-motor.html", "/products/automatic-gates"],
     ];
@@ -488,7 +493,7 @@ test.describe("assets, layout and links", () => {
 
   test("sitemap lists families, products and industries but not /projects", async ({ request }) => {
     const body = await (await request.get("/sitemap.xml")).text();
-    expect(body).toContain("/products/high-speed-doors/high-speed-roll-up-doors");
+    expect(body).toContain("/products/high-speed-doors/high-speed-roll-up-door");
     expect(body).toContain("/industries/manufacturing");
     expect(body).not.toContain("/projects");
   });
@@ -511,7 +516,7 @@ test.describe("accessibility basics", () => {
   });
 
   test("headings do not skip a level on a product page", async ({ page }) => {
-    await page.goto("/products/high-speed-doors/high-speed-roll-up-doors");
+    await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
     const levels = await page.evaluate(() =>
       [...document.querySelectorAll("h1,h2,h3,h4")].map((h) => Number(h.tagName[1])),
     );

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>High speed cleanroom and hygiene door</title>
+  <desc>A sealed rapid-door assembly in a stainless frame, with side and bottom seals between two controlled rooms.</desc>
+
+  <rect x="0" y="0" width="800" height="600" fill="#eceae5"/>
+  <rect x="90" y="90" width="620" height="420" fill="#d9d5cd" stroke="#b9b3a8" stroke-width="2"/>
+  <rect x="250" y="150" width="300" height="330" fill="#eceae5"/>
+  <path d="M90 480 L710 480" stroke="#b9b3a8" stroke-width="3"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+
+  <rect x="90" y="90" width="160" height="390" fill="#ffffff" opacity="0.55"/>
+  <text x="104" y="124" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">CLASSIFIED</text>
+  <text x="104" y="144" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">AREA</text>
+  <rect x="228" y="118" width="344" height="16" fill="#3d444d"/>
+  <rect x="228" y="118" width="344" height="5" fill="#ffffff"/>
+  <circle cx="400" cy="188" r="44" fill="none" stroke="#3d444d" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="253" y="288" width="294" height="192" fill="#8f97a1" opacity="1"/>
+  <rect x="290" y="316" width="220" height="42" fill="#cfe0e6" stroke="#272c33" stroke-width="2"/>
+  <rect x="253" y="466" width="294" height="14" fill="#272c33"/>
+  <path d="M242 150 L242 480 M558 150 L558 480" stroke="#c8892a" stroke-width="5"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#8b929b" stroke-width="6" stroke-linecap="square"/>
+  <path d="M253 480 L547 480" stroke="#c8892a" stroke-width="6"/>
+  <path d="M600 300 L640 300" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="305" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">side seals</text>
+  <path d="M600 470 L640 470" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="475" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">bottom seal</text>
+  <path d="M232 220 L200 220" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="192" y="225" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">stainless</text>
+  <text x="192" y="245" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">frame</text>
+  <path d="M170 340 L228 340" stroke="#c8892a" stroke-width="3"/>
+  <path d="M228 340 L214 332 L214 348 Z" fill="#c8892a"/>
+  <text x="104" y="328" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">pressure</text>
+  <text x="90" y="552" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">HIGH SPEED CLEANROOM AND HYGIENE DOOR</text>
+  <text x="710" y="552" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">STANDARD AUTOMATION</text>
+  <path d="M90 566 L710 566" stroke="#a9a396" stroke-width="1"/>
+</svg>

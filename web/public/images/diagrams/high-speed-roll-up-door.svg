@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>High speed roll-up door</title>
+  <desc>The flexible curtain winds onto a drum above the opening and runs in side guides.</desc>
+
+  <rect x="0" y="0" width="800" height="600" fill="#eceae5"/>
+  <rect x="90" y="90" width="620" height="420" fill="#d9d5cd" stroke="#b9b3a8" stroke-width="2"/>
+  <rect x="250" y="150" width="300" height="330" fill="#eceae5"/>
+  <path d="M90 480 L710 480" stroke="#b9b3a8" stroke-width="3"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+
+  <rect x="230" y="118" width="340" height="14" fill="#272c33"/>
+  <path d="M412 185 L411.9696074846462 190.19913422249346 L409.623999319383 195.30478709632155 L405.07342612439044 199.27525297010013 L398.89447290349233 201.16223406088673 L392.06387809913764 200.31602001744096 L385.8044833801091 196.54890938116677 L381.3675504898201 190.22056752188843 L379.79000670085884 182.22220035843657 L381.6727037724778 173.85492427173995 L387.0246927524155 166.61817740726508 L395.20861089261047 161.9425697350813 L405.0050179210948 160.91453144301485 L414.7918502622463 164.04472224428216 L422.81299810139126 171.12710853405392 L427.49153500250816 181.22137548757914 L427.73201787561663 192.7701470093223 L423.15498202752696 203.83797513813266 L414.21600966589256 212.4356532486334 L402.18034510700124 216.87551717563773 L388.94897279835754 216.0946104299211 L376.75906547340486 209.88496458367015 L367.8058833171586 198.98387825360308 L363.85 185 L365.87973958399715 170.17947945771985 L373.89234227188643 157.0455243663618 L386.83923124168024 147.96914576073036 L402.7535813792645 144.74406516316174 L419.0466925620697 148.24155195814166 L432.9289442904026 158.21031676335903 L441.88690199962923 173.26384045466938 L444.1350588959185 191.0662242172377 L438.9615248473199 208.69302812161573 L426.9021370266587 223.11164550893704 L409.70485182261064 231.70231098244682 L390.08151936368415 232.73034927451323 L371.28131995867955 225.68510067191997 L356.55277327881106 211.4208438593018 L348.5833994007144 192.06704908809516 L349.013529634934 170.71426096723556 L358.1115903019612 150.92125100639333 L374.6734196729 136.12191872694927 L396.17160061024185 129.03078204841074 L419.1383698355719 131.14978830090945 L439.7245929353257 142.4653468790132 L454.34476961419807 161.3947354266102" stroke="#c8892a" stroke-width="3" fill="none"/>
+  <circle cx="400" cy="185" r="62" fill="none" stroke="#3d444d" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="253" y="300" width="294" height="180" fill="#69707a" opacity="1"/>
+  <rect x="290" y="326" width="220" height="42" fill="#cfe0e6" stroke="#272c33" stroke-width="2"/>
+  <rect x="253" y="466" width="294" height="14" fill="#272c33"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+  <path d="M600 185 L640 185" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="190" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">drum</text>
+  <path d="M600 360 L640 360" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="365" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">PVC curtain</text>
+  <path d="M232 300 L200 300" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="192" y="305" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">guide</text>
+  <text x="90" y="552" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">HIGH SPEED ROLL-UP DOOR</text>
+  <text x="710" y="552" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">STANDARD AUTOMATION</text>
+  <path d="M90 566 L710 566" stroke="#a9a396" stroke-width="1"/>
+</svg>

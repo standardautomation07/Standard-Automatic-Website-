@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { categories, families, products, productSpecGroups } from "../src/lib/catalog";
+import { authoredSpecs } from "../src/data/product-specs";
 
 /**
  * The research taxonomy and the site's typed data are two representations of
@@ -80,6 +81,11 @@ test.describe("catalogue data matches the research taxonomy", () => {
     // review found them a direct adjacency to the confirmed sliding and fire
     // rated door lines, so they are published as POTENTIAL with a visible
     // to-be-confirmed marker. Everything below remains withheld entirely.
+    //
+    // "cold-storage-door" still bars a standalone hinged or sliding cold room
+    // door, which we do not supply. It does not bar the high speed cold
+    // storage door, which is a rapid door and whose full parameters the
+    // business issued on 2026-09-05.
     const forbidden = [
       "hangar",
       "cold-storage-door",
@@ -133,19 +139,46 @@ test.describe("content honesty rules", () => {
     }
   });
 
-  test("every published value traces to spec-values.json", () => {
+  test("every published value traces to a declared source", () => {
+    // Exactly two files may put a figure on this site: spec-values.json, and
+    // the issued parameter sets in product-specs.ts. Anything a page renders
+    // has to be byte-identical to one of them.
     const values = JSON.parse(
       readFileSync(resolve(__dirname, "../src/data/spec-values.json"), "utf8"),
     ) as Record<string, Record<string, string>>;
 
     for (const product of products) {
+      const authored = authoredSpecs[product.id];
       for (const group of productSpecGroups(product)) {
         for (const spec of group.specs) {
           if (spec.value === null) continue;
+          if (authored) {
+            const source = authored
+              .flatMap((g) => g.specs)
+              .find((candidate) => candidate.label === spec.label);
+            expect(
+              source?.value,
+              `${product.id} / ${spec.label} has a value that is not in product-specs.ts`,
+            ).toBe(spec.value);
+          } else {
+            expect(
+              values[product.id]?.[spec.label],
+              `${product.id} / ${spec.label} has a value that is not in spec-values.json`,
+            ).toBe(spec.value);
+          }
+        }
+      }
+    }
+  });
+
+  test("no product carries a specification value with no status", () => {
+    for (const product of products) {
+      for (const group of productSpecGroups(product)) {
+        for (const spec of group.specs) {
           expect(
-            values[product.id]?.[spec.label],
-            `${product.id} / ${spec.label} has a value that is not in spec-values.json`,
-          ).toBe(spec.value);
+            ["CONFIRMED", "CONFIGURABLE", "TBC"],
+            `${product.id} / ${spec.label} has status ${spec.status}`,
+          ).toContain(spec.status);
         }
       }
     }

@@ -567,9 +567,15 @@ const vehicleAccess: SpecGroupSchema[] = [
 /** Category first, then family — a category is the level at which two
  *  products genuinely need different fields. */
 const byCategory: Record<string, SpecGroupSchema[]> = {
+  // The seven High Speed Doors products take their tables from
+  // product-specs.ts instead, because the business issued a complete parameter
+  // set for each. These entries are the fallback for anything added to those
+  // categories later without issued data.
   "roll-up-high-speed-doors": highSpeedDoor,
   "fold-up-high-speed-doors": highSpeedDoor,
+  "spiral-high-speed-doors": highSpeedDoor,
   "rigid-panel-high-speed-doors": highSpeedDoor,
+  "controlled-environment-high-speed-doors": highSpeedDoor,
   "sectional-overhead-doors": sectionalDoor,
   "garage-doors": sectionalDoor,
   "single-wall-rolling-shutters": rollingShutter,

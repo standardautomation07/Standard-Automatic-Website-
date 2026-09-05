@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>High speed self-repairing door</title>
+  <desc>On impact the curtain leaves the guide instead of tearing, and re-seats itself on the next opening cycle.</desc>
+
+  <rect x="0" y="0" width="800" height="600" fill="#eceae5"/>
+  <rect x="90" y="90" width="620" height="420" fill="#d9d5cd" stroke="#b9b3a8" stroke-width="2"/>
+  <rect x="250" y="150" width="300" height="330" fill="#eceae5"/>
+  <path d="M90 480 L710 480" stroke="#b9b3a8" stroke-width="3"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+
+  <rect x="230" y="118" width="340" height="14" fill="#272c33"/>
+  <circle cx="400" cy="185" r="46" fill="none" stroke="#3d444d" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect x="253" y="280" width="294" height="200" fill="#69707a" opacity="1"/>
+  <rect x="290" y="306" width="220" height="42" fill="#cfe0e6" stroke="#272c33" stroke-width="2"/>
+  <rect x="253" y="466" width="294" height="14" fill="#272c33"/>
+  <path d="M253 380 Q204 424 284 466 L253 466 Z" fill="#69707a"/>
+  <path d="M253 380 Q204 424 284 466" fill="none" stroke="#c8892a" stroke-width="3"/>
+  <path d="M250 150 L250 480 M550 150 L550 480" stroke="#3d444d" stroke-width="6" stroke-linecap="square"/>
+  <path d="M196 430 Q176 300 236 214" fill="none" stroke="#c8892a" stroke-width="3" stroke-dasharray="8 6"/>
+  <path d="M236 214 L226 232 L246 230 Z" fill="#c8892a"/>
+  <text x="96" y="452" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">curtain released</text>
+  <text x="96" y="472" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">on impact</text>
+  <path d="M600 250 L640 250" stroke="#c8892a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="648" y="255" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">re-seats at the</text>
+  <text x="648" y="275" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">top of travel</text>
+  <text x="90" y="552" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">HIGH SPEED SELF-REPAIRING DOOR</text>
+  <text x="710" y="552" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="0.06em" fill="#3d444d">STANDARD AUTOMATION</text>
+  <path d="M90 566 L710 566" stroke="#a9a396" stroke-width="1"/>
+</svg>

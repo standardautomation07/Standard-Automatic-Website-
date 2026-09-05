@@ -23,9 +23,16 @@ import { entranceAutomationProducts } from "../src/data/products/entrance-automa
 import { loadingBayProducts } from "../src/data/products/loading-bay.ts";
 import { accessControlProducts } from "../src/data/products/access-control.ts";
 import { schemaFor } from "../src/data/spec-schema.ts";
+import { authoredSpecs } from "../src/data/product-specs.ts";
 import { families } from "../src/data/families.ts";
 
-const products = [
+/**
+ * Products whose full parameter set has been issued by the business live in
+ * product-specs.ts and are deliberately absent from this sheet. Collecting
+ * them here would let an import write a second, competing copy of their data
+ * into spec-values.json.
+ */
+const allProducts = [
   ...highSpeedDoorProducts,
   ...industrialDoorProducts,
   ...rollingShutterProducts,
@@ -35,6 +42,9 @@ const products = [
   ...loadingBayProducts,
   ...accessControlProducts,
 ];
+
+const products = allProducts.filter((product) => !authoredSpecs[product.id]);
+const authoredCount = allProducts.length - products.length;
 
 const VALUES = "src/data/spec-values.json";
 const SHEET = "../research/technical-data-request.csv";
@@ -120,6 +130,7 @@ function buildRequest() {
   writeFileSync(SHEET, `${lines.join("\n")}\n`);
   console.log(`wrote ${SHEET}`);
   console.log(`${products.length} products, ${fields} schema fields, ${answered} already answered, ${fields - answered} to collect`);
+  console.log(`${authoredCount} products excluded: their parameters are issued and held in src/data/product-specs.ts`);
 }
 
 function importSheet() {

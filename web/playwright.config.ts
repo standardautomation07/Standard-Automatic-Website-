@@ -6,8 +6,21 @@ const baseURL = `http://localhost:${PORT}`;
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
+  // Two workers plus the server is what this hardware sustains; more produces
+  // resource failures rather than faster runs.
+  workers: 2,
   forbidOnly: Boolean(process.env.CI),
-  retries: process.env.CI ? 1 : 0,
+  /**
+   * One retry, locally as well as in CI.
+   *
+   * The suite runs 500+ tests across three viewports against a production
+   * server that transcodes images on demand. Under that load this machine
+   * intermittently refuses a socket (ERR_INSUFFICIENT_RESOURCES) and the
+   * browser lands on a blank page, which fails an assertion that has nothing
+   * to do with the site. A retry separates that from a real defect: a genuine
+   * failure fails twice, and a flake is reported as flaky rather than hidden.
+   */
+  retries: 1,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : [["list"]],
   expect: { timeout: 10_000 },
   use: {

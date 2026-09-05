@@ -11,7 +11,8 @@
     "spec:request": "node scripts/spec-data.mjs request",
     "spec:import": "node scripts/spec-data.mjs import",
     "spec:status": "node scripts/spec-data.mjs status",
-    "master": "node scripts/build-product-master.mjs"
+    "master": "node scripts/build-product-master.mjs",
+    "diagrams": "node scripts/build-door-diagrams.mjs"
   },
   "dependencies": {
     "next": "16.3.4",
