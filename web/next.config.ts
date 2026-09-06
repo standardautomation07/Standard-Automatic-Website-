@@ -13,6 +13,17 @@ import redirects from "./src/data/redirects.json";
  * been resolved by the edge/hosting layer, which is where that rule belongs.
  */
 const nextConfig: NextConfig = {
+  /**
+   * Dev and production build into separate directories.
+   *
+   * They used to share `.next`, and running `next build` then `next dev`
+   * against it left the dev server serving a half-stale graph — the symptom
+   * was dynamic product routes 404ing while the family pages still worked.
+   * Nothing about the code was wrong and it cost an hour twice. Two
+   * directories cannot corrupt each other.
+   */
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
+
   async redirects() {
     return redirects as { source: string; destination: string; permanent: boolean }[];
   },

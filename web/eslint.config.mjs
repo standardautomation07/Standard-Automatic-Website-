@@ -9,6 +9,10 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    // The dev build directory. next.config.ts gives dev and production
+    // separate output folders so they cannot corrupt each other; this keeps
+    // the dev one out of linting.
+    ".next-dev/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
