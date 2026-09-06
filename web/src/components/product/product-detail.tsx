@@ -7,6 +7,7 @@ import {
 } from "@/data/products/rolling-shutters";
 import { highSpeedSizeStatements } from "@/data/products/high-speed-doors";
 import { CONFIGURATION_NOTE } from "@/data/product-specs";
+import { orderingFor, sizeStatementFor } from "@/data/product-detail-data";
 import { industryById, productGuidance, productSpecGroups, resolveDetail } from "@/lib/catalog";
 import type { Product, Spec } from "@/lib/types";
 import { DetailList, DetailNote, Tabs } from "@/components/product/tabs";
@@ -35,13 +36,16 @@ export function ProductDetail({ product }: { product: Product }) {
   const controls = resolveDetail(product, "controls");
   const options = resolveDetail(product, "options");
   const maintenance = resolveDetail(product, "maintenance");
-  const sizeStatement =
-    shutterSizeStatements[product.id] ?? highSpeedSizeStatements[product.id] ?? "Available in custom sizes.";
+  const sizeStatement = sizeStatementFor(
+    product,
+    shutterSizeStatements[product.id] ?? highSpeedSizeStatements[product.id],
+  );
+  const ordering = orderingFor(product);
   const isWind = product.facets?.performance.some((p) => p.includes("Wind") || p.includes("Storm"));
   const isFire = product.facets?.construction === "Fire Rated";
   // Each family states the caveat in its own terms.
   const disclaimer =
-    product.familyId === "high-speed-doors" ? CONFIGURATION_NOTE : SHUTTER_DISCLAIMER;
+    product.familyId === "rolling-shutters" ? SHUTTER_DISCLAIMER : CONFIGURATION_NOTE;
 
   const answered = groups.flatMap((g) => g.specs).filter((s) => s.value !== null).length;
   const total = groups.flatMap((g) => g.specs).length;
@@ -252,10 +256,10 @@ export function ProductDetail({ product }: { product: Product }) {
     {
       id: "ordering",
       title: "Ordering Information",
-      meta: `${(product.ordering ?? []).length}`,
+      meta: `${ordering.length}`,
       content: (
         <div className="space-y-6">
-          <DetailList items={product.ordering ?? []} />
+          <DetailList items={ordering} />
           <div className="flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="#enquiry" variant="primary">
               Request a Quote

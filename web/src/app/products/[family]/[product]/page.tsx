@@ -65,16 +65,14 @@ export default async function ProductPage({ params }: Params) {
   const related = relatedProducts(product);
   const path = productPath(product);
 
-  // Rolling Shutters and High Speed Doors present their detail as horizontal
-  // tabs instead of a long scroll of stacked sections. Everything the standard
-  // template renders inline moves into those tabs, so the inline sections are
-  // suppressed for these families rather than duplicated.
+  // Every product presents its detail as the same nine horizontal tabs, so a
+  // buyer comparing a shutter against a gate is reading the same page shape
+  // twice. Everything the template used to render inline lives in those tabs.
   //
   // The gallery is the exception: where a product has real photography it
   // stays on the page, because burying images behind an unselected tab is the
   // one thing this pattern is bad at.
-  const isShutter = product.familyId === "rolling-shutters";
-  const useTabs = isShutter || product.familyId === "high-speed-doors";
+  const useTabs = true;
 
   const completeness = specCompleteness(product);
   const guidance = productGuidance(product);

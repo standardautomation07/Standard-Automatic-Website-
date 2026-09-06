@@ -256,15 +256,19 @@ test.describe("catalogue hierarchy", () => {
 
   test("a product with no supplied figures still shows the full field list, marked to be confirmed", async ({ page }) => {
     await page.goto("/products/access-control/tripod-turnstiles");
+    // Technical Data is the tab shown first, so the table is on screen already.
     await expect(page.getByRole("table").first()).toBeVisible();
-    await expect(page.getByText("0 of 29 fields published")).toBeVisible();
+    // The per-tab count is hidden on small screens by design, so assert the
+    // tab itself and prove the field list separately.
+    await expect(page.getByRole("tab", { name: /Technical Data/ })).toBeVisible();
+    expect(await page.getByRole("row").count()).toBeGreaterThan(25);
     // Every row is unanswered, and none of them invents a number.
     expect(await page.getByText("To be confirmed", { exact: false }).count()).toBeGreaterThan(20);
   });
 
   test("a product with supplied figures shows them alongside the unanswered fields", async ({ page }) => {
     await page.goto("/products/loading-bay/dock-levellers");
-    await expect(page.getByText(/\d+ of \d+ fields published/)).toBeVisible();
+    await expect(page.getByRole("tab", { name: /Technical Data/ })).toBeVisible();
     // Scoped to the tables: the FAQ answer cites the same figure, which is
     // the intended behaviour but makes an unscoped locator ambiguous.
     await expect(page.getByRole("table").getByText("725–750 mm")).toBeVisible();
@@ -272,21 +276,23 @@ test.describe("catalogue hierarchy", () => {
   });
 
   test("product pages carry integration, installation, selection guidance and FAQ", async ({ page }) => {
-    // High Speed Doors and Rolling Shutters carry compatibility and
-    // installation as tabs; selection guidance and FAQ stay as sections on the
-    // page.
-    await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
-    await expect(page.getByRole("tab", { name: /Compatibility/ })).toBeVisible();
-    await expect(page.getByRole("tab", { name: /Installation/ })).toBeVisible();
-    await expect(
-      page.getByRole("heading", { name: /Which configuration is right for your application/i }),
-    ).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Questions we are actually asked" })).toBeVisible();
-
-    // A family that does not use the accordion still renders them inline.
-    await page.goto("/products/loading-bay/dock-levellers");
-    await expect(page.getByRole("heading", { name: "What it connects to" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "What the site has to provide" })).toBeVisible();
+    // Compatibility and installation are tabs on every family now; selection
+    // guidance and FAQ stay as sections on the page. Checked across two
+    // families so the treatment is provably site-wide rather than local.
+    for (const path of [
+      "/products/high-speed-doors/high-speed-roll-up-door",
+      "/products/loading-bay/dock-levellers",
+    ]) {
+      await page.goto(path);
+      await expect(page.getByRole("tab", { name: /Compatibility/ })).toBeVisible();
+      await expect(page.getByRole("tab", { name: /Installation/ })).toBeVisible();
+      await expect(
+        page.getByRole("heading", { name: /Which configuration is right for your application/i }),
+      ).toBeVisible();
+      await expect(
+        page.getByRole("heading", { name: "Questions we are actually asked" }),
+      ).toBeVisible();
+    }
   });
 
   test("FAQ structured data matches the visible questions", async ({ page }) => {
