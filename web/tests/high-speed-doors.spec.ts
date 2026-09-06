@@ -381,8 +381,8 @@ test.describe("the pages render that data", () => {
       await expect(page.getByRole("navigation", { name: "Breadcrumb" })).toBeVisible();
       await expect(page.getByRole("heading", { name: "Available configurations" })).toBeVisible();
 
-      // Detail is presented as accordion panels. Every one of the nine has to
-      // be on the page; only Technical Data is open to begin with.
+      // Detail is presented as horizontal tabs. All nine are on the page; only
+      // Technical Data is selected to begin with.
       for (const panel of [
         "Technical Data",
         "Features",
@@ -394,10 +394,10 @@ test.describe("the pages render that data", () => {
         "Ordering Information",
         "Downloads",
       ]) {
-        await expect(page.getByRole("button", { name: new RegExp(panel) })).toBeVisible();
+        await expect(page.getByRole("tab", { name: new RegExp(panel) })).toBeVisible();
       }
-      await expect(page.getByRole("button", { name: /Technical Data/ })).toHaveAttribute(
-        "aria-expanded",
+      await expect(page.getByRole("tab", { name: /Technical Data/ })).toHaveAttribute(
+        "aria-selected",
         "true",
       );
 

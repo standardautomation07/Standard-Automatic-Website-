@@ -65,16 +65,16 @@ export default async function ProductPage({ params }: Params) {
   const related = relatedProducts(product);
   const path = productPath(product);
 
-  // Rolling Shutters and High Speed Doors present their detail as independent
-  // accordion sections instead of a long scroll of stacked panels. Everything
-  // the standard template renders inline moves inside that accordion, so the
-  // inline sections are suppressed for these families rather than duplicated.
+  // Rolling Shutters and High Speed Doors present their detail as horizontal
+  // tabs instead of a long scroll of stacked sections. Everything the standard
+  // template renders inline moves into those tabs, so the inline sections are
+  // suppressed for these families rather than duplicated.
   //
   // The gallery is the exception: where a product has real photography it
-  // stays on the page, because burying images behind a closed panel is the one
-  // thing an accordion is bad at.
+  // stays on the page, because burying images behind an unselected tab is the
+  // one thing this pattern is bad at.
   const isShutter = product.familyId === "rolling-shutters";
-  const useAccordion = isShutter || product.familyId === "high-speed-doors";
+  const useTabs = isShutter || product.familyId === "high-speed-doors";
 
   const completeness = specCompleteness(product);
   const guidance = productGuidance(product);
@@ -238,7 +238,7 @@ export default async function ProductPage({ params }: Params) {
       </section>
 
       {/* KEY BENEFITS */}
-      {!useAccordion && (
+      {!useTabs && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="02" eyebrow="Key benefits" title="What this product gets you" />
@@ -280,7 +280,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* TECHNICAL SPECIFICATIONS */}
-      {!useAccordion && (
+      {!useTabs && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
@@ -399,7 +399,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* APPLICATIONS */}
-      {!useAccordion && (
+      {!useTabs && (
       <section className="bg-paper py-16 lg:py-20">
         <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
@@ -423,7 +423,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* INTEGRATION */}
-      {!useAccordion && guidance.integration.length > 0 && (
+      {!useTabs && guidance.integration.length > 0 && (
         <section className="border-t border-line bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading
@@ -445,7 +445,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* SAFETY & CONTROL */}
-      {!useAccordion && (
+      {!useTabs && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
@@ -465,7 +465,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* INSTALLATION */}
-      {!useAccordion && guidance.installation.length > 0 && (
+      {!useTabs && guidance.installation.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
           <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -533,7 +533,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* DOWNLOADS */}
-      {!useAccordion && (
+      {!useTabs && (
       <section className="border-t border-line bg-paper py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="11" eyebrow="Downloads" title="Documentation" />
@@ -560,15 +560,15 @@ export default async function ProductPage({ params }: Params) {
       </section>
       )}
 
-      {/* PRODUCT DETAIL — accordion */}
-      {useAccordion && (
+      {/* PRODUCT DETAIL — tabs */}
+      {useTabs && (
         <section className="border-y border-line bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading
               index="04"
               eyebrow="Product detail"
               title="Specification, features and ordering"
-              lede="Each section opens on its own, and you can have as many open at once as you need. Technical data is open by default."
+              lede="Pick a section. Technical data is shown first; the rest are a click away."
             />
             <div className="mt-12">
               <ProductDetail product={product} />
@@ -639,7 +639,7 @@ export default async function ProductPage({ params }: Params) {
               </a>
               <a
                 href={
-                  useAccordion
+                  useTabs
                     ? productWhatsappHref(product.name)
                     : whatsappHref(`Hello Standard Automation, I would like a quote for ${product.name}.`)
                 }

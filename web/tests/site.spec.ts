@@ -234,13 +234,15 @@ test.describe("catalogue hierarchy", () => {
       const response = await page.goto(path);
       expect(response?.status()).toBeLessThan(400);
       await expect(page.locator("h1")).toBeVisible();
-      // Rolling Shutters render their benefits inside the accordion's Features
-      // panel rather than as a standalone section, so accept either heading.
-      await expect(
-        page
-          .getByRole("heading", { name: /Key benefits|What this product gets you|Features/i })
-          .first(),
-      ).toBeVisible();
+      // Tabbed families carry their benefits in a Features tab rather than as
+      // a standalone section, so accept either.
+      const benefits = page.getByRole("heading", {
+        name: /Key benefits|What this product gets you/i,
+      });
+      const featuresTab = page.getByRole("tab", { name: /Features/ });
+      await expect
+        .poll(async () => (await benefits.count()) + (await featuresTab.count()))
+        .toBeGreaterThan(0);
       await expect(page.getByText("Applications", { exact: false }).first()).toBeVisible();
       await expect(page.locator("#enquiry")).toBeAttached();
     });
@@ -271,11 +273,11 @@ test.describe("catalogue hierarchy", () => {
 
   test("product pages carry integration, installation, selection guidance and FAQ", async ({ page }) => {
     // High Speed Doors and Rolling Shutters carry compatibility and
-    // installation as accordion panels; selection guidance and FAQ stay as
-    // sections on the page.
+    // installation as tabs; selection guidance and FAQ stay as sections on the
+    // page.
     await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
-    await expect(page.getByRole("button", { name: /Compatibility/ })).toBeVisible();
-    await expect(page.getByRole("button", { name: /Installation/ })).toBeVisible();
+    await expect(page.getByRole("tab", { name: /Compatibility/ })).toBeVisible();
+    await expect(page.getByRole("tab", { name: /Installation/ })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /Which configuration is right for your application/i }),
     ).toBeVisible();

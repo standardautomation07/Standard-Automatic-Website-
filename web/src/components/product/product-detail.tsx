@@ -9,16 +9,16 @@ import { highSpeedSizeStatements } from "@/data/products/high-speed-doors";
 import { CONFIGURATION_NOTE } from "@/data/product-specs";
 import { industryById, productGuidance, productSpecGroups, resolveDetail } from "@/lib/catalog";
 import type { Product, Spec } from "@/lib/types";
-import { Accordion, AccordionList, AccordionNote } from "@/components/product/accordion";
+import { DetailList, DetailNote, Tabs } from "@/components/product/tabs";
 import { ButtonLink } from "@/components/ui/button";
 import { ArrowRight } from "@/components/ui/icons";
 
 /**
- * The accordion product detail body.
+ * The tabbed product detail body.
  *
  * One component for every product that uses this treatment rather than a page
- * each. It reads the product and renders nine independent panels, so the page
- * opens clean and the specifier expands only what they need.
+ * each. It reads the product and renders nine sections as horizontal tabs, so
+ * the reader sees everything on offer at a glance and picks what they need.
  *
  * Used by Rolling Shutters and High Speed Doors. Both are families where the
  * buyer arrives knowing roughly what they want and needs to check a long
@@ -50,7 +50,7 @@ export function ProductDetail({ product }: { product: Product }) {
     {
       id: "technical",
       title: "Technical Data",
-      meta: `${answered} of ${total} published`,
+      meta: `${answered}/${total}`,
       content: (
         <div className="space-y-6">
           <div className="space-y-6">
@@ -84,9 +84,9 @@ export function ProductDetail({ product }: { product: Product }) {
               </div>
             ))}
           </div>
-          <AccordionNote>{disclaimer}</AccordionNote>
-          {isWind && <AccordionNote>{WIND_DISCLAIMER}</AccordionNote>}
-          {isFire && <AccordionNote>{FIRE_DISCLAIMER}</AccordionNote>}
+          <DetailNote>{disclaimer}</DetailNote>
+          {isWind && <DetailNote>{WIND_DISCLAIMER}</DetailNote>}
+          {isFire && <DetailNote>{FIRE_DISCLAIMER}</DetailNote>}
         </div>
       ),
     },
@@ -139,7 +139,7 @@ export function ProductDetail({ product }: { product: Product }) {
     {
       id: "compatibility",
       title: "Compatibility",
-      meta: "Motors, controls & accessories",
+      meta: `${(product.compatibility ?? guidance.integration).length}`,
       content: (
         <div className="space-y-6">
           <dl className="grid gap-6 md:grid-cols-2">
@@ -150,18 +150,18 @@ export function ProductDetail({ product }: { product: Product }) {
               </div>
             ))}
           </dl>
-          <AccordionNote>
+          <DetailNote>
             Motor selection is calculated per opening from curtain weight, opening width and
             height, barrel diameter, required torque, speed, cycle frequency and the available
             supply. We do not assign one motor to a product line.
-          </AccordionNote>
+          </DetailNote>
         </div>
       ),
     },
     {
       id: "installation",
       title: "Installation",
-      meta: `${(product.installation ?? guidance.installation).length} steps`,
+      meta: `${(product.installation ?? guidance.installation).length}`,
       content: (
         <ol className="border-t border-line">
           {(product.installation ?? guidance.installation).map((step, index) => (
@@ -189,7 +189,7 @@ export function ProductDetail({ product }: { product: Product }) {
             the wind load and the drive system, and those are settled together rather than read
             off a table.
           </p>
-          <AccordionList
+          <DetailList
             items={[
               "Clear opening width and height, measured between the finished reveals",
               "Headroom above the opening for the stored leaf and its cover",
@@ -203,7 +203,7 @@ export function ProductDetail({ product }: { product: Product }) {
     {
       id: "safety",
       title: "Safety",
-      meta: `${safety.length} devices`,
+      meta: `${safety.length}`,
       content: (
         <div className="grid gap-8 md:grid-cols-2">
           <div>
@@ -252,10 +252,10 @@ export function ProductDetail({ product }: { product: Product }) {
     {
       id: "ordering",
       title: "Ordering Information",
-      meta: "What we need to quote",
+      meta: `${(product.ordering ?? []).length}`,
       content: (
         <div className="space-y-6">
-          <AccordionList items={product.ordering ?? []} />
+          <DetailList items={product.ordering ?? []} />
           <div className="flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="#enquiry" variant="primary">
               Request a Quote
@@ -271,7 +271,7 @@ export function ProductDetail({ product }: { product: Product }) {
     {
       id: "downloads",
       title: "Downloads",
-      meta: "Documentation",
+      meta: `${product.documents.length}`,
       content: (
         <div className="space-y-4">
           <ul className="grid hairline-grid md:grid-cols-2">
@@ -304,7 +304,7 @@ export function ProductDetail({ product }: { product: Product }) {
     },
   ];
 
-  return <Accordion sections={sections} defaultOpen={["technical"]} />;
+  return <Tabs sections={sections} defaultTab="technical" label={`${product.name} detail`} />;
 }
 
 /** Same three-state rendering the rest of the site uses. */
