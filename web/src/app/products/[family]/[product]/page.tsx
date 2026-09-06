@@ -18,7 +18,7 @@ import {
 } from "@/lib/catalog";
 import { image } from "@/data/images";
 import { CONFIGURATION_NOTE } from "@/data/product-specs";
-import { ShutterDetail } from "@/components/product/shutter-detail";
+import { ProductDetail } from "@/components/product/product-detail";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -65,11 +65,16 @@ export default async function ProductPage({ params }: Params) {
   const related = relatedProducts(product);
   const path = productPath(product);
 
-  // Rolling Shutters present their detail as independent accordion
-  // sections instead of a long scroll of stacked panels. Everything the
-  // standard template renders inline is inside that accordion, so the
-  // inline sections are suppressed for this family rather than duplicated.
+  // Rolling Shutters and High Speed Doors present their detail as independent
+  // accordion sections instead of a long scroll of stacked panels. Everything
+  // the standard template renders inline moves inside that accordion, so the
+  // inline sections are suppressed for these families rather than duplicated.
+  //
+  // The gallery is the exception: where a product has real photography it
+  // stays on the page, because burying images behind a closed panel is the one
+  // thing an accordion is bad at.
   const isShutter = product.familyId === "rolling-shutters";
+  const useAccordion = isShutter || product.familyId === "high-speed-doors";
 
   const completeness = specCompleteness(product);
   const guidance = productGuidance(product);
@@ -233,7 +238,7 @@ export default async function ProductPage({ params }: Params) {
       </section>
 
       {/* KEY BENEFITS */}
-      {!isShutter && (
+      {!useAccordion && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="02" eyebrow="Key benefits" title="What this product gets you" />
@@ -275,7 +280,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* TECHNICAL SPECIFICATIONS */}
-      {!isShutter && (
+      {!useAccordion && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
@@ -394,7 +399,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* APPLICATIONS */}
-      {!isShutter && (
+      {!useAccordion && (
       <section className="bg-paper py-16 lg:py-20">
         <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
@@ -418,7 +423,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* INTEGRATION */}
-      {!isShutter && guidance.integration.length > 0 && (
+      {!useAccordion && guidance.integration.length > 0 && (
         <section className="border-t border-line bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading
@@ -440,7 +445,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* SAFETY & CONTROL */}
-      {!isShutter && (
+      {!useAccordion && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell">
           <SectionHeading
@@ -460,7 +465,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* INSTALLATION */}
-      {!isShutter && guidance.installation.length > 0 && (
+      {!useAccordion && guidance.installation.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
           <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -512,7 +517,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* GALLERY */}
-      {!isShutter && product.galleryIds && product.galleryIds.length > 0 && (
+      {product.galleryIds && product.galleryIds.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading index="10" eyebrow="Gallery" title={`${product.name} in detail`} />
@@ -528,7 +533,7 @@ export default async function ProductPage({ params }: Params) {
       )}
 
       {/* DOWNLOADS */}
-      {!isShutter && (
+      {!useAccordion && (
       <section className="border-t border-line bg-paper py-16 lg:py-20">
         <div className="shell">
           <SectionHeading index="11" eyebrow="Downloads" title="Documentation" />
@@ -555,8 +560,8 @@ export default async function ProductPage({ params }: Params) {
       </section>
       )}
 
-      {/* SHUTTER DETAIL — accordion */}
-      {isShutter && (
+      {/* PRODUCT DETAIL — accordion */}
+      {useAccordion && (
         <section className="border-y border-line bg-paper py-16 lg:py-20">
           <div className="shell">
             <SectionHeading
@@ -566,7 +571,7 @@ export default async function ProductPage({ params }: Params) {
               lede="Each section opens on its own, and you can have as many open at once as you need. Technical data is open by default."
             />
             <div className="mt-12">
-              <ShutterDetail product={product} />
+              <ProductDetail product={product} />
             </div>
           </div>
         </section>
@@ -634,7 +639,7 @@ export default async function ProductPage({ params }: Params) {
               </a>
               <a
                 href={
-                  isShutter
+                  useAccordion
                     ? productWhatsappHref(product.name)
                     : whatsappHref(`Hello Standard Automation, I would like a quote for ${product.name}.`)
                 }

@@ -51,6 +51,21 @@ const cycleFirstSelection: SelectionRule[] = [
   },
 ];
 
+/**
+ * What we need before a high speed door can be configured and priced. Shared,
+ * because the same five answers drive every door in the family; individual
+ * products append the one extra question their environment raises.
+ */
+const hsdOrdering: string[] = [
+  "Clear opening width and height, measured between the finished reveals",
+  "Headroom above the lintel and side room at both jambs, which decide the drum, stack or spiral track and the guides",
+  "Roughly how many cycles a day the opening takes — this sizes the drive and is what justifies a high speed door at all",
+  "Internal or external, and the exposure of the elevation if external",
+  "What the two sides of the opening have to keep different from each other: temperature, dust, insects, noise or pressure",
+  "How close the traffic route runs to the guides, and whether forklift contact is likely",
+  "Power supply available at the opening, and any access control or signalling it has to interface with",
+];
+
 const brochure = (name: string) => ({
   title: `${name} brochure`,
   kind: "Brochure" as const,
@@ -239,6 +254,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-fold-up-door",
       "high-speed-self-repairing-door",
@@ -418,6 +434,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-roll-up-door",
       "high-speed-rigid-insulated-door",
@@ -584,6 +601,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-roll-up-door",
       "high-speed-fold-up-door",
@@ -753,6 +771,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-rigid-insulated-door",
       "high-speed-fold-up-door",
@@ -913,6 +932,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-spiral-door",
       "high-speed-fold-up-door",
@@ -1088,6 +1108,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-cold-storage-freezer-door",
       "hermetic-cleanroom-doors",
@@ -1260,6 +1281,7 @@ export const highSpeedDoorProducts: Product[] = [
       },
       quotationFaq,
     ],
+    ordering: hsdOrdering,
     related: [
       "high-speed-cleanroom-hygiene-door",
       "high-speed-rigid-insulated-door",
@@ -1270,3 +1292,19 @@ export const highSpeedDoorProducts: Product[] = [
     galleryIds: ["g-hsd-cold-chain", "g-hsd-food"],
   },
 ];
+
+/**
+ * Size statements, published per line. The published maximums appear in the
+ * specification table; this is the plain-language answer to "how big can it
+ * be", and it deliberately says what the limit depends on rather than implying
+ * one number covers every opening.
+ */
+export const highSpeedSizeStatements: Record<string, string> = {
+  "high-speed-roll-up-door": "Up to 5,000 × 5,000 mm, subject to configuration.",
+  "high-speed-fold-up-door": "Up to 5,000 × 8,000 mm, subject to configuration.",
+  "high-speed-self-repairing-door": "Engineered to the opening; width and height are application dependent.",
+  "high-speed-spiral-door": "Up to 5,000–6,000 mm each way, subject to configuration.",
+  "high-speed-rigid-insulated-door": "Up to 5,000 × 7,500 mm, subject to configuration.",
+  "high-speed-cleanroom-hygiene-door": "Project specific; maximum dimensions confirmed with the room requirement.",
+  "high-speed-cold-storage-freezer-door": "Project-specific; confirmed with the room temperature and the opening.",
+};

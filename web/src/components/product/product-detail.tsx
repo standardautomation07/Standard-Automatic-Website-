@@ -5,6 +5,8 @@ import {
   shutterSizeStatements,
   WIND_DISCLAIMER,
 } from "@/data/products/rolling-shutters";
+import { highSpeedSizeStatements } from "@/data/products/high-speed-doors";
+import { CONFIGURATION_NOTE } from "@/data/product-specs";
 import { industryById, productGuidance, productSpecGroups, resolveDetail } from "@/lib/catalog";
 import type { Product, Spec } from "@/lib/types";
 import { Accordion, AccordionList, AccordionNote } from "@/components/product/accordion";
@@ -12,26 +14,34 @@ import { ButtonLink } from "@/components/ui/button";
 import { ArrowRight } from "@/components/ui/icons";
 
 /**
- * The Rolling Shutters product detail body.
+ * The accordion product detail body.
  *
- * One component for every shutter rather than a page each. It reads the
- * product and renders the nine sections the business asked for as independent
- * accordion panels, so the page opens clean and the specifier expands only
- * what they need.
+ * One component for every product that uses this treatment rather than a page
+ * each. It reads the product and renders nine independent panels, so the page
+ * opens clean and the specifier expands only what they need.
+ *
+ * Used by Rolling Shutters and High Speed Doors. Both are families where the
+ * buyer arrives knowing roughly what they want and needs to check a long
+ * specification against their opening, which is exactly the case a stack of
+ * always-open sections serves badly.
  *
  * Technical data is grouped tables, never a paragraph, and every table carries
- * the caveat that a shutter is made to its opening.
+ * the caveat that these products are made to their opening.
  */
-export function ShutterDetail({ product }: { product: Product }) {
+export function ProductDetail({ product }: { product: Product }) {
   const groups = productSpecGroups(product);
   const guidance = productGuidance(product);
   const safety = resolveDetail(product, "safety");
   const controls = resolveDetail(product, "controls");
   const options = resolveDetail(product, "options");
   const maintenance = resolveDetail(product, "maintenance");
-  const sizeStatement = shutterSizeStatements[product.id];
+  const sizeStatement =
+    shutterSizeStatements[product.id] ?? highSpeedSizeStatements[product.id] ?? "Available in custom sizes.";
   const isWind = product.facets?.performance.some((p) => p.includes("Wind") || p.includes("Storm"));
   const isFire = product.facets?.construction === "Fire Rated";
+  // Each family states the caveat in its own terms.
+  const disclaimer =
+    product.familyId === "high-speed-doors" ? CONFIGURATION_NOTE : SHUTTER_DISCLAIMER;
 
   const answered = groups.flatMap((g) => g.specs).filter((s) => s.value !== null).length;
   const total = groups.flatMap((g) => g.specs).length;
@@ -74,7 +84,7 @@ export function ShutterDetail({ product }: { product: Product }) {
               </div>
             ))}
           </div>
-          <AccordionNote>{SHUTTER_DISCLAIMER}</AccordionNote>
+          <AccordionNote>{disclaimer}</AccordionNote>
           {isWind && <AccordionNote>{WIND_DISCLAIMER}</AccordionNote>}
           {isFire && <AccordionNote>{FIRE_DISCLAIMER}</AccordionNote>}
         </div>
@@ -174,14 +184,15 @@ export function ShutterDetail({ product }: { product: Product }) {
         <div className="space-y-6">
           <p className="font-display text-lg text-steel-900">{sizeStatement}</p>
           <p className="max-w-2xl text-sm leading-relaxed text-steel-600">
-            We do not publish a universal maximum width or height for this family. What a given
-            opening supports depends on curtain weight, profile, shaft, guide arrangement, wind
-            load and the drive system, and those are settled together rather than read off a table.
+            We do not publish a universal maximum width or height. What a given opening supports
+            depends on the leaf weight, the profile, the shaft or track, the guide arrangement,
+            the wind load and the drive system, and those are settled together rather than read
+            off a table.
           </p>
           <AccordionList
             items={[
               "Clear opening width and height, measured between the finished reveals",
-              "Headroom above the opening for the rolled curtain and its cover",
+              "Headroom above the opening for the stored leaf and its cover",
               "Side room at both jambs for the guides",
               "Face mounted, between jamb or recessed",
             ]}

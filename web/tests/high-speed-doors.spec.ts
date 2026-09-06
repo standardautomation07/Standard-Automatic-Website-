@@ -379,12 +379,28 @@ test.describe("the pages render that data", () => {
 
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.getByRole("navigation", { name: "Breadcrumb" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "What this product gets you" })).toBeVisible();
       await expect(page.getByRole("heading", { name: "Available configurations" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Where it is used" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "What it connects to" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "How it is governed" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "What the site has to provide" })).toBeVisible();
+
+      // Detail is presented as accordion panels. Every one of the nine has to
+      // be on the page; only Technical Data is open to begin with.
+      for (const panel of [
+        "Technical Data",
+        "Features",
+        "Applications",
+        "Compatibility",
+        "Installation",
+        "Dimensions",
+        "Safety",
+        "Ordering Information",
+        "Downloads",
+      ]) {
+        await expect(page.getByRole("button", { name: new RegExp(panel) })).toBeVisible();
+      }
+      await expect(page.getByRole("button", { name: /Technical Data/ })).toHaveAttribute(
+        "aria-expanded",
+        "true",
+      );
+
       await expect(
         page.getByRole("heading", { name: /Which configuration is right for your application/i }),
       ).toBeVisible();

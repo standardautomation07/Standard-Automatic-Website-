@@ -270,13 +270,21 @@ test.describe("catalogue hierarchy", () => {
   });
 
   test("product pages carry integration, installation, selection guidance and FAQ", async ({ page }) => {
+    // High Speed Doors and Rolling Shutters carry compatibility and
+    // installation as accordion panels; selection guidance and FAQ stay as
+    // sections on the page.
     await page.goto("/products/high-speed-doors/high-speed-roll-up-door");
-    await expect(page.getByRole("heading", { name: "What it connects to" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "What the site has to provide" })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Compatibility/ })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Installation/ })).toBeVisible();
     await expect(
       page.getByRole("heading", { name: /Which configuration is right for your application/i }),
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: "Questions we are actually asked" })).toBeVisible();
+
+    // A family that does not use the accordion still renders them inline.
+    await page.goto("/products/loading-bay/dock-levellers");
+    await expect(page.getByRole("heading", { name: "What it connects to" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "What the site has to provide" })).toBeVisible();
   });
 
   test("FAQ structured data matches the visible questions", async ({ page }) => {
