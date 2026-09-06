@@ -52,6 +52,16 @@
   --text-display-3--line-height: 1.06;
   --text-display-3--letter-spacing: -0.025em;
 
+  /* Body scale — one notch up from Tailwind's defaults (15/17/19px instead
+     of 14/16/18px) for a more confident, less datasheet-dense read at
+     normal viewing distance. Line-heights kept generous. */
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.8rem;
+
   --radius-edge: 2px;
 }
 
@@ -102,9 +112,9 @@
   /* Small mono label used above every section heading. */
   .eyebrow {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 

@@ -113,7 +113,7 @@ export const families: Family[] = [
     shortName: "Rolling Shutters",
     tagline: "The curtain rolls above the lintel and the opening stays clear.",
     summary:
-      "Single-wall galvanized, aluminium, grille, perforated and polycarbonate shutters, plus double-wall insulated shutters for thermal and acoustic separation.",
+      "Single-wall galvanized, aluminium, grille, perforated and polycarbonate rolling shutters, plus double-wall insulated shutters for thermal and acoustic separation.",
     intro: [
       "A rolling shutter stores its curtain in a barrel above the opening, so it needs almost no side room and leaves the aperture completely clear when open. That is why it remains the default for wide industrial openings and for frontages where floor and wall space is at a premium.",
       "The primary engineering split is single-wall against double-wall insulated, and only then material. A single folded slat is the choice when span, security or visibility matters; a double-wall insulated slat is the choice when the opening separates two environments.",
