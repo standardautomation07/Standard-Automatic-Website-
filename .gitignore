@@ -9,3 +9,5 @@ web/test-results/
 web/playwright-report/
 web/shots/
 web/.turbo/
+web/start.log
+web/build.log

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 144" width="540" height="144" role="img" aria-label="Standard Automatic Solutions Pvt Ltd">
+  <title>Standard Automatic Solutions Pvt Ltd</title>
+  <rect x="0" y="0" width="144" height="144" rx="28" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="0.5" y="0.5" width="143" height="143" rx="27.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  <polygon points="34,72 110,38 110,60 34,94" fill="#2563EB"/>
+  <polygon points="34,72 110,106 110,84 34,50" fill="#7C9CF6"/>
+  <text x="170" y="71" font-family="Archivo, Arial, Helvetica, 'Liberation Sans', sans-serif" font-weight="800" font-size="40" letter-spacing="2" textLength="250" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF">STANDARD</text>
+  <text x="170" y="101" font-family="Archivo, Arial, Helvetica, 'Liberation Sans', sans-serif" font-weight="500" font-size="17" letter-spacing="3" textLength="362" lengthAdjust="spacingAndGlyphs" fill="#8A909B">AUTOMATIC SOLUTIONS PVT LTD</text>
+</svg>

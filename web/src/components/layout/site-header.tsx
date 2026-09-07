@@ -87,29 +87,38 @@ export function SiteHeader() {
 
       <div className="shell flex h-20 items-center justify-between gap-2 lg:h-24 xl:gap-4">
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${siteConfig.shortName} — home`}>
-          {/* Two problems with dropping the supplied lockup straight in here.
-              Its wordmark is near-black, which disappears on this header; and
-              at any height that fits a 64px nav the 27-character strapline
-              renders about four pixels tall, which is not type, it is texture.
-              So the nav uses a compact inverted lockup — same mark, same
-              wordmark, no strapline — and the full lockup goes in the footer
-              where there is room for it. The mark alone shows on the narrowest
-              screens so the nav never competes with it for width. */}
+          {/* The nav uses its own inverted lockup rather than the supplied one.
+              Two reasons. The supplied wordmark is near-black, which
+              disappears on this header. And its artboard carries generous
+              padding around the mark, so at any height that fits the nav the
+              mark itself lands small and the 27-character strapline renders
+              about four pixels tall — texture rather than type.
+
+              This variant hugs its content: the artboard is exactly the height
+              of the mark tile, so the rendered height *is* the mark size. That
+              buys the emblem about a quarter more presence and the wordmark
+              about a fifth, with no change to the nav's own height. The
+              strapline keeps its issued letter spacing and comes along for the
+              scale, landing at a size that can actually be read.
+
+              The mark alone shows on the narrowest screens so the nav never
+              competes with it for width. The full lockup stays in the footer,
+              where there is room for it. */}
           <Image
-            src="/images/brand/logo-invert.svg"
+            src="/images/brand/logo-mark-invert.svg"
             alt=""
-            width={160}
-            height={160}
+            width={144}
+            height={144}
             priority
-            className="h-12 w-auto sm:hidden"
+            className="h-14 w-auto sm:hidden"
           />
           <Image
-            src="/images/brand/logo-full-invert.svg"
+            src="/images/brand/logo-header-invert.svg"
             alt=""
-            width={640}
-            height={160}
+            width={540}
+            height={144}
             priority
-            className="hidden h-12 w-auto sm:block lg:h-16"
+            className="hidden h-14 w-auto sm:block lg:h-[4.5rem]"
           />
           <span className="sr-only">{siteConfig.legalName}</span>
         </Link>
