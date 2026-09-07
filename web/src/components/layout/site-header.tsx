@@ -85,15 +85,31 @@ export function SiteHeader() {
         Skip to content
       </a>
 
-      <div className="shell flex h-16 items-center justify-between gap-2 lg:h-[4.5rem] xl:gap-4">
+      <div className="shell flex h-20 items-center justify-between gap-2 lg:h-24 xl:gap-4">
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${siteConfig.shortName} — home`}>
+          {/* Two problems with dropping the supplied lockup straight in here.
+              Its wordmark is near-black, which disappears on this header; and
+              at any height that fits a 64px nav the 27-character strapline
+              renders about four pixels tall, which is not type, it is texture.
+              So the nav uses a compact inverted lockup — same mark, same
+              wordmark, no strapline — and the full lockup goes in the footer
+              where there is room for it. The mark alone shows on the narrowest
+              screens so the nav never competes with it for width. */}
           <Image
-            src="/images/brand/logo-invert.png"
+            src="/images/brand/logo-invert.svg"
             alt=""
-            width={350}
-            height={65}
+            width={160}
+            height={160}
             priority
-            className="h-7 w-auto lg:h-8"
+            className="h-12 w-auto sm:hidden"
+          />
+          <Image
+            src="/images/brand/logo-full-invert.svg"
+            alt=""
+            width={640}
+            height={160}
+            priority
+            className="hidden h-12 w-auto sm:block lg:h-16"
           />
           <span className="sr-only">{siteConfig.legalName}</span>
         </Link>
@@ -160,7 +176,7 @@ export function SiteHeader() {
         ref={panelRef}
         id={panelId}
         hidden={!megaOpen}
-        className="absolute inset-x-0 top-full hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto border-b border-ink-line bg-ink-raised lg:block"
+        className="absolute inset-x-0 top-full hidden max-h-[calc(100vh-6rem)] overflow-y-auto border-b border-ink-line bg-ink-raised lg:block"
       >
         <div className="shell grid grid-cols-12 gap-x-10 gap-y-8 py-10">
           <div className="col-span-9">
@@ -234,7 +250,7 @@ export function SiteHeader() {
 
       {/* Mobile drawer */}
       {drawerOpen && (
-        <div id={drawerId} className="fixed inset-0 top-16 z-50 overflow-y-auto overscroll-contain bg-ink lg:hidden">
+        <div id={drawerId} className="fixed inset-0 top-20 z-50 overflow-y-auto overscroll-contain bg-ink lg:hidden">
           <div className="flex min-h-full flex-col">
             <div className="flex items-center justify-between border-b border-ink-line px-5 py-4">
               <span className="eyebrow text-steel-500">Menu</span>

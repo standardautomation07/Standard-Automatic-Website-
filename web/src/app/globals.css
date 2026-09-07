@@ -5,7 +5,7 @@
  *
  * Direction: engineered, architectural, high-contrast. Near-black
  * graphite and off-white paper, a cool steel grey scale, a single
- * industrial amber accent. Sharp corners (max 2px), hairline rules,
+ * brand blue accent. Sharp corners (max 2px), hairline rules,
  * mono labels, and a large display type scale doing most of the work.
  * ------------------------------------------------------------------ */
 
@@ -28,17 +28,20 @@
   --color-steel-200: #d6dadd;
   --color-steel-100: #e6e8ea;
 
-  /* Accent — industrial amber. `amber-deep` is the on-light text variant
-     (>=4.5:1 on paper); `amber` is for dark surfaces and solid fills. */
-  --color-amber: #ff7a00;
-  --color-amber-deep: #a84a00;
-  --color-amber-soft: #ffe9d5;
+  /* Accent — the blue from the logo ribbon. The token names stay `amber`
+     because they are referenced in ~200 places; only the values change, so
+     the whole site follows the brand without a rename churn.
+     `amber-deep` is the on-light text variant (>=4.5:1 on paper);
+     `amber` is for dark surfaces and solid fills. */
+  --color-amber: #2563EB;
+  --color-amber-deep: #1D4ED8;
+  --color-amber-soft: #E4EBFD;
 
   --color-line: #ddd9d2;
 
   /* Type */
-  --font-display: var(--font-space-grotesk), "Segoe UI", system-ui, sans-serif;
-  --font-sans: var(--font-inter), "Segoe UI", system-ui, sans-serif;
+  --font-display: var(--font-archivo), "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), "Segoe UI", system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
   /* Display scale */
@@ -61,6 +64,23 @@
   --text-base--line-height: 1.75rem;
   --text-lg: 1.1875rem;
   --text-lg--line-height: 1.8rem;
+
+  /* ------------------------------------------------------------------ *
+   * Brand palette, from the corporate identity.
+   *
+   * These are the source colours. The site's own semantic tokens above
+   * (ink, paper, steel, amber) still drive the components; these are what
+   * the logo is drawn in and what new brand-led surfaces should use, so the
+   * two stay reconcilable rather than drifting apart.
+   * ------------------------------------------------------------------ */
+  --color-sas-charcoal: #14161C;
+  --color-sas-blue: #2563EB;
+  --color-sas-blue-light: #7C9CF6;
+  --color-sas-blue-muted: #3B4A6B;
+  --color-sas-bg: #F6F7F9;
+  --color-sas-border: #E7E9ED;
+  --color-sas-text-secondary: #5B6270;
+  --color-sas-text-muted: #8A909B;
 
   --radius-edge: 2px;
 }

@@ -66,6 +66,14 @@ const whyPoints = [
   },
 ];
 
+/**
+ * Applied to supporting content so it is painted on a desktop and not on a
+ * phone. A media query rather than a conditional render: this site is crawled
+ * mobile-first, so content dropped from the mobile DOM is dropped from the
+ * index. Hidden this way it stays in the HTML and stays crawlable.
+ */
+const MOBILE_ONLY_DESKTOP = "hidden lg:block";
+
 export default function HomePage() {
   const formProducts = products.map(({ id, name, familyId }) => ({ id, name, familyId }));
   const formFamilies = familyList.map(({ id, name }) => ({ id, name }));
@@ -78,7 +86,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/85 to-ink/35" />
         <div className="grid-rule absolute inset-0" aria-hidden="true" />
 
-        <div className="shell relative flex min-h-[calc(100svh-4rem)] flex-col justify-end pb-14 pt-24 lg:min-h-[46rem] lg:pb-20 lg:pt-32">
+        <div className="shell relative flex min-h-[34rem] flex-col justify-end pb-14 pt-24 lg:min-h-[46rem] lg:pb-20 lg:pt-32">
           <p className="eyebrow text-amber">Entrance Automation & Industrial Access</p>
 
           <h1 className="mt-7 max-w-5xl text-display-1 text-white">
@@ -103,7 +111,7 @@ export default function HomePage() {
             </ButtonLink>
           </div>
 
-          <dl className="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-white/15 pt-8 lg:mt-20 lg:grid-cols-4">
+          <dl className="mt-16 hidden grid-cols-2 gap-x-8 gap-y-6 border-t border-white/15 pt-8 lg:mt-20 lg:grid lg:grid-cols-4">
             {[
               { k: "Product families", v: String(counts.families) },
               { k: "Categories", v: String(counts.categories) },
@@ -138,7 +146,10 @@ export default function HomePage() {
 
           <ul className="mt-14 grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             {families.map((family, index) => (
-              <li key={family.id} className="bg-paper-raised">
+              <li
+                key={family.id}
+                className={`bg-paper-raised ${index >= 4 ? MOBILE_ONLY_DESKTOP : ""}`}
+              >
                 <FamilyCard family={family} index={index} />
               </li>
             ))}
@@ -164,8 +175,13 @@ export default function HomePage() {
           />
 
           <ul className="mt-14 grid hairline-grid-dark sm:grid-cols-2 lg:grid-cols-4">
-            {industries.map((industry) => (
-              <li key={industry.id} className="group relative aspect-[4/3] overflow-hidden bg-ink">
+            {industries.map((industry, index) => (
+              <li
+                key={industry.id}
+                className={`group relative aspect-[4/3] overflow-hidden bg-ink ${
+                  index >= 4 ? MOBILE_ONLY_DESKTOP : ""
+                }`}
+              >
                 <Media
                   id={industry.imageId}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
@@ -227,8 +243,10 @@ export default function HomePage() {
             }
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {featuredProducts.map((product, index) => (
+              <div key={product.id} className={index >= 3 ? MOBILE_ONLY_DESKTOP : ""}>
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         </div>

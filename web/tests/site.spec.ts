@@ -286,9 +286,25 @@ test.describe("catalogue hierarchy", () => {
       await page.goto(path);
       await expect(page.getByRole("tab", { name: /Compatibility/ })).toBeVisible();
       await expect(page.getByRole("tab", { name: /Installation/ })).toBeVisible();
+      // The selection guide is desktop-only: it is hidden below the lg
+      // breakpoint by the mobile condensing, but it stays in the HTML so it
+      // is still crawled. Assert it is present, and visible where it is meant
+      // to be painted.
+      // includeHidden, because a display:none element is not in the
+      // accessibility tree at all — role queries skip it even for presence.
       await expect(
-        page.getByRole("heading", { name: /Which configuration is right for your application/i }),
-      ).toBeVisible();
+        page.getByRole("heading", {
+          name: /Which configuration is right for your application/i,
+          includeHidden: true,
+        }),
+      ).toBeAttached();
+      if (isDesktop(page)) {
+        await expect(
+          page.getByRole("heading", {
+            name: /Which configuration is right for your application/i,
+          }),
+        ).toBeVisible();
+      }
       await expect(
         page.getByRole("heading", { name: "Questions we are actually asked" }),
       ).toBeVisible();

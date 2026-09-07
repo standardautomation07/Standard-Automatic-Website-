@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
+import { Archivo, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -8,17 +8,22 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { localBusinessJsonLd, organizationJsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site-config";
 
-const spaceGrotesk = Space_Grotesk({
+/**
+ * Brand typefaces. Loaded through next/font rather than a Google Fonts <link>:
+ * the files are self-hosted at build time, so there is no third-party request
+ * on first paint and no layout shift while a webfont arrives.
+ */
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-space-grotesk",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-inter",
+  variable: "--font-plex-sans",
   display: "swap",
 });
 
@@ -59,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-IN"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable}`}
+      className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable}`}
     >
       <body className="pb-14 xl:pb-0">
         <JsonLd data={organizationJsonLd()} />

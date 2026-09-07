@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { families } from "@/data/families";
 import { industries } from "@/data/industries";
@@ -18,7 +19,14 @@ export function SiteFooter() {
       <div className="shell py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-3">
-            <p className="font-display text-lg font-medium text-white">{siteConfig.legalName}</p>
+            <Image
+              src="/images/brand/logo-full-invert.svg"
+              alt=""
+              width={640}
+              height={160}
+              className="h-16 w-auto"
+            />
+            <p className="mt-4 font-display text-lg font-medium text-white">{siteConfig.legalName}</p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-steel-400">
               Entrance automation and industrial access systems — specified against the opening,
               supplied, installed and supported from Pune.

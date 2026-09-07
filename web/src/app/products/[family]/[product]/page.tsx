@@ -55,6 +55,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
+/**
+ * Applied to supporting detail so it is painted on a desktop and not on a
+ * phone. A media query rather than a conditional render: this site is crawled
+ * mobile-first, so content dropped from the mobile DOM is content dropped from
+ * the index. Hidden this way it stays in the HTML and in the structured data.
+ */
+const MOBILE_ONLY_DESKTOP = "hidden lg:block";
+
 export default async function ProductPage({ params }: Params) {
   const { product: id, family: familyParam } = await params;
   const product = getProduct(id);
@@ -186,15 +194,20 @@ export default async function ProductPage({ params }: Params) {
           <div className="lg:col-span-7">
             <SectionHeading index="01" eyebrow="Overview" title={`About ${product.name}`} />
             <div className="mt-8">
-              {product.overview.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)} className="mb-5 text-base leading-relaxed text-steel-700 last:mb-0">
+              {product.overview.map((paragraph, index) => (
+                <p
+                  key={paragraph.slice(0, 40)}
+                  className={`mb-5 text-base leading-relaxed text-steel-700 last:mb-0 ${
+                    index > 0 ? MOBILE_ONLY_DESKTOP : ""
+                  }`}
+                >
                   {paragraph}
                 </p>
               ))}
             </div>
 
-            <h3 className="eyebrow mt-10 text-steel-500">Operating method</h3>
-            <ol className="mt-5">
+            <h3 className={`eyebrow mt-10 text-steel-500 ${MOBILE_ONLY_DESKTOP}`}>Operating method</h3>
+            <ol className={`mt-5 ${MOBILE_ONLY_DESKTOP}`}>
               {product.operatingMethod.map((step, index) => (
                 <li key={step.slice(0, 30)} className="grid grid-cols-[auto_1fr] gap-x-5 border-t border-line py-4 last:border-b">
                   <span className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</span>
@@ -204,7 +217,7 @@ export default async function ProductPage({ params }: Params) {
             </ol>
           </div>
 
-          <aside className="space-y-6 lg:col-span-5">
+          <aside className={`space-y-6 lg:col-span-5 ${MOBILE_ONLY_DESKTOP}`}>
             <div className="border border-line bg-paper-raised p-7">
               <h2 className="eyebrow text-steel-500">Construction</h2>
               <ul className="mt-5 space-y-3">
@@ -491,7 +504,9 @@ export default async function ProductPage({ params }: Params) {
 
       {/* SELECTION GUIDE */}
       {guidance.selectionGuide.length > 0 && (
-        <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+        <section
+          className={`border-y border-line bg-paper-sunken py-16 lg:py-20 ${MOBILE_ONLY_DESKTOP}`}
+        >
           <div className="shell">
             <SectionHeading
               index="09"
@@ -577,7 +592,7 @@ export default async function ProductPage({ params }: Params) {
 
       {/* RELATED */}
       {related.length > 0 && (
-        <section className="border-t border-line bg-paper-sunken py-16 lg:py-20">
+        <section className={`border-t border-line bg-paper-sunken py-16 lg:py-20 ${MOBILE_ONLY_DESKTOP}`}>
           <div className="shell">
             <SectionHeading
               eyebrow="Related products"
