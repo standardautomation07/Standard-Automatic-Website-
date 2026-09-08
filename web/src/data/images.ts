@@ -83,12 +83,15 @@ function generated(
 
 /**
  * A product render supplied by Standard Automation itself, filed alongside
- * the generated package for the same product. Same folder as `generated`,
- * deliberately different provenance: this is the company's own asset, so it
- * is approved rather than carrying the "replace before launch" caveat.
+ * the generated package for the same product. Same folder shape as
+ * `generated`, deliberately different provenance: this is the company's own
+ * asset, so it is approved rather than carrying the "replace before launch"
+ * caveat. `family` is the folder under products/, so this works for any
+ * family rather than only high speed doors.
  */
 function supplied(
   id: string,
+  family: string,
   product: string,
   view: string,
   alt: string,
@@ -96,7 +99,7 @@ function supplied(
 ): ImageRef {
   return {
     id,
-    src: `/images/products/high-speed-doors/${product}/${product}-${view}.webp`,
+    src: `/images/products/${family}/${product}/${product}-${view}.webp`,
     alt,
     source: OWN,
     usage: APPROVED,
@@ -222,7 +225,16 @@ const list: ImageRef[] = [
     "High Speed Roll-Up Door — in operation",
   ),
   supplied(
+    "shutter-ms-solid-supplied",
+    "rolling-shutters",
+    "ms-solid-rolling-shutters",
+    "supplied",
+    "A galvanized mild steel solid rolling shutter closed across an internal warehouse opening, its corrugated slats running the full width between steel side guides, with a stainless head box carrying the company mark and a wall-mounted control panel at the jamb",
+    "MS Solid Rolling Shutter — lead image",
+  ),
+  supplied(
     "hsd-rigid-insulated-supplied",
+    "high-speed-doors",
     "high-speed-rigid-insulated-door",
     "supplied",
     "A blue high speed rigid insulated door closed across an internal warehouse opening, its insulated panels divided by aluminium joints with a full-width clear vision band across the middle, a stainless head box carrying the company mark and a wall-mounted control panel at the jamb",
@@ -230,6 +242,7 @@ const list: ImageRef[] = [
   ),
   supplied(
     "hsd-spiral-supplied",
+    "high-speed-doors",
     "high-speed-spiral-door",
     "supplied",
     "A high speed spiral door part open across a warehouse opening, its horizontal aluminium panels glazed across the upper half and carried into the coiled spiral track visible beside the head box, with a wall-mounted control panel at the jamb",
@@ -237,6 +250,7 @@ const list: ImageRef[] = [
   ),
   supplied(
     "hsd-self-repairing-supplied",
+    "high-speed-doors",
     "high-speed-self-repairing-door",
     "supplied",
     "A yellow high speed self-repairing door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
@@ -244,6 +258,7 @@ const list: ImageRef[] = [
   ),
   supplied(
     "hsd-roll-up-supplied",
+    "high-speed-doors",
     "high-speed-roll-up-door",
     "supplied",
     "A blue high speed roll-up door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
@@ -268,6 +283,7 @@ const list: ImageRef[] = [
   // the generated package below it stands in until the rest is photographed.
   supplied(
     "hsd-fold-up-supplied",
+    "high-speed-doors",
     "high-speed-fold-up-door",
     "supplied",
     "A blue high speed fold-up door in the elevation of a warehouse, the curtain gathered into horizontal folds on black lifting straps beneath a stainless head box, with vision panels across the middle of the curtain and a forklift working inside",
