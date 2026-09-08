@@ -145,7 +145,12 @@ export default async function ProductPage({ params }: Params) {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
+            {/* Supplied renders carry a callout panel down one side. Cropping
+                them to a fixed 4:3 frame cuts that panel off, so the frame
+                takes the image's own ratio where the registry declares one. */}
+            <div
+              className={`relative ${image(product.imageId).aspect ?? "aspect-[4/3]"} overflow-hidden border border-line bg-paper-sunken`}
+            >
               <Media id={product.imageId} sizes="(min-width: 1024px) 50vw, 100vw" priority />
             </div>
           </div>

@@ -96,6 +96,7 @@ function supplied(
   view: string,
   alt: string,
   association: string,
+  aspect = "aspect-[3/2]",
 ): ImageRef {
   return {
     id,
@@ -105,6 +106,7 @@ function supplied(
     usage: APPROVED,
     association,
     fit: "cover",
+    aspect,
   };
 }
 
@@ -231,6 +233,7 @@ const list: ImageRef[] = [
     "supplied",
     "A mill-finish aluminium rolling shutter closed across a showroom entrance, its profiled slats running the full width between side guides, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the slat showing its foam core",
     "Aluminium Rolling Shutter — lead image",
+    "aspect-[16/9]",
   ),
   supplied(
     "shutter-ms-solid-supplied",
@@ -239,6 +242,7 @@ const list: ImageRef[] = [
     "supplied",
     "A galvanized mild steel solid rolling shutter closed across an internal warehouse opening, its corrugated slats running the full width between steel side guides, with a stainless head box carrying the company mark and a wall-mounted control panel at the jamb",
     "MS Solid Rolling Shutter — lead image",
+    "aspect-[16/9]",
   ),
   supplied(
     "hsd-rigid-insulated-supplied",

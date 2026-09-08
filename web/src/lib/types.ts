@@ -161,6 +161,13 @@ export interface ImageRef {
   association: string;
   /** `contain` renders on a light plate — used for catalogue renders. */
   fit?: "cover" | "contain";
+  /**
+   * Tailwind aspect class for the frame this image is shown in, where the
+   * image has a shape of its own that must not be cropped. Supplied renders
+   * carry callouts down one side, so a frame that does not match their ratio
+   * crops the callout straight off. Absent means the page picks the frame.
+   */
+  aspect?: string;
 }
 
 /**
