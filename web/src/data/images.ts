@@ -227,6 +227,15 @@ const list: ImageRef[] = [
     "High Speed Roll-Up Door — in operation",
   ),
   supplied(
+    "shutter-perforated-supplied",
+    "rolling-shutters",
+    "perforated-rolling-shutters",
+    "supplied",
+    "A perforated stainless steel rolling shutter closed across a showroom entrance, its slats pierced with a dense pattern of round holes that the interior shows through, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the perforated slat profile",
+    "Perforated Rolling Shutter — lead image",
+    "aspect-[16/9]",
+  ),
+  supplied(
     "shutter-stainless-supplied",
     "rolling-shutters",
     "stainless-steel-rolling-shutters",
