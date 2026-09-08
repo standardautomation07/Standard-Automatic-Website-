@@ -299,6 +299,14 @@ const list: ImageRef[] = [
     "aspect-[16/9]",
   ),
   supplied(
+    "hsd-cleanroom-supplied",
+    "high-speed-doors",
+    "high-speed-cleanroom-hygiene-door",
+    "supplied",
+    "A blue high speed cleanroom door closed across an opening in a white-panelled clean area, with a full-width clear vision band across the middle of the curtain showing the equipment beyond, a stainless head box carrying the company mark and a stainless control panel at the jamb",
+    "High Speed Cleanroom / Hygiene Door — lead image",
+  ),
+  supplied(
     "hsd-rigid-insulated-supplied",
     "high-speed-doors",
     "high-speed-rigid-insulated-door",

@@ -1116,8 +1116,8 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-roll-up-door",
     ],
     documents: [brochure("High Speed Cleanroom / Hygiene Door"), drawing],
-    imageId: "p-hsd-cleanroom",
-    galleryIds: ["g-hsd-cleanroom", "g-hsd-food"],
+    imageId: "hsd-cleanroom-supplied",
+    galleryIds: ["p-hsd-cleanroom", "g-hsd-cleanroom", "g-hsd-food"],
   },
 
   /* ============================================================== 7 */
