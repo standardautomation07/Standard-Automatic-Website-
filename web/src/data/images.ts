@@ -222,6 +222,13 @@ const list: ImageRef[] = [
     "High Speed Roll-Up Door — in operation",
   ),
   supplied(
+    "hsd-spiral-supplied",
+    "high-speed-spiral-door",
+    "supplied",
+    "A high speed spiral door part open across a warehouse opening, its horizontal aluminium panels glazed across the upper half and carried into the coiled spiral track visible beside the head box, with a wall-mounted control panel at the jamb",
+    "High Speed Spiral Door — lead image",
+  ),
+  supplied(
     "hsd-self-repairing-supplied",
     "high-speed-self-repairing-door",
     "supplied",

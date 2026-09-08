@@ -779,8 +779,8 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-roll-up-door",
     ],
     documents: [brochure("High Speed Spiral Door"), drawing],
-    imageId: "p-hsd-spiral",
-    galleryIds: ["g-hsd-production", "g-hsd-warehouse"],
+    imageId: "hsd-spiral-supplied",
+    galleryIds: ["p-hsd-spiral", "g-hsd-production", "g-hsd-warehouse"],
   },
 
   /* ============================================================== 5 */
