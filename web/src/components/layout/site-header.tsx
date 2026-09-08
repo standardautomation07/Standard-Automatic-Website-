@@ -101,24 +101,19 @@ export function SiteHeader() {
               strapline keeps its issued letter spacing and comes along for the
               scale, landing at a size that can actually be read.
 
-              The mark alone shows on the narrowest screens so the nav never
-              competes with it for width. The full lockup stays in the footer,
-              where there is room for it. */}
-          <Image
-            src="/images/brand/logo-mark-invert.svg"
-            alt=""
-            width={144}
-            height={144}
-            priority
-            className="h-14 w-auto sm:hidden"
-          />
+              One lockup at every width, including a phone. The nav used to
+              drop to the bare mark below the sm breakpoint to save room, which
+              left the company name off the mobile header altogether. It costs
+              210px of a 375px screen to put it back, and the hamburger is the
+              only other thing in the bar, so the room was never the problem.
+              The full lockup stays in the footer, where there is more of it. */}
           <Image
             src="/images/brand/logo-header-invert.svg"
             alt=""
             width={540}
             height={144}
             priority
-            className="hidden h-14 w-auto sm:block lg:h-[4.5rem]"
+            className="h-14 w-auto lg:h-[4.5rem]"
           />
           <span className="sr-only">{siteConfig.legalName}</span>
         </Link>
