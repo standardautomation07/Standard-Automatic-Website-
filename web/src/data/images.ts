@@ -81,6 +81,30 @@ function generated(
   };
 }
 
+/**
+ * A product render supplied by Standard Automation itself, filed alongside
+ * the generated package for the same product. Same folder as `generated`,
+ * deliberately different provenance: this is the company's own asset, so it
+ * is approved rather than carrying the "replace before launch" caveat.
+ */
+function supplied(
+  id: string,
+  product: string,
+  view: string,
+  alt: string,
+  association: string,
+): ImageRef {
+  return {
+    id,
+    src: `/images/products/high-speed-doors/${product}/${product}-${view}.webp`,
+    alt,
+    source: OWN,
+    usage: APPROVED,
+    association,
+    fit: "cover",
+  };
+}
+
 function diagram(id: string, file: string, alt: string, association: string): ImageRef {
   return {
     id,
@@ -212,7 +236,15 @@ const list: ImageRef[] = [
     "High Speed Roll-Up Door — installed application",
   ),
 
-  // High Speed Fold-Up Door — package in progress.
+  // High Speed Fold-Up Door. The lead image is the company's own render;
+  // the generated package below it stands in until the rest is photographed.
+  supplied(
+    "hsd-fold-up-supplied",
+    "high-speed-fold-up-door",
+    "supplied",
+    "A blue high speed fold-up door in the elevation of a warehouse, the curtain gathered into horizontal folds on black lifting straps beneath a stainless head box, with vision panels across the middle of the curtain and a forklift working inside",
+    "High Speed Fold-Up Door — lead image",
+  ),
   generated(
     "hsd-fold-up-hero",
     "high-speed-fold-up-door",

@@ -441,8 +441,8 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-self-repairing-door",
     ],
     documents: [brochure("High Speed Fold-Up Door"), drawing],
-    imageId: "hsd-fold-up-hero",
-    galleryIds: ["hsd-fold-up-front", "p-hsd-fold-up"],
+    imageId: "hsd-fold-up-supplied",
+    galleryIds: ["hsd-fold-up-hero", "hsd-fold-up-front", "p-hsd-fold-up"],
     legacyUrls: ["high-speed-fold-up-doors.html"],
   },
 
