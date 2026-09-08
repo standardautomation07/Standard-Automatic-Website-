@@ -552,28 +552,6 @@
           "principle": "An engineered shutter rather than a catalogue size: curtain, guide, shaft and drive are sized together against the opening and the load it carries.",
           "products": [
             {
-              "id": "industrial-rolling-shutters",
-              "name": "Industrial Rolling Shutter",
-              "status": "CONFIRMED",
-              "variants": [
-                {
-                  "id": "standard",
-                  "name": "Industrial standard",
-                  "status": "CONFIRMED"
-                },
-                {
-                  "id": "heavy-duty",
-                  "name": "Industrial heavy duty",
-                  "status": "CONFIRMED"
-                },
-                {
-                  "id": "extra-heavy-duty",
-                  "name": "Industrial extra heavy duty",
-                  "status": "CONFIRMED"
-                }
-              ]
-            },
-            {
               "id": "windproof-rolling-shutters",
               "name": "Windproof / Storm-Resistant Rolling Shutter",
               "status": "CONFIRMED",
@@ -1171,7 +1149,7 @@
   "counts": {
     "families": 8,
     "categories": 26,
-    "products": 40
+    "products": 39
   },
   "withdrawnFromRange": [
     {

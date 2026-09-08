@@ -1,4 +1,9 @@
 import { expect, test, type Page } from "@playwright/test";
+import { products } from "../src/lib/catalog";
+
+/** Every product has a card on the catalogue page, so the count follows the
+ *  data rather than being restated here and going stale on the next edit. */
+const PRODUCT_COUNT = products.length;
 
 const NAV_LINKS = [
   { label: "Industries", path: "/industries" },
@@ -350,13 +355,13 @@ test.describe("catalogue hierarchy", () => {
     await page.goto("/products/catalogue");
 
     const cards = page.locator("article");
-    await expect(cards).toHaveCount(40);
+    await expect(cards).toHaveCount(PRODUCT_COUNT);
 
     await clickUntil(page.getByRole("button", { name: /^Loading Bay/ }), async () => {
       await expect(cards).toHaveCount(2, { timeout: 1000 });
     });
     await clickUntil(page.getByRole("button", { name: /^All/ }), async () => {
-      await expect(cards).toHaveCount(40, { timeout: 1000 });
+      await expect(cards).toHaveCount(PRODUCT_COUNT, { timeout: 1000 });
     });
 
     await page.getByLabel("Industry").selectOption("cold-chain-food");

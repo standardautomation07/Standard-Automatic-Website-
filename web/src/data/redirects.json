@@ -308,5 +308,10 @@
     "source": "/perforated-rolling-shutters.html",
     "destination": "/products/rolling-shutters/perforated-rolling-shutters",
     "permanent": true
+  },
+  {
+    "source": "/products/rolling-shutters/industrial-rolling-shutters",
+    "destination": "/products/rolling-shutters/windproof-rolling-shutters",
+    "permanent": true
   }
 ]

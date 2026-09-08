@@ -206,7 +206,7 @@ export const rollingShutterProducts: Product[] = [
       { question: "How long will the paint finish last?", answer: "That depends on the environment and on how the shutter is looked after, so we do not publish a figure. What we can say is that coating condition decides service life on a steel curtain, and that a galvanized or Galvalume base is the better answer where corrosion is the concern." },
       ...commonFaq("MS Solid Rolling Shutter"),
     ],
-    related: ["galvanized-steel-rolling-shutters", "galvalume-rolling-shutters", "industrial-rolling-shutters"],
+    related: ["galvanized-steel-rolling-shutters", "galvalume-rolling-shutters"],
     documents: standardDocs("MS Solid Rolling Shutter"),
     imageId: "shutter-ms-solid-supplied",
     galleryIds: ["p-shutter-ms-solid"],
@@ -278,7 +278,7 @@ export const rollingShutterProducts: Product[] = [
       { question: "Is GI suitable for a coastal site?", answer: "It is better than mild steel, but for a genuinely coastal or chemically aggressive installation we would point you at Galvalume or stainless steel rather than claim GI will be sufficient." },
       ...commonFaq("GI Solid Rolling Shutter"),
     ],
-    related: ["ms-solid-rolling-shutters", "galvalume-rolling-shutters", "industrial-rolling-shutters"],
+    related: ["ms-solid-rolling-shutters", "galvalume-rolling-shutters"],
     documents: standardDocs("GI Solid Rolling Shutter"),
     imageId: "shutter-gi-solid-supplied",
     galleryIds: ["p-shutter-galvanized"],
@@ -857,7 +857,7 @@ export const rollingShutterProducts: Product[] = [
       { question: "Does it reduce noise as well as heat?", answer: "Yes, the double-wall construction with a core reduces noise transfer as well. If acoustic performance is the main reason for specifying it, say so, because it can change which core is appropriate." },
       ...commonFaq("Insulated Rolling Shutter"),
     ],
-    related: ["industrial-rolling-shutters", "galvanized-steel-rolling-shutters", "high-speed-cold-storage-freezer-door"],
+    related: ["galvanized-steel-rolling-shutters", "high-speed-cold-storage-freezer-door"],
     documents: standardDocs("Insulated Rolling Shutter"),
     imageId: "p-shutter-insulated",
     facets: { material: ["Aluminium", "GI", "MS"], construction: "Insulated", duty: ["Standard", "Heavy", "Industrial"], operation: ["Manual", "Gear", "Motorized"], performance: ["Insulated"] },
@@ -865,94 +865,7 @@ export const rollingShutterProducts: Product[] = [
     legacyUrls: ["insulated-rolling-shutters.html"],
   },
 
-  /* =================================================== 11 INDUSTRIAL */
-  {
-    id: "industrial-rolling-shutters",
-    familyId: "rolling-shutters",
-    categoryId: "industrial-rolling-shutters",
-    name: "Industrial Rolling Shutter",
-    status: "CONFIRMED",
-    tagline: "Engineered as an assembly, not selected from a size list.",
-    summary:
-      "Heavy GI and MS curtains with reinforced guides, heavy shafts and industrial drives, in standard, heavy duty and extra heavy duty configurations.",
-    overview: [
-      "Past a certain opening size, a rolling shutter stops being a product you pick and becomes an assembly you engineer. Curtain weight sets the shaft. The shaft sets the brackets. The guide has to hold the curtain against whatever load the elevation sees. The drive has to move all of it, repeatedly, and stop it safely.",
-      "That is what this line is. Three configurations cover increasing spans and loads, and in each of them the curtain, guide, shaft and drive are sized together rather than mixed and matched.",
-      "We deliberately do not publish a maximum width or height. Large openings are available subject to engineering, and what is achievable on your opening depends on curtain weight, profile, shaft, guide, wind load and the drive system.",
-    ],
-    quickFacts: [
-      { label: "Curtain", value: "GI / MS, approx. 1.0–1.2 mm class", qualified: true },
-      { label: "Guide", value: "Reinforced" },
-      { label: "Drive", value: "Side or industrial drive" },
-      { label: "Sizes", value: "Subject to engineering", qualified: true },
-    ],
-    benefits: [
-      { title: "Sized as one assembly", body: "Curtain, guide, shaft, brackets and drive are specified together against the opening rather than assembled from separate standard parts." },
-      { title: "Built for continuous duty", body: "Heavy shaft, industrial drive and a reinforced guide, for openings that work all day rather than opening twice." },
-      { title: "Safety as part of the specification", body: "Photocell, emergency stop and emergency manual override on every configuration, with a safety edge available." },
-      { title: "Options that suit large openings", body: "Wind locks, a wicket door for pedestrians, an intermediate mullion on a wide span, and vision sections in the curtain." },
-    ],
-    variants: [
-      { id: "standard", name: "Industrial standard", note: "GI or MS heavy-duty curtain in approximately the 1.0 to 1.2 mm class, reinforced guide, heavy-duty shaft and a side or industrial drive, motorised with emergency manual override.", status: "CONFIRMED" },
-      { id: "heavy-duty", name: "Industrial heavy duty", note: "1.2 mm class or engineered heavier construction, reinforced guide, heavy shaft and barrel, industrial drive, with a wind-lock option.", status: "CONFIRMED" },
-      { id: "extra-heavy-duty", name: "Industrial extra heavy duty", note: "Engineered heavy profile with reinforced guide, heavy shaft, direct or indirect industrial drive and wind-load engineering for the specific opening.", status: "CONFIRMED" },
-    ],
-    applications: ["Factories and production halls", "Warehouses", "Loading and dispatch areas", "Industrial buildings", "Large vehicle openings"],
-    industries: ["manufacturing", "warehousing-logistics", "automotive"],
-    environments: ["internal", "external", "security"],
-    operatingMethod: [
-      "A heavy interlocking curtain rolls onto a heavy-duty shaft carried on engineered brackets above the opening.",
-      "Reinforced guides retain the curtain against the load the opening imposes; wind locks are added where the elevation requires them.",
-      "A side or industrial drive, direct or indirect depending on the configuration, powers the shutter.",
-      "A photocell, emergency stop and emergency manual override govern operation, with a safety edge available.",
-    ],
-    construction: [
-      "GI or MS heavy-duty curtain, approximately 1.0 to 1.2 mm class, or engineered heavier on the extra heavy duty configuration",
-      "Reinforced guide, with wind-lock option",
-      "Heavy-duty shaft and barrel with engineered brackets",
-      "Side, industrial, direct or indirect drive depending on configuration",
-      "Wicket door, intermediate mullion and vision section available as options",
-    ],
-    compatibility: [
-      ...shutterCompatibility,
-      {
-        system: "Traffic signalling",
-        detail:
-          "Volt-free outputs drive red and green lights either side of a large vehicle opening, so drivers are told when to approach.",
-      },
-    ],
-    installation: [
-      ...shutterInstallation,
-      "On a large opening the structural capacity of the lintel and jambs is checked against the assembly weight and the load path before manufacture, not on the day of installation.",
-    ],
-    ordering: [
-      ...shutterOrdering,
-      "The wind exposure of the elevation, where the opening is external",
-      "Whether a wicket door, intermediate mullion or vision section is required",
-      "Any traffic signalling or access control the shutter has to interface with",
-    ],
-    selectionGuide: [
-      ...cycleSelection,
-      { condition: "The opening is beyond the standard MS and GI range", recommendation: "This is the line. Rather than a thicker curtain in a standard assembly, the whole assembly is engineered to the opening." },
-      { condition: "A wide vehicle opening", recommendation: "Consider an intermediate mullion, which lets a wide span be closed without an unmanageable single curtain." },
-      { condition: "People need to pass through when the shutter is closed", recommendation: "A wicket door in the curtain, so the main shutter is not cycled for pedestrian traffic." },
-      { condition: "The elevation is wind exposed", recommendation: "Wind locks and wind-load engineering. See the windproof and storm-resistant line, which can also be applied as a configuration here." },
-    ],
-    faq: [
-      { question: "What is the maximum size you can supply?", answer: "We do not publish one, because there is not an honest single answer. Large openings are available subject to engineering, and what is achievable depends on curtain weight, profile, shaft, guide, wind load and the drive system. Send the opening and we will tell you what it takes." },
-      { question: "What is the difference between the three configurations?", answer: "Increasing span and load. Standard is a heavy-duty curtain in approximately the 1.0 to 1.2 mm class on a reinforced guide. Heavy duty steps to 1.2 mm class or engineered heavier with a heavier shaft and a wind-lock option. Extra heavy duty is engineered per opening, including the wind-load calculation." },
-      { question: "Can people get through without opening the whole shutter?", answer: "Yes, with a wicket door in the curtain. On a busy opening that is worth specifying, because it stops the main shutter being cycled every time someone walks through." },
-      { question: "What safety devices are included?", answer: "Photocell, emergency stop and an emergency manual override independent of the power supply, with a safety edge available. On a curtain this heavy those are part of the specification rather than options." },
-      ...commonFaq("Industrial Rolling Shutter"),
-    ],
-    related: ["windproof-rolling-shutters", "insulated-double-wall-rolling-shutters", "galvanized-steel-rolling-shutters"],
-    documents: standardDocs("Industrial Rolling Shutter"),
-    imageId: "p-shutter-industrial",
-    facets: { material: ["GI", "MS"], construction: "Solid", duty: ["Industrial", "Heavy"], operation: ["Motorized", "Gear"], performance: ["Standard", "Wind Resistant"] },
-    comparison: { material: "GI or mild steel", thickness: "1.0–1.2 mm and engineered", corrosion: "Material dependent", operation: "Motorised with manual override" },
-  },
-
-  /* ====================================================== 12 COUNTER */
+  /* ====================================================== 11 COUNTER */
   {
     id: "counter-service-rolling-shutters",
     familyId: "rolling-shutters",
@@ -1034,7 +947,7 @@ export const rollingShutterProducts: Product[] = [
     comparison: { material: "Aluminium, GI or stainless", thickness: "0.8–1.0 mm class", corrosion: "Material dependent", operation: "Manual, gear or motorised" },
   },
 
-  /* ==================================================== 13 WINDPROOF */
+  /* ==================================================== 12 WINDPROOF */
   {
     id: "windproof-rolling-shutters",
     familyId: "rolling-shutters",
@@ -1107,7 +1020,7 @@ export const rollingShutterProducts: Product[] = [
       { question: "Is it storm-proof?", answer: "We will not use that word. It is engineered for high-wind and storm-prone environments according to project-specific wind-load requirements, and its performance is defined by the configuration and the anchoring rather than by a claim." },
       ...commonFaq("Windproof / Storm-Resistant Rolling Shutter"),
     ],
-    related: ["industrial-rolling-shutters", "galvalume-rolling-shutters", "galvanized-steel-rolling-shutters"],
+    related: ["galvalume-rolling-shutters", "galvanized-steel-rolling-shutters"],
     documents: standardDocs("Windproof / Storm-Resistant Rolling Shutter"),
     imageId: "shutter-windproof-supplied",
     galleryIds: ["p-shutter-windproof"],
@@ -1131,7 +1044,6 @@ export const shutterSizeStatements: Record<string, string> = {
   "grille-rolling-shutters": SIZE_CUSTOM,
   "polycarbonate-rolling-shutters": SIZE_POLY,
   "insulated-double-wall-rolling-shutters": SIZE_CUSTOM,
-  "industrial-rolling-shutters": SIZE_ENGINEERED,
   "counter-service-rolling-shutters": SIZE_COUNTER,
   "windproof-rolling-shutters": SIZE_WIND,
   "fire-rated-rolling-shutters": "Maximum size subject to the tested configuration.",
