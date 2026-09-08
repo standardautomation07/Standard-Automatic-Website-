@@ -227,6 +227,15 @@ const list: ImageRef[] = [
     "High Speed Roll-Up Door — in operation",
   ),
   supplied(
+    "shutter-vision-supplied",
+    "rolling-shutters",
+    "vision-window-rolling-shutters",
+    "supplied",
+    "A galvanized steel vision rolling shutter part raised over a reception service counter, the office behind visible through the opening beneath the curtain, with a stainless head box carrying the company mark, and inset details of the slat with its glazed vision window and of the plain slat offered alongside it",
+    "Vision / Window Rolling Shutter — lead image",
+    "aspect-[5/3]",
+  ),
+  supplied(
     "shutter-gi-solid-supplied",
     "rolling-shutters",
     "galvanized-steel-rolling-shutters",
