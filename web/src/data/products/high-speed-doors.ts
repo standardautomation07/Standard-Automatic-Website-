@@ -940,8 +940,8 @@ export const highSpeedDoorProducts: Product[] = [
       "industrial-sectional-overhead-doors",
     ],
     documents: [brochure("High Speed Rigid / Insulated Door"), drawing],
-    imageId: "p-hsd-rigid",
-    galleryIds: ["g-hsd-production", "g-hsd-wide-opening"],
+    imageId: "hsd-rigid-insulated-supplied",
+    galleryIds: ["p-hsd-rigid", "g-hsd-production", "g-hsd-wide-opening"],
     legacyUrls: ["high-speed-industrial-door.html"],
   },
 
