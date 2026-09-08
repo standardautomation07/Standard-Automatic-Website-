@@ -131,7 +131,8 @@ export const industrialDoorProducts: Product[] = [
     documents: [
       { title: "Aluminium Garage Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-garage-aluminium",
+    imageId: "garage-aluminium-supplied",
+    galleryIds: ["p-garage-aluminium"],
     legacyUrls: ["garage-door.html"],
   },
   {
@@ -186,7 +187,8 @@ export const industrialDoorProducts: Product[] = [
     documents: [
       { title: "Residential Garage Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-garage-residential",
+    imageId: "garage-residential-supplied",
+    galleryIds: ["p-garage-residential"],
     legacyUrls: ["residential-garage-door.html"],
   },
 ];

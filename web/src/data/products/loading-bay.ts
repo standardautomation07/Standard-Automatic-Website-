@@ -57,7 +57,8 @@ export const loadingBayProducts: Product[] = [
       { title: "Dock Leveller datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Pit construction drawing", kind: "Technical drawing", href: null, note: "Issued per project so the builder can form the pit correctly." },
     ],
-    imageId: "p-dock-leveller",
+    imageId: "dock-leveller-supplied",
+    galleryIds: ["p-dock-leveller"],
     legacyUrls: ["dock-levellers.html"],
   },
   {
@@ -113,7 +114,8 @@ export const loadingBayProducts: Product[] = [
     documents: [
       { title: "Dock Shelter datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-dock-shelter",
+    imageId: "dock-shelter-supplied",
+    galleryIds: ["p-dock-shelter"],
     legacyUrls: ["dock-house.html"],
   },
 ];

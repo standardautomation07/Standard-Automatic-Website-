@@ -55,7 +55,8 @@ export const automaticGateProducts: Product[] = [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Gate layout drawing", kind: "Technical drawing", href: null, note: "Produced per project once the opening and side-run are surveyed." },
     ],
-    imageId: "p-gate-sliding",
+    imageId: "gate-sliding-supplied",
+    galleryIds: ["p-gate-sliding"],
     legacyUrls: ["sliding-gate.html"],
   },
   {
@@ -110,7 +111,8 @@ export const automaticGateProducts: Product[] = [
     documents: [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-gate-telescopic",
+    imageId: "gate-telescopic-supplied",
+    galleryIds: ["p-gate-telescopic"],
     legacyUrls: ["telescoping-gate.html"],
   },
   {
@@ -166,7 +168,8 @@ export const automaticGateProducts: Product[] = [
     documents: [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-gate-swing",
+    imageId: "gate-swing-supplied",
+    galleryIds: ["p-gate-swing"],
     legacyUrls: ["swing-gate.html"],
   },
   {
@@ -222,7 +225,8 @@ export const automaticGateProducts: Product[] = [
     documents: [
       { title: "Retractable Gate datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-gate-retractable",
+    imageId: "gate-retractable-supplied",
+    galleryIds: ["p-gate-retractable"],
     legacyUrls: ["retractable-gates.html"],
   },
 ];

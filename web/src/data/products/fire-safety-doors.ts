@@ -86,7 +86,8 @@ export const fireSafetyProducts: Product[] = [
       { title: "Fire test certificate", kind: "Certificate", href: null, note: "Issued per certified assembly. Ask us for the certificate covering the configuration proposed for your opening." },
       { title: "Fire Rated Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation." },
     ],
-    imageId: "p-fire-shutter",
+    imageId: "fire-shutter-supplied",
+    galleryIds: ["p-fire-shutter"],
     // Genuinely part of the rolling shutter range, but its page lives here
     // with the rest of the life-safety products. Cross-listed onto Rolling
     // Shutters rather than duplicated: one product, one URL.
@@ -162,7 +163,8 @@ export const fireSafetyProducts: Product[] = [
       { title: "Fire test certificate", kind: "Certificate", href: null, note: "Issued per certified assembly. Ask us for the certificate covering the configuration proposed for your opening." },
       { title: "Fire Rated Sliding Door datasheet", kind: "Datasheet", href: null, note: "In preparation." },
     ],
-    imageId: "p-fire-sliding-door",
+    imageId: "fire-sliding-supplied",
+    galleryIds: ["p-fire-sliding-door"],
     legacyUrls: ["fire-sliding-door.html"],
   },
 ];
