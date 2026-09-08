@@ -609,8 +609,8 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-cold-storage-freezer-door",
     ],
     documents: [brochure("High Speed Self-Repairing Door"), drawing],
-    imageId: "p-hsd-self-repairing",
-    galleryIds: ["g-hsd-forklift", "g-hsd-warehouse"],
+    imageId: "hsd-self-repairing-supplied",
+    galleryIds: ["p-hsd-self-repairing", "g-hsd-forklift", "g-hsd-warehouse"],
     legacyUrls: ["high-speed-self-repairing-doors.html"],
   },
 
