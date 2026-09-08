@@ -221,6 +221,13 @@ const list: ImageRef[] = [
     "A high speed roll-up door part open with a forklift driving through the clear opening beneath the raised curtain",
     "High Speed Roll-Up Door — in operation",
   ),
+  supplied(
+    "hsd-roll-up-supplied",
+    "high-speed-roll-up-door",
+    "supplied",
+    "A blue high speed roll-up door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
+    "High Speed Roll-Up Door — lead image",
+  ),
   generated(
     "hsd-roll-up-detail",
     "high-speed-roll-up-door",
