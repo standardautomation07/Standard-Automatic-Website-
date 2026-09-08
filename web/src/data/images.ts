@@ -299,6 +299,14 @@ const list: ImageRef[] = [
     "aspect-[16/9]",
   ),
   supplied(
+    "hsd-cold-store-supplied",
+    "high-speed-doors",
+    "high-speed-cold-storage-freezer-door",
+    "supplied",
+    "A blue high speed cold storage door closed across an opening into a chilled warehouse, frost forming along the guides and the sill, with a full-width clear vision band showing the racking and handling equipment beyond, a stainless head box carrying the company mark and a control panel at the jamb",
+    "High Speed Cold Storage / Freezer Door — lead image",
+  ),
+  supplied(
     "hsd-cleanroom-supplied",
     "high-speed-doors",
     "high-speed-cleanroom-hygiene-door",
