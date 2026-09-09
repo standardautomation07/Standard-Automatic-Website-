@@ -541,7 +541,10 @@ export default async function ProductPage({ params }: Params) {
             <SectionHeading index="10" eyebrow="Gallery" title={`${product.name} in detail`} />
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {product.galleryIds.map((imageId) => (
-                <li key={imageId} className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
+                <li
+                  key={imageId}
+                  className={`relative ${image(imageId).aspect ?? "aspect-[4/3]"} overflow-hidden border border-line bg-paper-sunken`}
+                >
                   <Media id={imageId} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
                 </li>
               ))}

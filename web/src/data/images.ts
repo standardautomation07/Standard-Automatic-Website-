@@ -379,6 +379,53 @@ const list: ImageRef[] = [
     "High Speed Roll-Up Door — installed application",
   ),
 
+  // Second views of shutters that already lead on a supplied render.
+  supplied(
+    "shutter-stainless-elevation",
+    "rolling-shutters",
+    "stainless-steel-rolling-shutters",
+    "elevation",
+    "A stainless steel rolling shutter closed across a commercial opening, its polished slats lit from the head box above, between stainless bollards, with a two-button control station and emergency stop on the wall alongside",
+    "Stainless Steel Rolling Shutter — elevation",
+    "aspect-[6/5]",
+  ),
+  supplied(
+    "shutter-gi-solid-elevation",
+    "rolling-shutters",
+    "galvanized-steel-rolling-shutters",
+    "elevation",
+    "A galvanized steel rolling shutter closed across an industrial opening beneath a plain galvanized head box, between yellow and black bollards, with a two-button control station and emergency stop on the wall alongside",
+    "GI Solid Rolling Shutter — elevation",
+    "aspect-[6/5]",
+  ),
+  supplied(
+    "shutter-ms-solid-powered",
+    "rolling-shutters",
+    "ms-solid-rolling-shutters",
+    "powered",
+    "A dark grey mild steel rolling shutter raised clear of a warehouse opening, the tube motor visible on the end of the head box and a control panel on the jamb, with racking and a forklift working inside",
+    "MS Solid Rolling Shutter — powered operation",
+    "aspect-[16/9]",
+  ),
+  supplied(
+    "shutter-aluminium-powered",
+    "rolling-shutters",
+    "aluminium-rolling-shutters",
+    "powered",
+    "An aluminium rolling shutter part raised across a commercial building entrance, a control panel with display and emergency stop mounted on the pier beside it, with the loading area and a forklift beyond",
+    "Aluminium Rolling Shutter — powered operation",
+    "aspect-[16/9]",
+  ),
+  supplied(
+    "shutter-gi-solid-powered",
+    "rolling-shutters",
+    "galvanized-steel-rolling-shutters",
+    "powered",
+    "A galvanized steel rolling shutter raised across an industrial opening, the tube motor mounted on the end of the head box and a control panel with emergency stop on the jamb, with pallet racking and a forklift inside",
+    "GI Solid Rolling Shutter — powered operation",
+    "aspect-[16/9]",
+  ),
+
   // ------------------------------- supplied renders, other families
   supplied(
     "garage-aluminium-supplied",
