@@ -313,5 +313,10 @@
     "source": "/products/rolling-shutters/industrial-rolling-shutters",
     "destination": "/products/rolling-shutters/windproof-rolling-shutters",
     "permanent": true
+  },
+  {
+    "source": "/products/rolling-shutters/counter-service-rolling-shutters",
+    "destination": "/products/rolling-shutters/vision-window-rolling-shutters",
+    "permanent": true
   }
 ]

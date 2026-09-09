@@ -551,41 +551,6 @@ export const rollingShutterSpecs: Record<string, SpecGroup[]> = {
   /* --------------------------------------------------- R11 INDUSTRIAL */
 
   /* ------------------------------------------------------ R12 COUNTER */
-  "counter-service-rolling-shutters": shutterSpec({
-    family: "Counter / Service Window Shutter",
-    material: "Aluminium / GI / stainless steel",
-    grade: "SS304 class on the stainless configuration; aluminium and GI selected to the application",
-    coating: "Anodised, powder coated, galvanized or stainless depending on material",
-    surface: "Anodised, powder coated or brushed depending on material",
-    construction: "Light interlocking curtain in a compact headbox",
-    profile: "Compact interlocking section",
-    profileHeight: CONFIG,
-    thickness: configurable(
-      "Slat thickness",
-      "Aluminium approximately 1.0 mm class / GI approximately 0.8–1.0 mm class / stainless SS304 class, configuration dependent",
-    ),
-    size: "Custom to the opening",
-    guideMaterial: "Compact aluminium, GI or stainless guide according to the construction",
-    guideWidth: CONFIG,
-    guideDepth: CONFIG,
-    guideThickness: CONFIG,
-    engagement: CONFIG,
-    barrel: "Compact barrel within the headbox",
-    shaft: CONFIG,
-    bracket: CONFIG,
-    hood: "Compact headbox; dimensions configuration dependent",
-    bottomProfile: "Compact bottom rail with integral lock",
-    lock: "Integral lock at the bottom rail",
-    operation: "Manual, gear operated or motorised where suitable",
-    motorOptions: "Tubular or compact motor where suitable",
-    controls: "Push button, key switch or remote where compatible",
-    corrosion: "Depends on the material and finish selected",
-    finish: "Anodised or powder coated aluminium; galvanized or powder coated GI; brushed or satin stainless",
-    colour: "Standard colours; custom RAL on coated finishes",
-    mounting: "Face mounted, between jamb or recessed into the joinery",
-    headroom: CONFIG,
-    sideRoom: CONFIG,
-  }),
 
   /* ---------------------------------------------------- R13 WINDPROOF */
   "windproof-rolling-shutters": shutterSpec({

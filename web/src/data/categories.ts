@@ -399,33 +399,6 @@ export const categories: Category[] = [
       ],
     },
   },
-  {
-    id: "counter-rolling-shutters",
-    familyId: "rolling-shutters",
-    name: "Counter & Service Shutters",
-    principle:
-      "A small shutter closing a service opening rather than a doorway. Light curtain, compact headbox, and a finish that suits the room it sits in.",
-    defaults: {
-      safety: [
-        "Bottom rail profiled so it can be closed by hand without a trap risk",
-        "Obstruction detection where the shutter is motorised",
-        "Manual override on every powered shutter",
-      ],
-      controls: [
-        "Manual, gear or motorised operation selected against the curtain size",
-        "Key switch or push button where motorised",
-      ],
-      options: [
-        "Integral lock at the bottom rail",
-        "Stainless, anodised or powder coated finish",
-        "Face mounted, between jamb or recessed installation",
-      ],
-      maintenance: [
-        "A counter shutter is operated by hand many times a day, so the guides and the bottom rail lock are the wear points",
-        "Finish should be cleaned with an agent that suits the material, particularly stainless in a food area",
-      ],
-    },
-  },
 
   // ---------------------------------------------------------- fire & safety
   {

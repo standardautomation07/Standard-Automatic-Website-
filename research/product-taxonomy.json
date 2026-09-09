@@ -574,35 +574,6 @@
               ]
             }
           ]
-        },
-        {
-          "id": "counter-rolling-shutters",
-          "name": "Counter & Service Shutters",
-          "principle": "A small shutter closing a service opening rather than a doorway. Light curtain, compact headbox, and a finish that suits the room it sits in.",
-          "products": [
-            {
-              "id": "counter-service-rolling-shutters",
-              "name": "Counter / Service Window Shutter",
-              "status": "CONFIRMED",
-              "variants": [
-                {
-                  "id": "aluminium",
-                  "name": "Aluminium counter shutter",
-                  "status": "CONFIRMED"
-                },
-                {
-                  "id": "gi",
-                  "name": "GI counter shutter",
-                  "status": "CONFIRMED"
-                },
-                {
-                  "id": "stainless",
-                  "name": "Stainless steel counter shutter",
-                  "status": "CONFIRMED"
-                }
-              ]
-            }
-          ]
         }
       ]
     },
@@ -1148,8 +1119,8 @@
   ],
   "counts": {
     "families": 8,
-    "categories": 26,
-    "products": 39
+    "categories": 25,
+    "products": 38
   },
   "withdrawnFromRange": [
     {

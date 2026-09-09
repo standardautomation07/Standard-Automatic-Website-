@@ -583,7 +583,6 @@ const byCategory: Record<string, SpecGroupSchema[]> = {
   "open-curtain-rolling-shutters": rollingShutter,
   "transparent-rolling-shutters": rollingShutter,
   "insulated-rolling-shutters": rollingShutter,
-  "counter-rolling-shutters": rollingShutter,
   "fire-rated-shutters": fireShutter,
   "fire-rated-doors": fireDoor,
   "sliding-gates": gate,
