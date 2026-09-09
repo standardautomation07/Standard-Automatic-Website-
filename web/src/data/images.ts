@@ -240,9 +240,9 @@ const list: ImageRef[] = [
     "rolling-shutters",
     "galvanized-steel-rolling-shutters",
     "supplied",
-    "A galvanized steel solid rolling shutter closed across a commercial entrance, its corrugated slats running the full width between steel side guides, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the spangled galvanized slat profile",
+    "A galvanized steel rolling shutter closed across an industrial opening, its spangled slats running the full width between side guides beneath a plain galvanized head box, with a two-button control station and emergency stop on the wall alongside and black and yellow bollards in front of the opening",
     "GI Solid Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "aspect-[6/5]",
   ),
   supplied(
     "shutter-insulated-supplied",
@@ -267,9 +267,9 @@ const list: ImageRef[] = [
     "rolling-shutters",
     "galvalume-rolling-shutters",
     "supplied",
-    "A coated steel rolling shutter closed across an industrial opening, its spangled slats running the full width between side guides beneath a plain galvanized head box, with a two-button control station and emergency stop on the wall alongside and black and yellow bollards in front of the opening",
+    "A galvalume rolling shutter closed across an industrial opening, its spangled aluminium-zinc coated slats running the full width between side guides, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the slat profile",
     "Galvalume Rolling Shutter — lead image",
-    "aspect-[6/5]",
+    "aspect-[16/9]",
   ),
   supplied(
     "shutter-grille-supplied",
