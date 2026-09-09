@@ -287,8 +287,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "boom-barrier-supplied",
-    galleryIds: ["boom-barrier-entrance", "p-boom-barrier"],
+    imageId: "boom-barrier-entrance",
+    galleryIds: ["boom-barrier-supplied", "p-boom-barrier"],
     legacyUrls: ["boom-barriers.html"],
   },
   {

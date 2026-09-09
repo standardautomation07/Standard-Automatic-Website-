@@ -441,7 +441,7 @@ const list: ImageRef[] = [
     "boom-barriers",
     "supplied",
     "A boom barrier raised across a business park entrance, its red and white striped arm horizontal above the roadway, with a card reader and a lit status strip on the pedestal and a car waiting beyond",
-    "Boom Barriers — lead image",
+    "Boom Barriers — gatehouse lane",
     "aspect-[6/5]",
   ),
   supplied(
@@ -450,7 +450,7 @@ const list: ImageRef[] = [
     "boom-barriers",
     "entrance",
     "A boom barrier lowered across an office forecourt lane, its red and white striped arm spanning the roadway from a pedestal with a lit status strip, with a speed hump and directional arrow marked on the surface",
-    "Boom Barriers — forecourt lane",
+    "Boom Barriers — lead image",
     "aspect-[6/5]",
   ),
   supplied(
