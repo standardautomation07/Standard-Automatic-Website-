@@ -428,6 +428,15 @@ const list: ImageRef[] = [
 
   // ------------------------------- supplied renders, other families
   supplied(
+    "sectional-overhead-supplied",
+    "industrial-doors",
+    "industrial-sectional-overhead-doors",
+    "supplied",
+    "A white insulated sectional overhead door part raised inside a warehouse, its panels tracked up under the roof on torsion-spring gear, a row of glazed vision panels across one section and a control panel with emergency stop on the jamb, looking out to a loading yard",
+    "Industrial Sectional Overhead Doors — lead image",
+    "aspect-[16/9]",
+  ),
+  supplied(
     "garage-aluminium-supplied",
     "industrial-doors",
     "aluminium-garage-doors",

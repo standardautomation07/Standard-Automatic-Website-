@@ -76,7 +76,8 @@ export const industrialDoorProducts: Product[] = [
       { title: "Sectional Overhead Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Lift configuration drawing", kind: "Technical drawing", href: null, note: "Produced per project once headroom and side room are surveyed." },
     ],
-    imageId: "p-sectional-overhead",
+    imageId: "sectional-overhead-supplied",
+    galleryIds: ["p-sectional-overhead"],
     legacyUrls: ["overhead-sectional-doors.html", "sectional-door.html"],
   },
   {
