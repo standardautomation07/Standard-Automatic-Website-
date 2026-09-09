@@ -436,6 +436,15 @@ const list: ImageRef[] = [
   ),
 
   supplied(
+    "retractable-barrier-supplied",
+    "access-control",
+    "retractable-barriers",
+    "supplied",
+    "A retractable arm barrier raised at a business park entrance, its red and white striped arm hinged part way along so the outer section folds back over the pedestal rather than sweeping a full arc, with a lit status strip down the pedestal and a car waiting beyond",
+    "Retractable Barriers — lead image",
+    "aspect-[6/5]",
+  ),
+  supplied(
     "boom-barrier-supplied",
     "access-control",
     "boom-barriers",

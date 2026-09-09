@@ -343,7 +343,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-retractable-barrier",
+    imageId: "retractable-barrier-supplied",
+    galleryIds: ["p-retractable-barrier"],
     legacyUrls: ["retractable-barriers.html"],
   },
 ];
