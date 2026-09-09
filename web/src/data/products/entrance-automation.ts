@@ -191,6 +191,7 @@ export const entranceAutomationProducts: Product[] = [
       { title: "Hermetic Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Room interface drawing", kind: "Technical drawing", href: null, note: "Produced per project, coordinated with the cleanroom designer." },
     ],
-    imageId: "p-hermetic-doors",
+    imageId: "hermetic-doors-supplied",
+    galleryIds: ["p-hermetic-doors"],
   },
 ];

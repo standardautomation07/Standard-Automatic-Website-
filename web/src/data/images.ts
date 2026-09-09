@@ -436,6 +436,15 @@ const list: ImageRef[] = [
   ),
 
   supplied(
+    "hermetic-doors-supplied",
+    "entrance-automation",
+    "hermetic-cleanroom-doors",
+    "supplied",
+    "A blue hermetic sliding door part open in a white-panelled clean corridor, its single leaf with a rounded vision window running under a stainless header, the gowned operators and equipment of the clean area visible through the opening, and a touchless reader on the wall beside it",
+    "Hermetic & Cleanroom Doors — lead image",
+    "aspect-[6/5]",
+  ),
+  supplied(
     "retractable-barrier-supplied",
     "access-control",
     "retractable-barriers",
