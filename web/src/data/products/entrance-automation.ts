@@ -73,7 +73,8 @@ export const entranceAutomationProducts: Product[] = [
       { title: "Automatic Sliding Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
       { title: "Header and threshold detail", kind: "Technical drawing", href: null, note: "Produced per project once the opening and header depth are surveyed." },
     ],
-    imageId: "p-auto-sliding-doors",
+    imageId: "auto-sliding-doors-supplied",
+    galleryIds: ["p-auto-sliding-doors"],
     legacyUrls: ["sliding-glass-door.html"],
   },
   {
@@ -130,7 +131,8 @@ export const entranceAutomationProducts: Product[] = [
     documents: [
       { title: "Automatic Swing Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-swing-doors",
+    imageId: "swing-doors-supplied",
+    galleryIds: ["p-swing-doors"],
   },
   {
     id: "hermetic-cleanroom-doors",

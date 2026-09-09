@@ -61,8 +61,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Pedestrian Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-tripod-turnstile",
-    galleryIds: ["g-tripod-yl121", "g-tripod-el128"],
+    imageId: "tripod-turnstile-supplied",
+    galleryIds: ["p-tripod-turnstile", "g-tripod-yl121", "g-tripod-el128"],
     legacyUrls: ["tripod-turnstile.html"],
   },
   {
@@ -117,8 +117,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Pedestrian Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-flap-barrier",
-    galleryIds: ["g-flap-e242", "g-flap-h249", "g-flap-y248"],
+    imageId: "flap-barrier-supplied",
+    galleryIds: ["p-flap-barrier", "g-flap-e242", "g-flap-h249", "g-flap-y248"],
     legacyUrls: ["flap-barrier.html"],
   },
   {
@@ -173,8 +173,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Pedestrian Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-full-height-turnstile",
-    galleryIds: ["g-full-g538", "g-full-g535-2"],
+    imageId: "full-height-turnstile-supplied",
+    galleryIds: ["p-full-height-turnstile", "g-full-g538", "g-full-g535-2"],
     legacyUrls: ["full-height-barrier.html"],
   },
   {
@@ -230,7 +230,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-bollard",
+    imageId: "bollard-supplied",
+    galleryIds: ["p-bollard"],
     legacyUrls: ["bollard.html"],
   },
   {
@@ -286,7 +287,8 @@ export const accessControlProducts: Product[] = [
     documents: [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
-    imageId: "p-boom-barrier",
+    imageId: "boom-barrier-supplied",
+    galleryIds: ["boom-barrier-entrance", "p-boom-barrier"],
     legacyUrls: ["boom-barriers.html"],
   },
   {
