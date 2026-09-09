@@ -267,9 +267,9 @@ const list: ImageRef[] = [
     "rolling-shutters",
     "galvalume-rolling-shutters",
     "supplied",
-    "A galvalume rolling shutter closed across an industrial opening, its spangled aluminium-zinc coated slats running the full width between side guides, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the slat profile",
+    "A coated steel rolling shutter closed across an industrial opening, its spangled slats running the full width between side guides beneath a plain galvanized head box, with a two-button control station and emergency stop on the wall alongside and black and yellow bollards in front of the opening",
     "Galvalume Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "aspect-[6/5]",
   ),
   supplied(
     "shutter-grille-supplied",
