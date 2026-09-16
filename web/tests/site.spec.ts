@@ -260,7 +260,10 @@ test.describe("catalogue hierarchy", () => {
   });
 
   test("a product with no supplied figures still shows the full field list, marked to be confirmed", async ({ page }) => {
-    await page.goto("/products/access-control/tripod-turnstiles");
+    // Residential garage doors: 6 of 38 rows answered at the time of writing.
+    // Tripod turnstiles used to be the example here until its table was
+    // populated; pick whichever product is still mostly unanswered.
+    await page.goto("/products/industrial-doors/residential-garage-doors");
     // Technical Data is the tab shown first, so the table is on screen already.
     await expect(page.getByRole("table").first()).toBeVisible();
     // The per-tab count is hidden on small screens by design, so assert the

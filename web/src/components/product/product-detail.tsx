@@ -7,6 +7,7 @@ import {
 } from "@/data/products/rolling-shutters";
 import { highSpeedSizeStatements } from "@/data/products/high-speed-doors";
 import { CONFIGURATION_NOTE } from "@/data/product-specs";
+import { GATE_DISCLAIMER } from "@/data/product-specs-gates";
 import { orderingFor, sizeStatementFor } from "@/data/product-detail-data";
 import { industryById, productGuidance, productSpecGroups, resolveDetail } from "@/lib/catalog";
 import type { Product, Spec } from "@/lib/types";
@@ -45,7 +46,11 @@ export function ProductDetail({ product }: { product: Product }) {
   const isFire = product.facets?.construction === "Fire Rated";
   // Each family states the caveat in its own terms.
   const disclaimer =
-    product.familyId === "rolling-shutters" ? SHUTTER_DISCLAIMER : CONFIGURATION_NOTE;
+    product.familyId === "rolling-shutters"
+      ? SHUTTER_DISCLAIMER
+      : product.id === "automatic-swing-gates"
+        ? GATE_DISCLAIMER
+        : CONFIGURATION_NOTE;
 
   const answered = groups.flatMap((g) => g.specs).filter((s) => s.value !== null).length;
   const total = groups.flatMap((g) => g.specs).length;

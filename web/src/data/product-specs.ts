@@ -1,5 +1,9 @@
 import type { Spec, SpecGroup } from "@/lib/types";
 import { rollingShutterSpecs } from "@/data/product-specs-shutters";
+import { gateSpecs } from "@/data/product-specs-gates";
+import { dockSpecs } from "@/data/product-specs-dock";
+import { accessSpecs } from "@/data/product-specs-access";
+import { entranceSpecs } from "@/data/product-specs-entrance";
 
 /**
  * Authored specification tables.
@@ -336,6 +340,10 @@ const coldStorage: SpecGroup[] = [
  */
 export const authoredSpecs: Record<string, SpecGroup[]> = {
   ...rollingShutterSpecs,
+  ...gateSpecs,
+  ...dockSpecs,
+  ...accessSpecs,
+  ...entranceSpecs,
   "high-speed-roll-up-door": rollUp,
   "high-speed-fold-up-door": foldUp,
   "high-speed-self-repairing-door": selfRepairing,
