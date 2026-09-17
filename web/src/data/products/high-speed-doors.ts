@@ -263,13 +263,11 @@ export const highSpeedDoorProducts: Product[] = [
     documents: [brochure("High Speed Roll-Up Door"), drawing],
     imageId: "hsd-roll-up-supplied",
     galleryIds: [
-      "hsd-roll-up-hero",
-      "hsd-roll-up-front",
       "hsd-roll-up-angle",
       "hsd-roll-up-operational",
       "hsd-roll-up-detail",
+      "hsd-roll-up-controls",
       "hsd-roll-up-application",
-      "p-hsd-roll-up",
     ],
     legacyUrls: ["high-speed-door.html", "high-speed-roll-up-door.html"],
   },
@@ -610,7 +608,13 @@ export const highSpeedDoorProducts: Product[] = [
     ],
     documents: [brochure("High Speed Self-Repairing Door"), drawing],
     imageId: "hsd-self-repairing-supplied",
-    galleryIds: ["p-hsd-self-repairing", "g-hsd-forklift", "g-hsd-warehouse"],
+    galleryIds: [
+      "hsd-self-repairing-angle",
+      "hsd-self-repairing-curtain",
+      "hsd-self-repairing-mechanism",
+      "hsd-self-repairing-guide",
+      "hsd-self-repairing-header",
+    ],
     legacyUrls: ["high-speed-self-repairing-doors.html"],
   },
 
@@ -780,7 +784,12 @@ export const highSpeedDoorProducts: Product[] = [
     ],
     documents: [brochure("High Speed Spiral Door"), drawing],
     imageId: "hsd-spiral-supplied",
-    galleryIds: ["p-hsd-spiral", "g-hsd-production", "g-hsd-warehouse"],
+    galleryIds: [
+      "hsd-spiral-angle",
+      "hsd-spiral-panels",
+      "hsd-spiral-spiral",
+      "hsd-spiral-guide",
+    ],
   },
 
   /* ============================================================== 5 */

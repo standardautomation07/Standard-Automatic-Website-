@@ -56,7 +56,7 @@ export const automaticGateProducts: Product[] = [
       { title: "Gate layout drawing", kind: "Technical drawing", href: null, note: "Produced per project once the opening and side-run are surveyed." },
     ],
     imageId: "gate-sliding-supplied",
-    galleryIds: ["p-gate-sliding"],
+    galleryIds: [],
     legacyUrls: ["sliding-gate.html"],
   },
   {
@@ -112,7 +112,7 @@ export const automaticGateProducts: Product[] = [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "gate-telescopic-supplied",
-    galleryIds: ["p-gate-telescopic"],
+    galleryIds: [],
     legacyUrls: ["telescoping-gate.html"],
   },
   {

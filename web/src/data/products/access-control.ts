@@ -231,7 +231,7 @@ export const accessControlProducts: Product[] = [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "bollard-supplied",
-    galleryIds: ["p-bollard"],
+    galleryIds: ["bollard-angle", "bollard-raised", "bollard-retracted", "bollard-installation", "bollard-application", "p-bollard"],
     legacyUrls: ["bollard.html"],
   },
   {
@@ -288,7 +288,7 @@ export const accessControlProducts: Product[] = [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "boom-barrier-entrance",
-    galleryIds: ["boom-barrier-supplied", "p-boom-barrier"],
+    galleryIds: ["boom-barrier-supplied", "boom-barrier-angle", "boom-barrier-cabinet", "boom-barrier-detail", "boom-barrier-installed", "boom-barrier-side"],
     legacyUrls: ["boom-barriers.html"],
   },
   {
@@ -344,7 +344,7 @@ export const accessControlProducts: Product[] = [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "retractable-barrier-supplied",
-    galleryIds: ["p-retractable-barrier"],
+    galleryIds: [],
     legacyUrls: ["retractable-barriers.html"],
   },
 ];

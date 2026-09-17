@@ -110,6 +110,35 @@ function supplied(
   };
 }
 
+/**
+ * One view from a generated package for a product outside High Speed Doors.
+ * Same provenance and caveat as `generated` — an interim visualisation built
+ * to a written master definition, to be replaced by installation photography
+ * under the same filename — with the family folder made explicit. `fit`
+ * defaults to cover; a wide elevation that must not be cropped passes
+ * "contain".
+ */
+function visualised(
+  id: string,
+  family: string,
+  product: string,
+  view: string,
+  alt: string,
+  association: string,
+  definition: string,
+  fit: "cover" | "contain" = "cover",
+): ImageRef {
+  return {
+    id,
+    src: `/images/products/${family}/${product}/${product}-${view}.webp`,
+    alt,
+    source: `Standard Automation — AI-generated product visualisation, built to the master visual definition in ${definition}`,
+    usage: VISUALISATION,
+    association,
+    fit,
+  };
+}
+
 function diagram(id: string, file: string, alt: string, association: string): ImageRef {
   return {
     id,
@@ -139,8 +168,8 @@ const list: ImageRef[] = [
   own("family-high-speed-doors", "intro.jpg", "A high speed door at a warehouse opening with a forklift passing through", "High Speed Doors family"),
   stock("family-rolling-shutters", "rolling-shutters.jpg", "Closed roller shutters across a commercial frontage", "Rolling Shutters family"),
   stock("family-fire-safety", "shutter-red.jpg", "A closed red rolling shutter at a building opening", "Fire & Safety Doors family"),
-  stock("family-automatic-gates", "gates-industrial.jpg", "An industrial site entrance with a large powered gate", "Automatic Gates family"),
-  stock("family-entrance-automation", "entrance-automation.jpg", "Automatic glass entrance doors at a modern building", "Entrance Automation family"),
+  stock("family-automatic-gates", "gates-industrial.jpg", "A factory floor with yellow safety railings around conveyor lines", "Automatic Gates family"),
+  stock("family-entrance-automation", "entrance-automation.jpg", "Glass pivot doors at an office entrance, photographed at night", "Entrance Automation family"),
   stock("family-loading-bay", "loading-bay.jpg", "A row of loading docks on a distribution building", "Loading Bay Equipment family"),
   stock("family-access-control", "security-access.jpg", "A row of access-control turnstiles in a building lobby", "Access Control family"),
 
@@ -196,36 +225,36 @@ const list: ImageRef[] = [
     "High Speed Cold Storage / Freezer Door",
   ),
 
-  // High Speed Roll-Up Door — generated product image package, six views built
-  // to one master visual definition so the same door appears in all of them.
-  generated(
-    "hsd-roll-up-hero",
-    "high-speed-roll-up-door",
-    "hero",
-    "A blue PVC high speed roll-up door, closed, in an internal warehouse opening, with galvanized steel side guides and a geared motor at the head",
-    "High Speed Roll-Up Door — lead image",
-  ),
-  generated(
-    "hsd-roll-up-front",
-    "high-speed-roll-up-door",
-    "front",
-    "Front elevation of a blue PVC high speed roll-up door showing the full curtain, both side guides, the barrel and the wall-mounted control panel",
-    "High Speed Roll-Up Door — front view",
-  ),
-  generated(
+  // High Speed Roll-Up Door — generated gallery views built to the master
+  // visual definition taken from the supplied hero; the hero itself is untouched.
+  visualised(
     "hsd-roll-up-angle",
+    "high-speed-doors",
     "high-speed-roll-up-door",
     "angle",
-    "A blue PVC high speed roll-up door seen from a three-quarter angle, showing the depth of the side guide, the end of the barrel and the geared motor housing",
+    "A blue PVC high speed roll-up door seen from a three-quarter angle, closed, with its full-width clear vision band, brushed stainless hood and side guides, wall control box and yellow-and-black bollards",
     "High Speed Roll-Up Door — three-quarter view",
+    "research/roll-up-door-visual-definition.md",
   ),
-  generated(
+  visualised(
     "hsd-roll-up-operational",
+    "high-speed-doors",
     "high-speed-roll-up-door",
     "operational",
-    "A high speed roll-up door part open with a forklift driving through the clear opening beneath the raised curtain",
+    "A blue PVC high speed roll-up door two-thirds open, the curtain rolled up into its stainless hood, with a second warehouse zone and pallet racking visible through the clear opening",
     "High Speed Roll-Up Door — in operation",
+    "research/roll-up-door-visual-definition.md",
   ),
+  visualised(
+    "hsd-roll-up-controls",
+    "high-speed-doors",
+    "high-speed-roll-up-door",
+    "controls",
+    "Close-up of the wall-mounted control box beside a high speed roll-up door, with display, push buttons and red emergency stop, a yellow-and-black bollard in the foreground and the blue curtain and stainless guide behind",
+    "High Speed Roll-Up Door — operator controls",
+    "research/roll-up-door-visual-definition.md",
+  ),
+
   supplied(
     "shutter-vision-supplied",
     "rolling-shutters",
@@ -365,6 +394,93 @@ const list: ImageRef[] = [
     "A yellow high speed self-repairing door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
     "High Speed Self-Repairing Door — lead image",
   ),
+  // High Speed Self-Repairing Door — generated gallery views built to the
+  // master visual definition taken from the supplied hero; the hero is untouched.
+  visualised(
+    "hsd-self-repairing-angle",
+    "high-speed-doors",
+    "high-speed-self-repairing-door",
+    "angle",
+    "A yellow PVC high speed self-repairing door seen from a three-quarter angle, closed, with its full-width clear vision band, brushed stainless hood and guide columns, wall control box and yellow-and-black bollards",
+    "High Speed Self-Repairing Door — three-quarter view",
+    "research/self-repairing-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-self-repairing-curtain",
+    "high-speed-doors",
+    "high-speed-self-repairing-door",
+    "curtain",
+    "Close-up of the yellow reinforced PVC curtain of a high speed self-repairing door, showing the woven scrim texture under the coating, a welded horizontal reinforcing seam and the aluminium edge strip of the clear vision band",
+    "High Speed Self-Repairing Door — curtain construction",
+    "research/self-repairing-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-self-repairing-mechanism",
+    "high-speed-doors",
+    "high-speed-self-repairing-door",
+    "mechanism",
+    "Close-up of the self-repairing guide of a high speed door: the yellow curtain's edge bead has released from the black flexible channel in the stainless guide over a short section after impact, the curtain bowing away undamaged while above and below the bead remains seated",
+    "High Speed Self-Repairing Door — curtain release from the flexible guide",
+    "research/self-repairing-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-self-repairing-guide",
+    "high-speed-doors",
+    "high-speed-self-repairing-door",
+    "guide",
+    "Bottom corner of a high speed self-repairing door: the aluminium bottom rail with its black soft floor seal, the foot of the stainless guide column bolted to the floor, and the curtain's edge bead running in the black flexible guide channel",
+    "High Speed Self-Repairing Door — bottom rail, seal and guide detail",
+    "research/self-repairing-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-self-repairing-header",
+    "high-speed-doors",
+    "high-speed-self-repairing-door",
+    "header",
+    "Top corner of a high speed self-repairing door: the plain stainless hood over the roller, the flared re-entry mouth at the head of the guide that re-threads the curtain edge, and the geared electric operator on the roller shaft end",
+    "High Speed Self-Repairing Door — hood, guide re-entry mouth and operator",
+    "research/self-repairing-door-visual-definition.md",
+  ),
+
+  // High Speed Spiral Door — generated gallery views built to the master
+  // visual definition taken from the supplied hero; the hero is untouched.
+  visualised(
+    "hsd-spiral-angle",
+    "high-speed-doors",
+    "high-speed-spiral-door",
+    "angle",
+    "A high speed spiral door on an external factory entrance seen from a three-quarter angle, closed: silver anodised aluminium panels alternating with full-width glazed rows, stainless hood with the spiral end plate at its right, guide columns, control box and yellow-and-black bollards",
+    "High Speed Spiral Door — three-quarter view",
+    "research/spiral-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-spiral-panels",
+    "high-speed-doors",
+    "high-speed-spiral-door",
+    "panels",
+    "Close-up of the leaf of a high speed spiral door: rigid silver anodised aluminium panels alternating with clear glazed panels in slim silver frames, hinged along fine joint lines with black seals",
+    "High Speed Spiral Door — panel construction",
+    "research/spiral-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-spiral-spiral",
+    "high-speed-doors",
+    "high-speed-spiral-door",
+    "spiral",
+    "Side of the head of a high speed spiral door with the hood end cover removed: the round steel side plate with its machined spiral groove, the panel-end rollers running in the outer turn of the track and the leaf entering from the guide column below",
+    "High Speed Spiral Door — spiral guide mechanism",
+    "research/spiral-door-visual-definition.md",
+  ),
+  visualised(
+    "hsd-spiral-guide",
+    "high-speed-doors",
+    "high-speed-spiral-door",
+    "guide",
+    "Bottom corner of a closed high speed spiral door: the leading aluminium panel with its black rubber safety edge on the concrete, a glazed panel above, and the foot of the guide column bolted to the plinth with its black seal",
+    "High Speed Spiral Door — guide and bottom seal detail",
+    "research/spiral-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",
@@ -373,19 +489,23 @@ const list: ImageRef[] = [
     "A blue high speed roll-up door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
     "High Speed Roll-Up Door — lead image",
   ),
-  generated(
+  visualised(
     "hsd-roll-up-detail",
+    "high-speed-doors",
     "high-speed-roll-up-door",
     "detail",
-    "Close-up of the lower corner of a high speed door, showing the woven texture of the blue PVC curtain, the black rubber bottom edge and the bolted galvanized steel side guide",
-    "High Speed Roll-Up Door — construction detail",
+    "Close-up of the edge of a blue PVC high speed roll-up door: the brushed stainless guide column with its black brush seal, the curtain's reinforcing seam and the aluminium edge strip of the clear vision band",
+    "High Speed Roll-Up Door — curtain and guide detail",
+    "research/roll-up-door-visual-definition.md",
   ),
-  generated(
+  visualised(
     "hsd-roll-up-application",
+    "high-speed-doors",
     "high-speed-roll-up-door",
     "application",
-    "A blue high speed roll-up door closed in a dividing wall of a distribution warehouse, with loaded pallet racking either side of a wide concrete aisle",
+    "A blue PVC high speed roll-up door closed in a partition wall between two zones of a warehouse, with loaded pallet racking to one side and yellow floor markings leading to the opening",
     "High Speed Roll-Up Door — installed application",
+    "research/roll-up-door-visual-definition.md",
   ),
 
   // Second views of shutters that already lead on a supplied render.
@@ -471,6 +591,52 @@ const list: ImageRef[] = [
     "Boom Barriers — lead image",
     "aspect-[6/5]",
   ),
+  visualised(
+    "boom-barrier-angle",
+    "access-control",
+    "boom-barriers",
+    "angle",
+    "An automatic boom barrier seen from across the lane with its arm raised vertical beside the cabinet: a graphite-grey pedestal with brushed silver side panels, an amber status strip on the front face, a reader plate on the side and a black boom boss carrying the white and red arm",
+    "Boom Barriers — raised, from the far side of the lane",
+    "research/boom-barrier-visual-definition.md",
+  ),
+  visualised(
+    "boom-barrier-cabinet",
+    "access-control",
+    "boom-barriers",
+    "cabinet",
+    "Close-up of a boom barrier operator cabinet: graphite-grey front face with brushed silver side panels and top cap, a vertical amber status strip, a card reader plate on the side and the black boom boss with the lowered white and red arm leading out of frame",
+    "Boom Barriers — operator cabinet",
+    "research/boom-barrier-visual-definition.md",
+  ),
+  visualised(
+    "boom-barrier-detail",
+    "access-control",
+    "boom-barriers",
+    "detail",
+    "Detail of a boom barrier's boom boss: a black cylindrical boss with a ring of stainless bolts fixed to the graphite-grey side face of the cabinet below the brushed silver top cap, with the root of the white arm and its first red reflective band clamped into it",
+    "Boom Barriers — boom boss and arm root",
+    "research/boom-barrier-visual-definition.md",
+  ),
+  visualised(
+    "boom-barrier-installed",
+    "access-control",
+    "boom-barriers",
+    "installed",
+    "A boom barrier installed at a business-park entrance beside a glazed gatehouse, arm raised, with a plain grey saloon car passing through towards the car park and glass office buildings beyond",
+    "Boom Barriers — installed at a vehicle entrance",
+    "research/boom-barrier-visual-definition.md",
+  ),
+  visualised(
+    "boom-barrier-side",
+    "access-control",
+    "boom-barriers",
+    "side",
+    "Side elevation of a boom barrier with its arm horizontal across the lane: the graphite-grey cabinet with brushed silver side panels and amber status strip at the left, the white arm with evenly spaced red reflective bands, and a black tip support post at the far kerb",
+    "Boom Barriers — full boom length, side elevation",
+    "research/boom-barrier-visual-definition.md",
+    "contain",
+  ),
   supplied(
     "bollard-supplied",
     "access-control",
@@ -479,6 +645,52 @@ const list: ImageRef[] = [
     "Four stainless steel bollards raised in a line across a building forecourt, each with a reflective band below its black cap and set into a flush floor socket, separating the parking area from the entrance",
     "Bollards — lead image",
     "aspect-[6/5]",
+  ),
+  visualised(
+    "bollard-angle",
+    "access-control",
+    "bollards",
+    "angle",
+    "A row of four raised rising bollards seen from a low angle along the line, each a brushed stainless cylinder with a flat black cap, an amber LED band beneath it and a flush stainless ground collar, on a stone-paved office forecourt",
+    "Bollards — the row from a low side angle",
+    "research/bollard-visual-definition.md",
+  ),
+  visualised(
+    "bollard-raised",
+    "access-control",
+    "bollards",
+    "raised",
+    "Close-up of one raised rising bollard: a brushed stainless cylinder with a flat black cap and a single amber LED band beneath it, standing in its flush stainless ground collar on stone paving",
+    "Bollards — raised, close-up",
+    "research/bollard-visual-definition.md",
+    "contain",
+  ),
+  visualised(
+    "bollard-retracted",
+    "access-control",
+    "bollards",
+    "retracted",
+    "The same row of four rising bollards fully retracted, only their flush stainless ground collars and black caps showing level with the paving, leaving the forecourt clear to the office entrance",
+    "Bollards — retracted, flush with the paving",
+    "research/bollard-visual-definition.md",
+  ),
+  visualised(
+    "bollard-installation",
+    "access-control",
+    "bollards",
+    "installation",
+    "Installation detail of a rising bollard part-way up: the cylinder rising through its flush stainless ground collar, the narrow gap around it and the polished lower section that sits below ground when raised, with the black cap and amber LED band at the top",
+    "Bollards — part-raised in the ground collar",
+    "research/bollard-visual-definition.md",
+  ),
+  visualised(
+    "bollard-application",
+    "access-control",
+    "bollards",
+    "application",
+    "Four raised rising bollards holding the line between a forecourt roadway and a glass office entrance, with a plain grey saloon car stopped on the roadway short of them",
+    "Bollards — holding a vehicle line at an entrance",
+    "research/bollard-visual-definition.md",
   ),
   supplied(
     "full-height-turnstile-supplied",
@@ -654,7 +866,7 @@ const list: ImageRef[] = [
   // Contextual photography used in the High Speed Doors galleries.
   own("g-hsd-installation", "intro.jpg", "A high speed door at a warehouse opening with a forklift passing through", "High Speed Doors gallery"),
   stock("g-hsd-rollup-context", "industrial-doors.jpg", "A closed roll-up industrial door on an internal opening", "High Speed Doors gallery"),
-  stock("g-hsd-wide-opening", "loading-bay-trailer.jpg", "A trailer positioned at a loading ramp beneath a wide door opening", "High Speed Doors gallery"),
+  stock("g-hsd-wide-opening", "loading-bay-trailer.jpg", "A refrigerated trailer raised on a hydraulic tipping platform outside a warehouse", "High Speed Doors gallery"),
   stock("g-hsd-forklift", "warehouse-forklift.jpg", "A forklift operating inside a large warehouse", "High Speed Doors gallery"),
   stock("g-hsd-production", "manufacturing.jpg", "Large production machinery inside a manufacturing plant", "High Speed Doors gallery"),
   stock("g-hsd-cleanroom", "industry-cleanroom.jpg", "Workers in protective suits inside a cleanroom", "High Speed Doors gallery"),
@@ -685,16 +897,16 @@ const list: ImageRef[] = [
   stock("p-fire-shutter", "shutter-red.jpg", "A closed red rolling shutter at a building opening", "Fire Rated Rolling Shutters"),
   stock("p-fire-sliding-door", "installation.jpg", "A technician inspecting a door installation on site", "Fire Rated Sliding Doors"),
 
-  stock("p-gate-sliding", "gates-industrial.jpg", "An industrial site entrance with a large powered gate", "Automatic Sliding Gates"),
+  stock("p-gate-sliding", "gates-industrial.jpg", "A factory floor with yellow safety railings around conveyor lines", "Automatic Sliding Gates"),
   stock("p-gate-telescopic", "gate-metal.jpg", "A black metal gate at a site entrance", "Telescopic Sliding Gates"),
   stock("p-gate-swing", "gate-driveway.jpg", "A gated driveway entrance", "Automatic Swing Gates"),
   stock("p-gate-retractable", "gate-sliding.jpg", "A yellow and black site gate across a vehicle entrance", "Retractable Gates"),
 
-  stock("p-auto-sliding-doors", "entrance-automation.jpg", "Automatic glass entrance doors at a modern building", "Automatic Sliding Glass Doors"),
+  stock("p-auto-sliding-doors", "entrance-automation.jpg", "Glass pivot doors at an office entrance, photographed at night", "Automatic Sliding Glass Doors"),
   stock("p-swing-doors", "industry-healthcare.jpg", "A hospital corridor with doors along it", "Automatic Swing Doors"),
   stock("p-hermetic-doors", "industry-cleanroom.jpg", "Workers in protective suits inside a cleanroom", "Hermetic & Cleanroom Doors"),
 
-  stock("p-dock-leveller", "loading-bay-trailer.jpg", "A trailer positioned at a loading ramp", "Dock Levellers"),
+  stock("p-dock-leveller", "loading-bay-trailer.jpg", "A refrigerated trailer raised on a hydraulic tipping platform outside a warehouse", "Dock Levellers"),
   stock("p-dock-shelter", "loading-bay.jpg", "A row of loading docks on a distribution building", "Dock Shelters & Dock Houses"),
 
   own("p-tripod-turnstile", "HL145.PNG", "A tripod turnstile unit", "Tripod Turnstiles", "contain"),
