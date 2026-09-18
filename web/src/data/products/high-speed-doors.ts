@@ -441,7 +441,13 @@ export const highSpeedDoorProducts: Product[] = [
     ],
     documents: [brochure("High Speed Fold-Up Door"), drawing],
     imageId: "hsd-fold-up-supplied",
-    galleryIds: ["hsd-fold-up-hero", "hsd-fold-up-front", "p-hsd-fold-up"],
+    galleryIds: [
+      "hsd-fold-up-angle",
+      "hsd-fold-up-curtain",
+      "hsd-fold-up-folding",
+      "hsd-fold-up-guide",
+      "hsd-fold-up-drive",
+    ],
     legacyUrls: ["high-speed-fold-up-doors.html"],
   },
 
@@ -950,7 +956,13 @@ export const highSpeedDoorProducts: Product[] = [
     ],
     documents: [brochure("High Speed Rigid / Insulated Door"), drawing],
     imageId: "hsd-rigid-insulated-supplied",
-    galleryIds: ["p-hsd-rigid", "g-hsd-production", "g-hsd-wide-opening"],
+    galleryIds: [
+      "hsd-rigid-angle",
+      "hsd-rigid-panels",
+      "hsd-rigid-guide",
+      "hsd-rigid-drive",
+      "hsd-rigid-section",
+    ],
     legacyUrls: ["high-speed-industrial-door.html"],
   },
 
