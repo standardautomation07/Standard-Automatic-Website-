@@ -1128,6 +1128,54 @@ const list: ImageRef[] = [
     "research/fire-rated-shutter-visual-definition.md",
   ),
 
+  // Fire Rated Sliding Doors — generated gallery views; the hero was attached to
+  // every prompt as the image input. No rating or certification is implied.
+  visualised(
+    "fire-sliding-angle",
+    "fire-safety-doors",
+    "fire-rated-sliding-doors",
+    "angle",
+    "An industrial fire rated sliding door seen at a three-quarter angle inside a warehouse, the silver-grey steel leaf a third open on its bracketed overhead track with trolley hangers, header box, jamb frame, control box and bollards in view",
+    "Fire Rated Sliding Doors — three-quarter view, leaf part open",
+    "research/fire-rated-sliding-door-visual-definition.md",
+  ),
+  visualised(
+    "fire-sliding-panel-section",
+    "fire-safety-doors",
+    "fire-rated-sliding-doors",
+    "panel-section",
+    "A cut sample of a fire rated sliding door panel on a bench: silver-grey painted steel skins on both faces with the rigid polyurethane foam insulation core between them and a galvanised steel edge channel",
+    "Fire Rated Sliding Doors — PUF-insulated panel section",
+    "research/fire-rated-sliding-door-visual-definition.md",
+  ),
+  visualised(
+    "fire-sliding-track",
+    "fire-safety-doors",
+    "fire-rated-sliding-doors",
+    "track",
+    "Looking up at a fire rated sliding door's overhead track: the galvanised track on heavy wall brackets with steel trolley hangers and paired rollers bolted to the top edge of the silver-grey leaf",
+    "Fire Rated Sliding Doors — track and trolley hangers",
+    "research/fire-rated-sliding-door-visual-definition.md",
+  ),
+  visualised(
+    "fire-sliding-closing-end",
+    "fire-safety-doors",
+    "fire-rated-sliding-doors",
+    "closing-end",
+    "The closing end of a fire rated sliding door: the grey header box on the track, the leaf's leading edge meeting the galvanised jamb frame, the floor guide at the base and the wall control box with emergency stop",
+    "Fire Rated Sliding Doors — header box, jamb frame and floor guide",
+    "research/fire-rated-sliding-door-visual-definition.md",
+  ),
+  visualised(
+    "fire-sliding-site",
+    "fire-safety-doors",
+    "fire-rated-sliding-doors",
+    "site",
+    "An industrial fire rated sliding door installed in a light-grey clad compartment wall inside a warehouse, the leaf, overhead track, brackets, header box, control box and bollards all visible",
+    "Fire Rated Sliding Doors — installed in a compartment wall",
+    "research/fire-rated-sliding-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

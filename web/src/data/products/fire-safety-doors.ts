@@ -168,7 +168,13 @@ export const fireSafetyProducts: Product[] = [
       { title: "Fire Rated Sliding Door datasheet", kind: "Datasheet", href: null, note: "In preparation." },
     ],
     imageId: "fire-sliding-supplied",
-    galleryIds: ["p-fire-sliding-door"],
+    galleryIds: [
+      "fire-sliding-angle",
+      "fire-sliding-panel-section",
+      "fire-sliding-track",
+      "fire-sliding-closing-end",
+      "fire-sliding-site",
+    ],
     legacyUrls: ["fire-sliding-door.html"],
   },
 ];
