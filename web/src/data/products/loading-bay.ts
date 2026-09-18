@@ -58,7 +58,7 @@ export const loadingBayProducts: Product[] = [
       { title: "Pit construction drawing", kind: "Technical drawing", href: null, note: "Issued per project so the builder can form the pit correctly." },
     ],
     imageId: "dock-leveller-supplied",
-    galleryIds: [],
+    galleryIds: ["dock-leveller-lip", "dock-leveller-hydraulics", "dock-leveller-bridging", "dock-leveller-controls", "dock-leveller-loading-bay"],
     legacyUrls: ["dock-levellers.html"],
   },
   {
