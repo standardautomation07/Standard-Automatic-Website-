@@ -905,6 +905,54 @@ const list: ImageRef[] = [
     "research/retractable-gate-visual-definition.md",
   ),
 
+  // Telescopic Sliding Gates — generated gallery views; the hero was attached to
+  // every prompt as the image input so the leaves, tracks and operator stay identical.
+  visualised(
+    "gate-telescopic-angle",
+    "automatic-gates",
+    "telescopic-sliding-gates",
+    "angle",
+    "A three-leaf telescopic sliding gate seen from the apron at a three-quarter angle, half open with the anthracite leaves nested side by side on their parallel tracks, the operator at the wall end and the posts in view",
+    "Telescopic Sliding Gates — three-quarter view, leaves nested",
+    "research/telescopic-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-telescopic-leaves",
+    "automatic-gates",
+    "telescopic-sliding-gates",
+    "leaves",
+    "Close-up of the three overlapping leaves of a telescopic sliding gate: anthracite flat-panel leaves side by side on parallel tracks with their frame stiles stepped one behind another and the wheel carriages beneath",
+    "Telescopic Sliding Gates — overlapping leaves",
+    "research/telescopic-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-telescopic-track",
+    "automatic-gates",
+    "telescopic-sliding-gates",
+    "track",
+    "Ground-level close-up of a telescopic gate's three parallel rails in the flush track channel, each leaf's black wheel carriage running on its own rail",
+    "Telescopic Sliding Gates — parallel tracks and carriages",
+    "research/telescopic-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-telescopic-operator",
+    "automatic-gates",
+    "telescopic-sliding-gates",
+    "operator",
+    "The automatic operator of a telescopic sliding gate: a compact grey gear-motor housing on its concrete plinth against the leading leaf, the rack on the leaf's bottom rail running behind it, manual release cover on the front, tracks passing beneath",
+    "Telescopic Sliding Gates — operator and rack",
+    "research/telescopic-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-telescopic-site",
+    "automatic-gates",
+    "telescopic-sliding-gates",
+    "site",
+    "A telescopic sliding gate fully closed across a wide office entrance seen from the road: three anthracite leaves extended end to end between posts with beacons, the operator at the wall and the glass-fronted building behind",
+    "Telescopic Sliding Gates — installed, fully closed",
+    "research/telescopic-gate-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

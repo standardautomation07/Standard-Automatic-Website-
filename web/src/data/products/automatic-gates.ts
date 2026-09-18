@@ -118,7 +118,13 @@ export const automaticGateProducts: Product[] = [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "gate-telescopic-supplied",
-    galleryIds: [],
+    galleryIds: [
+      "gate-telescopic-angle",
+      "gate-telescopic-leaves",
+      "gate-telescopic-track",
+      "gate-telescopic-operator",
+      "gate-telescopic-site",
+    ],
     legacyUrls: ["telescoping-gate.html"],
   },
   {
