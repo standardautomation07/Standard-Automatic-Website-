@@ -1332,6 +1332,34 @@ const list: ImageRef[] = [
     "research/aluminium-shutter-visual-definition.md",
   ),
 
+  visualised(
+    "shutter-insulated-slat-macro",
+    "rolling-shutters",
+    "insulated-double-wall-rolling-shutters",
+    "slat-macro",
+    "Close-up along the curtain of an insulated double-wall rolling shutter: galvanised slats with a convex profile interlocking one above the next, the cut end of each slat showing the two steel skins with the pale foam core between them, warehouse racking soft in the background",
+    "Insulated Rolling Shutter — double-wall slat with foam core",
+    "research/insulated-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-insulated-guide",
+    "rolling-shutters",
+    "insulated-double-wall-rolling-shutters",
+    "guide",
+    "Close-up at one jamb of an insulated rolling shutter: the black steel guide channel with a rubber edge seal gripping the galvanised double-wall curtain and the rubber bottom seal meeting the polished concrete floor",
+    "Insulated Rolling Shutter — guide, edge seal and bottom seal",
+    "research/insulated-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-insulated-cold-store",
+    "rolling-shutters",
+    "insulated-double-wall-rolling-shutters",
+    "cold-store",
+    "A galvanised insulated rolling shutter installed in a white insulated-panel wall of a chilled store, the curtain a third open beneath a stainless hood, with the wall control station at the jamb, yellow-and-black bollards and palletised goods on the floor",
+    "Insulated Rolling Shutter — chilled-store installation",
+    "research/insulated-shutter-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

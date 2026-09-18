@@ -893,7 +893,7 @@ export const rollingShutterProducts: Product[] = [
     related: ["galvanized-steel-rolling-shutters", "high-speed-cold-storage-freezer-door"],
     documents: standardDocs("Insulated Rolling Shutter"),
     imageId: "shutter-insulated-supplied",
-    galleryIds: ["p-shutter-insulated"],
+    galleryIds: ["shutter-insulated-slat-macro", "shutter-insulated-guide", "shutter-insulated-cold-store"],
     facets: { material: ["Aluminium", "GI", "MS"], construction: "Insulated", duty: ["Standard", "Heavy", "Industrial"], operation: ["Manual", "Gear", "Motorized"], performance: ["Insulated"] },
     comparison: { material: "Aluminium, GI or steel", thickness: "Double-wall, core dependent", corrosion: "Material dependent", operation: "Manual, gear or motorised" },
     legacyUrls: ["insulated-rolling-shutters.html"],
