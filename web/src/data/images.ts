@@ -761,6 +761,54 @@ const list: ImageRef[] = [
     "research/polycarbonate-shutter-visual-definition.md",
   ),
 
+  // Automatic Sliding Gates — generated gallery views; the hero was attached to
+  // every prompt as the image input so the gate and operator stay identical.
+  visualised(
+    "gate-sliding-angle",
+    "automatic-gates",
+    "automatic-sliding-gates",
+    "angle",
+    "An automatic sliding gate seen from the driveway at a three-quarter angle, the anthracite slatted leaf a third open and sliding behind the boundary wall, with the operator on its plinth, the rack along the bottom rail and the ground track in view",
+    "Automatic Sliding Gates — three-quarter view, leaf part open",
+    "research/sliding-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-sliding-track",
+    "automatic-gates",
+    "automatic-sliding-gates",
+    "track",
+    "Ground-level close-up of a sliding gate's lower mechanism: the steel ground track flush in the paving, grooved wheels under the gate's bottom rail running on it, and the toothed rack bolted along the rail",
+    "Automatic Sliding Gates — track, wheels and rack",
+    "research/sliding-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-sliding-operator",
+    "automatic-gates",
+    "automatic-sliding-gates",
+    "operator",
+    "The automatic sliding-gate operator, a compact grey housing bolted to a concrete plinth beside the leaf with the rack on the gate's bottom rail running behind it, the manual release cover on the front and the ground track beneath",
+    "Automatic Sliding Gates — operator",
+    "research/sliding-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-sliding-controls",
+    "automatic-gates",
+    "automatic-sliding-gates",
+    "controls",
+    "Control and safety hardware at a sliding gate post: a photocell sensor mounted low on the anthracite post, the access reader plate on the white pillar and a small control enclosure with antenna near the operator",
+    "Automatic Sliding Gates — photocell, reader and control enclosure",
+    "research/sliding-gate-visual-definition.md",
+  ),
+  visualised(
+    "gate-sliding-site",
+    "automatic-gates",
+    "automatic-sliding-gates",
+    "site",
+    "A complete automatic sliding gate installation seen from the street, gate closed: the anthracite slatted leaf between white pillars, the operator on its plinth, the ground track, planting and the modern house behind",
+    "Automatic Sliding Gates — installed entrance",
+    "research/sliding-gate-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

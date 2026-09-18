@@ -56,7 +56,13 @@ export const automaticGateProducts: Product[] = [
       { title: "Gate layout drawing", kind: "Technical drawing", href: null, note: "Produced per project once the opening and side-run are surveyed." },
     ],
     imageId: "gate-sliding-supplied",
-    galleryIds: [],
+    galleryIds: [
+      "gate-sliding-angle",
+      "gate-sliding-track",
+      "gate-sliding-operator",
+      "gate-sliding-controls",
+      "gate-sliding-site",
+    ],
     legacyUrls: ["sliding-gate.html"],
   },
   {
