@@ -1049,6 +1049,54 @@ const list: ImageRef[] = [
     "research/aluminium-garage-door-visual-definition.md",
   ),
 
+  // Residential Garage Doors — generated gallery views; the hero was attached to
+  // every prompt as the image input so the door stays identical.
+  visualised(
+    "garage-residential-angle",
+    "industrial-doors",
+    "residential-garage-doors",
+    "angle",
+    "A silver-grey insulated steel sectional garage door seen from the driveway at a three-quarter angle, closed, with its fine horizontal groove lines and a row of four black-framed windows, on a contemporary house at dusk",
+    "Residential Garage Doors — three-quarter view, closed",
+    "research/residential-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-residential-panels",
+    "industrial-doors",
+    "residential-garage-doors",
+    "panels",
+    "Square-on close-up of a residential garage door face: two flush silver-grey steel sections meeting along a level rounded joint, each with fine horizontal groove lines, and the lower edge of the black-framed windows above",
+    "Residential Garage Doors — section joint and surface finish",
+    "research/residential-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-residential-track",
+    "industrial-doors",
+    "residential-garage-doors",
+    "track",
+    "Inside view at the jamb of a residential garage door: a galvanised end hinge on the section edge with its roller in the powder-coated vertical track, an intermediate hinge across the joint, the black jamb seal and the track curving overhead",
+    "Residential Garage Doors — hinge, roller and track",
+    "research/residential-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-residential-operator",
+    "industrial-doors",
+    "residential-garage-doors",
+    "operator",
+    "Inside view of a residential garage door's drive: the ceiling-mounted operator at the end of its drive rail, the trolley arm to the top section with the release cord, the torsion spring above the door head and the horizontal tracks, with the silver-grey door and its window row below",
+    "Residential Garage Doors — operator, rail and torsion spring",
+    "research/residential-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-residential-site",
+    "industrial-doors",
+    "residential-garage-doors",
+    "site",
+    "A contemporary house at dusk with one silver-grey sectional garage door two-thirds open, its upper sections travelling overhead into the lit empty garage while the lower sections remain in the tracks, and the second door closed beside it",
+    "Residential Garage Doors — door opening on a contemporary house",
+    "research/residential-garage-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

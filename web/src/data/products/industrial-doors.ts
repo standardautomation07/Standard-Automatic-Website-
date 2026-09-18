@@ -201,7 +201,13 @@ export const industrialDoorProducts: Product[] = [
       { title: "Residential Garage Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "garage-residential-supplied",
-    galleryIds: ["p-garage-residential"],
+    galleryIds: [
+      "garage-residential-angle",
+      "garage-residential-panels",
+      "garage-residential-track",
+      "garage-residential-operator",
+      "garage-residential-site",
+    ],
     legacyUrls: ["residential-garage-door.html"],
   },
 ];
