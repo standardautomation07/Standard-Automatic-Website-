@@ -87,7 +87,11 @@ export const fireSafetyProducts: Product[] = [
       { title: "Fire Rated Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation." },
     ],
     imageId: "fire-shutter-supplied",
-    galleryIds: ["p-fire-shutter"],
+    galleryIds: [
+      "fire-shutter-installed",
+      "fire-shutter-guide-detail",
+      "fire-shutter-industrial-application",
+    ],
     // Genuinely part of the rolling shutter range, but its page lives here
     // with the rest of the life-safety products. Cross-listed onto Rolling
     // Shutters rather than duplicated: one product, one URL.

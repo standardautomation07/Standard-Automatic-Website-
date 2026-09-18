@@ -1097,6 +1097,37 @@ const list: ImageRef[] = [
     "research/residential-garage-door-visual-definition.md",
   ),
 
+  // Fire Rated Rolling Shutters — generated gallery views built to the heavy
+  // fire-shutter construction in the definition; the supplied MS shutter
+  // reference fixed the drive. No rating or certification is implied.
+  visualised(
+    "fire-shutter-installed",
+    "fire-safety-doors",
+    "fire-rated-rolling-shutters",
+    "installed",
+    "A fire rated rolling shutter closed across a large opening in a concrete compartment wall inside an industrial building: flat galvanised double-skin slats, the curtain coil on an exposed barrel between bolted steel end plates, heavy galvanised guides, the side motor with hand chain, a control box and yellow-and-black bollards",
+    "Fire Rated Rolling Shutters — installed, closed",
+    "research/fire-rated-shutter-visual-definition.md",
+  ),
+  visualised(
+    "fire-shutter-guide-detail",
+    "fire-safety-doors",
+    "fire-rated-rolling-shutters",
+    "guide-detail",
+    "Close-up at the base of a fire rated rolling shutter guide: the heavy galvanised angle guide anchored to the concrete wall with large bolts, the flat galvanised slats with riveted end locks entering the guide, and the angle-section bottom bar resting on the floor",
+    "Fire Rated Rolling Shutters — guide and bottom bar detail",
+    "research/fire-rated-shutter-visual-definition.md",
+  ),
+  visualised(
+    "fire-shutter-industrial-application",
+    "fire-safety-doors",
+    "fire-rated-rolling-shutters",
+    "industrial-application",
+    "A fire rated rolling shutter closed in a long concrete compartment wall dividing two production areas of a factory, with the curtain coil and end plates at the head, the side motor and chain, a control box, an alarm bell and a sprinkler pipe on the wall",
+    "Fire Rated Rolling Shutters — fire compartment wall application",
+    "research/fire-rated-shutter-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",
