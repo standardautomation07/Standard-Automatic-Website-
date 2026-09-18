@@ -288,7 +288,12 @@ export const rollingShutterProducts: Product[] = [
     related: ["ms-solid-rolling-shutters", "galvalume-rolling-shutters"],
     documents: standardDocs("GI Solid Rolling Shutter"),
     imageId: "shutter-gi-solid-supplied",
-    galleryIds: ["shutter-gi-solid-elevation", "shutter-gi-solid-powered", "p-shutter-galvanized"],
+    galleryIds: [
+      "shutter-gi-solid-slat-macro",
+      "shutter-gi-solid-guide",
+      "shutter-gi-solid-barrel",
+      "shutter-gi-solid-factory",
+    ],
     facets: { material: ["GI"], construction: "Solid", duty: ["Standard", "Heavy"], operation: ["Manual", "Gear", "Motorized"], performance: ["Standard"] },
     comparison: { material: "Galvanized steel", thickness: "0.8–1.2 mm", corrosion: "Good", operation: "Manual, gear or motorised" },
     legacyUrls: ["g-i-rolling-shutters.html"],

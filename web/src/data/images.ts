@@ -1254,6 +1254,45 @@ const list: ImageRef[] = [
     "research/swing-door-visual-definition.md",
   ),
 
+  // GI Solid Rolling Shutter — generated engineering views; the hero fixed the
+  // galvanised curtain and the supplied MS reference fixed the drive.
+  visualised(
+    "shutter-gi-solid-slat-macro",
+    "rolling-shutters",
+    "galvanized-steel-rolling-shutters",
+    "slat-macro",
+    "Macro view of a galvanised steel rolling shutter curtain: four curved interlocking slats with the matte hot-dip galvanised zinc surface and its faint spangle, the rolled interlock joints between slats and the crisp folded profile edges",
+    "GI Solid Rolling Shutter — galvanised slat macro",
+    "research/gi-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-gi-solid-guide",
+    "rolling-shutters",
+    "galvanized-steel-rolling-shutters",
+    "guide",
+    "Close-up at one jamb of a galvanised rolling shutter in a factory: the heavy galvanised angle guide bolted to the steel column, the curtain of interlocked slats entering the guide channel, the galvanised angle bottom rail on the floor and the hand chain and pull cords beside it",
+    "GI Solid Rolling Shutter — angle guide and bottom rail",
+    "research/gi-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-gi-solid-barrel",
+    "rolling-shutters",
+    "galvanized-steel-rolling-shutters",
+    "barrel",
+    "The upper mechanism of a galvanised rolling shutter seen from below: the galvanised curtain wound around the steel barrel, the barrel bearing on a galvanised end plate bolted to the column bracket, and the geared side motor with hand chain on the end plate",
+    "GI Solid Rolling Shutter — barrel, end plate and drive",
+    "research/gi-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-gi-solid-factory",
+    "rolling-shutters",
+    "galvanized-steel-rolling-shutters",
+    "factory",
+    "A large galvanised rolling shutter installed on a factory bay opening in a pre-engineered steel shed, the curtain two-thirds down, with angle guides, the side motor and chain, yellow-and-black bollards and yellow floor markings",
+    "GI Solid Rolling Shutter — factory bay installation",
+    "research/gi-shutter-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",
