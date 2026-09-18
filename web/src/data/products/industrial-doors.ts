@@ -139,7 +139,13 @@ export const industrialDoorProducts: Product[] = [
       { title: "Aluminium Garage Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "garage-aluminium-supplied",
-    galleryIds: ["p-garage-aluminium"],
+    galleryIds: [
+      "garage-aluminium-angle",
+      "garage-aluminium-section",
+      "garage-aluminium-track",
+      "garage-aluminium-operator",
+      "garage-aluminium-site",
+    ],
     legacyUrls: ["garage-door.html"],
   },
   {

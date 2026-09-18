@@ -1001,6 +1001,54 @@ const list: ImageRef[] = [
     "research/sectional-door-visual-definition.md",
   ),
 
+  // Aluminium Garage Doors — generated gallery views; the hero was attached to
+  // every prompt as the image input so the door stays identical.
+  visualised(
+    "garage-aluminium-angle",
+    "industrial-doors",
+    "aluminium-garage-doors",
+    "angle",
+    "A full-view glazed aluminium sectional garage door seen from the driveway at a three-quarter angle, closed: four rows of satin silver aluminium sections with slim mullions and clear glazing on a modern residential garage at dusk",
+    "Aluminium Garage Doors — three-quarter view, closed",
+    "research/aluminium-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-aluminium-section",
+    "industrial-doors",
+    "aluminium-garage-doors",
+    "section",
+    "Close-up of an aluminium garage door at a section joint: satin silver anodised aluminium rails meeting along a fine joint, a vertical mullion with glazing beads holding clear glass either side",
+    "Aluminium Garage Doors — aluminium section and glazing detail",
+    "research/aluminium-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-aluminium-track",
+    "industrial-doors",
+    "aluminium-garage-doors",
+    "track",
+    "Inside view at the jamb of an aluminium garage door: a galvanised end hinge on the aluminium section edge with its roller in the powder-coated vertical track, the hinge across the section joint, and the track curving overhead",
+    "Aluminium Garage Doors — hinge, roller and track",
+    "research/aluminium-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-aluminium-operator",
+    "industrial-doors",
+    "aluminium-garage-doors",
+    "operator",
+    "Inside view of an aluminium garage door's drive: the ceiling-mounted operator on its brackets, the drive rail and trolley arm connected to the top section, the torsion spring above the door head and the horizontal tracks, with the clear-glazed door below",
+    "Aluminium Garage Doors — operator, rail and torsion spring",
+    "research/aluminium-garage-door-visual-definition.md",
+  ),
+  visualised(
+    "garage-aluminium-site",
+    "industrial-doors",
+    "aluminium-garage-doors",
+    "site",
+    "A glazed aluminium garage door two-thirds open at dusk, the upper sections travelling overhead into the garage while the lower sections remain in the vertical tracks, the lit empty garage visible through the opening",
+    "Aluminium Garage Doors — door opening overhead",
+    "research/aluminium-garage-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",
