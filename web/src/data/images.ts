@@ -1176,6 +1176,45 @@ const list: ImageRef[] = [
     "research/fire-rated-sliding-door-visual-definition.md",
   ),
 
+  // Automatic Sliding Glass Doors — generated gallery views; the hero was attached
+  // to every prompt as the image input so the door stays identical.
+  visualised(
+    "auto-sliding-doors-angle",
+    "entrance-automation",
+    "automatic-sliding-glass-doors",
+    "angle",
+    "A bi-parting automatic sliding glass door at an office lobby entrance seen from a three-quarter angle, the two framed glass leaves parted half open beneath the satin-silver header with its activation sensor, fixed side lights either side",
+    "Automatic Sliding Glass Doors — three-quarter view, leaves open",
+    "research/sliding-glass-door-visual-definition.md",
+  ),
+  visualised(
+    "auto-sliding-doors-frame",
+    "entrance-automation",
+    "automatic-sliding-glass-doors",
+    "frame",
+    "Close-up of an automatic sliding glass door's meeting stile: the slim satin-silver aluminium frame profile with the toughened glass seated in its gasket, the vertical brush seal on the stile and the floor guide track below",
+    "Automatic Sliding Glass Doors — leaf frame and glazing detail",
+    "research/sliding-glass-door-visual-definition.md",
+  ),
+  visualised(
+    "auto-sliding-doors-sensor",
+    "entrance-automation",
+    "automatic-sliding-glass-doors",
+    "sensor",
+    "The activation sensor of an automatic sliding glass door: a small black sensor unit with its dark lens mounted on the face of the satin-silver header above the sliding leaves",
+    "Automatic Sliding Glass Doors — activation sensor on the header",
+    "research/sliding-glass-door-visual-definition.md",
+  ),
+  visualised(
+    "auto-sliding-doors-site",
+    "entrance-automation",
+    "automatic-sliding-glass-doors",
+    "site",
+    "An office lobby entrance in the evening with the automatic sliding glass door parting as a person walks through hands-free, the framed glass leaves, header and side lights lit warmly from inside",
+    "Automatic Sliding Glass Doors — hands-free entry at an office lobby",
+    "research/sliding-glass-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

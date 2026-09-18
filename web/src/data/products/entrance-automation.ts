@@ -74,7 +74,12 @@ export const entranceAutomationProducts: Product[] = [
       { title: "Header and threshold detail", kind: "Technical drawing", href: null, note: "Produced per project once the opening and header depth are surveyed." },
     ],
     imageId: "auto-sliding-doors-supplied",
-    galleryIds: [],
+    galleryIds: [
+      "auto-sliding-doors-angle",
+      "auto-sliding-doors-frame",
+      "auto-sliding-doors-sensor",
+      "auto-sliding-doors-site",
+    ],
     legacyUrls: ["sliding-glass-door.html"],
   },
   {
