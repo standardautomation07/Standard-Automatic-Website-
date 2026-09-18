@@ -77,7 +77,13 @@ export const industrialDoorProducts: Product[] = [
       { title: "Lift configuration drawing", kind: "Technical drawing", href: null, note: "Produced per project once headroom and side room are surveyed." },
     ],
     imageId: "sectional-overhead-supplied",
-    galleryIds: ["p-sectional-overhead"],
+    galleryIds: [
+      "sectional-overhead-angle",
+      "sectional-overhead-panels",
+      "sectional-overhead-track",
+      "sectional-overhead-mechanism",
+      "sectional-overhead-site",
+    ],
     legacyUrls: ["overhead-sectional-doors.html", "sectional-door.html"],
   },
   {

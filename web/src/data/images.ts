@@ -953,6 +953,54 @@ const list: ImageRef[] = [
     "research/telescopic-gate-visual-definition.md",
   ),
 
+  // Industrial Sectional Overhead Doors — generated gallery views; the hero was
+  // attached to every prompt as the image input so the door stays identical.
+  visualised(
+    "sectional-overhead-angle",
+    "industrial-doors",
+    "industrial-sectional-overhead-doors",
+    "angle",
+    "An industrial sectional overhead door seen from inside the warehouse at a three-quarter angle, closed: five white insulated panels with a row of four windows, galvanised hinges and vertical tracks, the torsion shaft and black springs above the head, the control box and bollards",
+    "Industrial Sectional Overhead Doors — three-quarter view, closed",
+    "research/sectional-door-visual-definition.md",
+  ),
+  visualised(
+    "sectional-overhead-panels",
+    "industrial-doors",
+    "industrial-sectional-overhead-doors",
+    "panels",
+    "Close-up of a sectional door panel joint: smooth white insulated panels meeting along the rounded finger-safe joint, a galvanised intermediate hinge bolted across it and the edge of a black-framed window",
+    "Industrial Sectional Overhead Doors — panel joint and hinge",
+    "research/sectional-door-visual-definition.md",
+  ),
+  visualised(
+    "sectional-overhead-track",
+    "industrial-doors",
+    "industrial-sectional-overhead-doors",
+    "track",
+    "Close-up at the jamb of a sectional door: the galvanised end hinge with its roller running in the vertical track, the panel edges against the black jamb seal, and the track curving overhead",
+    "Industrial Sectional Overhead Doors — track, roller and seal",
+    "research/sectional-door-visual-definition.md",
+  ),
+  visualised(
+    "sectional-overhead-mechanism",
+    "industrial-doors",
+    "industrial-sectional-overhead-doors",
+    "mechanism",
+    "The overhead mechanism of an industrial sectional door: galvanised torsion shaft in its brackets, black torsion springs, the cable drum with lifting cable, and the door operator on the shaft end with its chain override",
+    "Industrial Sectional Overhead Doors — torsion shaft, springs and operator",
+    "research/sectional-door-visual-definition.md",
+  ),
+  visualised(
+    "sectional-overhead-site",
+    "industrial-doors",
+    "industrial-sectional-overhead-doors",
+    "site",
+    "An industrial sectional door two-thirds open seen from inside the warehouse, the upper panels travelling onto the horizontal overhead tracks under the roof while the lower panels remain in the vertical tracks, the loading yard visible through the opening",
+    "Industrial Sectional Overhead Doors — door opening overhead",
+    "research/sectional-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",
