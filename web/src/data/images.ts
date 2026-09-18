@@ -1215,6 +1215,45 @@ const list: ImageRef[] = [
     "research/sliding-glass-door-visual-definition.md",
   ),
 
+  // Automatic Swing Doors — generated gallery views; the hero was attached to
+  // every prompt as the image input so the doorset and operators stay identical.
+  visualised(
+    "swing-doors-angle",
+    "entrance-automation",
+    "automatic-swing-doors",
+    "angle",
+    "A pair of glazed aluminium automatic swing doors at an office lobby seen from a three-quarter angle, both leaves swung open by the surface-mounted operators and articulated arms on the transom, with stainless pull handles and butt hinges",
+    "Automatic Swing Doors — three-quarter view, leaves open",
+    "research/swing-door-visual-definition.md",
+  ),
+  visualised(
+    "swing-doors-hinge",
+    "entrance-automation",
+    "automatic-swing-doors",
+    "hinge",
+    "Close-up of the hinge side of an automatic swing door: the aluminium jamb, a satin stainless butt hinge carrying the framed glass leaf, the leaf frame profile and glass edge, and the operator's arm pivot above",
+    "Automatic Swing Doors — hinge, frame and arm pivot",
+    "research/swing-door-visual-definition.md",
+  ),
+  visualised(
+    "swing-doors-sensors",
+    "entrance-automation",
+    "automatic-swing-doors",
+    "sensors",
+    "Activation and safety hardware of an automatic swing door: the black activation sensor on the transom-mounted operator, a presence sensor strip on the top rail of the leaf, and a plain stainless push plate on the wall beside the frame",
+    "Automatic Swing Doors — sensors and push plate",
+    "research/swing-door-visual-definition.md",
+  ),
+  visualised(
+    "swing-doors-site",
+    "entrance-automation",
+    "automatic-swing-doors",
+    "site",
+    "An office lobby entrance with the automatic swing doors opening hands-free as a person walks in, the operators and arms visible on the transom, glazed leaves in aluminium frames",
+    "Automatic Swing Doors — hands-free entry at an office lobby",
+    "research/swing-door-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

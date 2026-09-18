@@ -137,7 +137,12 @@ export const entranceAutomationProducts: Product[] = [
       { title: "Automatic Swing Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "swing-doors-supplied",
-    galleryIds: [],
+    galleryIds: [
+      "swing-doors-angle",
+      "swing-doors-hinge",
+      "swing-doors-sensors",
+      "swing-doors-site",
+    ],
   },
   {
     id: "hermetic-cleanroom-doors",
