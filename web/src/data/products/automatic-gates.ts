@@ -175,7 +175,13 @@ export const automaticGateProducts: Product[] = [
       { title: "Automatic Gate range brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "gate-swing-supplied",
-    galleryIds: ["p-gate-swing"],
+    galleryIds: [
+      "gate-swing-angle",
+      "gate-swing-operator",
+      "gate-swing-hinge",
+      "gate-swing-controls",
+      "gate-swing-site",
+    ],
     legacyUrls: ["swing-gate.html"],
   },
   {
@@ -232,7 +238,13 @@ export const automaticGateProducts: Product[] = [
       { title: "Retractable Gate datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "gate-retractable-supplied",
-    galleryIds: ["p-gate-retractable"],
+    galleryIds: [
+      "gate-retractable-angle",
+      "gate-retractable-lattice",
+      "gate-retractable-wheels",
+      "gate-retractable-head-unit",
+      "gate-retractable-site",
+    ],
     legacyUrls: ["retractable-gates.html"],
   },
 ];
