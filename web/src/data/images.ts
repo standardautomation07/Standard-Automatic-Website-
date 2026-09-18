@@ -1293,6 +1293,45 @@ const list: ImageRef[] = [
     "research/gi-shutter-visual-definition.md",
   ),
 
+  // Aluminium Rolling Shutter — generated engineering views built to the hero's
+  // satin-anodised extruded curtain.
+  visualised(
+    "shutter-aluminium-profile",
+    "rolling-shutters",
+    "aluminium-rolling-shutters",
+    "profile",
+    "Five extruded double-wall aluminium rolling shutter slats seen end-on on a neutral background, each section showing its two walls and hollow chamber and the hook interlock that joins it to the next, in a satin anodised finish",
+    "Aluminium Rolling Shutter — extruded slat profile",
+    "research/aluminium-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-aluminium-guide",
+    "rolling-shutters",
+    "aluminium-rolling-shutters",
+    "guide",
+    "Close-up at one jamb of an aluminium rolling shutter: the satin anodised guide channel with black pile seals gripping the curtain edge, the interlocked double-wall slats entering the guide and the aluminium bottom rail with its rubber seal at the floor",
+    "Aluminium Rolling Shutter — guide, pile seals and bottom rail",
+    "research/aluminium-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-aluminium-barrel",
+    "rolling-shutters",
+    "aluminium-rolling-shutters",
+    "barrel",
+    "The upper mechanism of an aluminium rolling shutter with the hood cover off: the anodised curtain wound around the octagonal barrel on aluminium end plates, the tubular motor cable at the barrel end and the wall control station below",
+    "Aluminium Rolling Shutter — barrel and tubular motor",
+    "research/aluminium-shutter-visual-definition.md",
+  ),
+  visualised(
+    "shutter-aluminium-showroom",
+    "rolling-shutters",
+    "aluminium-rolling-shutters",
+    "showroom",
+    "A satin anodised aluminium rolling shutter installed on a stone-clad showroom entrance, the curtain a third open beneath the anodised hood between aluminium guides, with yellow-and-black bollards",
+    "Aluminium Rolling Shutter — showroom installation",
+    "research/aluminium-shutter-visual-definition.md",
+  ),
+
   supplied(
     "hsd-roll-up-supplied",
     "high-speed-doors",

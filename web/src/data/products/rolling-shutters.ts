@@ -434,7 +434,12 @@ export const rollingShutterProducts: Product[] = [
     related: ["stainless-steel-rolling-shutters", "polycarbonate-rolling-shutters"],
     documents: standardDocs("Aluminium Rolling Shutter"),
     imageId: "shutter-aluminium-supplied",
-    galleryIds: ["shutter-aluminium-powered", "p-shutter-aluminium"],
+    galleryIds: [
+      "shutter-aluminium-profile",
+      "shutter-aluminium-guide",
+      "shutter-aluminium-barrel",
+      "shutter-aluminium-showroom",
+    ],
     facets: { material: ["Aluminium"], construction: "Solid", duty: ["Standard", "Heavy"], operation: ["Manual", "Gear", "Motorized", "Smart"], performance: ["Standard"] },
     comparison: { material: "Aluminium", thickness: "Profile dependent", corrosion: "High", operation: "Manual, gear or motorised" },
     legacyUrls: ["aluminium-rolling-shutters.html", "aluminium-single-wall.html"],
