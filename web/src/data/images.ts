@@ -260,7 +260,7 @@ const list: ImageRef[] = [
     "rolling-shutters",
     "vision-window-rolling-shutters",
     "hero",
-    "A vision rolling shutter closed across a premium retail storefront at dusk: satin silver-grey curved steel slats, solid above and below, with an eye-level band of slats punched with rows of small window openings with clear inserts through which the lit shop display shows, between matching guides beneath a plain hood with a solid bottom rail and a small control station at the jamb",
+    "European exterior window roller shutters on a modern white-rendered house: a large ground-floor window with its anthracite aluminium roller shutter lowered two-thirds, slim foam-filled slats running in aluminium guide rails beneath a compact shutter box above the window, warm light beneath the curtain, a neighbouring window with its shutter raised and an upper window fully closed, in soft evening light",
     "Vision / Window Rolling Shutter — lead image",
     "research/vision-shutter-visual-definition.md",
   ),
