@@ -354,13 +354,14 @@ const list: ImageRef[] = [
     "MS Solid Rolling Shutter — lead image",
     "research/ms-solid-shutter-visual-definition.md",
   ),
-  supplied(
-    "hsd-cold-store-supplied",
+  visualised(
+    "hsd-cold-store-hero",
     "high-speed-doors",
     "high-speed-cold-storage-freezer-door",
-    "supplied",
-    "A blue high speed cold storage door closed across an opening into a chilled warehouse, frost forming along the guides and the sill, with a full-width clear vision band showing the racking and handling equipment beyond, a stainless head box carrying the company mark and a control panel at the jamb",
+    "hero",
+    "A royal-blue high speed insulated cold storage door lowered to about two-thirds across an opening in the white insulated-panel wall of a chilled warehouse, its quilted curtain with a full-width clear vision band running in stainless guide columns with thick black thermal seals beneath a plain stainless hood, cool-lit racking and a light haze of cold air visible beneath the insulated bottom bar, a line of frost along the sill, a wall control station with display and red emergency stop beside the guide and yellow-and-black bollards",
     "High Speed Cold Storage / Freezer Door — lead image",
+    "research/cold-storage-door-visual-definition.md",
   ),
   supplied(
     "hsd-cleanroom-supplied",

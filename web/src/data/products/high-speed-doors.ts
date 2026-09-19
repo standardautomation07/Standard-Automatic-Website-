@@ -1310,7 +1310,7 @@ export const highSpeedDoorProducts: Product[] = [
       "insulated-double-wall-rolling-shutters",
     ],
     documents: [brochure("High Speed Cold Storage / Freezer Door"), drawing],
-    imageId: "hsd-cold-store-supplied",
+    imageId: "hsd-cold-store-hero",
     galleryIds: ["p-hsd-cold-store", "g-hsd-cold-chain", "g-hsd-food"],
   },
 ];
