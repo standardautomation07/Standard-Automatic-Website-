@@ -3,8 +3,9 @@
 Governs the generated lead image for the Stainless Steel Rolling Shutter
 product page. The original supplied hero was replaced on 2026-09-19 by a
 generated lead image, `stainless-steel-rolling-shutters-hero.webp`
-(Google Flow, Nano Banana Pro, 2K), in the clean European industrial-door
-photography style adopted across the shutter range.
+(Google Flow, Nano Banana Pro, 2K), to a premium architectural brief: the shutter about 70 percent closed on
+the entrance of a premium automobile showroom at dusk, warm interior light
+beneath the curtain, cinematic but natural lighting.
 
 ## The product
 
@@ -17,8 +18,10 @@ photography style adopted across the shutter range.
 
 ## Setting
 
-Hygienic facility: white insulated wall panels on a concrete plinth,
-clean paved forecourt, soft overcast daylight. No people, no vehicles.
+Premium contemporary architecture — showroom, corporate or hospitality
+entrance: architectural concrete, stone and large glass, cantilevered
+canopy, polished stone paving, warm interior light. No people, no
+vehicles, no residential garage styling.
 
 ## Rules
 

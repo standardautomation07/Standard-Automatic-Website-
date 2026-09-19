@@ -332,7 +332,7 @@ const list: ImageRef[] = [
     "rolling-shutters",
     "stainless-steel-rolling-shutters",
     "hero",
-    "A brushed stainless steel rolling shutter closed across the entrance of a white-panelled processing facility, its curved satin-grained slats running between stainless guides beneath a plain stainless hood, with a wall control station and red emergency stop at the jamb, yellow-and-black bollards and a clean paved forecourt",
+    "A brushed stainless steel rolling shutter lowered to about two-thirds across the wide entrance of a premium automobile showroom at dusk, its satin-grained curved slats catching soft reflections between stainless guide channels beneath a plain stainless hood, warm showroom light spilling beneath the curtain onto dark polished stone paving under a deep cantilevered concrete canopy",
     "Stainless Steel Rolling Shutter — lead image",
     "research/stainless-shutter-visual-definition.md",
   ),
