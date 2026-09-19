@@ -264,14 +264,14 @@ const list: ImageRef[] = [
     "Vision / Window Rolling Shutter — lead image",
     "aspect-[5/3]",
   ),
-  supplied(
-    "shutter-gi-solid-supplied",
+  visualised(
+    "shutter-gi-solid-hero",
     "rolling-shutters",
     "galvanized-steel-rolling-shutters",
-    "supplied",
-    "A galvanized steel rolling shutter closed across an industrial opening, its spangled slats running the full width between side guides beneath a plain galvanized head box, with a two-button control station and emergency stop on the wall alongside and black and yellow bollards in front of the opening",
+    "hero",
+    "A galvanised steel rolling shutter closed across the loading opening of a light-grey clad factory shed, its spangled curved slats running between plain galvanised channel guides beneath a square galvanised hood, with a wall control station and red emergency stop at the jamb, yellow-and-black bollards and a wet concrete forecourt",
     "GI Solid Rolling Shutter — lead image",
-    "aspect-[6/5]",
+    "research/gi-shutter-visual-definition.md",
   ),
   supplied(
     "shutter-insulated-supplied",
