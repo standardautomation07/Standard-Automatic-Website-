@@ -118,7 +118,7 @@ export const accessControlProducts: Product[] = [
       { title: "Pedestrian Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "flap-barrier-supplied",
-    galleryIds: ["p-flap-barrier", "g-flap-e242", "g-flap-h249", "g-flap-y248"],
+    galleryIds: ["flap-barrier-lane-open", "flap-barrier-wing", "flap-barrier-sensors", "flap-barrier-wide-lane", "flap-barrier-reader-cap"],
     legacyUrls: ["flap-barrier.html"],
   },
   {
