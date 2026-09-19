@@ -2048,7 +2048,7 @@ const list: ImageRef[] = [
     "high-speed-doors",
     "high-speed-fold-up-door",
     "hero",
-    "A royal-blue high speed fold-up door caught mid-travel on the loading opening of a light-grey clad factory: the lower curtain with its wind-bar ridges, two black lifting straps and a row of three vision windows still hanging between the black guide columns, while the raised part is gathered into horizontal folds stacked beneath the plain stainless hood, with a wall control station and red emergency stop beside the guide and yellow-and-black bollards on the concrete apron",
+    "A royal-blue high speed fold-up door half open on the loading opening of a light-grey clad factory: the lower curtain with its wind-bar ridges, two black lifting straps and a row of three vision windows spanning the full width between the black guide columns, the raised half gathered into a full-width stack of horizontal folds beneath the plain stainless hood, warehouse pallets visible below the bottom bar, a wall control station with red emergency stop beside the guide and yellow-and-black bollards on the concrete apron",
     "High Speed Fold-Up Door — lead image",
     "research/fold-up-door-visual-definition.md",
   ),
