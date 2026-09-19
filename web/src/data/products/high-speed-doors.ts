@@ -261,7 +261,7 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-cold-storage-freezer-door",
     ],
     documents: [brochure("High Speed Roll-Up Door"), drawing],
-    imageId: "hsd-roll-up-supplied",
+    imageId: "hsd-roll-up-hero",
     galleryIds: [
       "hsd-roll-up-angle",
       "hsd-roll-up-operational",

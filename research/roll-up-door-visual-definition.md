@@ -58,3 +58,12 @@ roof structure. Clean commercial product photography.
 | `-detail` | close-up of the side guide, brush seal and vision-band edge strip | curtain and guide detail |
 | `-controls` | close-up of the control box and bollard beside the door | operator controls |
 | `-application` | wide view of the door dividing two warehouse zones | installed application |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`high-speed-roll-up-door-hero.webp` (Google Flow, Nano Banana Pro, 2K):
+the door about 70 percent closed on a wide internal warehouse opening, to
+the premium architectural brief adopted across the range. The hero no
+longer carries a company mark on the hood.

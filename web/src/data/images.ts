@@ -1682,13 +1682,14 @@ const list: ImageRef[] = [
     "research/windproof-shutter-visual-definition.md",
   ),
 
-  supplied(
-    "hsd-roll-up-supplied",
+  visualised(
+    "hsd-roll-up-hero",
     "high-speed-doors",
     "high-speed-roll-up-door",
-    "supplied",
-    "A blue high speed roll-up door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
+    "hero",
+    "A royal-blue high speed roll-up door lowered to about two-thirds across a wide internal warehouse opening, its taut PVC curtain with a full-width clear vision band running between brushed stainless guide columns beneath a plain stainless hood, the lit dispatch hall visible beneath the bottom rail, a wall control station with display and red emergency stop beside the guide and yellow-and-black bollards on the polished concrete floor",
     "High Speed Roll-Up Door — lead image",
+    "research/roll-up-door-visual-definition.md",
   ),
   visualised(
     "hsd-roll-up-detail",
