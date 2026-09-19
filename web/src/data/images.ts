@@ -368,7 +368,7 @@ const list: ImageRef[] = [
     "high-speed-doors",
     "high-speed-cleanroom-hygiene-door",
     "hero",
-    "A royal-blue high speed cleanroom door lowered to about two-thirds across an opening in the white flush-panel wall of a pharmaceutical clean corridor, its smooth seamless curtain with a full-width clear vision band running in fully enclosed brushed stainless guide columns beneath a sloped-top stainless hood, the bright clean area and stainless equipment visible beneath the bottom bar, a stainless control station with red emergency stop beside the guide and a pale epoxy floor with coved skirting",
+    "A royal-blue high speed roll-up hygiene door lowered to about two-thirds across an opening in the white flush-panel wall of a pharmaceutical clean corridor, its smooth seamless curtain hanging from the sloped-top stainless hood with a full-width clear vision band, held in fully enclosed brushed stainless guide columns with stainless bollards at their feet, the bright clean area and stainless equipment visible beneath the bottom bar, a stainless control station with red emergency stop beside the guide and a pale epoxy floor",
     "High Speed Cleanroom / Hygiene Door — lead image",
     "research/cleanroom-door-visual-definition.md",
   ),
