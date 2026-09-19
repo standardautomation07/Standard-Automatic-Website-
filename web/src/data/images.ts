@@ -309,14 +309,14 @@ const list: ImageRef[] = [
     "Rolling Grille — lead image",
     "research/grille-shutter-visual-definition.md",
   ),
-  supplied(
-    "shutter-polycarbonate-supplied",
+  visualised(
+    "shutter-polycarbonate-hero",
     "rolling-shutters",
     "polycarbonate-rolling-shutters",
-    "supplied",
-    "A transparent polycarbonate rolling shutter closed across a showroom entrance, its clear slats separated by aluminium interlocks so the lit interior shows straight through, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the polycarbonate slat profile",
-    "Transparent Polycarbonate Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "hero",
+    "A transparent polycarbonate rolling shutter closed across the entrance of a premium boutique at dusk, its clear curved slats joined by slim aluminium profiles showing the lit interior through the curtain, between stainless guides beneath a brushed stainless hood with an aluminium bottom rail on a polished stone floor",
+    "Transparent Rolling Shutter — lead image",
+    "research/polycarbonate-shutter-visual-definition.md",
   ),
   visualised(
     "shutter-perforated-hero",

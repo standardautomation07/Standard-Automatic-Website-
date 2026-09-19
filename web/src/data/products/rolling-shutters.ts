@@ -811,7 +811,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["vision-window-rolling-shutters", "grille-rolling-shutters", "aluminium-rolling-shutters"],
     documents: standardDocs("Transparent Polycarbonate Rolling Shutter"),
-    imageId: "shutter-polycarbonate-supplied",
+    imageId: "shutter-polycarbonate-hero",
     galleryIds: [
       "shutter-polycarbonate-angle",
       "shutter-polycarbonate-slats",

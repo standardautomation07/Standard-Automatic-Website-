@@ -47,3 +47,12 @@ by installation photography under the same filenames when it exists.
 | `-slats` | extreme close-up: clear slat and aluminium connector |
 | `-bottom-rail` | guide, bottom rail, lock, chain and cords |
 | `-drive` | motor, hand chain, pull cords, control box |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`polycarbonate-rolling-shutters-hero.webp` (Google Flow, Nano Banana Pro,
+2K): the clear shutter closed on a premium boutique frontage at dusk with
+the lit interior visible through it, to the premium architectural brief
+adopted across the shutter range.
