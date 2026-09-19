@@ -208,7 +208,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["galvanized-steel-rolling-shutters", "galvalume-rolling-shutters"],
     documents: standardDocs("MS Solid Rolling Shutter"),
-    imageId: "shutter-ms-solid-supplied",
+    imageId: "shutter-ms-solid-hero",
     galleryIds: [
       "shutter-ms-solid-elevation",
       "shutter-ms-solid-half-open",

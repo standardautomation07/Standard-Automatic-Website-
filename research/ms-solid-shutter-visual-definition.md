@@ -2,9 +2,11 @@
 
 Governs every generated gallery view for the MS Solid Rolling Shutter
 product page, so the views read as one shutter photographed from different
-positions. The approved hero,
-`public/images/products/rolling-shutters/ms-solid-rolling-shutters/ms-solid-rolling-shutters-supplied.webp`,
-is the reference and is not altered.
+positions. The original supplied hero was replaced on 2026-09-19 by a
+generated lead image, `ms-solid-rolling-shutters-hero.webp` (Google Flow,
+Nano Banana Pro, 2K): the same dark graphite-grey shutter closed on a
+light-grey clad warehouse, in the clean European industrial-door
+photography style adopted for the windproof shutter hero.
 
 Generated 2026-09-18 through Google Flow (Nano Banana Pro, 2K download)
 with two image inputs attached to every prompt: the hero, and a reference

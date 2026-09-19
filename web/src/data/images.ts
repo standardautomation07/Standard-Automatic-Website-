@@ -345,14 +345,14 @@ const list: ImageRef[] = [
     "Aluminium Rolling Shutter — lead image",
     "aspect-[16/9]",
   ),
-  supplied(
-    "shutter-ms-solid-supplied",
+  visualised(
+    "shutter-ms-solid-hero",
     "rolling-shutters",
     "ms-solid-rolling-shutters",
-    "supplied",
-    "A dark grey mild steel rolling shutter part open across a warehouse entrance, the racking and a forklift visible inside, with a tube motor mounted on the head box, a control panel with display and emergency stop at the jamb and hatched yellow floor markings across the threshold",
+    "hero",
+    "A dark graphite-grey mild steel rolling shutter closed across the loading opening of a light-grey clad warehouse, its curved interlocking slats running between dark grey channel guides beneath a plain square hood, with a wall control station and red emergency stop at the jamb, yellow-and-black bollards and a wet concrete forecourt",
     "MS Solid Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "research/ms-solid-shutter-visual-definition.md",
   ),
   supplied(
     "hsd-cold-store-supplied",
