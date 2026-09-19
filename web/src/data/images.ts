@@ -386,13 +386,14 @@ const list: ImageRef[] = [
     "A high speed spiral door part open across a warehouse opening, its horizontal aluminium panels glazed across the upper half and carried into the coiled spiral track visible beside the head box, with a wall-mounted control panel at the jamb",
     "High Speed Spiral Door — lead image",
   ),
-  supplied(
-    "hsd-self-repairing-supplied",
+  visualised(
+    "hsd-self-repairing-hero",
     "high-speed-doors",
     "high-speed-self-repairing-door",
-    "supplied",
-    "A yellow high speed self-repairing door closed across an internal warehouse opening, with a full-width clear vision band across the middle of the curtain, a stainless head box carrying the company mark and a wall-mounted control panel beside the guide",
+    "hero",
+    "A safety-yellow high speed self-repairing door lowered to about two-thirds across a wide internal warehouse opening, its taut PVC curtain with a full-width clear vision band running in brushed stainless guide columns with flexible black retention channels beneath a plain stainless hood, the lit hall visible beneath the bottom rail, a wall control station with display and red emergency stop beside the guide and yellow-and-black bollards on the polished concrete floor",
     "High Speed Self-Repairing Door — lead image",
+    "research/self-repairing-door-visual-definition.md",
   ),
   // High Speed Self-Repairing Door — generated gallery views built to the
   // master visual definition taken from the supplied hero; the hero is untouched.

@@ -72,3 +72,12 @@ commercial product photography.
 | `-mechanism` | curtain edge released from the flexible guide after impact, undamaged | self-repairing design |
 | `-guide` | bottom corner: bottom rail, soft seal, guide foot, retaining bead in its channel | bottom, guide and sealing detail |
 | `-header` | head of the door: stainless hood, guide top with re-entry mouth, side-mounted operator | header and operator |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`high-speed-self-repairing-door-hero.webp` (Google Flow, Nano Banana Pro,
+2K): the door about 70 percent closed on a wide internal warehouse
+opening, to the premium architectural brief adopted across the range.
+The hero no longer carries a company mark on the hood.

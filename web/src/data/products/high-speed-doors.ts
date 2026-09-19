@@ -613,7 +613,7 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-cold-storage-freezer-door",
     ],
     documents: [brochure("High Speed Self-Repairing Door"), drawing],
-    imageId: "hsd-self-repairing-supplied",
+    imageId: "hsd-self-repairing-hero",
     galleryIds: [
       "hsd-self-repairing-angle",
       "hsd-self-repairing-curtain",
