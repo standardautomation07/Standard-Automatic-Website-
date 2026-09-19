@@ -327,14 +327,14 @@ const list: ImageRef[] = [
     "Perforated Rolling Shutter — lead image",
     "aspect-[16/9]",
   ),
-  supplied(
-    "shutter-stainless-supplied",
+  visualised(
+    "shutter-stainless-hero",
     "rolling-shutters",
     "stainless-steel-rolling-shutters",
-    "supplied",
-    "A stainless steel rolling shutter closed across a commercial entrance, its polished slats running the full width between stainless side guides beneath a brushed stainless head box with downlights, a two-button control station with emergency stop on the wall alongside, and stainless bollards set in front of the opening",
+    "hero",
+    "A brushed stainless steel rolling shutter closed across the entrance of a white-panelled processing facility, its curved satin-grained slats running between stainless guides beneath a plain stainless hood, with a wall control station and red emergency stop at the jamb, yellow-and-black bollards and a clean paved forecourt",
     "Stainless Steel Rolling Shutter — lead image",
-    "aspect-[6/5]",
+    "research/stainless-shutter-visual-definition.md",
   ),
   visualised(
     "shutter-aluminium-hero",

@@ -511,7 +511,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["aluminium-rolling-shutters", "galvalume-rolling-shutters"],
     documents: standardDocs("Stainless Steel Rolling Shutter"),
-    imageId: "shutter-stainless-supplied",
+    imageId: "shutter-stainless-hero",
     galleryIds: ["shutter-stainless-elevation", "p-shutter-stainless"],
     facets: { material: ["Stainless Steel"], construction: "Solid", duty: ["Standard", "Heavy"], operation: ["Manual", "Gear", "Motorized"], performance: ["Standard"] },
     comparison: { material: "Stainless steel", thickness: "Profile dependent", corrosion: "High", operation: "Manual, gear or motorised" },
