@@ -318,14 +318,14 @@ const list: ImageRef[] = [
     "Transparent Polycarbonate Rolling Shutter — lead image",
     "aspect-[16/9]",
   ),
-  supplied(
-    "shutter-perforated-supplied",
+  visualised(
+    "shutter-perforated-hero",
     "rolling-shutters",
     "perforated-rolling-shutters",
-    "supplied",
-    "A perforated stainless steel rolling shutter closed across a showroom entrance, its slats pierced with a dense pattern of round holes that the interior shows through, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the perforated slat profile",
+    "hero",
+    "A perforated steel rolling shutter closed across the glazed entrance of a premium retail store at dusk, its satin silver-grey curved slats punched with a dense pattern of small round holes through which the lit shop interior glows, between matching guides beneath a plain hood, with a small control station at the jamb and a wide paved pavement in front",
     "Perforated Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "research/perforated-shutter-visual-definition.md",
   ),
   visualised(
     "shutter-stainless-hero",

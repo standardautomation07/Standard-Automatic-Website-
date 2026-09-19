@@ -48,3 +48,12 @@ filenames when it exists.
 | `-bottom-rail` | guide, bottom rail and lock |
 | `-drive` | motor, hand chain, pull cords, control box |
 | `-site` | installed on the showroom front, square-on |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`perforated-rolling-shutters-hero.webp` (Google Flow, Nano Banana Pro, 2K):
+the perforated shutter closed on a premium retail storefront at dusk with
+the lit interior showing through the perforations, to the premium
+architectural brief adopted across the shutter range.

@@ -582,7 +582,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["vision-window-rolling-shutters", "grille-rolling-shutters", "polycarbonate-rolling-shutters"],
     documents: standardDocs("Perforated Rolling Shutter"),
-    imageId: "shutter-perforated-supplied",
+    imageId: "shutter-perforated-hero",
     galleryIds: [
       "shutter-perforated-angle",
       "shutter-perforated-slats",
