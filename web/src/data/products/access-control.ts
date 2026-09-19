@@ -62,7 +62,7 @@ export const accessControlProducts: Product[] = [
       { title: "Pedestrian Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "tripod-turnstile-supplied",
-    galleryIds: ["p-tripod-turnstile", "g-tripod-yl121", "g-tripod-el128"],
+    galleryIds: ["tripod-turnstile-unit", "tripod-turnstile-rotor-hub", "tripod-turnstile-drop-arm", "tripod-turnstile-reader-top", "tripod-turnstile-gate-house"],
     legacyUrls: ["tripod-turnstile.html"],
   },
   {
