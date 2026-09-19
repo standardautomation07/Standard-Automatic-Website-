@@ -174,7 +174,7 @@ export const accessControlProducts: Product[] = [
       { title: "Pedestrian Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "full-height-turnstile-supplied",
-    galleryIds: ["p-full-height-turnstile", "g-full-g538", "g-full-g535-2"],
+    galleryIds: ["full-height-turnstile-single-rotor", "full-height-turnstile-rotor", "full-height-turnstile-head", "full-height-turnstile-reader", "full-height-turnstile-perimeter"],
     legacyUrls: ["full-height-barrier.html"],
   },
   {
