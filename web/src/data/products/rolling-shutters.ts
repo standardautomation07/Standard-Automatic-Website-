@@ -361,7 +361,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["galvanized-steel-rolling-shutters", "stainless-steel-rolling-shutters", "windproof-rolling-shutters"],
     documents: standardDocs("Galvalume Rolling Shutter"),
-    imageId: "shutter-galvalume-supplied",
+    imageId: "shutter-galvalume-hero",
     galleryIds: ["p-shutter-galvalume"],
     facets: { material: ["Galvalume"], construction: "Solid", duty: ["Standard", "Heavy"], operation: ["Manual", "Gear", "Motorized"], performance: ["Standard"] },
     comparison: { material: "Aluminium-zinc steel", thickness: "1.0–1.2 mm", corrosion: "Enhanced", operation: "Manual, gear or motorised" },

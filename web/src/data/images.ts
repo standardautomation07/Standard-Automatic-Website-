@@ -291,14 +291,14 @@ const list: ImageRef[] = [
     "Windproof / Storm-Resistant Rolling Shutter — lead image",
     "research/windproof-shutter-visual-definition.md",
   ),
-  supplied(
-    "shutter-galvalume-supplied",
+  visualised(
+    "shutter-galvalume-hero",
     "rolling-shutters",
     "galvalume-rolling-shutters",
-    "supplied",
-    "A galvalume rolling shutter closed across an industrial opening, its spangled aluminium-zinc coated slats running the full width between side guides, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the slat profile",
+    "hero",
+    "A Galvalume steel rolling shutter lowered to about two-thirds across the loading entrance of a modern light-grey clad logistics building, its smooth silvery-matte curved slats running between matching guides beneath a plain hood, warm interior light beneath the curtain, a wall control station with red emergency stop at the jamb and yellow-and-black bollards on the concrete apron",
     "Galvalume Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "research/galvalume-shutter-visual-definition.md",
   ),
   supplied(
     "shutter-grille-supplied",
