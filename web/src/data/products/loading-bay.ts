@@ -115,7 +115,7 @@ export const loadingBayProducts: Product[] = [
       { title: "Dock Shelter datasheet", kind: "Datasheet", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "dock-shelter-supplied",
-    galleryIds: ["p-dock-shelter"],
+    galleryIds: ["dock-shelter-sealed", "dock-shelter-frame", "dock-shelter-curtain", "dock-shelter-dock-house", "dock-shelter-inside"],
     legacyUrls: ["dock-house.html"],
   },
 ];
