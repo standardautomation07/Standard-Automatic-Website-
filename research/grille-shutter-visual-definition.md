@@ -47,3 +47,12 @@ filenames when it exists.
 | `-pattern` | extreme close-up: rods and links |
 | `-bottom-rail` | guide, bottom rail, lock, chain and cords |
 | `-drive` | motor, hand chain, pull cords, control box |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`grille-rolling-shutters-hero.webp` (Google Flow, Nano Banana Pro, 2K):
+the grille closed on a premium mall storefront with the lit interior
+visible through it, to the premium architectural brief adopted across
+the shutter range.

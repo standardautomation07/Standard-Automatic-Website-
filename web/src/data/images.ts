@@ -300,14 +300,14 @@ const list: ImageRef[] = [
     "Galvalume Rolling Shutter — lead image",
     "research/galvalume-shutter-visual-definition.md",
   ),
-  supplied(
-    "shutter-grille-supplied",
+  visualised(
+    "shutter-grille-hero",
     "rolling-shutters",
     "grille-rolling-shutters",
-    "supplied",
-    "A stainless steel rolling grille closed across a showroom entrance, its horizontal tubes linked by vertical bars into an open lattice the interior shows through, with a stainless head box carrying the company mark, a wall-mounted control panel at the jamb and an inset cutaway of the tube-and-link profile",
+    "hero",
+    "A rolling grille of horizontal aluminium rods joined by cast links in a brick-bond pattern closed across the wide entrance of a premium mall store, the lit interior visible through it, between aluminium guides beneath a plain hood with a solid bottom rail on a polished stone floor",
     "Rolling Grille — lead image",
-    "aspect-[16/9]",
+    "research/grille-shutter-visual-definition.md",
   ),
   supplied(
     "shutter-polycarbonate-supplied",
