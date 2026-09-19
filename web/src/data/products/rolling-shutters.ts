@@ -433,7 +433,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["stainless-steel-rolling-shutters", "polycarbonate-rolling-shutters"],
     documents: standardDocs("Aluminium Rolling Shutter"),
-    imageId: "shutter-aluminium-supplied",
+    imageId: "shutter-aluminium-hero",
     galleryIds: [
       "shutter-aluminium-profile",
       "shutter-aluminium-guide",

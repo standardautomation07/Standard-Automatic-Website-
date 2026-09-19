@@ -336,14 +336,14 @@ const list: ImageRef[] = [
     "Stainless Steel Rolling Shutter — lead image",
     "aspect-[6/5]",
   ),
-  supplied(
-    "shutter-aluminium-supplied",
+  visualised(
+    "shutter-aluminium-hero",
     "rolling-shutters",
     "aluminium-rolling-shutters",
-    "supplied",
-    "An aluminium rolling shutter part open across a commercial building entrance, the warehouse and a forklift visible inside, with a wide aluminium head box above and a control panel with display and emergency stop mounted on the pier alongside",
+    "hero",
+    "A satin anodised aluminium rolling shutter closed across a stone-clad showroom entrance, its smooth double-wall slats running between anodised guides beneath a plain aluminium hood, with a wall control station and red emergency stop at the jamb, yellow-and-black bollards and a paved forecourt in soft evening light",
     "Aluminium Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "research/aluminium-shutter-visual-definition.md",
   ),
   visualised(
     "shutter-ms-solid-hero",
