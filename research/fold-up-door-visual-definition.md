@@ -64,3 +64,13 @@ commercial product photography.
 | `-folding` | door open: the curtain gathered in horizontal folds under the hood, wind bars stacked, straps taut | folding mechanism |
 | `-guide` | bottom corner: bottom bar, safety edge, wind-bar end in the guide, guide foot | side guide and bottom seal detail |
 | `-drive` | top corner: hood, strap drum shaft, geared motor | drive (optional) |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`high-speed-fold-up-door-hero.webp` (Google Flow, Nano Banana Pro, 2K):
+the door caught mid-travel with the raised curtain stacked in horizontal
+folds under the hood, so the fold-up action reads at a glance, to the
+premium architectural brief adopted across the range. The hero no longer
+carries a company mark on the hood.

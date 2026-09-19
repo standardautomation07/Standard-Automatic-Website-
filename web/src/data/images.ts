@@ -2043,13 +2043,14 @@ const list: ImageRef[] = [
 
   // High Speed Fold-Up Door. The lead image is the company's own render;
   // the generated package below it stands in until the rest is photographed.
-  supplied(
-    "hsd-fold-up-supplied",
+  visualised(
+    "hsd-fold-up-hero",
     "high-speed-doors",
     "high-speed-fold-up-door",
-    "supplied",
-    "A blue high speed fold-up door in the elevation of a warehouse, the curtain gathered into horizontal folds on black lifting straps beneath a stainless head box, with vision panels across the middle of the curtain and a forklift working inside",
+    "hero",
+    "A royal-blue high speed fold-up door caught mid-travel on the loading opening of a light-grey clad factory: the lower curtain with its wind-bar ridges, two black lifting straps and a row of three vision windows still hanging between the black guide columns, while the raised part is gathered into horizontal folds stacked beneath the plain stainless hood, with a wall control station and red emergency stop beside the guide and yellow-and-black bollards on the concrete apron",
     "High Speed Fold-Up Door — lead image",
+    "research/fold-up-door-visual-definition.md",
   ),
 
   // Contextual photography used in the High Speed Doors galleries.

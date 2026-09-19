@@ -440,7 +440,7 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-self-repairing-door",
     ],
     documents: [brochure("High Speed Fold-Up Door"), drawing],
-    imageId: "hsd-fold-up-supplied",
+    imageId: "hsd-fold-up-hero",
     galleryIds: [
       "hsd-fold-up-angle",
       "hsd-fold-up-curtain",
