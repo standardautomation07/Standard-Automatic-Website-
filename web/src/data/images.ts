@@ -378,13 +378,14 @@ const list: ImageRef[] = [
     "A blue high speed rigid insulated door closed across an internal warehouse opening, its insulated panels divided by aluminium joints with a full-width clear vision band across the middle, a stainless head box carrying the company mark and a wall-mounted control panel at the jamb",
     "High Speed Rigid / Insulated Door — lead image",
   ),
-  supplied(
-    "hsd-spiral-supplied",
+  visualised(
+    "hsd-spiral-hero",
     "high-speed-doors",
     "high-speed-spiral-door",
-    "supplied",
-    "A high speed spiral door part open across a warehouse opening, its horizontal aluminium panels glazed across the upper half and carried into the coiled spiral track visible beside the head box, with a wall-mounted control panel at the jamb",
+    "hero",
+    "A silver high speed spiral door lowered to about two-thirds across the loading opening of a light-grey clad factory, its rigid aluminium panels alternating solid and glazed rows between silver guide columns beneath a plain brushed stainless hood, the lit warehouse showing beneath the black safety edge, a wall control station with display and red emergency stop beside the guide and yellow-and-black bollards on the concrete apron",
     "High Speed Spiral Door — lead image",
+    "research/spiral-door-visual-definition.md",
   ),
   visualised(
     "hsd-self-repairing-hero",

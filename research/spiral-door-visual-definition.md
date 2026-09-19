@@ -63,3 +63,11 @@ visible through the opening. Clean commercial product photography.
 | `-spiral` | side of the head with the hood end cover off: leaf running up into the spiral track | spiral guide mechanism |
 | `-guide` | bottom corner: leading panel, safety edge, guide column, floor seal | side guide and bottom seal detail |
 | `-drive` | top corner: hood, spiral end plate, drive motor on the shaft | header and drive |
+
+
+## Lead image (2026-09-19)
+
+The original supplied hero was replaced by a generated lead image,
+`high-speed-spiral-door-hero.webp` (Google Flow, Nano Banana Pro, 2K):
+the door about 70 percent closed on a light-grey clad factory opening, to
+the premium architectural brief adopted across the range.

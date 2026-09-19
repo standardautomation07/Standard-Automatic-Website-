@@ -789,7 +789,7 @@ export const highSpeedDoorProducts: Product[] = [
       "high-speed-roll-up-door",
     ],
     documents: [brochure("High Speed Spiral Door"), drawing],
-    imageId: "hsd-spiral-supplied",
+    imageId: "hsd-spiral-hero",
     galleryIds: [
       "hsd-spiral-angle",
       "hsd-spiral-panels",
