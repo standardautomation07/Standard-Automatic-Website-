@@ -51,7 +51,7 @@ the same filenames when it exists.
 
 | File suffix | View |
 | --- | --- |
-| `-hero` | lead image: shutter closed on an exposed coastal estate |
+| `-hero` | lead image: large shutter closed on a harbour logistics building (European insulated-slat idiom, chosen by the client from the second set) |
 | `-wind-locks` | lath ends with end locks and cast wind-locks |
 | `-wind-anchor-guide` | deep guide on its angle, anchored to the jamb |
 | `-bottom-rail` | T-section bottom rail, seal and ground bolt |

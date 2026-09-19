@@ -287,7 +287,7 @@ const list: ImageRef[] = [
     "rolling-shutters",
     "windproof-rolling-shutters",
     "hero",
-    "A wind-resistant industrial steel rolling shutter closed across the loading opening of a clad warehouse on an exposed coastal estate under a grey sky: a curtain of curved galvanised laths between heavy steel channel guides on grey angles beneath a galvanised coil casing, with a control station and red emergency stop at the jamb and yellow-and-black bollards on the wet apron",
+    "A large wind-resistant industrial rolling shutter closed across the opening of a dark-grey clad logistics building at a harbour under a heavy grey sky: a curtain of flat silver-grey slats running in heavy box-section guide columns beneath a matching flat hood, a wall control station with a red emergency stop at the jamb, a wet concrete apron and harbour cranes on the horizon",
     "Windproof / Storm-Resistant Rolling Shutter — lead image",
     "research/windproof-shutter-visual-definition.md",
   ),
