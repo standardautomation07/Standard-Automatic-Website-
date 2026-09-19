@@ -660,7 +660,7 @@ export const rollingShutterProducts: Product[] = [
     ],
     related: ["perforated-rolling-shutters", "polycarbonate-rolling-shutters", "grille-rolling-shutters"],
     documents: standardDocs("Vision / Window Rolling Shutter"),
-    imageId: "shutter-vision-supplied",
+    imageId: "shutter-vision-hero",
     galleryIds: ["p-shutter-vision"],
     facets: { material: ["MS", "GI", "Aluminium"], construction: "Vision", duty: ["Standard"], operation: ["Manual", "Gear", "Motorized"], performance: ["Standard"] },
     comparison: { material: "MS, GI or aluminium", thickness: "Profile dependent", corrosion: "Material dependent", operation: "Manual, gear or motorised" },

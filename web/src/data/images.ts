@@ -255,14 +255,14 @@ const list: ImageRef[] = [
     "research/roll-up-door-visual-definition.md",
   ),
 
-  supplied(
-    "shutter-vision-supplied",
+  visualised(
+    "shutter-vision-hero",
     "rolling-shutters",
     "vision-window-rolling-shutters",
-    "supplied",
-    "A galvanized steel vision rolling shutter part raised over a reception service counter, the office behind visible through the opening beneath the curtain, with a stainless head box carrying the company mark, and inset details of the slat with its glazed vision window and of the plain slat offered alongside it",
+    "hero",
+    "A vision rolling shutter closed across a premium retail storefront at dusk: satin silver-grey curved steel slats, solid above and below, with an eye-level band of slats punched with rows of small window openings with clear inserts through which the lit shop display shows, between matching guides beneath a plain hood with a solid bottom rail and a small control station at the jamb",
     "Vision / Window Rolling Shutter — lead image",
-    "aspect-[5/3]",
+    "research/vision-shutter-visual-definition.md",
   ),
   visualised(
     "shutter-gi-solid-hero",
