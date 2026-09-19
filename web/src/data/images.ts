@@ -363,13 +363,14 @@ const list: ImageRef[] = [
     "High Speed Cold Storage / Freezer Door — lead image",
     "research/cold-storage-door-visual-definition.md",
   ),
-  supplied(
-    "hsd-cleanroom-supplied",
+  visualised(
+    "hsd-cleanroom-hero",
     "high-speed-doors",
     "high-speed-cleanroom-hygiene-door",
-    "supplied",
-    "A blue high speed cleanroom door closed across an opening in a white-panelled clean area, with a full-width clear vision band across the middle of the curtain showing the equipment beyond, a stainless head box carrying the company mark and a stainless control panel at the jamb",
+    "hero",
+    "A royal-blue high speed cleanroom door lowered to about two-thirds across an opening in the white flush-panel wall of a pharmaceutical clean corridor, its smooth seamless curtain with a full-width clear vision band running in fully enclosed brushed stainless guide columns beneath a sloped-top stainless hood, the bright clean area and stainless equipment visible beneath the bottom bar, a stainless control station with red emergency stop beside the guide and a pale epoxy floor with coved skirting",
     "High Speed Cleanroom / Hygiene Door — lead image",
+    "research/cleanroom-door-visual-definition.md",
   ),
   supplied(
     "hsd-rigid-insulated-supplied",
