@@ -1,9 +1,12 @@
 # Insulated Rolling Shutter — master visual definition
 
 Governs the generated gallery views for the Insulated Double-Wall Rolling
-Shutter product page. The approved hero,
-`public/images/products/rolling-shutters/insulated-double-wall-rolling-shutters/insulated-double-wall-rolling-shutters-supplied.webp`,
-is the reference and is not altered.
+Shutter product page. The original supplied hero was replaced on
+2026-09-19 by a generated lead image,
+`insulated-double-wall-rolling-shutters-hero.webp` (Google Flow, Nano
+Banana Pro, 2K): the shutter about 70 percent closed on a white-panelled
+temperature-controlled logistics building, to the premium architectural
+brief adopted across the shutter range.
 
 Generated 2026-09-19 through Google Flow (Nano Banana Pro, 2K download) with
 the hero attached to every prompt. As with the GI and aluminium shutters,

@@ -273,14 +273,14 @@ const list: ImageRef[] = [
     "GI Solid Rolling Shutter — lead image",
     "research/gi-shutter-visual-definition.md",
   ),
-  supplied(
-    "shutter-insulated-supplied",
+  visualised(
+    "shutter-insulated-hero",
     "rolling-shutters",
     "insulated-double-wall-rolling-shutters",
-    "supplied",
-    "A galvanized steel insulated rolling shutter closed across an industrial opening, its slats running the full width between side guides beneath a stainless head box carrying the company mark, with a control panel at the jamb and an inset cutaway of the slat showing the foam core between its two skins",
+    "hero",
+    "An insulated double-wall rolling shutter lowered to about two-thirds across the loading opening of a white-panelled temperature-controlled logistics building, its thick spangled galvanised slats running between black guides with rubber seals beneath a stainless hood, cool interior light beneath the bottom rail, a wall control station with red emergency stop at the jamb and yellow-and-black bollards on the concrete apron",
     "Insulated Rolling Shutter — lead image",
-    "aspect-[16/9]",
+    "research/insulated-shutter-visual-definition.md",
   ),
   visualised(
     "shutter-windproof-hero",
