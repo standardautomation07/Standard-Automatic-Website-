@@ -1,27 +1,28 @@
-# Vision / Window Rolling Shutter — master visual definition
+# Window Roller Shutter — master visual definition
 
 Governs the generated lead image for the Vision / Window Rolling Shutter
 product page. The original supplied hero was replaced on 2026-09-19 by a
 generated lead image, `vision-window-rolling-shutters-hero.webp` (Google
-Flow, Nano Banana Pro, 2K), to the premium architectural brief adopted
-across the shutter range.
+Flow, Nano Banana Pro, 2K). At the client's direction the image shows the
+European window roller shutter (Rollladen) idiom rather than a storefront
+vision shutter.
 
 ## The product
 
-- **Curtain** — curved interlocking steel slats in a smooth satin
-  silver-grey finish, solid at top and bottom, with a vision band at eye
-  level of slats punched with rows of small rectangular windows fitted
-  with clear inserts; never chrome, never fully perforated, never a
-  grille.
-- **Guides, hood and bottom rail** — matching finish; plain square hood
-  over the barrel; solid bottom rail with a dark seal.
-- **Controls** — small wall control station at the jamb.
+- **Curtain** — slim horizontal foam-filled aluminium roller-shutter
+  slats in anthracite grey with fine shadow lines; aluminium end slat at
+  the bottom.
+- **Guides and box** — slim anthracite aluminium guide rails fixed to the
+  window reveal; compact rectangular roller-shutter box mounted above the
+  window.
+- **States** — one shutter about two-thirds lowered (hero), one fully
+  raised, one fully closed.
 
 ## Setting
 
-Premium retail storefront: contemporary stone and glass frontage with slim
-dark frames, wide paved pavement, dusk with warm interior light. No
-people, no vehicles, no shop names.
+Contemporary European house: white render, anthracite window frames,
+timber terrace, low planting, soft evening light with warm interior light
+beneath the lowered shutter. No people, no vehicles.
 
 ## Rules
 
