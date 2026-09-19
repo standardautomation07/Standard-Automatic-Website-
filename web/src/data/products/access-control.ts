@@ -344,7 +344,7 @@ export const accessControlProducts: Product[] = [
       { title: "Vehicle Access Control brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },
     ],
     imageId: "retractable-barrier-supplied",
-    galleryIds: [],
+    galleryIds: ["retractable-barrier-closed", "retractable-barrier-joint", "retractable-barrier-cabinet", "retractable-barrier-low-headroom", "retractable-barrier-folded"],
     legacyUrls: ["retractable-barriers.html"],
   },
 ];
