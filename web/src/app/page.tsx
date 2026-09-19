@@ -13,6 +13,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { FamilyCard, ProductCard } from "@/components/product/cards";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { Media } from "@/components/ui/media";
+import { ClientShowcase } from "@/components/clients/client-showcase";
 import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { families as familyList } from "@/data/families";
@@ -252,34 +253,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06 — Projects / installations */}
-      <section className="relative isolate overflow-hidden bg-ink py-20 lg:py-28">
-        <Media id="warehouse-interior" sizes="100vw" decorative className="opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/60" />
-        <div className="shell relative grid gap-10 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-6">
-            <SectionHeading
-              index="06"
-              eyebrow="Projects & installations"
-              tone="dark"
-              title="Installation references, being documented properly."
-              lede="We are writing up completed installations — site, opening, the products specified and why — and confirming each client reference before it is published. Rather than fill a page with stock photography and invented case studies, it stays empty until there is real material to put there."
-            />
-            <div className="mt-10">
-              <ButtonLink href="/projects" variant="onDark">
-                What is coming
-                <ArrowRight className="h-4 w-4" />
-              </ButtonLink>
-            </div>
-          </div>
-          <div className="lg:col-span-6 lg:pt-8">
-            <p className="text-base leading-relaxed text-steel-300">
-              If you want references relevant to your sector in the meantime, ask us directly and we
-              will share what the client has agreed we can share.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 06 — Trusted clients & project partners */}
+      <ClientShowcase index="06" />
 
       {/* 07 — Why Standard Automatic */}
       <section className="bg-paper py-20 lg:py-28">

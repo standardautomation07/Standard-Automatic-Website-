@@ -2,10 +2,6 @@ import type { MetadataRoute } from "next";
 import { families, industries, productPath, products } from "@/lib/catalog";
 import { siteConfig } from "@/lib/site-config";
 
-/**
- * `/projects` is deliberately absent: it is noindex until it carries real
- * project content, so listing it here would contradict the page itself.
- */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const url = (path: string) => `${siteConfig.url}${path}`;
@@ -18,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/service-support"), lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: url("/resources"), lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: url("/about"), lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    { url: url("/projects"), lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: url("/contact"), lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     ...families.map((family) => ({
       url: url(`/products/${family.id}`),

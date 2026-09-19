@@ -1,0 +1,477 @@
+{
+  "generatedFrom": "Client List. 2026 MARCH.pdf",
+  "stats": {
+    "organisations": 32,
+    "organisationsWithCompleted": 27,
+    "organisationsWithOngoing": 9,
+    "projects": 54,
+    "completedProjects": 45,
+    "ongoingProjects": 9,
+    "locations": 37,
+    "verifiedLogos": 21,
+    "logosNeedingReview": 11
+  },
+  "organisations": [
+    {
+      "organization": "URC Construction (P) Ltd",
+      "sourceName": "URC Construction (P) Ltd",
+      "officialWebsite": "https://www.urcindia.com",
+      "logo": "/images/clients/urc-construction.png",
+      "logoSource": "https://www.urcindia.com/img/new_logo.svg (official website header)",
+      "logoStatus": "verified",
+      "locations": [
+        "Kothrud Depot, Pune",
+        "Shivaji Nagar, Pune",
+        "Pune"
+      ],
+      "completedProjectCount": 5,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Godrej & Boyce Mfg Co Ltd",
+      "sourceName": "Godrej & Boyce Mfg Co Ltd",
+      "officialWebsite": "https://www.godrej.com",
+      "logo": "/images/clients/godrej-boyce.png",
+      "logoSource": "https://www.godrej.com/resources/logo.png (Godrej group official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Pirangut, Pune",
+        "Shirwal, Satara"
+      ],
+      "completedProjectCount": 3,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Ador Powertron",
+      "sourceName": "Ador Powertron",
+      "officialWebsite": "https://adorpowertron.com",
+      "logo": "/images/clients/ador-powertron.png",
+      "logoSource": "https://adorpowertron.com (official website header image)",
+      "logoStatus": "verified",
+      "locations": [
+        "Chinchwad, Pune"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "Site given as \"chinchawad Pine\" in the PDF; read as Chinchwad, Pune."
+    },
+    {
+      "organization": "Suroj Buildcon Pvt Ltd",
+      "sourceName": "SUROJ BUILDCON PVT LTD",
+      "officialWebsite": "https://www.suroj.in",
+      "logo": "/images/clients/suroj-buildcon.svg",
+      "logoSource": "https://www.suroj.in/img/logo-suroj.svg (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Nadiad, Gujarat",
+        "Gujarat"
+      ],
+      "completedProjectCount": 3,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Precast India Infrastructures Pvt Ltd",
+      "sourceName": "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
+      "officialWebsite": "https://www.precastindia.co.in",
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "needs-review",
+      "locations": [
+        "Khandala, Satara",
+        "Sangli",
+        "Hinjewadi, Pune"
+      ],
+      "completedProjectCount": 4,
+      "ongoingProjectCount": 0,
+      "notes": "Official website found but it carries no separable logo file; initials placeholder until a logo is supplied."
+    },
+    {
+      "organization": "Godrej Industries Ltd",
+      "sourceName": "GODREJ INDUSTRIES LTD",
+      "officialWebsite": "https://www.godrejindustries.com",
+      "logo": "/images/clients/godrej-industries.png",
+      "logoSource": "https://www.godrej.com/resources/logo.png (Godrej group master logo; godrejindustries.com blocks automated access)",
+      "logoStatus": "needs-review",
+      "locations": [
+        "Ambernath, Thane"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "Godrej group master logo used; confirm Godrej Industries does not require a distinct lock-up."
+    },
+    {
+      "organization": "ABB India Limited",
+      "sourceName": "ABB India Limited",
+      "officialWebsite": "https://new.abb.com/indian-subcontinent",
+      "logo": "/images/clients/abb-india.svg",
+      "logoSource": "Wikimedia Commons ABB_logo.svg (official wordmark; abb.com serves the logo inline only)",
+      "logoStatus": "verified",
+      "locations": [
+        "Vadodara, Gujarat"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Xerbia Developers",
+      "sourceName": "Xerbia Developers",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "unavailable",
+      "locations": [
+        "Karjat, Raigad"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "No official website or logo could be verified (xerbia.com now belongs to an unrelated business)."
+    },
+    {
+      "organization": "Bhate & Raje Construction Company Pvt Ltd",
+      "sourceName": "Bhate & raje Construction Company Ltd",
+      "officialWebsite": "https://bhateraje.com",
+      "logo": "/images/clients/bhate-raje.png",
+      "logoSource": "https://bhateraje.com/assets/img/logo/bhate-and-raje.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Pune",
+        "Chakan, Pune"
+      ],
+      "completedProjectCount": 2,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Sambhav Building Systems Pvt Ltd",
+      "sourceName": "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "unavailable",
+      "locations": [
+        "Sarsawa, Uttar Pradesh"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "No official website or logo could be found. Site given as \"Sarwasa UP\"; read as Air Force Station Sarsawa, Uttar Pradesh — confirm."
+    },
+    {
+      "organization": "Sula Vineyards",
+      "sourceName": "Sula Vineyards",
+      "officialWebsite": "https://sulavineyards.com",
+      "logo": "/images/clients/sula-vineyards.png",
+      "logoSource": "https://sulavineyards.com/images/media2/home-page/sula-logo-main.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Nashik"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Kaira District Co-operative Milk Producers' Union Ltd (Amul Dairy)",
+      "sourceName": "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy",
+      "officialWebsite": "https://www.amuldairy.com",
+      "logo": "/images/clients/amul-kaira.png",
+      "logoSource": "https://www.amuldairy.com/assets/img/Amul_Logo.png (Kaira Union / Amul Dairy official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Anand, Gujarat"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "ITD Cementation India Ltd",
+      "sourceName": "ITD CEMENTATION IND LTD | ITD CEMENTATION",
+      "officialWebsite": "https://www.itdcem.co.in",
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "needs-review",
+      "locations": [
+        "Pune",
+        "Palam, Delhi"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 1,
+      "notes": "itdcem.co.in now redirects to cemindia.co.in (rebranded Cemindia); the PDF uses the ITD Cementation name, so no logo is shown until the correct mark is confirmed."
+    },
+    {
+      "organization": "Suvijay Buildcon",
+      "sourceName": "SUVIJIAY BUILDCON",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "unavailable",
+      "locations": [
+        "Pune"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "PDF spelling \"SUVIJIAY BUILDCON\" looks like a typo; displayed as Suvijay Buildcon — confirm. No website or logo found."
+    },
+    {
+      "organization": "Gaurav Engineers",
+      "sourceName": "Gaurav Engineers",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "unavailable",
+      "locations": [
+        "Kirloskarwadi, Sangli"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "No official website or logo could be found."
+    },
+    {
+      "organization": "SMS India Pvt Ltd",
+      "sourceName": "SMS INDIA PVT LTD",
+      "officialWebsite": "https://www.sms-group.com",
+      "logo": "/images/clients/sms-india.svg",
+      "logoSource": "https://www.sms-group.com (SMS group official website header asset)",
+      "logoStatus": "needs-review",
+      "locations": [
+        "Lucknow, Uttar Pradesh"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "SMS group logo used on the assumption SMS India Pvt Ltd is the SMS group Indian subsidiary — confirm."
+    },
+    {
+      "organization": "Larsen & Toubro Limited, Construction",
+      "sourceName": "Larsen & Toubro Limited, Construction",
+      "officialWebsite": "https://www.lntecc.com",
+      "logo": "/images/clients/lt-construction.svg",
+      "logoSource": "https://www.larsentoubro.com (official website header SVG, white version)",
+      "logoStatus": "verified",
+      "locations": [
+        "Bacheli, Dantewada, Chhattisgarh",
+        "Ayodhya–Prayagraj, Uttar Pradesh",
+        "Visakhapatnam",
+        "Tarapur",
+        "Kirandul, Dantewada, Chhattisgarh"
+      ],
+      "completedProjectCount": 5,
+      "ongoingProjectCount": 1,
+      "notes": "Rows C27/C43 give the project as \"Ram Mandir Ayodhya Prayagraj\" with site \"Utter pradesh\"; the exact site (Ayodhya or Prayagraj) is ambiguous. Only a white logo is published by L&T; it is shown on a dark well rather than recoloured."
+    },
+    {
+      "organization": "Manipal Energy & Infra Pvt Ltd",
+      "sourceName": "MANIPAL ENERGY & INFRA PVT TD",
+      "officialWebsite": "https://manipalenergy.in",
+      "logo": "/images/clients/manipal-energy-infra.png",
+      "logoSource": "https://manipalenergy.in/images/meil_logo.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Bacheli, Chhattisgarh"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Crescon Projects & Services Pvt Ltd",
+      "sourceName": "CRESCON PROJECTS & SERVICES PVT LTD",
+      "officialWebsite": "https://cresconprojects.com",
+      "logo": "/images/clients/crescon-projects.png",
+      "logoSource": "https://cresconprojects.com/assets/img/logo.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Kolkata, West Bengal"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Asmita Engineering Equipments",
+      "sourceName": "ASMITA ENGINEERING EUIPMENTS",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "unavailable",
+      "locations": [
+        "Pune"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "PDF spelling \"EUIPMENTS\" corrected to Equipments. No website or logo found."
+    },
+    {
+      "organization": "Raheja Universal Ltd",
+      "sourceName": "RAHEJA UNIVERSAL LTD",
+      "officialWebsite": "https://www.rahejauniversal.com",
+      "logo": "/images/clients/raheja-universal.png",
+      "logoSource": "https://www.rahejauniversal.com/images/logo.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Mumbai"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "VTP Realty",
+      "sourceName": "VTP REALTY - RISING WELWORTH | VTP REALTY",
+      "officialWebsite": "https://www.vtprealty.in",
+      "logo": "/images/clients/vtp-realty.png",
+      "logoSource": "https://www.vtprealty.in/images/footer/new-vtp-logo.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Pune",
+        "Pashan, Pune"
+      ],
+      "completedProjectCount": 3,
+      "ongoingProjectCount": 1,
+      "notes": "\"VTP REALTY - RISING WELWORTH\" (row C37) consolidated under VTP Realty as a project entity of the same developer — confirm."
+    },
+    {
+      "organization": "R R Construction",
+      "sourceName": "R R CONSTRUCTION",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "unavailable",
+      "locations": [
+        "Khalapur (Mumbai)"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": "Name too generic to identify an official website or logo. Project \"Toyo Factory, Khalapur\" with site \"MUMBAI\" — Khalapur is in Raigad district; both preserved."
+    },
+    {
+      "organization": "L'Oréal India",
+      "sourceName": "LOREAL INDIA",
+      "officialWebsite": "https://www.loreal.com/en/india/",
+      "logo": "/images/clients/loreal-india.svg",
+      "logoSource": "Wikimedia Commons L'Oréal_logo.svg (official wordmark)",
+      "logoStatus": "verified",
+      "locations": [
+        "Chakan, Pune"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "SPG Infraprojects Pvt Ltd",
+      "sourceName": "SPG INFRAPROJECTS PVT LTD",
+      "officialWebsite": "https://spginfra.com",
+      "logo": "/images/clients/spg-infraprojects.png",
+      "logoSource": "https://spginfra.com (official website header)",
+      "logoStatus": "verified",
+      "locations": [
+        "Nariman Point, Mumbai"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "CBRE South Asia",
+      "sourceName": "CBRE SOUTH ASIA",
+      "officialWebsite": "https://www.cbre.co.in",
+      "logo": "/images/clients/cbre-south-asia.svg",
+      "logoSource": "Wikimedia Commons CBRE_Group_logo.svg (official wordmark; cbre.co.in serves the logo inline only)",
+      "logoStatus": "verified",
+      "locations": [
+        "Chennai"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 1,
+      "notes": ""
+    },
+    {
+      "organization": "Safe Lifters Pvt Ltd",
+      "sourceName": "Safe Lifters Pvt Ltd",
+      "officialWebsite": "https://safelifters.com",
+      "logo": "/images/clients/safe-lifters.svg",
+      "logoSource": "https://safelifters.com/wp-content/uploads/2024/07/safe-logo-final.svg (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Hadapsar, Pune"
+      ],
+      "completedProjectCount": 1,
+      "ongoingProjectCount": 0,
+      "notes": ""
+    },
+    {
+      "organization": "Tata Construction Ltd",
+      "sourceName": "TATA CONSTRUCTION LTD",
+      "officialWebsite": null,
+      "logo": null,
+      "logoSource": null,
+      "logoStatus": "needs-review",
+      "locations": [
+        "Tarapur"
+      ],
+      "completedProjectCount": 0,
+      "ongoingProjectCount": 1,
+      "notes": "\"TATA CONSTRUCTION LTD\" does not match a registered Tata company name (possibly Tata Projects Ltd); no logo assigned until confirmed."
+    },
+    {
+      "organization": "Shapoorji Pallonji And Company Pvt Ltd",
+      "sourceName": "Shapoorji Pallonji And Company Private Limited",
+      "officialWebsite": "https://www.shapoorjipallonji.com",
+      "logo": "/images/clients/shapoorji-pallonji.svg",
+      "logoSource": "https://www.shapoorjipallonji.com/assets/vectors/icons/icon_splogo_blue.svg (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Lower Parel, Mumbai"
+      ],
+      "completedProjectCount": 0,
+      "ongoingProjectCount": 1,
+      "notes": ""
+    },
+    {
+      "organization": "Milecon Engineering Pvt Ltd",
+      "sourceName": "MILECON ENGINEERING PRIVATE LIMITED",
+      "officialWebsite": "https://milecon.in",
+      "logo": "/images/clients/milecon-engineering.png",
+      "logoSource": "https://milecon.in/images/logo.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Sanand, Gujarat"
+      ],
+      "completedProjectCount": 0,
+      "ongoingProjectCount": 1,
+      "notes": ""
+    },
+    {
+      "organization": "Amara Raja Infra Pvt Ltd",
+      "sourceName": "Amara Raja Infra Private Limited",
+      "officialWebsite": "https://www.amararajainfra.com",
+      "logo": "/images/clients/amara-raja-infra.png",
+      "logoSource": "https://amararajainfra.com/wp-content/uploads/2023/05/thumbnail_AR_Infra_logo.png (official website)",
+      "logoStatus": "verified",
+      "locations": [
+        "Gujarat"
+      ],
+      "completedProjectCount": 0,
+      "ongoingProjectCount": 1,
+      "notes": ""
+    },
+    {
+      "organization": "Inditech Valves Ltd",
+      "sourceName": "INDITECH VALVES LTD",
+      "officialWebsite": "https://www.inditechvalves.com",
+      "logo": "/images/clients/inditech-valves.png",
+      "logoSource": "https://www.inditechvalves.com/wp-content/uploads/2024/02/IndiTech-Logo-svg.svg (official website; rasterised)",
+      "logoStatus": "verified",
+      "locations": [
+        "Alandi, Pune"
+      ],
+      "completedProjectCount": 0,
+      "ongoingProjectCount": 1,
+      "notes": ""
+    }
+  ]
+}
