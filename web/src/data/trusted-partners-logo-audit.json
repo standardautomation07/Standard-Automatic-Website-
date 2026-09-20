@@ -24,19 +24,16 @@
     "organisationsFromPdf": 57,
     "organisationsFromWebsiteOnly": 33,
     "duplicatesConsolidated": 43,
-    "verifiedFullColourLogos": 53,
-    "logoReviewRequired": 37,
+    "verifiedFullColourLogos": 54,
+    "logoReviewRequired": 36,
     "placeholders": [
       "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
-      "CHITALE FOODS",
-      "Xerbia Developers",
       "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
       "ARESPACE New Delhi",
       "SUVIJIAY BUILDCON",
       "Gaurav Engineers",
       "ASMITA ENGINEERING EUIPMENTS",
       "TESLA PARK 2",
-      "INS VARSHA",
       "R R CONSTRUCTION",
       "Aerospace Museum, MES, Palam, Delhi",
       "BDD MUMBAI"
@@ -198,33 +195,33 @@
     },
     {
       "organization": "CHITALE FOODS",
-      "logoFile": null,
-      "sourceUrl": null,
-      "officialWebsite": null,
-      "verificationStatus": "requires_review",
-      "logoStatus": "unavailable",
+      "logoFile": "/images/trusted-partners/chitale-foods.png",
+      "sourceUrl": "https://chitalexpress.com/downloads/2024-chitale-xpress-brochure.pdf (official Chitale group brochure, page 1 vector logo rendered at 500 dpi); also https://chitalexpress.com/wp-content/uploads/2020/10/logo-chitale-foods.png",
+      "officialWebsite": "https://chitalexpress.com",
+      "verificationStatus": "verified",
+      "logoStatus": "verified",
       "logoOnDark": false,
       "sourceNames": [
         "CHITALE FOODS"
       ],
       "occurrencesInPdf": 1,
       "websiteLogoFiles": [],
-      "notes": "chitaledairy.com refused the connection; no logo retrieved."
+      "notes": "Yellow oval / red Chitale FOODS logo taken from the official Chitale group brochure (vector, rasterised unaltered at high resolution). Record name kept as in the source."
     },
     {
       "organization": "Xerbia Developers",
-      "logoFile": null,
-      "sourceUrl": null,
-      "officialWebsite": null,
+      "logoFile": "/images/trusted-partners/xerbia-developers.png",
+      "sourceUrl": "https://web.archive.org/web/20190626144608im_/https://www.xrbia.com/images/logo.gif (XRBIA Developers Ltd official website, Wayback Machine snapshot 26 Jun 2019; live site returns 403)",
+      "officialWebsite": "https://www.xrbia.com",
       "verificationStatus": "requires_review",
-      "logoStatus": "unavailable",
+      "logoStatus": "needs-review",
       "logoOnDark": false,
       "sourceNames": [
         "Xerbia Developers"
       ],
       "occurrencesInPdf": 1,
       "websiteLogoFiles": [],
-      "notes": "No official website or logo could be verified."
+      "notes": "Source line reads Xerbia Developers; company records identify Xrbia Developers Ltd, Pune (Wangini/Karjat project). Official red XRBIA wordmark taken from an archived copy of xrbia.com because the live site is inaccessible. Record name kept as in the source - confirm identity."
     },
     {
       "organization": "Bhate & raje Construction Company Ltd",
@@ -607,18 +604,18 @@
     },
     {
       "organization": "INS VARSHA",
-      "logoFile": null,
-      "sourceUrl": null,
-      "officialWebsite": null,
+      "logoFile": "/images/trusted-partners/ins-varsha.png",
+      "sourceUrl": "https://indiannavy.gov.in/sites/default/files/site-logo.png (Indian Navy official website; crest portion of the site lock-up, tagline text omitted)",
+      "officialWebsite": "https://indiannavy.gov.in",
       "verificationStatus": "requires_review",
-      "logoStatus": "unavailable",
+      "logoStatus": "needs-review",
       "logoOnDark": false,
       "sourceNames": [
         "INS VARSHA"
       ],
       "occurrencesInPdf": 1,
       "websiteLogoFiles": [],
-      "notes": "Indian Navy establishment; no organisation-specific logo assigned."
+      "notes": "REQUIRES VERIFICATION. INS Varsha is an Indian Navy establishment (source line renamed from the Vizag project row); no INS Varsha-specific logo is published, so the official Indian Navy crest is shown. Nothing generated. Confirm that Indian Navy branding is appropriate for this entry."
     },
     {
       "organization": "BARC",
