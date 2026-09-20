@@ -1,965 +1,791 @@
 {
-  "generatedFrom": [
-    "Client List. 2026 MARCH.pdf",
-    "https://www.standardautomation.in/clients.html"
-  ],
+  "generatedFrom": "Trusted_Partners_Editable.pdf",
   "reconciliation": {
-    "pdfOrganisationOccurrences": 54,
-    "pdfUniqueOrganisations": 32,
-    "websiteLogoOccurrences": 43,
-    "websiteUniqueOrganisations": 40,
-    "websiteOnlyOrganisations": 34,
-    "masterOrganisations": 66,
-    "publicOrganisations": 66,
-    "contractors": 17,
-    "endUsers": 38,
-    "projectPartners": 8,
-    "pendingClassification": 3,
-    "verifiedFullColourLogos": 38,
-    "logoReviewRequired": 28,
-    "duplicatesConsolidated": 31,
+    "pdfOrganisationOccurrences": 91,
+    "pdfDistinctLines": 64,
+    "nonOrganisationLines": [
+      "R&D PLANT"
+    ],
+    "uniqueOrganisations": 57,
+    "publicTrustedPartners": 57,
+    "consolidatedSpellings": [
+      "ITC <= ITC Project | ITC",
+      "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy <= Kaira District Co-operative Milk Producers' Union Limited. Amul dairy | Amul",
+      "CEMINDIA CEMENTATION IND LTD <= CEMINDIA CEMENTATION IND LTD | CEMINDIA CEMENTATION",
+      "NMDC LTD <= NNMDC SLURRY PUMP HOUSE BACHELI | NMDC BACHELI | NMDC LTD",
+      "VTP REALTY <= VTP REALTY - RISING WELWORTH | VTP REALTY"
+    ],
+    "duplicatesConsolidated": 33,
+    "verifiedFullColourLogos": 35,
+    "logoReviewRequired": 22,
+    "placeholders": [
+      "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
+      "CHITALE FOODS",
+      "Xerbia Developers",
+      "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
+      "ARESPACE New Delhi",
+      "SUVIJIAY BUILDCON",
+      "Gaurav Engineers",
+      "RAIL COACH FACTORY",
+      "ASMITA ENGINEERING EUIPMENTS",
+      "DUROSHOCK",
+      "TESLA PARK 2",
+      "INS VARSHA",
+      "R R CONSTRUCTION",
+      "Income tax Building Nariman Point Mumbai",
+      "Aerospace Museum, MES, Palam, Delhi",
+      "BDD MUMBAI"
+    ],
     "missingOrganisations": 0,
-    "duplicatePublicEntries": 0,
-    "projects": 54,
-    "completedProjects": 45,
-    "ongoingProjects": 9,
-    "locations": 37
+    "duplicatePublicEntries": 0
   },
   "organisations": [
     {
       "organization": "URC Construction (P) Ltd",
-      "relationship": "contractor",
-      "sourceName": "URC Construction (P) Ltd",
-      "officialWebsite": "https://www.urcindia.com",
-      "logo": "/images/clients/urc-construction.png",
-      "logoSource": "https://www.urcindia.com/img/new_logo.svg (official website header)",
-      "logoStatus": "verified",
-      "locations": [
-        "Kothrud Depot, Pune",
-        "Shivaji Nagar, Pune",
-        "Pune"
+      "sourceNames": [
+        "URC Construction (P) Ltd"
       ],
-      "completedProjectCount": 5,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "occurrencesInPdf": 4,
+      "logo": "/images/trusted-partners/urc-construction.png",
+      "logoSource": "https://www.urcindia.com/img/new_logo.svg (official website header)",
+      "officialWebsite": "https://www.urcindia.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "Pune Metro",
+      "sourceNames": [
+        "Pune Metro"
+      ],
+      "occurrencesInPdf": 4,
+      "logo": "/images/trusted-partners/pune-metro.png",
+      "logoSource": "https://punemetrorail.org/assets/images/logo.png (Maha-Metro Pune official website)",
+      "officialWebsite": "https://punemetrorail.org",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
       "organization": "Godrej & Boyce Mfg Co Ltd",
-      "relationship": "end-user",
-      "sourceName": "Godrej & Boyce Mfg Co Ltd",
-      "officialWebsite": "https://www.godrej.com",
-      "logo": "/images/clients/godrej-boyce.png",
-      "logoSource": "https://www.godrej.com/resources/logo.png (Godrej group official website)",
-      "logoStatus": "verified",
-      "locations": [
-        "Pirangut, Pune",
-        "Shirwal, Satara"
+      "sourceNames": [
+        "Godrej & Boyce Mfg Co Ltd"
       ],
-      "completedProjectCount": 3,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "occurrencesInPdf": 3,
+      "logo": "/images/trusted-partners/godrej-boyce.png",
+      "logoSource": "https://www.godrej.com/resources/logo.png (Godrej group official website)",
+      "officialWebsite": "https://www.godrej.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
       "organization": "Ador Powertron",
-      "relationship": "end-user",
-      "sourceName": "Ador Powertron",
-      "officialWebsite": "https://adorpowertron.com",
-      "logo": "/images/clients/ador-powertron.png",
+      "sourceNames": [
+        "Ador Powertron"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/ador-powertron.png",
       "logoSource": "https://adorpowertron.com (official website header image)",
+      "officialWebsite": "https://adorpowertron.com",
       "logoStatus": "verified",
-      "locations": [
-        "Chinchwad, Pune"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "Site given as \"chinchawad Pine\" in the PDF; read as Chinchwad, Pune."
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Suroj Buildcon Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "SUROJ BUILDCON PVT LTD",
-      "officialWebsite": "https://www.suroj.in",
-      "logo": "/images/clients/suroj-buildcon.svg",
+      "organization": "SUROJ BUILDCON PVT LTD",
+      "sourceNames": [
+        "SUROJ BUILDCON PVT LTD"
+      ],
+      "occurrencesInPdf": 3,
+      "logo": "/images/trusted-partners/suroj-buildcon.svg",
       "logoSource": "https://www.suroj.in/img/logo-suroj.svg (official website)",
+      "officialWebsite": "https://www.suroj.in",
       "logoStatus": "verified",
-      "locations": [
-        "Nadiad, Gujarat",
-        "Gujarat"
-      ],
-      "completedProjectCount": 3,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Precast India Infrastructures Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
-      "officialWebsite": "https://www.precastindia.co.in",
+      "organization": "ITC",
+      "sourceNames": [
+        "ITC Project",
+        "ITC"
+      ],
+      "occurrencesInPdf": 3,
+      "logo": "/images/trusted-partners/itc.png",
+      "logoSource": "https://itcportal.com/content/dam/itc-corporate/ITC-Logo-Updated.png (official website)",
+      "officialWebsite": "https://www.itcportal.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "\"ITC Project\" and \"ITC\" consolidated as one organisation."
+    },
+    {
+      "organization": "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
+      "sourceNames": [
+        "PRECAST INDIA INFRASTRUCTURES PVT.LTD."
+      ],
+      "occurrencesInPdf": 4,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": "https://www.precastindia.co.in",
       "logoStatus": "needs-review",
-      "locations": [
-        "Khandala, Satara",
-        "Sangli",
-        "Hinjewadi, Pune"
-      ],
-      "completedProjectCount": 4,
-      "ongoingProjectCount": 0,
-      "notes": "Official website found but it carries no separable logo file; initials placeholder until a logo is supplied."
+      "logoOnDark": false,
+      "verificationNotes": "Official website carries no separable logo file; placeholder until a logo is supplied."
     },
     {
-      "organization": "Godrej Industries Ltd",
-      "relationship": "end-user",
-      "sourceName": "GODREJ INDUSTRIES LTD",
-      "officialWebsite": "https://www.godrejindustries.com",
-      "logo": "/images/clients/godrej-industries.png",
-      "logoSource": "https://www.godrej.com/resources/logo.png (Godrej group master logo; godrejindustries.com blocks automated access)",
-      "logoStatus": "needs-review",
-      "locations": [
-        "Ambernath, Thane"
+      "organization": "WILO-Mather & Platt Pumps",
+      "sourceNames": [
+        "WILO-Mather & Platt Pumps"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "Godrej group master logo used; confirm Godrej Industries does not require a distinct lock-up."
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/wilo.png",
+      "logoSource": "https://wilo.com/resources/v125/img/wilologo.png (WILO official website header; white version)",
+      "officialWebsite": "https://wilo.com/in/en/",
+      "logoStatus": "needs-review",
+      "logoOnDark": true,
+      "verificationNotes": "Only the white knockout logo is served by wilo.com; shown on a dark well, replace with the green master logo."
+    },
+    {
+      "organization": "GODREJ INDUSTRIES LTD",
+      "sourceNames": [
+        "GODREJ INDUSTRIES LTD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/godrej-industries.png",
+      "logoSource": "https://www.godrej.com/resources/logo.png (Godrej group master logo; godrejindustries.com blocks automated access)",
+      "officialWebsite": "https://www.godrejindustries.com",
+      "logoStatus": "needs-review",
+      "logoOnDark": false,
+      "verificationNotes": "Godrej group master logo used; confirm."
     },
     {
       "organization": "ABB India Limited",
-      "relationship": "end-user",
-      "sourceName": "ABB India Limited",
-      "officialWebsite": "https://new.abb.com/indian-subcontinent",
-      "logo": "/images/clients/abb-india.svg",
-      "logoSource": "Wikimedia Commons ABB_logo.svg (official wordmark; abb.com serves the logo inline only)",
-      "logoStatus": "verified",
-      "locations": [
-        "Vadodara, Gujarat"
+      "sourceNames": [
+        "ABB India Limited"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/abb-india.svg",
+      "logoSource": "Wikimedia Commons ABB_logo.svg (official wordmark)",
+      "officialWebsite": "https://new.abb.com/indian-subcontinent",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "CHITALE FOODS",
+      "sourceNames": [
+        "CHITALE FOODS"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "chitaledairy.com refused the connection; no logo retrieved."
     },
     {
       "organization": "Xerbia Developers",
-      "relationship": "project-partner",
-      "sourceName": "Xerbia Developers",
-      "officialWebsite": null,
+      "sourceNames": [
+        "Xerbia Developers"
+      ],
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": null,
       "logoStatus": "unavailable",
-      "locations": [
-        "Karjat, Raigad"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "No official website or logo could be verified (xerbia.com now belongs to an unrelated business)."
+      "logoOnDark": false,
+      "verificationNotes": "No official website or logo could be verified."
     },
     {
-      "organization": "Bhate & Raje Construction Company Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "Bhate & raje Construction Company Ltd",
-      "officialWebsite": "https://bhateraje.com",
-      "logo": "/images/clients/bhate-raje.png",
+      "organization": "Bhate & raje Construction Company Ltd",
+      "sourceNames": [
+        "Bhate & raje Construction Company Ltd"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/bhate-raje.png",
       "logoSource": "https://bhateraje.com/assets/img/logo/bhate-and-raje.png (official website)",
+      "officialWebsite": "https://bhateraje.com",
       "logoStatus": "verified",
-      "locations": [
-        "Pune",
-        "Chakan, Pune"
-      ],
-      "completedProjectCount": 2,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Sambhav Building Systems Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
-      "officialWebsite": null,
+      "organization": "TETRA PACK",
+      "sourceNames": [
+        "TETRA PACK"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/tetra-pak.png",
+      "logoSource": "https://www.tetrapak.com/en-in (official website header)",
+      "officialWebsite": "https://www.tetrapak.com/en-in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "PDF spelling TETRA PACK kept; logo is Tetra Pak's."
+    },
+    {
+      "organization": "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
+      "sourceNames": [
+        "M/s SAMBHAV BUILDING SYSTEMS PVT LTD"
+      ],
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": null,
       "logoStatus": "unavailable",
-      "locations": [
-        "Sarsawa, Uttar Pradesh"
+      "logoOnDark": false,
+      "verificationNotes": "No official website or logo could be found."
+    },
+    {
+      "organization": "Indian Air Force",
+      "sourceNames": [
+        "Indian Air Force"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "No official website or logo could be found. Site given as \"Sarwasa UP\"; read as Air Force Station Sarsawa, Uttar Pradesh — confirm."
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/indian-air-force.png",
+      "logoSource": "https://indianairforce.nic.in (official website crest)",
+      "officialWebsite": "https://indianairforce.nic.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
       "organization": "Sula Vineyards",
-      "relationship": "end-user",
-      "sourceName": "Sula Vineyards",
+      "sourceNames": [
+        "Sula Vineyards"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/sula-vineyards.png",
+      "logoSource": "https://sulavineyards.com (official website)",
       "officialWebsite": "https://sulavineyards.com",
-      "logo": "/images/clients/sula-vineyards.png",
-      "logoSource": "https://sulavineyards.com/images/media2/home-page/sula-logo-main.png (official website)",
       "logoStatus": "verified",
-      "locations": [
-        "Nashik"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Kaira District Co-operative Milk Producers' Union Ltd (Amul Dairy)",
-      "relationship": "end-user",
-      "sourceName": "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy",
-      "officialWebsite": "https://www.amuldairy.com",
-      "logo": "/images/clients/amul-kaira.png",
+      "organization": "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy",
+      "sourceNames": [
+        "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy",
+        "Amul"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/amul-kaira.png",
       "logoSource": "https://www.amuldairy.com/assets/img/Amul_Logo.png (Kaira Union / Amul Dairy official website)",
+      "officialWebsite": "https://www.amuldairy.com",
       "logoStatus": "verified",
-      "locations": [
-        "Anand, Gujarat"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": "\"Amul\" line consolidated with the Kaira Union (Amul Dairy) entry."
     },
     {
-      "organization": "ITD Cementation India Ltd",
-      "relationship": "contractor",
-      "sourceName": "ITD CEMENTATION IND LTD | ITD CEMENTATION",
-      "officialWebsite": "https://www.itdcem.co.in",
-      "logo": null,
-      "logoSource": null,
+      "organization": "CEMINDIA CEMENTATION IND LTD",
+      "sourceNames": [
+        "CEMINDIA CEMENTATION IND LTD",
+        "CEMINDIA CEMENTATION"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/cemindia.png",
+      "logoSource": "https://www.cemindia.co.in (official website header)",
+      "officialWebsite": "https://www.cemindia.co.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "Both Cemindia spellings consolidated."
+    },
+    {
+      "organization": "PUNE AIRPORT",
+      "sourceNames": [
+        "PUNE AIRPORT"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/pune-airport.png",
+      "logoSource": "https://www.aai.aero (Airports Authority of India official website; operator of Pune Airport)",
+      "officialWebsite": "https://www.aai.aero/en/airports/pune",
       "logoStatus": "needs-review",
-      "locations": [
-        "Pune",
-        "Palam, Delhi"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 1,
-      "notes": "itdcem.co.in now redirects to cemindia.co.in (rebranded Cemindia); the PDF uses the ITD Cementation name, so no logo is shown until the correct mark is confirmed."
+      "logoOnDark": false,
+      "verificationNotes": "AAI logo used for Pune Airport - confirm."
     },
     {
-      "organization": "Suvijay Buildcon",
-      "relationship": "contractor",
-      "sourceName": "SUVIJIAY BUILDCON",
-      "officialWebsite": null,
+      "organization": "ARESPACE New Delhi",
+      "sourceNames": [
+        "ARESPACE New Delhi"
+      ],
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": null,
       "logoStatus": "unavailable",
-      "locations": [
-        "Pune"
+      "logoOnDark": false,
+      "verificationNotes": "Organisation could not be identified; no logo."
+    },
+    {
+      "organization": "SUVIJIAY BUILDCON",
+      "sourceNames": [
+        "SUVIJIAY BUILDCON"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "PDF spelling \"SUVIJIAY BUILDCON\" looks like a typo; displayed as Suvijay Buildcon — confirm. No website or logo found."
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "No website or logo found; PDF spelling kept."
+    },
+    {
+      "organization": "FIAT",
+      "sourceNames": [
+        "FIAT"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/fiat.svg",
+      "logoSource": "Wikimedia Commons Fiat_logo.svg (official mark)",
+      "officialWebsite": "https://www.fiat.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
       "organization": "Gaurav Engineers",
-      "relationship": "contractor",
-      "sourceName": "Gaurav Engineers",
-      "officialWebsite": null,
+      "sourceNames": [
+        "Gaurav Engineers"
+      ],
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": null,
       "logoStatus": "unavailable",
-      "locations": [
-        "Kirloskarwadi, Sangli"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "No official website or logo could be found."
+      "logoOnDark": false,
+      "verificationNotes": "No official website or logo could be found."
     },
     {
-      "organization": "SMS India Pvt Ltd",
-      "relationship": "end-user",
-      "sourceName": "SMS INDIA PVT LTD",
-      "officialWebsite": "https://www.sms-group.com",
-      "logo": "/images/clients/sms-india.svg",
-      "logoSource": "https://www.sms-group.com (SMS group official website header asset)",
-      "logoStatus": "needs-review",
-      "locations": [
-        "Lucknow, Uttar Pradesh"
+      "organization": "Kirlosker Factory Plant",
+      "sourceNames": [
+        "Kirlosker Factory Plant"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "SMS group logo used on the assumption SMS India Pvt Ltd is the SMS group Indian subsidiary — confirm."
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/kirloskar.png",
+      "logoSource": "https://www.kirloskar.com (official website header)",
+      "officialWebsite": "https://www.kirloskar.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "PDF spelling kept; logo is Kirloskar Group's."
+    },
+    {
+      "organization": "SMS INDIA PVT LTD",
+      "sourceNames": [
+        "SMS INDIA PVT LTD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/sms-india.svg",
+      "logoSource": "https://www.sms-group.com (SMS group official website header asset)",
+      "officialWebsite": "https://www.sms-group.com",
+      "logoStatus": "needs-review",
+      "logoOnDark": false,
+      "verificationNotes": "SMS group logo assumed for SMS India Pvt Ltd - confirm."
+    },
+    {
+      "organization": "RAIL COACH FACTORY",
+      "sourceNames": [
+        "RAIL COACH FACTORY"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "Ambiguous (RCF Kapurthala / MCF Raebareli); no logo assigned."
     },
     {
       "organization": "Larsen & Toubro Limited, Construction",
-      "relationship": "contractor",
-      "sourceName": "Larsen & Toubro Limited, Construction",
-      "officialWebsite": "https://www.lntecc.com",
-      "logo": "/images/clients/lt-construction.svg",
+      "sourceNames": [
+        "Larsen & Toubro Limited, Construction"
+      ],
+      "occurrencesInPdf": 6,
+      "logo": "/images/trusted-partners/lt-construction.svg",
       "logoSource": "https://www.larsentoubro.com (official website header SVG, white version)",
+      "officialWebsite": "https://www.lntecc.com",
       "logoStatus": "verified",
-      "locations": [
-        "Bacheli, Dantewada, Chhattisgarh",
-        "Ayodhya–Prayagraj, Uttar Pradesh",
-        "Visakhapatnam",
-        "Tarapur",
-        "Kirandul, Dantewada, Chhattisgarh"
-      ],
-      "completedProjectCount": 5,
-      "ongoingProjectCount": 1,
-      "notes": "Rows C27/C43 give the project as \"Ram Mandir Ayodhya Prayagraj\" with site \"Utter pradesh\"; the exact site (Ayodhya or Prayagraj) is ambiguous. Only a white logo is published by L&T; it is shown on a dark well rather than recoloured."
+      "logoOnDark": true,
+      "verificationNotes": "Only a white logo is published by L&T; shown on a dark well."
     },
     {
-      "organization": "Manipal Energy & Infra Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "MANIPAL ENERGY & INFRA PVT TD",
-      "officialWebsite": "https://manipalenergy.in",
-      "logo": "/images/clients/manipal-energy-infra.png",
+      "organization": "NMDC LTD",
+      "sourceNames": [
+        "NNMDC SLURRY PUMP HOUSE BACHELI",
+        "NMDC BACHELI",
+        "NMDC LTD"
+      ],
+      "occurrencesInPdf": 3,
+      "logo": "/images/trusted-partners/nmdc.png",
+      "logoSource": "https://www.nmdc.co.in/assets/images/logo.png (official website; certification badge cropped off)",
+      "officialWebsite": "https://www.nmdc.co.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "Three NMDC lines consolidated."
+    },
+    {
+      "organization": "Ram Mandir Ayodhya Prayagraj",
+      "sourceNames": [
+        "Ram Mandir Ayodhya Prayagraj"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/ram-mandir.png",
+      "logoSource": "https://srjbtkshetra.org (Shri Ram Janmabhoomi Teerth Kshetra official website)",
+      "officialWebsite": "https://srjbtkshetra.org",
+      "logoStatus": "needs-review",
+      "logoOnDark": true,
+      "verificationNotes": "Trust logo has white lettering; shown on a dark well - confirm this is the intended organisation."
+    },
+    {
+      "organization": "MANIPAL ENERGY & INFRA PVT TD",
+      "sourceNames": [
+        "MANIPAL ENERGY & INFRA PVT TD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/manipal-energy-infra.png",
       "logoSource": "https://manipalenergy.in/images/meil_logo.png (official website)",
+      "officialWebsite": "https://manipalenergy.in",
       "logoStatus": "verified",
-      "locations": [
-        "Bacheli, Chhattisgarh"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Crescon Projects & Services Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "CRESCON PROJECTS & SERVICES PVT LTD",
-      "officialWebsite": "https://cresconprojects.com",
-      "logo": "/images/clients/crescon-projects.png",
+      "organization": "ASIAN PAINT",
+      "sourceNames": [
+        "ASIAN PAINT"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/asian-paints.svg",
+      "logoSource": "https://www.asianpaints.com (official website header SVG)",
+      "officialWebsite": "https://www.asianpaints.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "CRESCON PROJECTS & SERVICES PVT LTD",
+      "sourceNames": [
+        "CRESCON PROJECTS & SERVICES PVT LTD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/crescon-projects.png",
       "logoSource": "https://cresconprojects.com/assets/img/logo.png (official website)",
+      "officialWebsite": "https://cresconprojects.com",
       "logoStatus": "verified",
-      "locations": [
-        "Kolkata, West Bengal"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Asmita Engineering Equipments",
-      "relationship": "pending",
-      "sourceName": "ASMITA ENGINEERING EUIPMENTS",
-      "officialWebsite": null,
+      "organization": "ASMITA ENGINEERING EUIPMENTS",
+      "sourceNames": [
+        "ASMITA ENGINEERING EUIPMENTS"
+      ],
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": null,
       "logoStatus": "unavailable",
-      "locations": [
-        "Pune"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "PDF spelling \"EUIPMENTS\" corrected to Equipments. No website or logo found."
+      "logoOnDark": false,
+      "verificationNotes": "No website or logo found; PDF spelling kept."
     },
     {
-      "organization": "Raheja Universal Ltd",
-      "relationship": "project-partner",
-      "sourceName": "RAHEJA UNIVERSAL LTD",
-      "officialWebsite": "https://www.rahejauniversal.com",
-      "logo": "/images/clients/raheja-universal.png",
+      "organization": "DUROSHOCK",
+      "sourceNames": [
+        "DUROSHOCK"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "No official website resolved; no logo."
+    },
+    {
+      "organization": "RAHEJA UNIVERSAL LTD",
+      "sourceNames": [
+        "RAHEJA UNIVERSAL LTD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/raheja-universal.png",
       "logoSource": "https://www.rahejauniversal.com/images/logo.png (official website)",
+      "officialWebsite": "https://www.rahejauniversal.com",
       "logoStatus": "verified",
-      "locations": [
-        "Mumbai"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "VTP Realty",
-      "relationship": "project-partner",
-      "sourceName": "VTP REALTY - RISING WELWORTH | VTP REALTY",
-      "officialWebsite": "https://www.vtprealty.in",
-      "logo": "/images/clients/vtp-realty.png",
-      "logoSource": "https://www.vtprealty.in/images/footer/new-vtp-logo.png (official website)",
-      "logoStatus": "verified",
-      "locations": [
-        "Pune",
-        "Pashan, Pune"
+      "organization": "TESLA PARK 2",
+      "sourceNames": [
+        "TESLA PARK 2"
       ],
-      "completedProjectCount": 3,
-      "ongoingProjectCount": 1,
-      "notes": "\"VTP REALTY - RISING WELWORTH\" (row C37) consolidated under VTP Realty as a project entity of the same developer — confirm."
-    },
-    {
-      "organization": "R R Construction",
-      "relationship": "contractor",
-      "sourceName": "R R CONSTRUCTION",
-      "officialWebsite": null,
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
+      "officialWebsite": null,
       "logoStatus": "unavailable",
-      "locations": [
-        "Khalapur (Mumbai)"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": "Name too generic to identify an official website or logo. Project \"Toyo Factory, Khalapur\" with site \"MUMBAI\" — Khalapur is in Raigad district; both preserved."
+      "logoOnDark": false,
+      "verificationNotes": "Project name without a separate organisation identity; no logo."
     },
     {
-      "organization": "L'Oréal India",
-      "relationship": "end-user",
-      "sourceName": "LOREAL INDIA",
+      "organization": "INS VARSHA",
+      "sourceNames": [
+        "INS VARSHA"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "Indian Navy establishment; no organisation-specific logo assigned."
+    },
+    {
+      "organization": "BARC",
+      "sourceNames": [
+        "BARC"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/barc.png",
+      "logoSource": "https://www.barc.gov.in/images/logo_goi_barc.png (official website)",
+      "officialWebsite": "https://www.barc.gov.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "VTP REALTY",
+      "sourceNames": [
+        "VTP REALTY - RISING WELWORTH",
+        "VTP REALTY"
+      ],
+      "occurrencesInPdf": 3,
+      "logo": "/images/trusted-partners/vtp-realty.png",
+      "logoSource": "https://www.vtprealty.in/images/footer/new-vtp-logo.png (official website)",
+      "officialWebsite": "https://www.vtprealty.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "\"VTP REALTY - RISING WELWORTH\" consolidated with VTP REALTY."
+    },
+    {
+      "organization": "R R CONSTRUCTION",
+      "sourceNames": [
+        "R R CONSTRUCTION"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "Name too generic to identify; no logo."
+    },
+    {
+      "organization": "TOYO FACTORY, KHALAPUR",
+      "sourceNames": [
+        "TOYO FACTORY, KHALAPUR"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/toyo.png",
+      "logoSource": "https://www.toyo-eng.com (Toyo Engineering Corporation official website)",
+      "officialWebsite": "https://www.toyo-eng.com",
+      "logoStatus": "needs-review",
+      "logoOnDark": false,
+      "verificationNotes": "Toyo Engineering logo used for the Khalapur factory - confirm."
+    },
+    {
+      "organization": "LOREAL INDIA",
+      "sourceNames": [
+        "LOREAL INDIA"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/loreal-india.svg",
+      "logoSource": "Wikimedia Commons L'Oreal_logo.svg (official wordmark)",
       "officialWebsite": "https://www.loreal.com/en/india/",
-      "logo": "/images/clients/loreal-india.svg",
-      "logoSource": "Wikimedia Commons L'Oréal_logo.svg (official wordmark)",
       "logoStatus": "verified",
-      "locations": [
-        "Chakan, Pune"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "SPG Infraprojects Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "SPG INFRAPROJECTS PVT LTD",
-      "officialWebsite": "https://spginfra.com",
-      "logo": "/images/clients/spg-infraprojects.png",
+      "organization": "SPG INFRAPROJECTS PVT LTD",
+      "sourceNames": [
+        "SPG INFRAPROJECTS PVT LTD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/spg-infraprojects.png",
       "logoSource": "https://spginfra.com (official website header)",
+      "officialWebsite": "https://spginfra.com",
       "logoStatus": "verified",
-      "locations": [
-        "Nariman Point, Mumbai"
-      ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "CBRE South Asia",
-      "relationship": "project-partner",
-      "sourceName": "CBRE SOUTH ASIA",
-      "officialWebsite": "https://www.cbre.co.in",
-      "logo": "/images/clients/cbre-south-asia.svg",
-      "logoSource": "Wikimedia Commons CBRE_Group_logo.svg (official wordmark; cbre.co.in serves the logo inline only)",
-      "logoStatus": "verified",
-      "locations": [
-        "Chennai"
+      "organization": "Income tax Building Nariman Point Mumbai",
+      "sourceNames": [
+        "Income tax Building Nariman Point Mumbai"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 1,
-      "notes": ""
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "Building, not an organisation with a logo; incometaxindia.gov.in blocks automated access."
+    },
+    {
+      "organization": "CBRE SOUTH ASIA",
+      "sourceNames": [
+        "CBRE SOUTH ASIA"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/cbre-south-asia.svg",
+      "logoSource": "Wikimedia Commons CBRE_Group_logo.svg (official wordmark)",
+      "officialWebsite": "https://www.cbre.co.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "DLF CYBERCITY",
+      "sourceNames": [
+        "DLF CYBERCITY"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/dlf.svg",
+      "logoSource": "https://www.dlf.in/images/logo-black.svg (official website)",
+      "officialWebsite": "https://www.dlf.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": "DLF's official logo is a black wordmark."
     },
     {
       "organization": "Safe Lifters Pvt Ltd",
-      "relationship": "pending",
-      "sourceName": "Safe Lifters Pvt Ltd",
-      "officialWebsite": "https://safelifters.com",
-      "logo": "/images/clients/safe-lifters.svg",
-      "logoSource": "https://safelifters.com/wp-content/uploads/2024/07/safe-logo-final.svg (official website)",
-      "logoStatus": "verified",
-      "locations": [
-        "Hadapsar, Pune"
+      "sourceNames": [
+        "Safe Lifters Pvt Ltd"
       ],
-      "completedProjectCount": 1,
-      "ongoingProjectCount": 0,
-      "notes": ""
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/safe-lifters.svg",
+      "logoSource": "https://safelifters.com (official website)",
+      "officialWebsite": "https://safelifters.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Tata Construction Ltd",
-      "relationship": "contractor",
-      "sourceName": "TATA CONSTRUCTION LTD",
-      "officialWebsite": null,
+      "organization": "TATA PROJECTS",
+      "sourceNames": [
+        "TATA PROJECTS"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/tata-projects.png",
+      "logoSource": "https://tataprojects.com (official website header)",
+      "officialWebsite": "https://www.tataprojects.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "TATA MOTORS PLANT SANAND",
+      "sourceNames": [
+        "TATA MOTORS PLANT SANAND"
+      ],
+      "occurrencesInPdf": 2,
+      "logo": "/images/trusted-partners/tata-motors.svg",
+      "logoSource": "Wikimedia Commons Tata_Motors_Logo.svg (official wordmark)",
+      "officialWebsite": "https://www.tatamotors.com",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "Aerospace Museum, MES, Palam, Delhi",
+      "sourceNames": [
+        "Aerospace Museum, MES, Palam, Delhi"
+      ],
+      "occurrencesInPdf": 1,
       "logo": null,
       "logoSource": null,
-      "logoStatus": "needs-review",
-      "locations": [
-        "Tarapur"
-      ],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 1,
-      "notes": "\"TATA CONSTRUCTION LTD\" does not match a registered Tata company name (possibly Tata Projects Ltd); no logo assigned until confirmed."
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "No organisation logo identified."
     },
     {
-      "organization": "Shapoorji Pallonji And Company Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "Shapoorji Pallonji And Company Private Limited",
+      "organization": "Shapoorji Pallonji And Company Private Limited",
+      "sourceNames": [
+        "Shapoorji Pallonji And Company Private Limited"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/shapoorji-pallonji.svg",
+      "logoSource": "https://www.shapoorjipallonji.com (official website)",
       "officialWebsite": "https://www.shapoorjipallonji.com",
-      "logo": "/images/clients/shapoorji-pallonji.svg",
-      "logoSource": "https://www.shapoorjipallonji.com/assets/vectors/icons/icon_splogo_blue.svg (official website)",
       "logoStatus": "verified",
-      "locations": [
-        "Lower Parel, Mumbai"
-      ],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 1,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Milecon Engineering Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "MILECON ENGINEERING PRIVATE LIMITED",
-      "officialWebsite": "https://milecon.in",
-      "logo": "/images/clients/milecon-engineering.png",
+      "organization": "BDD MUMBAI",
+      "sourceNames": [
+        "BDD MUMBAI"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": null,
+      "logoSource": null,
+      "officialWebsite": null,
+      "logoStatus": "unavailable",
+      "logoOnDark": false,
+      "verificationNotes": "Redevelopment site name; no organisation logo identified."
+    },
+    {
+      "organization": "MILECON ENGINEERING PRIVATE LIMITED",
+      "sourceNames": [
+        "MILECON ENGINEERING PRIVATE LIMITED"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/milecon-engineering.png",
       "logoSource": "https://milecon.in/images/logo.png (official website)",
+      "officialWebsite": "https://milecon.in",
       "logoStatus": "verified",
-      "locations": [
-        "Sanand, Gujarat"
-      ],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 1,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Amara Raja Infra Pvt Ltd",
-      "relationship": "contractor",
-      "sourceName": "Amara Raja Infra Private Limited",
+      "organization": "Amara Raja Infra Private Limited",
+      "sourceNames": [
+        "Amara Raja Infra Private Limited"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/amara-raja-infra.png",
+      "logoSource": "https://amararajainfra.com (official website)",
       "officialWebsite": "https://www.amararajainfra.com",
-      "logo": "/images/clients/amara-raja-infra.png",
-      "logoSource": "https://amararajainfra.com/wp-content/uploads/2023/05/thumbnail_AR_Infra_logo.png (official website)",
       "logoStatus": "verified",
-      "locations": [
-        "Gujarat"
-      ],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 1,
-      "notes": ""
+      "logoOnDark": false,
+      "verificationNotes": ""
     },
     {
-      "organization": "Inditech Valves Ltd",
-      "relationship": "end-user",
-      "sourceName": "INDITECH VALVES LTD",
+      "organization": "AMNS HAZIRA",
+      "sourceNames": [
+        "AMNS HAZIRA"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/amns-hazira.png",
+      "logoSource": "https://www.amns.in/public/assets/images/logo_red.png (AM/NS India official website)",
+      "officialWebsite": "https://www.amns.in",
+      "logoStatus": "verified",
+      "logoOnDark": false,
+      "verificationNotes": ""
+    },
+    {
+      "organization": "INDITECH VALVES LTD",
+      "sourceNames": [
+        "INDITECH VALVES LTD"
+      ],
+      "occurrencesInPdf": 1,
+      "logo": "/images/trusted-partners/inditech-valves.png",
+      "logoSource": "https://www.inditechvalves.com (official website)",
       "officialWebsite": "https://www.inditechvalves.com",
-      "logo": "/images/clients/inditech-valves.png",
-      "logoSource": "https://www.inditechvalves.com/wp-content/uploads/2024/02/IndiTech-Logo-svg.svg (official website; rasterised)",
       "logoStatus": "verified",
-      "locations": [
-        "Alandi, Pune"
-      ],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 1,
-      "notes": ""
-    },
-    {
-      "organization": "ZF India",
-      "relationship": "end-user",
-      "sourceName": "ZF India (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/zf-india.svg",
-      "logoSource": "Wikimedia Commons ZF_Friedrichshafen_logo.svg (official mark)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Monier",
-      "relationship": "end-user",
-      "sourceName": "Monier (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/monier.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 12.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "John Deere",
-      "relationship": "end-user",
-      "sourceName": "John Deere (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/john-deere.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 13.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Tata DLT",
-      "relationship": "end-user",
-      "sourceName": "Tata DLT (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/tata-dlt.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 14.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Uno Minda",
-      "relationship": "end-user",
-      "sourceName": "Uno Minda (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/uno-minda.png",
-      "logoSource": "https://www.unominda.com/images/logo.png (official website)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Flash Electronics",
-      "relationship": "end-user",
-      "sourceName": "Flash Electronics (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/flash-electronics.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 16.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "IAC (International Automotive Components)",
-      "relationship": "end-user",
-      "sourceName": "IAC (International Automotive Components) (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/iac.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 17.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "LMT Tools",
-      "relationship": "end-user",
-      "sourceName": "LMT Tools (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/lmt-tools.svg",
-      "logoSource": "https://www.lmt-tools.com/svg/logo.svg (official website)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Tech Mahindra",
-      "relationship": "end-user",
-      "sourceName": "Tech Mahindra (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/tech-mahindra.svg",
-      "logoSource": "Wikimedia Commons Tech_Mahindra_New_Logo.svg (official wordmark)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "General Motors",
-      "relationship": "end-user",
-      "sourceName": "General Motors (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/general-motors.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 20.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Burckhardt Compression",
-      "relationship": "end-user",
-      "sourceName": "Burckhardt Compression (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/burckhardt-compression.png",
-      "logoSource": "https://www.burckhardtcompression.com (official website header)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Kirloskar",
-      "relationship": "end-user",
-      "sourceName": "Kirloskar (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/kirloskar.png",
-      "logoSource": "https://www.kirloskar.com (official website header)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Thermax",
-      "relationship": "end-user",
-      "sourceName": "Thermax (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/thermax.svg",
-      "logoSource": "https://www.thermaxglobal.com (official website header SVG)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Revati",
-      "relationship": "pending",
-      "sourceName": "Revati (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/revati.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 25.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "\"Revati\" as shown on the previous website; full organisation name not recorded — confirm. Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Amazon",
-      "relationship": "end-user",
-      "sourceName": "Amazon (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/amazon.svg",
-      "logoSource": "Wikimedia Commons Amazon_logo.svg (official wordmark)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Flipkart",
-      "relationship": "end-user",
-      "sourceName": "Flipkart (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/flipkart.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 27.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Royal Enfield",
-      "relationship": "end-user",
-      "sourceName": "Royal Enfield (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/royal-enfield.png",
-      "logoSource": "https://www.royalenfield.com (official website header, webp)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "P. N. Gadgil & Sons",
-      "relationship": "end-user",
-      "sourceName": "P. N. Gadgil & Sons (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/pn-gadgil.png",
-      "logoSource": "https://pngadgilandsons.com (official website header)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Ranka Jewellers",
-      "relationship": "end-user",
-      "sourceName": "Ranka Jewellers (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/ranka-jewellers.png",
-      "logoSource": "https://www.rankajewellers.com (official website header)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Cummins",
-      "relationship": "end-user",
-      "sourceName": "Cummins (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/cummins.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 32.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Reliance Trends",
-      "relationship": "end-user",
-      "sourceName": "Reliance Trends (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/reliance-trends.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 33.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "PARI (Precision Automation & Robotics India)",
-      "relationship": "end-user",
-      "sourceName": "PARI (Precision Automation & Robotics India) (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/pari.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 34.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Dell'Orto",
-      "relationship": "end-user",
-      "sourceName": "Dell'Orto (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/dellorto.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 36.jpg)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "POSCO",
-      "relationship": "end-user",
-      "sourceName": "POSCO (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/posco.svg",
-      "logoSource": "Wikimedia Commons POSCO_logo.svg (official wordmark)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Takshi Auto Components Pvt Ltd",
-      "relationship": "end-user",
-      "sourceName": "Takshi Auto Components Pvt Ltd (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/takshi-auto.png",
-      "logoSource": "https://www.takshiauto.com (official website header)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Kempegowda International Airport Bengaluru",
-      "relationship": "end-user",
-      "sourceName": "Kempegowda International Airport Bengaluru (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/kempegowda-airport.png",
-      "logoSource": "https://www.bengaluruairport.com (official website header)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Indian Institute of Technology Gandhinagar",
-      "relationship": "end-user",
-      "sourceName": "Indian Institute of Technology Gandhinagar (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/iit-gandhinagar.png",
-      "logoSource": "https://iitgn.ac.in/assets/img/IITGN-5.png (official website)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Vizag Steel (Rashtriya Ispat Nigam Ltd)",
-      "relationship": "end-user",
-      "sourceName": "Vizag Steel (Rashtriya Ispat Nigam Ltd) (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/vizag-steel.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l6.png)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Godrej Agrovet",
-      "relationship": "end-user",
-      "sourceName": "Godrej Agrovet (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/godrej-agrovet.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l8.png)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Godrej Properties",
-      "relationship": "project-partner",
-      "sourceName": "Godrej Properties (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/godrej-properties.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l9.png)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Raviraj Realty",
-      "relationship": "project-partner",
-      "sourceName": "Raviraj Realty (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/raviraj-realty.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l11.png)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Wienerberger",
-      "relationship": "end-user",
-      "sourceName": "Wienerberger (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/wienerberger.svg",
-      "logoSource": "https://www.wienerberger.in (official website header SVG)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Kolte-Patil Developers",
-      "relationship": "project-partner",
-      "sourceName": "Kolte-Patil Developers (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/kolte-patil.png",
-      "logoSource": "https://www.koltepatil.com/assets/dist/images/logo.jpg (official website)",
-      "logoStatus": "verified",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
-    },
-    {
-      "organization": "Siddhivinayak Groups (Naupatlal Sakla Enterprise)",
-      "relationship": "project-partner",
-      "sourceName": "Siddhivinayak Groups (Naupatlal Sakla Enterprise) (logo on standardautomation.in client page)",
-      "officialWebsite": null,
-      "logo": "/images/clients/siddhivinayak-groups.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l14.png)",
-      "logoStatus": "needs-review",
-      "locations": [],
-      "completedProjectCount": 0,
-      "ongoingProjectCount": 0,
-      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
+      "logoOnDark": false,
+      "verificationNotes": ""
     }
   ]
 }

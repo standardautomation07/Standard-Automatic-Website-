@@ -5,11 +5,11 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { Media } from "@/components/ui/media";
 import { TrustedPartners } from "@/components/clients/trusted-partners";
-import { clientStats } from "@/data/clients";
+import { trustedPartnerStats } from "@/data/trusted-partners";
 
 export const metadata: Metadata = {
   title: "Trusted Partners",
-  description: `Trusted Partners — ${clientStats.organisations} organizations Standard Automatic Solutions works with across industrial, infrastructure and commercial projects.`,
+  description: `Trusted Partners — ${trustedPartnerStats.organisations} organizations Standard Automatic Solutions works with across industrial, infrastructure and commercial projects.`,
   alternates: { canonical: "/projects" },
 };
 
@@ -20,7 +20,7 @@ const trail = [
 
 /**
  * The Trusted Partners showcase is built from the master organisation
- * dataset (src/data/clients.ts). Written-up case studies are still being
+ * dataset (src/data/trusted-partners.ts). Written-up case studies are still being
  * documented, so the page says so rather than inventing them.
  */
 export default function ProjectsPage() {

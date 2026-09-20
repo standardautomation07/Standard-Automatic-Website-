@@ -10,7 +10,7 @@ for (const [name, vp] of [["desktop", { width: 1440, height: 900 }], ["wide", { 
       const imgs = [...document.querySelectorAll("#trusted-partners img")]; const cards = [...document.querySelectorAll("#trusted-partners > div > ul > li")];
       const broken = imgs.filter(i => !i.complete || i.naturalWidth === 0).map(i => i.getAttribute("src"));
       const hs = cards.map(c => c.getBoundingClientRect().height);
-      return { cards: cards.length, imgs: imgs.length, placeholders: cards.length - imgs.length, broken, overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth, minH: Math.min(...hs), maxH: Math.max(...hs), names: document.querySelectorAll("#trusted-partners h3").length, textLeak: /completed|ongoing|contractor|end user|Pune|Mumbai/i.test(document.querySelector("#trusted-partners ul").innerText) };
+      return { cards: cards.length, imgs: imgs.length, placeholders: cards.length - imgs.length, broken, overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth, minH: Math.min(...hs), maxH: Math.max(...hs), names: document.querySelectorAll("#trusted-partners h3").length, textLeak: /completed|ongoing|contractor|end user|rolling shutter|high speed door/i.test(document.querySelector("#trusted-partners ul").innerText), mapping: [...document.querySelectorAll("#trusted-partners li")].filter(li => { const img = li.querySelector("img"); return img && img.alt !== li.querySelector("h3").textContent; }).length };
     });
     console.log(name.padEnd(8), path.padEnd(10), JSON.stringify(r), "errors:", errors.length ? errors : 0);
     if (name === "desktop" && path === "/") {
