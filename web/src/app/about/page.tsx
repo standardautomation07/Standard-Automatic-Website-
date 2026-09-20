@@ -121,8 +121,8 @@ export default function AboutPage() {
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-steel-600">
                 No employee count, turnover, project or installation totals, years-of-experience
-                claims, client lists or factory dimensions appear on this site, because none of them
-                has been verified. Ask us and we will tell you what we can evidence.
+                claims or factory dimensions appear on this site, because none of them has been
+                verified. Our Trusted Partners page lists organisations from our project records. Ask us and we will tell you what we can evidence.
               </p>
             </article>
           </div>

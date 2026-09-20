@@ -8,7 +8,7 @@ import { ArrowUpRight, Mail, MapPin, Phone, WhatsApp } from "@/components/ui/ico
 const company = [
   { href: "/about", label: "About" },
   { href: "/service-support", label: "Service & Support" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Trusted Partners" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
 ];

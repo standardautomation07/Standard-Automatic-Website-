@@ -11,7 +11,7 @@ import { ArrowRight, ChevronDown, Close, Menu, Phone } from "@/components/ui/ico
 
 const primaryNav = [
   { href: "/industries", label: "Industries" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Trusted Partners" },
   { href: "/resources", label: "Resources" },
   { href: "/service-support", label: "Service & Support" },
   { href: "/about", label: "About" },

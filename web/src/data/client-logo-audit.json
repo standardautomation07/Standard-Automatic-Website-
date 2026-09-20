@@ -1,19 +1,34 @@
 {
-  "generatedFrom": "Client List. 2026 MARCH.pdf",
-  "stats": {
-    "organisations": 66,
-    "organisationsWithCompleted": 27,
-    "organisationsWithOngoing": 9,
+  "generatedFrom": [
+    "Client List. 2026 MARCH.pdf",
+    "https://www.standardautomation.in/clients.html"
+  ],
+  "reconciliation": {
+    "pdfOrganisationOccurrences": 54,
+    "pdfUniqueOrganisations": 32,
+    "websiteLogoOccurrences": 43,
+    "websiteUniqueOrganisations": 40,
+    "websiteOnlyOrganisations": 34,
+    "masterOrganisations": 66,
+    "publicOrganisations": 66,
+    "contractors": 17,
+    "endUsers": 38,
+    "projectPartners": 8,
+    "pendingClassification": 3,
+    "verifiedFullColourLogos": 38,
+    "logoReviewRequired": 28,
+    "duplicatesConsolidated": 31,
+    "missingOrganisations": 0,
+    "duplicatePublicEntries": 0,
     "projects": 54,
     "completedProjects": 45,
     "ongoingProjects": 9,
-    "locations": 37,
-    "verifiedLogos": 21,
-    "logosNeedingReview": 45
+    "locations": 37
   },
   "organisations": [
     {
       "organization": "URC Construction (P) Ltd",
+      "relationship": "contractor",
       "sourceName": "URC Construction (P) Ltd",
       "officialWebsite": "https://www.urcindia.com",
       "logo": "/images/clients/urc-construction.png",
@@ -30,6 +45,7 @@
     },
     {
       "organization": "Godrej & Boyce Mfg Co Ltd",
+      "relationship": "end-user",
       "sourceName": "Godrej & Boyce Mfg Co Ltd",
       "officialWebsite": "https://www.godrej.com",
       "logo": "/images/clients/godrej-boyce.png",
@@ -45,6 +61,7 @@
     },
     {
       "organization": "Ador Powertron",
+      "relationship": "end-user",
       "sourceName": "Ador Powertron",
       "officialWebsite": "https://adorpowertron.com",
       "logo": "/images/clients/ador-powertron.png",
@@ -59,6 +76,7 @@
     },
     {
       "organization": "Suroj Buildcon Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "SUROJ BUILDCON PVT LTD",
       "officialWebsite": "https://www.suroj.in",
       "logo": "/images/clients/suroj-buildcon.svg",
@@ -74,6 +92,7 @@
     },
     {
       "organization": "Precast India Infrastructures Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
       "officialWebsite": "https://www.precastindia.co.in",
       "logo": null,
@@ -90,6 +109,7 @@
     },
     {
       "organization": "Godrej Industries Ltd",
+      "relationship": "end-user",
       "sourceName": "GODREJ INDUSTRIES LTD",
       "officialWebsite": "https://www.godrejindustries.com",
       "logo": "/images/clients/godrej-industries.png",
@@ -104,6 +124,7 @@
     },
     {
       "organization": "ABB India Limited",
+      "relationship": "end-user",
       "sourceName": "ABB India Limited",
       "officialWebsite": "https://new.abb.com/indian-subcontinent",
       "logo": "/images/clients/abb-india.svg",
@@ -118,6 +139,7 @@
     },
     {
       "organization": "Xerbia Developers",
+      "relationship": "project-partner",
       "sourceName": "Xerbia Developers",
       "officialWebsite": null,
       "logo": null,
@@ -132,6 +154,7 @@
     },
     {
       "organization": "Bhate & Raje Construction Company Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "Bhate & raje Construction Company Ltd",
       "officialWebsite": "https://bhateraje.com",
       "logo": "/images/clients/bhate-raje.png",
@@ -147,6 +170,7 @@
     },
     {
       "organization": "Sambhav Building Systems Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
       "officialWebsite": null,
       "logo": null,
@@ -161,6 +185,7 @@
     },
     {
       "organization": "Sula Vineyards",
+      "relationship": "end-user",
       "sourceName": "Sula Vineyards",
       "officialWebsite": "https://sulavineyards.com",
       "logo": "/images/clients/sula-vineyards.png",
@@ -175,6 +200,7 @@
     },
     {
       "organization": "Kaira District Co-operative Milk Producers' Union Ltd (Amul Dairy)",
+      "relationship": "end-user",
       "sourceName": "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy",
       "officialWebsite": "https://www.amuldairy.com",
       "logo": "/images/clients/amul-kaira.png",
@@ -189,6 +215,7 @@
     },
     {
       "organization": "ITD Cementation India Ltd",
+      "relationship": "contractor",
       "sourceName": "ITD CEMENTATION IND LTD | ITD CEMENTATION",
       "officialWebsite": "https://www.itdcem.co.in",
       "logo": null,
@@ -204,6 +231,7 @@
     },
     {
       "organization": "Suvijay Buildcon",
+      "relationship": "contractor",
       "sourceName": "SUVIJIAY BUILDCON",
       "officialWebsite": null,
       "logo": null,
@@ -218,6 +246,7 @@
     },
     {
       "organization": "Gaurav Engineers",
+      "relationship": "contractor",
       "sourceName": "Gaurav Engineers",
       "officialWebsite": null,
       "logo": null,
@@ -232,6 +261,7 @@
     },
     {
       "organization": "SMS India Pvt Ltd",
+      "relationship": "end-user",
       "sourceName": "SMS INDIA PVT LTD",
       "officialWebsite": "https://www.sms-group.com",
       "logo": "/images/clients/sms-india.svg",
@@ -246,6 +276,7 @@
     },
     {
       "organization": "Larsen & Toubro Limited, Construction",
+      "relationship": "contractor",
       "sourceName": "Larsen & Toubro Limited, Construction",
       "officialWebsite": "https://www.lntecc.com",
       "logo": "/images/clients/lt-construction.svg",
@@ -264,6 +295,7 @@
     },
     {
       "organization": "Manipal Energy & Infra Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "MANIPAL ENERGY & INFRA PVT TD",
       "officialWebsite": "https://manipalenergy.in",
       "logo": "/images/clients/manipal-energy-infra.png",
@@ -278,6 +310,7 @@
     },
     {
       "organization": "Crescon Projects & Services Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "CRESCON PROJECTS & SERVICES PVT LTD",
       "officialWebsite": "https://cresconprojects.com",
       "logo": "/images/clients/crescon-projects.png",
@@ -292,6 +325,7 @@
     },
     {
       "organization": "Asmita Engineering Equipments",
+      "relationship": "pending",
       "sourceName": "ASMITA ENGINEERING EUIPMENTS",
       "officialWebsite": null,
       "logo": null,
@@ -306,6 +340,7 @@
     },
     {
       "organization": "Raheja Universal Ltd",
+      "relationship": "project-partner",
       "sourceName": "RAHEJA UNIVERSAL LTD",
       "officialWebsite": "https://www.rahejauniversal.com",
       "logo": "/images/clients/raheja-universal.png",
@@ -320,6 +355,7 @@
     },
     {
       "organization": "VTP Realty",
+      "relationship": "project-partner",
       "sourceName": "VTP REALTY - RISING WELWORTH | VTP REALTY",
       "officialWebsite": "https://www.vtprealty.in",
       "logo": "/images/clients/vtp-realty.png",
@@ -335,6 +371,7 @@
     },
     {
       "organization": "R R Construction",
+      "relationship": "contractor",
       "sourceName": "R R CONSTRUCTION",
       "officialWebsite": null,
       "logo": null,
@@ -349,6 +386,7 @@
     },
     {
       "organization": "L'Oréal India",
+      "relationship": "end-user",
       "sourceName": "LOREAL INDIA",
       "officialWebsite": "https://www.loreal.com/en/india/",
       "logo": "/images/clients/loreal-india.svg",
@@ -363,6 +401,7 @@
     },
     {
       "organization": "SPG Infraprojects Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "SPG INFRAPROJECTS PVT LTD",
       "officialWebsite": "https://spginfra.com",
       "logo": "/images/clients/spg-infraprojects.png",
@@ -377,6 +416,7 @@
     },
     {
       "organization": "CBRE South Asia",
+      "relationship": "project-partner",
       "sourceName": "CBRE SOUTH ASIA",
       "officialWebsite": "https://www.cbre.co.in",
       "logo": "/images/clients/cbre-south-asia.svg",
@@ -391,6 +431,7 @@
     },
     {
       "organization": "Safe Lifters Pvt Ltd",
+      "relationship": "pending",
       "sourceName": "Safe Lifters Pvt Ltd",
       "officialWebsite": "https://safelifters.com",
       "logo": "/images/clients/safe-lifters.svg",
@@ -405,6 +446,7 @@
     },
     {
       "organization": "Tata Construction Ltd",
+      "relationship": "contractor",
       "sourceName": "TATA CONSTRUCTION LTD",
       "officialWebsite": null,
       "logo": null,
@@ -419,6 +461,7 @@
     },
     {
       "organization": "Shapoorji Pallonji And Company Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "Shapoorji Pallonji And Company Private Limited",
       "officialWebsite": "https://www.shapoorjipallonji.com",
       "logo": "/images/clients/shapoorji-pallonji.svg",
@@ -433,6 +476,7 @@
     },
     {
       "organization": "Milecon Engineering Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "MILECON ENGINEERING PRIVATE LIMITED",
       "officialWebsite": "https://milecon.in",
       "logo": "/images/clients/milecon-engineering.png",
@@ -447,6 +491,7 @@
     },
     {
       "organization": "Amara Raja Infra Pvt Ltd",
+      "relationship": "contractor",
       "sourceName": "Amara Raja Infra Private Limited",
       "officialWebsite": "https://www.amararajainfra.com",
       "logo": "/images/clients/amara-raja-infra.png",
@@ -461,6 +506,7 @@
     },
     {
       "organization": "Inditech Valves Ltd",
+      "relationship": "end-user",
       "sourceName": "INDITECH VALVES LTD",
       "officialWebsite": "https://www.inditechvalves.com",
       "logo": "/images/clients/inditech-valves.png",
@@ -475,18 +521,20 @@
     },
     {
       "organization": "ZF India",
+      "relationship": "end-user",
       "sourceName": "ZF India (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/zf-india.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 11.jpg)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/zf-india.svg",
+      "logoSource": "Wikimedia Commons ZF_Friedrichshafen_logo.svg (official mark)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Monier",
+      "relationship": "end-user",
       "sourceName": "Monier (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/monier.png",
@@ -495,10 +543,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "John Deere",
+      "relationship": "end-user",
       "sourceName": "John Deere (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/john-deere.png",
@@ -507,10 +556,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Tata DLT",
+      "relationship": "end-user",
       "sourceName": "Tata DLT (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/tata-dlt.png",
@@ -519,22 +569,24 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Uno Minda",
+      "relationship": "end-user",
       "sourceName": "Uno Minda (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/uno-minda.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 42.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.unominda.com/images/logo.png (official website)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Flash Electronics",
+      "relationship": "end-user",
       "sourceName": "Flash Electronics (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/flash-electronics.png",
@@ -543,10 +595,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "IAC (International Automotive Components)",
+      "relationship": "end-user",
       "sourceName": "IAC (International Automotive Components) (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/iac.png",
@@ -555,34 +608,37 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "LMT Tools",
+      "relationship": "end-user",
       "sourceName": "LMT Tools (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/lmt-tools.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 18.jpg)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/lmt-tools.svg",
+      "logoSource": "https://www.lmt-tools.com/svg/logo.svg (official website)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Tech Mahindra",
+      "relationship": "end-user",
       "sourceName": "Tech Mahindra (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/tech-mahindra.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 19.jpg)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/tech-mahindra.svg",
+      "logoSource": "Wikimedia Commons Tech_Mahindra_New_Logo.svg (official wordmark)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "General Motors",
+      "relationship": "end-user",
       "sourceName": "General Motors (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/general-motors.png",
@@ -591,46 +647,50 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Burckhardt Compression",
+      "relationship": "end-user",
       "sourceName": "Burckhardt Compression (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/burckhardt-compression.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 22.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.burckhardtcompression.com (official website header)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Kirloskar",
+      "relationship": "end-user",
       "sourceName": "Kirloskar (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/kirloskar.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 23.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.kirloskar.com (official website header)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Thermax",
+      "relationship": "end-user",
       "sourceName": "Thermax (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/thermax.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 24.jpg)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/thermax.svg",
+      "logoSource": "https://www.thermaxglobal.com (official website header SVG)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Revati",
+      "relationship": "pending",
       "sourceName": "Revati (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/revati.png",
@@ -639,22 +699,24 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "\"Revati\" as shown on the previous website; full organisation name not recorded — confirm. Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "\"Revati\" as shown on the previous website; full organisation name not recorded — confirm. Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Amazon",
+      "relationship": "end-user",
       "sourceName": "Amazon (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/amazon.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 26.jpg)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/amazon.svg",
+      "logoSource": "Wikimedia Commons Amazon_logo.svg (official wordmark)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Flipkart",
+      "relationship": "end-user",
       "sourceName": "Flipkart (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/flipkart.png",
@@ -663,46 +725,50 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Royal Enfield",
+      "relationship": "end-user",
       "sourceName": "Royal Enfield (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/royal-enfield.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 28.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.royalenfield.com (official website header, webp)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "P. N. Gadgil & Sons",
+      "relationship": "end-user",
       "sourceName": "P. N. Gadgil & Sons (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/pn-gadgil.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 29.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://pngadgilandsons.com (official website header)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Ranka Jewellers",
+      "relationship": "end-user",
       "sourceName": "Ranka Jewellers (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/ranka-jewellers.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 30.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.rankajewellers.com (official website header)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Cummins",
+      "relationship": "end-user",
       "sourceName": "Cummins (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/cummins.png",
@@ -711,10 +777,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Reliance Trends",
+      "relationship": "end-user",
       "sourceName": "Reliance Trends (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/reliance-trends.png",
@@ -723,10 +790,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "PARI (Precision Automation & Robotics India)",
+      "relationship": "end-user",
       "sourceName": "PARI (Precision Automation & Robotics India) (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/pari.png",
@@ -735,10 +803,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Dell'Orto",
+      "relationship": "end-user",
       "sourceName": "Dell'Orto (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/dellorto.png",
@@ -747,58 +816,63 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "POSCO",
+      "relationship": "end-user",
       "sourceName": "POSCO (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/posco.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 39.jpg)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/posco.svg",
+      "logoSource": "Wikimedia Commons POSCO_logo.svg (official wordmark)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Takshi Auto Components Pvt Ltd",
+      "relationship": "end-user",
       "sourceName": "Takshi Auto Components Pvt Ltd (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/takshi-auto.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image 44.jpg)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.takshiauto.com (official website header)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Kempegowda International Airport Bengaluru",
+      "relationship": "end-user",
       "sourceName": "Kempegowda International Airport Bengaluru (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/kempegowda-airport.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l4.png)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.bengaluruairport.com (official website header)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Indian Institute of Technology Gandhinagar",
+      "relationship": "end-user",
       "sourceName": "Indian Institute of Technology Gandhinagar (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/iit-gandhinagar.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l5.png)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://iitgn.ac.in/assets/img/IITGN-5.png (official website)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Vizag Steel (Rashtriya Ispat Nigam Ltd)",
+      "relationship": "end-user",
       "sourceName": "Vizag Steel (Rashtriya Ispat Nigam Ltd) (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/vizag-steel.png",
@@ -807,10 +881,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Godrej Agrovet",
+      "relationship": "end-user",
       "sourceName": "Godrej Agrovet (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/godrej-agrovet.png",
@@ -819,10 +894,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Godrej Properties",
+      "relationship": "project-partner",
       "sourceName": "Godrej Properties (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/godrej-properties.png",
@@ -831,10 +907,11 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Raviraj Realty",
+      "relationship": "project-partner",
       "sourceName": "Raviraj Realty (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/raviraj-realty.png",
@@ -843,34 +920,37 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     },
     {
       "organization": "Wienerberger",
+      "relationship": "end-user",
       "sourceName": "Wienerberger (logo on standardautomation.in client page)",
       "officialWebsite": null,
-      "logo": "/images/clients/wienerberger.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l12.png)",
-      "logoStatus": "needs-review",
+      "logo": "/images/clients/wienerberger.svg",
+      "logoSource": "https://www.wienerberger.in (official website header SVG)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Kolte-Patil Developers",
+      "relationship": "project-partner",
       "sourceName": "Kolte-Patil Developers (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/kolte-patil.png",
-      "logoSource": "https://www.standardautomation.in/clients.html (previous company website, image l13.png)",
-      "logoStatus": "needs-review",
+      "logoSource": "https://www.koltepatil.com/assets/dist/images/logo.jpg (official website)",
+      "logoStatus": "verified",
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Listed on the previous website's client page; no project rows in the March 2026 client list."
     },
     {
       "organization": "Siddhivinayak Groups (Naupatlal Sakla Enterprise)",
+      "relationship": "project-partner",
       "sourceName": "Siddhivinayak Groups (Naupatlal Sakla Enterprise) (logo on standardautomation.in client page)",
       "officialWebsite": null,
       "logo": "/images/clients/siddhivinayak-groups.png",
@@ -879,7 +959,7 @@
       "locations": [],
       "completedProjectCount": 0,
       "ongoingProjectCount": 0,
-      "notes": "Carried over from the previous website's client page; low-resolution logo, replace with an official asset. No project rows in the March 2026 client list."
+      "notes": "Colour logo carried over from the previous website's client page (110×80 source); a higher-resolution official asset could not be retrieved automatically. No project rows in the March 2026 client list."
     }
   ]
 }

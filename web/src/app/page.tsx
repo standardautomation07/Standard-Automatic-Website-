@@ -13,7 +13,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { FamilyCard, ProductCard } from "@/components/product/cards";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { Media } from "@/components/ui/media";
-import { ClientShowcase } from "@/components/clients/client-showcase";
+import { TrustedPartners } from "@/components/clients/trusted-partners";
 import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { families as familyList } from "@/data/families";
@@ -253,8 +253,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 06 — Trusted clients & project partners */}
-      <ClientShowcase index="06" />
+      {/* 06 — Trusted partners */}
+      <TrustedPartners index="06" />
 
       {/* 07 — Why Standard Automatic */}
       <section className="bg-paper py-20 lg:py-28">

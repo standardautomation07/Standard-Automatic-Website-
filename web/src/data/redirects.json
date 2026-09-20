@@ -11,7 +11,7 @@
   },
   {
     "source": "/clients.html",
-    "destination": "/about",
+    "destination": "/projects",
     "permanent": true
   },
   {

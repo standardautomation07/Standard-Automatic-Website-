@@ -4,23 +4,23 @@ import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { Media } from "@/components/ui/media";
-import { ClientShowcase } from "@/components/clients/client-showcase";
+import { TrustedPartners } from "@/components/clients/trusted-partners";
 import { clientStats } from "@/data/clients";
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description: `Organisations Standard Automatic Solutions has worked with — ${clientStats.organisations} clients and project partners across ${clientStats.locations} locations, completed and ongoing.`,
+  title: "Trusted Partners",
+  description: `Trusted Partners — ${clientStats.organisations} organizations Standard Automatic Solutions works with across industrial, infrastructure and commercial projects.`,
   alternates: { canonical: "/projects" },
 };
 
 const trail = [
   { name: "Home", path: "/" },
-  { name: "Projects", path: "/projects" },
+  { name: "Trusted Partners", path: "/projects" },
 ];
 
 /**
- * The client & project-partner showcase is built from the March 2026 client
- * list (src/data/clients.ts). Written-up case studies are still being
+ * The Trusted Partners showcase is built from the master organisation
+ * dataset (src/data/clients.ts). Written-up case studies are still being
  * documented, so the page says so rather than inventing them.
  */
 export default function ProjectsPage() {
@@ -34,15 +34,14 @@ export default function ProjectsPage() {
         <div className="shell relative py-14 lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />
           <p className="eyebrow mt-8 text-amber">Projects</p>
-          <h1 className="mt-5 max-w-3xl text-display-2 text-white">Trusted clients &amp; project partners</h1>
+          <h1 className="mt-5 max-w-3xl text-display-2 text-white">Trusted Partners</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-steel-300">
-            Organisations and project partners across industrial, infrastructure, commercial and
-            manufacturing projects, completed and ongoing.
+            Organizations we work with across industrial, infrastructure and commercial projects.
           </p>
         </div>
       </section>
 
-      <ClientShowcase />
+      <TrustedPartners />
 
       <section className="bg-paper py-16 lg:py-24">
         <div className="shell">
