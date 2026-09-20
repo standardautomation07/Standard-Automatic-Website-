@@ -35,7 +35,7 @@ export function ClientShowcase({ index, className = "" }: ClientShowcaseProps) {
           eyebrow="Trusted clients & project partners"
           align="between"
           title={<span id="clients-heading">Organisations we have worked with.</span>}
-          lede="Organisations and project partners across industrial, infrastructure, commercial and manufacturing projects — end users, contractors, developers and engineering companies, completed and ongoing."
+          lede="Organisations and project partners across industrial, infrastructure, commercial and manufacturing projects — end users, contractors, developers and engineering companies, from our current project list and our earlier client references."
           action={
             <dl className="grid grid-cols-3 gap-6 md:gap-8">
               {stats.map((stat) => (

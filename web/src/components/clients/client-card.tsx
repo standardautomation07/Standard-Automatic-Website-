@@ -44,22 +44,30 @@ export function ClientCard({ org }: { org: ClientOrganisation }) {
       </button>
 
       <p className="flex items-start justify-center gap-1.5 px-6 pb-7 text-center text-xs leading-relaxed text-steel-500">
-        <MapPin className="mt-[3px] h-3.5 w-3.5 shrink-0 text-amber" />
-        <span>
-          {shown.join(" · ")}
-          {hidden > 0 && (
-            <>
-              {" · "}
-              <button
-                type="button"
-                onClick={() => setExpanded(true)}
-                className="font-medium text-amber-deep underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
-              >
-                +{hidden} more
-              </button>
-            </>
-          )}
-        </span>
+        {locations.length === 0 ? (
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-400">
+            Client / end user
+          </span>
+        ) : (
+          <>
+            <MapPin className="mt-[3px] h-3.5 w-3.5 shrink-0 text-amber" />
+            <span>
+              {shown.join(" · ")}
+              {hidden > 0 && (
+                <>
+                  {" · "}
+                  <button
+                    type="button"
+                    onClick={() => setExpanded(true)}
+                    className="font-medium text-amber-deep underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                  >
+                    +{hidden} more
+                  </button>
+                </>
+              )}
+            </span>
+          </>
+        )}
       </p>
 
       <dialog
@@ -74,15 +82,21 @@ export function ClientCard({ org }: { org: ClientOrganisation }) {
           <div className="flex items-start justify-between gap-6">
             <div>
               <p className="eyebrow text-steel-500">Client / project partner</p>
-              <h4 id={titleId} className="mt-3 font-display text-xl font-medium text-steel-900">
+              <h4
+                id={titleId}
+                className="mt-3 font-display text-xl font-medium text-steel-900"
+              >
                 {org.displayName}
               </h4>
-              <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
-                {counts.completed} completed
-                {counts.ongoing > 0 && ` · ${counts.ongoing} ongoing`}
-                {" · "}
-                {locations.length} {locations.length === 1 ? "location" : "locations"}
-              </p>
+              {org.projects.length > 0 && (
+                <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
+                  {counts.completed} completed
+                  {counts.ongoing > 0 && ` · ${counts.ongoing} ongoing`}
+                  {" · "}
+                  {locations.length}{" "}
+                  {locations.length === 1 ? "location" : "locations"}
+                </p>
+              )}
             </div>
             <button
               type="button"
@@ -94,11 +108,24 @@ export function ClientCard({ org }: { org: ClientOrganisation }) {
             </button>
           </div>
 
-          <ul className="mt-6 divide-y divide-line border-y border-line">
+          {org.projects.length === 0 && (
+            <p className="mt-5 text-sm leading-relaxed text-steel-600">
+              Listed as a valued client / end user on our previous website.
+              Individual project records for this organisation are not published
+              here.
+            </p>
+          )}
+
+          <ul className="mt-6 divide-y divide-line border-y border-line empty:hidden">
             {org.projects.map((project) => (
-              <li key={project.ref} className="flex items-start justify-between gap-4 py-3">
+              <li
+                key={project.ref}
+                className="flex items-start justify-between gap-4 py-3"
+              >
                 <div>
-                  <p className="text-sm font-medium text-steel-900">{project.projectName}</p>
+                  <p className="text-sm font-medium text-steel-900">
+                    {project.projectName}
+                  </p>
                   <p className="mt-0.5 flex items-center gap-1.5 text-xs text-steel-500">
                     <MapPin className="h-3 w-3 text-amber" />
                     {project.location}
@@ -106,7 +133,9 @@ export function ClientCard({ org }: { org: ClientOrganisation }) {
                 </div>
                 <span
                   className={`shrink-0 font-mono text-[0.6rem] uppercase tracking-[0.12em] ${
-                    project.status === "ongoing" ? "text-amber-deep" : "text-steel-500"
+                    project.status === "ongoing"
+                      ? "text-amber-deep"
+                      : "text-steel-500"
                   }`}
                 >
                   {project.status}
@@ -140,9 +169,7 @@ function ClientLogo({ org }: { org: ClientOrganisation }) {
     );
   }
 
-  const well = org.logoOnDark
-    ? "bg-ink px-6"
-    : "px-4";
+  const well = org.logoOnDark ? "bg-ink px-6" : "px-4";
 
   return (
     <div className={`flex h-24 w-full items-center justify-center ${well}`}>
