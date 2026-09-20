@@ -955,7 +955,7 @@ export const highSpeedDoorProducts: Product[] = [
       "industrial-sectional-overhead-doors",
     ],
     documents: [brochure("High Speed Rigid / Insulated Door"), drawing],
-    imageId: "hsd-rigid-insulated-supplied",
+    imageId: "hsd-rigid-insulated-hero",
     galleryIds: [
       "hsd-rigid-angle",
       "hsd-rigid-panels",

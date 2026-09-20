@@ -372,13 +372,14 @@ const list: ImageRef[] = [
     "High Speed Cleanroom / Hygiene Door — lead image",
     "research/cleanroom-door-visual-definition.md",
   ),
-  supplied(
-    "hsd-rigid-insulated-supplied",
+  visualised(
+    "hsd-rigid-insulated-hero",
     "high-speed-doors",
     "high-speed-rigid-insulated-door",
-    "supplied",
-    "A blue high speed rigid insulated door closed across an internal warehouse opening, its insulated panels divided by aluminium joints with a full-width clear vision band across the middle, a stainless head box carrying the company mark and a wall-mounted control panel at the jamb",
+    "hero",
+    "A royal-blue high speed rigid insulated door lowered to about two-thirds across a wide internal warehouse opening, its stacked double-skin panels separated by slim aluminium joint profiles with a full-width glazed row at mid height, running in black guide columns beneath a plain brushed stainless hood, the lit hall visible beneath the aluminium bottom rail, a wall control station with display and red emergency stop beside the guide and yellow-and-black bollards on the polished concrete floor",
     "High Speed Rigid / Insulated Door — lead image",
+    "research/rigid-insulated-door-visual-definition.md",
   ),
   visualised(
     "hsd-spiral-hero",

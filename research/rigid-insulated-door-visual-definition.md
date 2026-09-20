@@ -67,3 +67,13 @@ lighting. Clean commercial product photography.
 | `-guide` | close-up of a panel end in the black guide column with its seal | side guide and panel connection |
 | `-drive` | top corner: hood end, shaft and geared motor | drive and header |
 | `-section` | cutaway of a panel end: two metal skins and the insulation core, joint profile | insulated construction |
+
+
+## Lead image (2026-09-20)
+
+The original supplied hero was replaced by a generated lead image,
+`high-speed-rigid-insulated-door-hero.webp` (Google Flow, Nano Banana Pro,
+2K): the door about 70 percent closed on a wide internal warehouse
+opening with its stacked rigid panels and aluminium joints clearly read,
+to the premium architectural brief adopted across the range. The hero no
+longer carries a company mark on the hood.
