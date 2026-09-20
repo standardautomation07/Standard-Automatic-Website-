@@ -139,6 +139,27 @@ function visualised(
   };
 }
 
+/**
+ * A product-family lead image generated for the 2026 product-imagery
+ * campaign (Google Flow, Nano Banana Pro). One unique composition per
+ * family, built to research/product-family-visual-definitions.md, cropped
+ * to the 16:10 frame of the landing-page family card (the family page banner
+ * and the related-family panel crop it with object-fit cover).
+ */
+function familyVisual(id: string, family: string, alt: string, association: string): ImageRef {
+  return {
+    id,
+    src: `/images/products/${family}/${family}-family-flow.webp`,
+    alt,
+    source:
+      "Standard Automation — AI-generated family visualisation (Google Flow), built to research/product-family-visual-definitions.md",
+    usage: VISUALISATION,
+    association,
+    fit: "cover",
+    aspect: "aspect-[16/10]",
+  };
+}
+
 function diagram(id: string, file: string, alt: string, association: string): ImageRef {
   return {
     id,
@@ -164,14 +185,14 @@ const list: ImageRef[] = [
   stock("commercial-building", "commercial-building.jpg", "A modern commercial building with a large glazed facade", "About page"),
 
   // ------------------------------------------------------------ families
-  stock("family-industrial-doors", "garage-door-house.jpg", "A closed sectional overhead door beside a brick wall", "Industrial Doors family"),
-  own("family-high-speed-doors", "intro.jpg", "A high speed door at a warehouse opening with a forklift passing through", "High Speed Doors family"),
-  stock("family-rolling-shutters", "rolling-shutters.jpg", "Closed roller shutters across a commercial frontage", "Rolling Shutters family"),
-  stock("family-fire-safety", "shutter-red.jpg", "A closed red rolling shutter at a building opening", "Fire & Safety Doors family"),
-  stock("family-automatic-gates", "gates-industrial.jpg", "A factory floor with yellow safety railings around conveyor lines", "Automatic Gates family"),
-  stock("family-entrance-automation", "entrance-automation.jpg", "Glass pivot doors at an office entrance, photographed at night", "Entrance Automation family"),
-  stock("family-loading-bay", "loading-bay.jpg", "A row of loading docks on a distribution building", "Loading Bay Equipment family"),
-  stock("family-access-control", "security-access.jpg", "A row of access-control turnstiles in a building lobby", "Access Control family"),
+  familyVisual("family-industrial-doors", "industrial-doors", "A row of three white insulated sectional overhead doors on the light-grey clad elevation of a modern manufacturing plant, one raised to show the production hall, bollards on the concrete forecourt in late-afternoon light", "Industrial Doors family"),
+  familyVisual("family-high-speed-doors", "high-speed-doors", "A royal-blue high speed roll-up door with a clear vision band raised two-thirds in a steel-framed internal opening of a modern logistics warehouse, the lit dispatch hall visible beyond, stainless guides and hood, bollards and yellow floor markings", "High Speed Doors family"),
+  familyVisual("family-rolling-shutters", "rolling-shutters", "Four motorised rolling shutters, two anodised aluminium and two galvanised steel, closed across the bays of a premium stone- and metal-clad commercial facade in morning light, their horizontal slats under plain hoods", "Rolling Shutters family"),
+  familyVisual("family-fire-safety", "fire-safety-doors", "A heavy fire-rated steel rolling shutter closed across a wide opening in a concrete fire-compartment wall inside an industrial building, exposed barrel on end plates above, a fire-rated sliding door on its track further along the wall", "Fire & Safety Doors family"),
+  familyVisual("family-automatic-gates", "automatic-gates", "A large anthracite-grey aluminium automatic sliding gate half open across the vehicle entrance of an industrial site in early-morning light, its operator, rack and beacon post beside the lane, the factory beyond", "Automatic Gates family"),
+  familyVisual("family-entrance-automation", "entrance-automation", "A bi-parting automatic sliding glass door open at a stone-clad corporate headquarters entrance at dusk, its slim aluminium frame and header sensor, the warm-lit lobby inside", "Entrance Automation family"),
+  familyVisual("family-loading-bay", "loading-bay", "Three loading bays on a distribution centre, each with a black dock shelter around a white sectional door and a dock leveller at the dock edge, a white trailer reversed onto the nearest bay", "Loading Bay Equipment family"),
+  familyVisual("family-access-control", "access-control", "A bank of four brushed stainless flap-barrier lanes with glass wings and blue-lit reader caps in a modern corporate lobby, glass balustrades either side and full-height glazing behind", "Access Control family"),
 
   // ------------------------------------------------------------ products
   stock("p-sectional-overhead", "garage-door-house.jpg", "A closed sectional overhead door beside a brick wall", "Industrial Sectional Overhead Doors"),
