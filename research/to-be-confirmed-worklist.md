@@ -1,10 +1,10 @@
 # "To be confirmed" worklist — every page that still shows unconfirmed data
 
-Generated 2026-09-20 from the product data by resolving every product's specification table exactly as the site does (`specCompleteness()` in `web/src/lib/catalog.ts`).
+Regenerated 2026-09-20 after the first technical-data research pass (37 fields filled from the company's own published pages; see the commit history). Resolved exactly as the site does (`specCompleteness()` in `web/src/lib/catalog.ts`).
 
 - Products on the site: **38**
 - Product pages showing "To be confirmed" somewhere: **22**
-- Specification rows rendered as "To be confirmed": **157**
+- Specification rows rendered as "To be confirmed": **121**
 
 Where it shows up:
 
@@ -12,13 +12,13 @@ Where it shows up:
 2. **Quick facts** — a `quickFacts` entry whose value literally reads "To be confirmed per …" in `web/src/data/products/<family>.ts`. Fix: replace with a real statement or remove the fact.
 3. **Status badges** — a product or variant with `status: "POTENTIAL"` shows an amber "To be confirmed" badge on its page and on every card that lists it (family pages, `/products/catalogue`, industry pages). Fix: set `status: "CONFIRMED"` in the product data once the business confirms the line/variant, or remove it.
 
-Pages that only inherit badges from product status (no data of their own): `/products/catalogue`, `/products/entrance-automation`, `/products/access-control`, `/industries/retail-commercial`, `/industries/infrastructure-transit`.
+Remaining rows are certification-, survey- or supplier-dependent: none of them is stated in the company's published material, so they wait for the business (fire certificates, EN performance classes, headroom/side-room, duty ratings, control/safety hardware, compliance marking).
 
 ## By product page (worst first)
 
 ### Residential Garage Doors
-- Page: `/products/industrial-doors/residential-garage-doors` · data: `web/src/data/products/industrial-doors.ts` · specs published 6/38
-- **Spec rows to confirm (32):**
+- Page: `/products/industrial-doors/residential-garage-doors` · data: `web/src/data/products/industrial-doors.ts` · specs published 12/38
+- **Spec rows to confirm (26):**
   - Dimensions › Maximum clear width (mm)
   - Dimensions › Maximum clear height (mm)
   - Dimensions › Minimum headroom required (mm)
@@ -26,51 +26,12 @@ Pages that only inherit badges from product status (no data of their own): `/pro
   - Dimensions › Lift configuration
   - Construction › Panel thickness (mm)
   - Construction › Panel height (mm)
-  - Construction › Insulation core
   - Construction › Finish and colour
   - Construction › Glazing and vision panels
-  - Construction › Counterbalance
-  - Construction › Perimeter sealing
   - Declared performance › Water tightness (class)
   - Declared performance › Air permeability (class)
   - Declared performance › Thermal transmittance (U) (W/m²K)
   - Declared performance › Airborne sound reduction (dB)
-  - Drive › Operator type
-  - Drive › Rated motor power (kW)
-  - Drive › Supply voltage (V / phase / Hz)
-  - Drive › Duty rating (cycles per hour or %ED)
-  - Drive › Manual override
-  - Control › Control system
-  - Control › Activation devices
-  - Control › Travel limit setting
-  - Control › Interfaces
-  - Safety › Obstruction detection
-  - Safety › Finger-trap protection
-  - Safety › Operating force limitation
-  - Safety › Manual release
-  - Compliance › Product standard
-  - Compliance › Conformity marking
-  - Compliance › Certificate reference
-
-### Aluminium Garage Doors
-- Page: `/products/industrial-doors/aluminium-garage-doors` · data: `web/src/data/products/industrial-doors.ts` · specs published 8/38
-- **Spec rows to confirm (30):**
-  - Dimensions › Maximum clear width (mm)
-  - Dimensions › Maximum clear height (mm)
-  - Dimensions › Minimum headroom required (mm)
-  - Dimensions › Minimum side room required (mm)
-  - Dimensions › Lift configuration
-  - Construction › Panel thickness (mm)
-  - Construction › Panel height (mm)
-  - Construction › Insulation core
-  - Construction › Finish and colour
-  - Construction › Glazing and vision panels
-  - Construction › Counterbalance
-  - Declared performance › Water tightness (class)
-  - Declared performance › Air permeability (class)
-  - Declared performance › Thermal transmittance (U) (W/m²K)
-  - Declared performance › Airborne sound reduction (dB)
-  - Drive › Operator type
   - Drive › Rated motor power (kW)
   - Drive › Duty rating (cycles per hour or %ED)
   - Drive › Manual override
@@ -78,40 +39,6 @@ Pages that only inherit badges from product status (no data of their own): `/pro
   - Control › Activation devices
   - Control › Travel limit setting
   - Control › Interfaces
-  - Safety › Obstruction detection
-  - Safety › Finger-trap protection
-  - Safety › Operating force limitation
-  - Safety › Manual release
-  - Compliance › Product standard
-  - Compliance › Conformity marking
-  - Compliance › Certificate reference
-
-### Industrial Sectional Overhead Doors
-- Page: `/products/industrial-doors/industrial-sectional-overhead-doors` · data: `web/src/data/products/industrial-doors.ts` · specs published 12/40
-- **Variant badges (3):** High lift; Vertical lift; Low headroom
-- **Spec rows to confirm (28):**
-  - Dimensions › Maximum clear height (mm)
-  - Dimensions › Minimum headroom required (mm)
-  - Dimensions › Minimum side room required (mm)
-  - Dimensions › Lift configuration
-  - Construction › Insulation core
-  - Construction › Glazing and vision panels
-  - Construction › Counterbalance
-  - Construction › Perimeter sealing
-  - Declared performance › Water tightness (class)
-  - Declared performance › Air permeability (class)
-  - Declared performance › Thermal transmittance (U) (W/m²K)
-  - Declared performance › Airborne sound reduction (dB)
-  - Drive › Rated motor power (kW)
-  - Drive › Supply voltage (V / phase / Hz)
-  - Drive › Duty rating (cycles per hour or %ED)
-  - Drive › Manual override
-  - Control › Control system
-  - Control › Travel limit setting
-  - Control › Interfaces
-  - Safety › Spring-break device
-  - Safety › Anti-fall device
-  - Safety › Obstruction detection
   - Safety › Finger-trap protection
   - Safety › Operating force limitation
   - Safety › Manual release
@@ -149,26 +76,49 @@ Pages that only inherit badges from product status (no data of their own): `/pro
   - Compliance › Conformity marking
   - Compliance › Certificate reference
 
-### Retractable Gates
-- Page: `/products/automatic-gates/retractable-gates` · data: `web/src/data/products/automatic-gates.ts` · specs published 13/36
-- **Spec rows to confirm (23):**
-  - Dimensions › Maximum leaf width (mm)
-  - Dimensions › Maximum leaf weight (kg)
-  - Dimensions › Side-run or swing room required (mm)
-  - Cycle performance › Opening time for full travel (s)
-  - Cycle performance › Rated daily cycles (cycles/day)
-  - Construction › Infill
-  - Construction › Posts and foundations
-  - Drive › Operator type
+### Aluminium Garage Doors
+- Page: `/products/industrial-doors/aluminium-garage-doors` · data: `web/src/data/products/industrial-doors.ts` · specs published 13/38
+- **Spec rows to confirm (25):**
+  - Dimensions › Maximum clear width (mm)
+  - Dimensions › Maximum clear height (mm)
+  - Dimensions › Minimum headroom required (mm)
+  - Dimensions › Minimum side room required (mm)
+  - Dimensions › Lift configuration
+  - Construction › Panel thickness (mm)
+  - Construction › Panel height (mm)
+  - Construction › Insulation core
+  - Declared performance › Water tightness (class)
+  - Declared performance › Air permeability (class)
+  - Declared performance › Thermal transmittance (U) (W/m²K)
+  - Declared performance › Airborne sound reduction (dB)
+  - Drive › Rated motor power (kW)
   - Drive › Duty rating (cycles per hour or %ED)
   - Drive › Manual override
   - Control › Control system
   - Control › Activation devices
   - Control › Travel limit setting
   - Control › Interfaces
+  - Safety › Finger-trap protection
+  - Safety › Operating force limitation
+  - Safety › Manual release
+  - Compliance › Product standard
+  - Compliance › Conformity marking
+  - Compliance › Certificate reference
+
+### Retractable Gates
+- Page: `/products/automatic-gates/retractable-gates` · data: `web/src/data/products/automatic-gates.ts` · specs published 19/36
+- **Spec rows to confirm (17):**
+  - Dimensions › Maximum leaf weight (kg)
+  - Dimensions › Side-run or swing room required (mm)
+  - Cycle performance › Rated daily cycles (cycles/day)
+  - Construction › Posts and foundations
+  - Drive › Duty rating (cycles per hour or %ED)
+  - Drive › Manual override
+  - Control › Control system
+  - Control › Travel limit setting
+  - Control › Interfaces
   - Safety › Photocells
   - Safety › Safety edge
-  - Safety › Obstruction detection
   - Safety › Operating force limitation
   - Safety › Manual release
   - Safety › Warning light and audible warning
@@ -176,17 +126,31 @@ Pages that only inherit badges from product status (no data of their own): `/pro
   - Compliance › Conformity marking
   - Compliance › Certificate reference
 
+### Industrial Sectional Overhead Doors
+- Page: `/products/industrial-doors/industrial-sectional-overhead-doors` · data: `web/src/data/products/industrial-doors.ts` · specs published 25/40
+- **Variant badges (3):** High lift; Vertical lift; Low headroom
+- **Spec rows to confirm (15):**
+  - Dimensions › Minimum headroom required (mm)
+  - Dimensions › Minimum side room required (mm)
+  - Declared performance › Water tightness (class)
+  - Declared performance › Air permeability (class)
+  - Declared performance › Thermal transmittance (U) (W/m²K)
+  - Declared performance › Airborne sound reduction (dB)
+  - Drive › Duty rating (cycles per hour or %ED)
+  - Control › Interfaces
+  - Safety › Obstruction detection
+  - Safety › Finger-trap protection
+  - Safety › Operating force limitation
+  - Safety › Manual release
+  - Compliance › Product standard
+  - Compliance › Conformity marking
+  - Compliance › Certificate reference
+
 ### Dock Shelters & Dock Houses
-- Page: `/products/loading-bay/dock-shelters-and-houses` · data: `web/src/data/products/loading-bay.ts` · specs published 5/16
+- Page: `/products/loading-bay/dock-shelters-and-houses` · data: `web/src/data/products/loading-bay.ts` · specs published 11/16
 - **Variant badges (1):** Inflatable shelter
-- **Spec rows to confirm (11):**
-  - Dimensions › Opening width (mm)
-  - Dimensions › Opening height (mm)
+- **Spec rows to confirm (5):**
   - Dimensions › Projection from the building line (mm)
-  - Construction › Sealing arrangement
-  - Construction › Curtain material and weight
-  - Construction › Head and side seal configuration
-  - Construction › Impact behaviour
   - Performance › Operating temperature (°C)
   - Compliance › Product standard
   - Compliance › Conformity marking
