@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { counts } from "@/lib/catalog";
+import { counts, familyPath, industryPath, productsInFamily } from "@/lib/catalog";
+import { families } from "@/data/families";
+import { industries } from "@/data/industries";
+import { publicTrustedPartners } from "@/data/trusted-partners";
+import { ArrowRight } from "@/components/ui/icons";
+import { ButtonLink } from "@/components/ui/button";
+import Link from "next/link";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { Media } from "@/components/ui/media";
-import { addressLine, siteConfig } from "@/lib/site-config";
+import { addressLine, mailtoHref, siteConfig, telHref } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About",
@@ -62,6 +68,22 @@ export default function AboutPage() {
                 The company is an {siteConfig.isoCertification} registered organisation and operates
                 from {siteConfig.address.city}, {siteConfig.address.region}.
               </p>
+              <p>
+                In its own words, the company is &ldquo;engaged in manufacturing and supplying a
+                comprehensive assortment of the best quality Automatic Rolling Shutters to Automatic
+                Sliding Gates, Doors, Swing Gates, Road Barriers&rdquo;, manufactured from
+                &ldquo;finest grade raw material&rdquo; and built for &ldquo;excellent finish,
+                corrosion resistance, reliable performance, robust construction, extended durability
+                and ability to withstand extreme weather conditions&rdquo;. Those are the properties
+                the product pages on this site are written against: which curtain thickness, which
+                coating, which retention and which drive, and why.
+              </p>
+              <p>
+                Two things have not changed since {siteConfig.foundedYear}. Every assembly is made to
+                the surveyed opening rather than adapted from a stock size, and the company installs
+                and commissions what it supplies, so the drive sizing, limit setting and safety
+                devices are set by the people who built the door.
+              </p>
             </div>
           </div>
 
@@ -89,6 +111,132 @@ export default function AboutPage() {
         <div className="shell">
           <SectionHeading
             index="02"
+            eyebrow="What we make"
+            title={`${counts.families} product families, one discipline.`}
+            lede="Every family answers the same question - how an opening is closed, secured and moved through - for a different kind of opening. Each family page states what is fixed, what is configured and what is confirmed at survey."
+            action={
+              <ButtonLink href="/products" variant="secondary">
+                All products
+                <ArrowRight className="h-4 w-4" />
+              </ButtonLink>
+            }
+          />
+          <ul className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
+            {families.map((family) => (
+              <li key={family.id} className="bg-paper-raised">
+                <Link
+                  href={familyPath(family.id)}
+                  className="group flex h-full flex-col focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-amber"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Media
+                      id={family.imageId}
+                      sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                      decorative
+                      className="transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-lg font-medium text-steel-900">{family.name}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-steel-600">{family.tagline}</p>
+                    <p className="mt-4 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
+                      {productsInFamily(family.id).length} products
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-paper py-16 lg:py-24">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              index="03"
+              eyebrow="Who we work for"
+              title="Eight industries, each with its own failure mode."
+              lede="The opening that fails in a cold store is not the one that fails in a car plant. The industry pages set out what usually goes wrong on each kind of site and which products are specified against it."
+            />
+            <div className="mt-10 border border-line bg-paper-raised p-7">
+              <p className="eyebrow text-amber-deep">Trusted partners</p>
+              <p className="mt-3 font-display text-3xl font-medium text-steel-900">
+                {publicTrustedPartners.length} organisations
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-steel-600">
+                Manufacturers, developers, institutions and public bodies from our project records,
+                shown by name and logo only. We publish who we have worked for, not what we did for
+                them.
+              </p>
+              <Link
+                href="/projects"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-steel-900 underline-offset-4 hover:underline"
+              >
+                See the list
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          <ul className="grid hairline-grid sm:grid-cols-2 lg:col-span-7">
+            {industries.map((industry) => (
+              <li key={industry.id} className="bg-paper-raised">
+                <Link
+                  href={industryPath(industry.id)}
+                  className="group flex h-full flex-col p-6 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-amber"
+                >
+                  <h3 className="flex items-start justify-between gap-4 font-display text-lg font-medium text-steel-900">
+                    {industry.name}
+                    <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-steel-400 transition-transform group-hover:translate-x-1" />
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-steel-600">{industry.tagline}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="border-y border-line bg-ink py-16 lg:py-24">
+        <div className="shell">
+          <SectionHeading
+            index="04"
+            eyebrow="What we stand behind"
+            title="What a specification from us means."
+            tone="dark"
+          />
+          <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                t: "Measured, not assumed",
+                d: "Clear width, height, headroom, side room, traffic and exposure are taken at the opening before a product type or drive is proposed.",
+              },
+              {
+                t: "Figures we can support",
+                d: "Every product page publishes the fields a specifier needs. A figure appears where we can stand behind it; where it depends on the opening or a certificate, the entry says so instead of guessing.",
+              },
+              {
+                t: "Ratings only with certificates",
+                d: "No fire rating, wind class or performance class is published without the certificate for the tested assembly. Ask for it and we will send it.",
+              },
+              {
+                t: "Commissioned and tested",
+                d: "Limits, forces, photocells, safety edges and spring-break or anti-fall devices are set and tested at handover, then supported with service, spares and maintenance.",
+              },
+            ].map((item) => (
+              <article key={item.t} className="bg-ink-raised p-7">
+                <h3 className="font-display text-lg font-medium text-white">{item.t}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-400">{item.d}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-line bg-paper-sunken py-16 lg:py-24">
+        <div className="shell">
+          <SectionHeading
+            index="05"
             eyebrow="How this site is written"
             title="Two company facts, and a rule about the rest."
             lede="Buyers in this market are used to company pages full of unverifiable numbers. This one carries two company claims, and both appear on Standard Automation's own published material."
@@ -132,7 +280,7 @@ export default function AboutPage() {
       <section className="bg-paper py-16 lg:py-24">
         <div className="shell">
           <SectionHeading
-            index="03"
+            index="06"
             eyebrow="How we work"
             title="Survey, specify, manufacture, install, support."
           />
@@ -151,6 +299,39 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="bg-paper py-16 lg:py-24">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <SectionHeading index="07" eyebrow="Where we are" title="Pune, Maharashtra." />
+            <p className="mt-8 text-base leading-relaxed text-steel-700">
+              The office is in Bavdhan, on the western side of Pune. Site surveys, installation and
+              service are carried out by our own teams; send us the opening and we will tell you
+              when we can come and measure it.
+            </p>
+          </div>
+          <dl className="grid hairline-grid sm:grid-cols-3 lg:col-span-7">
+            {[
+              { k: "Head office", v: addressLine, href: undefined as string | undefined },
+              { k: "Telephone", v: siteConfig.phone, href: telHref() },
+              { k: "Email", v: siteConfig.email, href: mailtoHref() },
+            ].map((row) => (
+              <div key={row.k} className="bg-paper-raised p-7">
+                <dt className="eyebrow text-steel-500">{row.k}</dt>
+                <dd className="mt-3 leading-relaxed text-steel-900 [overflow-wrap:anywhere]">
+                  {row.href ? (
+                    <a href={row.href} className="underline-offset-4 hover:underline">
+                      {row.v}
+                    </a>
+                  ) : (
+                    row.v
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
