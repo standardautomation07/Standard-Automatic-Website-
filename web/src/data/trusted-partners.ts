@@ -13,7 +13,7 @@
  * The public Trusted Partners section renders one card per record: the
  * organisation's official full-colour logo and its name, nothing else.
  * Records without a verified logo carry `logo: null` and are shown with a
- * clearly marked placeholder; they are listed in client-logo-audit.json.
+ * clearly marked placeholder; they are listed in trusted-partners-logo-audit.json.
  */
 
 export type LogoStatus = "verified" | "needs-review" | "unavailable";
@@ -419,12 +419,12 @@ export const trustedPartners: TrustedPartner[] = [
     name: "RAIL COACH FACTORY",
     sourceNames: ["RAIL COACH FACTORY"],
     occurrences: 1,
-    logo: null,
+    logo: "/images/trusted-partners/rail-coach-factory.png",
     initials: "RCF",
-    logoSource: null,
-    officialWebsite: null,
-    logoStatus: "unavailable",
-    notes: "Ambiguous (RCF Kapurthala / MCF Raebareli); no logo assigned.",
+    logoSource: "https://mcf.indianrailways.gov.in/images/18%20star.png (Indian Railways emblem as used on the Modern Coach Factory, Raebareli official website)",
+    officialWebsite: "https://mcf.indianrailways.gov.in",
+    logoStatus: "needs-review",
+    notes: "Source line reads RAIL COACH FACTORY (Lucknow); the unit near Lucknow is Modern Coach Factory, Raebareli, whose official site carries only the Indian Railways emblem, so that emblem is shown. Record name kept as in the source - confirm the intended unit and branding.",
   },
   {
     id: "lt-construction",
@@ -517,12 +517,12 @@ export const trustedPartners: TrustedPartner[] = [
     name: "DUROSHOCK",
     sourceNames: ["DUROSHOCK"],
     occurrences: 1,
-    logo: null,
+    logo: "/images/trusted-partners/duroshock.svg",
     initials: "D",
-    logoSource: null,
-    officialWebsite: null,
-    logoStatus: "unavailable",
-    notes: "No official website resolved; no logo.",
+    logoSource: "https://duroshox.com/wp-content/uploads/2024/11/logo.svg (Duro Shox Pvt Ltd official website)",
+    officialWebsite: "https://duroshox.com",
+    logoStatus: "verified",
+    notes: "Source line reads DUROSHOCK; identified as Duro Shox Pvt Ltd, Pune (cross-reference: indiascienceandtechnology.gov.in/allstinstitutions/duro-shox-pvt-ltd-0). Official DUROSHOX SVG used; the record name is kept exactly as in the source.",
   },
   {
     id: "raheja-universal",
@@ -637,12 +637,12 @@ export const trustedPartners: TrustedPartner[] = [
     name: "Income tax Building Nariman Point Mumbai",
     sourceNames: ["Income tax Building Nariman Point Mumbai"],
     occurrences: 1,
-    logo: null,
+    logo: "/images/trusted-partners/income-tax.png",
     initials: "ITB",
-    logoSource: null,
-    officialWebsite: null,
-    logoStatus: "unavailable",
-    notes: "Building, not an organisation with a logo; incometaxindia.gov.in blocks automated access.",
+    logoSource: "https://www.incometax.gov.in/iec/foportal/sites/default/files/2021-11/API_AddClientFlow_v1.1.pdf (Income Tax Department logo embedded in the official government PDF, page 1)",
+    officialWebsite: "https://www.incometax.gov.in/iec/foportal/",
+    logoStatus: "verified",
+    notes: "Source line names the Income Tax Building, Nariman Point; the Income Tax Department logo (wreath, national emblem, red ribbon) is used as the organisation mark. Extracted unaltered from the official PDF at its embedded 160x110 px size.",
   },
   {
     id: "cbre-south-asia",
@@ -713,8 +713,8 @@ export const trustedPartners: TrustedPartner[] = [
     initials: "AMM",
     logoSource: null,
     officialWebsite: null,
-    logoStatus: "unavailable",
-    notes: "No organisation logo identified.",
+    logoStatus: "needs-review",
+    notes: "LOGO REQUIRES VERIFICATION. Source line reads Aerospace Museum, MES, Palam, Delhi (CE(AF) WAC Palam / Military Engineer Services). emb.mes.gov.in serves only the national emblem and a vendor mark, so no authentic MES logo asset could be established; placeholder retained deliberately, nothing generated.",
   },
   {
     id: "shapoorji-pallonji",

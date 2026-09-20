@@ -1,6 +1,6 @@
 // Automated validation for the Trusted Partners implementation.
 //
-//   node scripts/validate-partners.mjs           -> validate + write src/data/client-logo-audit.json
+//   node scripts/validate-partners.mjs           -> validate + write src/data/trusted-partners-logo-audit.json
 //   node scripts/validate-partners.mjs --check   -> validate only (exit 1 on failure)
 //
 // Source of truth: "Trusted_Partners_Editable.pdf". Its 91 name lines are
@@ -99,10 +99,11 @@ const report = {
 
 if (!process.argv.includes("--check")) {
   const audit = trustedPartners.map((p) => ({
-    organization: p.name, sourceNames: p.sourceNames, occurrencesInPdf: p.occurrences, websiteLogoFiles: p.websiteLogoFiles ?? [], logo: p.logo, logoSource: p.logoSource,
-    officialWebsite: p.officialWebsite, logoStatus: p.logoStatus, logoOnDark: !!p.logoOnDark, verificationNotes: p.notes,
+    organization: p.name, logoFile: p.logo, sourceUrl: p.logoSource, officialWebsite: p.officialWebsite,
+    verificationStatus: p.logoStatus === "verified" ? "verified" : "requires_review", logoStatus: p.logoStatus, logoOnDark: !!p.logoOnDark,
+    sourceNames: p.sourceNames, occurrencesInPdf: p.occurrences, websiteLogoFiles: p.websiteLogoFiles ?? [], notes: p.notes,
   }));
-  fs.writeFileSync(path.join(root, "src/data/client-logo-audit.json"), JSON.stringify({ generatedFrom: ["Trusted_Partners_Editable.pdf", "https://www.standardautomation.in/clients.html"], reconciliation: report, organisations: audit }, null, 2) + "\n");
+  fs.writeFileSync(path.join(root, "src/data/trusted-partners-logo-audit.json"), JSON.stringify({ generatedFrom: ["Trusted_Partners_Editable.pdf", "https://www.standardautomation.in/clients.html"], reconciliation: report, organisations: audit }, null, 2) + "\n");
 }
 console.log(JSON.stringify(report, null, 1));
 if (failures.length) { console.error("\nVALIDATION FAILED:"); failures.forEach((f) => console.error(" -", f)); process.exit(1); }

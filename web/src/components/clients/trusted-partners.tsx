@@ -61,7 +61,7 @@ function PartnerCard({ org }: { org: TrustedPartner }) {
  * box and is shown in its original full-colour treatment. A logo published
  * only as a white knockout sits on a dark well rather than being recoloured.
  * Organisations without a verified logo get a clearly marked placeholder
- * (and an entry in client-logo-audit.json) — they still appear.
+ * (and an entry in trusted-partners-logo-audit.json) — they still appear.
  */
 function PartnerLogo({ org }: { org: TrustedPartner }) {
   if (!org.logo) {
