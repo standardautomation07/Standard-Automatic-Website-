@@ -26,6 +26,7 @@ const trail = [
 ];
 
 export default function AboutPage() {
+  const yearsInBusiness = new Date().getFullYear() - siteConfig.foundedYear;
   return (
     <>
       <JsonLd data={breadcrumbJsonLd(trail)} />
@@ -237,42 +238,49 @@ export default function AboutPage() {
         <div className="shell">
           <SectionHeading
             index="05"
-            eyebrow="How this site is written"
-            title="Two company facts, and a rule about the rest."
-            lede="Buyers in this market are used to company pages full of unverifiable numbers. This one carries two company claims, and both appear on Standard Automation's own published material."
+            eyebrow="On the record"
+            title="What we can put our name to."
+            lede="Company pages in this market are full of numbers nobody can check. Everything below is either published by the company itself or taken from the data behind this site, and we would rather show you five things we can stand behind than fifty we cannot."
           />
           <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
-            <article className="bg-paper-raised p-7">
-              <p className="eyebrow text-amber-deep">Stated</p>
-              <h3 className="mt-3 font-display text-lg font-medium text-steel-900">
-                Established {siteConfig.foundedYear}, in Pune
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-steel-600">
-                The company&apos;s own published material states its foundation was laid in{" "}
-                {siteConfig.foundedYear} in Pune, Maharashtra.
-              </p>
-            </article>
-            <article className="bg-paper-raised p-7">
-              <p className="eyebrow text-amber-deep">Stated</p>
-              <h3 className="mt-3 font-display text-lg font-medium text-steel-900">
-                {siteConfig.isoCertification} registered
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-steel-600">
-                Published by the company as an {siteConfig.isoCertification} registered
-                organisation. Certificate details on request.
-              </p>
-            </article>
-            <article className="bg-paper-raised p-7">
-              <p className="eyebrow text-steel-500">Not stated</p>
-              <h3 className="mt-3 font-display text-lg font-medium text-steel-900">
-                Everything we cannot evidence
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-steel-600">
-                No employee count, turnover, project or installation totals, years-of-experience
-                claims or factory dimensions appear on this site, because none of them has been
-                verified. Our Trusted Partners page lists organisations from our project records. Ask us and we will tell you what we can evidence.
-              </p>
-            </article>
+            {[
+              {
+                k: "Established",
+                v: `${siteConfig.foundedYear}`,
+                d: `${yearsInBusiness} years of manufacturing and installing entrance automation from Pune, Maharashtra, as stated in the company's own published material.`,
+              },
+              {
+                k: "Quality system",
+                v: siteConfig.isoCertification,
+                d: `Published by the company as an ${siteConfig.isoCertification} registered organisation. Certificate details on request.`,
+              },
+              {
+                k: "Trusted partners",
+                v: `${publicTrustedPartners.length} organisations`,
+                d: "Manufacturers, developers, institutions and public bodies from our project records, listed by name and logo on the Trusted Partners page.",
+              },
+              {
+                k: "Range",
+                v: `${counts.products} products`,
+                d: `Across ${counts.families} families and ${counts.categories} categories, each with a published specification table that says what is fixed, what is configured and what is confirmed at survey.`,
+              },
+              {
+                k: "Made and installed by us",
+                v: "Survey to support",
+                d: "Every assembly is made to the surveyed opening, installed and commissioned by our own teams, and supported with service, spares and maintenance afterwards.",
+              },
+              {
+                k: "Our rule",
+                v: "Evidence first",
+                d: "We publish no figure we cannot support - no ratings without certificates, no totals without records. Ask us for anything not shown here and we will tell you what we can evidence.",
+              },
+            ].map((item) => (
+              <article key={item.k} className="bg-paper-raised p-7">
+                <p className="eyebrow text-amber-deep">{item.k}</p>
+                <h3 className="mt-3 font-display text-2xl font-medium text-steel-900">{item.v}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-600">{item.d}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
