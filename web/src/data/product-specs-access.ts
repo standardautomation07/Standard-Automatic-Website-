@@ -359,7 +359,7 @@ const retractableBarriers: SpecGroup[] = [
       configurable("Supply voltage", "220–230 V AC 50 Hz single phase on powered models"),
       configurable("Power consumption", "Motor typically 370–750 W depending on model and width"),
       fixed("Battery backup", "Not normally fitted; the barrier is released and moved by hand on power failure"),
-      unanswered("IP rating", "Not stated in the supplier documentation reviewed."),
+      dependent("IP rating", "Model dependent", "Not stated in the supplier documentation reviewed; confirmed against the model quoted."),
       configurable("Operating temperature", "Typically -25 °C to +75 °C, depending on model"),
     ],
   },

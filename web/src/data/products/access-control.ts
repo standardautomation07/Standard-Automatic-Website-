@@ -26,7 +26,7 @@ export const accessControlProducts: Product[] = [
       { label: "Passage control", value: "One person per authorisation" },
       { label: "Resistance", value: "Waist height, mechanical" },
       { label: "Emergency", value: "Drop-arm release" },
-      { label: "Specification", value: "To be confirmed per lane" },
+      { label: "Specification", value: "Configured per lane at survey", qualified: true },
     ],
     benefits: [
       { title: "Enforced single passage", body: "One rotation per authorisation, so tailgating is prevented mechanically rather than only detected." },
@@ -82,7 +82,7 @@ export const accessControlProducts: Product[] = [
       { label: "Throughput", value: "Higher than a tripod turnstile" },
       { label: "Wings", value: "Retracting acrylic or glass" },
       { label: "Accessibility", value: "Wide lane variant" },
-      { label: "Specification", value: "To be confirmed per lane" },
+      { label: "Specification", value: "Configured per lane at survey", qualified: true },
     ],
     benefits: [
       { title: "High throughput", body: "Wings open ahead of the user, so authorised flow is not slowed to a mechanical rotation." },
@@ -138,7 +138,7 @@ export const accessControlProducts: Product[] = [
       { label: "Resistance", value: "Floor-to-head-height rotor" },
       { label: "Supervision", value: "Suited to unsupervised points" },
       { label: "Configurations", value: "Single or twin rotor" },
-      { label: "Specification", value: "To be confirmed per lane" },
+      { label: "Specification", value: "Configured per lane at survey", qualified: true },
     ],
     benefits: [
       { title: "No over, no under", body: "A floor-to-head-height rotor inside a cage removes the obvious defeats of a waist-height unit." },
@@ -194,7 +194,7 @@ export const accessControlProducts: Product[] = [
       { label: "Line type", value: "Physical vehicle barrier" },
       { label: "Pedestrians", value: "Unaffected" },
       { label: "Configurations", value: "Fixed, removable, automatic" },
-      { label: "Specification", value: "To be confirmed per installation" },
+      { label: "Specification", value: "Configured per installation at survey", qualified: true },
     ],
     benefits: [
       { title: "Physical vehicle control", body: "A barrier vehicles cannot cross, while pedestrian movement over the line is unaffected." },
@@ -251,7 +251,7 @@ export const accessControlProducts: Product[] = [
       { label: "Function", value: "Traffic metering, not physical security" },
       { label: "Closure", value: "Loop-confirmed behind each vehicle" },
       { label: "Manual release", value: "Yes" },
-      { label: "Specification", value: "To be confirmed per installation" },
+      { label: "Specification", value: "Configured per installation at survey", qualified: true },
     ],
     benefits: [
       { title: "One vehicle per authorisation", body: "Loop detectors close the boom behind each vehicle rather than on a timer." },
@@ -308,7 +308,7 @@ export const accessControlProducts: Product[] = [
       { label: "Line type", value: "Time-based, foldable" },
       { label: "When open", value: "Route completely clear" },
       { label: "Operation", value: "Powered or manual" },
-      { label: "Specification", value: "To be confirmed per installation" },
+      { label: "Specification", value: "Configured per installation at survey", qualified: true },
     ],
     benefits: [
       { title: "Wide lines, compact stack", body: "A folding structure closes a wide opening but parks in a short length of boundary." },

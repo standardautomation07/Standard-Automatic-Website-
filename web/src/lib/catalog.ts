@@ -150,9 +150,15 @@ export function productSpecGroups(product: Product): SpecGroup[] {
   const groups: SpecGroup[] = schemaFor(product).map((group) => ({
     group: group.group,
     specs: group.fields.map((field) => {
-      const value = published[field.label];
-      if (value !== undefined) claimed.add(field.label);
-      return { ...field, value: value ?? null, status: value !== undefined ? "CONFIRMED" : "TBC" } satisfies Spec;
+      const raw = published[field.label];
+      if (raw !== undefined) claimed.add(field.label);
+      // A value entered on the sheet with a trailing " *" is a qualified
+      // answer (project, configuration or certification dependent): it is
+      // published as CONFIGURABLE so the configuration note appears under
+      // the tables, exactly as an asterisked authored row does.
+      const qualified = raw !== undefined && raw.endsWith(" *");
+      const value = raw === undefined ? null : qualified ? raw.slice(0, -2) : raw;
+      return { ...field, value, status: raw === undefined ? "TBC" : qualified ? "CONFIGURABLE" : "CONFIRMED" } satisfies Spec;
     }),
   }));
 

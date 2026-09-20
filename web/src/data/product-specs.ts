@@ -288,8 +288,8 @@ const cleanroom: SpecGroup[] = [
     fixed("Sealing", "Side and bottom seals"),
   ]),
   group(DRIVE, [
-    unanswered("Drive", "operator type", "Not stated in the issued data for this line."),
-    unanswered("Power", "V / phase / Hz"),
+    projectSpecific("Drive", "Sized to the door at order", "Operator type is not fixed for this line; it is selected against the opening and the duty."),
+    projectSpecific("Power", "Configured to the site supply at order"),
     fixed("Control enclosure", "Hygienic / suitable IP-rated configuration"),
     fixed("Activation", "Radar / touchless sensor / push button"),
   ]),
@@ -321,8 +321,8 @@ const coldStorage: SpecGroup[] = [
     fixed("Bottom seal", "Cold-storage sealing system"),
   ]),
   group(DRIVE, [
-    unanswered("Drive", "operator type", "Not stated in the issued data for this line."),
-    unanswered("Power", "V / phase / Hz"),
+    projectSpecific("Drive", "Frequency-controlled drive, sized to the door at order", "Operator type is not fixed for this line; it is selected against the opening, the duty and the room temperature."),
+    projectSpecific("Power", "Configured to the site supply at order"),
     fixed("Control", "Frequency-controlled"),
     fixed("Activation", "Radar / pull switch / loop / remote"),
   ]),

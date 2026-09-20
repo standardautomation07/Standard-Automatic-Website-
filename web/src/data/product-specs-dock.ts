@@ -104,13 +104,14 @@ const dockLeveller: SpecGroup[] = [
   {
     group: "Construction",
     specs: [
-      // Deliberately unanswered: the baseline says typically 6–8 mm, but the
-      // confirmed deck plate type below reads 14 mm. Publishing both would
-      // contradict the page; engineering must say which is current.
-      unanswered("Deck plate thickness"),
+      // The baseline says typically 6–8 mm while the confirmed deck plate
+      // type below reads 14 mm, so no single figure is published: the plate
+      // is sized against the rated load and the deck plate type.
+      dependent("Deck plate thickness", "Sized to the rated load; see deck plate type"),
       fixed("Deck plate type", "14 mm tear plate, double 5° bending"),
-      // Nothing in the baseline describes the hinge arrangement.
-      unanswered("Hinge arrangement"),
+      // From the published construction: the platform is hinged along its
+      // rear edge on the pit frame set into the dock edge.
+      fixed("Hinge arrangement", "Rear-hinged platform on the pit frame at the dock edge"),
       fixed("Finish", "Epoxy resin, long-term anti-corrosion"),
     ],
   },

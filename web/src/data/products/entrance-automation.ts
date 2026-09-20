@@ -33,7 +33,7 @@ export const entranceAutomationProducts: Product[] = [
       { label: "Operation", value: "Sensor activated, hands-free" },
       { label: "Arrangements", value: "Single leaf and bi-parting" },
       { label: "Modes", value: "Auto, partial, exit only, locked, hold open" },
-      { label: "Specification", value: "To be confirmed per opening" },
+      { label: "Specification", value: "Configured per opening at survey", qualified: true },
     ],
     benefits: [
       { title: "Hands-free passage", body: "Motion and presence detection open the door before the user reaches it and hold it open while the threshold is occupied." },
@@ -99,7 +99,7 @@ export const entranceAutomationProducts: Product[] = [
       { label: "Operation", value: "Powered hinged leaf" },
       { label: "Modes", value: "Low-energy or full-power" },
       { label: "Activation", value: "Push plate, wave, reader" },
-      { label: "Specification", value: "To be confirmed per opening" },
+      { label: "Specification", value: "Configured per opening at survey", qualified: true },
     ],
     benefits: [
       { title: "Fits where sliding cannot", body: "No side-run is needed for a retracting leaf, so a swing operator suits corridors and openings with walls close to both jambs." },
@@ -161,7 +161,7 @@ export const entranceAutomationProducts: Product[] = [
       { label: "Sealing", value: "All four edges on closing" },
       { label: "Operation", value: "Automatic sliding, hands-free" },
       { label: "Airlocks", value: "Interlockable pairs" },
-      { label: "Specification", value: "To be confirmed per room" },
+      { label: "Specification", value: "Configured per room at survey", qualified: true },
     ],
     benefits: [
       { title: "Holds the pressure cascade", body: "A sealed leaf lets a classified area keep its differential across an opening that has to be crossed constantly." },

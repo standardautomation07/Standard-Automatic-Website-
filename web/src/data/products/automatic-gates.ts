@@ -19,7 +19,7 @@ export const automaticGateProducts: Product[] = [
       { label: "Leaf travel", value: "Parallel to the boundary" },
       { label: "Arrangements", value: "Track guided or cantilever" },
       { label: "Manual release", value: "Key operated" },
-      { label: "Specification", value: "To be confirmed per opening" },
+      { label: "Specification", value: "Configured per opening at survey", qualified: true },
     ],
     benefits: [
       { title: "No swing arc required", body: "The leaf runs alongside the boundary, so no part of the road or yard has to be kept clear for the gate to open." },
@@ -82,7 +82,7 @@ export const automaticGateProducts: Product[] = [
       { label: "Side-run needed", value: "About half a single leaf" },
       { label: "Leaves", value: "Two or three, nesting" },
       { label: "Opening time", value: "Shorter than an equivalent single leaf" },
-      { label: "Specification", value: "To be confirmed per opening" },
+      { label: "Specification", value: "Configured per opening at survey", qualified: true },
     ],
     benefits: [
       { title: "Half the side-run", body: "Nested leaves retract into roughly half the space a single sliding leaf of the same opening width would need." },
@@ -144,7 +144,7 @@ export const automaticGateProducts: Product[] = [
       { label: "Driveway", value: "No track or guide across it" },
       { label: "Operators", value: "Arm, ram or underground" },
       { label: "Leaves", value: "Single or double" },
-      { label: "Specification", value: "To be confirmed per opening" },
+      { label: "Specification", value: "Configured per opening at survey", qualified: true },
     ],
     benefits: [
       { title: "Nothing crosses the driveway", body: "No ground track or guide rail, so drainage and heavy vehicle loading across the entrance are unaffected." },
