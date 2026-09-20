@@ -975,7 +975,7 @@ export const rollingShutterProducts: Product[] = [
     related: ["galvalume-rolling-shutters", "galvanized-steel-rolling-shutters"],
     documents: standardDocs("Windproof / Storm-Resistant Rolling Shutter"),
     imageId: "shutter-windproof-hero",
-    galleryIds: ["shutter-windproof-wind-locks", "shutter-windproof-wind-anchor-guide", "shutter-windproof-bottom-rail", "shutter-windproof-barrel", "shutter-windproof-half-open"],
+    galleryIds: ["shutter-windproof-slat-detail", "shutter-windproof-side-guide", "shutter-windproof-bottom-profile", "shutter-windproof-drive-assembly", "shutter-windproof-installed"],
     facets: { material: ["MS", "GI", "Galvalume", "Aluminium"], construction: "Wind Resistant", duty: ["Standard", "Heavy", "Industrial"], operation: ["Motorized", "Gear"], performance: ["Wind Resistant", "Storm Resistant"] },
     comparison: { material: "MS, GI, Galvalume or aluminium", thickness: "1.0–1.2 mm and engineered", corrosion: "Material dependent", operation: "Motorised with manual override" },
   },

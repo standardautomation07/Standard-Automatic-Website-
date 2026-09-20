@@ -1,59 +1,62 @@
 # Windproof / Storm-Resistant Rolling Shutter — master visual definition
 
-Governs the generated lead image and gallery views for the Windproof /
-Storm-Resistant Rolling Shutter product page. Unlike earlier products, the
-previous lead image (a marketing composite with text and inset diagrams)
-has been replaced by a generated photograph, so the hero and the gallery
-are built from the same definition.
+Governs the lead image and the five gallery views of the Windproof /
+Storm-Resistant Rolling Shutter product page. The set was regenerated on
+2026-09-20 through Google Flow (Nano Banana Pro, 2K download, 4:3) as one
+coherent premium product: the hero was generated first from text and then
+attached as the reference ingredient to every detail prompt so the slats,
+guides, bottom bar, finish and proportions match across the set. It replaces
+the 2026-09-19 heavy galvanised set, which read as generic industrial
+machinery.
 
-Generated 2026-09-19 through Google Flow (Nano Banana Pro, 2K download)
-from text prompts alone, after two rejected sets: one in the Asian
-windlock-shutter idiom and one in the German insulated-slat idiom. The
-approved direction is the UK / European heavy-duty galvanised steel
-industrial shutter, researched from British industrial door makers (LBS
-Induguard 75, Bolton Gate, Samson) and cast-iron windlock suppliers.
+Direction: "engineered for performance, designed for modern architecture" —
+a premium, refined architectural rolling shutter whose wind resistance is
+read from realistic construction and precise components, not from bulk.
 
-## The product
+## The product, as fixed by the product data
 
-- **Curtain** — 75 mm traditionally curved galvanised steel interlocking
-  laths in self-finish hot-dip galvanised steel with a matte spangled
-  surface; plain steel end locks riveted to every lath end.
-- **Wind-locks** — heavy zinc-plated malleable cast-iron wind-locks riveted
-  through the lath ends every fourth lath, whose wider heads run inside
-  the wind-anchor guides so the curtain cannot leave the guide under
-  wind load.
-- **Guides** — deep galvanised wind-anchor channel guides mounted on mild
-  steel angles in grey primer, anchor-bolted to the structure.
-- **Bottom rail** — heavy pre-formed galvanised T-section bottom rail
-  with a rubber floor seal and a padlockable ground bolt.
-- **Head** — curtain coiled on a large primed steel barrel on heavy end
-  plates bolted to the steelwork, a flange-mounted geared operator with an
-  endless hand chain, a galvanised box coil casing over the opening.
-- **Controls** — grey wall control station with a red emergency stop;
-  yellow-and-black bollards.
+Only components documented in `src/data/products/rolling-shutters.ts`
+(windproof-rolling-shutters) are shown; nothing else is specified.
+
+- **Curtain** — reinforced interlocking curtain (1.0 / 1.2 mm class): slim
+  gently curved galvanised steel slats, powder-coated matte anthracite
+  (powder coat over a GI base is a documented option on the range), crisp
+  rolled interlock joints.
+- **End locks** — small flush rivet end locks at the slat ends.
+- **Wind locks** — flat rectangular steel plates riveted flush to the slat
+  ends at intervals, wider than the guide slot so the curtain is retained
+  in the guide under load. No levers, bars or linkages.
+- **Guides** — deep rectangular wind-resistant guide channels in the same
+  finish, anchor-bolted to the structure with countersunk fixings.
+- **Bottom bar** — reinforced flat-fronted bottom bar, about twice a slat
+  in height, with a continuous black rubber floor seal.
+- **Head** — heavy-duty shaft on steel end plates bolted to the structure,
+  a compact integrated geared drive with a manual override chain (motorised
+  with emergency manual override), a slim plain rectangular hood outside.
 
 ## Setting
 
-Exposed British-style industrial estate: clad or brick warehouses, grey
-overcast or storm sky, wet concrete aprons, coastal horizon where shown.
-No vehicles, no people.
+Modern light-grey clad commercial / logistics buildings with pale concrete
+aprons and restrained planting; soft natural light, overcast or late
+afternoon; light rain and wind-bent grasses on the exposed elevation only.
+No people, no vehicles, no storm damage or drama.
 
 ## Rules
 
-Realistic photography, never a render; realistic weathering and fixings.
-Smooth silver insulated slats, chrome finishes, painted curtains and flat
-European insulated profiles are rejected. No text, dimensions, labels,
-logos, brand names, model numbers, wind classes, ratings or certification
-marks. Interim visualisations, replaced by installation photography under
-the same filenames when it exists.
+Photorealistic manufacturer-catalogue quality, realistic metal and fixings.
+Rejected: heavy galvanised UK/Asian idioms, oversized machinery, visible
+handles or mechanisms on the guides, doubled or melted slat profiles, chrome,
+text, labels, logos, brand names, model numbers, wind classes or ratings.
+Interim visualisations, replaced by installation photography under the same
+filenames when it exists.
 
-## Views
+## Views (all 4:3, matching the product page hero frame and gallery grid)
 
 | File suffix | View |
 | --- | --- |
-| `-hero` | lead image: large shutter closed on a harbour logistics building (European insulated-slat idiom, chosen by the client from the second set) |
-| `-wind-locks` | lath ends with end locks and cast wind-locks |
-| `-wind-anchor-guide` | deep guide on its angle, anchored to the jamb |
-| `-bottom-rail` | T-section bottom rail, seal and ground bolt |
-| `-barrel` | barrel, end plates and flange operator with hand chain |
-| `-half-open` | curtain at half height on a loading bay |
+| `-hero` | complete shutter closed, three-quarter architectural view |
+| `-slat-detail` | curtain macro: slat profile, interlock joint, end lock |
+| `-side-guide` | guide channel at the jamb with wind-lock plates and end locks |
+| `-bottom-profile` | reinforced bottom bar, rubber seal, guide engagement |
+| `-drive-assembly` | shaft, end plates and integrated drive with override chain |
+| `-installed` | closed shutter on an exposed elevation in light rain |

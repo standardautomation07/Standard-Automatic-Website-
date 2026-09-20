@@ -1,0 +1,62 @@
+{
+  "product": "Windproof / Storm-Resistant Rolling Shutter",
+  "productId": "windproof-rolling-shutters",
+  "generatedOn": "2026-09-20",
+  "generationSource": "Google Flow MCP (Nano Banana Pro, 2K download, 4:3; detail views generated with the approved hero attached as reference)",
+  "images": [
+    {
+      "product": "Windproof / Storm-Resistant Rolling Shutter",
+      "imageId": "shutter-windproof-hero",
+      "imageFile": "/images/products/rolling-shutters/windproof-rolling-shutters/windproof-rolling-shutters-hero.webp",
+      "generationSource": "Google Flow MCP",
+      "imageType": "hero",
+      "flowAssetId": "dacecd01-4d00-40dd-87c4-f24dd0edc70f",
+      "verified": true
+    },
+    {
+      "product": "Windproof / Storm-Resistant Rolling Shutter",
+      "imageId": "shutter-windproof-slat-detail",
+      "imageFile": "/images/products/rolling-shutters/windproof-rolling-shutters/windproof-rolling-shutters-slat-detail.webp",
+      "generationSource": "Google Flow MCP",
+      "imageType": "component-detail",
+      "flowAssetId": "9900d6ac-58ef-4bda-8df7-9c757330eea8",
+      "verified": true
+    },
+    {
+      "product": "Windproof / Storm-Resistant Rolling Shutter",
+      "imageId": "shutter-windproof-side-guide",
+      "imageFile": "/images/products/rolling-shutters/windproof-rolling-shutters/windproof-rolling-shutters-side-guide.webp",
+      "generationSource": "Google Flow MCP",
+      "imageType": "component-detail",
+      "flowAssetId": "f189eefe-5a2d-4bed-951d-99dea4edeec2",
+      "verified": true
+    },
+    {
+      "product": "Windproof / Storm-Resistant Rolling Shutter",
+      "imageId": "shutter-windproof-bottom-profile",
+      "imageFile": "/images/products/rolling-shutters/windproof-rolling-shutters/windproof-rolling-shutters-bottom-profile.webp",
+      "generationSource": "Google Flow MCP",
+      "imageType": "component-detail",
+      "flowAssetId": "42373dfc-4288-4423-8825-ee02202aa340",
+      "verified": true
+    },
+    {
+      "product": "Windproof / Storm-Resistant Rolling Shutter",
+      "imageId": "shutter-windproof-drive-assembly",
+      "imageFile": "/images/products/rolling-shutters/windproof-rolling-shutters/windproof-rolling-shutters-drive-assembly.webp",
+      "generationSource": "Google Flow MCP",
+      "imageType": "component-detail",
+      "flowAssetId": "22f652c3-c7a4-434e-9d72-eb28abbb24ac",
+      "verified": true
+    },
+    {
+      "product": "Windproof / Storm-Resistant Rolling Shutter",
+      "imageId": "shutter-windproof-installed",
+      "imageFile": "/images/products/rolling-shutters/windproof-rolling-shutters/windproof-rolling-shutters-installed.webp",
+      "generationSource": "Google Flow MCP",
+      "imageType": "installation",
+      "flowAssetId": "b53614ce-2bd7-45e3-872c-4d5601aca5b4",
+      "verified": true
+    }
+  ]
+}
