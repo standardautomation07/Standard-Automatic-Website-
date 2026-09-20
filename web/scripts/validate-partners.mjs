@@ -15,6 +15,7 @@ import {
   trustedPartnerStats,
   sourcePdfLines,
   sourcePdfNonOrganisationLines,
+  sourceWebsiteLogos,
 } from "../src/data/trusted-partners.ts";
 
 const root = path.resolve(import.meta.dirname, "..");
@@ -34,6 +35,14 @@ for (const s of byLine.keys()) if (!distinct.includes(s)) fail(`sourceName "${s}
 for (const p of trustedPartners) {
   const n = p.sourceNames.reduce((a, s) => a + sourcePdfLines.filter((l) => l === s).length, 0);
   if (n !== p.occurrences) fail(`${p.id}: occurrences ${p.occurrences} != counted ${n}`);
+}
+// 1b. every previous-website logo file resolves to exactly one existing card; website-only cards claim at least one file
+const ids = new Set(trustedPartners.map((p) => p.id));
+for (const [file, id] of Object.entries(sourceWebsiteLogos)) if (!ids.has(id)) fail(`website logo ${file} maps to unknown organisation ${id}`);
+for (const p of trustedPartners) {
+  const claimed = Object.entries(sourceWebsiteLogos).filter(([, id]) => id === p.id).map(([f]) => f);
+  if (p.sourceNames.length === 0 && claimed.length === 0) fail(`${p.id}: neither in the PDF nor on the website client page`);
+  if (p.websiteLogoFiles && p.websiteLogoFiles.join() !== claimed.join()) fail(`${p.id}: websiteLogoFiles ${p.websiteLogoFiles} != map ${claimed}`);
 }
 // 2. no duplicate cards
 const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "");
@@ -75,20 +84,25 @@ const report = {
   uniqueOrganisations: trustedPartners.length,
   publicTrustedPartners: trustedPartners.length,
   consolidatedSpellings: trustedPartners.filter((p) => p.sourceNames.length > 1).map((p) => `${p.name} <= ${p.sourceNames.join(" | ")}`),
-  duplicatesConsolidated: sourcePdfLines.length - sourcePdfNonOrganisationLines.length - trustedPartners.length,
+  websiteLogoOccurrences: Object.keys(sourceWebsiteLogos).length,
+  websiteUniqueOrganisations: new Set(Object.values(sourceWebsiteLogos)).size,
+  websiteOrganisationsAlreadyInPdf: [...new Set(Object.values(sourceWebsiteLogos))].filter((id) => trustedPartners.find((p) => p.id === id)?.sourceNames.length).length,
+  organisationsFromPdf: trustedPartnerStats.organisationsFromPdf,
+  organisationsFromWebsiteOnly: trustedPartnerStats.organisationsFromWebsiteOnly,
+  duplicatesConsolidated: (sourcePdfLines.length - sourcePdfNonOrganisationLines.length - trustedPartnerStats.organisationsFromPdf) + (Object.keys(sourceWebsiteLogos).length - trustedPartnerStats.organisationsFromWebsiteOnly),
   verifiedFullColourLogos: trustedPartnerStats.verifiedLogos,
   logoReviewRequired: trustedPartnerStats.logosNeedingReview,
   placeholders: trustedPartners.filter((p) => !p.logo).map((p) => p.name),
-  missingOrganisations: missing.length,
+  missingOrganisations: missing.length + Object.values(sourceWebsiteLogos).filter((id) => !ids.has(id)).length,
   duplicatePublicEntries: trustedPartners.length - new Set(trustedPartners.map((p) => p.id)).size,
 };
 
 if (!process.argv.includes("--check")) {
   const audit = trustedPartners.map((p) => ({
-    organization: p.name, sourceNames: p.sourceNames, occurrencesInPdf: p.occurrences, logo: p.logo, logoSource: p.logoSource,
+    organization: p.name, sourceNames: p.sourceNames, occurrencesInPdf: p.occurrences, websiteLogoFiles: p.websiteLogoFiles ?? [], logo: p.logo, logoSource: p.logoSource,
     officialWebsite: p.officialWebsite, logoStatus: p.logoStatus, logoOnDark: !!p.logoOnDark, verificationNotes: p.notes,
   }));
-  fs.writeFileSync(path.join(root, "src/data/client-logo-audit.json"), JSON.stringify({ generatedFrom: "Trusted_Partners_Editable.pdf", reconciliation: report, organisations: audit }, null, 2) + "\n");
+  fs.writeFileSync(path.join(root, "src/data/client-logo-audit.json"), JSON.stringify({ generatedFrom: ["Trusted_Partners_Editable.pdf", "https://www.standardautomation.in/clients.html"], reconciliation: report, organisations: audit }, null, 2) + "\n");
 }
 console.log(JSON.stringify(report, null, 1));
 if (failures.length) { console.error("\nVALIDATION FAILED:"); failures.forEach((f) => console.error(" -", f)); process.exit(1); }
