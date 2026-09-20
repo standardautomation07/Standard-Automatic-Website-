@@ -1,5 +1,5 @@
 import { SectionHeading } from "@/components/ui/section-heading";
-import { trustedPartners, type TrustedPartner } from "@/data/trusted-partners";
+import { publicTrustedPartners, type TrustedPartner } from "@/data/trusted-partners";
 
 interface TrustedPartnersProps {
   /** Two-digit section number on the homepage; omitted on standalone pages. */
@@ -8,8 +8,10 @@ interface TrustedPartnersProps {
 }
 
 /**
- * Trusted Partners — the single public showcase of every organisation in
- * `src/data/trusted-partners.ts`, one grid, one card each.
+ * Trusted Partners — the single public showcase of the organisations in
+ * `src/data/trusted-partners.ts` that have a verified logo, one grid, one
+ * card each. Organisations still without a logo stay in the dataset and the
+ * audit file but are not shown until a logo is supplied.
  *
  * Each card carries only the organisation's full-colour logo and its name.
  * Nothing else from the source is rendered here.
@@ -24,13 +26,13 @@ export function TrustedPartners({ index, className = "" }: TrustedPartnersProps)
       <div className="shell">
         <SectionHeading
           index={index}
-          eyebrow={`${trustedPartners.length} organisations`}
+          eyebrow={`${publicTrustedPartners.length} organisations`}
           title={<span id="trusted-partners-heading">Trusted Partners</span>}
           lede="Organizations we work with across industrial, infrastructure and commercial projects."
         />
 
         <ul className="mt-14 grid hairline-grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {trustedPartners.map((org) => (
+          {publicTrustedPartners.map((org) => (
             <li key={org.id} className="min-w-0">
               <PartnerCard org={org} />
             </li>
@@ -45,7 +47,7 @@ export function TrustedPartners({ index, className = "" }: TrustedPartnersProps)
   );
 }
 
-function PartnerCard({ org }: { org: TrustedPartner }) {
+function PartnerCard({ org }: { org: TrustedPartner & { logo: string } }) {
   return (
     <article className="flex h-full flex-col items-center bg-paper-raised px-6 pb-7 pt-8 text-center transition-colors duration-300 hover:bg-paper">
       <PartnerLogo org={org} />
@@ -60,27 +62,8 @@ function PartnerCard({ org }: { org: TrustedPartner }) {
  * Consistent logo well: every logo keeps its aspect ratio inside the same
  * box and is shown in its original full-colour treatment. A logo published
  * only as a white knockout sits on a dark well rather than being recoloured.
- * Organisations without a verified logo get a clearly marked placeholder
- * (and an entry in trusted-partners-logo-audit.json) — they still appear.
  */
-function PartnerLogo({ org }: { org: TrustedPartner }) {
-  if (!org.logo) {
-    return (
-      <div
-        className="flex h-24 w-full flex-col items-center justify-center border border-dashed border-steel-300 bg-paper-sunken"
-        role="img"
-        aria-label={`${org.name} — logo to be supplied`}
-      >
-        <span className="font-display text-2xl font-medium tracking-tight text-steel-500">
-          {org.initials}
-        </span>
-        <span className="mt-1 font-mono text-[0.55rem] uppercase tracking-[0.14em] text-steel-400">
-          Logo pending
-        </span>
-      </div>
-    );
-  }
-
+function PartnerLogo({ org }: { org: TrustedPartner & { logo: string } }) {
   return (
     <div
       className={`flex h-24 w-full items-center justify-center ${org.logoOnDark ? "bg-ink px-6" : "px-4"}`}

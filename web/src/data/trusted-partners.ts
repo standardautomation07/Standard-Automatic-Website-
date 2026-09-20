@@ -10,10 +10,11 @@
  * and its "Amul" line). One line, "R&D PLANT", names a facility rather than
  * an organisation and is intentionally not a partner card.
  *
- * The public Trusted Partners section renders one card per record: the
- * organisation's official full-colour logo and its name, nothing else.
- * Records without a verified logo carry `logo: null` and are shown with a
- * clearly marked placeholder; they are listed in trusted-partners-logo-audit.json.
+ * The public Trusted Partners section renders one card per record that has
+ * a logo: the organisation's official full-colour logo and its name, nothing
+ * else. Records without a logo carry `logo: null`; they are kept here and in
+ * trusted-partners-logo-audit.json for reconciliation but are NOT shown on
+ * the website until a logo is supplied (see `publicTrustedPartners`).
  */
 
 export type LogoStatus = "verified" | "needs-review" | "unavailable";
@@ -1221,10 +1222,17 @@ export const trustedPartners: TrustedPartner[] = [
   },
 ];
 
+/** Organisations rendered on the website: only those with a logo file. */
+export const publicTrustedPartners = trustedPartners.filter(
+  (p): p is TrustedPartner & { logo: string } => p.logo !== null,
+);
+
 export const trustedPartnerStats = {
   sourceOccurrences: sourcePdfLines.length,
   sourceDistinctLines: new Set(sourcePdfLines).size,
   organisations: trustedPartners.length,
+  publicOrganisations: publicTrustedPartners.length,
+  hiddenWithoutLogo: trustedPartners.length - publicTrustedPartners.length,
   organisationsFromPdf: trustedPartners.filter((p) => p.sourceNames.length > 0).length,
   organisationsFromWebsiteOnly: trustedPartners.filter((p) => p.sourceNames.length === 0).length,
   verifiedLogos: trustedPartners.filter((p) => p.logoStatus === "verified").length,

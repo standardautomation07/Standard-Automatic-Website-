@@ -10,7 +10,19 @@
       "R&D PLANT"
     ],
     "uniqueOrganisations": 90,
-    "publicTrustedPartners": 90,
+    "publicTrustedPartners": 80,
+    "hiddenWithoutLogo": [
+      "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
+      "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
+      "ARESPACE New Delhi",
+      "SUVIJIAY BUILDCON",
+      "Gaurav Engineers",
+      "ASMITA ENGINEERING EUIPMENTS",
+      "TESLA PARK 2",
+      "R R CONSTRUCTION",
+      "Aerospace Museum, MES, Palam, Delhi",
+      "BDD MUMBAI"
+    ],
     "consolidatedSpellings": [
       "ITC <= ITC Project | ITC",
       "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy <= Kaira District Co-operative Milk Producers' Union Limited. Amul dairy | Amul",
@@ -26,18 +38,6 @@
     "duplicatesConsolidated": 43,
     "verifiedFullColourLogos": 54,
     "logoReviewRequired": 36,
-    "placeholders": [
-      "PRECAST INDIA INFRASTRUCTURES PVT.LTD.",
-      "M/s SAMBHAV BUILDING SYSTEMS PVT LTD",
-      "ARESPACE New Delhi",
-      "SUVIJIAY BUILDCON",
-      "Gaurav Engineers",
-      "ASMITA ENGINEERING EUIPMENTS",
-      "TESLA PARK 2",
-      "R R CONSTRUCTION",
-      "Aerospace Museum, MES, Palam, Delhi",
-      "BDD MUMBAI"
-    ],
     "missingOrganisations": 0,
     "duplicatePublicEntries": 0
   },
@@ -50,6 +50,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "URC Construction (P) Ltd"
       ],
@@ -65,6 +66,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Pune Metro"
       ],
@@ -80,6 +82,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Godrej & Boyce Mfg Co Ltd"
       ],
@@ -95,6 +98,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Ador Powertron"
       ],
@@ -110,6 +114,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "SUROJ BUILDCON PVT LTD"
       ],
@@ -125,6 +130,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "ITC Project",
         "ITC"
@@ -141,6 +147,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "PRECAST INDIA INFRASTRUCTURES PVT.LTD."
       ],
@@ -156,6 +163,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": true,
+      "shownOnWebsite": true,
       "sourceNames": [
         "WILO-Mather & Platt Pumps"
       ],
@@ -171,6 +179,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "GODREJ INDUSTRIES LTD"
       ],
@@ -186,6 +195,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "ABB India Limited"
       ],
@@ -201,6 +211,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "CHITALE FOODS"
       ],
@@ -216,6 +227,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Xerbia Developers"
       ],
@@ -231,6 +243,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Bhate & raje Construction Company Ltd"
       ],
@@ -246,6 +259,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "TETRA PACK"
       ],
@@ -261,6 +275,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "M/s SAMBHAV BUILDING SYSTEMS PVT LTD"
       ],
@@ -276,6 +291,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Indian Air Force"
       ],
@@ -291,6 +307,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Sula Vineyards"
       ],
@@ -306,6 +323,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Kaira District Co-operative Milk Producers' Union Limited. Amul dairy",
         "Amul"
@@ -322,6 +340,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "CEMINDIA CEMENTATION IND LTD",
         "CEMINDIA CEMENTATION"
@@ -338,6 +357,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "PUNE AIRPORT"
       ],
@@ -353,6 +373,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "ARESPACE New Delhi"
       ],
@@ -368,6 +389,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "SUVIJIAY BUILDCON"
       ],
@@ -383,6 +405,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "FIAT"
       ],
@@ -398,6 +421,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "Gaurav Engineers"
       ],
@@ -413,6 +437,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Kirlosker Factory Plant"
       ],
@@ -428,6 +453,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "SMS INDIA PVT LTD"
       ],
@@ -443,6 +469,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "RAIL COACH FACTORY"
       ],
@@ -458,6 +485,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": true,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Larsen & Toubro Limited, Construction"
       ],
@@ -473,6 +501,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "NNMDC SLURRY PUMP HOUSE BACHELI",
         "NMDC BACHELI",
@@ -490,6 +519,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": true,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Ram Mandir Ayodhya Prayagraj"
       ],
@@ -505,6 +535,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "MANIPAL ENERGY & INFRA PVT TD"
       ],
@@ -520,6 +551,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "ASIAN PAINT"
       ],
@@ -535,6 +567,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "CRESCON PROJECTS & SERVICES PVT LTD"
       ],
@@ -550,6 +583,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "ASMITA ENGINEERING EUIPMENTS"
       ],
@@ -565,6 +599,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "DUROSHOCK"
       ],
@@ -580,6 +615,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "RAHEJA UNIVERSAL LTD"
       ],
@@ -595,6 +631,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "TESLA PARK 2"
       ],
@@ -610,6 +647,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "INS VARSHA"
       ],
@@ -625,6 +663,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "BARC"
       ],
@@ -640,6 +679,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "VTP REALTY - RISING WELWORTH",
         "VTP REALTY"
@@ -656,6 +696,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "R R CONSTRUCTION"
       ],
@@ -671,6 +712,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "TOYO FACTORY, KHALAPUR"
       ],
@@ -686,6 +728,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "LOREAL INDIA"
       ],
@@ -701,6 +744,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "SPG INFRAPROJECTS PVT LTD"
       ],
@@ -716,6 +760,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Income tax Building Nariman Point Mumbai"
       ],
@@ -731,6 +776,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "CBRE SOUTH ASIA"
       ],
@@ -746,6 +792,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "DLF CYBERCITY"
       ],
@@ -761,6 +808,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Safe Lifters Pvt Ltd"
       ],
@@ -776,6 +824,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "TATA PROJECTS"
       ],
@@ -791,6 +840,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "TATA MOTORS PLANT SANAND"
       ],
@@ -806,6 +856,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "Aerospace Museum, MES, Palam, Delhi"
       ],
@@ -821,6 +872,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Shapoorji Pallonji And Company Private Limited"
       ],
@@ -836,6 +888,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "unavailable",
       "logoOnDark": false,
+      "shownOnWebsite": false,
       "sourceNames": [
         "BDD MUMBAI"
       ],
@@ -851,6 +904,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "MILECON ENGINEERING PRIVATE LIMITED"
       ],
@@ -866,6 +920,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "Amara Raja Infra Private Limited"
       ],
@@ -881,6 +936,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "AMNS HAZIRA"
       ],
@@ -896,6 +952,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [
         "INDITECH VALVES LTD"
       ],
@@ -911,6 +968,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -926,6 +984,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -941,6 +1000,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -956,6 +1016,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -971,6 +1032,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -987,6 +1049,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1002,6 +1065,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1017,6 +1081,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1032,6 +1097,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1047,6 +1113,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1062,6 +1129,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1077,6 +1145,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1093,6 +1162,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1108,6 +1178,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1123,6 +1194,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1138,6 +1210,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1153,6 +1226,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1168,6 +1242,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1183,6 +1258,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1198,6 +1274,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1213,6 +1290,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1228,6 +1306,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1243,6 +1322,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1258,6 +1338,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1273,6 +1354,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1288,6 +1370,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1303,6 +1386,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1318,6 +1402,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1333,6 +1418,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1348,6 +1434,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1363,6 +1450,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1378,6 +1466,7 @@
       "verificationStatus": "verified",
       "logoStatus": "verified",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [
@@ -1393,6 +1482,7 @@
       "verificationStatus": "requires_review",
       "logoStatus": "needs-review",
       "logoOnDark": false,
+      "shownOnWebsite": true,
       "sourceNames": [],
       "occurrencesInPdf": 0,
       "websiteLogoFiles": [

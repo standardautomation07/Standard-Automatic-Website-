@@ -12,6 +12,7 @@ import fs from "fs";
 import path from "path";
 import {
   trustedPartners,
+  publicTrustedPartners,
   trustedPartnerStats,
   sourcePdfLines,
   sourcePdfNonOrganisationLines,
@@ -82,7 +83,8 @@ const report = {
   pdfDistinctLines: distinct.length,
   nonOrganisationLines: sourcePdfNonOrganisationLines,
   uniqueOrganisations: trustedPartners.length,
-  publicTrustedPartners: trustedPartners.length,
+  publicTrustedPartners: publicTrustedPartners.length,
+  hiddenWithoutLogo: trustedPartners.filter((p) => !p.logo).map((p) => p.name),
   consolidatedSpellings: trustedPartners.filter((p) => p.sourceNames.length > 1).map((p) => `${p.name} <= ${p.sourceNames.join(" | ")}`),
   websiteLogoOccurrences: Object.keys(sourceWebsiteLogos).length,
   websiteUniqueOrganisations: new Set(Object.values(sourceWebsiteLogos)).size,
@@ -92,15 +94,14 @@ const report = {
   duplicatesConsolidated: (sourcePdfLines.length - sourcePdfNonOrganisationLines.length - trustedPartnerStats.organisationsFromPdf) + (Object.keys(sourceWebsiteLogos).length - trustedPartnerStats.organisationsFromWebsiteOnly),
   verifiedFullColourLogos: trustedPartnerStats.verifiedLogos,
   logoReviewRequired: trustedPartnerStats.logosNeedingReview,
-  placeholders: trustedPartners.filter((p) => !p.logo).map((p) => p.name),
   missingOrganisations: missing.length + Object.values(sourceWebsiteLogos).filter((id) => !ids.has(id)).length,
-  duplicatePublicEntries: trustedPartners.length - new Set(trustedPartners.map((p) => p.id)).size,
+  duplicatePublicEntries: publicTrustedPartners.length - new Set(publicTrustedPartners.map((p) => p.id)).size,
 };
 
 if (!process.argv.includes("--check")) {
   const audit = trustedPartners.map((p) => ({
     organization: p.name, logoFile: p.logo, sourceUrl: p.logoSource, officialWebsite: p.officialWebsite,
-    verificationStatus: p.logoStatus === "verified" ? "verified" : "requires_review", logoStatus: p.logoStatus, logoOnDark: !!p.logoOnDark,
+    verificationStatus: p.logoStatus === "verified" ? "verified" : "requires_review", logoStatus: p.logoStatus, logoOnDark: !!p.logoOnDark, shownOnWebsite: p.logo !== null,
     sourceNames: p.sourceNames, occurrencesInPdf: p.occurrences, websiteLogoFiles: p.websiteLogoFiles ?? [], notes: p.notes,
   }));
   fs.writeFileSync(path.join(root, "src/data/trusted-partners-logo-audit.json"), JSON.stringify({ generatedFrom: ["Trusted_Partners_Editable.pdf", "https://www.standardautomation.in/clients.html"], reconciliation: report, organisations: audit }, null, 2) + "\n");

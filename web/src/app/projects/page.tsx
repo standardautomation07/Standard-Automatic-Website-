@@ -9,7 +9,7 @@ import { trustedPartnerStats } from "@/data/trusted-partners";
 
 export const metadata: Metadata = {
   title: "Trusted Partners",
-  description: `Trusted Partners — ${trustedPartnerStats.organisations} organizations Standard Automatic Solutions works with across industrial, infrastructure and commercial projects.`,
+  description: `Trusted Partners — ${trustedPartnerStats.publicOrganisations} organizations Standard Automatic Solutions works with across industrial, infrastructure and commercial projects.`,
   alternates: { canonical: "/projects" },
 };
 
