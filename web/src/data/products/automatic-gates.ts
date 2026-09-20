@@ -29,7 +29,7 @@ export const automaticGateProducts: Product[] = [
     ],
     variants: [
       { id: "tracked", name: "Track guided", note: "The leaf runs on a ground rail. Suits long, heavy leaves on a level, well-drained approach; the track must be kept clear of silt.", status: "CONFIRMED" },
-      { id: "cantilever", name: "Cantilever", note: "The leaf is carried on rollers set back from the opening, so nothing crosses the driveway. Chosen where drainage, silt or heavy axle loads rule out a ground track.", status: "POTENTIAL" },
+      { id: "cantilever", name: "Cantilever", note: "The leaf is carried on rollers set back from the opening, so nothing crosses the driveway. Chosen where drainage, silt or heavy axle loads rule out a ground track.", status: "CONFIRMED" },
     ],
     applications: [
       "Factory and plant main gates",
@@ -92,7 +92,7 @@ export const automaticGateProducts: Product[] = [
     ],
     variants: [
       { id: "two-leaf", name: "Two-leaf nesting", note: "The usual arrangement. Halves the required side-run compared with a single leaf of the same opening width.", status: "CONFIRMED" },
-      { id: "three-leaf", name: "Three-leaf nesting", note: "For very wide openings on very short boundaries, at the cost of a more involved drive and guidance arrangement.", status: "POTENTIAL" },
+      { id: "three-leaf", name: "Three-leaf nesting", note: "For very wide openings on very short boundaries, at the cost of a more involved drive and guidance arrangement.", status: "CONFIRMED" },
     ],
     applications: [
       "Constrained industrial entrances",
@@ -155,7 +155,7 @@ export const automaticGateProducts: Product[] = [
     variants: [
       { id: "articulated-arm", name: "Articulated arm operator", note: "For wide or heavy leaves, and where the hinge post sits back from the opening. The arm folds as the leaf swings.", status: "CONFIRMED" },
       { id: "linear-ram", name: "Linear ram operator", note: "The usual choice for residential and light commercial leaves. Compact and simple to install on a standard hinge post.", status: "CONFIRMED" },
-      { id: "underground", name: "Underground operator", note: "The drive sits in a foundation box at the hinge, invisible when the gate is closed. Requires drainage in the box.", status: "POTENTIAL" },
+      { id: "underground", name: "Underground operator", note: "The drive sits in a foundation box at the hinge, invisible when the gate is closed. Requires drainage in the box.", status: "CONFIRMED" },
     ],
     applications: [
       "Residential and villa entrances",

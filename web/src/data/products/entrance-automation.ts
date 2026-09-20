@@ -7,10 +7,8 @@ import type { Product } from "@/lib/types";
  * 2026-09-05 market review. Both are standard adjacencies for a company
  * already supplying automatic sliding doors and fire-rated sliding doors into
  * healthcare and pharmaceutical work, and both are supplied by comparable
- * Pune-based manufacturers. Neither is evidenced as a current Standard
- * Automation line, so both carry status POTENTIAL and are shown with a
- * visible "to be confirmed" marker rather than presented as established
- * products.
+ * Pune-based manufacturers. Both were confirmed as offered lines on
+ * 2026-09-20 and carry status CONFIRMED.
  *
  * Revolving doors and interlocking security portals remain NOT CONFIRMED and
  * are still absent — see research/product-source-matrix.csv.
@@ -44,8 +42,8 @@ export const entranceAutomationProducts: Product[] = [
     variants: [
       { id: "single-leaf", name: "Single leaf", note: "One leaf sliding to one side. Suits narrower openings and lower footfall.", status: "CONFIRMED" },
       { id: "bi-parting", name: "Bi-parting", note: "Two leaves parting from the centre. Clears the opening in roughly half the time, which matters at peak footfall.", status: "CONFIRMED" },
-      { id: "telescopic", name: "Telescopic", note: "Nested leaves give a wider clear opening from a narrower overall frame — for openings where the structure limits the header width.", status: "POTENTIAL" },
-      { id: "break-out", name: "Break-out escape leaves", note: "Leaves swing out under push force to give a clear escape width. Required where the opening sits on a designated escape route.", status: "POTENTIAL" },
+      { id: "telescopic", name: "Telescopic", note: "Nested leaves give a wider clear opening from a narrower overall frame — for openings where the structure limits the header width.", status: "CONFIRMED" },
+      { id: "break-out", name: "Break-out escape leaves", note: "Leaves swing out under push force to give a clear escape width. Required where the opening sits on a designated escape route.", status: "CONFIRMED" },
     ],
     applications: [
       "Office and corporate building lobbies",
@@ -87,7 +85,7 @@ export const entranceAutomationProducts: Product[] = [
     familyId: "entrance-automation",
     categoryId: "automatic-swing-doors",
     name: "Automatic Swing Doors",
-    status: "POTENTIAL",
+    status: "CONFIRMED",
     tagline: "Powered hinged leaves where a sliding track will not fit.",
     summary:
       "Operator-driven swing doors for corridors, lobbies and accessible entrances, in low-energy and full-power configurations with hands-free activation.",
@@ -108,10 +106,10 @@ export const entranceAutomationProducts: Product[] = [
       { title: "Still a door without power", body: "The leaf remains manually operable, which matters where the opening also serves as an escape route." },
     ],
     variants: [
-      { id: "low-energy", name: "Low energy", note: "Opens slowly enough that kinetic energy is limited by design. The usual choice for accessible entrances and public corridors.", status: "POTENTIAL" },
-      { id: "full-power", name: "Full power", note: "Faster operation for higher traffic, requiring presence sensing and guarding around the swing arc.", status: "POTENTIAL" },
-      { id: "double-leaf", name: "Double leaf with sequencing", note: "Two operators sequenced so the leaves open and close in the correct order at a meeting stile.", status: "POTENTIAL" },
-      { id: "concealed", name: "Concealed operator", note: "Operator housed within the transom where the entrance is architecturally sensitive.", status: "POTENTIAL" },
+      { id: "low-energy", name: "Low energy", note: "Opens slowly enough that kinetic energy is limited by design. The usual choice for accessible entrances and public corridors.", status: "CONFIRMED" },
+      { id: "full-power", name: "Full power", note: "Faster operation for higher traffic, requiring presence sensing and guarding around the swing arc.", status: "CONFIRMED" },
+      { id: "double-leaf", name: "Double leaf with sequencing", note: "Two operators sequenced so the leaves open and close in the correct order at a meeting stile.", status: "CONFIRMED" },
+      { id: "concealed", name: "Concealed operator", note: "Operator housed within the transom where the entrance is architecturally sensitive.", status: "CONFIRMED" },
     ],
     applications: [
       "Hospital and clinic corridors",
@@ -149,7 +147,7 @@ export const entranceAutomationProducts: Product[] = [
     familyId: "entrance-automation",
     categoryId: "hermetic-cleanroom-doors",
     name: "Hermetic & Cleanroom Doors",
-    status: "POTENTIAL",
+    status: "CONFIRMED",
     tagline: "An opening that can hold a pressure differential and a classification.",
     summary:
       "Automatic sliding doors that seal on all four edges, for operating theatres, gowning rooms, material airlocks and classified production areas.",
@@ -170,10 +168,10 @@ export const entranceAutomationProducts: Product[] = [
       { title: "Hands-free", body: "Wave, elbow or foot activation suits gowned staff and anyone carrying instruments or materials." },
     ],
     variants: [
-      { id: "single-leaf", name: "Single leaf", note: "The standard arrangement for gowning rooms and personnel access between classified areas.", status: "POTENTIAL" },
-      { id: "bi-parting", name: "Bi-parting", note: "Two leaves for wider openings such as material and equipment transfer.", status: "POTENTIAL" },
-      { id: "airlock-interlocked", name: "Airlock interlocked pair", note: "Two doors electrically interlocked so both are never open at once, with override defined against the escape strategy.", status: "POTENTIAL" },
-      { id: "shielded", name: "Shielded", note: "Lead-lined leaf where the room also requires radiation shielding, coordinated with the room shielding design.", status: "POTENTIAL" },
+      { id: "single-leaf", name: "Single leaf", note: "The standard arrangement for gowning rooms and personnel access between classified areas.", status: "CONFIRMED" },
+      { id: "bi-parting", name: "Bi-parting", note: "Two leaves for wider openings such as material and equipment transfer.", status: "CONFIRMED" },
+      { id: "airlock-interlocked", name: "Airlock interlocked pair", note: "Two doors electrically interlocked so both are never open at once, with override defined against the escape strategy.", status: "CONFIRMED" },
+      { id: "shielded", name: "Shielded", note: "Lead-lined leaf where the room also requires radiation shielding, coordinated with the room shielding design.", status: "CONFIRMED" },
     ],
     applications: [
       "Operating theatres and recovery suites",

@@ -44,9 +44,9 @@ export const industrialDoorProducts: Product[] = [
     ],
     variants: [
       { id: "standard-lift", name: "Standard lift", note: "The default arrangement where there is moderate clear headroom above the opening. The leaf runs up the wall then turns back under the roof.", status: "CONFIRMED" },
-      { id: "high-lift", name: "High lift", note: "Extends the vertical track so the leaf travels further up before turning, freeing usable height beneath the horizontal track. For buildings with generous headroom.", status: "POTENTIAL" },
-      { id: "vertical-lift", name: "Vertical lift", note: "The leaf stores entirely vertically against the wall. Suits very high internal clearance and keeps the ceiling completely clear.", status: "POTENTIAL" },
-      { id: "low-headroom", name: "Low headroom", note: "A second horizontal track lets the door operate where there is very little space between the top of the opening and the structure.", status: "POTENTIAL" },
+      { id: "high-lift", name: "High lift", note: "Extends the vertical track so the leaf travels further up before turning, freeing usable height beneath the horizontal track. For buildings with generous headroom.", status: "CONFIRMED" },
+      { id: "vertical-lift", name: "Vertical lift", note: "The leaf stores entirely vertically against the wall. Suits very high internal clearance and keeps the ceiling completely clear.", status: "CONFIRMED" },
+      { id: "low-headroom", name: "Low headroom", note: "A second horizontal track lets the door operate where there is very little space between the top of the opening and the structure.", status: "CONFIRMED" },
       { id: "glazed-vision", name: "Glazed vision panels", note: "Vision sections in one or more panels, or a full-vision glazed leaf, where daylight or sightlines through the opening matter.", status: "CONFIRMED" },
       { id: "wicket-door", name: "Wicket access door", note: "A pedestrian door built into the leaf, interlocked so the main door only runs when the wicket is closed.", status: "CONFIRMED" },
     ],

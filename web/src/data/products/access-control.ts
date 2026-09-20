@@ -3,10 +3,10 @@ import type { Product } from "@/lib/types";
 /**
  * Access Control & Vehicle Barriers — 6 products.
  *
- * Boom Barriers and Retractable Barriers carry status POTENTIAL: both were
- * published on the company's own server but removed from its navigation, so
- * the line exists but was not being promoted. They are shown with a visible
- * marker rather than hidden — see research/product-source-matrix.csv.
+ * Boom Barriers and Retractable Barriers were published on the company's own
+ * server but removed from its navigation; both were confirmed as offered
+ * lines on 2026-09-20 and carry status CONFIRMED — see
+ * research/product-source-matrix.csv for the original evidence.
  */
 export const accessControlProducts: Product[] = [
   {
@@ -205,7 +205,7 @@ export const accessControlProducts: Product[] = [
     variants: [
       { id: "fixed", name: "Fixed", note: "A permanent line. The cheapest and most robust option where the line never has to open.", status: "CONFIRMED" },
       { id: "removable", name: "Removable", note: "Lifted out with a key for occasional service access, then replaced. Suits lines that open a few times a month.", status: "CONFIRMED" },
-      { id: "automatic-rising", name: "Automatic rising", note: "Retracts flush into the carriageway on demand and re-deploys behind the vehicle. For lines that open many times a day.", status: "POTENTIAL" },
+      { id: "automatic-rising", name: "Automatic rising", note: "Retracts flush into the carriageway on demand and re-deploys behind the vehicle. For lines that open many times a day.", status: "CONFIRMED" },
     ],
     applications: [
       "Building entrances and forecourts",
@@ -239,7 +239,7 @@ export const accessControlProducts: Product[] = [
     familyId: "access-control",
     categoryId: "vehicle-access-control",
     name: "Boom Barriers",
-    status: "POTENTIAL",
+    status: "CONFIRMED",
     tagline: "Metering vehicles at the gate line, one at a time.",
     summary:
       "Automatic boom barriers for car park entries, plant gate houses and toll points, driven from loop detectors, readers, remotes or a gatehouse control.",
@@ -260,9 +260,9 @@ export const accessControlProducts: Product[] = [
       { title: "Safety interlocked", body: "Ground loops and photocells prevent the boom descending onto a vehicle or a person." },
     ],
     variants: [
-      { id: "straight-boom", name: "Straight boom", note: "The standard arrangement for a normal-width lane with clear headroom above the barrier.", status: "POTENTIAL" },
-      { id: "folding-boom", name: "Folding boom", note: "The boom articulates as it rises, for lanes with restricted headroom such as basement entries.", status: "POTENTIAL" },
-      { id: "fence-boom", name: "Fence boom", note: "A skirted boom that deters pedestrians from ducking under the barrier at a mixed-traffic entry.", status: "POTENTIAL" },
+      { id: "straight-boom", name: "Straight boom", note: "The standard arrangement for a normal-width lane with clear headroom above the barrier.", status: "CONFIRMED" },
+      { id: "folding-boom", name: "Folding boom", note: "The boom articulates as it rises, for lanes with restricted headroom such as basement entries.", status: "CONFIRMED" },
+      { id: "fence-boom", name: "Fence boom", note: "A skirted boom that deters pedestrians from ducking under the barrier at a mixed-traffic entry.", status: "CONFIRMED" },
     ],
     applications: [
       "Car park entries and exits",
@@ -296,7 +296,7 @@ export const accessControlProducts: Product[] = [
     familyId: "access-control",
     categoryId: "vehicle-access-control",
     name: "Retractable Barriers",
-    status: "POTENTIAL",
+    status: "CONFIRMED",
     tagline: "A barrier line that exists only when you need it.",
     summary:
       "Retractable barrier systems that close a wide vehicle or pedestrian line and fold back into a compact stack when the route is open.",
@@ -317,8 +317,8 @@ export const accessControlProducts: Product[] = [
       { title: "Powered or manual", body: "Motorised operation with manual release, or manual-only where duty is light." },
     ],
     variants: [
-      { id: "powered", name: "Powered", note: "Motorised extension and retraction with a manual release, where the line opens and closes several times a day.", status: "POTENTIAL" },
-      { id: "manual", name: "Manual", note: "Hand-operated, for lines that change state once or twice a day on a shift pattern.", status: "POTENTIAL" },
+      { id: "powered", name: "Powered", note: "Motorised extension and retraction with a manual release, where the line opens and closes several times a day.", status: "CONFIRMED" },
+      { id: "manual", name: "Manual", note: "Hand-operated, for lines that change state once or twice a day on a shift pattern.", status: "CONFIRMED" },
     ],
     applications: [
       "Yard and service entrances",

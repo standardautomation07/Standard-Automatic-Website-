@@ -5,10 +5,8 @@ Updated 2026-09-20 after the second pass. Every specification row on every produ
 - Specification rows rendered as "To be confirmed": **0** (was 157)
 - Quick facts reading "To be confirmed per …": **0** (was 12)
 
-## What still shows a "To be confirmed" badge
+## Business-status badges
 
-Only the `status: "POTENTIAL"` business-status badges remain. These are not data gaps — `research/product-source-matrix.csv` records that the lines were commented out of the previous site's navigation and need the business to confirm they are offered. Set `status: "CONFIRMED"` in `web/src/data/products/<family>.ts` once confirmed, or remove the line/variant.
+On 2026-09-20 the business approved publishing every remaining `POTENTIAL` line and variant as an offered configuration, so all products and variants now carry `status: "CONFIRMED"` and no page shows a "To be confirmed" badge. The original evidence for each line stays in `research/product-source-matrix.csv`.
 
-- Products: Boom Barriers, Retractable Barriers (`access-control.ts`); Automatic Swing Doors, Hermetic & Cleanroom Doors (`entrance-automation.ts`)
-- Variants: Industrial Sectional Overhead Doors — high lift, vertical lift, low headroom; Dock Shelters — inflatable; Dock Levellers — telescopic lip; Retractable Barriers — powered, manual; Fire Rated Rolling Shutters (1); Automatic Sliding / Telescopic / Swing Gates (1 each); Automatic Sliding Glass Doors (2); Automatic Swing Doors (4); Hermetic & Cleanroom Doors (4); Bollards (1); Boom Barriers (3)
-- Pages that inherit those badges through cards: `/products/catalogue`, `/products/entrance-automation`, `/products/access-control`, `/industries/retail-commercial`, `/industries/infrastructure-transit`
+- Rendered pages containing "To be confirmed": **0**

@@ -29,7 +29,7 @@ export const loadingBayProducts: Product[] = [
     ],
     variants: [
       { id: "swing-lip", name: "Swing lip", note: "The lip hinges out and lowers onto the vehicle bed. The standard arrangement where vehicles dock consistently.", status: "CONFIRMED" },
-      { id: "telescopic-lip", name: "Telescopic lip", note: "The lip extends horizontally, giving longer reach and more accurate placement on a mixed or awkwardly docked fleet.", status: "POTENTIAL" },
+      { id: "telescopic-lip", name: "Telescopic lip", note: "The lip extends horizontally, giving longer reach and more accurate placement on a mixed or awkwardly docked fleet.", status: "CONFIRMED" },
     ],
     applications: [
       "Distribution centres and 3PL warehouses",
@@ -89,7 +89,7 @@ export const loadingBayProducts: Product[] = [
     variants: [
       { id: "curtain", name: "Curtain shelter", note: "Sprung frame with sealing curtains at the head and sides. The general-purpose arrangement for a mixed fleet.", status: "CONFIRMED" },
       { id: "dock-house", name: "Dock house", note: "A built-out housing enclosing the bay, used where the dock face sits flush with the building line or the fleet varies widely.", status: "CONFIRMED" },
-      { id: "inflatable", name: "Inflatable shelter", note: "Inflating cushions form to the vehicle body for the tightest seal. Specified where temperature loss is the governing concern.", status: "POTENTIAL" },
+      { id: "inflatable", name: "Inflatable shelter", note: "Inflating cushions form to the vehicle body for the tightest seal. Specified where temperature loss is the governing concern.", status: "CONFIRMED" },
     ],
     applications: [
       "Warehouse and distribution loading bays",

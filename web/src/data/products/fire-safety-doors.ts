@@ -57,7 +57,7 @@ export const fireSafetyProducts: Product[] = [
         id: "auto-close-release",
         name: "Alarm-linked auto-close",
         note: "Interface to the fire alarm panel with a battery-backed release, so the shutter closes on alarm at a governed speed. Specified against the building's fire strategy.",
-        status: "POTENTIAL",
+        status: "CONFIRMED",
       },
     ],
     applications: [
