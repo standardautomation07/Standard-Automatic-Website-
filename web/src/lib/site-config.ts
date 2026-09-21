@@ -14,7 +14,7 @@ export const siteConfig = {
   foundedYear: 2006,
   /** Confirmed: the company publishes "An ISO 9001-2015 Registered Company" on its own site. */
   isoCertification: "ISO 9001:2015",
-  url: "https://www.standardautomation.in",
+  url: "https://www.standardautomations.in",
 
   /** Confirmed by the business (supersedes the two other addresses on the old site). */
   address: {
