@@ -5,8 +5,13 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { ConversionRail, MobileActionBar } from "@/components/layout/conversion";
 import { JsonLd } from "@/components/seo/json-ld";
-import { localBusinessJsonLd, organizationJsonLd } from "@/lib/json-ld";
+import { Motion } from "@/components/ui/motion";
+import { localBusinessJsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { siteConfig } from "@/lib/site-config";
+import { families } from "@/data/families";
+import { industries } from "@/data/industries";
+import { productsInFamily } from "@/lib/catalog";
+import { image } from "@/data/images";
 
 /**
  * Brand typefaces. Loaded through next/font rather than a Google Fonts <link>:
@@ -61,6 +66,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // The header is a client component; hand it the eight family records it
+  // needs rather than letting it import the catalogue and image registry.
+  const headerFamilies = families.map((family) => ({
+    id: family.id,
+    name: family.name,
+    src: image(family.imageId).src,
+    count: productsInFamily(family.id).length,
+  }));
+  const headerIndustries = industries.map(({ id, name }) => ({ id, name }));
   return (
     <html
       lang="en-IN"
@@ -69,11 +83,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="pb-14 xl:pb-0">
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={localBusinessJsonLd()} />
-        <SiteHeader />
+        <JsonLd data={websiteJsonLd()} />
+        <SiteHeader families={headerFamilies} industries={headerIndustries} />
         <main id="main">{children}</main>
         <SiteFooter />
         <ConversionRail />
         <MobileActionBar />
+        <Motion />
       </body>
     </html>
   );

@@ -6,7 +6,7 @@ import { ArrowRight } from "@/components/ui/icons";
 export default function NotFound() {
   return (
     <section className="bg-paper py-24 lg:py-32">
-      <div className="shell">
+      <div className="shell" data-reveal>
         <p className="eyebrow text-amber-deep">Error 404</p>
         <h1 className="mt-5 max-w-2xl text-display-2 text-steel-900">
           That page is not here.

@@ -29,9 +29,13 @@ export default function ProjectsPage() {
       <JsonLd data={breadcrumbJsonLd(trail)} />
 
       <section className="relative isolate overflow-hidden bg-ink">
-        <Media id="warehouse-interior" sizes="100vw" priority decorative className="opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="shell relative py-14 lg:py-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <Media id="warehouse-interior" sizes="100vw" priority decorative className="img-settle opacity-55" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/20" />
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
+        <div className="hero-in shell relative flex min-h-[24rem] flex-col justify-end py-14 lg:min-h-[32rem] lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />
           <p className="eyebrow mt-8 text-amber">Projects</p>
           <h1 className="mt-5 max-w-3xl text-display-2 text-white">Trusted Partners</h1>
@@ -44,7 +48,7 @@ export default function ProjectsPage() {
       <TrustedPartners />
 
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <div className="max-w-2xl border-l-2 border-amber bg-paper-raised p-8">
             <h2 className="font-display text-xl font-medium text-steel-900">
               Written case studies are being prepared.

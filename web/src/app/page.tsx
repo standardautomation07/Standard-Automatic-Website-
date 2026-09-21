@@ -10,7 +10,7 @@ import {
 } from "@/lib/catalog";
 import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { FamilyCard, ProductCard } from "@/components/product/cards";
+import { FamilyTile, ProductCard } from "@/components/product/cards";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { Media } from "@/components/ui/media";
 import { TrustedPartners } from "@/components/clients/trusted-partners";
@@ -83,36 +83,44 @@ export default function HomePage() {
     <>
       {/* 01 — Hero */}
       <section className="relative isolate overflow-hidden bg-ink">
-        <Media id="hero-facility" sizes="100vw" priority />
-        <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink/85 to-ink/35" />
-        <div className="grid-rule absolute inset-0" aria-hidden="true" />
+        <div className="absolute inset-0 overflow-hidden">
+          <Media id="hero-facility" sizes="100vw" priority className="img-settle" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/30" />
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
 
-        <div className="shell relative flex min-h-[34rem] flex-col justify-end pb-14 pt-24 lg:min-h-[46rem] lg:pb-20 lg:pt-32">
-          <p className="eyebrow text-amber">Entrance Automation & Industrial Access</p>
+        <div className="shell relative flex min-h-[calc(100svh-4.5rem)] flex-col justify-end pb-10 pt-24 lg:min-h-[calc(100svh-5.5rem)] lg:pb-14 lg:pt-32">
+          <div className="hero-in max-w-5xl">
+            <p className="eyebrow flex items-center gap-3 text-amber">
+              <span className="h-px w-8 bg-amber" aria-hidden="true" />
+              Entrance Automation & Industrial Access
+            </p>
 
-          <h1 className="mt-7 max-w-5xl text-display-1 text-white">
-            Engineered access.
-            <br />
-            <span className="text-steel-400">Specified against the opening.</span>
-          </h1>
+            <h1 className="mt-7 text-display-1 text-white">
+              Engineered access.
+              <br />
+              <span className="text-steel-400">Specified against the opening.</span>
+            </h1>
 
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-steel-300 lg:text-lg">
-            High speed doors, industrial doors, rolling shutters, fire rated assemblies, automatic
-            gates, loading bay equipment and access control — engineered, supplied, installed and
-            supported from Pune.
-          </p>
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-steel-300 lg:text-lg">
+              High speed doors, industrial doors, rolling shutters, fire rated assemblies, automatic
+              gates, loading bay equipment and access control — engineered, supplied, installed and
+              supported from Pune.
+            </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/products" variant="primary" size="lg">
-              Explore products
-              <ArrowRight className="h-5 w-5" />
-            </ButtonLink>
-            <ButtonLink href="#enquiry" variant="onDark" size="lg">
-              Request a Quote
-            </ButtonLink>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/products" variant="primary" size="lg">
+                Explore products
+                <ArrowRight className="h-5 w-5" />
+              </ButtonLink>
+              <ButtonLink href="#enquiry" variant="onDark" size="lg">
+                Request a Quote
+              </ButtonLink>
+            </div>
           </div>
 
-          <dl className="mt-16 hidden grid-cols-2 gap-x-8 gap-y-6 border-t border-white/15 pt-8 lg:mt-20 lg:grid lg:grid-cols-4">
+          <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-white/15 pt-7 lg:mt-20 lg:grid-cols-4" data-reveal-group>
             {[
               { k: "Product families", v: String(counts.families) },
               { k: "Categories", v: String(counts.categories) },
@@ -130,7 +138,7 @@ export default function HomePage() {
 
       {/* 02 — Product families */}
       <section className="bg-paper py-20 lg:py-28">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="02"
             eyebrow="Product families"
@@ -145,13 +153,10 @@ export default function HomePage() {
             }
           />
 
-          <ul className="mt-14 grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
+          <ul className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-14 lg:grid-cols-6 lg:gap-4" data-reveal-group>
             {families.map((family, index) => (
-              <li
-                key={family.id}
-                className={`bg-paper-raised ${index >= 4 ? MOBILE_ONLY_DESKTOP : ""}`}
-              >
-                <FamilyCard family={family} index={index} />
+              <li key={family.id} className={index < 2 ? "lg:col-span-3" : "lg:col-span-2"}>
+                <FamilyTile family={family} index={index} size={index < 2 ? "lg" : "md"} priority={index < 2} />
               </li>
             ))}
           </ul>
@@ -160,7 +165,7 @@ export default function HomePage() {
 
       {/* 03 — Solutions by industry */}
       <section className="bg-ink py-20 lg:py-28">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="03"
             eyebrow="Solutions by industry"
@@ -175,7 +180,7 @@ export default function HomePage() {
             }
           />
 
-          <ul className="mt-14 grid hairline-grid-dark sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-14 grid hairline-grid-dark sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
             {industries.map((industry, index) => (
               <li
                 key={industry.id}
@@ -187,7 +192,7 @@ export default function HomePage() {
                   id={industry.imageId}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   decorative
-                  className="opacity-50 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-70"
+                  className="img-zoom opacity-60 transition-opacity duration-700 group-hover:opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
@@ -208,14 +213,14 @@ export default function HomePage() {
 
       {/* 04 — Engineering capabilities */}
       <section className="border-b border-line bg-paper-sunken py-20 lg:py-28">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="04"
             eyebrow="Engineering capabilities"
             title="Four steps, in this order."
             lede="An opening is an engineering problem before it is a product choice. Reversing these steps is what produces a door that is technically correct and practically wrong."
           />
-          <div className="mt-14 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-14 grid hairline-grid md:grid-cols-2 xl:grid-cols-4" data-reveal-group>
             {capabilities.map((item, index) => (
               <article key={item.k} className="bg-paper-raised p-7">
                 <p className="font-mono text-xs text-amber">{String(index + 1).padStart(2, "0")}</p>
@@ -230,7 +235,7 @@ export default function HomePage() {
 
       {/* 05 — Selected products */}
       <section className="bg-paper py-20 lg:py-28">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="05"
             eyebrow="Selected products"
@@ -243,7 +248,7 @@ export default function HomePage() {
               </ButtonLink>
             }
           />
-          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3" data-reveal-group>
             {featuredProducts.map((product, index) => (
               <div key={product.id} className={index >= 3 ? MOBILE_ONLY_DESKTOP : ""}>
                 <ProductCard product={product} />
@@ -258,7 +263,7 @@ export default function HomePage() {
 
       {/* 07 — Why Standard Automatic */}
       <section className="bg-paper py-20 lg:py-28">
-        <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-5">
             <SectionHeading
               index="07"
@@ -290,9 +295,9 @@ export default function HomePage() {
 
       {/* 08 — Service & support */}
       <section className="border-y border-line bg-paper-sunken py-20 lg:py-28">
-        <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="relative aspect-[4/3] lg:col-span-6">
-            <Media id="installation" sizes="(min-width: 1024px) 50vw, 100vw" />
+        <div className="shell grid items-center gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
+          <div className="group relative aspect-[4/3] overflow-hidden lg:col-span-6">
+            <Media id="installation" sizes="(min-width: 1024px) 50vw, 100vw" className="img-zoom" />
           </div>
           <div className="lg:col-span-6">
             <SectionHeading
@@ -326,7 +331,7 @@ export default function HomePage() {
 
       {/* 09 — Engineering enquiry */}
       <section id="enquiry" className="scroll-mt-20 bg-paper py-20 lg:py-28">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-5">
             <SectionHeading
               index="09"

@@ -4,44 +4,60 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
-import { families } from "@/data/families";
-import { industries } from "@/data/industries";
-import { siteConfig, telHref } from "@/lib/site-config";
-import { ArrowRight, ChevronDown, Close, Menu, Phone } from "@/components/ui/icons";
+import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
+import { ArrowRight, ChevronDown, Close, Menu, Phone, WhatsApp } from "@/components/ui/icons";
 
+/**
+ * Primary navigation. Six destinations plus the quote CTA: Products opens a
+ * visual mega-menu of the eight families; the rest are single pages. The
+ * labels are the site's own sections — nothing here points at a route that
+ * does not exist.
+ */
 const primaryNav = [
   { href: "/industries", label: "Industries" },
-  { href: "/projects", label: "Trusted Partners" },
+  { href: "/projects", label: "Projects" },
   { href: "/resources", label: "Resources" },
-  { href: "/service-support", label: "Service & Support" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/service-support", label: "Support" },
+  { href: "/about", label: "Company" },
 ];
 
-export function SiteHeader() {
+export interface HeaderFamily {
+  id: string;
+  name: string;
+  src: string;
+  count: number;
+}
+
+export function SiteHeader({
+  families,
+  industries,
+}: {
+  families: HeaderFamily[];
+  industries: { id: string; name: string }[];
+}) {
   const pathname = usePathname();
   const [megaOpen, setMegaOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [mobileProducts, setMobileProducts] = useState(false);
+  const [mobileProducts, setMobileProducts] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const panelId = useId();
   const drawerId = useId();
   const triggerRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<number | null>(null);
 
   const closeAll = useCallback(() => {
     setMegaOpen(false);
     setDrawerOpen(false);
   }, []);
 
-  // Route change closes everything. Adjusting state during render is React's
-  // documented pattern for reacting to a changed input and avoids the
-  // cascading second render an effect would cause.
+  // Route change closes everything (React's documented adjust-during-render
+  // pattern, which avoids a cascading second render from an effect).
   const [renderedPath, setRenderedPath] = useState(pathname);
   if (renderedPath !== pathname) {
     setRenderedPath(pathname);
     setMegaOpen(false);
     setDrawerOpen(false);
-    setMobileProducts(false);
   }
 
   useEffect(() => {
@@ -52,8 +68,13 @@ export function SiteHeader() {
     return () => document.removeEventListener("keydown", onKey);
   }, [closeAll]);
 
-  // The panel counts as "inside": it is a sibling of the trigger in the DOM,
-  // and closing on pointerdown would unmount a link before its click fired.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   useEffect(() => {
     if (!megaOpen) return;
     function onPointer(e: PointerEvent) {
@@ -73,64 +94,74 @@ export function SiteHeader() {
     };
   }, [drawerOpen]);
 
+  // Hover intent: open on enter, close a beat after leaving trigger and panel.
+  const cancelClose = () => {
+    if (closeTimer.current) window.clearTimeout(closeTimer.current);
+    closeTimer.current = null;
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = window.setTimeout(() => setMegaOpen(false), 160);
+  };
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
+  const underline = (active: boolean) =>
+    `absolute inset-x-3 bottom-0 h-0.5 origin-left bg-amber transition-transform duration-300 ${
+      active ? "scale-x-100" : "scale-x-0"
+    }`;
+
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-line bg-ink text-white">
+    <header
+      className={`sticky top-0 z-50 border-b text-white transition-[background-color,border-color,box-shadow] duration-300 ${
+        scrolled || megaOpen
+          ? "border-ink-line bg-ink/95 shadow-[0_8px_30px_rgba(0,0,0,0.25)] supports-[backdrop-filter]:bg-ink/85 supports-[backdrop-filter]:backdrop-blur-xl"
+          : "border-white/10 bg-ink"
+      }`}
+    >
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-edge focus:bg-amber focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-edge focus:bg-amber focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
       >
         Skip to content
       </a>
 
-      <div className="shell flex h-20 items-center justify-between gap-2 lg:h-24 xl:gap-4">
+      <div className="shell flex h-18 items-center justify-between gap-2 lg:h-22 xl:gap-6">
         <Link href="/" className="flex shrink-0 items-center" aria-label={`${siteConfig.shortName} — home`}>
-          {/* The nav uses its own inverted lockup rather than the supplied one.
-              Two reasons. The supplied wordmark is near-black, which
-              disappears on this header. And its artboard carries generous
-              padding around the mark, so at any height that fits the nav the
-              mark itself lands small and the 27-character strapline renders
-              about four pixels tall — texture rather than type.
-
-              This variant hugs its content: the artboard is exactly the height
-              of the mark tile, so the rendered height *is* the mark size. That
-              buys the emblem about a quarter more presence and the wordmark
-              about a fifth, with no change to the nav's own height. The
-              strapline keeps its issued letter spacing and comes along for the
-              scale, landing at a size that can actually be read.
-
-              One lockup at every width, including a phone. The nav used to
-              drop to the bare mark below the sm breakpoint to save room, which
-              left the company name off the mobile header altogether. It costs
-              210px of a 375px screen to put it back, and the hamburger is the
-              only other thing in the bar, so the room was never the problem.
-              The full lockup stays in the footer, where there is more of it. */}
           <Image
             src="/images/brand/logo-header-invert.svg"
             alt=""
             width={540}
             height={144}
             priority
-            className="h-14 w-auto lg:h-[4.5rem]"
+            className="h-12 w-auto lg:h-16"
           />
           <span className="sr-only">{siteConfig.legalName}</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden min-w-0 lg:flex lg:items-center">
-          <div ref={triggerRef}>
+        <nav aria-label="Primary" className="hidden min-w-0 self-stretch lg:flex lg:items-stretch lg:gap-1">
+          <div
+            ref={triggerRef}
+            className="flex"
+            onPointerEnter={() => {
+              cancelClose();
+              setMegaOpen(true);
+            }}
+            onPointerLeave={scheduleClose}
+          >
             <button
               type="button"
               onClick={() => setMegaOpen((v) => !v)}
               aria-expanded={megaOpen}
               aria-controls={panelId}
-              className={`flex items-center gap-1.5 whitespace-nowrap px-2 py-2 text-sm transition-colors xl:px-3 ${
+              className={`relative flex items-center gap-1.5 whitespace-nowrap px-3 text-[0.9rem] font-medium transition-colors ${
                 megaOpen || pathname.startsWith("/products") ? "text-white" : "text-steel-300 hover:text-white"
               }`}
             >
               Products
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${megaOpen ? "rotate-180" : ""}`} />
+              <span aria-hidden="true" className={underline(megaOpen || pathname.startsWith("/products"))} />
             </button>
           </div>
 
@@ -138,12 +169,13 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className={`whitespace-nowrap px-2 py-2 text-sm transition-colors xl:px-3 ${
+              className={`relative flex items-center whitespace-nowrap px-3 text-[0.9rem] font-medium transition-colors ${
                 isActive(item.href) ? "text-white" : "text-steel-300 hover:text-white"
               }`}
               aria-current={isActive(item.href) ? "page" : undefined}
             >
               {item.label}
+              <span aria-hidden="true" className={underline(isActive(item.href))} />
             </Link>
           ))}
         </nav>
@@ -151,14 +183,14 @@ export function SiteHeader() {
         <div className="flex shrink-0 items-center gap-2">
           <a
             href={telHref()}
-            className="hidden items-center gap-2 whitespace-nowrap px-3 py-2 font-mono text-xs tracking-wide text-steel-300 transition-colors hover:text-white 2xl:flex"
+            className="hidden items-center gap-2 whitespace-nowrap px-3 py-2 font-mono text-xs tracking-wide text-steel-300 transition-colors hover:text-white xl:flex"
           >
             <Phone className="h-4 w-4" />
             {siteConfig.phone}
           </a>
           <Link
             href="/contact"
-            className="hidden whitespace-nowrap rounded-edge bg-amber px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-[#ff9426] sm:inline-flex xl:px-5"
+            className="hidden whitespace-nowrap rounded-edge bg-amber px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-deep sm:inline-flex xl:px-5"
           >
             Request a Quote
           </Link>
@@ -180,29 +212,38 @@ export function SiteHeader() {
         ref={panelRef}
         id={panelId}
         hidden={!megaOpen}
-        className="absolute inset-x-0 top-full hidden max-h-[calc(100vh-6rem)] overflow-y-auto border-b border-ink-line bg-ink-raised lg:block"
+        onPointerEnter={cancelClose}
+        onPointerLeave={scheduleClose}
+        className="absolute inset-x-0 top-full hidden max-h-[calc(100vh-5.5rem)] overflow-y-auto border-b border-ink-line bg-ink shadow-[0_30px_60px_rgba(0,0,0,0.45)] lg:block"
       >
-        <div className="shell grid grid-cols-12 gap-x-10 gap-y-8 py-10">
+        <div className="shell grid grid-cols-12 gap-x-10 py-9">
           <div className="col-span-9">
-            <p className="eyebrow text-steel-600">Product families</p>
-            <ul className="mt-5 grid grid-cols-3 gap-x-8">
+            <div className="flex items-end justify-between gap-6">
+              <p className="eyebrow text-steel-500">Product families</p>
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 text-sm text-steel-300 transition-colors hover:text-white"
+              >
+                All products
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <ul className="mt-5 grid grid-cols-4 gap-x-5 gap-y-6">
               {families.map((family, index) => (
                 <li key={family.id}>
-                  <Link
-                    href={`/products/${family.id}`}
-                    className="group flex gap-3 border-b border-ink-line py-3.5"
-                  >
-                    <span className="mt-0.5 font-mono text-[0.65rem] text-steel-600">
-                      {String(index + 1).padStart(2, "0")}
+                  <Link href={`/products/${family.id}`} className="group block">
+                    <span className="relative block aspect-[16/10] overflow-hidden bg-ink-raised">
+                      <Image src={family.src} alt="" fill sizes="18vw" className="img-zoom object-cover opacity-90" />
+                      <span className="absolute left-3 top-3 font-mono text-[0.6rem] text-white/70">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </span>
-                    <span className="min-w-0">
-                      <span className="flex items-center gap-2 font-display text-[0.95rem] font-medium text-white">
-                        {family.name}
-                        <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-amber opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
-                      </span>
-                      <span className="mt-1 block text-[0.8rem] leading-relaxed text-steel-400">
-                        {family.tagline}
-                      </span>
+                    <span className="mt-3 flex items-center gap-2 font-display text-[0.95rem] font-medium text-white">
+                      {family.name}
+                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-amber opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                    </span>
+                    <span className="mt-1 block font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-500">
+                      {family.count} products
                     </span>
                   </Link>
                 </li>
@@ -210,53 +251,44 @@ export function SiteHeader() {
             </ul>
           </div>
 
-          <div className="col-span-3 space-y-8">
-            <div>
-              <p className="eyebrow text-steel-600">Browse</p>
-              <ul className="mt-5 space-y-3">
-                <li>
-                  <Link href="/products" className="flex items-center gap-2 text-sm text-white hover:text-amber">
-                    All product families
-                    <ArrowRight className="h-4 w-4" />
+          <div className="col-span-3 border-l border-ink-line pl-8">
+            <p className="eyebrow text-steel-500">Browse</p>
+            <ul className="mt-5 space-y-3">
+              <li>
+                <Link href="/products/catalogue" className="flex items-center gap-2 text-sm text-white hover:text-amber">
+                  Full catalogue &amp; search
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="flex items-center gap-2 text-sm text-white hover:text-amber">
+                  Resources &amp; downloads
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </li>
+            </ul>
+            <p className="eyebrow mt-8 text-steel-500">By industry</p>
+            <ul className="mt-4 space-y-2">
+              {industries.map((industry) => (
+                <li key={industry.id}>
+                  <Link
+                    href={`/industries/${industry.id}`}
+                    className="text-sm text-steel-300 transition-colors hover:text-white"
+                  >
+                    {industry.name}
                   </Link>
                 </li>
-                <li>
-                  <Link href="/products/catalogue" className="flex items-center gap-2 text-sm text-white hover:text-amber">
-                    Full catalogue &amp; search
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow text-steel-600">By industry</p>
-              <ul className="mt-5 space-y-2">
-                {industries.slice(0, 5).map((industry) => (
-                  <li key={industry.id}>
-                    <Link
-                      href={`/industries/${industry.id}`}
-                      className="text-sm text-steel-300 transition-colors hover:text-white"
-                    >
-                      {industry.name}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/industries" className="text-sm text-amber hover:underline">
-                    All industries
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
       {/* Mobile drawer */}
       {drawerOpen && (
-        <div id={drawerId} className="fixed inset-0 top-20 z-50 overflow-y-auto overscroll-contain bg-ink lg:hidden">
+        <div id={drawerId} className="fixed inset-0 top-18 z-50 overflow-y-auto overscroll-contain bg-ink lg:hidden">
           <div className="flex min-h-full flex-col">
-            <div className="flex items-center justify-between border-b border-ink-line px-5 py-4">
+            <div className="flex items-center justify-between border-b border-ink-line px-5 py-3">
               <span className="eyebrow text-steel-500">Menu</span>
               <button
                 type="button"
@@ -281,17 +313,26 @@ export function SiteHeader() {
                 />
               </button>
               {mobileProducts && (
-                <ul className="border-b border-ink-line py-2">
+                <ul className="grid grid-cols-2 gap-x-3 gap-y-4 border-b border-ink-line py-4">
                   {families.map((family) => (
                     <li key={family.id}>
-                      <Link href={`/products/${family.id}`} className="block py-3 pl-4 text-[0.95rem] text-steel-300">
-                        {family.name}
+                      <Link href={`/products/${family.id}`} className="block">
+                        <span className="relative block aspect-[16/10] overflow-hidden bg-ink-raised">
+                          <Image src={family.src} alt="" fill sizes="45vw" className="object-cover opacity-90" />
+                        </span>
+                        <span className="mt-2 block font-display text-[0.9rem] font-medium leading-snug text-white">
+                          {family.name}
+                        </span>
+                        <span className="block font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-500">
+                          {family.count} products
+                        </span>
                       </Link>
                     </li>
                   ))}
-                  <li>
-                    <Link href="/products/catalogue" className="block py-3 pl-4 text-[0.95rem] text-amber">
+                  <li className="col-span-2">
+                    <Link href="/products/catalogue" className="flex items-center gap-2 py-2 text-[0.95rem] text-amber">
                       Full catalogue &amp; search
+                      <ArrowRight className="h-4 w-4" />
                     </Link>
                   </li>
                 </ul>
@@ -301,26 +342,43 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block border-b border-ink-line py-4 font-display text-xl text-white"
+                  className="flex items-center justify-between border-b border-ink-line py-4 font-display text-xl text-white"
                 >
                   {item.label}
+                  <ArrowRight className="h-4 w-4 text-steel-500" />
                 </Link>
               ))}
-            </nav>
-
-            <div className="space-y-3 px-5 py-6">
               <Link
                 href="/contact"
-                className="flex min-h-13 w-full items-center justify-center rounded-edge bg-amber px-6 font-semibold text-ink"
+                className="flex items-center justify-between border-b border-ink-line py-4 font-display text-xl text-white"
+              >
+                Contact
+                <ArrowRight className="h-4 w-4 text-steel-500" />
+              </Link>
+            </nav>
+
+            <div className="grid grid-cols-2 gap-3 px-5 py-6">
+              <Link
+                href="/contact"
+                className="col-span-2 flex min-h-13 w-full items-center justify-center rounded-edge bg-amber px-6 font-semibold text-white"
               >
                 Request a Quote
               </Link>
               <a
                 href={telHref()}
-                className="flex min-h-13 w-full items-center justify-center gap-2 rounded-edge border border-white/25 px-6 text-white"
+                className="flex min-h-13 items-center justify-center gap-2 rounded-edge border border-white/25 px-4 text-sm text-white"
               >
                 <Phone className="h-4 w-4" />
-                {siteConfig.phone}
+                Call
+              </a>
+              <a
+                href={whatsappHref("Hello Standard Automation, I would like a quote.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-13 items-center justify-center gap-2 rounded-edge border border-white/25 px-4 text-sm text-white"
+              >
+                <WhatsApp className="h-4 w-4" />
+                WhatsApp
               </a>
             </div>
           </div>

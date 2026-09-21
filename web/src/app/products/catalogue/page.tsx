@@ -26,7 +26,7 @@ export default function CataloguePage() {
       <section className="border-b border-line bg-paper pt-10 lg:pt-14">
         <div className="shell pb-12 lg:pb-14">
           <Breadcrumb trail={trail} />
-          <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="hero-in mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <p className="eyebrow text-amber-deep">Full catalogue</p>
               <h1 className="mt-5 text-display-2 text-steel-900">
@@ -43,7 +43,7 @@ export default function CataloguePage() {
       </section>
 
       <section className="bg-paper-sunken py-12 lg:py-16">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <ProductExplorer
             products={products}
             families={families.map((family) => ({ id: family.id, label: family.shortName }))}

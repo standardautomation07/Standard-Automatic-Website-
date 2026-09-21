@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { image } from "@/data/images";
 import { notFound } from "next/navigation";
 import {
   categoriesInFamily,
@@ -39,7 +40,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: family.name,
     description: family.summary,
     alternates: { canonical: `/products/${family.id}` },
-    openGraph: { title: `${family.name} | Standard Automation`, description: family.summary },
+    openGraph: {
+      title: `${family.name} | Standard Automation`,
+      description: family.summary,
+      images: [{ url: image(family.imageId).src }],
+    },
   };
 }
 
@@ -80,10 +85,13 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-ink">
-        <Media id={family.imageId} sizes="100vw" priority decorative className="opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="grid-rule absolute inset-0" aria-hidden="true" />
-        <div className="shell relative py-14 lg:py-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <Media id={family.imageId} sizes="100vw" priority decorative className="img-settle opacity-55" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/20" />
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
+        <div className="hero-in shell relative flex min-h-[24rem] flex-col justify-end py-14 lg:min-h-[32rem] lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />
           <h1 className="mt-8 max-w-3xl text-display-2 text-white">{family.name}</h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-steel-300 lg:text-lg">
@@ -110,7 +118,7 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Introduction */}
       <section className="bg-paper py-16 lg:py-20">
-        <div className="shell grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-10 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-7">
             <SectionHeading index="01" eyebrow="Introduction" title={`About ${family.name.toLowerCase()}`} />
             <div className="mt-8">
@@ -139,7 +147,7 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Why this family */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading index="02" eyebrow="Why" title={`Why ${family.name.toLowerCase()}?`} />
           <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {family.why.map((point) => (
@@ -154,7 +162,7 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Categories and their products */}
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="03"
             eyebrow="Categories"
@@ -190,7 +198,7 @@ export default async function FamilyPage({ params }: Params) {
       {/* Filter and browse */}
       {showFilters && (
         <section className="border-t border-line bg-paper-sunken py-16 lg:py-20">
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading
               index="04"
               eyebrow="Find a shutter"
@@ -207,7 +215,7 @@ export default async function FamilyPage({ params }: Params) {
       {/* Cross-listed */}
       {crossListed.length > 0 && (
         <section className="border-t border-line bg-paper py-16 lg:py-20">
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading
               eyebrow="Also part of this range"
               title="Listed under another family"
@@ -224,15 +232,54 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Comparison */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="04"
             eyebrow="Compare"
             title="Side by side"
             lede="What each product in this family is for, what it is built to survive, and whether we can publish a specification table for it today."
           />
-          <div className="mt-12 overflow-x-auto border border-line bg-paper-raised">
-            <table className="w-full min-w-[46rem] border-collapse text-sm">
+          {/* Phone: one stacked card per product, so the comparison never
+              needs a sideways scroll. The table below is desktop only. */}
+          <ul className="mt-12 grid gap-3 lg:hidden">
+            {items.map((product) => {
+              const { published, total } = specCompleteness(product);
+              const rows = [
+                ["Category", cats.find((c) => c.id === product.categoryId)?.name ?? "—"],
+                ...(comparable.length > 0
+                  ? [
+                      ["Material", product.comparison?.material ?? "—"],
+                      ["Thickness", product.comparison?.thickness ?? "—"],
+                      ["Corrosion", product.comparison?.corrosion ?? "—"],
+                    ]
+                  : []),
+                ["Environment", product.environments.join(", ")],
+                ["Configurations", String(product.variants.length)],
+                ["Published fields", `${published} / ${total}`],
+              ];
+              return (
+                <li key={product.id} className="border border-line bg-paper-raised p-5">
+                  <h3 className="font-display text-base font-medium text-steel-900">
+                    <Link href={productPath(product)} className="underline-offset-4 hover:underline">
+                      {product.name}
+                    </Link>
+                    <StatusBadge status={product.status} className="ml-2 align-middle" />
+                  </h3>
+                  <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm">
+                    {rows.map(([k, v]) => (
+                      <div key={k} className="contents">
+                        <dt className="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-steel-500 pt-0.5">{k}</dt>
+                        <dd className="text-steel-700 [overflow-wrap:anywhere]">{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="mt-12 hidden overflow-hidden border border-line bg-paper-raised lg:block">
+            <table className="w-full border-collapse text-sm">
               <caption className="sr-only">{family.name} product comparison</caption>
               <thead>
                 <tr className="border-b border-line bg-paper-sunken/60">
@@ -311,7 +358,7 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Considerations + industries */}
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-7">
             <SectionHeading
               index="05"
@@ -355,7 +402,7 @@ export default async function FamilyPage({ params }: Params) {
 
       {/* Related families */}
       <section className="border-t border-line bg-paper pb-20 lg:pb-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <h2 className="eyebrow pt-16 text-steel-500">Related solutions</h2>
           <ul className="mt-6 grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
             {others.map((other) => (

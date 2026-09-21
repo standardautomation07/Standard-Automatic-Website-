@@ -37,7 +37,7 @@ export default function ProductsPage() {
       <section className="border-b border-line bg-paper pt-10 lg:pt-14">
         <div className="shell pb-14 lg:pb-16">
           <Breadcrumb trail={trail} />
-          <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="hero-in mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <p className="eyebrow text-amber-deep">Product families</p>
               <h1 className="mt-5 text-display-2 text-steel-900">
@@ -66,7 +66,7 @@ export default function ProductsPage() {
       </section>
 
       <section className="bg-paper-sunken py-14 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <ul className="grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             {families.map((family, index) => (
               <li key={family.id} className="bg-paper-raised">
@@ -79,7 +79,7 @@ export default function ProductsPage() {
 
       {/* Category index — the middle level of the hierarchy, made visible */}
       <section className="border-t border-line bg-paper py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <p className="eyebrow text-steel-500">Every category</p>
           <h2 className="mt-4 max-w-2xl text-display-3 text-steel-900">
             The middle level, where two products genuinely work differently.

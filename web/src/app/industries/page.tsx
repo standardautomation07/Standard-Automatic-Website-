@@ -36,7 +36,7 @@ export default function IndustriesPage() {
       <section className="border-b border-line bg-paper pt-10 lg:pt-14">
         <div className="shell pb-14 lg:pb-16">
           <Breadcrumb trail={trail} />
-          <div className="mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="hero-in mt-8 grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <p className="eyebrow text-amber-deep">Industries</p>
               <h1 className="mt-5 text-display-2 text-steel-900">
@@ -53,7 +53,7 @@ export default function IndustriesPage() {
       </section>
 
       <section className="bg-paper-sunken py-14 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <ul className="grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {industries.map((industry, index) => {
               const recommended = productsForIndustry(industry.id);

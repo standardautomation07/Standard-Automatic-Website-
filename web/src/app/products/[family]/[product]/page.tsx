@@ -107,26 +107,27 @@ export default async function ProductPage({ params }: Params) {
       {guidance.faq.length > 0 && <JsonLd data={faqJsonLd(guidance.faq)} />}
 
       {/* HERO */}
-      <section className="border-b border-line bg-paper">
-        <div className="shell pt-10 lg:pt-14">
-          <Breadcrumb trail={trail} />
+      <section className="relative isolate overflow-hidden bg-ink text-white">
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
+        <div className="shell relative pt-8 lg:pt-10">
+          <Breadcrumb trail={trail} tone="dark" />
         </div>
-        <div className="shell grid gap-10 pb-12 pt-8 lg:grid-cols-12 lg:gap-16 lg:pb-16">
-          <div className="lg:col-span-6 lg:pt-4">
-            <p className="eyebrow text-amber-deep">
+        <div className="shell relative grid gap-10 pb-12 pt-8 lg:grid-cols-12 lg:items-center lg:gap-14 lg:pb-16 lg:pt-10">
+          <div className="hero-in lg:col-span-5">
+            <p className="eyebrow flex flex-wrap items-center gap-x-2 gap-y-1 text-amber">
               <Link href={`/products/${family.id}`} className="hover:underline">
                 {family.name}
               </Link>
-              <span className="mx-2 text-steel-400">/</span>
-              <span className="text-steel-500">{category.name}</span>
+              <span className="text-steel-500">/</span>
+              <span className="text-steel-400">{category.name}</span>
             </p>
-            <h1 className="mt-5 text-display-2 text-steel-900">{product.name}</h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel-700">{product.tagline}</p>
+            <h1 className="mt-5 text-display-2 text-white">{product.name}</h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-steel-300">{product.tagline}</p>
 
             {(product.status === "POTENTIAL" || product.namingNote) && (
-              <div className="mt-8 border-l-2 border-amber bg-amber-soft/60 p-5">
+              <div className="mt-8 border-l-2 border-amber bg-white/5 p-5">
                 <StatusBadge status={product.status} />
-                <p className={`text-sm leading-relaxed text-steel-700 ${product.status === "POTENTIAL" ? "mt-3" : ""}`}>
+                <p className={`text-sm leading-relaxed text-steel-300 ${product.status === "POTENTIAL" ? "mt-3" : ""}`}>
                   {product.namingNote ??
                     "This line is published while we confirm it is currently active. Contact us and we will confirm availability and configurations before quoting."}
                 </p>
@@ -137,27 +138,30 @@ export default async function ProductPage({ params }: Params) {
               <ButtonLink href="#enquiry" variant="primary" size="lg">
                 Request a Quote
               </ButtonLink>
-              <ButtonLink href={telHref()} variant="secondary" size="lg">
+              <ButtonLink href={telHref()} variant="onDark" size="lg">
                 <Phone className="h-5 w-5" />
                 Talk to an Engineer
               </ButtonLink>
             </div>
           </div>
 
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-7">
             {/* Supplied renders carry a callout panel down one side. Cropping
                 them to a fixed 4:3 frame cuts that panel off, so the frame
                 takes the image's own ratio where the registry declares one. */}
             <div
-              className={`relative ${image(product.imageId).aspect ?? "aspect-[4/3]"} overflow-hidden border border-line bg-paper-sunken`}
+              className={`relative ${image(product.imageId).aspect ?? "aspect-[4/3]"} overflow-hidden border border-white/10 bg-ink-raised shadow-[0_30px_80px_rgba(0,0,0,0.45)]`}
             >
-              <Media id={product.imageId} sizes="(min-width: 1024px) 50vw, 100vw" priority />
+              <Media id={product.imageId} sizes="(min-width: 1024px) 58vw, 100vw" priority className="img-settle" />
+              <span className="absolute left-4 top-4 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-white/70">
+                {family.shortName}
+              </span>
             </div>
           </div>
         </div>
 
         {image(product.imageId).usage.startsWith("Interim visual") && (
-          <div className="shell pb-2">
+          <div className="shell relative pb-6">
             <p className="max-w-3xl text-xs leading-relaxed text-steel-500">
               Product visualisations. These images are built to a written
               specification of this door type rather than photographed on site,
@@ -167,10 +171,13 @@ export default async function ProductPage({ params }: Params) {
             </p>
           </div>
         )}
+      </section>
 
-        {/* QUICK FACTS */}
-        <div className="shell pb-12 lg:pb-14">
-          <dl className="grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
+      {/* KEY SPECIFICATIONS */}
+      <section className="border-b border-line bg-paper">
+        <div className="shell py-8 lg:py-10" data-reveal>
+          <p className="eyebrow text-steel-500">Key specifications</p>
+          <dl className="mt-4 grid hairline-grid sm:grid-cols-2 xl:grid-cols-4" data-reveal-group>
             {product.quickFacts.map((fact) => (
               <div key={fact.label} className="bg-paper-raised p-6">
                 <dt className="eyebrow text-steel-500">{fact.label}</dt>
@@ -195,7 +202,7 @@ export default async function ProductPage({ params }: Params) {
 
       {/* OVERVIEW */}
       <section className="bg-paper py-16 lg:py-20">
-        <div className="shell grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-10 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-7">
             <SectionHeading index="01" eyebrow="Overview" title={`About ${product.name}`} />
             <div className="mt-8">
@@ -256,7 +263,7 @@ export default async function ProductPage({ params }: Params) {
       {/* KEY BENEFITS */}
       {!useTabs && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading index="02" eyebrow="Key benefits" title="What this product gets you" />
           <div className="mt-12 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
             {product.benefits.map((benefit) => (
@@ -273,7 +280,7 @@ export default async function ProductPage({ params }: Params) {
       {/* VARIANTS */}
       {product.variants.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading
               index="03"
               eyebrow="Variants"
@@ -298,7 +305,7 @@ export default async function ProductPage({ params }: Params) {
       {/* TECHNICAL SPECIFICATIONS */}
       {!useTabs && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="04"
             eyebrow="Technical specifications"
@@ -417,7 +424,7 @@ export default async function ProductPage({ params }: Params) {
       {/* APPLICATIONS */}
       {!useTabs && (
       <section className="bg-paper py-16 lg:py-20">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-6">
             <SectionHeading index="05" eyebrow="Applications" title="Where it is used" />
             <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
@@ -441,7 +448,7 @@ export default async function ProductPage({ params }: Params) {
       {/* INTEGRATION */}
       {!useTabs && guidance.integration.length > 0 && (
         <section className="border-t border-line bg-paper py-16 lg:py-20">
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading
               index="06"
               eyebrow="Integration"
@@ -463,7 +470,7 @@ export default async function ProductPage({ params }: Params) {
       {/* SAFETY & CONTROL */}
       {!useTabs && (
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="07"
             eyebrow="Safety & control"
@@ -483,7 +490,7 @@ export default async function ProductPage({ params }: Params) {
       {/* INSTALLATION */}
       {!useTabs && guidance.installation.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
-          <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
             <div className="lg:col-span-5">
               <SectionHeading
                 index="08"
@@ -512,7 +519,7 @@ export default async function ProductPage({ params }: Params) {
         <section
           className={`border-y border-line bg-paper-sunken py-16 lg:py-20 ${MOBILE_ONLY_DESKTOP}`}
         >
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading
               index="09"
               eyebrow="Selection guide"
@@ -537,7 +544,7 @@ export default async function ProductPage({ params }: Params) {
       {/* GALLERY */}
       {product.galleryIds && product.galleryIds.length > 0 && (
         <section className="bg-paper py-16 lg:py-20">
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading index="10" eyebrow="Gallery" title={`${product.name} in detail`} />
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {product.galleryIds.map((imageId) => (
@@ -556,7 +563,7 @@ export default async function ProductPage({ params }: Params) {
       {/* DOWNLOADS */}
       {!useTabs && (
       <section className="border-t border-line bg-paper py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading index="11" eyebrow="Downloads" title="Documentation" />
           <ul className="mt-12 grid hairline-grid md:grid-cols-2">
             {product.documents.map((doc) => (
@@ -583,13 +590,13 @@ export default async function ProductPage({ params }: Params) {
 
       {/* PRODUCT DETAIL — tabs */}
       {useTabs && (
-        <section className="border-y border-line bg-paper py-16 lg:py-20">
-          <div className="shell">
+        <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+          <div className="shell" data-reveal>
             <SectionHeading
               index="04"
-              eyebrow="Product detail"
+              eyebrow="Technical specifications"
               title="Specification, features and ordering"
-              lede="Pick a section. Technical data is shown first; the rest are a click away."
+              lede="Technical data is shown first; features, applications, compatibility, installation, safety, ordering and downloads are a click away."
             />
             <div className="mt-12">
               <ProductDetail product={product} />
@@ -601,7 +608,7 @@ export default async function ProductPage({ params }: Params) {
       {/* RELATED */}
       {related.length > 0 && (
         <section className={`border-t border-line bg-paper-sunken py-16 lg:py-20 ${MOBILE_ONLY_DESKTOP}`}>
-          <div className="shell">
+          <div className="shell" data-reveal>
             <SectionHeading
               eyebrow="Related products"
               title="Often specified alongside"
@@ -613,7 +620,7 @@ export default async function ProductPage({ params }: Params) {
                 </ButtonLink>
               }
             />
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3" data-reveal-group>
               {related.map((item) => (
                 <ProductCard key={item.id} product={item} />
               ))}
@@ -625,7 +632,7 @@ export default async function ProductPage({ params }: Params) {
       {/* FAQ */}
       {guidance.faq.length > 0 && (
         <section className="border-t border-line bg-paper py-16 lg:py-20">
-          <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
             <div className="lg:col-span-4">
               <SectionHeading eyebrow="FAQ" title="Questions we are actually asked" />
             </div>
@@ -643,7 +650,7 @@ export default async function ProductPage({ params }: Params) {
 
       {/* ENGINEERING ENQUIRY */}
       <section id="enquiry" className="scroll-mt-20 border-t border-line bg-paper py-16 lg:py-24">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="Engineering enquiry"

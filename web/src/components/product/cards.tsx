@@ -103,3 +103,59 @@ export function FamilyCard({ family, index }: { family: Family; index: number })
     </article>
   );
 }
+
+/**
+ * Image-led family tile for the homepage portfolio: the family photograph
+ * carries the tile, the name and count sit on it, and the tagline rises in
+ * on hover. `size` sets the crop so a 12-column grid can mix two wide tiles
+ * with six standard ones.
+ */
+export function FamilyTile({
+  family,
+  index,
+  size = "md",
+  priority = false,
+}: {
+  family: Family;
+  index: number;
+  size?: "lg" | "md";
+  priority?: boolean;
+}) {
+  const count = productsInFamily(family.id).length;
+  return (
+    <article className="group relative isolate overflow-hidden bg-ink">
+      <Link
+        href={familyPath(family.id)}
+        className={`relative block ${size === "lg" ? "aspect-[4/3] lg:aspect-[16/9]" : "aspect-[4/3]"} focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-amber`}
+      >
+        <Media
+          id={family.imageId}
+          sizes={size === "lg" ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
+          decorative
+          priority={priority}
+          className="img-zoom"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-ink/5 transition-opacity duration-500 group-hover:opacity-95" />
+        <span className="absolute left-5 top-5 font-mono text-[0.65rem] text-white/70 sm:left-6 sm:top-6">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="absolute right-5 top-5 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-white/70 sm:right-6 sm:top-6">
+          {count} products
+        </span>
+        <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 lg:p-7">
+          <h3
+            className={`flex items-end justify-between gap-4 font-display font-medium text-white ${
+              size === "lg" ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"
+            }`}
+          >
+            <span className="text-balance">{family.name}</span>
+            <ArrowRight className="mb-1 h-5 w-5 shrink-0 text-amber transition-transform duration-300 group-hover:translate-x-1" />
+          </h3>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-steel-300 lg:max-h-0 lg:overflow-hidden lg:opacity-0 lg:transition-all lg:duration-500 lg:group-hover:max-h-24 lg:group-hover:opacity-100">
+            {family.tagline}
+          </p>
+        </div>
+      </Link>
+    </article>
+  );
+}

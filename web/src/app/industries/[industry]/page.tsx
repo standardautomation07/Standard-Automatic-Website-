@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { image } from "@/data/images";
 import { notFound } from "next/navigation";
 import { industries, industryById, productsForIndustry } from "@/lib/catalog";
 import { ProductCard } from "@/components/product/cards";
@@ -27,6 +28,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: `${industry.name} — entrance automation and industrial access`,
     description: `${industry.tagline} Recommended doors, shutters, gates, loading bay and access control products for ${industry.name.toLowerCase()} facilities.`,
     alternates: { canonical: `/industries/${industry.id}` },
+    openGraph: {
+      title: `${industry.name} | Standard Automation`,
+      description: industry.tagline,
+      images: [{ url: image(industry.imageId).src }],
+    },
   };
 }
 
@@ -49,10 +55,13 @@ export default async function IndustryPage({ params }: Params) {
       <JsonLd data={breadcrumbJsonLd(trail)} />
 
       <section className="relative isolate overflow-hidden bg-ink">
-        <Media id={industry.imageId} sizes="100vw" priority decorative className="opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="grid-rule absolute inset-0" aria-hidden="true" />
-        <div className="shell relative py-14 lg:py-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <Media id={industry.imageId} sizes="100vw" priority decorative className="img-settle opacity-55" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/20" />
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
+        <div className="hero-in shell relative flex min-h-[24rem] flex-col justify-end py-14 lg:min-h-[32rem] lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />
           <p className="eyebrow mt-8 text-amber">Industry</p>
           <h1 className="mt-5 max-w-3xl text-display-2 text-white">{industry.name}</h1>
@@ -64,7 +73,7 @@ export default async function IndustryPage({ params }: Params) {
 
       {/* Challenges */}
       <section className="bg-paper py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="01"
             eyebrow="Industry challenges"
@@ -83,7 +92,7 @@ export default async function IndustryPage({ params }: Params) {
 
       {/* Recommended products */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="02"
             eyebrow="Recommended solutions"
@@ -99,7 +108,7 @@ export default async function IndustryPage({ params }: Params) {
 
       {/* Considerations + applications */}
       <section className="bg-paper py-16 lg:py-20">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-7">
             <SectionHeading
               index="03"
@@ -136,7 +145,7 @@ export default async function IndustryPage({ params }: Params) {
 
       {/* Other industries */}
       <section className="border-t border-line bg-paper pb-20 lg:pb-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <h2 className="eyebrow pt-16 text-steel-500">Other industries</h2>
           <ul className="mt-6 grid hairline-grid sm:grid-cols-2 xl:grid-cols-4">
             {others.map((other) => (

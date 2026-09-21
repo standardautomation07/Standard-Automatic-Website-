@@ -13,7 +13,7 @@ import { industryById, productGuidance, productSpecGroups, resolveDetail } from 
 import type { Product, Spec } from "@/lib/types";
 import { DetailList, DetailNote, Tabs } from "@/components/product/tabs";
 import { ButtonLink } from "@/components/ui/button";
-import { ArrowRight } from "@/components/ui/icons";
+import { ArrowRight, ChevronDown } from "@/components/ui/icons";
 
 /**
  * The tabbed product detail body.
@@ -62,16 +62,49 @@ export function ProductDetail({ product }: { product: Product }) {
       meta: `${answered}/${total}`,
       content: (
         <div className="space-y-6">
-          <div className="space-y-6">
+          {/* Phone: one vertical accordion per group, label stacked over
+              value, so nothing can push wider than the viewport. */}
+          <div className="lg:hidden">
+            {groups.map((group, index) => (
+              <details key={group.group} className="spec-accordion" open={index === 0}>
+                <summary>
+                  <span>{group.group}</span>
+                  <span className="flex items-center gap-3">
+                    <span className="font-mono text-[0.6rem] uppercase tracking-[0.1em] text-steel-400">
+                      {group.specs.length} fields
+                    </span>
+                    <ChevronDown className="chev h-4 w-4" />
+                  </span>
+                </summary>
+                <dl>
+                  {group.specs.map((spec) => (
+                    <div key={spec.label}>
+                      <dt>
+                        {spec.label}
+                        {spec.unit && spec.value !== null && <span className="ml-1 normal-case tracking-normal">({spec.unit})</span>}
+                      </dt>
+                      <dd>
+                        <SpecCell spec={spec} />
+                      </dd>
+                      {spec.note && <p className="mt-1 text-xs leading-relaxed text-steel-400">{spec.note}</p>}
+                    </div>
+                  ))}
+                </dl>
+              </details>
+            ))}
+          </div>
+
+          {/* Desktop: grouped tables. */}
+          <div className="hidden space-y-6 lg:block">
             {groups.map((group) => (
-              <div key={group.group} className="overflow-x-auto border border-line bg-paper-raised">
-                <table className="w-full min-w-[32rem] border-collapse text-sm">
+              <div key={group.group} className="overflow-hidden border border-line bg-paper-raised">
+                <table className="w-full border-collapse text-sm">
                   <caption className="border-b border-line bg-paper-sunken/60 px-5 py-3 text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] text-steel-500">
                     {group.group}
                   </caption>
                   <tbody>
                     {group.specs.map((spec) => (
-                      <tr key={spec.label} className="border-b border-line last:border-b-0">
+                      <tr key={spec.label} className="border-b border-line transition-colors last:border-b-0 hover:bg-paper-sunken/40">
                         <th
                           scope="row"
                           className="w-2/5 px-5 py-3.5 text-left align-top font-mono text-xs font-medium uppercase tracking-[0.08em] text-steel-500"

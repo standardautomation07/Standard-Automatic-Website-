@@ -7,6 +7,7 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.legalName,
     alternateName: siteConfig.shortName,
     url: siteConfig.url,
@@ -32,6 +33,19 @@ export function organizationJsonLd() {
         availableLanguage: ["en", "hi", "mr"],
       },
     ],
+  };
+}
+
+/** The site itself, tied to the organisation that publishes it. */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: siteConfig.shortName,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    inLanguage: "en-IN",
   };
 }
 

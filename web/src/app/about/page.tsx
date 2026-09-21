@@ -32,9 +32,13 @@ export default function AboutPage() {
       <JsonLd data={breadcrumbJsonLd(trail)} />
 
       <section className="relative isolate overflow-hidden bg-ink">
-        <Media id="commercial-building" sizes="100vw" priority decorative className="opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="shell relative py-14 lg:py-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <Media id="commercial-building" sizes="100vw" priority decorative className="img-settle opacity-55" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/20" />
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
+        <div className="hero-in shell relative flex min-h-[24rem] flex-col justify-end py-14 lg:min-h-[32rem] lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />
           <p className="eyebrow mt-8 text-amber">About</p>
           <h1 className="mt-5 max-w-3xl text-display-2 text-white">{siteConfig.legalName}</h1>
@@ -46,7 +50,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-7">
             <SectionHeading
               index="01"
@@ -109,7 +113,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="02"
             eyebrow="What we make"
@@ -152,7 +156,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-5">
             <SectionHeading
               index="03"
@@ -199,7 +203,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-line bg-ink py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="04"
             eyebrow="What we stand behind"
@@ -235,7 +239,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="05"
             eyebrow="On the record"
@@ -286,7 +290,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading
             index="06"
             eyebrow="How we work"
@@ -311,7 +315,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-5">
             <SectionHeading index="07" eyebrow="Where we are" title="Pune, Maharashtra." />
             <p className="mt-8 text-base leading-relaxed text-steel-700">

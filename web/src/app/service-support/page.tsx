@@ -58,9 +58,13 @@ export default function ServiceSupportPage() {
       <JsonLd data={breadcrumbJsonLd(trail)} />
 
       <section className="relative isolate overflow-hidden bg-ink">
-        <Media id="installation" sizes="100vw" priority decorative className="opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="shell relative py-14 lg:py-20">
+        <div className="absolute inset-0 overflow-hidden">
+          <Media id="installation" sizes="100vw" priority decorative className="img-settle opacity-55" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-ink/20" />
+        <div className="grid-fine absolute inset-0" aria-hidden="true" />
+        <div className="hero-in shell relative flex min-h-[24rem] flex-col justify-end py-14 lg:min-h-[32rem] lg:py-20">
           <Breadcrumb trail={trail} tone="dark" />
           <p className="eyebrow mt-8 text-amber">Service & Support</p>
           <h1 className="mt-5 max-w-3xl text-display-2 text-white">
@@ -74,7 +78,7 @@ export default function ServiceSupportPage() {
       </section>
 
       <section className="bg-paper py-16 lg:py-24">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <SectionHeading index="01" eyebrow="How we work" title="Five stages, in order" />
           <ol className="mt-12">
             {stages.map((stage, index) => (
@@ -96,7 +100,7 @@ export default function ServiceSupportPage() {
       </section>
 
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-24">
-        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
           <div className="lg:col-span-6">
             <SectionHeading
               index="02"
