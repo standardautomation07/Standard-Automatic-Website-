@@ -20,8 +20,9 @@ import { families as familyList } from "@/data/families";
 import { products } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "Engineered Entrance & Industrial Automation",
-  description: `Standard Automatic Solutions Pvt Ltd designs, supplies and installs high speed doors, industrial doors, rolling shutters, fire rated shutters, automatic gates, loading bay equipment and access control — ${counts.products} products across ${counts.families} families, from Pune.`,
+  title: "Industrial Doors, Entrance Automation & Access Control in Pune",
+  description:
+    "Standard Automatic Solutions supplies industrial doors, entrance automation, rolling shutters, automatic gates, loading bay systems and access control for factories, warehouses and commercial sites across Pune and India.",
   alternates: { canonical: "/" },
 };
 
@@ -104,9 +105,9 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-8 max-w-xl text-base leading-relaxed text-steel-300 lg:text-lg">
-              High speed doors, industrial doors, rolling shutters, fire rated assemblies, automatic
-              gates, loading bay equipment and access control — engineered, supplied, installed and
-              supported from Pune.
+              <Link href="/products/high-speed-doors" className="font-medium text-white underline-offset-4 hover:underline">
+                High speed doors
+              </Link>, industrial doors, rolling shutters, automatic gates, loading bay equipment and access control for factories, warehouses, commercial buildings and logistics sites across Pune and India.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -153,6 +154,10 @@ export default function HomePage() {
             }
           />
 
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-steel-600">
+            Explore <Link href="/products/high-speed-doors" className="font-medium text-steel-900 underline-offset-4 hover:underline">High speed doors</Link>, <Link href="/products/rolling-shutters" className="font-medium text-steel-900 underline-offset-4 hover:underline">Rolling shutters</Link>, <Link href="/products/loading-bay" className="font-medium text-steel-900 underline-offset-4 hover:underline">Loading bay equipment</Link> and <Link href="/products/automatic-gates" className="font-medium text-steel-900 underline-offset-4 hover:underline">Automatic gates</Link> for industrial and commercial openings.
+          </p>
+
           <ul className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-14 lg:grid-cols-6 lg:gap-4" data-reveal-group>
             {families.map((family, index) => (
               <li key={family.id} className={index < 2 ? "lg:col-span-3" : "lg:col-span-2"}>
@@ -179,6 +184,10 @@ export default function HomePage() {
               </ButtonLink>
             }
           />
+
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-steel-300">
+            Start with <Link href="/industries/warehousing-logistics" className="font-medium text-white underline-offset-4 hover:underline">Warehousing & logistics</Link> for high-frequency loading and dispatch openings, or review the full range by sector.
+          </p>
 
           <ul className="mt-14 grid hairline-grid-dark sm:grid-cols-2 lg:grid-cols-4" data-reveal-group>
             {industries.map((industry, index) => (

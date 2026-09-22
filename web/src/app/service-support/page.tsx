@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { Media } from "@/components/ui/media";
-import { Check } from "@/components/ui/icons";
+import { ArrowRight, Check } from "@/components/ui/icons";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { ButtonLink } from "@/components/ui/button";
+import { familyById, familyPath } from "@/lib/catalog";
+import type { FamilyId } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Service & Support",
@@ -50,6 +53,13 @@ const checks = [
   "Guides, tracks and the running surface cleared and inspected",
   "Manual release operated and confirmed",
   "Wear items reported before they fail, not after",
+];
+
+const supportedFamilies: Array<{ id: FamilyId; detail: string }> = [
+  { id: "high-speed-doors", detail: "Maintenance and commissioning for high-frequency industrial openings." },
+  { id: "rolling-shutters", detail: "Inspection of curtains, guides, drives, seals and wear items." },
+  { id: "automatic-gates", detail: "Gate automation support, safety checks and manual release review." },
+  { id: "loading-bay", detail: "Support for dock levellers, shelters and loading-bay interfaces." },
 ];
 
 export default function ServiceSupportPage() {
@@ -142,6 +152,35 @@ export default function ServiceSupportPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-16 lg:py-20">
+        <div className="shell" data-reveal>
+          <SectionHeading
+            index="03"
+            eyebrow="Product support"
+            title="Support organised around the opening"
+            lede="Choose the product family that matches the opening so the site information, maintenance questions and spare requirements start in the right place."
+          />
+          <ul className="mt-10 grid hairline-grid md:grid-cols-2 xl:grid-cols-4">
+            {supportedFamilies.map(({ id, detail }) => {
+              const family = familyById[id];
+              return (
+                <li key={id} className="bg-paper-raised">
+                  <Link href={familyPath(id)} className="group block h-full p-7">
+                    <h2 className="font-display text-lg font-medium text-steel-900 group-hover:text-amber-deep">
+                      {family.name}
+                    </h2>
+                    <p className="mt-3 text-sm leading-relaxed text-steel-600">{detail}</p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-steel-800">
+                      View family <ArrowRight className="h-4 w-4 text-amber transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 

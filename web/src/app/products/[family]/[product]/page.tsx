@@ -38,18 +38,73 @@ export function generateStaticParams() {
 
 type Params = { params: Promise<{ family: string; product: string }> };
 
+const commercialMetadata: Record<string, { title: string; description: string }> = {
+  "high-speed-roll-up-door": {
+    title: "High Speed Roll-Up Doors for Industrial Openings",
+    description:
+      "Specify high speed roll-up doors for frequent internal or sheltered industrial openings. Review construction, controls, safety and site requirements with Standard Automation.",
+  },
+  "high-speed-self-repairing-door": {
+    title: "High Speed Self-Repairing Doors for Busy Routes",
+    description:
+      "High speed self-repairing doors for impact-prone industrial and logistics routes. Compare the configuration, traffic conditions and safety requirements before selection.",
+  },
+  "insulated-double-wall-rolling-shutters": {
+    title: "Insulated Rolling Shutters for Temperature Separation",
+    description:
+      "Insulated rolling shutters with double-wall profiles and configuration-dependent cores for warehouses, food processing and temperature-controlled openings.",
+  },
+  "dock-levellers": {
+    title: "Dock Levellers for Warehouse Loading Bays",
+    description:
+      "Dock levellers bridge the warehouse floor and vehicle bed for loading-bay movement. Select the lip arrangement and working range against the vehicle mix and dock design.",
+  },
+  "dock-shelters-and-houses": {
+    title: "Dock Shelters and Dock Houses for Loading Bays",
+    description:
+      "Dock shelters and dock houses seal the loading bay around the vehicle. Compare curtain, dock-house and inflatable arrangements against the fleet and temperature requirement.",
+  },
+  "automatic-sliding-gates": {
+    title: "Automatic Sliding Gates for Wide Site Entrances",
+    description:
+      "Automatic sliding gates suit wide site entrances where the gate needs to move parallel to the boundary. Review side-run, traffic, control and safety requirements.",
+  },
+  "automatic-sliding-glass-doors": {
+    title: "Automatic Sliding Glass Doors for Controlled Entrances",
+    description:
+      "Automatic sliding glass doors for commercial, healthcare and controlled pedestrian entrances. Select the opening arrangement, access control and safety interface for the site.",
+  },
+  "industrial-sectional-overhead-doors": {
+    title: "Industrial Sectional Overhead Doors for Warehouses",
+    description:
+      "Industrial sectional overhead doors for warehouse, factory and loading openings. Choose the lift arrangement, vision, insulation and access options against the available headroom.",
+  },
+  "fire-rated-sliding-doors": {
+    title: "Fire Rated Sliding Doors for Compartment Openings",
+    description:
+      "Fire rated sliding doors for compartment openings where the door arrangement must be specified against the building fire strategy and documented assembly requirements.",
+  },
+  "tripod-turnstiles": {
+    title: "Tripod Turnstiles for Controlled Pedestrian Access",
+    description:
+      "Tripod turnstiles control single pedestrian passage at supervised entrances, factory gate houses and restricted facilities. Specify the reader, release and egress strategy for the site.",
+  },
+};
+
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { product: id, family } = await params;
   const product = getProduct(id);
   if (!product || product.familyId !== family) return {};
 
+  const commercial = commercialMetadata[product.id];
+
   return {
-    title: product.name,
-    description: product.summary,
+    title: commercial?.title ?? product.name,
+    description: commercial?.description ?? product.summary,
     alternates: { canonical: productPath(product) },
     openGraph: {
-      title: `${product.name} | Standard Automation`,
-      description: product.summary,
+      title: `${commercial?.title ?? product.name} | Standard Automation`,
+      description: commercial?.description ?? product.summary,
       images: [{ url: image(product.imageId).src }],
     },
   };
@@ -172,6 +227,47 @@ export default async function ProductPage({ params }: Params) {
           </div>
         )}
       </section>
+
+      {commercialMetadata[product.id] && guidance.selectionGuide.length > 0 && (
+        <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading
+              index="02"
+              eyebrow="Buyer answers"
+              title={`Choosing ${product.name.toLowerCase()}`}
+              lede="A concise starting point from the published product description, applications and selection guidance. Final configuration remains subject to the opening and site assessment."
+            />
+            <div className="mt-10 grid gap-8 lg:grid-cols-3">
+              <div className="border border-line bg-paper-raised p-7">
+                <h2 className="font-display text-lg font-medium text-steel-900">What is this product?</h2>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">{product.overview[0]}</p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h2 className="font-display text-lg font-medium text-steel-900">Where is it used?</h2>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  {product.applications.slice(0, 4).map((application) => (
+                    <li key={application} className="flex gap-3">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
+                      {application}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h2 className="font-display text-lg font-medium text-steel-900">What should be considered?</h2>
+                <ul className="mt-4 space-y-4 text-sm leading-relaxed text-steel-700">
+                  {guidance.selectionGuide.slice(0, 3).map((rule) => (
+                    <li key={rule.condition}>
+                      <strong className="font-medium text-steel-900">{rule.condition}:</strong>{" "}
+                      {rule.recommendation}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* KEY SPECIFICATIONS */}
       <section className="border-b border-line bg-paper">

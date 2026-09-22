@@ -145,6 +145,172 @@ export default async function FamilyPage({ params }: Params) {
         </div>
       </section>
 
+      {family.id === "high-speed-doors" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="What is a high-speed industrial door?" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">A high-speed door is built for frequent operation.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">
+                  It is a powered opening designed to move quickly and keep the opening closed as much as possible between movements. On busy industrial and logistics openings, the main cost is usually the time the opening stands open to dust, insects, temperature loss, noise and vehicle or pedestrian conflict.
+                </p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">How to choose the right type</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  <li><strong className="font-medium text-steel-900">Roll-up doors</strong> suit frequent internal or sheltered openings.</li>
+                  <li><strong className="font-medium text-steel-900">Fold-up doors</strong> suit taller openings where a shallower stack above the lintel matters.</li>
+                  <li><strong className="font-medium text-steel-900">Self-repairing doors</strong> suit impact-prone routes with forklift or vehicle movement nearby.</li>
+                  <li><strong className="font-medium text-steel-900">Rigid insulated or spiral doors</strong> suit temperature-controlled or heavier-duty openings.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8">
+              <h3 className="eyebrow text-steel-500">Common products in this family</h3>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {[
+                  ["/products/high-speed-doors/high-speed-roll-up-door", "High Speed Roll-Up Door"],
+                  ["/products/high-speed-doors/high-speed-fold-up-door", "High Speed Fold-Up Door"],
+                  ["/products/high-speed-doors/high-speed-self-repairing-door", "High Speed Self-Repairing Door"],
+                  ["/products/high-speed-doors/high-speed-spiral-door", "High Speed Spiral Door"],
+                  ["/products/high-speed-doors/high-speed-rigid-insulated-door", "High Speed Rigid Insulated Door"],
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <Link href={href} className="inline-flex rounded-edge border border-line px-3 py-2 text-sm text-steel-800 transition-colors hover:border-steel-900 hover:text-steel-900">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {family.id === "rolling-shutters" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="What are industrial rolling shutters?" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">A rolling shutter is a curtain that stores above the opening.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">
+                  It is selected for security, weather protection, visibility, or environmental separation, while keeping the opening clear when the shutter is open. In industrial and commercial work, the main choice is usually between solid, perforated and vision curtain constructions.
+                </p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Solid vs perforated vs vision</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  <li><strong className="font-medium text-steel-900">Solid shutters</strong> suit security and general industrial openings.</li>
+                  <li><strong className="font-medium text-steel-900">Perforated shutters</strong> suit openings where airflow, light or visibility matters.</li>
+                  <li><strong className="font-medium text-steel-900">Vision shutters</strong> allow sight through the opening while keeping a secure curtain.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8">
+              <h3 className="eyebrow text-steel-500">Relevant products</h3>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {[
+                  ["/products/rolling-shutters/ms-solid-rolling-shutters", "MS Solid Rolling Shutter"],
+                  ["/products/rolling-shutters/perforated-rolling-shutters", "Perforated Rolling Shutter"],
+                  ["/products/rolling-shutters/vision-window-rolling-shutters", "Vision / Window Rolling Shutter"],
+                  ["/products/rolling-shutters/aluminium-rolling-shutters", "Aluminium Rolling Shutter"],
+                  ["/products/rolling-shutters/insulated-double-wall-rolling-shutters", "Insulated Double-Wall Rolling Shutter"],
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <Link href={href} className="inline-flex rounded-edge border border-line px-3 py-2 text-sm text-steel-800 transition-colors hover:border-steel-900 hover:text-steel-900">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {family.id === "loading-bay" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="What is loading bay equipment?" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">A dock leveller bridges the bay to the vehicle.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">
+                  A dock leveller is the load-bearing bridge between the warehouse floor and the vehicle bed. It lets forklifts and pallet trucks move from the warehouse to the trailer without a step or loose plate, while accommodating the height difference between standard dock and vehicle bed.
+                </p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">What should a buyer consider?</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  <li>The vehicle mix and the dock height range.</li>
+                  <li>Whether the bay needs sealing around the vehicle as well as under it.</li>
+                  <li>Whether the bay is in a cold environment or a standard loading bay.</li>
+                  <li>How often the bay is used and how the opening is protected.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8">
+              <h3 className="eyebrow text-steel-500">Relevant products</h3>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {[
+                  ["/products/loading-bay/dock-levellers", "Dock Levellers"],
+                  ["/products/loading-bay/dock-shelters-and-houses", "Dock Shelters & Dock Houses"],
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <Link href={href} className="inline-flex rounded-edge border border-line px-3 py-2 text-sm text-steel-800 transition-colors hover:border-steel-900 hover:text-steel-900">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {family.id === "automatic-gates" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="What is an automatic sliding gate?" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Sliding gates move along the boundary.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">
+                  An automatic sliding gate is chosen when the opening is wide and there is no room for a leaf to swing into the road or yard. It runs parallel to the boundary and is usually selected where the site has a defined side-run or a cantilever arrangement is needed.
+                </p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Sliding vs swing</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  <li><strong className="font-medium text-steel-900">Sliding gates</strong> suit wide openings and sites where the driveway must remain clear.</li>
+                  <li><strong className="font-medium text-steel-900">Swing gates</strong> suit sites with clear swing room and moderate traffic.</li>
+                  <li><strong className="font-medium text-steel-900">Telescopic gates</strong> solve short boundary space on very wide openings.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8">
+              <h3 className="eyebrow text-steel-500">Relevant products</h3>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {[
+                  ["/products/automatic-gates/automatic-sliding-gates", "Automatic Sliding Gates"],
+                  ["/products/automatic-gates/telescopic-sliding-gates", "Telescopic Sliding Gates"],
+                  ["/products/automatic-gates/automatic-swing-gates", "Automatic Swing Gates"],
+                  ["/products/automatic-gates/retractable-gates", "Retractable Gates"],
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <Link href={href} className="inline-flex rounded-edge border border-line px-3 py-2 text-sm text-steel-800 transition-colors hover:border-steel-900 hover:text-steel-900">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Why this family */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell" data-reveal>

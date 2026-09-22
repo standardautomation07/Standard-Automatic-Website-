@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { image } from "@/data/images";
 import { notFound } from "next/navigation";
-import { industries, industryById, productsForIndustry } from "@/lib/catalog";
+import { families, familyPath, industries, industryById, productsForIndustry } from "@/lib/catalog";
 import { ProductCard } from "@/components/product/cards";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -42,6 +42,10 @@ export default async function IndustryPage({ params }: Params) {
   if (!industry) notFound();
 
   const recommended = productsForIndustry(industry.id);
+  const recommendedFamilyIds = [...new Set(recommended.map((product) => product.familyId))];
+  const recommendedFamilies = recommendedFamilyIds
+    .map((familyId) => families.find((family) => family.id === familyId))
+    .filter((family): family is (typeof families)[number] => Boolean(family));
   const others = industries.filter((i) => i.id !== industry.id);
 
   const trail = [
@@ -102,6 +106,21 @@ export default async function IndustryPage({ params }: Params) {
             {recommended.map((product, index) => (
               <ProductCard key={product.id} product={product} priority={index < 3} />
             ))}
+          </div>
+          <div className="mt-12 border-t border-line pt-8">
+            <h3 className="eyebrow text-steel-500">Explore product families</h3>
+            <ul className="mt-5 flex flex-wrap gap-3">
+              {recommendedFamilies.map((family) => (
+                <li key={family.id}>
+                  <Link
+                    href={familyPath(family.id)}
+                    className="inline-flex rounded-edge border border-line px-3 py-2 text-sm text-steel-800 transition-colors hover:border-steel-900 hover:text-steel-900"
+                  >
+                    {family.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
