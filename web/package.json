@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "playwright test",
+    "test:enquiry": "node --no-warnings --import ./scripts/register-alias.mjs scripts/test-enquiry.mjs",
     "spec:request": "node --no-warnings --import ./scripts/register-alias.mjs scripts/spec-data.mjs request",
     "spec:import": "node --no-warnings --import ./scripts/register-alias.mjs scripts/spec-data.mjs import",
     "spec:status": "node --no-warnings --import ./scripts/register-alias.mjs scripts/spec-data.mjs status",
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "next": "16.3.4",
+    "nodemailer": "^10.0.10",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -24,6 +26,7 @@
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.2",
     "@types/pngjs": "^6.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",

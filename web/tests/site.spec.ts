@@ -405,7 +405,7 @@ test.describe("conversion routes", () => {
     await page.goto("/");
     await expect(page.locator('a[href^="tel:"]').first()).toHaveAttribute("href", "tel:+919309841322");
     await expect(page.locator('a[href*="wa.me"]').first()).toHaveAttribute("href", /wa\.me\/919309841322/);
-    await expect(page.locator('a[href^="mailto:sales@standardautomation.in"]').first()).toHaveCount(1);
+    await expect(page.locator('a[href^="mailto:sales@standardautomations.in"]').first()).toHaveCount(1);
   });
 
   test("product page CTA reaches the on-page engineering enquiry", async ({ page }) => {

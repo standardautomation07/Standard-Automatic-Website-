@@ -11,3 +11,8 @@ web/shots/
 web/.turbo/
 web/start.log
 web/build.log
+
+# Local secrets. .env.example is the documented, value-free template.
+web/.env
+web/.env.*
+!web/.env.example

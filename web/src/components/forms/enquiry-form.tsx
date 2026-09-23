@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useId } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { submitEnquiry } from "@/app/actions";
 import type { EnquiryResult } from "@/lib/enquiry";
 import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
@@ -31,6 +31,7 @@ export function EnquiryForm({
 }) {
   const [state, formAction, pending] = useActionState(submitEnquiry, initialState);
   const searchParams = useSearchParams();
+  const pathname = usePathname();
   const preselected = presetProductId ?? searchParams.get("product") ?? "general";
   const formId = useId();
 
@@ -76,6 +77,10 @@ export function EnquiryForm({
 
   return (
     <form action={formAction} noValidate className="space-y-10">
+      {/* Which page the enquiry came from, so the sales team can see the
+          context the visitor was reading. Not a user-facing field. */}
+      <input type="hidden" name="sourcePage" value={pathname} />
+
       {/* Honeypot — visually and programmatically hidden from real users. */}
       <div hidden aria-hidden="true">
         <label htmlFor={`${formId}-website`}>Website</label>
