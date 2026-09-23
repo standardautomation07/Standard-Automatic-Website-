@@ -268,7 +268,7 @@ export default function HomePage() {
       </section>
 
       {/* 06 — Trusted partners */}
-      <TrustedPartners index="06" />
+      <TrustedPartners index="06" variant="marquee" />
 
       {/* 07 — Why Standard Automatic */}
       <section className="bg-paper py-20 lg:py-28">

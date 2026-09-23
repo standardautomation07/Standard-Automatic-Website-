@@ -272,6 +272,53 @@
     mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 85%);
   }
 
+  /* ------------------------------------------------------------------ *
+   * Logo marquee.
+   *
+   * The track holds the same run of logos twice and slides exactly one run
+   * (-50%) before repeating, so the loop is seamless. The spacing between
+   * logos lives inside each item rather than in a flex `gap`: a gap would
+   * add one extra space that is not part of the 50% translation, which is
+   * what makes naive marquees jump on every cycle.
+   *
+   * CSS only — no timers, no carousel library, no client state. Hover pause
+   * is limited to devices that really hover, so a tap cannot leave a phone
+   * stuck on a paused row. Under reduced motion the animation is dropped
+   * and the row becomes a plain scrollable line with the duplicate hidden.
+   * ------------------------------------------------------------------ */
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x var(--marquee-duration, 60s) linear infinite;
+    will-change: transform;
+  }
+  /* The run carries its own display rather than a `flex` utility, so the
+     reduced-motion rule below can take it out of the flow: a utility class
+     would win over this layer whatever the specificity. */
+  .marquee-run {
+    display: flex;
+    align-items: center;
+  }
+  @keyframes marquee-x {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  @media (hover: hover) {
+    .marquee:hover .marquee-track,
+    .marquee:focus-within .marquee-track { animation-play-state: paused; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { overflow-x: auto; }
+    .marquee-track { animation: none; }
+    .marquee-track > [aria-hidden="true"] { display: none; }
+  }
+
   /* Mobile specification accordion: label stacked over value, never a
      table, so nothing can push wider than the phone. */
   .spec-accordion { border: 1px solid var(--color-line); background: var(--color-paper-raised); }
