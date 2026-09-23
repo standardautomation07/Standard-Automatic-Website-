@@ -403,8 +403,8 @@ test.describe("industries", () => {
 test.describe("conversion routes", () => {
   test("phone, WhatsApp and email links are present and correctly formed", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator('a[href^="tel:"]').first()).toHaveAttribute("href", "tel:+918888100280");
-    await expect(page.locator('a[href*="wa.me"]').first()).toHaveAttribute("href", /wa\.me\/918888100280/);
+    await expect(page.locator('a[href^="tel:"]').first()).toHaveAttribute("href", "tel:+919309841322");
+    await expect(page.locator('a[href*="wa.me"]').first()).toHaveAttribute("href", /wa\.me\/919309841322/);
     await expect(page.locator('a[href^="mailto:sales@standardautomation.in"]').first()).toHaveCount(1);
   });
 

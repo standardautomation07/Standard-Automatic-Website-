@@ -27,8 +27,8 @@ export const siteConfig = {
     countryName: "India",
   },
 
-  phone: "+91 8888 100 280",
-  whatsapp: "+91 8888 100 280",
+  phone: "+91 93098 41322",
+  whatsapp: "+91 93098 41322",
   email: "sales@standardautomations.in",
 
   /** Not confirmed. Leave null — components must render nothing. */
