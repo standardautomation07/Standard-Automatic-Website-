@@ -114,12 +114,27 @@ export function SiteHeader({
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b text-white transition-[background-color,border-color,box-shadow] duration-300 ${
+      className={`sticky top-0 z-50 border-b text-white transition-[border-color,box-shadow] duration-300 ${
         scrolled || megaOpen
-          ? "border-ink-line bg-ink/95 shadow-[0_8px_30px_rgba(0,0,0,0.25)] supports-[backdrop-filter]:bg-ink/85 supports-[backdrop-filter]:backdrop-blur-xl"
-          : "border-white/10 bg-ink"
+          ? "border-ink-line shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+          : "border-white/10"
       }`}
     >
+      {/* The background and blur live on their own layer rather than on the
+          <header>. An element with a backdrop-filter becomes the containing
+          block for its position:fixed descendants, so blurring the header
+          itself shrank the fixed mobile drawer to the header's own height
+          (zero usable space) as soon as the page was scrolled — the menu
+          opened invisible, with page scroll locked behind it. As a sibling
+          layer the blur looks the same and contains nothing. */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 -z-10 transition-[background-color] duration-300 ${
+          scrolled || megaOpen
+            ? "bg-ink/95 supports-[backdrop-filter]:bg-ink/85 supports-[backdrop-filter]:backdrop-blur-xl"
+            : "bg-ink"
+        }`}
+      />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-edge focus:bg-amber focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
@@ -196,13 +211,15 @@ export function SiteHeader({
           </Link>
           <button
             type="button"
-            onClick={() => setDrawerOpen(true)}
+            // A toggle, so the one control that is always on screen can always
+            // close the drawer as well as open it.
+            onClick={() => setDrawerOpen((v) => !v)}
             aria-expanded={drawerOpen}
             aria-controls={drawerId}
             className="-mr-2 flex h-11 w-11 items-center justify-center text-white lg:hidden"
           >
             <Menu className="h-6 w-6" />
-            <span className="sr-only">Open menu</span>
+            <span className="sr-only">{drawerOpen ? "Close navigation" : "Open menu"}</span>
           </button>
         </div>
       </div>

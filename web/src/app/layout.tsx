@@ -78,6 +78,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en-IN"
       className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable}`}
+      // globals.css sets `scroll-behavior: smooth` for in-page anchors. Next
+      // 16 only suspends it during a route change when this attribute is
+      // present; without it, every navigation animated the scroll from
+      // wherever the reader was back to the top of the new page.
+      data-scroll-behavior="smooth"
     >
       <body className="pb-14 xl:pb-0">
         <JsonLd data={organizationJsonLd()} />

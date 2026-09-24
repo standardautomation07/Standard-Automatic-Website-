@@ -188,6 +188,59 @@ test.describe("navigation", () => {
     await expect(mobileNav).toBeHidden();
   });
 
+  /**
+   * Regression: once the page was scrolled the header gained a backdrop-filter,
+   * which made it the containing block for the fixed drawer inside it. The
+   * drawer collapsed to zero height, so the menu "opened" invisible while body
+   * scroll was locked — the page appeared frozen. Every check here is made
+   * after scrolling, which is where the bug lived.
+   */
+  test("mobile drawer stays usable after scrolling, repeatedly and across navigation", async ({ page }) => {
+    test.skip(isDesktop(page), "mobile-only navigation");
+    await page.goto("/products/rolling-shutters/windproof-rolling-shutters");
+
+    const mobileNav = page.getByRole("navigation", { name: "Mobile" });
+    const openAfterScrolling = async () => {
+      await page.evaluate(() => window.scrollTo(0, 1600));
+      await clickUntil(page.getByRole("button", { name: "Open menu" }), async () => {
+        await expect(mobileNav).toBeVisible({ timeout: 1000 });
+      });
+      // The drawer must occupy the screen below the header, not collapse.
+      const height = await mobileNav.evaluate((nav) => nav.closest("div[id]")!.getBoundingClientRect().height);
+      expect(height).toBeGreaterThan(400);
+      await expect(mobileNav.getByRole("link", { name: "Rolling Shutters" })).toBeInViewport();
+    };
+
+    for (let i = 0; i < 5; i++) {
+      await openAfterScrolling();
+      await page.getByRole("button", { name: "Close menu" }).click();
+      await expect(mobileNav).toBeHidden();
+      // Body scroll must be released every time the drawer closes.
+      expect(await page.evaluate(() => document.body.style.overflow)).toBe("");
+    }
+
+    // The header button toggles, so the menu can always be dismissed from it.
+    await openAfterScrolling();
+    await page.getByRole("button", { name: "Close navigation" }).click();
+    await expect(mobileNav).toBeHidden();
+
+    // Navigate from deep in the page; the new page must start at the top
+    // immediately rather than animating a long smooth scroll.
+    await openAfterScrolling();
+    await mobileNav.getByRole("link", { name: "Loading Bay Equipment" }).click();
+    await expect(page).toHaveURL(/\/products\/loading-bay$/);
+    await expect(mobileNav).toBeHidden();
+    await expect.poll(() => page.evaluate(() => window.scrollY), { timeout: 1500 }).toBe(0);
+
+    // Back, and the menu still works.
+    await page.goBack();
+    await expect(page).toHaveURL(/windproof-rolling-shutters$/);
+    await openAfterScrolling();
+    await mobileNav.getByRole("link", { name: "High Speed Doors" }).click();
+    await expect(page).toHaveURL(/\/products\/high-speed-doors$/);
+    await expect(page.locator("h1")).toBeVisible();
+  });
+
   for (const link of NAV_LINKS) {
     test(`primary nav link "${link.label}" reaches ${link.path}`, async ({ page }) => {
       await page.goto("/");
