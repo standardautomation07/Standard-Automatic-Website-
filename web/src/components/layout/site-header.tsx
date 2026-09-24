@@ -24,7 +24,7 @@ const primaryNav = [
 export interface HeaderFamily {
   id: string;
   name: string;
-  src: string;
+  tagline: string;
   count: number;
 }
 
@@ -228,22 +228,29 @@ export function SiteHeader({
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <ul className="mt-5 grid grid-cols-4 gap-x-5 gap-y-6">
+            <ul className="mt-5 grid grid-cols-2 gap-x-10">
               {families.map((family, index) => (
                 <li key={family.id}>
-                  <Link href={`/products/${family.id}`} className="group block">
-                    <span className="relative block aspect-[16/10] overflow-hidden bg-ink-raised">
-                      <Image src={family.src} alt="" fill sizes="18vw" className="img-zoom object-cover opacity-90" />
-                      <span className="absolute left-3 top-3 font-mono text-[0.6rem] text-white/70">
-                        {String(index + 1).padStart(2, "0")}
+                  <Link
+                    href={`/products/${family.id}`}
+                    className="group grid grid-cols-[auto_1fr] gap-x-4 border-b border-ink-line py-4"
+                  >
+                    <span className="pt-1 font-mono text-[0.65rem] text-steel-600">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="flex items-center justify-between gap-3">
+                        <span className="flex items-center gap-2 font-display text-[0.95rem] font-medium text-white">
+                          {family.name}
+                          <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-amber opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                        </span>
+                        <span className="shrink-0 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-500">
+                          {family.count} products
+                        </span>
                       </span>
-                    </span>
-                    <span className="mt-3 flex items-center gap-2 font-display text-[0.95rem] font-medium text-white">
-                      {family.name}
-                      <ArrowRight className="h-3.5 w-3.5 -translate-x-1 text-amber opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                    </span>
-                    <span className="mt-1 block font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-500">
-                      {family.count} products
+                      <span className="mt-1 block text-[0.8rem] leading-relaxed text-steel-400">
+                        {family.tagline}
+                      </span>
                     </span>
                   </Link>
                 </li>
@@ -313,24 +320,25 @@ export function SiteHeader({
                 />
               </button>
               {mobileProducts && (
-                <ul className="grid grid-cols-2 gap-x-3 gap-y-4 border-b border-ink-line py-4">
+                <ul className="border-b border-ink-line py-1">
                   {families.map((family) => (
                     <li key={family.id}>
-                      <Link href={`/products/${family.id}`} className="block">
-                        <span className="relative block aspect-[16/10] overflow-hidden bg-ink-raised">
-                          <Image src={family.src} alt="" fill sizes="45vw" className="object-cover opacity-90" />
-                        </span>
-                        <span className="mt-2 block font-display text-[0.9rem] font-medium leading-snug text-white">
-                          {family.name}
-                        </span>
-                        <span className="block font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-500">
-                          {family.count} products
+                      <Link
+                        href={`/products/${family.id}`}
+                        className="flex min-h-12 items-center justify-between gap-4 py-2.5 pl-4"
+                      >
+                        <span className="text-[0.95rem] text-steel-200">{family.name}</span>
+                        <span className="shrink-0 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-steel-500">
+                          {family.count}
                         </span>
                       </Link>
                     </li>
                   ))}
-                  <li className="col-span-2">
-                    <Link href="/products/catalogue" className="flex items-center gap-2 py-2 text-[0.95rem] text-amber">
+                  <li>
+                    <Link
+                      href="/products/catalogue"
+                      className="flex min-h-12 items-center gap-2 py-2.5 pl-4 text-[0.95rem] text-amber"
+                    >
                       Full catalogue &amp; search
                       <ArrowRight className="h-4 w-4" />
                     </Link>

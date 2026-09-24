@@ -11,7 +11,6 @@ import { siteConfig } from "@/lib/site-config";
 import { families } from "@/data/families";
 import { industries } from "@/data/industries";
 import { productsInFamily } from "@/lib/catalog";
-import { image } from "@/data/images";
 
 /**
  * Brand typefaces. Loaded through next/font rather than a Google Fonts <link>:
@@ -71,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const headerFamilies = families.map((family) => ({
     id: family.id,
     name: family.name,
-    src: image(family.imageId).src,
+    tagline: family.tagline,
     count: productsInFamily(family.id).length,
   }));
   const headerIndustries = industries.map(({ id, name }) => ({ id, name }));
