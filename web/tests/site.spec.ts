@@ -5,13 +5,18 @@ import { products } from "../src/lib/catalog";
  *  data rather than being restated here and going stale on the next edit. */
 const PRODUCT_COUNT = products.length;
 
-const NAV_LINKS = [
+/**
+ * The header's destinations, labelled as the header labels them. Contact is
+ * a link in the mobile menu; on desktop the same route is the header's
+ * "Request a Quote" button rather than a primary-nav item.
+ */
+const NAV_LINKS: { label: string; path: string; desktop?: string }[] = [
   { label: "Industries", path: "/industries" },
   { label: "Projects", path: "/projects" },
   { label: "Resources", path: "/resources" },
-  { label: "Service & Support", path: "/service-support" },
-  { label: "About", path: "/about" },
-  { label: "Contact", path: "/contact" },
+  { label: "Support", path: "/service-support" },
+  { label: "Company", path: "/about" },
+  { label: "Contact", path: "/contact", desktop: "Request a Quote" },
 ];
 
 const FAMILIES = [
@@ -246,10 +251,10 @@ test.describe("navigation", () => {
       await page.goto("/");
 
       if (isDesktop(page)) {
-        await page
-          .getByRole("navigation", { name: "Primary" })
-          .getByRole("link", { name: link.label, exact: true })
-          .click();
+        const scope = link.desktop
+          ? page.getByRole("banner")
+          : page.getByRole("navigation", { name: "Primary" });
+        await scope.getByRole("link", { name: link.desktop ?? link.label, exact: true }).click();
       } else {
         const mobileNav = page.getByRole("navigation", { name: "Mobile" });
         await clickUntil(page.getByRole("button", { name: "Open menu" }), async () => {
