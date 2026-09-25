@@ -20,8 +20,7 @@ const trail = [
 
 /**
  * The Trusted Partners showcase is built from the master organisation
- * dataset (src/data/trusted-partners.ts). Written-up case studies are still being
- * documented, so the page says so rather than inventing them.
+ * dataset (src/data/trusted-partners.ts).
  */
 export default function ProjectsPage() {
   return (
@@ -46,25 +45,6 @@ export default function ProjectsPage() {
       </section>
 
       <TrustedPartners />
-
-      <section className="bg-paper py-16 lg:py-24">
-        <div className="shell" data-reveal>
-          <div className="max-w-2xl border-l-2 border-amber bg-paper-raised p-8">
-            <h2 className="font-display text-xl font-medium text-steel-900">
-              Written case studies are being prepared.
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-steel-700">
-              We are documenting completed installations properly — site, opening, the products
-              specified and why — and confirming each reference before it is published, rather than
-              filling this page with stock photography and invented case studies.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-steel-700">
-              If you would like references relevant to your sector in the meantime, ask us directly
-              and we will share what the client has agreed we can share.
-            </p>
-          </div>
-        </div>
-      </section>
 
       <CtaBand
         title="Ask for references for your sector."
