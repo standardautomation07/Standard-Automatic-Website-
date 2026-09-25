@@ -1168,15 +1168,14 @@ const list: ImageRef[] = [
     "research/residential-garage-door-visual-definition.md",
   ),
 
-  // Fire Rated Rolling Shutters — generated gallery views built to the heavy
-  // fire-shutter construction in the definition; the supplied MS shutter
-  // reference fixed the drive. No rating or certification is implied.
+  // Fire Rated Rolling Shutters — generated views of the heavy fire-shutter
+  // construction, used on the FRS-120 UD / FRS-240 UD page.
   visualised(
     "fire-shutter-installed",
     "fire-safety-doors",
     "fire-rated-rolling-shutters",
     "installed",
-    "A fire rated rolling shutter closed across a large opening in a concrete compartment wall inside an industrial building: flat galvanised double-skin slats, the curtain coil on an exposed barrel between bolted steel end plates, heavy galvanised guides, the side motor with hand chain, a control box and yellow-and-black bollards",
+    "A fire rated rolling shutter closed across a large opening in a concrete compartment wall inside an industrial building: interlocking steel slats, the curtain coil on a steel barrel between bolted end plates, heavy-duty steel side guides, the motor and gearbox, a control box and yellow-and-black bollards",
     "Fire Rated Rolling Shutters — installed, closed",
     "research/fire-rated-shutter-visual-definition.md",
   ),
@@ -1185,7 +1184,7 @@ const list: ImageRef[] = [
     "fire-safety-doors",
     "fire-rated-rolling-shutters",
     "guide-detail",
-    "Close-up at the base of a fire rated rolling shutter guide: the heavy galvanised angle guide anchored to the concrete wall with large bolts, the flat galvanised slats with riveted end locks entering the guide, and the angle-section bottom bar resting on the floor",
+    "Close-up at the base of a fire rated rolling shutter: the heavy-duty steel side guide anchored to the concrete wall, the interlocking steel slats entering the guide, and the reinforced steel bottom bar resting on the floor",
     "Fire Rated Rolling Shutters — guide and bottom bar detail",
     "research/fire-rated-shutter-visual-definition.md",
   ),

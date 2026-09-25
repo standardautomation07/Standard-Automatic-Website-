@@ -595,67 +595,40 @@ export const rollingShutterSpecs: Record<string, SpecGroup[]> = {
   /* --------------------------------------------------- R14 FIRE RATED */
   /**
    * Listed under Fire & Safety Doors and cross-listed onto Rolling Shutters.
-   *
-   * The published values below are the ones the company already carries in its
-   * own material — profile heights, curtain thickness, finish, sound reduction
-   * and type code. Everything that depends on a test or a certificate says so.
-   * No certificate number, test laboratory, tested size, fire classification or
-   * closing speed is stated, because none has been supplied.
+   * Two variants, FRS-120 UD and FRS-240 UD. Values are the ones issued by
+   * the company for this product line; where the two variants differ, the
+   * row states both.
    */
-  "fire-rated-rolling-shutters": shutterSpec({
-    family: "Fire Rated Rolling Shutter",
-    material: "Galvanized steel; certified fire-rated construction",
-    grade: "Certified configuration dependent",
-    coating: "Galvanized",
-    surface: "Silver galvanized; customised where the certified system allows",
-    construction: "Galvanized double wall with silicon insulated strip",
-    profile: "75 mm / 100 mm",
-    profileHeight: "75 mm, 100 mm",
-    thickness: fixed("Curtain thickness", "25 mm"),
-    slatWeight: "Certified configuration dependent",
-    curtainWeight: "Certified configuration dependent",
-    size: "Certified configuration dependent",
-    area: "Certified configuration dependent",
-    mullion: "Certified configuration dependent",
-    guideMaterial: "Certified fire-rated guide construction, steel",
-    guideWidth: "Certified configuration dependent",
-    guideDepth: "Certified configuration dependent",
-    guideThickness: "Certified configuration dependent",
-    engagement: "Certified configuration dependent",
-    windLock: "Not applicable to the certified fire configuration unless specified",
-    guideSeal: "Certified configuration dependent",
-    barrel: "Certified fire-rated barrel assembly",
-    shaft: "Certified configuration dependent",
-    bracket: "Certified configuration dependent",
-    hood: "Certified configuration dependent",
-    bottomProfile: "Certified fire-rated bottom bar",
-    bottomBar: "Certified configuration dependent",
-    bottomSeal: "Certified configuration dependent",
-    lock: "Certified configuration dependent",
-    operation: "Electric or manual",
-    motorOptions: "Certified configuration dependent",
-    motorRating: "Certified configuration dependent",
-    override: "Certified release mechanism with manual operation",
-    controls:
-      "Normal operation by push button or key switch; fire alarm interface available where specified",
-    wind: "Not applicable to the certified fire configuration unless separately tested",
-    fire:
-      "FD 120 / FD 180 / FD 240 according to the supplied certified configuration; the rating applies only to the tested system",
-    thermal: "Certificate and test dependent",
-    acoustic: "21 dB airborne sound reduction",
-    corrosion: "Galvanized surface protection",
-    cycle: "Certified configuration dependent",
-    speed: "Certified configuration dependent; controlled descent on release",
-    safety:
-      "Automatic fire-triggered closing where specified, fire alarm interface, certified release mechanism and manual release",
-    extraSafety:
-      "Test standard, certificate reference and maximum tested opening are stated from the actual certificate for the supplied system",
-    antiDrop: "Certified configuration dependent",
-    brake: "Certified configuration dependent",
-    obstacle: "Certified configuration dependent",
-    finish: "Silver galvanized; customised where the certified system allows",
-    colour: "Silver or customised",
-    substrate: "Structural opening prepared to the certified system requirement",
-    extraCurtain: [fixed("Type code", "FR75, FR100")],
-  }),
+  "fire-rated-rolling-shutters": [
+    group("Identification", [
+      fixed("Product type", "Metallic Fire Rated Rolling Shutter"),
+      fixed("Variants", "FRS-120 UD, FRS-240 UD"),
+    ]),
+    group("Fire performance", [
+      fixed("Fire resistance", "120 minutes (FRS-120 UD); 240 minutes (FRS-240 UD)"),
+      fixed("Classification", "FD 120 UD (FRS-120 UD); FD 240 UD (FRS-240 UD)"),
+      fixed("Insulation classification", "UD — Uninsulated"),
+      fixed("Applicable standard", "IS 3614:2021"),
+      fixed("Fire test method", "IS 17518 Part 1:2022"),
+    ]),
+    group("Curtain & opening", [
+      fixed("Curtain construction", "Interlocking steel fire-rated slats"),
+      fixed("Nominal curtain / slat thickness", "1.2 mm"),
+      fixed("Maximum opening", "6000 mm W × 6000 mm H"),
+    ]),
+    group("Structure", [
+      fixed("Side guides", "Heavy-duty structural steel"),
+      fixed("Bottom bar", "Reinforced steel"),
+      fixed("Barrel", "Heavy-duty steel barrel assembly"),
+      fixed("Hood", "Steel protective enclosure"),
+      fixed("Installation", "Structural opening with engineered fixing arrangement"),
+    ]),
+    group("Operation & fire closure", [
+      fixed("Operation", "Motorized"),
+      fixed("Fire closure", "Automatic"),
+      fixed("Fire release", "Automatic fire-release mechanism"),
+      fixed("Fire alarm interface", "Yes"),
+      fixed("Emergency / manual operation", "Yes"),
+    ]),
+  ],
 };

@@ -201,7 +201,10 @@ export function variantSpecs(product: Product): VariantSpec[] {
   return product.variants
     .map((variant) => {
       const published = values[`${product.id}::${variant.id}`] ?? {};
-      const specs = Object.entries(published).map(([label, value]) => ({
+      const specs = [
+        ...(variant.specs ?? []).map(({ label, value }) => [label, value] as const),
+        ...Object.entries(published),
+      ].map(([label, value]) => ({
         label,
         value,
         status: "CONFIRMED" as const,

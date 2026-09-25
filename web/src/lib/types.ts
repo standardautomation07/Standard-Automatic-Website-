@@ -43,6 +43,8 @@ export interface Variant {
   /** What this configuration changes and when you would choose it. */
   note: string;
   status: Status;
+  /** Published figures for this configuration, shown on its variant card. */
+  specs?: { label: string; value: string }[];
 }
 
 /** A resolved variant: the configuration plus the specification fields that
@@ -241,6 +243,10 @@ export interface Product {
   ordering?: string[];
   /** Motors, controls and accessories that genuinely couple to this product. */
   compatibility?: Integration[];
+  /** Replaces the generic sizing paragraph where a maximum size is published. */
+  dimensionsNote?: string;
+  /** Application settings shown as captioned images below the product detail. */
+  applicationImages?: { name: string; imageId: string }[];
 }
 
 export interface Category {

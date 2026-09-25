@@ -3,10 +3,8 @@ import type { Product } from "@/lib/types";
 /**
  * Fire & Safety Doors — 2 products.
  *
- * No fire rating is published for either product. A rating belongs to a
- * tested assembly, not to a product name, and no test certificate has been
- * supplied for these lines. Both pages say so explicitly rather than quoting
- * a rating the market commonly advertises.
+ * Fire Rated Rolling Shutters carry the FRS-120 UD / FRS-240 UD values issued
+ * by the company, and override the category guidance with them.
  */
 export const fireSafetyProducts: Product[] = [
   {
@@ -15,78 +13,227 @@ export const fireSafetyProducts: Product[] = [
     categoryId: "fire-rated-shutters",
     name: "Fire Rated Rolling Shutters",
     status: "CONFIRMED",
-    tagline: "Holding the compartment line where a large aperture cuts through it.",
+    tagline:
+      "Engineered fire-resistant rolling shutters designed for controlled fire compartmentation, automatic closure and protection of large industrial and commercial openings.",
     summary:
-      "Galvanised double-wall, silicon-insulated shutters in 75 and 100 mm profiles with a stated 21 dB sound reduction, for openings in fire-rated walls.",
+      "Fire rated rolling shutters FRS-120 UD and FRS-240 UD: 120 and 240 minute (FD 120 UD / FD 240 UD), motorized, with automatic fire closure, for openings up to 6000 × 6000 mm.",
     overview: [
-      "A fire rated shutter closes an opening in a fire compartment wall. Its job is to hold that line for a stated period so the building's escape and containment strategy still works after a large aperture has been cut through a rated wall.",
-      "Construction follows from that: a galvanised double-wall curtain with a silicon-insulated strip between the skins, running in steel guides sized to retain the curtain under heat. The same construction gives useful acoustic performance as a by-product — a stated 21 dB sound reduction.",
+      "Fire-rated rolling shutters provide controlled closure of large openings within fire compartmentation systems, helping restrict the passage of fire through normally open industrial and commercial openings.",
+      "Two variants are offered: FRS-120 UD, with 120 minutes fire resistance (FD 120 UD), and FRS-240 UD, with 240 minutes fire resistance (FD 240 UD). Both are heavy-duty uninsulated metallic shutters with an interlocking steel fire-rated slat curtain of 1.2 mm nominal thickness, for openings up to 6000 mm wide × 6000 mm high.",
+      "In normal use the shutter is motorized. On a fire signal from the building fire alarm system, the automatic fire-release mechanism releases the curtain for controlled descent, and emergency / manual operation is provided. The applicable standard is IS 3614:2021, with fire test method IS 17518 Part 1:2022.",
     ],
     quickFacts: [
-      { label: "Slat height", value: "75 / 100 mm" },
-      { label: "Curtain thickness", value: "25 mm" },
-      { label: "Sound reduction", value: "21 dB" },
-      { label: "Fire rating", value: "Certification dependent", qualified: true },
+      { label: "Fire resistance", value: "120 / 240 minutes" },
+      { label: "Classification", value: "FD 120 UD / FD 240 UD" },
+      { label: "Maximum opening", value: "6000 × 6000 mm" },
+      { label: "Applicable standard", value: "IS 3614:2021" },
     ],
     benefits: [
       {
-        title: "Compartment openings",
-        body: "Specified where a large aperture passes through a fire-rated wall and the compartment line has to be maintained.",
+        title: "120 and 240 minute variants",
+        body: "FRS-120 UD (FD 120 UD) and FRS-240 UD (FD 240 UD), selected against the fire compartmentation requirement of the opening.",
       },
       {
-        title: "Radiant heat protection",
-        body: "Insulated double-wall construction limits radiant heat transfer through the closed curtain.",
+        title: "Automatic fire closure",
+        body: "Fire alarm interface and automatic fire-release mechanism for controlled descent of the curtain on a fire signal.",
       },
       {
-        title: "21 dB sound reduction",
-        body: "The same insulated build gives a stated sound reduction value of 21 dB in normal daily use.",
+        title: "Large openings",
+        body: "Designed for openings up to 6000 mm wide × 6000 mm high in industrial and commercial buildings.",
       },
       {
-        title: "Corrosion protected",
-        body: "Galvanised slats and steel guides, for industrial and service environments.",
+        title: "Heavy-duty steel construction",
+        body: "Interlocking steel fire-rated slats, heavy-duty structural steel side guides, reinforced steel bottom bar, steel barrel and steel hood.",
       },
     ],
     variants: [
       {
-        id: "insulated-double-wall",
-        name: "Galvanised double-wall insulated",
-        note: "The standard construction: galvanised double-wall slats with a silicon insulated strip, in steel guides.",
+        id: "frs-120-ud",
+        name: "FRS-120 UD",
+        note: "A heavy-duty uninsulated metallic fire-rated rolling shutter engineered for fire compartmentation and automatic closure in industrial and commercial environments.",
         status: "CONFIRMED",
+        specs: [
+          { label: "Fire resistance", value: "120 minutes" },
+          { label: "Classification", value: "FD 120 UD" },
+          { label: "Insulation", value: "Uninsulated (UD)" },
+          { label: "Curtain", value: "Interlocking steel fire-rated slats" },
+          { label: "Nominal curtain / slat thickness", value: "1.2 mm" },
+          { label: "Maximum opening", value: "6000 mm W × 6000 mm H" },
+          { label: "Operation", value: "Motorized" },
+          { label: "Fire closure", value: "Automatic" },
+          { label: "Fire alarm interface", value: "Available" },
+          { label: "Emergency / manual operation", value: "Provided" },
+          { label: "Side guides", value: "Heavy-duty steel" },
+          { label: "Bottom bar", value: "Reinforced steel" },
+          { label: "Hood", value: "Steel" },
+        ],
       },
       {
-        id: "auto-close-release",
-        name: "Alarm-linked auto-close",
-        note: "Interface to the fire alarm panel with a battery-backed release, so the shutter closes on alarm at a governed speed. Specified against the building's fire strategy.",
+        id: "frs-240-ud",
+        name: "FRS-240 UD",
+        note: "A heavy-duty uninsulated metallic fire-rated rolling shutter engineered for extended fire compartmentation requirements and automatic closure in demanding industrial environments.",
         status: "CONFIRMED",
+        specs: [
+          { label: "Fire resistance", value: "240 minutes" },
+          { label: "Classification", value: "FD 240 UD" },
+          { label: "Insulation", value: "Uninsulated (UD)" },
+          { label: "Curtain", value: "Interlocking steel fire-rated slats" },
+          { label: "Nominal curtain / slat thickness", value: "1.2 mm" },
+          { label: "Maximum opening", value: "6000 mm W × 6000 mm H" },
+          { label: "Operation", value: "Motorized" },
+          { label: "Fire closure", value: "Automatic" },
+          { label: "Fire alarm interface", value: "Available" },
+          { label: "Emergency / manual operation", value: "Provided" },
+          { label: "Side guides", value: "Heavy-duty steel" },
+          { label: "Bottom bar", value: "Reinforced steel" },
+          { label: "Hood", value: "Steel" },
+        ],
       },
     ],
     applications: [
+      "Industrial manufacturing facilities",
+      "Warehouses & logistics centres",
       "Fire compartment openings",
-      "Warehouse and plant separations",
-      "Basement, service and plant rooms",
-      "Commercial buildings with rated wall lines",
+      "Electrical & utility rooms",
+      "Plant & process areas",
+      "Commercial buildings",
+      "Service & material openings",
+      "Industrial fire separation",
     ],
     industries: ["manufacturing", "warehousing-logistics", "retail-commercial", "healthcare"],
     environments: ["fire", "internal"],
     operatingMethod: [
-      "Galvanised double-wall slats with an insulated strip form a curtain that winds onto a barrel above the opening.",
-      "In normal use the shutter is operated like any other motorised shutter, by push button, key switch or remote.",
-      "On a fire signal the drive releases and the curtain descends at a governed speed to close the compartment line.",
-      "A manual release allows the shutter to be closed or opened for testing and during a power failure.",
+      "Normal operation: the shutter is opened and closed by its motor and gearbox for daily use.",
+      "Fire signal: the building fire alarm system signals the shutter through the fire alarm interface.",
+      "Fire release: the automatic fire-release mechanism releases the curtain.",
+      "Automatic closure: the curtain descends under control to close the opening.",
+      "Fire compartmentation: the closed shutter maintains the compartment line at the opening. Emergency / manual operation is provided.",
     ],
     construction: [
-      "Galvanised double-wall slats, 75 / 100 mm profile, with a silicon insulated strip",
-      "25 mm curtain thickness",
-      "Steel guides and end plates sized to retain the curtain under heat",
+      "Steel fire-rated curtain, 1.2 mm nominal thickness",
+      "Interlocking steel fire-rated slats",
+      "Heavy-duty structural steel side guides",
+      "Reinforced steel bottom bar",
+      "Heavy-duty steel barrel assembly",
+      "Structural brackets",
+      "Steel hood — protective enclosure",
+      "Motor / gearbox for motorized normal operation",
+      "Automatic fire-release mechanism",
+      "Control / fire alarm interface",
     ],
-    namingNote:
-      "Fire rating is not published for this product. A rating applies to a tested assembly — curtain, guides, fixings, motor and release as installed — and only against a certificate for that assembly. Ask us and we will confirm what rating can be certified for your opening.",
+    safety: [
+      "Automatic fire closure on a fire signal from the building fire alarm system",
+      "Controlled shutter descent on fire release",
+      "Emergency / manual operation provided",
+    ],
+    controls: [
+      "Motorized normal operation",
+      "Fire alarm interface to the building fire alarm system",
+      "Automatic fire-release mechanism",
+    ],
+    options: [
+      "FRS-120 UD — 120 minutes fire resistance, FD 120 UD",
+      "FRS-240 UD — 240 minutes fire resistance, FD 240 UD",
+    ],
+    maintenance: [
+      "The fire-release mechanism and controlled descent are checked at scheduled intervals as part of fire system maintenance",
+      "Motorized and emergency / manual operation are checked at each service visit",
+    ],
+    integration: [
+      {
+        system: "Building fire alarm system",
+        detail:
+          "The fire alarm interface receives the fire signal; the automatic fire-release mechanism then releases the curtain for controlled descent.",
+      },
+      {
+        system: "Motor / gearbox",
+        detail: "Motorized opening and closing of the shutter in normal daily use.",
+      },
+      {
+        system: "Emergency / manual operation",
+        detail: "Provided for operation of the shutter when required.",
+      },
+    ],
+    installation: [
+      "The opening size, the fire resistance period required (120 or 240 minutes) and the wall construction are established before the variant is specified.",
+      "The shutter is installed in the structural opening with an engineered fixing arrangement: heavy-duty side guides, the steel barrel assembly on structural brackets, and the steel hood.",
+      "The fire alarm interface is connected to the building fire alarm system.",
+      "Commissioning covers motorized operation, the automatic fire release with controlled descent, and emergency / manual operation.",
+    ],
+    selectionGuide: [
+      {
+        condition: "The opening requires 120 minutes fire resistance",
+        recommendation: "FRS-120 UD — classification FD 120 UD.",
+      },
+      {
+        condition: "The opening requires 240 minutes fire resistance",
+        recommendation: "FRS-240 UD — classification FD 240 UD, for extended fire compartmentation requirements.",
+      },
+      {
+        condition: "The opening is large",
+        recommendation:
+          "Both variants are designed for openings up to 6000 mm wide × 6000 mm high, where conventional fire-rated door systems may not provide the required operational configuration.",
+      },
+      {
+        condition: "The opening is in daily use as well",
+        recommendation: "Both variants are motorized for normal operation, with automatic fire closure on a fire signal.",
+      },
+    ],
+    faq: [
+      {
+        question: "What is the difference between FRS-120 UD and FRS-240 UD?",
+        answer:
+          "FRS-120 UD has 120 minutes fire resistance, classification FD 120 UD. FRS-240 UD has 240 minutes fire resistance, classification FD 240 UD. Both are uninsulated (UD) metallic fire rated rolling shutters with interlocking steel fire-rated slats of 1.2 mm nominal thickness.",
+      },
+      {
+        question: "Which standard applies?",
+        answer: "The applicable standard is IS 3614:2021. The fire test method is IS 17518 Part 1:2022.",
+      },
+      {
+        question: "Does the shutter close automatically in a fire?",
+        answer:
+          "Yes. On a fire signal from the building fire alarm system, the automatic fire-release mechanism releases the curtain and the shutter descends under control to close the opening.",
+      },
+      {
+        question: "What is the maximum opening size?",
+        answer: "Both variants are designed for openings up to 6000 mm wide × 6000 mm high.",
+      },
+      {
+        question: "Can it be used as a normal shutter day to day?",
+        answer: "Yes. In normal use the shutter is motorized, and emergency / manual operation is provided.",
+      },
+    ],
+    ordering: [
+      "Clear opening width and height, up to 6000 × 6000 mm",
+      "Fire resistance required: 120 minutes (FRS-120 UD) or 240 minutes (FRS-240 UD)",
+      "The compartment line the opening sits on, and whether it is on an escape route",
+      "The building fire alarm system the fire alarm interface connects to",
+      "Headroom and side room available, and the structural substrate for fixing",
+      "Whether the opening is used daily as well as for fire separation",
+      "Site conditions",
+    ],
+    dimensionsNote:
+      "Designed for large industrial and commercial openings where conventional fire-rated door systems may not provide the required operational configuration.",
+    applicationImages: [
+      { name: "Industrial Manufacturing Facilities", imageId: "i-manufacturing" },
+      { name: "Warehouses & Logistics Centres", imageId: "warehouse-interior" },
+      { name: "Fire Compartment Openings", imageId: "fire-shutter-industrial-application" },
+      { name: "Electrical & Utility Rooms", imageId: "engineering-panel" },
+      { name: "Plant & Process Areas", imageId: "g-hsd-production" },
+      { name: "Commercial Buildings", imageId: "commercial-building" },
+      { name: "Service & Material Openings", imageId: "p-shutter-industrial" },
+      { name: "Industrial Fire Separation", imageId: "facility-night" },
+    ],
     related: ["fire-rated-sliding-doors", "insulated-double-wall-rolling-shutters", "galvanized-steel-rolling-shutters"],
     documents: [
-      { title: "Fire test certificate", kind: "Certificate", href: null, note: "Issued per certified assembly. Ask us for the certificate covering the configuration proposed for your opening." },
-      { title: "Fire Rated Shutter datasheet", kind: "Datasheet", href: null, note: "In preparation." },
+      {
+        title: "Technical submittal — FRS-120 UD / FRS-240 UD",
+        kind: "Datasheet",
+        href: null,
+        note: "Prepared for your opening on request.",
+      },
     ],
-    imageId: "fire-shutter-supplied",
+    imageId: "fire-shutter-installed",
     galleryIds: [
       "fire-shutter-installed",
       "fire-shutter-guide-detail",
@@ -97,17 +244,17 @@ export const fireSafetyProducts: Product[] = [
     // Shutters rather than duplicated: one product, one URL.
     crossListedIn: ["rolling-shutters"],
     facets: {
-      material: ["MS", "GI"],
+      material: ["MS"],
       construction: "Fire Rated",
       duty: ["Heavy", "Industrial"],
-      operation: ["Motorized", "Gear"],
+      operation: ["Motorized"],
       performance: ["Fire Rated"],
     },
     comparison: {
-      material: "Steel, tested assembly",
-      thickness: "Per tested configuration",
-      corrosion: "Material dependent",
-      operation: "Motorised with automatic closure on alarm",
+      material: "Interlocking steel fire-rated slats",
+      thickness: "1.2 mm nominal",
+      corrosion: "Steel construction",
+      operation: "Motorized, automatic fire closure",
     },
     legacyUrls: ["fire-proof-rolling-shutters.html", "fire-proof-shutters.html"],
   },

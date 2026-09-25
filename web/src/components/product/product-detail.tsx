@@ -44,6 +44,9 @@ export function ProductDetail({ product }: { product: Product }) {
   const ordering = orderingFor(product);
   const isWind = product.facets?.performance.some((p) => p.includes("Wind") || p.includes("Storm"));
   const isFire = product.facets?.construction === "Fire Rated";
+  // The fire caveat stands in for a classification; once one is published it
+  // is the classification that is shown.
+  const fireClassified = groups.some((g) => g.specs.some((s) => s.label === "Classification" && s.value));
   // Each family states the caveat in its own terms.
   const disclaimer =
     product.familyId === "rolling-shutters"
@@ -128,7 +131,7 @@ export function ProductDetail({ product }: { product: Product }) {
           </div>
           <DetailNote>{disclaimer}</DetailNote>
           {isWind && <DetailNote>{WIND_DISCLAIMER}</DetailNote>}
-          {isFire && <DetailNote>{FIRE_DISCLAIMER}</DetailNote>}
+          {isFire && !fireClassified && <DetailNote>{FIRE_DISCLAIMER}</DetailNote>}
         </div>
       ),
     },
@@ -226,10 +229,8 @@ export function ProductDetail({ product }: { product: Product }) {
         <div className="space-y-6">
           <p className="font-display text-lg text-steel-900">{sizeStatement}</p>
           <p className="max-w-2xl text-sm leading-relaxed text-steel-600">
-            We do not publish a universal maximum width or height. What a given opening supports
-            depends on the leaf weight, the profile, the shaft or track, the guide arrangement,
-            the wind load and the drive system, and those are settled together rather than read
-            off a table.
+            {product.dimensionsNote ??
+              "We do not publish a universal maximum width or height. What a given opening supports depends on the leaf weight, the profile, the shaft or track, the guide arrangement, the wind load and the drive system, and those are settled together rather than read off a table."}
           </p>
           <DetailList
             items={[

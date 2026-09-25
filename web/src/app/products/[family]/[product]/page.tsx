@@ -84,6 +84,11 @@ const commercialMetadata: Record<string, { title: string; description: string }>
     description:
       "Fire rated sliding doors for compartment openings where the door arrangement must be specified against the building fire strategy and documented assembly requirements.",
   },
+  "fire-rated-rolling-shutters": {
+    title: "Fire Rated Rolling Shutter — 120 & 240 Minute, FD 120 / FD 240 UD",
+    description:
+      "Fire rated rolling shutters FRS-120 UD and FRS-240 UD: 2 hour and 4 hour (FD 120 UD / FD 240 UD), motorized with automatic fire closure, for openings up to 6000 × 6000 mm.",
+  },
   "tripod-turnstiles": {
     title: "Tripod Turnstiles for Controlled Pedestrian Access",
     description:
@@ -109,6 +114,18 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     },
   };
 }
+
+/** Where a product's primary action is worded differently from the default. */
+const primaryAction: Record<string, string> = {
+  "fire-rated-rolling-shutters": "Request Technical Submittal",
+};
+
+const closingBand: Record<string, { title: string; lede: string }> = {
+  "fire-rated-rolling-shutters": {
+    title: "Need a fire rated rolling shutter?",
+    lede: "Tell us your opening size, fire-rating requirement and site conditions.",
+  },
+};
 
 /**
  * Applied to supporting detail so it is painted on a desktop and not on a
@@ -189,9 +206,9 @@ export default async function ProductPage({ params }: Params) {
               </div>
             )}
 
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap [&>*]:whitespace-nowrap">
               <ButtonLink href="#enquiry" variant="primary" size="lg">
-                Request a Quote
+                {primaryAction[product.id] ?? "Request a Quote"}
               </ButtonLink>
               <ButtonLink href={telHref()} variant="onDark" size="lg">
                 <Phone className="h-5 w-5" />
@@ -391,6 +408,21 @@ export default async function ProductPage({ params }: Params) {
                     <StatusBadge status={variant.status} />
                   </div>
                   <p className="mt-3 text-sm leading-relaxed text-steel-600">{variant.note}</p>
+                  {variantDeltas
+                    .filter((entry) => entry.variant.id === variant.id)
+                    .map(({ specs }) => (
+                      <dl key={variant.id} className="mt-6 border-t border-line">
+                        {specs.map((spec) => (
+                          <div
+                            key={spec.label}
+                            className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-4 border-b border-line py-2.5 last:border-b-0"
+                          >
+                            <dt className="font-mono text-xs uppercase tracking-[0.08em] text-steel-500">{spec.label}</dt>
+                            <dd className="text-sm text-steel-800">{spec.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    ))}
                 </li>
               ))}
             </ul>
@@ -701,6 +733,25 @@ export default async function ProductPage({ params }: Params) {
         </section>
       )}
 
+      {/* APPLICATION SETTINGS */}
+      {product.applicationImages && product.applicationImages.length > 0 && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading eyebrow="Applications" title="Where it is used" />
+            <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-6 lg:grid-cols-4">
+              {product.applicationImages.map((entry) => (
+                <li key={entry.name}>
+                  <div className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-sunken">
+                    <Media id={entry.imageId} sizes="(min-width: 1024px) 25vw, 50vw" decorative />
+                  </div>
+                  <p className="mt-3 text-sm font-medium leading-snug text-steel-900">{entry.name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* RELATED */}
       {related.length > 0 && (
         <section className={`border-t border-line bg-paper-sunken py-16 lg:py-20 ${MOBILE_ONLY_DESKTOP}`}>
@@ -791,8 +842,11 @@ export default async function ProductPage({ params }: Params) {
       </section>
 
       <CtaBand
-        title="Or talk it through with an engineer."
-        lede="If it is easier to describe the opening than to write it down, call or message us and we will work through it with you."
+        title={closingBand[product.id]?.title ?? "Or talk it through with an engineer."}
+        lede={
+          closingBand[product.id]?.lede ??
+          "If it is easier to describe the opening than to write it down, call or message us and we will work through it with you."
+        }
         whatsappMessage={`Hello Standard Automation, I would like a quote for ${product.name}.`}
       />
     </>

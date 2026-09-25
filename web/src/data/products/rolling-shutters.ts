@@ -997,7 +997,7 @@ export const shutterSizeStatements: Record<string, string> = {
   "polycarbonate-rolling-shutters": SIZE_POLY,
   "insulated-double-wall-rolling-shutters": SIZE_CUSTOM,
   "windproof-rolling-shutters": SIZE_WIND,
-  "fire-rated-rolling-shutters": "Maximum size subject to the tested configuration.",
+  "fire-rated-rolling-shutters": "Maximum opening 6000 mm W × 6000 mm H.",
 };
 
 /** The general caveat shown under every shutter specification table. */
