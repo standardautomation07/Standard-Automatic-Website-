@@ -245,7 +245,7 @@ export default async function ProductPage({ params }: Params) {
         )}
       </section>
 
-      {commercialMetadata[product.id] && guidance.selectionGuide.length > 0 && (
+      {guidance.selectionGuide.length > 0 && (
         <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
           <div className="shell" data-reveal>
             <SectionHeading
