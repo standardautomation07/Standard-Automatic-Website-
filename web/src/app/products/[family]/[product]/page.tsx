@@ -930,20 +930,16 @@ export default async function ProductPage({ params }: Params) {
         </section>
       )}
 
-      {family.id !== "fire-safety-doors" && (
-        <section className="border-t border-line bg-paper py-8">
-          <div className="shell flex flex-col gap-3 text-sm leading-relaxed text-steel-700 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              Planning the opening? Read our <Link href="/resources" className="font-medium text-steel-900 underline-offset-4 hover:underline">specification guidance</Link> before you enquire.
-            </p>
-            {["high-speed-doors", "rolling-shutters", "automatic-gates", "loading-bay"].includes(family.id) && (
-              <p>
-                Need installation or after-sales help? Visit <Link href="/service-support" className="font-medium text-steel-900 underline-offset-4 hover:underline">Service &amp; Support</Link>.
-              </p>
-            )}
-          </div>
-        </section>
-      )}
+      <section className="border-t border-line bg-paper py-8">
+        <div className="shell flex flex-col gap-3 text-sm leading-relaxed text-steel-700 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            Planning the opening? Read our <Link href="/resources" className="font-medium text-steel-900 underline-offset-4 hover:underline">specification guidance</Link> before you enquire.
+          </p>
+          <p>
+            Need installation or after-sales help? Visit <Link href="/service-support" className="font-medium text-steel-900 underline-offset-4 hover:underline">Service &amp; Support</Link>.
+          </p>
+        </div>
+      </section>
 
       {/* ENGINEERING ENQUIRY */}
       <section id="enquiry" className="scroll-mt-20 border-t border-line bg-paper py-16 lg:py-24">
