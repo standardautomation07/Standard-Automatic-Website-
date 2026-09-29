@@ -20,9 +20,9 @@ import { families as familyList } from "@/data/families";
 import { products } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "Industrial Doors, Entrance Automation & Access Control in Pune",
+  title: "Industrial Automation Company in Pune | Standard Automation",
   description:
-    "Standard Automatic Solutions supplies industrial doors, entrance automation, rolling shutters, automatic gates, loading bay systems and access control for factories, warehouses and commercial sites across Pune and India.",
+    "Standard Automation is an industrial automation company in Pune supplying industrial doors, high speed doors, rolling shutters, automatic gates, loading bay equipment, entrance automation and access control for industrial and commercial sites.",
   alternates: { canonical: "/" },
 };
 
@@ -134,6 +134,23 @@ export default function HomePage() {
               </div>
             ))}
           </dl>
+        </div>
+      </section>
+
+      {/* Search answer — concise, crawlable category summary */}
+      <section className="border-b border-line bg-paper-sunken py-14 lg:py-16">
+        <div className="shell" data-reveal>
+          <SectionHeading
+            index="01A"
+            eyebrow="Quick answer"
+            title="What does Standard Automation provide?"
+          />
+          <p className="mt-6 max-w-4xl text-base leading-relaxed text-steel-700">
+            Standard Automation provides industrial door and access automation systems for factories, warehouses, logistics facilities and commercial buildings in Pune and across India. The range includes high speed doors, industrial doors, rolling shutters, fire and safety doors, automatic gates, entrance automation, loading bay equipment, and pedestrian and vehicle access control.
+          </p>
+          <p className="mt-4 max-w-4xl text-sm leading-relaxed text-steel-600">
+            Product selection depends on the opening dimensions, traffic, duty cycle, environment, safety requirements and site constraints. For a project quotation, provide the clear opening width and height, application, location and expected usage.
+          </p>
         </div>
       </section>
 
