@@ -164,7 +164,7 @@ export const families: Family[] = [
       "Fire rated rolling shutters and fire rated sliding doors for openings that pass through a rated wall, specified against a tested assembly.",
     intro: [
       "A fire rated shutter or door closes an opening in a fire compartment wall. Its job is to hold that line for a stated period so the building's escape and containment strategy still works after a large aperture has been cut through a rated wall.",
-      "The point that matters more than any other in this family: a fire rating belongs to a tested assembly — curtain or leaf, guides, fixings, motor and release mechanism, as installed — not to a product name. In India the governing standard is IS 3614, commonly cross-referenced to BS 476 Part 20/22 and EN 1634-1. We publish a rating for your opening only against a certificate for that assembly.",
+      "The point that matters more than any other in this family: fire performance belongs to a tested assembly — curtain or leaf, guides, fixings, operating and release arrangement, as installed — not to a product name. The required performance, evidence and installation scope must be confirmed against the project documentation and the proposed assembly.",
     ],
     why: [
       {
@@ -185,8 +185,8 @@ export const families: Family[] = [
       },
     ],
     considerations: [
-      "The required integrity period in minutes, taken from the building's fire strategy and the National Building Code.",
-      "The standard the assembly must be certified to — IS 3614, BS 476 Part 22, EN 1634-1 or another.",
+      "The required fire-compartmentation performance, taken from the building's fire strategy and project documentation.",
+      "The test, certification or compliance documentation required for the proposed assembly and installation scope.",
       "What triggers closure: alarm interface, fusible link, or a controlled release.",
       "Egress: what happens to people on the wrong side, and whether an adjacent escape route exists.",
       "Whether the opening also needs shielding, hygiene or acoustic performance.",
