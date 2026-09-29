@@ -36,9 +36,29 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const family = getFamily(id);
   if (!family) return {};
 
+  const seoTitles: Record<string, string> = {
+    "high-speed-doors": "High Speed Doors for Industrial Applications | Standard Automation",
+    "industrial-doors": "Industrial Doors & Sectional Overhead Doors | Standard Automation",
+    "rolling-shutters": "Industrial Rolling Shutters | Standard Automation",
+    "fire-safety-doors": "Fire & Safety Doors for Industrial Openings | Standard Automation",
+    "automatic-gates": "Automatic Gates for Industrial & Commercial Sites | Standard Automation",
+    "entrance-automation": "Entrance Automation & Automatic Doors | Standard Automation",
+    "loading-bay": "Loading Bay Equipment & Dock Systems | Standard Automation",
+    "access-control": "Access Control & Vehicle Barriers | Standard Automation",
+  };
+  const seoDescriptions: Record<string, string> = {
+    "high-speed-doors": "High speed doors for warehouses, factories, loading areas and controlled environments. Compare roll-up, fold-up, self-repairing, spiral and specialist door configurations.",
+    "industrial-doors": "Industrial doors including sectional overhead doors and garage door systems, selected around opening size, headroom, insulation, traffic and site conditions.",
+    "rolling-shutters": "Industrial rolling shutters in insulated, galvanized, aluminium, grille, perforated and transparent configurations for factories, warehouses and commercial openings.",
+    "fire-safety-doors": "Fire and safety door systems for openings in fire compartment lines, specified against the required project documentation and tested assembly.",
+    "automatic-gates": "Automatic sliding, telescopic, swing and retractable gates for industrial, commercial and institutional vehicle entrances, selected around site geometry and duty.",
+    "entrance-automation": "Entrance automation and automatic sliding door systems for offices, retail, healthcare and commercial buildings, selected around throughput, accessibility, sealing and egress.",
+    "loading-bay": "Loading bay equipment including dock levellers, dock shelters and dock houses for warehouses, distribution centres, manufacturing and cold-chain facilities.",
+    "access-control": "Access control and vehicle barriers including boom barriers, bollards, tripod turnstiles, flap barriers and full height turnstiles for controlled pedestrian and vehicle access.",
+  };
   return {
-    title: family.name,
-    description: family.summary,
+    title: seoTitles[family.id] ?? family.name,
+    description: seoDescriptions[family.id] ?? family.summary,
     alternates: { canonical: `/products/${family.id}` },
     openGraph: {
       title: `${family.name} | Standard Automation`,
