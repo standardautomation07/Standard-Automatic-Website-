@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     "rolling-shutters": "Industrial rolling shutters in insulated, galvanized, aluminium, grille, perforated and transparent configurations for factories, warehouses and commercial openings.",
     "fire-safety-doors": "Fire and safety door systems for openings in fire compartment lines, specified against the required project documentation and tested assembly.",
     "automatic-gates": "Automatic sliding, telescopic, swing and retractable gates for industrial, commercial and institutional vehicle entrances, selected around site geometry and duty.",
-    "entrance-automation": "Entrance automation and automatic sliding door systems for offices, retail, healthcare and commercial buildings, selected around throughput, accessibility, sealing and egress.",
+    "entrance-automation": "Entrance automation with automatic sliding, swing and hermetic cleanroom doors for offices, retail, healthcare and controlled environments, selected around throughput, accessibility, sealing and egress.",
     "loading-bay": "Loading bay equipment including dock levellers, dock shelters and dock houses for warehouses, distribution centres, manufacturing and cold-chain facilities.",
     "access-control": "Access control and vehicle barriers including boom barriers, bollards, tripod turnstiles, flap barriers and full height turnstiles for controlled pedestrian and vehicle access.",
   };
