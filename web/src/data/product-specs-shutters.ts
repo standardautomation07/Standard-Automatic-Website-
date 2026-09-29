@@ -592,24 +592,19 @@ export const rollingShutterSpecs: Record<string, SpecGroup[]> = {
     colour: "Standard colours; custom RAL available",
   }),
 
-  /* --------------------------------------------------- R14 FIRE RATED */
+  /* --------------------------------------------------- FIRE SHUTTER */
   /**
    * Listed under Fire & Safety Doors and cross-listed onto Rolling Shutters.
-   * Two variants, FRS-120 UD and FRS-240 UD. Values are the ones issued by
-   * the company for this product line; where the two variants differ, the
-   * row states both.
+   * Fire-performance values are not published without supporting project
+   * documentation for the proposed configuration.
    */
   "fire-rated-rolling-shutters": [
     group("Identification", [
-      fixed("Product type", "Metallic Fire Rated Rolling Shutter"),
-      fixed("Variants", "FRS-120 UD, FRS-240 UD"),
+      fixed("Product type", "Metallic fire-resistant rolling shutter system"),
     ]),
-    group("Fire performance", [
-      fixed("Fire resistance", "120 minutes (FRS-120 UD); 240 minutes (FRS-240 UD)"),
-      fixed("Classification", "FD 120 UD (FRS-120 UD); FD 240 UD (FRS-240 UD)"),
+    group("Performance & documentation", [
+      fixed("Fire performance", "Depends on the product configuration, tested assembly, dimensions and installation conditions; request project-specific documentation"),
       fixed("Insulation classification", "UD — Uninsulated"),
-      fixed("Applicable standard", "IS 3614:2021"),
-      fixed("Fire test method", "IS 17518 Part 1:2022"),
     ]),
     group("Curtain & opening", [
       fixed("Curtain construction", "Interlocking steel fire-rated slats"),

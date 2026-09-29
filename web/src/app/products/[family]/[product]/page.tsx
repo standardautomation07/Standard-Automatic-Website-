@@ -85,9 +85,9 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "Fire rated sliding doors for compartment openings where the door arrangement must be specified against the building fire strategy and documented assembly requirements.",
   },
   "fire-rated-rolling-shutters": {
-    title: "Fire Rated Rolling Shutter — 120 & 240 Minute, FD 120 / FD 240 UD",
+    title: "Fire-Resistant Rolling Shutters for Fire Compartmentation",
     description:
-      "Fire rated rolling shutters FRS-120 UD and FRS-240 UD: 2 hour and 4 hour (FD 120 UD / FD 240 UD), motorized with automatic fire closure, for openings up to 6000 × 6000 mm.",
+      "Fire-resistant rolling shutter systems designed for fire compartmentation applications. Performance depends on the product configuration, tested assembly, dimensions and installation conditions. Request project-specific documentation for the proposed configuration.",
   },
   "tripod-turnstiles": {
     title: "Tripod Turnstiles for Controlled Pedestrian Access",
@@ -123,7 +123,7 @@ const primaryAction: Record<string, string> = {
 const closingBand: Record<string, { title: string; lede: string }> = {
   "fire-rated-rolling-shutters": {
     title: "Need a fire rated rolling shutter?",
-    lede: "Tell us your opening size, fire-rating requirement and site conditions.",
+    lede: "Tell us the opening size, project fire-performance requirements and site conditions.",
   },
 };
 

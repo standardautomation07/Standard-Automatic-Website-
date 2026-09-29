@@ -3,8 +3,8 @@ import type { Product } from "@/lib/types";
 /**
  * Fire & Safety Doors — 2 products.
  *
- * Fire Rated Rolling Shutters carry the FRS-120 UD / FRS-240 UD values issued
- * by the company, and override the category guidance with them.
+ * Fire Rated Rolling Shutters require project-specific performance evidence;
+ * do not publish a fire-resistance duration without supporting documentation.
  */
 export const fireSafetyProducts: Product[] = [
   {
@@ -14,24 +14,25 @@ export const fireSafetyProducts: Product[] = [
     name: "Fire Rated Rolling Shutters",
     status: "CONFIRMED",
     tagline:
-      "Engineered fire-resistant rolling shutters designed for controlled fire compartmentation, automatic closure and protection of large industrial and commercial openings.",
+      "Fire-resistant rolling shutter systems designed for fire compartmentation applications.",
     summary:
-      "Fire rated rolling shutters FRS-120 UD and FRS-240 UD: 120 and 240 minute (FD 120 UD / FD 240 UD), motorized, with automatic fire closure, for openings up to 6000 × 6000 mm.",
+      "Fire-resistant rolling shutter systems designed for fire compartmentation applications. Specific fire-resistance performance depends on the product configuration, tested assembly, dimensions and installation conditions.",
     overview: [
-      "Fire-rated rolling shutters provide controlled closure of large openings within fire compartmentation systems, helping restrict the passage of fire through normally open industrial and commercial openings.",
-      "Two variants are offered: FRS-120 UD, with 120 minutes fire resistance (FD 120 UD), and FRS-240 UD, with 240 minutes fire resistance (FD 240 UD). Both are heavy-duty uninsulated metallic shutters with an interlocking steel fire-rated slat curtain of 1.2 mm nominal thickness, for openings up to 6000 mm wide × 6000 mm high.",
-      "In normal use the shutter is motorized. On a fire signal from the building fire alarm system, the automatic fire-release mechanism releases the curtain for controlled descent, and emergency / manual operation is provided. The applicable standard is IS 3614:2021, with fire test method IS 17518 Part 1:2022.",
+      "These systems are intended for large openings within fire compartmentation applications. Project-specific performance must be confirmed against the proposed configuration and supporting documentation.",
+      "The shutter uses heavy-duty uninsulated metallic construction with an interlocking steel slat curtain of 1.2 mm nominal thickness, for openings up to 6000 mm wide × 6000 mm high.",
+      "In normal use the shutter is motorized. On a fire signal from the building fire alarm system, the automatic fire-release mechanism releases the curtain for controlled descent, and emergency / manual operation is provided.",
+      "Specific fire-resistance performance depends on the product configuration, tested assembly, dimensions and installation conditions. Relevant test reports and compliance documentation should be requested for the project configuration.",
     ],
     quickFacts: [
-      { label: "Fire resistance", value: "120 / 240 minutes" },
-      { label: "Classification", value: "FD 120 UD / FD 240 UD" },
+      { label: "Fire performance", value: "Configuration and project documentation dependent", qualified: true },
+      { label: "Normal operation", value: "Motorized" },
       { label: "Maximum opening", value: "6000 × 6000 mm" },
-      { label: "Applicable standard", value: "IS 3614:2021" },
+      { label: "Fire closure", value: "Automatic on fire signal" },
     ],
     benefits: [
       {
-        title: "120 and 240 minute variants",
-        body: "FRS-120 UD (FD 120 UD) and FRS-240 UD (FD 240 UD), selected against the fire compartmentation requirement of the opening.",
+        title: "Project-specific fire performance",
+        body: "Specific performance depends on the product configuration, tested assembly, dimensions and installation conditions. Request project documentation for the proposed configuration.",
       },
       {
         title: "Automatic fire closure",
@@ -46,50 +47,7 @@ export const fireSafetyProducts: Product[] = [
         body: "Interlocking steel fire-rated slats, heavy-duty structural steel side guides, reinforced steel bottom bar, steel barrel and steel hood.",
       },
     ],
-    variants: [
-      {
-        id: "frs-120-ud",
-        name: "FRS-120 UD",
-        note: "A heavy-duty uninsulated metallic fire-rated rolling shutter engineered for fire compartmentation and automatic closure in industrial and commercial environments.",
-        status: "CONFIRMED",
-        specs: [
-          { label: "Fire resistance", value: "120 minutes" },
-          { label: "Classification", value: "FD 120 UD" },
-          { label: "Insulation", value: "Uninsulated (UD)" },
-          { label: "Curtain", value: "Interlocking steel fire-rated slats" },
-          { label: "Nominal curtain / slat thickness", value: "1.2 mm" },
-          { label: "Maximum opening", value: "6000 mm W × 6000 mm H" },
-          { label: "Operation", value: "Motorized" },
-          { label: "Fire closure", value: "Automatic" },
-          { label: "Fire alarm interface", value: "Available" },
-          { label: "Emergency / manual operation", value: "Provided" },
-          { label: "Side guides", value: "Heavy-duty steel" },
-          { label: "Bottom bar", value: "Reinforced steel" },
-          { label: "Hood", value: "Steel" },
-        ],
-      },
-      {
-        id: "frs-240-ud",
-        name: "FRS-240 UD",
-        note: "A heavy-duty uninsulated metallic fire-rated rolling shutter engineered for extended fire compartmentation requirements and automatic closure in demanding industrial environments.",
-        status: "CONFIRMED",
-        specs: [
-          { label: "Fire resistance", value: "240 minutes" },
-          { label: "Classification", value: "FD 240 UD" },
-          { label: "Insulation", value: "Uninsulated (UD)" },
-          { label: "Curtain", value: "Interlocking steel fire-rated slats" },
-          { label: "Nominal curtain / slat thickness", value: "1.2 mm" },
-          { label: "Maximum opening", value: "6000 mm W × 6000 mm H" },
-          { label: "Operation", value: "Motorized" },
-          { label: "Fire closure", value: "Automatic" },
-          { label: "Fire alarm interface", value: "Available" },
-          { label: "Emergency / manual operation", value: "Provided" },
-          { label: "Side guides", value: "Heavy-duty steel" },
-          { label: "Bottom bar", value: "Reinforced steel" },
-          { label: "Hood", value: "Steel" },
-        ],
-      },
-    ],
+    variants: [],
     applications: [
       "Industrial manufacturing facilities",
       "Warehouses & logistics centres",
@@ -107,11 +65,11 @@ export const fireSafetyProducts: Product[] = [
       "Fire signal: the building fire alarm system signals the shutter through the fire alarm interface.",
       "Fire release: the automatic fire-release mechanism releases the curtain.",
       "Automatic closure: the curtain descends under control to close the opening.",
-      "Fire compartmentation: the closed shutter maintains the compartment line at the opening. Emergency / manual operation is provided.",
+      "The curtain descends under control to close the opening. Project-specific fire performance depends on the configuration and its supporting documentation. Emergency / manual operation is provided.",
     ],
     construction: [
-      "Steel fire-rated curtain, 1.2 mm nominal thickness",
-      "Interlocking steel fire-rated slats",
+      "Steel curtain, 1.2 mm nominal thickness",
+      "Interlocking steel slats",
       "Heavy-duty structural steel side guides",
       "Reinforced steel bottom bar",
       "Heavy-duty steel barrel assembly",
@@ -132,8 +90,7 @@ export const fireSafetyProducts: Product[] = [
       "Automatic fire-release mechanism",
     ],
     options: [
-      "FRS-120 UD — 120 minutes fire resistance, FD 120 UD",
-      "FRS-240 UD — 240 minutes fire resistance, FD 240 UD",
+      "Project configuration is confirmed against the opening and supporting documentation",
     ],
     maintenance: [
       "The fire-release mechanism and controlled descent are checked at scheduled intervals as part of fire system maintenance",
@@ -155,19 +112,19 @@ export const fireSafetyProducts: Product[] = [
       },
     ],
     installation: [
-      "The opening size, the fire resistance period required (120 or 240 minutes) and the wall construction are established before the variant is specified.",
+      "The opening dimensions, wall construction and project-specific fire-performance documentation are established before the configuration is specified.",
       "The shutter is installed in the structural opening with an engineered fixing arrangement: heavy-duty side guides, the steel barrel assembly on structural brackets, and the steel hood.",
       "The fire alarm interface is connected to the building fire alarm system.",
       "Commissioning covers motorized operation, the automatic fire release with controlled descent, and emergency / manual operation.",
     ],
     selectionGuide: [
       {
-        condition: "The opening requires 120 minutes fire resistance",
-        recommendation: "FRS-120 UD — classification FD 120 UD.",
+        condition: "The opening is part of a fire compartmentation strategy",
+        recommendation: "Confirm the proposed configuration, tested assembly, dimensions and installation conditions with the project team and request the relevant documentation.",
       },
       {
-        condition: "The opening requires 240 minutes fire resistance",
-        recommendation: "FRS-240 UD — classification FD 240 UD, for extended fire compartmentation requirements.",
+        condition: "Project-specific compliance evidence is required",
+        recommendation: "Request relevant test reports and compliance documentation from the engineering team for the proposed configuration.",
       },
       {
         condition: "The opening is large",
@@ -181,13 +138,13 @@ export const fireSafetyProducts: Product[] = [
     ],
     faq: [
       {
-        question: "What is the difference between FRS-120 UD and FRS-240 UD?",
+        question: "What determines the fire-resistance performance?",
         answer:
-          "FRS-120 UD has 120 minutes fire resistance, classification FD 120 UD. FRS-240 UD has 240 minutes fire resistance, classification FD 240 UD. Both are uninsulated (UD) metallic fire rated rolling shutters with interlocking steel fire-rated slats of 1.2 mm nominal thickness.",
+          "Specific fire-resistance performance depends on the product configuration, tested assembly, dimensions and installation conditions. Request relevant project-specific documentation for the proposed configuration.",
       },
       {
-        question: "Which standard applies?",
-        answer: "The applicable standard is IS 3614:2021. The fire test method is IS 17518 Part 1:2022.",
+        question: "What compliance documentation should be requested?",
+        answer: "Project-specific compliance documentation and test reports should be requested from our engineering team for the proposed configuration. Their availability should be confirmed for the project.",
       },
       {
         question: "Does the shutter close automatically in a fire?",
@@ -205,7 +162,7 @@ export const fireSafetyProducts: Product[] = [
     ],
     ordering: [
       "Clear opening width and height, up to 6000 × 6000 mm",
-      "Fire resistance required: 120 minutes (FRS-120 UD) or 240 minutes (FRS-240 UD)",
+      "Project fire-performance requirements and the documentation required for the proposed configuration",
       "The compartment line the opening sits on, and whether it is on an escape route",
       "The building fire alarm system the fire alarm interface connects to",
       "Headroom and side room available, and the structural substrate for fixing",
@@ -227,10 +184,10 @@ export const fireSafetyProducts: Product[] = [
     related: ["fire-rated-sliding-doors", "insulated-double-wall-rolling-shutters", "galvanized-steel-rolling-shutters"],
     documents: [
       {
-        title: "Technical submittal — FRS-120 UD / FRS-240 UD",
+        title: "Technical submittal — fire-resistant rolling shutter",
         kind: "Datasheet",
         href: null,
-        note: "Prepared for your opening on request.",
+        note: "Request project-specific compliance documentation and test reports from our engineering team for the proposed configuration. Availability must be confirmed for the project.",
       },
     ],
     imageId: "fire-shutter-installed",
