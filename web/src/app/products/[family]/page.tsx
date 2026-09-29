@@ -159,30 +159,45 @@ export default async function FamilyPage({ params }: Params) {
               <div className="border border-line bg-paper-raised p-7">
                 <h3 className="font-display text-lg font-medium text-steel-900">How to choose the right type</h3>
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
-                  <li><strong className="font-medium text-steel-900">Roll-up doors</strong> suit frequent internal or sheltered openings.</li>
-                  <li><strong className="font-medium text-steel-900">Fold-up doors</strong> suit taller openings where a shallower stack above the lintel matters.</li>
-                  <li><strong className="font-medium text-steel-900">Self-repairing doors</strong> suit impact-prone routes with forklift or vehicle movement nearby.</li>
-                  <li><strong className="font-medium text-steel-900">Rigid insulated or spiral doors</strong> suit temperature-controlled or heavier-duty openings.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-roll-up-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Roll-up doors</Link> suit frequent internal or sheltered openings.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-fold-up-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Fold-up doors</Link> suit openings where the available space above the lintel favours a folding stack.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-self-repairing-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Self-repairing doors</Link> suit impact-prone routes with forklift or vehicle movement nearby.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-spiral-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Spiral doors</Link> use a rigid leaf for openings where that construction suits the application.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-rigid-insulated-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Rigid / insulated doors</Link> suit openings where a rigid leaf and environmental separation are required.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-cleanroom-hygiene-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Cleanroom / hygiene doors</Link> are selected around the room’s cleaning and controlled-environment requirements.</li>
+                  <li><Link href="/products/high-speed-doors/high-speed-cold-storage-freezer-door" className="font-medium text-steel-900 underline-offset-4 hover:underline">Cold storage / freezer doors</Link> are considered where the opening serves a cold-chain environment.</li>
                 </ul>
               </div>
             </div>
-            <div className="mt-8">
-              <h3 className="eyebrow text-steel-500">Common products in this family</h3>
-              <ul className="mt-4 flex flex-wrap gap-3">
-                {[
-                  ["/products/high-speed-doors/high-speed-roll-up-door", "High Speed Roll-Up Door"],
-                  ["/products/high-speed-doors/high-speed-fold-up-door", "High Speed Fold-Up Door"],
-                  ["/products/high-speed-doors/high-speed-self-repairing-door", "High Speed Self-Repairing Door"],
-                  ["/products/high-speed-doors/high-speed-spiral-door", "High Speed Spiral Door"],
-                  ["/products/high-speed-doors/high-speed-rigid-insulated-door", "High Speed Rigid Insulated Door"],
-                ].map(([href, label]) => (
-                  <li key={href}>
-                    <Link href={href} className="inline-flex rounded-edge border border-line px-3 py-2 text-sm text-steel-800 transition-colors hover:border-steel-900 hover:text-steel-900">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-8 grid gap-8 border-t border-line pt-8 lg:grid-cols-2">
+              <div>
+                <h3 className="font-display text-lg font-medium text-steel-900">Information required for a high speed door enquiry</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">Clear opening width and height, the application, whether the opening is indoors or exposed outdoors, and the usage or environment are useful starting points. Add the project location and any site constraints you already know; details can be confirmed during assessment.</p>
+              </div>
+              <p className="text-sm leading-relaxed text-steel-700">Final selection also depends on available headroom and side room, traffic near the opening, and what the door needs to separate. No single configuration is assumed from dimensions alone.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {family.id === "industrial-doors" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="Sectional door vs rolling shutter" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">What is an industrial sectional overhead door?</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">It is a door made from hinged panels that travel on tracks and turn overhead as the door opens, storing beneath the roof. The <Link href="/products/industrial-doors/industrial-sectional-overhead-doors" className="font-medium text-steel-900 underline-offset-4 hover:underline">industrial sectional overhead door</Link> is selected around the opening, available headroom and required lift arrangement.</p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Which arrangement suits the opening?</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  <li><strong className="font-medium text-steel-900">Headroom and space:</strong> a sectional door needs track and storage space overhead; a rolling shutter stores its curtain above the lintel and uses guides at the sides.</li>
+                  <li><strong className="font-medium text-steel-900">Opening and operation:</strong> consider how the opening is used, what must remain clear around it, and whether the overhead track arrangement fits the building.</li>
+                  <li><strong className="font-medium text-steel-900">Visibility and insulation:</strong> consider whether the closed opening needs vision panels and whether insulated panels or a particular shutter construction better fits the requirement.</li>
+                </ul>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">Compare with <Link href="/products/rolling-shutters" className="font-medium text-steel-900 underline-offset-4 hover:underline">rolling shutter options</Link> after checking the available space and application.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -265,6 +280,60 @@ export default async function FamilyPage({ params }: Params) {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="mt-8 grid gap-8 border-t border-line pt-8 lg:grid-cols-2">
+              <div>
+                <h3 className="font-display text-lg font-medium text-steel-900">Dock leveller vs dock shelter</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">A <Link href="/products/loading-bay/dock-levellers" className="font-medium text-steel-900 underline-offset-4 hover:underline">dock leveller</Link> bridges and adjusts for the height difference between the fixed dock and vehicle bed, providing a crossing for handling equipment. A <Link href="/products/loading-bay/dock-shelters-and-houses" className="font-medium text-steel-900 underline-offset-4 hover:underline">dock shelter</Link> helps seal the loading interface around the vehicle. They address different parts of the bay and may be specified together where both level transition and perimeter sealing are needed.</p>
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-medium text-steel-900">Information required for loading bay selection</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">Useful enquiry inputs include the dock and bay configuration, the vehicle bed-height range, the handling equipment and its axle/load information, and whether the bay needs sealing against weather or temperature. These are selection inputs, not guaranteed product ratings or working ranges.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {family.id === "entrance-automation" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="Choosing an automatic pedestrian door" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Automatic sliding vs swing doors</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700"><Link href="/products/entrance-automation/automatic-sliding-glass-doors" className="font-medium text-steel-900 underline-offset-4 hover:underline">Automatic sliding doors</Link> move leaves alongside the opening, so selection depends on the clear opening needed and the side space available for the leaves. <Link href="/products/entrance-automation/automatic-swing-doors" className="font-medium text-steel-900 underline-offset-4 hover:underline">Automatic swing doors</Link> need a clear swing area and are considered where the opening and surrounding traffic allow the leaf to move through that space. Footfall, accessibility and escape-route behaviour also inform selection.</p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Hermetic doors vs cleanroom doors</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700"><Link href="/products/entrance-automation/hermetic-cleanroom-doors" className="font-medium text-steel-900 underline-offset-4 hover:underline">Hermetic door systems</Link> are selected where sealing and the room’s pressure or containment requirements matter. “Cleanroom door” describes an application context: classification depends on the room design, air handling and validated system, not on a door alone. Specify the room requirements, pressure conditions, cleaning regime and interlock needs with the project team.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {family.id === "access-control" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="Selecting access control equipment" />
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              <article className="border border-line bg-paper-raised p-6">
+                <h3 className="font-display text-lg font-medium text-steel-900">What is a boom barrier?</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">A <Link href="/products/access-control/boom-barriers" className="font-medium text-steel-900 underline-offset-4 hover:underline">boom barrier</Link> meters vehicle movements at an entrance. It controls access flow; it is not a substitute for physical vehicle protection.</p>
+              </article>
+              <article className="border border-line bg-paper-raised p-6">
+                <h3 className="font-display text-lg font-medium text-steel-900">What is a bollard?</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">A <Link href="/products/access-control/bollards" className="font-medium text-steel-900 underline-offset-4 hover:underline">bollard</Link> is positioned at the vehicle line to provide a physical barrier. The required protection and supporting installation must be established for the site.</p>
+              </article>
+              <article className="border border-line bg-paper-raised p-6">
+                <h3 className="font-display text-lg font-medium text-steel-900">What is a tripod turnstile?</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">A <Link href="/products/access-control/tripod-turnstiles" className="font-medium text-steel-900 underline-offset-4 hover:underline">tripod turnstile</Link> controls pedestrian passage through a single-person lane and can be integrated with an access system.</p>
+              </article>
+              <article className="border border-line bg-paper-raised p-6">
+                <h3 className="font-display text-lg font-medium text-steel-900">How to select access control equipment</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">First identify whether the point controls vehicles or pedestrians. For vehicles, distinguish traffic metering by a <Link href="/products/access-control/boom-barriers" className="font-medium text-steel-900 underline-offset-4 hover:underline">boom barrier</Link> from physical protection by <Link href="/products/access-control/bollards" className="font-medium text-steel-900 underline-offset-4 hover:underline">bollards</Link>. For pedestrians, compare <Link href="/products/access-control/tripod-turnstiles" className="font-medium text-steel-900 underline-offset-4 hover:underline">tripod</Link>, <Link href="/products/access-control/flap-barriers" className="font-medium text-steel-900 underline-offset-4 hover:underline">flap</Link> and <Link href="/products/access-control/full-height-turnstiles" className="font-medium text-steel-900 underline-offset-4 hover:underline">full-height turnstiles</Link> or <Link href="/products/access-control/retractable-barriers" className="font-medium text-steel-900 underline-offset-4 hover:underline">retractable barriers</Link> against throughput, supervision, accessibility, site conditions and emergency behaviour.</p>
+              </article>
             </div>
           </div>
         </section>
