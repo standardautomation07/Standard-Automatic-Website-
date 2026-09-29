@@ -400,6 +400,60 @@ export default async function FamilyPage({ params }: Params) {
         </section>
       )}
 
+      {family.id === "fire-safety-doors" && (
+        <section className="bg-paper py-16 lg:py-20">
+          <div className="shell" data-reveal>
+            <SectionHeading index="02" eyebrow="Quick answers" title="How should fire and safety doors be specified?" />
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">Fire performance belongs to the tested assembly.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-steel-700">
+                  For a fire-rated opening, the required performance must be established for the proposed door configuration and installation. The relevant evidence may depend on the door construction, guides, hardware, release arrangement, dimensions and site installation. A product name alone should not be treated as a fire rating.
+                </p>
+              </div>
+              <div className="border border-line bg-paper-raised p-7">
+                <h3 className="font-display text-lg font-medium text-steel-900">What should be confirmed before quotation?</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-steel-700">
+                  <li>The opening width and height and the type of wall or partition receiving the door.</li>
+                  <li>The required fire-compartmentation objective and project documentation.</li>
+                  <li>The proposed door construction, operating arrangement and any release or interface requirements.</li>
+                  <li>Any test report, certificate or approved assembly documentation required by the project.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-8 border-t border-line pt-8 lg:grid-cols-2">
+              <div>
+                <h3 className="font-display text-lg font-medium text-steel-900">Fire-rated rolling shutters</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">
+                  Our <Link href="/products/fire-safety-doors/fire-rated-rolling-shutters" className="font-medium text-steel-900 underline-offset-4 hover:underline">fire-rated rolling shutter</Link> information is intentionally configuration-dependent. Request project-specific documentation and test evidence for the proposed assembly rather than relying on a generic duration or classification.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-medium text-steel-900">Fire-rated sliding doors</h3>
+                <p className="mt-3 text-sm leading-relaxed text-steel-700">
+                  <Link href="/products/fire-safety-doors/fire-rated-sliding-doors" className="font-medium text-steel-900 underline-offset-4 hover:underline">Fire-rated sliding doors</Link> should likewise be specified against the project documentation and the exact assembly proposed. Where certification or testing is required, confirm its scope and applicability before ordering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="border-y border-line bg-paper-sunken py-12">
+        <div className="shell flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="eyebrow text-steel-500">Engineering support</p>
+            <h2 className="mt-2 font-display text-2xl font-medium text-steel-900">Need help selecting a system?</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-steel-600">
+              Share the opening dimensions, application, site location and operating requirements. Our <Link href="/service-support" className="font-medium text-steel-900 underline-offset-4 hover:underline">service and support team</Link> can help identify the information needed for engineering review. You can also browse the <Link href="/resources" className="font-medium text-steel-900 underline-offset-4 hover:underline">resources</Link> area for available technical information.
+            </p>
+          </div>
+          <Link href="/contact" className="inline-flex shrink-0 items-center rounded-edge border border-steel-900 px-5 py-3 text-sm font-medium text-steel-900 transition-colors hover:bg-steel-900 hover:text-white">
+            Request a consultation
+          </Link>
+        </div>
+      </section>
+
       {/* Why this family */}
       <section className="border-y border-line bg-paper-sunken py-16 lg:py-20">
         <div className="shell" data-reveal>
