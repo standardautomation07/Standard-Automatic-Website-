@@ -115,7 +115,7 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "High speed doors for cold-storage and freezer openings with temperature-focused configurations. Review temperature conditions, threshold details, traffic and room interface before selection.",
   },
   "aluminium-garage-doors": {
-    title: "Aluminium Garage Doors | Standard Automation",
+    title: "Aluminium Garage Doors for Commercial & Residential Openings",
     description:
       "Aluminium sectional garage doors with glazed panel options for visible residential and commercial garage openings. Review opening geometry, finish, glazing and automation requirements.",
   },
@@ -173,11 +173,6 @@ const commercialMetadata: Record<string, { title: string; description: string }>
     title: "Windproof Rolling Shutters for Exposed Openings",
     description:
       "Windproof and storm-resistant rolling shutters with reinforced curtain and engineered anchoring configurations. Select the shutter around exposure, opening conditions and the required assembly.",
-  },
-  "fire-rated-sliding-doors": {
-    title: "Fire Rated Sliding Doors for Compartment Openings",
-    description:
-      "Sliding door systems for fire compartmentation and controlled-area openings. Specific fire performance depends on the proposed doorset, tested assembly, dimensions and installation conditions; request project documentation.",
   },
   "telescopic-sliding-gates": {
     title: "Telescopic Sliding Gates for Wide Site Entrances",
