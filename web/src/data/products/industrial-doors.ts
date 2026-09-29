@@ -13,14 +13,14 @@ export const industrialDoorProducts: Product[] = [
     status: "CONFIRMED",
     tagline: "Insulated panels that stack overhead and free the whole opening.",
     summary:
-      "Insulated sectional doors in aluminium or galvanized steel with a PUF core, 40–50 mm thick, spanning up to 10 m, in manual and motorised configurations.",
+      "Insulated sectional doors in aluminium or galvanized steel with a PUF core, 40–50 mm thick, with opening width confirmed for the specific door configuration, in manual and motorised configurations.",
     overview: [
       "A sectional door is built from horizontal insulated panels hinged together, running on tracks that curve from vertical to horizontal above the opening. When open, the whole door sits flat under the roof — the aperture is completely clear, and so is the wall on either side of it.",
       "That geometry is why sectional doors are standard on industrial elevations: nothing intrudes into the opening or the space beside it, the panels carry real insulation, and the perimeter can be properly sealed against weather. The variant that has to be decided first is the track and lift configuration, and it is set by the headroom available above the opening rather than by the door itself.",
     ],
     quickFacts: [
       { label: "Panel thickness", value: "40–50 mm PUF insulated" },
-      { label: "Maximum span", value: "Up to 10 m wide" },
+      { label: "Maximum span", value: "Maximum opening width is confirmed for the specific door configuration." },
       { label: "Panel height", value: "300 mm" },
       { label: "Wind resistance", value: "EN 12424" },
     ],
@@ -71,6 +71,8 @@ export const industrialDoorProducts: Product[] = [
       "Torsion spring counterbalance with spring-break and anti-fall devices",
       "Perimeter seals at head, jambs and floor",
     ],
+    dimensionsNote:
+      "Maximum opening width is confirmed for the specific door configuration. Send the clear opening width and height for engineering review.",
     related: ["aluminium-garage-doors", "high-speed-rigid-insulated-door", "insulated-double-wall-rolling-shutters"],
     documents: [
       { title: "Sectional Overhead Door brochure", kind: "Brochure", href: null, note: "In preparation — ask us for the specification sheet in the meantime." },

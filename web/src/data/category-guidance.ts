@@ -192,7 +192,7 @@ export const categoryGuidance: Record<string, Guidance> = {
       {
         question: "How wide can a sectional door be?",
         answer:
-          "Our published configurations span up to 10 m. Beyond that the assembly is engineered against the specific opening.",
+          "Maximum opening width is confirmed for the specific door configuration. Send the clear opening width and height for engineering review.",
       },
     ],
   },
