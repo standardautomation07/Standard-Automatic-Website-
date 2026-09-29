@@ -472,14 +472,14 @@ export const categoryGuidance: Record<string, Guidance> = {
       {
         condition: "The opening is on a compartment line",
         recommendation:
-          "The required integrity period comes from the fire strategy, and the assembly must be certified for it.",
+          "Confirm whether documented doorset evidence is available for the required fire strategy. Request documentation for the proposed configuration; do not infer a rating from the product name.",
       },
     ],
     faq: [
       {
         question: "Can one door be both automatic and fire rated?",
         answer:
-          "It can be an automatic door that closes correctly against its frame when the strategy requires it. Whether a given configuration can be certified for a specific period is confirmed against a test certificate for that assembly.",
+          "Fire-resistant sliding door systems are designed for fire compartmentation applications. Specific fire-resistance performance depends on the selected doorset configuration, tested assembly, dimensions and installation conditions. Relevant test reports and compliance documentation should be requested for the proposed project configuration; availability and scope must be confirmed.",
       },
       {
         question: "Are the surfaces suitable for a cleanroom?",

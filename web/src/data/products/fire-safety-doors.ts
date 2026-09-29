@@ -223,16 +223,17 @@ export const fireSafetyProducts: Product[] = [
     status: "CONFIRMED",
     tagline: "Automatic sliding leaves on compartment and controlled-area openings.",
     summary:
-      "Automatic sliding doors with HPL, painted steel or powder-coated aluminium leaves, lead-lined options and glazed vision panels, for hospital, clean room and cold store openings.",
+      "Automatic sliding door systems with HPL, painted steel or powder-coated aluminium leaves, lead-lined options and glazed vision panels, for compartment and controlled-area openings. No specific fire-resistance rating is stated for this product.",
     overview: [
-      "A sliding door on a compartment or controlled-area opening has to satisfy two requirements at once. It must move automatically and hygienically for the traffic that uses it every day, and it must close properly against its frame when the building's fire or containment strategy requires it.",
+      "Fire-resistant sliding door systems are designed for fire compartmentation applications. Specific fire-resistance performance depends on the selected doorset configuration, tested assembly, dimensions and installation conditions.",
       "Leaf construction follows the environment: HPL, painted steel or powder-coated aluminium faces, with lead sheet where radiation shielding is required, and single or double glazed vision panels for sightlines through the opening.",
+      "No specific fire-resistance rating is stated for this product. Relevant test reports and compliance documentation should be requested for the proposed project configuration.",
     ],
     quickFacts: [
       { label: "Leaf thickness", value: "4.5 mm" },
       { label: "Lead sheet option", value: "3.0 mm" },
       { label: "Reference size", value: "1800 × 2100 mm" },
-      { label: "Fire rating", value: "Certification dependent", qualified: true },
+      { label: "Fire performance", value: "No specific rating is stated; confirm project-specific documentation.", qualified: true },
     ],
     benefits: [
       { title: "Automatic and hands-free", body: "Powered sliding operation suits corridors where trolleys and beds are moved constantly." },
@@ -265,10 +266,9 @@ export const fireSafetyProducts: Product[] = [
       "Optional 3.0 mm lead sheet lining with lead glass vision panels",
     ],
     namingNote:
-      "Fire rating is not published for this product. A rating applies to a tested assembly as installed, and only against a certificate for that assembly. Ask us and we will confirm what can be certified for your opening.",
+      "No specific fire-resistance rating is stated for this product. Specific fire-resistance performance depends on the selected doorset configuration, tested assembly, dimensions and installation conditions. Request relevant test reports and compliance documentation for the proposed project configuration; availability and scope must be confirmed.",
     related: ["fire-rated-rolling-shutters", "automatic-sliding-glass-doors", "high-speed-roll-up-door"],
     documents: [
-      { title: "Fire test certificate", kind: "Certificate", href: null, note: "Issued per certified assembly. Ask us for the certificate covering the configuration proposed for your opening." },
       { title: "Fire Rated Sliding Door datasheet", kind: "Datasheet", href: null, note: "In preparation." },
     ],
     imageId: "fire-sliding-supplied",

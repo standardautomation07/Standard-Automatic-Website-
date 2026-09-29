@@ -236,9 +236,9 @@ const fireDoor: SpecGroupSchema[] = [
   {
     group: "Fire performance",
     fields: [
-      { label: "Integrity rating", unit: "minutes", note: "Only published against a certificate for the tested assembly." },
+      { label: "Integrity rating", unit: "minutes", note: "Specific performance must be confirmed from documentation for the proposed assembly." },
       { label: "Insulation rating", unit: "minutes" },
-      { label: "Test standard", note: "IS 3614, BS 476 Pt 22 or EN 1634-1." },
+      { label: "Test standard", note: "Not stated for this product; confirm from documentation for the proposed assembly." },
       { label: "Certificate reference" },
       { label: "Behaviour on alarm" },
     ],
