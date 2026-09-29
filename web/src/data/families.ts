@@ -257,10 +257,10 @@ export const families: Family[] = [
     shortName: "Entrance Automation",
     tagline: "Hands-free pedestrian entrances that hold the building envelope.",
     summary:
-      "Sensor-operated automatic sliding glass door systems for lobbies, retail frontages and healthcare corridors, with defined egress behaviour.",
+      "Automatic sliding glass, swing, and hermetic cleanroom door systems for commercial, healthcare, institutional, and controlled environments, selected around access, sealing, throughput, and egress.",
     intro: [
-      "An automatic pedestrian door is driven by an operator concealed in a header above the opening, with motion and presence sensors on both sides. It opens before the user reaches it and holds open while the threshold is occupied.",
-      "Three questions decide the specification: throughput, sealing and egress. Bi-parting leaves clear the opening faster than a single leaf; a well-sealed door cuts conditioning loss through a busy lobby; and what the door does on power failure and on alarm has to be set against the building's escape strategy before it is installed, not after.",
+      "Entrance automation covers automatic sliding, swing, and hermetic door systems. Sliding doors move leaves alongside the opening, swing doors automate hinged leaves where side-run is limited, and hermetic doors add perimeter sealing for controlled environments.",
+      "The specification depends on the opening geometry, pedestrian traffic, accessibility, sealing requirement, and escape strategy. For cleanroom or pressure-controlled areas, the room classification, pressure regime, cleaning requirements, and airlock arrangement are confirmed with the project design before the door is specified.",
     ],
     why: [
       {
