@@ -89,6 +89,146 @@ const commercialMetadata: Record<string, { title: string; description: string }>
     description:
       "Fire-resistant rolling shutter systems designed for fire compartmentation applications. Performance depends on the product configuration, tested assembly, dimensions and installation conditions. Request project-specific documentation for the proposed configuration.",
   },
+  "high-speed-fold-up-door": {
+    title: "High Speed Fold-Up Doors for Industrial Openings",
+    description:
+      "High speed fold-up doors for industrial and logistics openings where the curtain folds above the opening. Review traffic, opening conditions, space and safety requirements.",
+  },
+  "high-speed-spiral-door": {
+    title: "High Speed Spiral Doors for Industrial Openings",
+    description:
+      "High speed spiral doors with rigid insulated panels for industrial openings. Select the door around traffic, headroom, environmental conditions and required configuration.",
+  },
+  "high-speed-rigid-insulated-door": {
+    title: "High Speed Rigid Insulated Doors for Industrial Use",
+    description:
+      "Rigid insulated high speed doors for industrial openings where rapid operation and thermal separation are both important. Confirm opening and site conditions before selection.",
+  },
+  "high-speed-cleanroom-hygiene-door": {
+    title: "High Speed Cleanroom & Hygiene Doors",
+    description:
+      "High speed doors for hygiene, cleanroom and controlled production areas. Specify the door around cleaning regime, room conditions, traffic and the required environmental interface.",
+  },
+  "high-speed-cold-storage-freezer-door": {
+    title: "High Speed Cold Storage & Freezer Doors",
+    description:
+      "High speed doors for cold-storage and freezer openings with temperature-focused configurations. Review temperature conditions, threshold details, traffic and room interface before selection.",
+  },
+  "aluminium-garage-doors": {
+    title: "Aluminium Garage Doors | Standard Automation",
+    description:
+      "Aluminium sectional garage doors with glazed panel options for visible residential and commercial garage openings. Review opening geometry, finish, glazing and automation requirements.",
+  },
+  "residential-garage-doors": {
+    title: "Residential Garage Doors | Standard Automation",
+    description:
+      "Insulated sectional garage doors for residential openings with remote operation and counterbalance safety features. Confirm opening dimensions, headroom and automation requirements.",
+  },
+  "ms-solid-rolling-shutters": {
+    title: "MS Solid Rolling Shutters for Commercial Openings",
+    description:
+      "Mild steel solid rolling shutters for shops, godowns and commercial openings. Select manual or motorised operation and the curtain configuration around opening use and site conditions.",
+  },
+  "galvanized-steel-rolling-shutters": {
+    title: "GI Solid Rolling Shutters for Industrial Openings",
+    description:
+      "Galvanized steel rolling shutters for commercial and outdoor openings. Compare curtain configuration, operation, exposure and usage before specifying the shutter.",
+  },
+  "galvalume-rolling-shutters": {
+    title: "Galvalume Rolling Shutters for Industrial Openings",
+    description:
+      "Galvalume rolling shutters for exposed commercial and industrial openings. Review curtain configuration, environment, operation and opening requirements with Standard Automation.",
+  },
+  "aluminium-rolling-shutters": {
+    title: "Aluminium Rolling Shutters for Showrooms & Commercial Openings",
+    description:
+      "Aluminium rolling shutters for showrooms, offices and commercial entrances, including architectural configurations. Select the curtain and operation around appearance, usage and site conditions.",
+  },
+  "stainless-steel-rolling-shutters": {
+    title: "Stainless Steel Rolling Shutters for Hygienic Areas",
+    description:
+      "Stainless steel rolling shutters for food, pharmaceutical, healthcare and exposed installations. Specify material finish, operating duty and the cleaning environment for the opening.",
+  },
+  "perforated-rolling-shutters": {
+    title: "Perforated Rolling Shutters for Retail & Parking",
+    description:
+      "Perforated rolling shutters for retail, malls and parking structures where ventilation and visibility matter. Select the material, perforation pattern and operating arrangement for the site.",
+  },
+  "vision-window-rolling-shutters": {
+    title: "Vision Window Rolling Shutters for Retail Frontages",
+    description:
+      "Vision and window rolling shutters for showrooms and retail storefronts. Choose the vision arrangement, curtain material and operation around display visibility and site use.",
+  },
+  "grille-rolling-shutters": {
+    title: "Rolling Grilles for Retail & Commercial Security",
+    description:
+      "Rolling grilles in steel, aluminium and stainless configurations for retail, commercial and frequently operated openings. Review visibility, ventilation, operating duty and site conditions.",
+  },
+  "polycarbonate-rolling-shutters": {
+    title: "Transparent Polycarbonate Rolling Shutters",
+    description:
+      "Transparent polycarbonate rolling shutters with clear or tinted sections for showrooms, jewellery retail and premium storefronts. Confirm the selected profile and configuration for the opening.",
+  },
+  "windproof-rolling-shutters": {
+    title: "Windproof Rolling Shutters for Exposed Openings",
+    description:
+      "Windproof and storm-resistant rolling shutters with reinforced curtain and engineered anchoring configurations. Select the shutter around exposure, opening conditions and the required assembly.",
+  },
+  "fire-rated-sliding-doors": {
+    title: "Fire Rated Sliding Doors for Compartment Openings",
+    description:
+      "Sliding door systems for fire compartmentation and controlled-area openings. Specific fire performance depends on the proposed doorset, tested assembly, dimensions and installation conditions; request project documentation.",
+  },
+  "telescopic-sliding-gates": {
+    title: "Telescopic Sliding Gates for Wide Site Entrances",
+    description:
+      "Telescopic sliding gates for wide entrances where boundary space is limited. Multiple leaves nest during opening; confirm site geometry, duty, controls and safety requirements.",
+  },
+  "automatic-swing-gates": {
+    title: "Automatic Swing Gates for Vehicle Entrances",
+    description:
+      "Automatic single and double swing gates for factory, commercial and institutional entrances. Select the operator and gate arrangement around swing room, leaf geometry, traffic and wind exposure.",
+  },
+  "retractable-gates": {
+    title: "Retractable Gates for Wide Vehicle Entrances",
+    description:
+      "Motorised retractable gates for vehicle entrances where the boundary space and parking arrangement favour a folding gate. Review track arrangement, parked stack, duty and safety requirements.",
+  },
+  "automatic-swing-doors": {
+    title: "Automatic Swing Doors for Accessible Entrances",
+    description:
+      "Automatic swing doors for corridors, lobbies and accessible entrances, with low-energy and full-power configurations. Confirm leaf condition, swing arc, activation and safety requirements.",
+  },
+  "hermetic-cleanroom-doors": {
+    title: "Hermetic & Cleanroom Doors for Controlled Areas",
+    description:
+      "Hermetic automatic sliding doors for operating theatres, airlocks and classified production areas. Specify sealing, room classification, pressure regime, cleaning requirements and interlocking.",
+  },
+  "flap-barriers": {
+    title: "Flap Barriers for Controlled Pedestrian Access",
+    description:
+      "Flap barrier lanes for corporate lobbies and high-footfall entrances, with accessible lane configurations. Select the lane around throughput, access control, egress and site layout.",
+  },
+  "full-height-turnstiles": {
+    title: "Full Height Turnstiles for Perimeter Access",
+    description:
+      "Full height turnstiles for unsupervised perimeter and controlled access points. Review single or twin rotor arrangement, access control, pedestrian flow and escape strategy.",
+  },
+  "bollards": {
+    title: "Automatic & Fixed Bollards for Vehicle Access Control",
+    description:
+      "Fixed, removable and automatic rising bollards for controlled vehicle entrances, plazas and restricted zones. Select the arrangement around access needs, site geometry and any documented impact requirement.",
+  },
+  "boom-barriers": {
+    title: "Automatic Boom Barriers for Vehicle Access Control",
+    description:
+      "Automatic boom barriers for car parks, factory gate houses and controlled vehicle entrances. Integrate readers, loops or gatehouse control and specify the lane around traffic flow and safety.",
+  },
+  "retractable-barriers": {
+    title: "Retractable Barriers for Wide Access Lines",
+    description:
+      "Retractable barrier systems for wide vehicle or pedestrian access lines where the barrier needs to fold into a compact parked position. Confirm opening geometry, controls and safety requirements.",
+  },
   "tripod-turnstiles": {
     title: "Tripod Turnstiles for Controlled Pedestrian Access",
     description:
