@@ -93,8 +93,7 @@ const dockLeveller: SpecGroup[] = [
       // figures were not given as axle loads.
       fixed(
         "Rated capacity",
-        "Rated load 6,000 kg; evenly distributed load capacity up to 15,000 kg",
-        "Rated load and evenly distributed load are different quantities and are quoted separately.",
+        "Load capacity is confirmed for the selected dock leveller configuration and application. Provide the vehicle/axle loading and pit dimensions for engineering confirmation.",
       ),
       fixed("Working range above dock", "725–750 mm"),
       fixed("Working range below dock", "225–380 mm"),

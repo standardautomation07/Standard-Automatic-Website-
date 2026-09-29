@@ -736,14 +736,14 @@ export const categoryGuidance: Record<string, Guidance> = {
       {
         condition: "Heavy handling equipment crosses the deck",
         recommendation:
-          "Rated capacity under EN 1398 refers to the axle load of the equipment, not its gross weight — quote the axle load when asking.",
+          "Provide the handling equipment type, vehicle/axle loading and application so engineering can confirm the selected configuration.",
       },
     ],
     faq: [
       {
         question: "What capacity dock leveller do I need?",
         answer:
-          "It is set by the axle load of the heaviest handling equipment crossing the deck, plus its load — not the gross vehicle weight. EN 1398 rates levellers on that basis.",
+          "Load capacity is confirmed for the selected dock leveller configuration and application. Provide the vehicle/axle loading and pit dimensions for engineering confirmation.",
       },
       {
         question: "What pit size is required?",
