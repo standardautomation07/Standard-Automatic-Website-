@@ -8,7 +8,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { ArrowRight, Check, WhatsApp } from "@/components/ui/icons";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/json-ld";
 import { whatsappHref } from "@/lib/site-config";
-import { getResourceGuide, resourceGuides, type Inline } from "@/data/resources";
+import { getResourceGuide, resourceGuides, type GuideTable, type Inline } from "@/data/resources";
 
 export function generateStaticParams() {
   return resourceGuides.map((guide) => ({ slug: guide.slug }));
@@ -54,6 +54,76 @@ function Text({ runs }: { runs: Inline[] }) {
   );
 }
 
+/**
+ * A comparison table. Phone: one block per row, so nothing is wider than the
+ * screen. Wider screens: a table in the site's specification-table style.
+ */
+function GuideTableView({ table }: { table: GuideTable }) {
+  const label = (row: GuideTable["rows"][number]) =>
+    row.href ? (
+      <Link
+        href={row.href}
+        className="font-display text-sm font-medium normal-case tracking-normal text-amber-deep underline-offset-4 hover:underline"
+      >
+        {row.label}
+      </Link>
+    ) : (
+      row.label
+    );
+
+  return (
+    <>
+      <dl className="mt-6 border-t border-line md:hidden">
+        {table.rows.map((row) => (
+          <div key={row.label} className="border-b border-line py-5">
+            <dt className="font-mono text-xs uppercase tracking-[0.08em] text-steel-500">{label(row)}</dt>
+            {row.values.map((value, index) => (
+              <dd key={index} className="mt-3">
+                <span className="block text-xs font-medium text-steel-900">{table.columns[index]}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-steel-700">{value}</span>
+              </dd>
+            ))}
+          </div>
+        ))}
+      </dl>
+
+      <div className="mt-6 hidden overflow-hidden border border-line bg-paper-raised md:block">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-line bg-paper-sunken/60">
+              <th scope="col" className="w-1/5 px-5 py-3 text-left font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-steel-500">
+                {table.labelHeading ?? <span className="sr-only">Aspect</span>}
+              </th>
+              {table.columns.map((column) => (
+                <th key={column} scope="col" className="px-5 py-3 text-left font-display text-sm font-medium text-steel-900">
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row) => (
+              <tr key={row.label} className="border-b border-line last:border-b-0">
+                <th
+                  scope="row"
+                  className="px-5 py-4 text-left align-top font-mono text-xs font-medium uppercase tracking-[0.08em] text-steel-500"
+                >
+                  {label(row)}
+                </th>
+                {row.values.map((value, index) => (
+                  <td key={index} className="px-5 py-4 align-top leading-relaxed text-steel-800">
+                    {value}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+}
+
 export default async function ResourceGuidePage({ params }: Params) {
   const { slug } = await params;
   const guide = getResourceGuide(slug);
@@ -94,61 +164,7 @@ export default async function ResourceGuidePage({ params }: Params) {
             {guide.comparison && (
               <div className="mt-14" data-reveal>
                 <h2 className="font-display text-2xl font-medium text-steel-900">At a glance</h2>
-
-                {/* Phone: one block per row, so nothing is wider than the screen. */}
-                <dl className="mt-6 border-t border-line md:hidden">
-                  {guide.comparison.rows.map((row) => (
-                    <div key={row.label} className="border-b border-line py-5">
-                      <dt className="font-mono text-xs uppercase tracking-[0.08em] text-steel-500">{row.label}</dt>
-                      {row.values.map((value, index) => (
-                        <dd key={index} className="mt-3">
-                          <span className="block text-xs font-medium text-steel-900">
-                            {guide.comparison!.columns[index]}
-                          </span>
-                          <span className="mt-1 block text-sm leading-relaxed text-steel-700">{value}</span>
-                        </dd>
-                      ))}
-                    </div>
-                  ))}
-                </dl>
-
-                <div className="mt-6 hidden overflow-hidden border border-line bg-paper-raised md:block">
-                  <table className="w-full border-collapse text-sm">
-                    <thead>
-                      <tr className="border-b border-line bg-paper-sunken/60">
-                        <th scope="col" className="w-1/5 px-5 py-3 text-left font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-steel-500">
-                          <span className="sr-only">Aspect</span>
-                        </th>
-                        {guide.comparison.columns.map((column) => (
-                          <th
-                            key={column}
-                            scope="col"
-                            className="px-5 py-3 text-left font-display text-sm font-medium text-steel-900"
-                          >
-                            {column}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {guide.comparison.rows.map((row) => (
-                        <tr key={row.label} className="border-b border-line last:border-b-0">
-                          <th
-                            scope="row"
-                            className="px-5 py-4 text-left align-top font-mono text-xs font-medium uppercase tracking-[0.08em] text-steel-500"
-                          >
-                            {row.label}
-                          </th>
-                          {row.values.map((value, index) => (
-                            <td key={index} className="px-5 py-4 align-top leading-relaxed text-steel-800">
-                              {value}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                <GuideTableView table={guide.comparison} />
               </div>
             )}
 
@@ -160,6 +176,7 @@ export default async function ResourceGuidePage({ params }: Params) {
                     <Text runs={runs} />
                   </p>
                 ))}
+                {section.table && <GuideTableView table={section.table} />}
                 {section.bullets && (
                   <ul className="mt-6 space-y-3">
                     {section.bullets.map((runs, index) => (

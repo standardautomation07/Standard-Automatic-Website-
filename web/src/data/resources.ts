@@ -12,12 +12,25 @@ import type { Faq } from "@/lib/types";
 /** A run of text, optionally linking to an existing page on the site. */
 export type Inline = string | { text: string; href: string };
 
+/**
+ * A comparison table. The first column is the row label; `columns` names the
+ * value columns. A row with `href` links its label to that page.
+ */
+export interface GuideTable {
+  /** Header for the row-label column, if it needs one. */
+  labelHeading?: string;
+  columns: string[];
+  rows: { label: string; href?: string; values: string[] }[];
+}
+
 export interface GuideSection {
   heading: string;
   paragraphs?: Inline[][];
   bullets?: Inline[][];
   /** Rendered as a numbered list. */
   steps?: Inline[][];
+  /** Rendered after the section's text. */
+  table?: GuideTable;
 }
 
 export interface ResourceGuide {
@@ -31,10 +44,8 @@ export interface ResourceGuide {
   lede: string;
   /** The direct answer, stated before any detail. */
   answer: string;
-  comparison?: {
-    columns: [string, string];
-    rows: { label: string; values: [string, string] }[];
-  };
+  /** Shown as "At a glance" after the short answer. */
+  comparison?: GuideTable;
   sections: GuideSection[];
   faq: Faq[];
   related: { href: string; label: string }[];
@@ -235,6 +246,242 @@ export const resourceGuides: ResourceGuide[] = [
       { href: "/products/industrial-doors/industrial-sectional-overhead-doors", label: "Industrial Sectional Overhead Doors" },
       { href: "/products/loading-bay/dock-levellers", label: "Dock Levellers" },
       { href: "/service-support", label: "Service & Support" },
+    ],
+  },
+  {
+    slug: "how-to-choose-a-high-speed-door",
+    title: "How to Choose a High Speed Door",
+    metaTitle: "How to Choose a High Speed Door | Selection Guide",
+    description:
+      "How to choose a high speed door by application, traffic, environment and installation constraints — and which of the seven high speed door types fits your opening.",
+    eyebrow: "Selection guide",
+    lede: "Seven high speed door types cover very different openings. This guide works through the questions that separate them, and links each type to its product page.",
+    answer:
+      "Choosing a high speed door starts with what the opening does: the application, how often it is crossed and by what traffic, and the environment on each side — internal or external, temperature-controlled or hygiene-sensitive. Those answers point to one of seven door types. The final configuration then depends on the opening dimensions, the headroom and side room available, the exposure of the elevation and the controls the door must work with, confirmed at survey.",
+    sections: [
+      {
+        heading: "Start with the application",
+        paragraphs: [
+          [
+            "A high speed door is justified by the time an opening would otherwise stand open. Before comparing door types, be clear about what this opening is for: an internal throughway between production and storage, an external entrance on the building envelope, or a boundary between two environments that have to be kept apart.",
+          ],
+          [
+            "For a constantly crossed internal opening, the ",
+            { text: "High Speed Roll-Up Door", href: "/products/high-speed-doors/high-speed-roll-up-door" },
+            " is the type the others are compared against. Each of the other six answers a specific requirement the roll-up door does not: height, impact, rigidity, insulation, hygiene or sub-zero operation. The full range is on the ",
+            { text: "High Speed Doors", href: "/products/high-speed-doors" },
+            " page.",
+          ],
+        ],
+      },
+      {
+        heading: "Consider traffic and operating conditions",
+        paragraphs: [
+          [
+            "Size on duty cycle first. Roughly how many times a day the opening is used decides the drive, and an operator chosen only for leaf weight will overheat long before it fails mechanically.",
+          ],
+          [
+            "Then look at what crosses the opening and how close it runs to the door. Where forklifts pass close to the guides and contact is routine, the ",
+            { text: "High Speed Self-Repairing Door", href: "/products/high-speed-doors/high-speed-self-repairing-door" },
+            " is the configuration to consider: its curtain leaves the guides on impact and re-enters them automatically, keeping the opening in service. Where impact is unlikely and the route is wide, a standard roll-up door is the more economical choice.",
+          ],
+          [
+            "Activation follows the traffic. On the roll-up door, for example, radar suits mixed vehicle and pedestrian flow, a ground loop suits openings only vehicles should open, and a push button suits openings where opening should be a deliberate act.",
+          ],
+        ],
+      },
+      {
+        heading: "Match the door to the environment",
+        bullets: [
+          [
+            { text: "Manufacturing", href: "/industries/manufacturing" },
+            " and ",
+            { text: "warehousing and logistics", href: "/industries/warehousing-logistics" },
+            ": high-frequency internal routes and larger openings for vehicle and material movement. The roll-up, fold-up and self-repairing doors are the types published for these applications.",
+          ],
+          [
+            { text: "Cold chain and food", href: "/industries/cold-chain-food" },
+            ": a reinforced fabric curtain is not a thermal barrier. Where the opening has to hold a temperature difference, compare the rigid insulated and spiral doors; where the door itself operates in a cold room or freezer, the cold storage configuration is the more specific answer.",
+          ],
+          [
+            { text: "Pharmaceutical and cleanroom", href: "/industries/pharmaceutical-cleanroom" },
+            " and ",
+            { text: "healthcare", href: "/industries/healthcare" },
+            ": hygiene-sensitive areas call for a sealed assembly with a cleanable curtain and stainless steel or hygienic-coated frame and guides. The room's cleaning regime decides the construction.",
+          ],
+          [
+            "External openings: the exposure of the elevation sets the wind class the assembly must be built to. The fold-up and self-repairing doors have a Class 3 wind configuration alongside Class 2; the exposure decides which, not the opening size.",
+          ],
+          [
+            "Washdown areas that are not hygiene-classified: the stainless steel frame and guide configuration of the roll-up door may be sufficient.",
+          ],
+        ],
+      },
+      {
+        heading: "Choose the appropriate high speed door type",
+        paragraphs: [
+          [
+            "Each type below links to its product page, where the published specification and its qualifications are set out in full.",
+          ],
+        ],
+        table: {
+          labelHeading: "Door type",
+          columns: ["Typical application", "Key selection consideration"],
+          rows: [
+            {
+              label: "High Speed Roll-Up Door",
+              href: "/products/high-speed-doors/high-speed-roll-up-door",
+              values: [
+                "Frequent internal traffic in warehouses, factories, logistics facilities and production areas.",
+                "The reference type for a constantly crossed internal opening. Specify the stainless steel frame and guides where the area is washed down.",
+              ],
+            },
+            {
+              label: "High Speed Fold-Up Door",
+              href: "/products/high-speed-doors/high-speed-fold-up-door",
+              values: [
+                "Larger logistics openings, loading areas and high-frequency vehicle and material movement.",
+                "Published to a greater height than the roll-up door, and its folded stack is shallower than a drum of the same span. The fabric curtain is not a thermal barrier.",
+              ],
+            },
+            {
+              label: "High Speed Self-Repairing Door",
+              href: "/products/high-speed-doors/high-speed-self-repairing-door",
+              values: [
+                "Forklift and material-handling routes in warehouses, factories and logistics facilities.",
+                "For openings where curtain impact is routine: the curtain leaves its guides on impact and re-enters them automatically.",
+              ],
+            },
+            {
+              label: "High Speed Spiral Door",
+              href: "/products/high-speed-doors/high-speed-spiral-door",
+              values: [
+                "External factory entrances, high-traffic entrances and temperature-controlled areas.",
+                "A rigid insulated aluminium leaf without giving up cycle time. The spiral track needs a deeper head detail than a drum of the same span.",
+              ],
+            },
+            {
+              label: "High Speed Rigid / Insulated Door",
+              href: "/products/high-speed-doors/high-speed-rigid-insulated-door",
+              values: [
+                "External industrial entrances, loading areas and temperature-controlled spaces.",
+                "Double-skin insulated panels for structural rigidity and thermal separation, at a slower cycle than the spiral door.",
+              ],
+            },
+            {
+              label: "High Speed Cleanroom / Hygiene Door",
+              href: "/products/high-speed-doors/high-speed-cleanroom-hygiene-door",
+              values: [
+                "Pharmaceutical manufacturing, healthcare, laboratories and food processing.",
+                "A sealed assembly with a cleanable hygienic curtain and stainless steel or hygienic-coated frame; dimensions are project specific.",
+              ],
+            },
+            {
+              label: "High Speed Cold Storage / Freezer Door",
+              href: "/products/high-speed-doors/high-speed-cold-storage-freezer-door",
+              values: [
+                "Cold rooms, frozen storage, cold-chain logistics and refrigerated production areas.",
+                "Heated or temperature-resistant guides and a cold-storage bottom seal; the operating temperature is project specific.",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Check installation constraints",
+        paragraphs: [
+          [
+            "Headroom above the lintel and side room at both jambs decide the drum, stack or spiral track and the guides — and headroom rules out more high speed doors than opening width does. Where the lintel cannot take the depth of a drum, the fold-up door's stack is shallower; the spiral door needs a deeper head detail. These dimensions are configuration dependent and are measured at survey rather than quoted from a table.",
+          ],
+          [
+            "Check the power supply available at the opening. On an external elevation, the structural fixings have to carry the wind load a large curtain transfers into the building. On a cold or freezer opening, the floor condition and any threshold heating are agreed with the refrigeration contractor; in a hygiene area, the cleaning regime is set before the door is specified.",
+          ],
+        ],
+      },
+      {
+        heading: "Consider integration and service",
+        paragraphs: [
+          [
+            "Doors in this range run under inverter or frequency control. The roll-up door's PLC control, for example, takes a release signal from an access control system, a loop or a plant signal. Where an opening forms one side of an airlock, both doors are set out together so the interlock is commissioned as one system.",
+          ],
+          [
+            "Cycle count, not calendar time, drives wear on a high speed door. Photocells and safety edges are function-tested at every service visit, and the consumables differ by type — curtain and bottom seal on a roll-up door, fold straps on a folding door, seals on an insulated, hygiene or cold-store opening. See ",
+            { text: "Service & Support", href: "/service-support" },
+            " for maintenance and service.",
+          ],
+        ],
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["Where is the door installed, and what does the opening connect?"],
+          ["What traffic passes through it — vehicles, forklifts, pedestrians — and roughly how many cycles a day?"],
+          ["Does the opening have to hold a temperature difference, or does the door itself operate in a cold room or freezer?"],
+          ["Are hygiene or cleanroom requirements involved, and what is the cleaning regime?"],
+          ["Is the opening internal or external, and how exposed is the elevation?"],
+          ["What are the clear opening width and height, measured between the finished reveals?"],
+          ["What headroom and side room are available, and what site constraints affect installation?"],
+          ["What power supply is available, and what access control, signalling or interlocks must the door work with?"],
+        ],
+      },
+      {
+        heading: "Related resources",
+        bullets: [
+          [
+            { text: "High Speed Door vs Sectional Overhead Door", href: "/resources/high-speed-door-vs-sectional-overhead-door" },
+            " — when a sectional overhead door is the better fit.",
+          ],
+          [{ text: "High Speed Doors", href: "/products/high-speed-doors" }, " — the full product family."],
+          [
+            "Industry pages: ",
+            { text: "manufacturing", href: "/industries/manufacturing" },
+            ", ",
+            { text: "warehousing and logistics", href: "/industries/warehousing-logistics" },
+            ", ",
+            { text: "cold chain and food", href: "/industries/cold-chain-food" },
+            " and ",
+            { text: "pharmaceutical and cleanroom", href: "/industries/pharmaceutical-cleanroom" },
+            ".",
+          ],
+          [{ text: "Service & Support", href: "/service-support" }, " — maintenance and service."],
+          [{ text: "Contact", href: "/contact" }, " — send the opening details for a recommendation."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Which high speed door suits a cold store or freezer?",
+        answer:
+          "The High Speed Cold Storage / Freezer Door, with heated or temperature-resistant guides and a cold-storage bottom seal; its operating temperature is project specific. On the warm side of the cold chain, a standard roll-up door may be sufficient — the temperature the door itself works at decides, not the goods passing through.",
+      },
+      {
+        question: "Is a fabric high speed door insulated?",
+        answer:
+          "No. A reinforced fabric curtain is not a thermal barrier. Where the opening has to hold a temperature difference, the rigid / insulated and spiral doors use insulated panels, and thermal performance is engineered to the stated differential.",
+      },
+      {
+        question: "What if forklifts regularly hit the door?",
+        answer:
+          "Consider the High Speed Self-Repairing Door. Its curtain leaves the guides on impact and re-enters them automatically, so the opening stays in service. Where impact is unlikely, a standard roll-up door is more economical.",
+      },
+      {
+        question: "Can a high speed door be used on an external opening?",
+        answer:
+          "Yes. Several types have an external configuration, specified against the wind class the exposure requires. The rigid / insulated door is engineered for external applications, and the fold-up and self-repairing doors have a Class 3 wind configuration.",
+      },
+      {
+        question: "How much headroom does a high speed door need?",
+        answer:
+          "There is no single figure. It depends on whether the leaf is stored on a drum, in a folded stack or in a spiral track, and it is measured at survey. A folded stack is shallower than a drum of the same span; a spiral track is deeper.",
+      },
+    ],
+    related: [
+      { href: "/products/high-speed-doors", label: "High Speed Doors" },
+      { href: "/resources/high-speed-door-vs-sectional-overhead-door", label: "High Speed Door vs Sectional Overhead Door" },
+      { href: "/products/high-speed-doors/high-speed-cold-storage-freezer-door", label: "High Speed Cold Storage / Freezer Door" },
+      { href: "/products/high-speed-doors/high-speed-cleanroom-hygiene-door", label: "High Speed Cleanroom / Hygiene Door" },
+      { href: "/service-support", label: "Service & Support" },
+      { href: "/contact", label: "Contact" },
     ],
   },
 ];
