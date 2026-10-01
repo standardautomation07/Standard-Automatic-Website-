@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/lib/json-ld";
 import { ArrowRight } from "@/components/ui/icons";
 import { families } from "@/lib/catalog";
+import { resourceGuides } from "@/data/resources";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -72,6 +73,28 @@ export default function ResourcesPage() {
 
       <section className="bg-paper-sunken py-14 lg:py-20">
         <div className="shell" data-reveal>
+          <div className="mb-12">
+            <h2 className="eyebrow text-steel-500">Selection guides</h2>
+            <ul className="mt-6 grid hairline-grid sm:grid-cols-2 xl:grid-cols-3">
+              {resourceGuides.map((guide) => (
+                <li key={guide.slug} className="bg-paper-raised">
+                  <Link
+                    href={`/resources/${guide.slug}`}
+                    className="group flex h-full items-start justify-between gap-3 p-6"
+                  >
+                    <span>
+                      <span className="block font-display text-base font-medium text-steel-900">
+                        {guide.title}
+                      </span>
+                      <span className="mt-1 block text-sm text-steel-600">{guide.description}</span>
+                    </span>
+                    <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-amber transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <ol className="grid hairline-grid md:grid-cols-2 xl:grid-cols-3">
             {checklist.map((item, index) => (
               <li key={item.t} className="bg-paper-raised p-7">

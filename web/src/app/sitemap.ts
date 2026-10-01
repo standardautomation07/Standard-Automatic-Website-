@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { families, industries, productPath, products } from "@/lib/catalog";
 import { siteConfig } from "@/lib/site-config";
+import { resourceGuides } from "@/data/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = (path: string) => `${siteConfig.url}${path}`;
@@ -12,6 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/industries") },
     { url: url("/service-support") },
     { url: url("/resources") },
+    ...resourceGuides.map((guide) => ({
+      url: url(`/resources/${guide.slug}`),
+    })),
     { url: url("/about") },
     { url: url("/projects") },
     { url: url("/contact") },
