@@ -673,6 +673,279 @@ export const resourceGuides: ResourceGuide[] = [
       lede: "Dock height, the vehicles and handling equipment using the bay, and the pit or structure available — that is enough for a configuration and a quotation.",
     },
   },
+  {
+    slug: "how-to-choose-an-industrial-rolling-shutter",
+    title: "How to Choose an Industrial Rolling Shutter",
+    metaTitle: "How to Choose an Industrial Rolling Shutter | Selection Guide",
+    description:
+      "How to choose an industrial rolling shutter by application, material, visibility, ventilation and environmental exposure — compared across eleven shutter types.",
+    eyebrow: "Selection guide",
+    lede: "Eleven rolling shutter types cover very different openings. This guide sets out what separates them, and links each type to its product page.",
+    answer:
+      "Choosing a rolling shutter starts with what the opening is for and where it is: a shop front, a godown, a warehouse opening or an exposed elevation. From there, the material is chosen against corrosion and appearance, the curtain against visibility and ventilation, and the construction against insulation, wind exposure and how often the shutter is operated. Sizes are custom, and the final configuration depends on the opening and the project requirements.",
+    sections: [
+      {
+        heading: "Start with the opening and application",
+        paragraphs: [
+          [
+            "The opening's purpose decides most of the specification. A small shop operated by hand, a general commercial opening, a warehouse or industrial opening, a showroom that must stay visible after hours and an opening that separates two temperatures all lead to different shutters. The full range is on the ",
+            { text: "Rolling Shutters", href: "/products/rolling-shutters" },
+            " page.",
+          ],
+          [
+            "Two things apply to every type. If the shutter is opened and closed many times a day, size on duty first and motorise it: a shutter chosen only on curtain size will wear at the barrel and drive long before the curtain gives out. If the opening is external or exposed, state the exposure: it decides the guide section, whether wind locks are needed, and rules out lighter curtains regardless of opening size.",
+          ],
+        ],
+      },
+      {
+        heading: "Choose the shutter material and construction",
+        bullets: [
+          [
+            { text: "MS (mild steel)", href: "/products/rolling-shutters/ms-solid-rolling-shutters" },
+            ": the standard steel shutter, in light, standard and heavy duty curtains, push-up, gear or motorised. Mild steel is the wrong base for a coastal or chemically aggressive opening.",
+          ],
+          [
+            { text: "Galvanized steel (GI)", href: "/products/rolling-shutters/galvanized-steel-rolling-shutters" },
+            ": the same steel shutter, galvanized before it is formed. Chosen over mild steel where the opening is outdoors or gets wet, because the protection is in the material rather than in a finish that has to be maintained.",
+          ],
+          [
+            { text: "Galvalume", href: "/products/rolling-shutters/galvalume-rolling-shutters" },
+            ": aluminium-zinc coated steel, the step up where galvanized has been marginal, while keeping a steel curtain.",
+          ],
+          [
+            { text: "Aluminium", href: "/products/rolling-shutters/aluminium-rolling-shutters" },
+            ": chosen for corrosion resistance, weight and finish — showrooms, offices and commercial entrances. Where security rather than appearance is the dominant requirement, a steel curtain gives more resistance for the money.",
+          ],
+          [
+            { text: "Stainless steel", href: "/products/rolling-shutters/stainless-steel-rolling-shutters" },
+            ": SS304 for food, pharmaceutical and healthcare areas, and SS316 for coastal or chemically aggressive conditions. Where the area is hosed down at pressure, specify stainless guides as well as a stainless curtain.",
+          ],
+        ],
+      },
+      {
+        heading: "Consider visibility and ventilation",
+        bullets: [
+          [
+            { text: "Perforated", href: "/products/rolling-shutters/perforated-rolling-shutters" },
+            ": a closed shutter you can see and breathe through, in fine, standard vision or heavy-duty patterns. Fine perforation moves air and light while keeping the opening visually closed.",
+          ],
+          [
+            { text: "Vision / window", href: "/products/rolling-shutters/vision-window-rolling-shutters" },
+            ": a solid curtain with defined vision sections, for shop fronts with a lit display. A mixed curtain can be solid at the bottom, vision at eye level and perforated where airflow is needed.",
+          ],
+          [
+            { text: "Rolling grille", href: "/products/rolling-shutters/grille-rolling-shutters" },
+            ": maximum visibility and airflow on a curtain that still locks, for mall units and retail lines. A grille does not keep weather out; pair it with a solid shutter or specify a solid curtain where that matters.",
+          ],
+          [
+            { text: "Transparent polycarbonate", href: "/products/rolling-shutters/polycarbonate-rolling-shutters" },
+            ": clear or tinted polycarbonate sections so the display stays visible behind the closed shutter. It is not presented as an impact- or forced-entry-rated barrier, so select the closure against the site's documented security requirement.",
+          ],
+        ],
+      },
+      {
+        heading: "Consider insulation and environmental requirements",
+        bullets: [
+          [
+            { text: "Insulated double-wall", href: "/products/rolling-shutters/insulated-double-wall-rolling-shutters" },
+            ": a double-wall slat with an insulating core, where the opening separates two temperatures. State the temperature differential — it decides the core, the core thickness and the perimeter sealing. Thermal performance is configuration dependent, and an acoustic requirement should be stated explicitly.",
+          ],
+          [
+            { text: "Windproof / storm-resistant", href: "/products/rolling-shutters/windproof-rolling-shutters" },
+            ": reinforced curtains with wind locks, end locks and engineered anchoring, engineered to the project wind load. Where a specification calls for a tested wind classification, say so at enquiry: it is confirmed against tested configurations and the documentation required.",
+          ],
+          [
+            "Corrosion: move from mild steel to GI where the opening gets wet, to Galvalume where galvanized has been marginal, and to stainless — SS316 — where the environment is genuinely aggressive.",
+          ],
+          [
+            "Constant use with a temperature difference: an insulated shutter is not a rapid door. Where cycle time drives the air exchange, see ",
+            { text: "How to Choose a High Speed Door", href: "/resources/how-to-choose-a-high-speed-door" },
+            ".",
+          ],
+        ],
+      },
+      {
+        heading: "Match the requirement to the shutter type",
+        paragraphs: [
+          ["Each type links to its product page, where the published specification and its qualifications are set out in full."],
+        ],
+        table: {
+          labelHeading: "Shutter type",
+          columns: ["Typical application", "Selection consideration"],
+          rows: [
+            {
+              label: "MS Solid Rolling Shutter",
+              href: "/products/rolling-shutters/ms-solid-rolling-shutters",
+              values: [
+                "Small shops, garages, shops and commercial buildings, godowns and small warehouses.",
+                "Light, standard or heavy duty curtain chosen against use; not for coastal or chemically aggressive openings.",
+              ],
+            },
+            {
+              label: "GI Solid Rolling Shutter",
+              href: "/products/rolling-shutters/galvanized-steel-rolling-shutters",
+              values: [
+                "Shops, commercial buildings, godowns, outdoor openings, warehouses and industrial buildings.",
+                "Chosen over mild steel for outdoor or wet openings; heavy duty with the reinforced guide for warehouse and industrial openings.",
+              ],
+            },
+            {
+              label: "Galvalume Rolling Shutter",
+              href: "/products/rolling-shutters/galvalume-rolling-shutters",
+              values: [
+                "Commercial and industrial buildings, outdoor openings, exposed environments and warehouses.",
+                "The step up from galvanized on exposed elevations, keeping a steel curtain.",
+              ],
+            },
+            {
+              label: "Aluminium Rolling Shutter",
+              href: "/products/rolling-shutters/aluminium-rolling-shutters",
+              values: [
+                "Shops, showrooms, offices, premium retail and commercial entrances.",
+                "Chosen for corrosion, weight and finish; premium extruded profile where the profile is part of the architecture.",
+              ],
+            },
+            {
+              label: "Stainless Steel Rolling Shutter",
+              href: "/products/rolling-shutters/stainless-steel-rolling-shutters",
+              values: [
+                "Food processing, pharmaceutical manufacturing, healthcare, premium commercial and coastal areas.",
+                "SS304 for hygiene areas, SS316 for coastal or aggressive conditions; stainless guides where the area is hosed down.",
+              ],
+            },
+            {
+              label: "Perforated Rolling Shutter",
+              href: "/products/rolling-shutters/perforated-rolling-shutters",
+              values: [
+                "Shops and retail, showrooms, shopping malls, parking structures and commercial buildings.",
+                "Airflow and light through a closed curtain; the perforation pattern is selected per project.",
+              ],
+            },
+            {
+              label: "Vision / Window Rolling Shutter",
+              href: "/products/rolling-shutters/vision-window-rolling-shutters",
+              values: [
+                "Showrooms, retail and commercial storefronts and shopping malls.",
+                "Defined vision sections set out against where the display sits; a mixed curtain where parts of the opening need different things.",
+              ],
+            },
+            {
+              label: "Rolling Grille",
+              href: "/products/rolling-shutters/grille-rolling-shutters",
+              values: [
+                "Retail units, shopping malls, parking structures, airports and transit, and commercial entrances.",
+                "Maximum visibility and airflow; does not keep weather out. A high-cycle configuration for openings operated many times a day.",
+              ],
+            },
+            {
+              label: "Transparent Polycarbonate Rolling Shutter",
+              href: "/products/rolling-shutters/polycarbonate-rolling-shutters",
+              values: [
+                "Showrooms, luxury and jewellery retail, shopping malls and premium commercial.",
+                "Clear or tinted sections keep the display visible; not presented as an impact- or forced-entry-rated barrier.",
+              ],
+            },
+            {
+              label: "Insulated Rolling Shutter",
+              href: "/products/rolling-shutters/insulated-double-wall-rolling-shutters",
+              values: [
+                "Warehouses, factories, loading areas, food processing and temperature-controlled spaces.",
+                "The temperature differential decides the core and sealing; thermal performance is configuration dependent.",
+              ],
+            },
+            {
+              label: "Windproof / Storm-Resistant Rolling Shutter",
+              href: "/products/rolling-shutters/windproof-rolling-shutters",
+              values: [
+                "Coastal buildings, cyclone-prone locations, high-wind sites, exposed commercial buildings and industrial facilities.",
+                "Engineered to the project wind load; the wind configuration can be applied as an upgrade to suitable shutters on mixed elevations.",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["What are the clear opening width and height? Sizes are custom, so the opening is measured rather than matched to a standard."],
+          ["What is the opening for, and what environment is it in — internal, external, coastal, hygiene or temperature-controlled?"],
+          ["Is there a material or finish preference for the elevation?"],
+          ["Does the display or the space behind need to stay visible when the shutter is closed?"],
+          ["Does air need to pass through the closed shutter?"],
+          ["Does the opening separate two temperatures, or is there an acoustic requirement?"],
+          ["What security or closure requirement does the site have, and is it documented?"],
+          ["How exposed is the elevation, and is a tested wind classification required?"],
+          ["How often will the shutter be operated, and should it be push-up, gear or motorised?"],
+          ["What site and installation conditions apply at the opening?"],
+        ],
+      },
+      {
+        heading: "Related products and applications",
+        bullets: [
+          [{ text: "Rolling Shutters", href: "/products/rolling-shutters" }, " — the full product family."],
+          [
+            { text: "Fire Rated Rolling Shutters", href: "/products/fire-safety-doors/fire-rated-rolling-shutters" },
+            " — for openings within fire compartmentation systems.",
+          ],
+          [
+            "Industry pages: ",
+            { text: "manufacturing", href: "/industries/manufacturing" },
+            ", ",
+            { text: "warehousing and logistics", href: "/industries/warehousing-logistics" },
+            " and ",
+            { text: "retail and commercial", href: "/industries/retail-commercial" },
+            ".",
+          ],
+          [{ text: "Service & Support", href: "/service-support" }, " — maintenance and service."],
+          [{ text: "Contact", href: "/contact" }, " — send the opening details for a recommendation."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Which rolling shutter material suits a coastal site?",
+        answer:
+          "Mild steel is the wrong base. Galvanized may not be enough; Galvalume is the step up while keeping a steel curtain, and stainless steel SS316 is specified where the environment is genuinely aggressive. The windproof and storm-resistant configurations address wind exposure separately.",
+      },
+      {
+        question: "What is the difference between perforated, vision and grille shutters?",
+        answer:
+          "A perforated curtain passes diffuse light and air through an overall pattern. A vision shutter is a solid curtain with defined window sections for seeing a display. A rolling grille gives maximum visibility and airflow but does not keep weather out.",
+      },
+      {
+        question: "Can a rolling shutter be insulated?",
+        answer:
+          "Yes. The insulated double-wall shutter has an insulating core between two faces. Its thermal performance is configuration dependent, so state the temperature differential. Where the opening is used constantly and cycle time drives air exchange, a high speed door is the alternative to consider.",
+      },
+      {
+        question: "Do I need a windproof rolling shutter?",
+        answer:
+          "It depends on the exposure. Windproof standard or heavy duty suits an exposed elevation; the storm-resistant configuration suits coastal and cyclone-prone sites and is engineered against the project wind load. A tested wind classification is confirmed against tested configurations.",
+      },
+      {
+        question: "Should a rolling shutter be manual or motorised?",
+        answer:
+          "It depends on how often it is used. Mild steel shutters are available push-up, gear operated or motorised; where a shutter is opened and closed many times a day, size it on duty first and motorise it.",
+      },
+    ],
+    related: [
+      { href: "/products/rolling-shutters", label: "Rolling Shutters" },
+      { href: "/products/rolling-shutters/galvanized-steel-rolling-shutters", label: "GI Solid Rolling Shutter" },
+      { href: "/products/rolling-shutters/insulated-double-wall-rolling-shutters", label: "Insulated Rolling Shutter" },
+      { href: "/products/rolling-shutters/windproof-rolling-shutters", label: "Windproof / Storm-Resistant Rolling Shutter" },
+      { href: "/resources/how-to-choose-a-high-speed-door", label: "How to Choose a High Speed Door" },
+      { href: "/service-support", label: "Service & Support" },
+      { href: "/contact", label: "Contact" },
+    ],
+    sidebarCta: {
+      title: "Not sure which shutter fits?",
+      body: "Send the opening size, what it is for and how exposed it is, and we will recommend a configuration.",
+    },
+    closing: {
+      title: "Describe the opening. We will specify the shutter.",
+      lede: "Clear width and height, what the opening is for, how exposed it is and how often it is used — that is enough for a configuration and a quotation.",
+    },
+  },
 ];
 
 export function getResourceGuide(slug: string): ResourceGuide | undefined {
