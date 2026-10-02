@@ -946,6 +946,184 @@ export const resourceGuides: ResourceGuide[] = [
       lede: "Clear width and height, what the opening is for, how exposed it is and how often it is used — that is enough for a configuration and a quotation.",
     },
   },
+  {
+    slug: "fire-rated-rolling-shutter-specification-guide",
+    title: "Fire-Rated Rolling Shutter: What to Specify",
+    metaTitle: "Fire-Rated Rolling Shutter: What to Specify",
+    description:
+      "How to specify a fire-rated rolling shutter: the opening, the project's fire-performance requirement, opening size, surrounding construction and the documented tested assembly.",
+    eyebrow: "Specification guide",
+    lede: "For architects, consultants, fire-safety and project teams: what to settle, and what to ask for, before a fire-rated rolling shutter is specified.",
+    answer:
+      "A fire-rated rolling shutter should be specified from the opening outward: what the opening does, the fire-performance requirement the project sets for it, the opening size and configuration, the surrounding construction, and the tested or certified assembly proposed for the project. Fire performance belongs to that assembly as installed, not to a product name, so it is confirmed against the project documentation for the selected configuration.",
+    sections: [
+      {
+        heading: "What is a fire-rated rolling shutter?",
+        paragraphs: [
+          [
+            "A fire rated shutter closes an opening in a fire compartment wall, so that the building's escape and containment strategy still works where a large aperture has been cut through a rated wall.",
+          ],
+          [
+            "Our ",
+            { text: "Fire Rated Rolling Shutters", href: "/products/fire-safety-doors/fire-rated-rolling-shutters" },
+            " are intended for large openings within fire compartmentation applications. They use heavy-duty uninsulated metallic construction with an interlocking steel slat curtain of 1.2 mm nominal thickness, for openings up to 6000 mm wide × 6000 mm high. In normal use the shutter is motorized; on a fire signal from the building fire alarm system, the automatic fire-release mechanism releases the curtain for controlled descent, and emergency / manual operation is provided.",
+          ],
+        ],
+      },
+      {
+        heading: "Start with the opening and application",
+        bullets: [
+          ["Where the opening is: the compartment line it sits on, and whether it is on an escape route."],
+          ["What it separates: the areas on each side of the opening and why they are separated."],
+          ["The surrounding construction: the wall construction is established before the shutter configuration is specified."],
+          ["How it is used: whether the opening is in daily use as well as being part of the fire separation, and which building fire alarm system the shutter connects to."],
+        ],
+      },
+      {
+        heading: "Specify the required fire performance",
+        paragraphs: [
+          [
+            "The required fire performance comes from the project — its fire strategy and the consultant's or authority's specification — and is matched to the tested or certified assembly proposed for the opening. It is not read from a product name.",
+          ],
+          [
+            "The product information states that specific fire-resistance performance depends on the product configuration, tested assembly, dimensions and installation conditions. Relevant test reports and compliance documentation should be requested for the project configuration, and their availability confirmed for the project.",
+          ],
+        ],
+      },
+      {
+        heading: "Check the complete door / shutter assembly",
+        paragraphs: [
+          [
+            "Fire performance belongs to a tested assembly — curtain or leaf, guides, fixings, operating and release arrangement, as installed. For our fire rated rolling shutter, that assembly comprises the steel curtain and interlocking slats, heavy-duty structural steel side guides, a reinforced steel bottom bar, a heavy-duty steel barrel assembly on structural brackets, a steel hood, the motor and gearbox, the automatic fire-release mechanism and the control / fire alarm interface.",
+          ],
+          [
+            "The shutter is installed in the structural opening with an engineered fixing arrangement, and its fire alarm interface is connected to the building fire alarm system. Commissioning covers motorized operation, the automatic fire release with controlled descent, and emergency / manual operation. The shutter protects the opening; the wall around it and the building's wider fire strategy remain matters for the project team.",
+          ],
+        ],
+      },
+      {
+        heading: "Consider opening size and site conditions",
+        paragraphs: [
+          [
+            "Our fire rated rolling shutters are designed for openings up to 6000 mm wide × 6000 mm high, for large industrial and commercial openings where conventional fire-rated door systems may not provide the required operational configuration. Within that, specify against the clear opening width and height, the headroom and side room available, the structural substrate for fixing and the site conditions.",
+          ],
+          [
+            "Final installation requirements depend on the selected configuration and on the project and site conditions, and are confirmed before the configuration is specified.",
+          ],
+        ],
+      },
+      {
+        heading: "Fire-rated rolling shutter vs fire-rated sliding door",
+        paragraphs: [
+          [
+            "The two suit different openings, and neither is better in general. The choice follows the opening type, its use and the documentation the project requires.",
+          ],
+        ],
+        table: {
+          labelHeading: "Product",
+          columns: ["Opening type and operation", "Documented applications", "Fire performance as documented"],
+          rows: [
+            {
+              label: "Fire Rated Rolling Shutters",
+              href: "/products/fire-safety-doors/fire-rated-rolling-shutters",
+              values: [
+                "Steel slat curtain for openings up to 6000 × 6000 mm; motorized, with automatic fire release and controlled descent on a fire signal.",
+                "Manufacturing facilities, warehouses and logistics centres, fire compartment openings, electrical and utility rooms, plant and process areas, commercial buildings.",
+                "Depends on the product configuration, tested assembly, dimensions and installation conditions; request project-specific documentation.",
+              ],
+            },
+            {
+              label: "Fire Rated Sliding Doors",
+              href: "/products/fire-safety-doors/fire-rated-sliding-doors",
+              values: [
+                "Automatic sliding leaf on a header-mounted operator; closes against its frame on a fire signal, to the agreed fire strategy, and can be operated manually without power.",
+                "Hospitals and diagnostic suites, clean rooms and controlled areas, cold storage systems, warehouse compartment openings.",
+                "No specific fire-resistance rating is stated for this product; request documentation for the selected configuration.",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["What fire-performance requirement applies to this opening, and where is it set out?"],
+          ["What opening is being protected, which compartment line does it sit on, and is it on an escape route?"],
+          ["What are the clear opening width and height?"],
+          ["What is the surrounding wall construction, and what structural substrate is available for fixing?"],
+          ["Is the opening used daily as well as for fire separation, and which building fire alarm system will the shutter connect to?"],
+          ["What headroom, side room and other installation constraints apply on site?"],
+          ["What test reports, compliance documentation or certification does the project require for the selected configuration?"],
+          ["Which authority, consultant or project specification must the opening satisfy?"],
+        ],
+      },
+      {
+        heading: "Related products and resources",
+        bullets: [
+          [{ text: "Fire Rated Rolling Shutters", href: "/products/fire-safety-doors/fire-rated-rolling-shutters" }, " — product information and specification."],
+          [{ text: "Fire Rated Sliding Doors", href: "/products/fire-safety-doors/fire-rated-sliding-doors" }, " — for compartment and controlled-area openings."],
+          [{ text: "Fire & Safety Doors", href: "/products/fire-safety-doors" }, " — the product family."],
+          [{ text: "Rolling Shutters", href: "/products/rolling-shutters" }, " — the non-fire-rated range."],
+          [
+            { text: "How to Choose an Industrial Rolling Shutter", href: "/resources/how-to-choose-an-industrial-rolling-shutter" },
+            " — for openings without a fire-performance requirement.",
+          ],
+          [
+            "Industry pages: ",
+            { text: "manufacturing", href: "/industries/manufacturing" },
+            " and ",
+            { text: "warehousing and logistics", href: "/industries/warehousing-logistics" },
+            ".",
+          ],
+          [{ text: "Service & Support", href: "/service-support" }, " — maintenance and service."],
+          [{ text: "Contact", href: "/contact" }, " — send the opening details and the project requirement."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "What fire rating does a fire-rated rolling shutter have?",
+        answer:
+          "It is not set by the product name. Specific fire-resistance performance depends on the product configuration, tested assembly, dimensions and installation conditions, and is confirmed against the project's requirement and the documentation for the selected configuration.",
+      },
+      {
+        question: "What documentation should be requested?",
+        answer:
+          "Relevant test reports and compliance documentation for the project configuration. Their availability and scope should be confirmed for the project before the configuration is specified.",
+      },
+      {
+        question: "Does the shutter close automatically in a fire?",
+        answer:
+          "Yes. On a fire signal from the building fire alarm system, the automatic fire-release mechanism releases the curtain and the shutter descends under control to close the opening. Emergency / manual operation is provided.",
+      },
+      {
+        question: "How large an opening can a fire-rated rolling shutter close?",
+        answer:
+          "Our fire rated rolling shutters are designed for openings up to 6000 mm wide × 6000 mm high. Final requirements depend on the selected configuration and the site conditions.",
+      },
+      {
+        question: "Should I specify a fire-rated rolling shutter or a fire-rated sliding door?",
+        answer:
+          "It depends on the opening. The rolling shutter suits large industrial and commercial openings; the sliding door suits compartment and controlled-area openings such as hospitals, clean rooms and cold storage. In both cases, fire performance is confirmed against documentation for the selected configuration.",
+      },
+    ],
+    related: [
+      { href: "/products/fire-safety-doors/fire-rated-rolling-shutters", label: "Fire Rated Rolling Shutters" },
+      { href: "/products/fire-safety-doors/fire-rated-sliding-doors", label: "Fire Rated Sliding Doors" },
+      { href: "/products/fire-safety-doors", label: "Fire & Safety Doors" },
+      { href: "/products/rolling-shutters", label: "Rolling Shutters" },
+      { href: "/service-support", label: "Service & Support" },
+      { href: "/contact", label: "Contact" },
+    ],
+    sidebarCta: {
+      title: "Specifying a fire-rated opening?",
+      body: "Send the opening size, its location and the project's fire-performance requirement, and we will review the configuration with you.",
+    },
+    closing: {
+      title: "Describe the opening and the requirement.",
+      lede: "Opening size, location, surrounding construction and the project's fire-performance requirement — that is what a fire-rated opening is specified from.",
+    },
+  },
 ];
 
 export function getResourceGuide(slug: string): ResourceGuide | undefined {
