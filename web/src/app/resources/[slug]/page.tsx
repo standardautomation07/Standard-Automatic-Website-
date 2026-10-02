@@ -243,10 +243,12 @@ export default async function ResourceGuidePage({ params }: Params) {
                 </ul>
               </div>
               <div className="border border-line bg-paper-raised p-7">
-                <h2 className="font-display text-lg font-medium text-steel-900">Not sure which door fits?</h2>
+                <h2 className="font-display text-lg font-medium text-steel-900">
+                  {guide.sidebarCta?.title ?? "Not sure which door fits?"}
+                </h2>
                 <p className="mt-3 text-sm leading-relaxed text-steel-600">
-                  Send the opening size, headroom and how often it is used, and we will recommend a
-                  configuration.
+                  {guide.sidebarCta?.body ??
+                    "Send the opening size, headroom and how often it is used, and we will recommend a configuration."}
                 </p>
                 <div className="mt-6 flex flex-col gap-3">
                   <ButtonLink href="/contact" variant="primary">
@@ -267,8 +269,11 @@ export default async function ResourceGuidePage({ params }: Params) {
       </section>
 
       <CtaBand
-        title="Describe the opening. We will specify the door."
-        lede="Clear width and height, headroom, how often it is used and what it has to keep out — that is enough for a configuration and a quotation."
+        title={guide.closing?.title ?? "Describe the opening. We will specify the door."}
+        lede={
+          guide.closing?.lede ??
+          "Clear width and height, headroom, how often it is used and what it has to keep out — that is enough for a configuration and a quotation."
+        }
         whatsappMessage={`Hello Standard Automation, I have a question about: ${guide.title}.`}
       />
     </>

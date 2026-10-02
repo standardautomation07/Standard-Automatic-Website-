@@ -49,6 +49,10 @@ export interface ResourceGuide {
   sections: GuideSection[];
   faq: Faq[];
   related: { href: string; label: string }[];
+  /** Sidebar call to action, where the default door wording does not fit. */
+  sidebarCta?: { title: string; body: string };
+  /** Closing band, where the default door wording does not fit. */
+  closing?: { title: string; lede: string };
 }
 
 export const resourceGuides: ResourceGuide[] = [
@@ -483,6 +487,191 @@ export const resourceGuides: ResourceGuide[] = [
       { href: "/service-support", label: "Service & Support" },
       { href: "/contact", label: "Contact" },
     ],
+  },
+  {
+    slug: "what-is-a-dock-leveller",
+    title: "What Is a Dock Leveller? How to Choose One",
+    metaTitle: "What Is a Dock Leveller? How to Choose One",
+    description:
+      "What a dock leveller does and how to choose one for your loading bay: vehicle mix, working range, lip type, handling equipment, pit and site requirements.",
+    eyebrow: "Selection guide",
+    lede: "A practical guide for warehouse, logistics and project teams: what a dock leveller does, why it is used, and what to settle before one is specified.",
+    answer:
+      "A dock leveller is a hinged platform recessed into the dock edge that bridges the gap between the warehouse floor and the vehicle bed. Raised and lowered hydraulically, it places a lip on the bed and forms a continuous, load-bearing ramp, so handling equipment can drive on and off the vehicle. Choosing one depends on the vehicle mix, the working range above and below dock, the lip type, the handling equipment and the pit arrangement at the bay.",
+    sections: [
+      {
+        heading: "What is a dock leveller?",
+        paragraphs: [
+          [
+            "A ",
+            { text: "dock leveller", href: "/products/loading-bay/dock-levellers" },
+            " is a platform set into a foundation pit at the dock edge and hinged along its rear edge. A hydraulic cylinder raises the platform, the lip extends and lowers onto the vehicle bed, and the deck settles onto the bed and follows it as the vehicle's suspension moves under load.",
+          ],
+          [
+            "After loading, the lip retracts and the platform returns to its stored, level position. In normal use it is operated from a hold-to-run push-button control station at the bay, which includes an emergency stop.",
+          ],
+        ],
+      },
+      {
+        heading: "Why dock levellers are used",
+        paragraphs: [
+          [
+            "Vehicle beds sit at different heights depending on the vehicle, its suspension and how much of the load has already come off. Without a leveller, the step between the dock floor and the bed has to be bridged with packing or a loose dock plate.",
+          ],
+          [
+            "A leveller gives handling equipment a single load-bearing surface to drive across, with no step and no loose plate. Because it works both above and below dock level, one bay can serve a mixed fleet.",
+          ],
+        ],
+      },
+      {
+        heading: "What to consider when choosing a dock leveller",
+        bullets: [
+          ["The vehicle mix and its bed heights. Specify the working range against the extremes of the fleet, not the common case."],
+          ["How accurately vehicles reverse onto the bay. This decides between a swing lip and a telescopic lip."],
+          ["The handling equipment that crosses the deck, and its axle loading. Load capacity is confirmed for the selected configuration and application, so provide the equipment type, the vehicle and axle loading and the application for engineering confirmation."],
+          ["How many vehicles the bay turns round in a day."],
+          ["The operating environment. The published operating range is −35 °C to +50 °C, which covers cold chain bays; on a temperature-controlled bay, specify the shelter and the door with the leveller."],
+          ["The power supply at the bay, and any interlock with the bay door, traffic lights or vehicle restraint signalling."],
+          ["Any levelling, sealing or vehicle restraint already in place at the bay."],
+        ],
+      },
+      {
+        heading: "Types and configurations",
+        paragraphs: [
+          [
+            "The configurations below are published for our dock levellers. Platform sizes and the full specification are on the ",
+            { text: "Dock Levellers", href: "/products/loading-bay/dock-levellers" },
+            " product page.",
+          ],
+        ],
+        table: {
+          labelHeading: "Lip type",
+          columns: ["How it works", "When it suits"],
+          rows: [
+            {
+              label: "Swing lip",
+              values: [
+                "The lip hinges out and lowers onto the vehicle bed.",
+                "The standard arrangement where vehicles dock consistently.",
+              ],
+            },
+            {
+              label: "Telescopic lip",
+              values: [
+                "The lip extends horizontally onto the vehicle bed.",
+                "Longer reach and more accurate placement where the fleet is mixed or vehicles cannot always reverse on accurately.",
+              ],
+            },
+          ],
+        },
+      },
+      {
+        heading: "Dock leveller installation considerations",
+        paragraphs: [
+          [
+            "Final civil and structural requirements depend on the selected leveller and on the project and site conditions. The points below are the ones that matter most at the planning stage.",
+          ],
+        ],
+        bullets: [
+          ["The foundation pit is formed by the building contractor to the dimensions issued for the selected leveller. Drawings are issued before the pit is formed, and the pit cannot be corrected afterwards."],
+          ["Pit drainage matters: standing water shortens the life of the hydraulics and the hinge."],
+          ["Dock height is set against the vehicle mix actually using the bay, not a nominal figure."],
+          ["The electrical contractor provides the power supply and an isolator at the bay."],
+          ["Commissioning tests the full working range above and below dock, the lip operation and every safety device, including the maintenance strut."],
+          [
+            "In service, the hydraulic system, hinges and lip mechanism are inspected on a scheduled interval, and the pit is kept clear and free-draining. See ",
+            { text: "Service & Support", href: "/service-support" },
+            ".",
+          ],
+        ],
+      },
+      {
+        heading: "Dock leveller vs dock shelter",
+        paragraphs: [
+          [
+            "They do different jobs, and one does not replace the other. A dock leveller closes the gap under the vehicle, so equipment can cross between the dock and the bed. A ",
+            { text: "dock shelter or dock house", href: "/products/loading-bay/dock-shelters-and-houses" },
+            " closes the gap around the vehicle, so the docked opening is not left open to the weather and the outside air while a vehicle is on the bay.",
+          ],
+          [
+            "Shelters are made to the bay, in curtain, dock house and inflatable arrangements. Where the bay is temperature controlled, the leveller, the shelter and the door are specified together as one assembly rather than as three separate purchases.",
+          ],
+        ],
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["What is the dock height above the yard, and what range of vehicle bed heights does the bay serve?"],
+          ["How accurately can vehicles reverse onto the bay?"],
+          ["What handling equipment crosses the deck, and what is its axle load?"],
+          ["How many vehicles does the bay turn round in a day?"],
+          ["What is the bay width, and what pit or structural arrangement is available?"],
+          ["Is the bay exposed or temperature controlled, and what does the building have to keep out?"],
+          ["What power supply is available at the bay, and must the leveller interlock with the bay door or traffic signals?"],
+          ["What levelling, sealing or vehicle restraint is already in place?"],
+        ],
+      },
+      {
+        heading: "Related products and resources",
+        bullets: [
+          [{ text: "Dock Levellers", href: "/products/loading-bay/dock-levellers" }, " — published configurations and specification."],
+          [{ text: "Dock Shelters & Dock Houses", href: "/products/loading-bay/dock-shelters-and-houses" }, " — sealing around the vehicle."],
+          [{ text: "Loading Bay Equipment", href: "/products/loading-bay" }, " — the full product family."],
+          [
+            "Industry pages: ",
+            { text: "warehousing and logistics", href: "/industries/warehousing-logistics" },
+            " and ",
+            { text: "manufacturing", href: "/industries/manufacturing" },
+            ".",
+          ],
+          [{ text: "Service & Support", href: "/service-support" }, " — maintenance and service."],
+          [{ text: "Contact", href: "/contact" }, " — send the bay details for a recommendation."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "What capacity dock leveller do I need?",
+        answer:
+          "Load capacity is confirmed for the selected dock leveller configuration and application. Provide the handling equipment type, the vehicle and axle loading and the pit dimensions for engineering confirmation.",
+      },
+      {
+        question: "What pit size is required?",
+        answer:
+          "It follows the platform selected. Pit drawings for the chosen leveller are issued before the pit is formed, and final dimensions depend on the installation and configuration.",
+      },
+      {
+        question: "Can one dock leveller serve both vans and trailers?",
+        answer:
+          "Within its working range, yes. Our dock levellers work both above and below dock level, which is what allows a mixed fleet to use one bay. Specify the range against the extremes of the fleet.",
+      },
+      {
+        question: "Does a dock leveller work in a cold store?",
+        answer:
+          "The published operating range is −35 °C to +50 °C, which covers cold chain bays. On a temperature-controlled bay, specify the shelter and the door together with the leveller.",
+      },
+      {
+        question: "Do I need a dock shelter if I already have a dock leveller?",
+        answer:
+          "They do different jobs. The leveller closes the gap under the vehicle; the shelter closes it around the vehicle. Without a shelter, the opening is effectively open for as long as a vehicle is on the bay.",
+      },
+    ],
+    related: [
+      { href: "/products/loading-bay/dock-levellers", label: "Dock Levellers" },
+      { href: "/products/loading-bay/dock-shelters-and-houses", label: "Dock Shelters & Dock Houses" },
+      { href: "/products/loading-bay", label: "Loading Bay Equipment" },
+      { href: "/industries/warehousing-logistics", label: "Warehousing & Logistics" },
+      { href: "/service-support", label: "Service & Support" },
+      { href: "/contact", label: "Contact" },
+    ],
+    sidebarCta: {
+      title: "Planning a loading bay?",
+      body: "Send the dock height, the vehicle mix and the handling equipment, and we will recommend a configuration.",
+    },
+    closing: {
+      title: "Describe the bay. We will specify the leveller.",
+      lede: "Dock height, the vehicles and handling equipment using the bay, and the pit or structure available — that is enough for a configuration and a quotation.",
+    },
   },
 ];
 
