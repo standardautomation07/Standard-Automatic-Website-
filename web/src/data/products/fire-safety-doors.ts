@@ -129,11 +129,11 @@ export const fireSafetyProducts: Product[] = [
       {
         condition: "The opening is large",
         recommendation:
-          "Both variants are designed for openings up to 6000 mm wide × 6000 mm high, where conventional fire-rated door systems may not provide the required operational configuration.",
+          "The shutter is designed for openings up to 6000 mm wide × 6000 mm high, where conventional fire-rated door systems may not provide the required operational configuration.",
       },
       {
         condition: "The opening is in daily use as well",
-        recommendation: "Both variants are motorized for normal operation, with automatic fire closure on a fire signal.",
+        recommendation: "The shutter is motorized for normal operation, with automatic fire closure on a fire signal.",
       },
     ],
     faq: [
@@ -153,7 +153,7 @@ export const fireSafetyProducts: Product[] = [
       },
       {
         question: "What is the maximum opening size?",
-        answer: "Both variants are designed for openings up to 6000 mm wide × 6000 mm high.",
+        answer: "The shutter is designed for openings up to 6000 mm wide × 6000 mm high.",
       },
       {
         question: "Can it be used as a normal shutter day to day?",
