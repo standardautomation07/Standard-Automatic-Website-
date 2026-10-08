@@ -20,9 +20,9 @@ import { families as familyList } from "@/data/families";
 import { products } from "@/lib/catalog";
 
 export const metadata: Metadata = {
-  title: "Industrial Automation Company in Pune | Standard Automation",
+  title: "Industrial Doors, Rolling Shutters & Gates in Pune | Standard Automation",
   description:
-    "Standard Automation is an industrial automation company in Pune supplying industrial doors, high speed doors, rolling shutters, automatic gates, loading bay equipment, entrance automation and access control for industrial and commercial sites.",
+    "High speed doors, rolling shutters, industrial doors, automatic gates, loading bay and access control — specified, supplied and installed from Pune by Standard Automation.",
   alternates: { canonical: "/" },
 };
 
