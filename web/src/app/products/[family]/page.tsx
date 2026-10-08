@@ -37,14 +37,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!family) return {};
 
   const seoTitles: Record<string, string> = {
-    "high-speed-doors": "High Speed Doors for Industrial Applications | Standard Automation",
-    "industrial-doors": "Industrial Doors & Sectional Overhead Doors | Standard Automation",
-    "rolling-shutters": "Industrial Rolling Shutters | Standard Automation",
-    "fire-safety-doors": "Fire & Safety Doors for Industrial Openings | Standard Automation",
-    "automatic-gates": "Automatic Gates for Industrial & Commercial Sites | Standard Automation",
-    "entrance-automation": "Entrance Automation & Automatic Doors | Standard Automation",
-    "loading-bay": "Loading Bay Equipment & Dock Systems | Standard Automation",
-    "access-control": "Access Control & Vehicle Barriers | Standard Automation",
+    "high-speed-doors": "High Speed Doors for Industrial Applications",
+    "industrial-doors": "Industrial Doors & Sectional Overhead Doors",
+    "rolling-shutters": "Industrial & Commercial Rolling Shutters",
+    "fire-safety-doors": "Fire & Safety Doors for Industrial Openings",
+    "automatic-gates": "Automatic Gates for Industrial & Commercial Sites",
+    "entrance-automation": "Entrance Automation & Automatic Doors",
+    "loading-bay": "Loading Bay Equipment: Dock Levellers & Shelters",
+    "access-control": "Access Control, Boom Barriers & Turnstiles",
   };
   const seoDescriptions: Record<string, string> = {
     "high-speed-doors": "High speed doors for warehouses, factories, loading areas and controlled environments. Compare roll-up, fold-up, self-repairing, spiral and specialist door configurations.",
