@@ -11,7 +11,7 @@ import { ArrowRight } from "@/components/ui/icons";
 export const metadata: Metadata = {
   title: "Industries",
   description:
-    "Entrance automation and industrial access solutions by sector — manufacturing, warehousing and logistics, cold chain and food, pharmaceutical and cleanroom, automotive, retail, healthcare and infrastructure.",
+    "Doors, shutters, gates, loading bay and access control by sector: manufacturing, warehousing, cold chain, pharma, automotive, retail, healthcare and transit.",
   alternates: { canonical: "/industries" },
 };
 

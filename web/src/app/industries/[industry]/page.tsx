@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   return {
     title: `${industry.name} — entrance automation and industrial access`,
-    description: `${industry.tagline} Recommended doors, shutters, gates, loading bay and access control products for ${industry.name.toLowerCase()} facilities.`,
+    description: `${industry.tagline} Recommended doors and access products for ${industry.name.toLowerCase()} sites.`,
     alternates: { canonical: `/industries/${industry.id}` },
     openGraph: {
       title: `${industry.name} | Standard Automation`,

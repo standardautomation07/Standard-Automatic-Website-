@@ -12,7 +12,7 @@ import { ArrowRight, Search } from "@/components/ui/icons";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Eight product families covering entrance automation and industrial access: high speed doors, industrial doors, rolling shutters, fire and safety doors, automatic gates, entrance automation, loading bay equipment and access control.",
+    "Eight product families: high speed doors, industrial doors, rolling shutters, fire doors, automatic gates, entrance automation, loading bay and access control.",
   alternates: { canonical: "/products" },
 };
 

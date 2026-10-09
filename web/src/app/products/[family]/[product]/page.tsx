@@ -89,7 +89,7 @@ const commercialMetadata: Record<string, { title: string; description: string }>
   "fire-rated-rolling-shutters": {
     title: "Fire Rated Rolling Shutters for Large Openings",
     description:
-      "Fire-resistant rolling shutter systems designed for fire compartmentation applications. Performance depends on the product configuration, tested assembly, dimensions and installation conditions. Request project-specific documentation for the proposed configuration.",
+      "Fire rated rolling shutters for large openings in fire compartmentation, with automatic closure. Performance depends on the configuration and tested assembly.",
   },
   "high-speed-fold-up-door": {
     title: "High Speed Fold-Up Doors for Industrial Openings",
@@ -214,7 +214,7 @@ const commercialMetadata: Record<string, { title: string; description: string }>
   "bollards": {
     title: "Automatic & Fixed Bollards for Vehicle Access",
     description:
-      "Fixed, removable and automatic rising bollards for controlled vehicle entrances, plazas and restricted zones. Select the arrangement around access needs, site geometry and any documented impact requirement.",
+      "Fixed, removable and automatic rising bollards for vehicle entrances, plazas and restricted zones, selected around access needs and site geometry.",
   },
   "boom-barriers": {
     title: "Boom Barriers for Vehicle Access Control",
