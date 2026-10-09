@@ -1349,6 +1349,200 @@ export const resourceGuides: ResourceGuide[] = [
       lede: "Vehicles or pedestrians, peak flow, supervision and the system it must work with — that is enough for a configuration and a quotation.",
     },
   },
+  {
+    slug: "how-to-choose-an-automatic-gate",
+    products: ["automatic-sliding-gates", "telescopic-sliding-gates", "automatic-swing-gates", "retractable-gates"],
+    families: ["automatic-gates"],
+    title: "How to Choose an Automatic Gate",
+    metaTitle: "How to Choose an Automatic Gate | Selection Guide",
+    description:
+      "How to choose an automatic gate — sliding, cantilever, telescopic, swing or retractable — by boundary space, driveway, traffic and wind exposure.",
+    eyebrow: "Selection guide",
+    lede: "Four gate types cover almost every vehicle entrance. This guide sets out what each needs from the site, where each fits, and what to confirm before ordering.",
+    answer:
+      "An automatic gate is chosen by the geometry of the entrance first. A sliding gate needs clear boundary beside the opening to retract into; a telescopic gate needs about half that; a retractable gate folds into a very short stack; a swing gate needs depth for its leaf to open inward. Then whether anything may cross the driveway, how often the gate runs and how exposed it is decide the arrangement and the operator.",
+    comparison: {
+      labelHeading: "Gate type",
+      columns: ["Space it needs", "Best suited to", "Key point"],
+      rows: [
+        {
+          label: "Automatic Sliding Gates",
+          href: "/products/automatic-gates/automatic-sliding-gates",
+          values: [
+            "Clear boundary beside the opening, roughly the leaf's own width",
+            "Factory main gates, warehouse yards, campus entries, housing societies",
+            "Track-guided or cantilever; cantilever keeps the driveway clear",
+          ],
+        },
+        {
+          label: "Telescopic Sliding Gates",
+          href: "/products/automatic-gates/telescopic-sliding-gates",
+          values: [
+            "About half the side-run of a single leaf",
+            "Wide openings on short boundaries, urban plots, narrow frontages",
+            "Two or three nesting leaves; a more involved drive and guidance arrangement",
+          ],
+        },
+        {
+          label: "Automatic Swing Gates",
+          href: "/products/automatic-gates/automatic-swing-gates",
+          values: [
+            "Depth for the leaf to swing inward",
+            "Residential and office entrances, secondary industrial gates",
+            "Nothing crosses the driveway; wind matters more than on a sliding gate",
+          ],
+        },
+        {
+          label: "Retractable Gates",
+          href: "/products/automatic-gates/retractable-gates",
+          values: [
+            "A very short parked stack",
+            "Factory, school, institutional gates; large yards and depots",
+            "Folding lattice; published configuration up to 30 m long at a standard 1.6 m height",
+          ],
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: "Start with the space at the entrance",
+        paragraphs: [
+          [
+            "A single ",
+            { text: "sliding gate", href: "/products/automatic-gates/automatic-sliding-gates" },
+            " needs roughly its own width of clear boundary to retract into, plus the operator. Where that does not exist, a ",
+            { text: "telescopic gate", href: "/products/automatic-gates/telescopic-sliding-gates" },
+            " halves it, and a ",
+            { text: "retractable gate", href: "/products/automatic-gates/retractable-gates" },
+            " folds into a stack a fraction of the opening width.",
+          ],
+          [
+            "A ",
+            { text: "swing gate", href: "/products/automatic-gates/automatic-swing-gates" },
+            " needs depth instead: room for the leaf's arc inside the site. Where that depth exists and traffic is moderate, it is the simplest and least expensive way to automate an entrance.",
+          ],
+        ],
+      },
+      {
+        heading: "Decide what may cross the driveway",
+        bullets: [
+          ["Track-guided sliding gates suit long, heavy leaves on a level, well-drained approach; the track must be kept clear of silt."],
+          ["Cantilever sliding gates carry the leaf on rollers set back from the opening, so nothing crosses the driveway — chosen where drainage, silt or heavy axle loads rule out a ground track."],
+          ["Retractable gates come trackless, single-track or double-track: trackless keeps the driveway clear, a track adds lateral stability on long or exposed runs."],
+          ["Swing gates leave nothing across the driveway."],
+        ],
+      },
+      {
+        heading: "Size for traffic and exposure",
+        paragraphs: [
+          [
+            "Size the operator on duty cycle, not leaf weight alone. An entrance that runs for every vehicle movement needs an operator rated for it, and closing confirmed by a ground loop rather than a timer.",
+          ],
+          [
+            "On an exposed site, the infill matters as much as the frame: a solid leaf presents far more area to the wind than a bar infill. Wind matters more on a swing gate than on a sliding gate, because an open leaf stands at right angles to the boundary.",
+          ],
+        ],
+      },
+      {
+        heading: "Safety and power failure",
+        paragraphs: [
+          [
+            "Photocells across the opening stop and reverse travel on obstruction, a safety edge protects the leading edge of a sliding leaf, and the operator detects obstruction. Ground loops confirm a vehicle has cleared before the gate closes.",
+          ],
+          [
+            "A manual release lets the gate be moved by hand during a power failure. Battery backup can be specified where the entrance must keep operating.",
+          ],
+        ],
+      },
+      {
+        heading: "Installation considerations",
+        bullets: [
+          ["A survey establishes the clear opening, the side-run or swing room available, the ground level and fall across the entrance, and wind exposure."],
+          ["Foundations are sized for the finished leaf and the operator, and cure before the gate is hung; swing gate hinge posts carry high loads."],
+          ["Ducting for loops, photocells, readers and the supply is laid before the surface is made good — retrofitting it means breaking up the driveway."],
+          ["Underground swing operators need a drained foundation box; standing water is the usual cause of premature failure."],
+          ["Commissioning sets travel limits and soft stop, and tests the photocells, safety edge and manual release."],
+        ],
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["What is the clear opening width?"],
+          ["How much clear boundary is there beside the opening, and how much depth inside it?"],
+          ["May anything cross the driveway — or do drainage, silt or heavy axle loads rule out a track?"],
+          ["How many times a day does the gate run?"],
+          ["How exposed is the entrance to wind, and what infill is wanted?"],
+          ["What ground level and fall run across the entrance?"],
+          ["How will it be operated — remotes, readers, keypad, intercom or loop detectors — and must it keep running during a power failure?"],
+          ["Is there a pedestrian route through the same entrance?"],
+        ],
+      },
+      {
+        heading: "Related products and resources",
+        bullets: [
+          [{ text: "Automatic Gates", href: "/products/automatic-gates" }, " — the full product family."],
+          [
+            { text: "Boom Barrier vs Flap Barrier vs Turnstile", href: "/resources/boom-barrier-vs-flap-barrier-vs-turnstile" },
+            " — controlling vehicles and pedestrians at the same entrance.",
+          ],
+          [
+            "Industry pages: ",
+            { text: "manufacturing", href: "/industries/manufacturing" },
+            ", ",
+            { text: "warehousing and logistics", href: "/industries/warehousing-logistics" },
+            " and ",
+            { text: "retail and commercial", href: "/industries/retail-commercial" },
+            ".",
+          ],
+          [{ text: "Service & Support", href: "/service-support" }, " — maintenance and service."],
+          [{ text: "Contact", href: "/contact" }, " — send the entrance details for a recommendation."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Swing or sliding gate?",
+        answer:
+          "Geometry decides it. A swing gate needs depth for its arc and keeps the driveway clear of tracks; a sliding gate needs side-run but tolerates wind and heavy leaves better.",
+      },
+      {
+        question: "How much space is needed beside a sliding gate?",
+        answer:
+          "A single leaf needs roughly its own width of clear boundary to retract into, plus the operator. Where that does not exist, a telescopic arrangement halves it, and a swing or retractable gate may suit better.",
+      },
+      {
+        question: "Tracked or cantilever sliding gate?",
+        answer:
+          "Cantilever where the driveway must stay clear for drainage, silt or heavy loading. Tracked where the approach is level and well drained and the leaf is long and heavy.",
+      },
+      {
+        question: "What happens if the power fails?",
+        answer:
+          "A manual release lets the gate be moved by hand — key-operated on sliding gates, one on each operator of a swing gate. Battery backup can be specified where the entrance must keep operating.",
+      },
+      {
+        question: "How long an opening can a retractable gate close?",
+        answer:
+          "Our published retractable gate configuration covers openings up to 30 m at a standard 1.6 m height, driven at 17–19 m/min.",
+      },
+    ],
+    related: [
+      { href: "/products/automatic-gates", label: "Automatic Gates" },
+      { href: "/products/automatic-gates/automatic-sliding-gates", label: "Automatic Sliding Gates" },
+      { href: "/products/automatic-gates/telescopic-sliding-gates", label: "Telescopic Sliding Gates" },
+      { href: "/products/automatic-gates/automatic-swing-gates", label: "Automatic Swing Gates" },
+      { href: "/products/automatic-gates/retractable-gates", label: "Retractable Gates" },
+      { href: "/contact", label: "Contact" },
+    ],
+    sidebarCta: {
+      title: "Not sure which gate fits?",
+      body: "Send the opening width, the boundary space beside it and how often it runs, and we will recommend a configuration.",
+    },
+    closing: {
+      title: "Describe the entrance. We will specify the gate.",
+      lede: "Opening width, side-run or swing room, what may cross the driveway and how often it runs — that is enough for a configuration and a quotation.",
+    },
+  },
 ];
 
 export function getResourceGuide(slug: string): ResourceGuide | undefined {
