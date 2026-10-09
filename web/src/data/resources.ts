@@ -57,6 +57,8 @@ export interface ResourceGuide {
   products?: string[];
   /** Product-family pages that link to this guide. */
   families?: string[];
+  /** Product the guide's enquiry form starts on; comparison guides leave it unset. */
+  enquiryProductId?: string;
 }
 
 export const resourceGuides: ResourceGuide[] = [
@@ -498,6 +500,7 @@ export const resourceGuides: ResourceGuide[] = [
   },
   {
     slug: "what-is-a-dock-leveller",
+    enquiryProductId: "dock-levellers",
     products: ["dock-levellers", "dock-shelters-and-houses"],
     families: ["loading-bay"],
     title: "What Is a Dock Leveller? How to Choose One",
@@ -960,6 +963,7 @@ export const resourceGuides: ResourceGuide[] = [
   },
   {
     slug: "fire-rated-rolling-shutter-specification-guide",
+    enquiryProductId: "fire-rated-rolling-shutters",
     products: ["fire-rated-rolling-shutters", "fire-rated-sliding-doors"],
     families: ["fire-safety-doors"],
     title: "Fire-Rated Rolling Shutter: What to Specify",

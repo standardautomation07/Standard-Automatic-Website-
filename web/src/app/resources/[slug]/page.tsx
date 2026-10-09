@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ButtonLink } from "@/components/ui/button";
-import { ArrowRight, Check, WhatsApp } from "@/components/ui/icons";
+import { ArrowRight, Check, Phone, WhatsApp } from "@/components/ui/icons";
+import { EnquiryForm } from "@/components/forms/enquiry-form";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { families, products } from "@/lib/catalog";
 import { breadcrumbJsonLd, faqJsonLd } from "@/lib/json-ld";
-import { whatsappHref } from "@/lib/site-config";
+import { siteConfig, telHref, whatsappHref } from "@/lib/site-config";
 import { getResourceGuide, resourceGuides, type GuideTable, type Inline } from "@/data/resources";
 
 export function generateStaticParams() {
@@ -251,7 +255,7 @@ export default async function ResourceGuidePage({ params }: Params) {
                     "Send the opening size, headroom and how often it is used, and we will recommend a configuration."}
                 </p>
                 <div className="mt-6 flex flex-col gap-3">
-                  <ButtonLink href="/contact" variant="primary">
+                  <ButtonLink href="#enquiry" variant="primary">
                     Request a Quote
                   </ButtonLink>
                   <ButtonLink
@@ -265,6 +269,47 @@ export default async function ResourceGuidePage({ params }: Params) {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* ENQUIRY — the same form as the product pages; it records this guide as the source page. */}
+      <section id="enquiry" className="scroll-mt-20 border-t border-line bg-paper py-16 lg:py-24">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Engineering enquiry"
+              title="Send us the opening."
+              lede="Answer what you can — approximate figures are fine. We come back with a configuration and a price."
+            />
+            <div className="mt-8 space-y-4">
+              <a href={telHref()} className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep">
+                <Phone className="h-5 w-5 text-amber" />
+                {siteConfig.phone}
+              </a>
+              <a
+                href={whatsappHref(`Hello Standard Automation, I have a question about: ${guide.title}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-base text-steel-900 hover:text-amber-deep"
+              >
+                <WhatsApp className="h-5 w-5 text-amber" />
+                WhatsApp us
+              </a>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <Suspense
+              fallback={
+                <div className="border border-line bg-paper-raised p-8 text-sm text-steel-600">Loading enquiry form…</div>
+              }
+            >
+              <EnquiryForm
+                products={products.map(({ id, name, familyId }) => ({ id, name, familyId }))}
+                families={families.map(({ id, name }) => ({ id, name }))}
+                presetProductId={guide.enquiryProductId}
+              />
+            </Suspense>
+          </div>
         </div>
       </section>
 
