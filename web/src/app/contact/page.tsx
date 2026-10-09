@@ -20,6 +20,16 @@ const trail = [
   { name: "Contact", path: "/contact" },
 ];
 
+/** The questions the product pages' ordering sections ask, in plain form. */
+const quoteChecklist = [
+  "Clear opening width and height, measured between the finished reveals",
+  "Headroom above the lintel and side room at both sides of the opening",
+  "Roughly how many times a day the opening is used",
+  "Whether it is internal or external, and how exposed the elevation is",
+  "What the opening has to keep out or keep separate — weather, temperature, dust, noise, people or vehicles",
+  "The power supply available, and any access control, fire alarm or interlock it must work with",
+];
+
 export default function ContactPage() {
   const formProducts = products.map(({ id, name, familyId }) => ({ id, name, familyId }));
   const formFamilies = families.map(({ id, name }) => ({ id, name }));
@@ -104,6 +114,22 @@ export default function ContactPage() {
                     </a>
                   </li>
                 </ul>
+              </div>
+
+              <div className="border-b border-line p-7">
+                <h2 className="eyebrow text-steel-500">What helps us quote</h2>
+                <ol className="mt-5 space-y-3">
+                  {quoteChecklist.map((item, index) => (
+                    <li key={item} className="grid grid-cols-[auto_1fr] gap-x-3 text-sm leading-relaxed text-steel-700">
+                      <span className="font-mono text-xs leading-6 text-amber">{String(index + 1).padStart(2, "0")}</span>
+                      {item}
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-5 text-sm leading-relaxed text-steel-600">
+                  A photograph of the opening helps. Approximate figures are fine — details are
+                  confirmed at survey.
+                </p>
               </div>
 
               <div className="p-7">
