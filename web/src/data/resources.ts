@@ -1543,6 +1543,196 @@ export const resourceGuides: ResourceGuide[] = [
       lede: "Opening width, side-run or swing room, what may cross the driveway and how often it runs — that is enough for a configuration and a quotation.",
     },
   },
+  {
+    slug: "cleanroom-and-hermetic-door-selection",
+    products: ["hermetic-cleanroom-doors", "high-speed-cleanroom-hygiene-door", "stainless-steel-rolling-shutters"],
+    families: ["entrance-automation"],
+    title: "Cleanroom & Hermetic Door Selection Guide",
+    metaTitle: "Cleanroom & Hermetic Door Selection Guide",
+    description:
+      "How to choose a cleanroom door — hermetic sliding, high speed hygiene or stainless — by sealing, traffic, cleaning regime and airlock requirements.",
+    eyebrow: "Selection guide",
+    lede: "For pharmaceutical, healthcare, laboratory and food projects: how the door follows from the room, and which construction suits which opening.",
+    answer:
+      "A cleanroom door is chosen with the room, not after it. The room's classification, pressure regime and cleaning agents are set by the cleanroom designer, and the door is configured to suit them — classification belongs to the room and its air handling, not to a door alone. A hermetic sliding door seals on all four edges between classified areas; a high speed hygiene door gives a sealed rapid opening; the cleaning regime decides the construction.",
+    comparison: {
+      labelHeading: "Door type",
+      columns: ["How it closes the opening", "Typical application", "Key point"],
+      rows: [
+        {
+          label: "Hermetic & Cleanroom Doors",
+          href: "/products/entrance-automation/hermetic-cleanroom-doors",
+          values: [
+            "Automatic sliding leaf that seals against its frame on all four edges",
+            "Operating theatres, gowning rooms, material airlocks, classified production areas, laboratories",
+            "For openings between two classified areas; interlockable pairs for airlocks",
+          ],
+        },
+        {
+          label: "High Speed Cleanroom / Hygiene Door",
+          href: "/products/high-speed-doors/high-speed-cleanroom-hygiene-door",
+          values: [
+            "Rapid hygienic PVC curtain with side and bottom seals",
+            "Pharmaceutical and food manufacturing, healthcare, laboratories, controlled production areas",
+            "Sealing is the requirement, not speed; stainless or hygienic-coated construction",
+          ],
+        },
+        {
+          label: "Stainless Steel Rolling Shutter",
+          href: "/products/rolling-shutters/stainless-steel-rolling-shutters",
+          values: [
+            "SS304 or SS316 interlocking curtain",
+            "Food processing, pharmaceutical manufacturing, healthcare",
+            "Chosen for the cleaning regime; stainless guides where the area is hosed down at pressure",
+          ],
+        },
+        {
+          label: "High Speed Roll-Up Door (stainless)",
+          href: "/products/high-speed-doors/high-speed-roll-up-door",
+          values: [
+            "Rapid PVC curtain with stainless steel frame and guides",
+            "Food areas that are washed down but not classified",
+            "May be sufficient and more economical where no classification applies",
+          ],
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: "Classification belongs to the room",
+        paragraphs: [
+          [
+            "A cleanroom class is a property of the room and its air handling, not of any single opening in it. The door is specified to suit the classification the cleanroom designer has set; no class or approval is quoted for a door in isolation. Where a project needs one, it has to be established for the assembly as installed.",
+          ],
+          [
+            "That is why seal detail, surface finish, vision panel construction and interlocking all follow from the room's classification, pressure regime and cleaning agents — and why the door and the room are designed together. See also the ",
+            { text: "pharmaceutical and cleanroom", href: "/industries/pharmaceutical-cleanroom" },
+            " industry page.",
+          ],
+        ],
+      },
+      {
+        heading: "Sealing first, then traffic",
+        bullets: [
+          [
+            "Between two classified areas — a ",
+            { text: "hermetic door", href: "/products/entrance-automation/hermetic-cleanroom-doors" },
+            ". It seals on all four edges as it closes, so the opening does not break the pressure cascade. A conventional automatic door will not hold it.",
+          ],
+          [
+            "A controlled area with frequent traffic — a ",
+            { text: "high speed cleanroom / hygiene door", href: "/products/high-speed-doors/high-speed-cleanroom-hygiene-door" },
+            ". Its side and bottom seals are what make the closed door maintain the separation; its speed is set by the pressure regime and the traffic.",
+          ],
+          ["Wide equipment transfer — bi-parting hermetic leaves give the clear width without an excessively long single leaf."],
+          ["A room that also needs radiation shielding — a shielded hermetic leaf, coordinated with the room's shielding calculation."],
+          ["Below zero as well as hygienic — the cold storage configuration is the more specific answer; hygiene and sub-zero operation are different problems."],
+        ],
+      },
+      {
+        heading: "Airlocks and interlocks",
+        paragraphs: [
+          [
+            "Gowning rooms and material airlocks use an interlocked pair, so both doors are never open at once. Both openings are set out together so the interlock is commissioned as one system, and the override behaviour on a fire alarm is agreed against the building's escape strategy before commissioning.",
+          ],
+        ],
+      },
+      {
+        heading: "The cleaning regime decides the construction",
+        bullets: [
+          ["Areas hosed, foamed or chemically cleaned — stainless steel construction. Hygienic-coated construction suits a lighter regime; the cleaning method decides, not the room label."],
+          ["A stainless curtain in mild steel guides fails at the guides — specify stainless guides as well."],
+          ["Controls have to survive the same regime: the high speed hygiene door uses a hygienic, suitably IP-rated control enclosure."],
+          ["Hands-free activation — wave sensor, elbow switch, foot control, radar or touchless sensor — avoids adding a hand contact to a gowned procedure."],
+        ],
+      },
+      {
+        heading: "Installation considerations",
+        bullets: [
+          ["The door is set out with the cleanroom design, not after it."],
+          ["The wall construction and panel system have to accept the frame without breaking the sealed line around the opening."],
+          ["A site survey confirms clear width and height, headroom, side room, floor level across the opening and the available supply before anything is manufactured."],
+          ["Seals are the consumable that decides whether the opening still holds its separation; interlock and sensor function are tested as part of the area's periodic qualification."],
+        ],
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["What classification and pressure regime has the cleanroom designer set for the rooms on each side?"],
+          ["Does the opening separate two classified areas, or a controlled area from an unclassified one?"],
+          ["How much traffic passes — personnel, trolleys, equipment?"],
+          ["Is the opening part of a gowning room or material airlock that needs an interlocked pair?"],
+          ["What cleaning agents and cleaning method are used?"],
+          ["Is radiation shielding or sub-zero operation also required?"],
+          ["What should the door do on a fire alarm or power failure?"],
+          ["What wall or panel system will the frame sit in, and what are the clear width and height?"],
+        ],
+      },
+      {
+        heading: "Related products and resources",
+        bullets: [
+          [{ text: "Entrance Automation", href: "/products/entrance-automation" }, " — hermetic, sliding and swing door systems."],
+          [{ text: "High Speed Doors", href: "/products/high-speed-doors" }, " — including the cleanroom / hygiene and cold storage configurations."],
+          [
+            { text: "How to Choose a High Speed Door", href: "/resources/how-to-choose-a-high-speed-door" },
+            " — the full high speed door range.",
+          ],
+          [
+            "Industry pages: ",
+            { text: "pharmaceutical and cleanroom", href: "/industries/pharmaceutical-cleanroom" },
+            ", ",
+            { text: "healthcare", href: "/industries/healthcare" },
+            " and ",
+            { text: "cold chain and food", href: "/industries/cold-chain-food" },
+            ".",
+          ],
+          [{ text: "Contact", href: "/contact" }, " — send the room requirement and the opening details."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "What makes a door hermetic?",
+        answer:
+          "It seals against its frame on all four edges as it closes, rather than simply meeting a stop. That is what lets the opening sit in a wall between two classified areas without breaking the pressure cascade.",
+      },
+      {
+        question: "Which cleanroom classification can a door achieve?",
+        answer:
+          "Classification is a property of the room and its air handling, not of the door alone. The door is specified to suit the classification the cleanroom designer has set; no class is quoted for a door in isolation.",
+      },
+      {
+        question: "Hermetic door or high speed hygiene door?",
+        answer:
+          "A hermetic sliding door seals on all four edges for openings between classified areas. A high speed hygiene door gives a sealed rapid opening with side and bottom seals for controlled areas with frequent traffic. The room requirement decides.",
+      },
+      {
+        question: "Can two doors be interlocked as an airlock?",
+        answer:
+          "Yes. A pair can be electrically interlocked so both are never open together. The override behaviour on a fire alarm is agreed against the building's escape strategy before commissioning.",
+      },
+      {
+        question: "Stainless steel or hygienic-coated construction?",
+        answer:
+          "The cleaning method decides. Stainless steel for areas that are hosed, foamed or chemically cleaned; hygienic-coated construction where the regime is lighter.",
+      },
+    ],
+    related: [
+      { href: "/products/entrance-automation/hermetic-cleanroom-doors", label: "Hermetic & Cleanroom Doors" },
+      { href: "/products/high-speed-doors/high-speed-cleanroom-hygiene-door", label: "High Speed Cleanroom / Hygiene Door" },
+      { href: "/products/rolling-shutters/stainless-steel-rolling-shutters", label: "Stainless Steel Rolling Shutter" },
+      { href: "/industries/pharmaceutical-cleanroom", label: "Pharmaceutical & Cleanroom" },
+      { href: "/contact", label: "Contact" },
+    ],
+    sidebarCta: {
+      title: "Specifying a cleanroom opening?",
+      body: "Send the room classification and pressure regime set by your cleanroom designer, the cleaning method and the opening size, and we will configure the door to suit.",
+    },
+    closing: {
+      title: "Describe the room. We will configure the door.",
+      lede: "The classification and pressure regime, the cleaning method, the traffic and the opening size — that is what a cleanroom door is specified from.",
+    },
+  },
 ];
 
 export function getResourceGuide(slug: string): ResourceGuide | undefined {
