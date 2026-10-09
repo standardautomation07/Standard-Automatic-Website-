@@ -53,11 +53,17 @@ export interface ResourceGuide {
   sidebarCta?: { title: string; body: string };
   /** Closing band, where the default door wording does not fit. */
   closing?: { title: string; lede: string };
+  /** Product pages that link to this guide in their "Selection guides" block. */
+  products?: string[];
+  /** Product-family pages that link to this guide. */
+  families?: string[];
 }
 
 export const resourceGuides: ResourceGuide[] = [
   {
     slug: "high-speed-door-vs-sectional-overhead-door",
+    products: ["high-speed-roll-up-door", "high-speed-fold-up-door", "high-speed-self-repairing-door", "high-speed-spiral-door", "high-speed-rigid-insulated-door", "high-speed-cleanroom-hygiene-door", "high-speed-cold-storage-freezer-door", "industrial-sectional-overhead-doors"],
+    families: ["high-speed-doors", "industrial-doors"],
     title: "High Speed Door vs Sectional Overhead Door",
     metaTitle: "High Speed Door vs Sectional Overhead Door: How to Choose",
     description:
@@ -254,6 +260,8 @@ export const resourceGuides: ResourceGuide[] = [
   },
   {
     slug: "how-to-choose-a-high-speed-door",
+    products: ["high-speed-roll-up-door", "high-speed-fold-up-door", "high-speed-self-repairing-door", "high-speed-spiral-door", "high-speed-rigid-insulated-door", "high-speed-cleanroom-hygiene-door", "high-speed-cold-storage-freezer-door"],
+    families: ["high-speed-doors"],
     title: "How to Choose a High Speed Door",
     metaTitle: "How to Choose a High Speed Door | Selection Guide",
     description:
@@ -490,6 +498,8 @@ export const resourceGuides: ResourceGuide[] = [
   },
   {
     slug: "what-is-a-dock-leveller",
+    products: ["dock-levellers", "dock-shelters-and-houses"],
+    families: ["loading-bay"],
     title: "What Is a Dock Leveller? How to Choose One",
     metaTitle: "What Is a Dock Leveller? How to Choose One",
     description:
@@ -675,6 +685,8 @@ export const resourceGuides: ResourceGuide[] = [
   },
   {
     slug: "how-to-choose-an-industrial-rolling-shutter",
+    products: ["ms-solid-rolling-shutters", "galvanized-steel-rolling-shutters", "galvalume-rolling-shutters", "aluminium-rolling-shutters", "stainless-steel-rolling-shutters", "perforated-rolling-shutters", "vision-window-rolling-shutters", "grille-rolling-shutters", "polycarbonate-rolling-shutters", "insulated-double-wall-rolling-shutters", "windproof-rolling-shutters"],
+    families: ["rolling-shutters"],
     title: "How to Choose an Industrial Rolling Shutter",
     metaTitle: "How to Choose an Industrial Rolling Shutter | Selection Guide",
     description:
@@ -948,6 +960,8 @@ export const resourceGuides: ResourceGuide[] = [
   },
   {
     slug: "fire-rated-rolling-shutter-specification-guide",
+    products: ["fire-rated-rolling-shutters", "fire-rated-sliding-doors"],
+    families: ["fire-safety-doors"],
     title: "Fire-Rated Rolling Shutter: What to Specify",
     metaTitle: "Fire-Rated Rolling Shutter: What to Specify",
     description:
@@ -1128,4 +1142,14 @@ export const resourceGuides: ResourceGuide[] = [
 
 export function getResourceGuide(slug: string): ResourceGuide | undefined {
   return resourceGuides.find((guide) => guide.slug === slug);
+}
+
+/** Guides that answer the selection questions for this product. */
+export function guidesForProduct(productId: string): ResourceGuide[] {
+  return resourceGuides.filter((guide) => guide.products?.includes(productId));
+}
+
+/** Guides that cover this product family. */
+export function guidesForFamily(familyId: string): ResourceGuide[] {
+  return resourceGuides.filter((guide) => guide.families?.includes(familyId));
 }

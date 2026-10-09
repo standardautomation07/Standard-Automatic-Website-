@@ -19,6 +19,8 @@ import { ShutterFilters } from "@/components/product/shutter-filters";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CtaBand } from "@/components/cta/cta-band";
+import { GuideLinks } from "@/components/resources/guide-links";
+import { guidesForFamily } from "@/data/resources";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, familyCollectionJsonLd } from "@/lib/json-ld";
 import { Media, StatusBadge } from "@/components/ui/media";
@@ -708,6 +710,16 @@ export default async function FamilyPage({ params }: Params) {
           </div>
         </div>
       </section>
+
+      {/* Selection guides */}
+      {guidesForFamily(family.id).length > 0 && (
+        <section className="border-t border-line bg-paper pt-16">
+          <div className="shell" data-reveal>
+            <h2 className="eyebrow text-steel-500">Selection guides</h2>
+            <GuideLinks guides={guidesForFamily(family.id)} />
+          </div>
+        </section>
+      )}
 
       {/* Related families */}
       <section className="border-t border-line bg-paper pb-20 lg:pb-24">

@@ -24,6 +24,8 @@ import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProductCard } from "@/components/product/cards";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
+import { GuideLinks } from "@/components/resources/guide-links";
+import { guidesForProduct } from "@/data/resources";
 import { CtaBand } from "@/components/cta/cta-band";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbJsonLd, faqJsonLd, productJsonLd } from "@/lib/json-ld";
@@ -278,6 +280,7 @@ export default async function ProductPage({ params }: Params) {
   const family = familyById[product.familyId];
   const category = categoryById[product.categoryId];
   const related = relatedProducts(product);
+  const guides = guidesForProduct(product.id);
   const path = productPath(product);
 
   // Every product presents its detail as the same nine horizontal tabs, so a
@@ -883,6 +886,16 @@ export default async function ProductPage({ params }: Params) {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+      )}
+
+      {/* SELECTION GUIDES */}
+      {guides.length > 0 && (
+        <section className="border-t border-line bg-paper py-14 lg:py-16">
+          <div className="shell" data-reveal>
+            <h2 className="eyebrow text-steel-500">Selection guides</h2>
+            <GuideLinks guides={guides} />
           </div>
         </section>
       )}
