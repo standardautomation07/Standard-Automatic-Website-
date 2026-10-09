@@ -52,12 +52,12 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "High speed self-repairing doors for impact-prone industrial and logistics routes. Compare the configuration, traffic conditions and safety requirements before selection.",
   },
   "insulated-double-wall-rolling-shutters": {
-    title: "Insulated Rolling Shutters for Temperature Separation",
+    title: "Insulated Double-Wall Rolling Shutters",
     description:
       "Insulated rolling shutters with double-wall profiles and configuration-dependent cores for warehouses, food processing and temperature-controlled openings.",
   },
   "dock-levellers": {
-    title: "Dock Levellers for Warehouse Loading Bays",
+    title: "Hydraulic Dock Levellers (Dock Levelers)",
     description:
       "Dock levellers bridge the warehouse floor and vehicle bed for loading-bay movement. Select the lip arrangement and working range against the vehicle mix and dock design.",
   },
@@ -72,7 +72,7 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "Automatic sliding gates suit wide site entrances where the gate needs to move parallel to the boundary. Review side-run, traffic, control and safety requirements.",
   },
   "automatic-sliding-glass-doors": {
-    title: "Automatic Sliding Glass Doors for Controlled Entrances",
+    title: "Automatic Sliding Glass Doors for Entrances",
     description:
       "Automatic sliding glass doors for commercial, healthcare and controlled pedestrian entrances. Select the opening arrangement, access control and safety interface for the site.",
   },
@@ -87,7 +87,7 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "Fire rated sliding doors for compartment openings where the door arrangement must be specified against the building fire strategy and documented assembly requirements.",
   },
   "fire-rated-rolling-shutters": {
-    title: "Fire-Resistant Rolling Shutters for Fire Compartmentation",
+    title: "Fire Rated Rolling Shutters for Large Openings",
     description:
       "Fire-resistant rolling shutter systems designed for fire compartmentation applications. Performance depends on the product configuration, tested assembly, dimensions and installation conditions. Request project-specific documentation for the proposed configuration.",
   },
@@ -117,12 +117,12 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "High speed doors for cold-storage and freezer openings with temperature-focused configurations. Review temperature conditions, threshold details, traffic and room interface before selection.",
   },
   "aluminium-garage-doors": {
-    title: "Aluminium Garage Doors for Commercial & Residential Openings",
+    title: "Aluminium Garage Doors with Glazed Sections",
     description:
       "Aluminium sectional garage doors with glazed panel options for visible residential and commercial garage openings. Review opening geometry, finish, glazing and automation requirements.",
   },
   "residential-garage-doors": {
-    title: "Residential Garage Doors | Standard Automation",
+    title: "Insulated Residential Garage Doors",
     description:
       "Insulated sectional garage doors for residential openings with remote operation and counterbalance safety features. Confirm opening dimensions, headroom and automation requirements.",
   },
@@ -142,7 +142,7 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "Galvalume rolling shutters for exposed commercial and industrial openings. Review curtain configuration, environment, operation and opening requirements with Standard Automation.",
   },
   "aluminium-rolling-shutters": {
-    title: "Aluminium Rolling Shutters for Showrooms & Commercial Openings",
+    title: "Aluminium Rolling Shutters for Shops & Showrooms",
     description:
       "Aluminium rolling shutters for showrooms, offices and commercial entrances, including architectural configurations. Select the curtain and operation around appearance, usage and site conditions.",
   },
@@ -212,12 +212,12 @@ const commercialMetadata: Record<string, { title: string; description: string }>
       "Full height turnstiles for unsupervised perimeter and controlled access points. Review single or twin rotor arrangement, access control, pedestrian flow and escape strategy.",
   },
   "bollards": {
-    title: "Automatic & Fixed Bollards for Vehicle Access Control",
+    title: "Automatic & Fixed Bollards for Vehicle Access",
     description:
       "Fixed, removable and automatic rising bollards for controlled vehicle entrances, plazas and restricted zones. Select the arrangement around access needs, site geometry and any documented impact requirement.",
   },
   "boom-barriers": {
-    title: "Automatic Boom Barriers for Vehicle Access Control",
+    title: "Boom Barriers for Vehicle Access Control",
     description:
       "Automatic boom barriers for car parks, factory gate houses and controlled vehicle entrances. Integrate readers, loops or gatehouse control and specify the lane around traffic flow and safety.",
   },
