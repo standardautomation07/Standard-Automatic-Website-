@@ -1138,6 +1138,217 @@ export const resourceGuides: ResourceGuide[] = [
       lede: "Opening size, location, surrounding construction and the project's fire-performance requirement — that is what a fire-rated opening is specified from.",
     },
   },
+  {
+    slug: "boom-barrier-vs-flap-barrier-vs-turnstile",
+    products: ["boom-barriers", "bollards", "retractable-barriers", "tripod-turnstiles", "flap-barriers", "full-height-turnstiles"],
+    families: ["access-control"],
+    title: "Boom Barrier vs Flap Barrier vs Turnstile: How to Choose",
+    metaTitle: "Boom Barrier vs Flap Barrier vs Turnstile",
+    description:
+      "How to choose between boom barriers, bollards, flap barriers and tripod or full height turnstiles — by what each controls, supervision and throughput.",
+    eyebrow: "Selection guide",
+    lede: "Six access control products, two questions. This guide sets out what each one controls, where each fits, and what to confirm before ordering.",
+    answer:
+      "Start by asking whether the point controls vehicles or pedestrians. At the vehicle line, a boom barrier meters traffic and records movements but will not stop a determined vehicle; bollards hold the line physically; a retractable barrier closes a wide line only when needed. At the pedestrian line, the choice follows supervision and throughput: tripod turnstiles for supervised staff entrances, flap barriers for busy lobbies, full height turnstiles for unsupervised perimeters.",
+    comparison: {
+      labelHeading: "Product",
+      columns: ["Controls", "Best suited to", "Key point"],
+      rows: [
+        {
+          label: "Boom Barriers",
+          href: "/products/access-control/boom-barriers",
+          values: [
+            "Vehicles — metering",
+            "Car park entries, plant gate houses, toll and weighbridge points",
+            "A control device, not a security barrier; a ground loop confirms the vehicle has cleared before the boom lowers",
+          ],
+        },
+        {
+          label: "Bollards",
+          href: "/products/access-control/bollards",
+          values: [
+            "Vehicles — physical line",
+            "Building entrances, plazas, restricted zones, campus perimeters",
+            "Fixed, removable or automatic rising; pedestrians pass freely",
+          ],
+        },
+        {
+          label: "Retractable Barriers",
+          href: "/products/access-control/retractable-barriers",
+          values: [
+            "Wide vehicle or pedestrian line",
+            "Yard and service entrances, shift-based closures",
+            "Folds into a stack when open, so the route is completely clear",
+          ],
+        },
+        {
+          label: "Tripod Turnstiles",
+          href: "/products/access-control/tripod-turnstiles",
+          values: [
+            "Pedestrians — one per authorisation",
+            "Factory gate houses, staff entrances, attendance points",
+            "Waist height; suits supervised points with moderate throughput",
+          ],
+        },
+        {
+          label: "Flap Barriers",
+          href: "/products/access-control/flap-barriers",
+          values: [
+            "Pedestrians — high throughput",
+            "Corporate lobbies, receptions, transit concourses",
+            "Higher throughput than a tripod; reads as building fit-out",
+          ],
+        },
+        {
+          label: "Full Height Turnstiles",
+          href: "/products/access-control/full-height-turnstiles",
+          values: [
+            "Pedestrians — unclimbable line",
+            "Unsupervised perimeter points, restricted zones",
+            "Floor-to-head-height rotor in a cage: no over and no under",
+          ],
+        },
+      ],
+    },
+    sections: [
+      {
+        heading: "Vehicle line: meter or enforce?",
+        paragraphs: [
+          [
+            "A ",
+            { text: "boom barrier", href: "/products/access-control/boom-barriers" },
+            " regulates flow: it holds the gate line closed, opens for one authorised vehicle and closes again behind it. It is not designed to stop a determined vehicle. Where the line has to be held physically, ",
+            { text: "bollards", href: "/products/access-control/bollards" },
+            " are the correct product.",
+          ],
+          [
+            "Bollards are chosen by how often the line opens: fixed for a line that never opens, removable for occasional service access, automatic rising for a line that opens many times a day. A ",
+            { text: "retractable barrier", href: "/products/access-control/retractable-barriers" },
+            " suits an opening that is a free-flow route during working hours and a closed line outside them.",
+          ],
+          [
+            "Where hostile vehicle mitigation is the requirement, a tested and certified product is needed. An impact rating is published only against that evidence.",
+          ],
+        ],
+      },
+      {
+        heading: "Pedestrian line: supervision and throughput",
+        bullets: [
+          [
+            "Supervised point, moderate throughput — a ",
+            { text: "tripod turnstile", href: "/products/access-control/tripod-turnstiles" },
+            " enforces single passage mechanically at the lowest cost and footprint.",
+          ],
+          [
+            "Corporate lobby at peak flow — ",
+            { text: "flap barriers", href: "/products/access-control/flap-barriers" },
+            " move people faster and read as building fit-out rather than security equipment.",
+          ],
+          [
+            "Unsupervised perimeter — a ",
+            { text: "full height turnstile", href: "/products/access-control/full-height-turnstiles" },
+            ". A waist-height unit with nobody watching it is a formality.",
+          ],
+          ["Wheelchair users, trolleys or luggage — provide at least one wide accessible lane alongside the standard lanes."],
+        ],
+      },
+      {
+        heading: "Emergency behaviour and integration",
+        paragraphs: [
+          [
+            "On a fire alarm or power failure, turnstile arms drop or free-spin and flap barrier wings retract, so the lane becomes clear escape width. A full height turnstile free-spins, locks or is released according to the behaviour specified for the site. The exact behaviour is agreed against the building's escape strategy and tested at commissioning.",
+          ],
+          [
+            "Lanes accept a release signal and return passage events over standard dry contacts, so the credential technology — card, biometric, QR or visitor system — is the site's choice. Boom barriers can be released by long-range RFID tags or number-plate recognition, often together: tags for fleet vehicles, ANPR for visitors.",
+          ],
+        ],
+      },
+      {
+        heading: "Installation considerations",
+        bullets: [
+          ["Vehicle lanes: lane geometry, approach and queuing space come first — a barrier in the wrong position creates a queue on the public road."],
+          ["Foundations are sized for the unit and, for bollards, for the sleeve depth required below the carriageway."],
+          ["Ground loops are cut and ducted before the surface is made good, and re-tested after any resurfacing."],
+          ["Pedestrian lanes: units are fixed to a sound, level floor, and power and reader cable routes are coordinated before the floor is finished."],
+          ["A local power supply and isolator are provided by the electrical contractor."],
+        ],
+      },
+      {
+        heading: "Questions to confirm before ordering",
+        steps: [
+          ["Does the point control vehicles, pedestrians or both?"],
+          ["For vehicles: does the line need to be metered and recorded, or physically held?"],
+          ["How often does the line open — rarely, several times a day, or continuously?"],
+          ["For pedestrians: is the point supervised, and what is the peak flow?"],
+          ["Is an accessible lane needed for wheelchair users, trolleys or luggage?"],
+          ["What should happen on a fire alarm or power failure?"],
+          ["Which access control, attendance, RFID or ANPR system must it work with?"],
+          ["What lane width, headroom, approach space and floor or foundation conditions apply on site?"],
+        ],
+      },
+      {
+        heading: "Related products and resources",
+        bullets: [
+          [{ text: "Access Control & Vehicle Barriers", href: "/products/access-control" }, " — the full product family."],
+          [{ text: "Automatic Gates", href: "/products/automatic-gates" }, " — where the site entrance itself needs a gate."],
+          [
+            "Industry pages: ",
+            { text: "manufacturing", href: "/industries/manufacturing" },
+            ", ",
+            { text: "retail and commercial", href: "/industries/retail-commercial" },
+            " and ",
+            { text: "infrastructure and transit", href: "/industries/infrastructure-transit" },
+            ".",
+          ],
+          [{ text: "Service & Support", href: "/service-support" }, " — maintenance and service."],
+          [{ text: "Contact", href: "/contact" }, " — send the entry point details for a recommendation."],
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Will a boom barrier stop an unauthorised vehicle?",
+        answer:
+          "No, and it is not designed to. A boom barrier meters traffic and records movements. Where the line must be physically held, bollards are the correct product.",
+      },
+      {
+        question: "Which turnstile type suits my entrance?",
+        answer:
+          "It follows supervision and throughput: flap barriers for high-flow supervised lobbies, tripod turnstiles for gate houses and staff entrances, full height turnstiles where the point is unsupervised and has to be unclimbable.",
+      },
+      {
+        question: "What happens to a turnstile on a fire alarm?",
+        answer:
+          "Arms drop or free-spin, or the wings retract, so the lane becomes clear escape width. The exact behaviour is specified against the building's escape strategy and tested at commissioning.",
+      },
+      {
+        question: "Do rising bollards carry a crash rating?",
+        answer:
+          "Only where the specific product has been tested and certified to an impact standard. An impact rating is published only against that evidence.",
+      },
+      {
+        question: "Will it work with our existing access control system?",
+        answer:
+          "In almost all cases, yes. Lanes accept a release signal and return passage events over standard dry contacts, and boom barriers can be released by RFID tags or number-plate recognition.",
+      },
+    ],
+    related: [
+      { href: "/products/access-control", label: "Access Control & Vehicle Barriers" },
+      { href: "/products/access-control/boom-barriers", label: "Boom Barriers" },
+      { href: "/products/access-control/flap-barriers", label: "Flap Barriers" },
+      { href: "/products/access-control/tripod-turnstiles", label: "Tripod Turnstiles" },
+      { href: "/products/access-control/bollards", label: "Bollards" },
+      { href: "/contact", label: "Contact" },
+    ],
+    sidebarCta: {
+      title: "Planning an entry point?",
+      body: "Tell us whether it controls vehicles or pedestrians, how busy it is and whether it is supervised, and we will recommend a configuration.",
+    },
+    closing: {
+      title: "Describe the entry point. We will specify the control.",
+      lede: "Vehicles or pedestrians, peak flow, supervision and the system it must work with — that is enough for a configuration and a quotation.",
+    },
+  },
 ];
 
 export function getResourceGuide(slug: string): ResourceGuide | undefined {
