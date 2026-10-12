@@ -22,7 +22,7 @@ import { products } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "Industrial Doors, Rolling Shutters & Gates in Pune | Standard Automation",
   description:
-    "High speed doors, rolling shutters, industrial doors, automatic gates, loading bay and access control — specified, supplied and installed from Pune by Standard Automation.",
+    "Standard Automatic Solutions Pvt. Ltd., Pune — high speed doors, rolling shutters, industrial doors, gates, loading bay and access control, supplied and installed.",
   alternates: { canonical: "/" },
 };
 
